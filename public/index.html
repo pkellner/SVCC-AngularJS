@@ -1,0 +1,132 @@
+<!doctype html>
+<html ng-app="svccApp">
+<head>
+    <meta charset="utf-8">
+    <title>SVCC AngularJS Migration</title>
+
+
+    <!-- build:js -->
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-messages/angular-messages.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="vendor/angular-resource/angular-resource.js"></script>
+
+
+    <script src="app/app.js"></script>
+
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js" ></script>-->
+
+    <!--components-->
+
+
+
+    <!--basics-->
+    <!--<script src="app/app.constants.js"></script>-->
+
+    <!--Speakers-->
+    <script src="app/speakers/speakers.controller.js"></script>
+    <script src="app/speakers/speaker-detail.controller.js"></script>
+    <script src="app/speakers/speaker-resource.service.js"></script>
+    <script src="app/speakers/speaker-social-icon.directive.js" ></script>
+
+    <!--Sessions-->
+    <script src="app/sessions/sessions.controller.js"></script>
+    <script src="app/sessions/session-detail.controller.js"></script>
+    <script src="app/sessions/session-resource.service.js"></script>
+    <script src="app/sessions/session-level.filter.js"></script>
+
+    <!--Registration-->
+    <script src="app/registration/registration.controller.js"></script>
+
+
+    <!--General-->
+    <script src="app/general/general.controller.js"></script>
+
+
+
+    <--Templates-->
+
+
+
+
+    <!-- endbuild -->
+
+
+    <!-- build:css -->
+    <link href="Content/Styles/site-svcc-relative.css" rel="stylesheet"/>
+    <!-- endbuild -->
+
+
+
+</head>
+
+<body ng-app="svCodeCamp">
+
+<div id="wrapper">
+
+    <header id="header" class="mainHeader ">
+
+        <div class="logoInfoBar">
+            <div class="logoWrap">
+                <a href="/">
+
+                    <img src="http://cache.siliconvalley-codecamp.com/Images/silicon-valley-code-camp.png"
+                         alt="Silicon Valley Code Camp"/>
+                </a>
+            </div>
+            <div class="dateWrap">
+                <br/>
+                OCTOBER 11TH &amp; 12TH 2014
+            </div>
+            <div class="venueWrap">
+                <span class="name">FOOTHILL COLLEGE</span><br/>
+                12345 EL MONTE RD.<br/>
+                LOS ALTOS HILLS, CA
+            </div>
+        </div>
+
+        <div class="menuUserBar">
+            <div class="menuWrap">
+                <ul class="menuList">
+
+                    <li class="menuListItem jobs">
+                        <a href="#/home" class="menuItemLink">Home</a>
+                    </li>
+
+                    <li class="menuListItem jobs">
+                        <a href="#/register" class="menuItemLink">Registration</a>
+                    </li>
+
+                    <li class="menuListItem sessions">
+                        <a href="#/sessions" class="menuItemLink">Sessions</a>
+                    </li>
+
+                    <li class="menuListItem program">
+                        <a href="#/speakers" class="menuItemLink">Presenters</a>
+                    </li>
+
+                    <li class="menuListItem jobs">
+                        <a href="#/about" class="menuItemLink">About</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section id="middle">
+        <div id="container">
+            <div id="content" class="content">
+                <div class="view-container">
+                    <div ng-view class="view-frame"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+
+
+</body>
+</html>

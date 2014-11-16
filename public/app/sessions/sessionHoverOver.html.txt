@@ -1,0 +1,118 @@
+<div class="cluetip-outer" style="position: relative; z-index: 97; overflow: visible; height: auto;">
+    <h3 class="cluetip-title ui-widget-header ui-cluetip-header">
+        <!--<div class="cluetip-close"><a href="#">Hide</a></div>-->
+        Community, Career and You: a Microsoft MVP Panel
+    </h3>
+    <div class="cluetip-inner ui-widget-content ui-cluetip-content">
+
+
+        <span style="display: none;">3648</span>
+        <span>Interest: </span>81<br>
+        <span>Attend: </span>34
+        <hr>
+        <p>No person survives as an island, and no career grows spontaneously. In this session, we will discuss how to
+            strategically grow your professional opportunities by participating in technical communities. </p>
+        <hr>
+        <div class="listingMedia">
+            <img alt="img" width="80" height="80"
+                 src="http://cache.siliconvalley-codecamp.com/attendeeimage/20140906002926-21132.jpg?format=jpg&amp;width=80&amp;Height=80&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+        </div>
+        <a target="_blank">
+            <h3>Esther Lee </h3>
+        </a>
+
+        <div class="buttonsSocialBig">
+            <a href="http://twitter.com/MsEstherL" class="twitter">Twitter</a>
+            <a href="http://www.linkedin.com/in/msestherl" class="linkedin">LinkedIn</a>
+        </div>
+        <div class="listingMedia">
+            <img alt="img" width="80" height="80"
+                 src="http://cache.siliconvalley-codecamp.com/attendeeimage/20140906032604-21146.jpg?format=jpg&amp;width=80&amp;Height=80&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+        </div>
+        <a target="_blank">
+            <h3>Kari Finn </h3>
+        </a>
+
+        <div class="buttonsSocialBig">
+            <a href="http://twitter.com/mvpmentor" class="twitter">Twitter</a>
+            <a href="http://www.facebook.com/mvpmentor" class="facebook">Facebook</a>
+            <a href="https://plus.google.com/karifinn/about" class="gplus">Google+</a>
+            <a href="http://www.linkedin.com/in/karifinn" class="linkedin">LinkedIn</a>
+        </div>
+        <div class="listingMedia">
+            <img alt="img" width="80" height="80"
+                 src="http://cache.siliconvalley-codecamp.com/attendeeimage/20140906033629-903.jpg?format=jpg&amp;width=80&amp;Height=80&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+        </div>
+        <a target="_blank">
+            <h3>Peter Kellner </h3>
+        </a>
+
+        <div class="buttonsSocialBig">
+            <a href="http://twitter.com/pkellner" class="twitter">Twitter</a>
+            <a href="http://www.facebook.com/peterkellner99" class="facebook">Facebook</a>
+            <a href="https://plus.google.com/+PeterKellner/about" class="gplus">Google+</a>
+            <a href="http://www.linkedin.com/in/peterkellner" class="linkedin">LinkedIn</a>
+        </div>
+        <div class="listingMedia">
+            <img alt="img" width="80" height="80"
+                 src="http://cache.siliconvalley-codecamp.com/attendeeimage/20130514003723-5995.jpg?format=jpg&amp;width=80&amp;Height=80&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+        </div>
+        <a target="_blank">
+            <h3>David McCarter </h3>
+        </a>
+
+        <div class="buttonsSocialBig">
+            <a href="http://twitter.com/RealDotNetDave" class="twitter">Twitter</a>
+            <a href="http://www.facebook.com/davidmccarter" class="facebook">Facebook</a>
+            <a href="http://www.linkedin.com/in/davidmccarter" class="linkedin">LinkedIn</a>
+        </div>
+        <div class="listingMedia">
+            <img alt="img" width="80" height="80"
+                 src="http://cache.siliconvalley-codecamp.com/attendeeimage/20130102000000-653.jpg?format=jpg&amp;width=80&amp;Height=80&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+        </div>
+        <a target="_blank">
+            <h3>Deborah Kurata </h3>
+        </a>
+
+        <div class="buttonsSocialBig">
+            <a href="http://twitter.com/DeborahKurata" class="twitter">Twitter</a>
+        </div>
+        <div class="listingMedia">
+            <img alt="img" width="80" height="80"
+                 src="http://cache.siliconvalley-codecamp.com/attendeeimage/20130102000000-8502.jpg?format=jpg&amp;width=80&amp;Height=80&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+        </div>
+        <a target="_blank">
+            <h3>Jeremy Clark </h3>
+        </a>
+
+        <div class="buttonsSocialBig">
+            <a href="http://twitter.com/jeremybytes" class="twitter">Twitter</a>
+            <a href="https://plus.google.com/jeremybytes/about" class="gplus">Google+</a>
+        </div>
+        <div class="listingMedia">
+            <img alt="img" width="80" height="80"
+                 src="http://cache.siliconvalley-codecamp.com/attendeeimage/20140812184333-17364.jpg?format=jpg&amp;width=80&amp;Height=80&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+        </div>
+        <a target="_blank">
+            <h3>Ryan Riley </h3>
+        </a>
+
+        <div class="buttonsSocialBig">
+            <a href="http://twitter.com/panesofglass" class="twitter">Twitter</a>
+            <a href="https://plus.google.com/112889976015498138189/about" class="gplus">Google+</a>
+            <a href="http://www.linkedin.com/in/ryanriley" class="linkedin">LinkedIn</a>
+        </div>
+        <div class="listingMedia">
+            <img alt="img" width="80" height="80"
+                 src="http://cache.siliconvalley-codecamp.com/attendeeimage/20140430030107-583.jpg?format=jpg&amp;width=80&amp;Height=80&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+        </div>
+        <a target="_blank">
+            <h3>Mathias Brandewinder </h3>
+        </a>
+
+        <div class="buttonsSocialBig">
+            <a href="http://twitter.com/brandewinder" class="twitter">Twitter</a>
+        </div>
+
+    </div>
+</div>

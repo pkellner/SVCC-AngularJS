@@ -1,0 +1,86 @@
+<!--suppress HtmlUnknownAnchorTarget -->
+<h1 class="title">Sessions</h1>
+
+<div class="toolbarBg">
+    <div class="searchBox alt">
+
+        <div class="searchBoxField">
+            <label for='SortByList'>Sort by :</label>
+
+            <div class="searchSelect">
+                <select id="SortByList">
+                    <option value="title">Title</option>
+                    <option value="sessionTimeDateTime">Time</option>
+                    <option value="roomNumber">Room</option>
+                    <option value="interestCount">Interest</option>
+                </select>
+            </div>
+        </div>
+
+        <!--<div class="sessionSearchFor">-->
+        <!--<div class="icheckbox_square-green checked" style="position: relative;"><input type="checkbox" id="showKidsSessions" name="showKidsSessions" checked="" class="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>-->
+        <!--<label for="showKidsSessions">Kids</label>-->
+        <!--<div class="icheckbox_square-green checked" style="position: relative;"><input type="checkbox" id="showProfSessions" name="showProfSessions" checked="" class="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>-->
+        <!--<label for="showProfSessions">Professionals</label>-->
+        <!--</div>-->
+
+        <div class="searchBoxField">
+            <div class="searchInput">
+                <!--<input ng-model="search.title"  placeholder="search here..." type="text">-->
+                <input ng-model="search.$" placeholder="search here..." type="text">
+                <button type="button"></button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<h1 class="searchTitle title">Search Results</h1>
+
+<table id="sessionsTable" class="sessionsTable">
+    <tbody>
+
+    <tr ng-repeat="session in vm.sessions | filter:search | orderBy:vm.orderProp    " class="ProfessionalSession">
+        <td class="name">
+            <div data-id="{{::session.id}}">
+                <div class="currentSession currentSessionVisible">
+                    <h3 id="sessionTitle_{{::session.id}}" title="{{::session.title}}">{{::session.title}}</h3>
+                    <i>by</i>
+                <span ng-repeat="speaker in session.presenters">
+                    <a ng-href="#/speakers/{{::speaker.id}}" class="author">{{::speaker.firstName}} {{::speaker.lastName}}</a>
+                </span>
+                    <span>Attending ({{::session.planAheadCount}})</span>
+
+                    <div>
+                        <span>{{::session.sessionTime}} &nbsp;&nbsp;</span>
+                    </div>
+                </div>
+                <!-- / currentSession -->
+            </div>
+        </td>
+
+        <td>
+        </td>
+
+
+
+        <td>
+
+
+
+        </td>
+
+        <td class="details">
+            <a class="button gray alt" href="#/sessions/{{::session.id}}" >
+                Details
+            </a>
+        </td>
+
+
+    </tbody>
+</table>
+<!-- / sessionsTable -->
