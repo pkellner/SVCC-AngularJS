@@ -1,33 +1,24 @@
-Sun Nov 16 2014 10:47:53 GMT-0800 (PST):
-{ [Error: Server returned an unknown AccountType: undefined]
+Sun Nov 16 2014 21:15:31 GMT-0800 (PST):
+{ [Error: Error: Website with given name mywebsite1 already exists.]
   stack: [Getter/Setter],
   __frame: 
-   { name: 'getSubscriptions',
-     line: 23,
-     file: '/usr/local/azure/lib/util/profile/subscriptionUtils.js',
+   { name: 'createSite',
+     line: 389,
+     file: '/usr/local/lib/node_modules/azure-cli/lib/commands/asm/site._js',
      prev: 
-      { name: '__1',
-        line: 41,
-        file: '/usr/local/azure/lib/commands/login.js',
+      { name: '__4',
+        line: 206,
+        file: '/usr/local/lib/node_modules/azure-cli/lib/commands/asm/site._js',
         prev: undefined,
         active: false,
-        offset: 47,
-        col: 31 },
+        offset: 50,
+        col: 12 },
      active: false,
-     offset: 1,
-     col: 20 },
+     offset: 20,
+     col: 21 },
   rawStack: [Getter] }
-Error: Server returned an unknown AccountType: undefined
-    at Logger.createError (/usr/local/azure/node_modules/adal-node/lib/log.js:196:13)
-    at /usr/local/azure/node_modules/adal-node/lib/token-request.js:373:35
-    at UserRealm._parseDiscoveryResponse (/usr/local/azure/node_modules/adal-node/lib/user-realm.js:234:3)
-    at /usr/local/azure/node_modules/adal-node/lib/user-realm.js:263:12
-    at Request._callback (/usr/local/azure/node_modules/adal-node/lib/util.js:116:5)
-    at Request.self.callback (/usr/local/azure/node_modules/request/request.js:129:22)
-    at Request.EventEmitter.emit (events.js:98:17)
-    at Request.<anonymous> (/usr/local/azure/node_modules/request/request.js:873:14)
-    at Request.EventEmitter.emit (events.js:117:20)
-    at IncomingMessage.<anonymous> (/usr/local/azure/node_modules/request/request.js:824:12)
-    at getSubscriptions (/usr/local/azure/lib/util/profile/subscriptionUtils.js:24:20)
-    at __1 (/usr/local/azure/lib/commands/login.js:88:31)
+Error: Error: Website with given name mywebsite1 already exists.
+    at createSite__4 (/usr/local/lib/node_modules/azure-cli/lib/commands/asm/websites/websitesclient._js:312:34)
+    at createSite (/usr/local/lib/node_modules/azure-cli/lib/commands/asm/site._js:409:21)
+    at __4 (/usr/local/lib/node_modules/azure-cli/lib/commands/asm/site._js:256:12)
 
