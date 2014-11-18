@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trace>
+  <step title="Startup Request" date="11/17 5:54:45" instance="4ed61c" url="/mysitename101.git/info/refs?service=git-receive-pack" method="GET" type="request" pid="45396,2,6" ScmType="LocalGit" elapsed="1" />
+  <step title="Incoming Request" date="11/17 5:54:45" instance="4ed61c" url="/mysitename101.git/info/refs?service=git-receive-pack" method="GET" type="request" pid="45396,2,6" Connection="Keep-Alive" Pragma="no-cache" Accept="*/*" Accept-Encoding="gzip" Host="mysitename101.scm.azurewebsites.net" User-Agent="git/1.9.3 (Apple Git-50)" X-SITE-DEPLOYMENT-ID="mysitename101" elapsed="2081">
+    <step title="InfoRefsService.Execute" date="11/17 5:54:45" instance="4ed61c" elapsed="1306">
+      <step title="InfoRefsService.SmartInfoRefs" date="11/17 5:54:45" instance="4ed61c" elapsed="1292">
+        <step title="GitExeServer.Initialize" date="11/17 5:54:46" instance="4ed61c" elapsed="1209">
+          <step title="GitExeRepository.Initialize" date="11/17 5:54:46" instance="4ed61c" elapsed="1204">
+            <step title="Executing external process" date="11/17 5:54:46" instance="4ed61c" type="process" path="git.exe" arguments="init" elapsed="636" />
+            <step title="Executing external process" date="11/17 5:54:46" instance="4ed61c" type="process" path="git.exe" arguments="config core.autocrlf true" elapsed="100" />
+            <step title="Executing external process" date="11/17 5:54:46" instance="4ed61c" type="process" path="git.exe" arguments="config core.preloadindex true" elapsed="84" />
+            <step title="Executing external process" date="11/17 5:54:46" instance="4ed61c" type="process" path="git.exe" arguments="config user.name &quot;windowsazure&quot;" elapsed="90" />
+            <step title="Executing external process" date="11/17 5:54:46" instance="4ed61c" type="process" path="git.exe" arguments="config user.email &quot;windowsazure&quot;" elapsed="87" />
+            <step title="Configure git server" date="11/17 5:54:47" instance="4ed61c" elapsed="84">
+              <step title="Executing external process" date="11/17 5:54:47" instance="4ed61c" type="process" path="git.exe" arguments="config receive.denyCurrentBranch ignore" elapsed="84" />
+            </step>
+            <step title="Create deny users for .git folder" date="11/17 5:54:47" instance="4ed61c" elapsed="5" />
+            <step title="Configure git-credential" date="11/17 5:54:47" instance="4ed61c" elapsed="96">
+              <step title="Executing external process" date="11/17 5:54:47" instance="4ed61c" type="process" path="git.exe" arguments="config credential.helper &quot;!'D:\home\site\repository\.git\hooks\git-credential-invalid.sh'&quot;" elapsed="87" />
+            </step>
+            <step title="Setup post receive hook" date="11/17 5:54:47" instance="4ed61c" elapsed="6" />
+          </step>
+        </step>
+        <step title="GitExeServer.AdvertiseReceivePack" date="11/17 5:54:47" instance="4ed61c" elapsed="48">
+          <step title="Executing external process" date="11/17 5:54:47" instance="4ed61c" type="process" path="git.exe" arguments="receive-pack --stateless-rpc --advertise-refs &quot;D:\home\site\repository&quot;" elapsed="47" />
+        </step>
+        <step title="Writing 183 bytes" date="11/17 5:54:47" instance="4ed61c" elapsed="0" />
+      </step>
+    </step>
+    <step title="Outgoing response" date="11/17 5:54:47" instance="4ed61c" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/8.0" Pragma="no-cache" Cache-Control="must-revalidate, no-cache, max-age=0" Expires="Tue, 01 Jan 1980 00:00:00 GMT" Content-Length="183" X-AspNet-Version="4.0.30319" Content-Type="application/x-git-receive-pack-advertisement" elapsed="0" />
+  </step>
+  <step title="Incoming Request" date="11/17 5:54:48" instance="4ed61c" url="/mysitename101.git/git-receive-pack" method="POST" type="request" pid="45396,2,6" Connection="Keep-Alive" Content-Length="4" Content-Type="application/x-git-receive-pack-request" Accept="application/x-git-receive-pack-result" Host="mysitename101.scm.azurewebsites.net" User-Agent="git/1.9.3 (Apple Git-50)" X-SITE-DEPLOYMENT-ID="mysitename101" elapsed="323">
+    <step title="RpcService.ReceivePack" date="11/17 5:54:48" instance="4ed61c" elapsed="309">
+      <step title="Executing external process" date="11/17 5:54:48" instance="4ed61c" type="process" path="git.exe" arguments="rev-parse --git-dir" elapsed="37" />
+      <step title="Assuming git repository at D:\home\site\repository" date="11/17 5:54:48" instance="4ed61c" elapsed="0" />
+      <step title="Executing external process" date="11/17 5:54:48" instance="4ed61c" type="process" path="git.exe" arguments="rev-parse --git-dir" elapsed="37" />
+      <step title="Assuming git repository at D:\home\site\repository" date="11/17 5:54:48" instance="4ed61c" elapsed="0" />
+      <step title="Creating temporary deployment" date="11/17 5:54:48" instance="4ed61c" elapsed="55" />
+      <step title="GitExeServer.Receive" date="11/17 5:54:48" instance="4ed61c" elapsed="34">
+        <step title="Executing external process" date="11/17 5:54:48" instance="4ed61c" type="process" path="git.exe" arguments="receive-pack --stateless-rpc &quot;D:\home\site\repository&quot;" elapsed="33" />
+      </step>
+    </step>
+    <step title="Outgoing response" date="11/17 5:54:48" instance="4ed61c" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/8.0" Expires="Fri, 01 Jan 1980 00:00:00 GMT" Pragma="no-cache" Cache-Control="no-cache, max-age=0, must-revalidate" X-AspNet-Version="4.0.30319" Content-Type="application/x-git-receive-pack-result" elapsed="0" />
+  </step>
+  <step title="Executing external process" date="11/17 5:54:56" instance="4ed61c" type="process" path="kudu.exe" arguments="D:\home\site D:\Program Files (x86)\SiteExtensions\Kudu\42.31114.1256\msbuild" elapsed="266597">
+    <step title="Executing external process" date="11/17 5:54:56" instance="4ed61c" type="process" path="git.exe" arguments="log -n 1 master --" elapsed="72" />
+    <step title="DeploymentManager.Deploy(id)" date="11/17 5:54:56" instance="4ed61c" elapsed="266097">
+      <step title="Collecting changeset information" date="11/17 5:54:56" instance="4ed61c" elapsed="70" />
+      <step title="Updating to specific changeset" date="11/17 5:54:56" instance="4ed61c" elapsed="90148">
+        <step title="Executing external process" date="11/17 5:54:56" instance="4ed61c" type="process" path="git.exe" arguments="checkout master --force" elapsed="90041">
+          <step title="Cpu: git(35484,4.531s)=total(4.531s)" date="11/17 5:55:56" instance="4ed61c" elapsed="0" />
+          <step title="git.exe: no io activity for 60s, prev-cpu=-1.000s, current-cpu=4.531s" date="11/17 5:55:56" instance="4ed61c" elapsed="0" />
+        </step>
+      </step>
+      <step title="Updating submodules" date="11/17 5:56:26" instance="4ed61c" elapsed="196" />
+      <step title="Determining deployment builder" date="11/17 5:56:26" instance="4ed61c" elapsed="113">
+        <step title="Executing external process" date="11/17 5:56:26" instance="4ed61c" type="process" path="git.exe" arguments="ls-files *.csproj *.vbproj *.fsproj *.sln" elapsed="97" />
+        <step title="Builder is NodeSiteBuilder" date="11/17 5:56:26" instance="4ed61c" elapsed="0" />
+      </step>
+      <step title="Copying SSH keys" date="11/17 5:56:26" instance="4ed61c" elapsed="5" />
+      <step title="Building" date="11/17 5:56:26" instance="4ed61c" elapsed="175329">
+        <step title="Generating deployment script" date="11/17 5:56:26" instance="4ed61c" elapsed="288">
+          <step title="Executing external process" date="11/17 5:56:27" instance="4ed61c" type="process" path="starter.cmd" arguments="&quot;d:\Program Files (x86)\SiteExtensions\Kudu\42.31114.1256\bin\node_modules\.bin\kuduscript.cmd&quot; -y --no-dot-deployment -r &quot;D:\home\site\repository&quot; -o &quot;D:\home\site\deployments\tools&quot; --node --sitePath &quot;D:\home\site\repository&quot;" elapsed="228" />
+          <step title="Saved cached version of the deployment script for command -y --no-dot-deployment -r &quot;D:\home\site\repository&quot; -o &quot;D:\home\site\deployments\tools&quot; --node --sitePath &quot;D:\home\site\repository&quot;" date="11/17 5:56:27" instance="4ed61c" elapsed="0" />
+        </step>
+        <step title="Executing external process" date="11/17 5:56:27" instance="4ed61c" type="process" path="starter.cmd" arguments="&quot;D:\home\site\deployments\tools\deploy.cmd&quot;" elapsed="174515" />
+      </step>
+    </step>
+    <step title="Cleaning up temp files" date="11/17 5:59:22" instance="4ed61c" elapsed="11" />
+    <step title="WebHooksManager.PublishEventAsync: PostDeployment" date="11/17 5:59:22" instance="4ed61c" elapsed="252" />
+  </step>
+  <step title="Incoming Request" date="11/17 5:54:48" instance="4ed61c" url="/mysitename101.git/git-receive-pack" method="POST" type="request" pid="45396,2,11" Connection="Keep-Alive" Transfer-Encoding="chunked" Content-Type="application/x-git-receive-pack-request" Accept="application/x-git-receive-pack-result" Accept-Encoding="gzip" Host="mysitename101.scm.azurewebsites.net" User-Agent="git/1.9.3 (Apple Git-50)" X-SITE-DEPLOYMENT-ID="mysitename101" elapsed="273924">
+    <step title="RpcService.ReceivePack" date="11/17 5:54:49" instance="4ed61c" elapsed="273828">
+      <step title="Executing external process" date="11/17 5:54:49" instance="4ed61c" type="process" path="git.exe" arguments="rev-parse --git-dir" elapsed="37" />
+      <step title="Assuming git repository at D:\home\site\repository" date="11/17 5:54:49" instance="4ed61c" elapsed="0" />
+      <step title="Executing external process" date="11/17 5:54:49" instance="4ed61c" type="process" path="git.exe" arguments="rev-parse --git-dir" elapsed="35" />
+      <step title="Assuming git repository at D:\home\site\repository" date="11/17 5:54:49" instance="4ed61c" elapsed="0" />
+      <step title="Creating temporary deployment" date="11/17 5:54:49" instance="4ed61c" elapsed="40" />
+      <step title="GitExeServer.Receive" date="11/17 5:54:49" instance="4ed61c" elapsed="273589">
+        <step title="Executing external process" date="11/17 5:54:49" instance="4ed61c" type="process" path="git.exe" arguments="receive-pack --stateless-rpc &quot;D:\home\site\repository&quot;" elapsed="273589" />
+      </step>
+    </step>
+    <step title="Outgoing response" date="11/17 5:59:22" instance="4ed61c" type="response" statusCode="200" statusText="OK" Server="Microsoft-IIS/8.0" Expires="Fri, 01 Jan 1980 00:00:00 GMT" Pragma="no-cache" Cache-Control="no-cache, max-age=0, must-revalidate" X-AspNet-Version="4.0.30319" Content-Type="application/x-git-receive-pack-result" elapsed="0" />
+  </step>
+</trace>
