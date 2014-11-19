@@ -16,8 +16,12 @@
                     controller: 'GeneralController as vm'
                 }).
                 when('/register', {
-                    templateUrl: 'app/registration/registration.html',
+                    templateUrl: 'app/account/registration.html',
                     controller: 'RegistrationController as vm'
+                }).
+                when('/login', {
+                    templateUrl: 'app/account/login.html',
+                    controller: 'LoginController as vm'
                 }).
                 when('/about', {
                     templateUrl: 'app/general/about.html',
