@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
+
 //var routes = require('./routes/index');
 //var users = require('./routes/users');
 
@@ -13,108 +15,56 @@ var LocalStrategy = require('passport-local').Strategy;
 var request = require('request');
 
 //var flash = require('connect-flash');
-var session = require('session');
+var session = require('express-session');
 
 var app = express();
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+}));
+
+
+// Session-persisted message middleware
+//app.use(function(req, res, next){
+//    var err = req.session.error,
+//        msg = req.session.notice,
+//        success = req.session.success;
+//
+//    delete req.session.error;
+//    delete req.session.success;
+//    delete req.session.notice;
+//
+//    if (err) res.locals.error = err;
+//    if (msg) res.locals.notice = msg;
+//    if (success) res.locals.success = success;
+//
+//    next();
+//});
 
 // required for passport
 //app.use(session({secret: 'adsfsadfsafdsafasd'})); // session secret
-app.use(passport.initialize());
+
 //app.use(passport.session()); // persistent login sessions
 
 
 
 
-//var router = express.Router();
-
-//// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-//router.get('/', function(req, res) {
-//    res.json({ message: 'hooray! welcome to our account api!' });
-//});
 
 
-app.set('view engine', 'ejs');
-
-//
-//app.use( function( req, res, next ) {
-//    //....
-//    //next();
-//} );
-
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-//app.post('/xxx', function(req, res){
-//    console.log('POST /');
-//    console.dir(req.body);
-//    res.writeHead(200, {'Content-Type': 'text/html'});
-//    res.end('thanks');
-//
-//});
-
-
-//catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-//production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
-
-
-//
-//app.post('/account/login',
-//    function(res,req) {
-//
-//    }
-//    //passport.authenticate('local', {
-//    //    successRedirect: '/success',
-//    //    failureRedirect: '/login',
-//    //    failureFlash: true
-//    //})
-//);
-
-//var account = require('./routes/account');
-//app.use('/account', account);
 
 var router = express.Router();
 
-
-
-/* GET users listing. */
-router.post('/account', function (req, res) {
+router.post('/', function (req, res) {
     //res.send('respond with a post account resource');
     var username = req.param('username');
     var password = req.param('password');
+
+    console.log('username: ' + username);
+    console.log('password: ' + password);
+
+    app.use(passport.initialize());
+    app.use(passport.session);
 
 
     passport.serializeUser(function (user, done) {
@@ -161,12 +111,91 @@ router.post('/account', function (req, res) {
     passport.authenticate('local', {
         successRedirect: '/success',
         failureRedirect: '/login',
-        failureFlash: true
+        failureFlash: false
+    });
+});
+app.use('/rpc/account/login',router);
+
+app.set('view engine', 'ejs');
+app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
+
+//
+//app.use( function( req, res, next ) {
+//    //....
+//    //next();
+//} );
+
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(__dirname + '/public/favicon.ico'));
+//app.use(logger('dev'));
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({extended: false}));
+//app.use(cookieParser());
+//app.use(express.static(path.join(__dirname, 'public')));
+
+//app.post('/xxx', function(req, res){
+//    console.log('POST /');
+//    console.dir(req.body);
+//    res.writeHead(200, {'Content-Type': 'text/html'});
+//    res.end('thanks');
+//
+//});
+
+
+//
+//app.post('/account/login',
+//    function(res,req) {
+//
+//    }
+//    //passport.authenticate('local', {
+//    //    successRedirect: '/success',
+//    //    failureRedirect: '/login',
+//    //    failureFlash: true
+//    //})
+//);
+
+//var account = require('./routes/account');
+//app.use('/account', account);
+
+
+
+
+module.exports = app;
+
+
+//catch 404 and forward to error handler
+app.use(function (req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
+
+//production error handler
+// no stacktraces leaked to user
+app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
     });
 });
 
 
-module.exports = app;
 
 
 var port = 3000; //process.env.port;
