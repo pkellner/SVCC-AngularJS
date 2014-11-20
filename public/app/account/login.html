@@ -1,153 +1,160 @@
-<!--<style type="text/css">-->
-    <!--.fieldset1 {-->
-        <!--padding-top: 10px;-->
-        <!--border: 1px solid #666;-->
-        <!--border-radius: 8px;-->
-        <!--margin-bottom: 20px;-->
-        <!--align-content: space-around;-->
-    <!--}-->
-
-    <!--.legend1 {-->
-        <!--font-size: larger;-->
-        <!--font-style: normal;-->
-        <!--font-weight: bold;-->
-    <!--}-->
-
-    <!--.formField input, .formField textarea {-->
-        <!--width: 205px;-->
-        <!--margin-left: 10px;-->
-    <!--}-->
-
-    <!--.li1 {-->
-        <!--padding-top: 5px;-->
-        <!--align-content: flex-start;-->
-    <!--}-->
-
-    <!--.ul1 {-->
-        <!--align-content: center;-->
-        <!--margin-bottom: 10px;-->
-    <!--}-->
-
-    <!--.svccloginbutton {-->
-        <!--margin-left: 10px;-->
-    <!--}-->
-<!--</style>-->
-
 <div id="content" class="content">
 
-    <div class="specialform">
-        <h1 class="title">Login</h1>
 
-        <form name="registration_form"
+    <style type="text/css">
+        .fieldset1 {
+            padding-top: 10px;
+            border: 1px solid #666;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            align-content: space-around;
+        }
+
+        .legend1 {
+            font-size: larger;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        .formField input, .formField textarea {
+            width: 205px;
+            margin-left: 10px;
+        }
+
+        .li1 {
+            padding-top: 5px;
+            align-content: flex-start;
+        }
+
+        .ul1 {
+            align-content: center;
+            margin-bottom: 10px;
+        }
+
+        .svccloginbutton {
+            margin-left: 10px;
+        }
+    </style>
+
+
+    <br/>
+
+    <p>
+
+    </p>
+
+
+    <div class="boxedForm loginFormBox">
+        <h1 class="formTitle">Login</h1>
+
+        <form name="login_form"
               novalidate
-              ng-controller="LoginController">
+              ng-controller="LoginController as vm">
+
+            <div>
+                <fieldset class="fieldset1">
+                    <legend class="legend1">Code Camp Login</legend>
+                    <div class="formField">
+                        <input id="Login_UserName" name="username"
+                               ng-model="vm.login.username"
+                               required ng-minlength="2" ng-maxlength="50"
+                               placeholder="Username" type="text" value=""/>
+                        <span class="field-validation-valid errorMsg"></span>
+                    </div>
+                    <div class="formField">
+                        <input id="Login_Password" name="password"
+                               ng-model="vm.login.password"
+                               required ng-minlength="2" ng-maxlength="100"
+                               placeholder="Password" type="password"/>
+                        <span class="field-validation-valid errorMsg" data-valmsg-for="Login.Password"
+                              data-valmsg-replace="true"></span>
+                    </div>
+                    <div style="text-align: center;">
+                        <button ng-disabled="login_form.$invalid"
+                                ng-click="vm.login.submitForm()"
+                                class="button magenta svccloginbutton">SVCC Login</button>
+                    </div>
+
+                    <div class="checkField">
+                        <input
+                               id="Login_RememberMe" name="Login.RememberMe"
+                               ng-model="vm.login.rememberMe"
+                               type="checkbox" value="true"/>
+                        <!--<input-->
+
+                            <!--name="Login.RememberMe" type="hidden" value="false"/>-->
+                        <label for="Login_RememberMe">Remember me</label>
+                        <span class="bullSeparator">&bull;</span>
+                        <a href="/Register/ForgotPassword" class="forgotPass">Forgot Password?</a>
+                    </div>
 
 
-            <div class="boxedForm loginFormBox">
-                <h1 class="formTitle">Login</h1>
-
-                <div>
+                </fieldset>
 
 
-                    <fieldset class="fieldset1">
-                        <legend class="legend1">Code Camp Login</legend>
-                        <div class="formField">
-                            <input id="Login_UserName" name="Login.UserName" placeholder="Username" type="text" value="">
-                            <span class="field-validation-valid errorMsg" data-valmsg-for="Login.UserName" data-valmsg-replace="true"></span>
-                        </div>
-                        <div class="formField">
-                            <input id="Login_Password" name="Login.Password" placeholder="Password" type="password">
-                            <span class="field-validation-valid errorMsg" data-valmsg-for="Login.Password" data-valmsg-replace="true"></span>
-                            <span class="field-validation-valid errorMsg" data-valmsg-for="WrongLogin" data-valmsg-replace="true"></span>
-                        </div>
-                        <div style="text-align: center;">
+                <link rel="stylesheet" href="/Content/Styles/SocialButtons/css/buttons-si.css">
 
-                            <button class="button magenta svccloginbutton"
-                                    ng-disabled="registration_form.$invalid"
-                                    ng-click="vm.registration.submitForm()"
-                                    type="submit">SVCC Login
-                            </button>
+                <style type="text/css">
+                    .fieldset1 {
+                        padding-top: 10px;
+                        border: 1px solid #666;
+                        border-radius: 8px;
+                        margin-bottom: 20px;
+                        align-content: space-around;
+                    }
 
-                        </div>
-                        <div class="checkField">
-                            <input data-val="true" data-val-required="The Remember me? field is required." id="Login_RememberMe" name="Login.RememberMe" type="checkbox" value="true"><input name="Login.RememberMe" type="hidden" value="false">
-                            <label for="Login_RememberMe">Remember me</label>
-                            <span class="bullSeparator">•</span>
-                            <a href="/Register/ForgotPassword" class="forgotPass">Forgot Password?</a>
-                        </div>
+                    .legend1 {
+                        font-size: larger;
+                        font-style: normal;
+                        font-weight: bold;
+                    }
 
+                    .formField input, .formField textarea {
+                        width: 205px;
+                        margin-left: 10px;
+                    }
 
+                    .li1 {
+                        padding-top: 5px;
+                        align-content: flex-start;
+                    }
 
+                    .ul1 {
+                        align-content: center;
+                        margin-bottom: 10px;
+                    }
 
-                    </fieldset>
-
-
-
-                    <link rel="stylesheet" href="/Content/Styles/SocialButtons/css/buttons-si.css">
-
-                    <style type="text/css">
-                        .fieldset1 {
-                            padding-top: 10px;
-                            border: 1px solid #666;
-                            border-radius: 8px;
-                            margin-bottom: 20px;
-                            align-content: space-around;
-                        }
-
-                        .legend1 {
-                            font-size: larger;
-                            font-style: normal;
-                            font-weight: bold;
-                        }
-
-                        .formField input, .formField textarea {
-                            width: 205px;
-                            margin-left: 10px;
-                        }
-
-                        .li1 {
-                            padding-top: 5px;
-                            align-content: flex-start;
-                        }
-
-                        .ul1 {
-                            align-content: center;
-                            margin-bottom: 10px;
-                        }
-
-                        .svccloginbutton {
-                            margin-left: 10px;
-                        }
-                    </style>
+                    .svccloginbutton {
+                        margin-left: 10px;
+                    }
+                </style>
 
 
-                    <fieldset class="fieldset1">
-                        <legend class="legend1">Social Logins (OAuth)</legend>
-                        <ul class="ul1">
-                            <li class="li1">
-                                <button class="btn-si btn-google" style="">Sign in with Google</button>
-                            </li>
-                            <li class="li1">
-                                <button class="btn-si btn-facebook">Sign in with Facebook </button>
-                            </li>
-                            <li class="li1">
-                                <button class="btn-si btn-twitter">Sign in with Twitter </button>
-                            </li>
-                            <li class="li1">
-                                <button class="btn-si btn-microsoft">Sign in with Microsoft </button>
-                            </li>
-                        </ul>
+                <!--<fieldset class="fieldset1">-->
+                <!--<legend class="legend1">Social Logins (OAuth)</legend>-->
+                <!--<ul class="ul1">-->
+                <!--<li class="li1">-->
+                <!--<button class="btn-si btn-google" style="">Sign in with Google</button>-->
+                <!--</li>-->
+                <!--<li class="li1">-->
+                <!--<button class="btn-si btn-facebook">Sign in with Facebook </button>-->
+                <!--</li>-->
+                <!--<li class="li1">-->
+                <!--<button class="btn-si btn-twitter">Sign in with Twitter </button>-->
+                <!--</li>-->
+                <!--<li class="li1">-->
+                <!--<button class="btn-si btn-microsoft">Sign in with Microsoft </button>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</fieldset>-->
 
-
-                    </fieldset>
-
-                </div>
             </div>
-
-
 
         </form>
     </div>
+    <br/>
 
 
 </div>
+</div>
+<!-- #container-->
