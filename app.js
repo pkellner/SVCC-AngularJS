@@ -1,203 +1,143 @@
 var express = require('express');
+//var routes = require('./routes');
+//var user = require('./routes/user');
+var http = require('http');
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-
-
-
-//var routes = require('./routes/index');
-//var users = require('./routes/users');
-
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var request = require('request');
-
-//var flash = require('connect-flash');
 var session = require('express-session');
+var flash = require('connect-flash');
+var bodyParser = require('body-parser');
 
 var app = express();
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+// all environments
+app.set('port', process.env.PORT || 3000);
+//app.use(express.logger('dev'));
+//app.use(express.json());
+
+app.use(bodyParser.urlencoded({
     extended: true
 }));
+// parse application/json
+app.use(bodyParser.json());
+app.use(session({
+    secret: 'a;sdfsadfksdf;',
+    name: 'cookie_name',
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(cookieParser());
 
+//app.use(express.methodOverride());
+
+// http://orchestrate.io/blog/2014/06/26/build-user-authentication-with-node-js-express-passport-and-orchestrate/
+app.use(passport.initialize());
+// https://github.com/jkvoorhis/userAuth/blob/master/index.js
+//http://www.learnallthenodes.com/episodes/23-authorization-with-passport-part-1-ensuring-theyre-logged-in
+
+app.use(passport.session());
+app.use(flash());
+//app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Session-persisted message middleware
-//app.use(function(req, res, next){
-//    var err = req.session.error,
-//        msg = req.session.notice,
-//        success = req.session.success;
-//
-//    delete req.session.error;
-//    delete req.session.success;
-//    delete req.session.notice;
-//
-//    if (err) res.locals.error = err;
-//    if (msg) res.locals.notice = msg;
-//    if (success) res.locals.success = success;
-//
-//    next();
-//});
+app.use(function(req, res, next){
+    var err = req.session.error;
+    var msg = req.session.notice;
+    var success = req.session.success;
 
-// required for passport
-//app.use(session({secret: 'adsfsadfsafdsafasd'})); // session secret
+    delete req.session.error;
+    delete req.session.success;
+    delete req.session.notice;
 
-//app.use(passport.session()); // persistent login sessions
+    if (err) res.locals.error = err;
+    if (msg) res.locals.notice = msg;
+    if (success) res.locals.success = success;
 
+    next();
+});
 
-
-
-
-
-
-var router = express.Router();
-
-router.post('/', function (req, res) {
-    //res.send('respond with a post account resource');
-    var username = req.param('username');
-    var password = req.param('password');
-
-    console.log('username: ' + username);
-    console.log('password: ' + password);
-
-    app.use(passport.initialize());
-    app.use(passport.session);
+//// Simple route middleware to ensure user is authenticated.
+//function ensureAuthenticated(req,res,next) {
+//    if (req.isAuthenticated()) {
+//        next();
+//    } else {
+//        req.flash('error', 'You must be logged in to do that.');
+//        res.redirect('/sign_in');
+//    }
+//}
 
 
-    passport.serializeUser(function (user, done) {
-        done(null, user);
-    });
+//// development only
+//if ('development' == app.get('env')) {
+//    app.use(express.errorHandler());
+//}
 
-    passport.deserializeUser(function (id, done) {
-        done(null, id);
-    });
+// Passport session setup.
+//   To support persistent login sessions, Passport needs to be able to
+//   serialize users into and deserialize users out of the session.  Typically,
+//   this will be as simple as storing the user ID when serializing, and finding
+//   the user by ID when deserializing.
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
 
-    passport.use(new LocalStrategy(
-        function (username, password, done) {
-            var formData = {
-                username: username,
-                password: password,
-                rememberMe: true
-            };
+passport.deserializeUser(function(id, done) {
+    done(null,id);
+});
 
-            request.debug = true;
 
-            request.post(
-                'https://www.siliconvalley-codecamp.com/rpc/account/login',
-                {form: formData},
-                function (error, response, body) {
-                    if (!error && response.statusCode == 200) {
-                        var jsonParsed = JSON.parse(body);
-                        if (jsonParsed.returnStatus === 'OK') {
-                            return done(null, jsonParsed.attendeeResults.username);
-                            req.session.success = 'You are successfully logged in ' + user.username + '!';
-                        } else {
-                            req.session.error = jsonParsed.returnStatus;
-                            done(null, formData.username);
-                        }
-                    }
-                    if (error) {
-                        req.session.error = 'Connection To Silicon Valley Code Camp Did Not Succeed.';
-                        return done(null, null);
+
+passport.use(new LocalStrategy(
+    function (username, password, done) {
+
+
+        var formData = {
+            username: username,
+            password: password,
+            rememberMe: true
+        };
+
+        request.debug = true;
+
+        request.post(
+            'https://www.siliconvalley-codecamp.com/rpc/account/login',
+            {form: formData},
+            function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    var jsonParsed = JSON.parse(body);
+                    if (jsonParsed.returnStatus === 'OK') {
+                        return done(null, jsonParsed.attendeeResults.username);
+                        //req.session.success = 'You are successfully logged in ' + user.username + '!';
+                    } else {
+                        return done(null, false, { message: jsonParsed.returnStatus });
+                        //req.session.error = jsonParsed.returnStatus;
+                        //done(null, formData.username);
                     }
                 }
-            );
-        }
-    ));
+                if (error) {
+                    var error1 = 'Connection To Silicon Valley Code Camp Did Not Succeed.';
+                    return done(null, false, { message: error1 });
+                }
+            }
+        );
+    }
+));
 
+app.post('/rpc/account/login',
+    //passport.authenticate('local')
     passport.authenticate('local', {
-        successRedirect: '/success',
-        failureRedirect: '/login',
-        failureFlash: false
-    });
-});
-app.use('/rpc/account/login',router);
-
-app.set('view engine', 'ejs');
-app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
-
-//
-//app.use( function( req, res, next ) {
-//    //....
-//    //next();
-//} );
+        successRedirect: '/#/session',
+        failureRedirect: '/home',
+        failureFlash: true
+    })
+);
 
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
-//app.use(logger('dev'));
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({extended: false}));
-//app.use(cookieParser());
-//app.use(express.static(path.join(__dirname, 'public')));
-
-//app.post('/xxx', function(req, res){
-//    console.log('POST /');
-//    console.dir(req.body);
-//    res.writeHead(200, {'Content-Type': 'text/html'});
-//    res.end('thanks');
-//
-//});
-
-
-//
-//app.post('/account/login',
-//    function(res,req) {
-//
-//    }
-//    //passport.authenticate('local', {
-//    //    successRedirect: '/success',
-//    //    failureRedirect: '/login',
-//    //    failureFlash: true
-//    //})
-//);
-
-//var account = require('./routes/account');
-//app.use('/account', account);
-
-
-
-
-module.exports = app;
-
-
-//catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+http.createServer(app).listen(app.get('port'), function () {
+    console.log('Express server listening on port ' + app.get('port'));
 });
 
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-//production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
-
-
-
-
-var port = 3000; //process.env.port;
-app.listen(port);
-console.log('Listening on ' + port);

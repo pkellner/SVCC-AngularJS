@@ -8,8 +8,8 @@
         'ngResource'
     ]);
 
-    svccApp.config(['$routeProvider',
-        function ($routeProvider) {
+    svccApp.config(['$routeProvider', '$locationProvider',
+        function ($routeProvider, $locationProvider) {
             $routeProvider.
                 when('/', {
                     templateUrl: 'app/general/home.html',
@@ -52,6 +52,9 @@
                 otherwise({
                     redirectTo: '/'
                 });
+
+            //$locationProvider.html5Mode(true);
+
         }]);
 
 }());

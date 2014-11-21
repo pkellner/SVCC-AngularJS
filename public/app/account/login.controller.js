@@ -4,27 +4,11 @@
     var app = angular.module('svccApp');
 
     app.controller('LoginController', LoginController);
-    function LoginController($http) {
+    function LoginController($http,$window) {
         var vm = this;
         vm.login = {};
 
-
-
         vm.login.submitForm = function () {
-            //$http.post('https://www.siliconvalley-codecamp.com/rpc/acount/login', {
-            //$http.post('/rpc/account/login', {
-            //$http.post('/account', {
-            //    username: vm.login.username,
-            //    password: vm.login.password
-            //})
-            //    .success(function () {
-            //        //alert('success');
-            //    })
-            //    .error(function () {
-            //        //alert('failure');
-            //    });
-
-
 
             // username=asdf&password=adsf&rememberMe=false
             $http({
@@ -32,12 +16,16 @@
                 url: '/rpc/account/login',
                 data: 'username=' + vm.login.username + '&' + 'password=' + vm.login.password,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).success(function(data,status,headers,config) {
+                $window.location = '#/';
+            }).error(function(data,status,header,config){
+                $window.location = '#/about';
             });
 
         };
 
 
-        LoginController.$inject = ['$http'];
+        LoginController.$inject = ['$http','$window'];
 
     }
 })();
