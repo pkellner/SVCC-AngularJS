@@ -9,7 +9,7 @@
     ]);
 
     svccApp.config(['$routeProvider', '$locationProvider',
-        function ($routeProvider, $locationProvider) {
+        function ($routeProvider) {
             $routeProvider.
                 when('/', {
                     templateUrl: 'app/general/home.html',
@@ -56,5 +56,42 @@
             //$locationProvider.html5Mode(true);
 
         }]);
+
+    //debugger;
+    // https://blog.mariusschulz.com/2014/10/22/asynchronously-bootstrapping-angularjs-applications-with-server-side-data
+    fetchData().then(bootstrapApplication);
+
+    function fetchData() {
+
+        var initInjector = angular.injector(['ng']);
+        var $http = initInjector.get('$http');
+
+        debugger;
+        return $http.post('/rpc/Account/isLoggedIn').then(function (response) {
+            debugger;
+            svccApp.constant('config', response.data);
+        }, function (errorResponse) {
+            debugger;
+            // Handle error case
+        });
+    }
+
+
+    function bootstrapApplication() {
+        angular.element(document).ready(function () {
+
+            debugger;
+            var appDiv = document.getElementById('svccApp');
+            angular.bootstrap(angular.element(appDiv), ['svccApp']);
+
+            //var appDiv = document.getElementById('svccApp');
+            //setTimeout(function () {
+            //    angular.bootstrap(angular.element(appDiv), ['svccApp']);
+            //    //document.getElementById('initializing').set
+            //    //console.log('angular started');
+            //}, 4000);
+        });
+    }
+
 
 }());

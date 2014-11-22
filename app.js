@@ -10,24 +10,32 @@ var request = require('request');
 var session = require('express-session');
 var flash = require('connect-flash');
 var bodyParser = require('body-parser');
+var morgan = require('morgan');
 
 var app = express();
 
-// all environments
+app.use(morgan('combined'))
+
 app.set('port', process.env.PORT || 3000);
-//app.use(express.logger('dev'));
-//app.use(express.json());
 
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 // parse application/json
 app.use(bodyParser.json());
+
+var hour = 3600000;
+var cookieExpire = new Date(Date.now() + hour);
+
 app.use(session({
-    secret: 'a;sdfsadfksdf;',
+    secret: 'SecretSessionCode',
     name: 'cookie_name',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        expires: cookieExpire,
+        maxAge: hour
+    }
 }));
 app.use(cookieParser());
 
@@ -45,6 +53,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Session-persisted message middleware
 app.use(function(req, res, next){
+
+    //console.log('req.user: ' + req.user);
+
     var err = req.session.error;
     var msg = req.session.notice;
     var success = req.session.success;
@@ -59,6 +70,77 @@ app.use(function(req, res, next){
 
     next();
 });
+
+
+app.post('/rpc/Account/isLoggedIn',function(req,res) {
+    var localToken = req.param('localToken');
+
+    var formData = {
+        localToken: localToken || 'nolocaltokenfoundinrequest'
+    };
+    request.post(
+        'https://www.siliconvalley-codecamp.com/rpc/Account/isLoggedIn',
+        formData,
+        function (error, response, body) {
+            if (!error && response.statusCode === 200) {
+                console.log('user %s ', req.user);
+                console.log('response body length: %s ', body.length);
+                //var jsonParsed = JSON.parse(body);
+                if (body.length > 0) {
+                    res.send(body); // pass through
+                    //req.session.success = 'You are successfully logged in ' + user.username + '!';
+                    //return done(null, jsonParsed.attendeeResults.username);
+                    //
+                } else {
+                    //req.session.error = jsonParsed.returnStatus;
+                    //return done(null, false, { message: jsonParsed.returnStatus });
+                    //
+                    //done(null, formData.username);
+                }
+            }
+            if (error) {
+                //req.session.error = jsonParsed.returnStatus;
+                //return done(null, false, { message: error1 });
+            }
+        }
+    );
+});
+
+
+
+
+
+app.get('/rest/session',function(req,res) {
+
+        request.get(
+            'https://www.siliconvalley-codecamp.com/rest/session?arrayOnly=true',
+            null,
+            function (error, response, body) {
+                if (!error && response.statusCode === 200) {
+                    console.log('user %s ',  req.user);
+                    console.log('response body length: %s ', body.length);
+                    //var jsonParsed = JSON.parse(body);
+                    if (body.length > 0 && req.user ) {
+                        res.send(body); // pass through
+                        //req.session.success = 'You are successfully logged in ' + user.username + '!';
+                        //return done(null, jsonParsed.attendeeResults.username);
+                        //
+                    } else {
+                        //req.session.error = jsonParsed.returnStatus;
+                        //return done(null, false, { message: jsonParsed.returnStatus });
+                        //
+                        //done(null, formData.username);
+                    }
+                }
+                if (error) {
+                    //req.session.error = jsonParsed.returnStatus;
+                    //return done(null, false, { message: error1 });
+                }
+            }
+        );
+
+    }
+);
 
 //// Simple route middleware to ensure user is authenticated.
 //function ensureAuthenticated(req,res,next) {
@@ -110,16 +192,18 @@ passport.use(new LocalStrategy(
                 if (!error && response.statusCode == 200) {
                     var jsonParsed = JSON.parse(body);
                     if (jsonParsed.returnStatus === 'OK') {
-                        return done(null, jsonParsed.attendeeResults.username);
                         //req.session.success = 'You are successfully logged in ' + user.username + '!';
+                        return done(null, jsonParsed.attendeeResults.sessionGuid);
+                        //
                     } else {
-                        return done(null, false, { message: jsonParsed.returnStatus });
                         //req.session.error = jsonParsed.returnStatus;
+                        return done(null, false, { message: jsonParsed.returnStatus });
+                        //
                         //done(null, formData.username);
                     }
                 }
                 if (error) {
-                    var error1 = 'Connection To Silicon Valley Code Camp Did Not Succeed.';
+                    //req.session.error = jsonParsed.returnStatus;
                     return done(null, false, { message: error1 });
                 }
             }
@@ -135,6 +219,9 @@ app.post('/rpc/account/login',
         failureFlash: true
     })
 );
+
+
+
 
 
 http.createServer(app).listen(app.get('port'), function () {
