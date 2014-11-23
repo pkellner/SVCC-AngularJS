@@ -17,6 +17,12 @@
                 data: 'username=' + vm.login.username + '&' + 'password=' + vm.login.password,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function(data,status,headers,config) {
+                $http.post('/rpc/Account/isLoggedIn').then(function (response) {
+                    console.log('error from isLoggedIn Post. length returned: ' + response.data.length);
+                    angular.module('svccApp').value('configData', angular.fromJson(response.data));
+                });
+
+
                 $window.location = '#/';
             }).error(function(data,status,header,config){
                 $window.location = '#/about';

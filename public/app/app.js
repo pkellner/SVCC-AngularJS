@@ -8,6 +8,8 @@
         'ngResource'
     ]);
 
+
+
     svccApp.config(['$routeProvider', '$locationProvider',
         function ($routeProvider) {
             $routeProvider.
@@ -57,21 +59,37 @@
 
         }]);
 
-    //debugger;
+    svccApp.run(function($rootScope) {
+
+
+        $rootScope.loginName = 'zzz';
+
+
+
+    });
+
+
     // https://blog.mariusschulz.com/2014/10/22/asynchronously-bootstrapping-angularjs-applications-with-server-side-data
-    fetchData().then(bootstrapApplication);
+
+
+    // for now I can not get bootstrapping working
+    //fetchData().then(bootstrapApplication);
+
 
     function fetchData() {
+
 
         var initInjector = angular.injector(['ng']);
         var $http = initInjector.get('$http');
 
-        debugger;
+        //console.log('fetchData called');
         return $http.post('/rpc/Account/isLoggedIn').then(function (response) {
-            debugger;
-            svccApp.constant('config', response.data);
+            console.log('error from isLoggedIn Post. length returned: ' + response.data.length);
+            //svccApp.value('configData', angular.fromJson(response.data));
+
+
         }, function (errorResponse) {
-            debugger;
+            console.log('error from isLoggedIn Post');
             // Handle error case
         });
     }
@@ -80,9 +98,12 @@
     function bootstrapApplication() {
         angular.element(document).ready(function () {
 
-            debugger;
+            //document.getElementById('svccApp').style.display = 'none';
+            console.log('bootstrapApplication called');
             var appDiv = document.getElementById('svccApp');
             angular.bootstrap(angular.element(appDiv), ['svccApp']);
+
+
 
             //var appDiv = document.getElementById('svccApp');
             //setTimeout(function () {

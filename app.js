@@ -73,19 +73,19 @@ app.use(function(req, res, next){
 
 
 app.post('/rpc/Account/isLoggedIn',function(req,res) {
-    var localToken = req.param('localToken');
+
+    var localToken = req.param('localToken') || req.user;
+
 
     var formData = {
         localToken: localToken || 'nolocaltokenfoundinrequest'
     };
     request.post(
-        'https://www.siliconvalley-codecamp.com/rpc/Account/isLoggedIn',
+        'http://www.siliconvalley-codecamp.com/rpc/Account/isLoggedIn',
         formData,
         function (error, response, body) {
             if (!error && response.statusCode === 200) {
-                console.log('user %s ', req.user);
-                console.log('response body length: %s ', body.length);
-                //var jsonParsed = JSON.parse(body);
+                //console.log('response isLoggedIn body length: %s ', body.length);
                 if (body.length > 0) {
                     res.send(body); // pass through
                     //req.session.success = 'You are successfully logged in ' + user.username + '!';
@@ -117,10 +117,10 @@ app.get('/rest/session',function(req,res) {
             null,
             function (error, response, body) {
                 if (!error && response.statusCode === 200) {
-                    console.log('user %s ',  req.user);
+                    //console.log('user %s ',  req.user);
                     console.log('response body length: %s ', body.length);
                     //var jsonParsed = JSON.parse(body);
-                    if (body.length > 0 && req.user ) {
+                    if (body.length > 0) {
                         res.send(body); // pass through
                         //req.session.success = 'You are successfully logged in ' + user.username + '!';
                         //return done(null, jsonParsed.attendeeResults.username);
