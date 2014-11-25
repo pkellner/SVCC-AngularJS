@@ -37,7 +37,8 @@
 
     <!--Account-->
     <script src="app/account/registration.controller.js"></script>
-    <script src="app/account/login.controller.js"></script>
+     <script src="app/account/login.controller.js"></script>
+    <script src="app/account/logout.controller.js"></script>
 
 
     <script src="app/general/general.controller.js"></script>
@@ -82,8 +83,9 @@
 
             <div class="userWrap">
                 <div class="loginForm">
-                    <a href="#/login">LOGIN</a> name: {{ loginName }}
-                    | <a href="#/register" class="colorwhite">REGISTER</a>
+                    <span ng-show='!loginName || loginName.length == 0'   ><a href="#/login">LOGIN</a></span>
+                    <span ng-show='loginName && loginName.length != 0'   ><a href="#/logout">LOGOUT</a> {{ loginName }}</span>
+                    <span ng-show='!loginName || loginName.length == 0'   >| <a href="#/register" class="colorwhite">REGISTER</a></span>
                 </div>
             </div>
 

@@ -25,6 +25,10 @@
                     templateUrl: 'app/account/login.html',
                     controller: 'LoginController as vm'
                 }).
+                when('/logout', {
+                    templateUrl: 'app/general/home.html',
+                    controller: 'LogoutController as vm'
+                }).
                 when('/about', {
                     templateUrl: 'app/general/about.html',
                     controller: 'GeneralController as vm'
@@ -62,7 +66,34 @@
     svccApp.run(function($rootScope) {
 
 
-        $rootScope.loginName = 'zzz';
+        $rootScope.loginName = '';
+
+        var initInjector = angular.injector(['ng']);
+        var $http = initInjector.get('$http','$rootScope');
+
+        //console.log('fetchData called');
+        return $http.post('/rpc/Account/isLoggedIn').then(function (response) {
+
+
+            console.log('error from isLoggedIn Post. length returned: ' + response.data.length);
+            console.log('username: ' + response.data.attendeeResults.username);
+
+            //$rootScope.loginName = response.data.attendeeResults.sessionGuid;
+            $rootScope.loginName = response.data.attendeeResults.username;
+            $rootScope.sessionGuid = response.data.attendeeResults.sessionGuid;
+            $rootScope.$apply();
+
+            //angular.module('svccApp').value('configData', angular.fromJson(response.data));
+
+
+
+            //svccApp.value('configData', angular.fromJson(response.data));
+
+
+        }, function (errorResponse) {
+            console.log('error from isLoggedIn Post');
+            // Handle error case
+        });
 
 
 
@@ -74,17 +105,22 @@
 
     // for now I can not get bootstrapping working
     //fetchData().then(bootstrapApplication);
-
+    //fetchData();
 
     function fetchData() {
 
 
         var initInjector = angular.injector(['ng']);
-        var $http = initInjector.get('$http');
+        var $http = initInjector.get('$http','$rootScope');
 
         //console.log('fetchData called');
         return $http.post('/rpc/Account/isLoggedIn').then(function (response) {
+
             console.log('error from isLoggedIn Post. length returned: ' + response.data.length);
+            angular.module('svccApp').value('configData', angular.fromJson(response.data));
+
+
+
             //svccApp.value('configData', angular.fromJson(response.data));
 
 
