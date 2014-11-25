@@ -21,7 +21,7 @@
         }).error(function (data, status, header, config) {
             $window.location = '#/about';
         });
-        
+
         LogoutController.$inject = ['$http', '$window', '$rootScope'];
 
     }
