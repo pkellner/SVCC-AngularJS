@@ -74,8 +74,6 @@
         //console.log('fetchData called');
         return $http.post('/rpc/Account/isLoggedIn').then(function (response) {
 
-
-            console.log('error from isLoggedIn Post. length returned: ' + response.data.length);
             console.log('username: ' + response.data.attendeeResults.username);
 
             //$rootScope.loginName = response.data.attendeeResults.sessionGuid;

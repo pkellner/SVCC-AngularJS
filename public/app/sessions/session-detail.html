@@ -70,7 +70,7 @@
 
 <h2 class="session-subh">The Speakers</h2>
 <div class="sessionSpeakers">
-    <div class="listingWrap" ng-repeat="presenter in vm.session.presenters">
+    <div class="listingWrap" ng-repeat="presenter in vm.session.speakersList">
         <section class="listingBox speakerDetails">
             <div class="listingMedia">
                 <img alt="img" width="135" height="135" src="http://cache.siliconvalley-codecamp.com{{presenter.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
@@ -79,13 +79,13 @@
             </div>
             <div class="listingInfo">
                 <header class="listingHeader">
-                    <a ng-href="#/speakers/{{presenter.id}}"> <h3 class="larger">{{presenter.firstName}} {{presenter.lastName}}</h3></a>
+                    <a ng-href="#/speakers/{{presenter.attendeeId}}"> <h3 class="larger">{{presenter.userFirstName}} {{presenter.userLastName}}</h3></a>
                 </header>
 
                 <div class="listingDesc">
-                    {{presenter.bio}}
+                    {{presenter.userBio}}
                 </div>
-                <!--<a href="/Presenter/2014/Paul-Fryer-16189/Feedback" class="orangeIcon speakerContact">Email the speaker</a>-->
+                <a href="/Presenter/2014/Paul-Fryer-16189/Feedback" class="orangeIcon speakerContact">Email the speaker</a>
             </div>
         </section>
     </div>
