@@ -35,6 +35,10 @@
                 }).
 
                 // speakers
+                when('/speakers/:id/feedback', {
+                    templateUrl: 'app/speakers/speaker-detail-feedback.html',
+                    controller: 'SpeakerDetailController as vm'
+                }).
                 when('/speakers/:id', {
                     templateUrl: 'app/speakers/speaker-detail.html',
                     controller: 'SpeakerDetailController as vm'

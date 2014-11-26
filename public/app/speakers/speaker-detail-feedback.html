@@ -1,0 +1,34 @@
+<!--suppress ALL -->
+<div id="content" class="content">
+
+
+    <h1 class="title">SPEAKER DETAILS FEEDBACK</h1>
+
+
+    <div class="listingWrap">
+        <section class="listingBox speakerDetails noBorder">
+            <div class="listingMedia">
+                <img alt="img" width="135" height="135"
+                     src="http://cache.siliconvalley-codecamp.com{{vm.speaker.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+            </div>
+
+            <div speaker-social-icon-directive speaker='vm.speaker' >
+            </div>
+
+            <div class="listingInfo">
+                <header class="listingHeader">
+                    <h3><h3>{{vm.speaker.firstName}} {{vm.speaker.lastName}}</h3></h3>
+                    <a ng-href="{{vm.speaker.webSite}}" target="_blank" class="speakerUrl">{{ vm.speaker.webSite}}</a>
+                </header>
+
+                <div class="listingDesc">
+                    {{vm.speaker.bio}}
+                </div>
+                <a href="#/speakers/{{vm.speaker.id}}/Feedback" class="orangeIcon speakerContact">Email the speaker</a>
+            </div>
+        </section>
+    </div>
+    <h2 class="smainTitle">Conversations</h2>
+
+
+</div>
