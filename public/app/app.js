@@ -3,64 +3,69 @@
 
 
     var svccApp = angular.module('svccApp', [
-        'ngRoute',
+        'ui-router',
         'ngMessages',
         'ngResource'
     ]);
 
 
 
-    svccApp.config(['$routeProvider', '$locationProvider',
-        function ($routeProvider) {
-            $routeProvider.
-                when('/', {
+    svccApp.config(['$stateProvider','$urlRouteProvider',
+
+        function ($stateProvider, $urlRouterProvider) {
+            $urlRouterProvider.otherwise('/');
+
+            $stateProvider
+                .state('home', {
+                    url: '/',
                     templateUrl: 'app/general/home.html',
                     controller: 'GeneralController as vm'
                 }).
-                when('/register', {
+                state('register', {
+                    url: '/register',
                     templateUrl: 'app/account/registration.html',
                     controller: 'RegistrationController as vm'
                 }).
-                when('/login', {
+                state('login', {
+                    url: '/login',
                     templateUrl: 'app/account/login.html',
                     controller: 'LoginController as vm'
                 }).
-                when('/logout', {
+                state('logout', {
+                    url: '/logout',
                     templateUrl: 'app/general/home.html',
                     controller: 'LogoutController as vm'
                 }).
-                when('/about', {
+                state('about', {
+                    url: '/about',
                     templateUrl: 'app/general/about.html',
                     controller: 'GeneralController as vm'
                 }).
 
                 // speakers
-                when('/speakers/:id/feedback', {
-                    templateUrl: 'app/speakers/speaker-detail-feedback.html',
-                    controller: 'SpeakerDetailController as vm'
-                }).
-                when('/speakers/:id', {
-                    templateUrl: 'app/speakers/speaker-detail.html',
-                    controller: 'SpeakerDetailController as vm'
-                }).
-                when('/speakers', {
+                //state('/speakers/:id/feedback', {
+                //    templateUrl: 'app/speakers/speaker-detail-feedback.html',
+                //    controller: 'SpeakerDetailController as vm'
+                //}).
+                //state('/speakers/:id', {
+                //    templateUrl: 'app/speakers/speaker-detail.html',
+                //    controller: 'SpeakerDetailController as vm'
+                //}).
+                state('speakers', {
+                    url: '/speakers',
                     templateUrl: 'app/speakers/speakers.html',
                     controller: 'SpeakersController as vm'
                 }).
 
                 // sessions
-                when('/sessions/:id', {
-                    templateUrl: 'app/sessions/session-detail.html',
-                    controller: 'SessionDetailController as vm'
-                }).
-                when('/sessions', {
+                //state('/sessions/:id', {
+                //    templateUrl: 'app/sessions/session-detail.html',
+                //    controller: 'SessionDetailController as vm'
+                //}).
+                state('sessions', {
+                    url: '/sessions',
                     templateUrl: 'app/sessions/sessions.html',
                     controller: 'SessionsController as vm'
-                }).
-
-
-                otherwise({
-                    redirectTo: '/'
                 });
 
             //$locationProvider.html5Mode(true);
