@@ -8,7 +8,7 @@
     <!-- build:js -->
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/angular-messages/angular-messages.js"></script>
-    <script src="vendor/angular-route/angular-route.js"></script>
+
     <script src="vendor/angular-resource/angular-resource.js"></script>
 
     <!-- angular-ui -->
@@ -86,9 +86,9 @@
 
             <div class="userWrap">
                 <div class="loginForm">
-                    <span ng-show='!loginName || loginName.length == 0'   ><a href="#/login">LOGIN</a></span>
-                    <span ng-show='loginName && loginName.length != 0'   ><a href="#/logout">LOGOUT</a> {{ loginName }}</span>
-                    <span ng-show='!loginName || loginName.length == 0'   >| <a href="#/register" class="colorwhite">REGISTER</a></span>
+                    <span ng-show='!loginName || loginName.length == 0'   ><a ui-sref="login">LOGIN</a></span>
+                    <span ng-show='loginName && loginName.length != 0'   ><a ui-sref="logout">LOGOUT</a> {{ loginName }}</span>
+                    <span ng-show='!loginName || loginName.length == 0'   >| <a ui-sref="register" class="colorwhite">REGISTER</a></span>
                 </div>
             </div>
 
@@ -96,20 +96,20 @@
                 <ul class="menuList">
 
                     <li class="menuListItem jobs">
-                        <a href="#/home" class="menuItemLink">Home</a>
+                        <a ui-sref="home" class="menuItemLink">Home</a>
                     </li>
 
 
                     <li class="menuListItem sessions">
-                        <a href="#/sessions" class="menuItemLink">Sessions</a>
+                        <a ui-sref="sessions" class="menuItemLink">Sessions</a>
                     </li>
 
                     <li class="menuListItem program">
-                        <a href="#/speakers" class="menuItemLink">Presenters</a>
+                        <a ui-sref="speakers" class="menuItemLink">Presenters</a>
                     </li>
 
                     <li class="menuListItem jobs">
-                        <a href="#/about" class="menuItemLink">About</a>
+                        <a ui-sref="about" class="menuItemLink">About</a>
                     </li>
 
                 </ul>
@@ -121,7 +121,7 @@
         <div id="container">
             <div id="content" class="content">
                 <div class="view-container">
-                    <div ng-view class="view-frame"></div>
+                    <div ui-view class="view-frame"></div>
                 </div>
             </div>
         </div>

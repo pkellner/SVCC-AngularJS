@@ -3,14 +3,14 @@
 
 
     var svccApp = angular.module('svccApp', [
-        'ui-router',
+        'ui.router',
         'ngMessages',
         'ngResource'
     ]);
 
 
 
-    svccApp.config(['$stateProvider','$urlRouteProvider',
+    svccApp.config(['$stateProvider','$urlRouterProvider',
 
         function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
