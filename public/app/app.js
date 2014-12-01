@@ -61,7 +61,13 @@
                 state('speakers', {
                     url: '/speakers',
                     templateUrl: 'app/speakers/speakers.html',
-                    controller: 'SpeakersController as vm'
+                    controller: 'SpeakersController as vm',
+                    resolve: {
+                        speakerResourceService: 'speakerResourceService',
+                        speakers: function(speakerResourceService) {
+                            return speakerResourceService.query().$promise;
+                        }
+                    }
                 }).
 
                 // sessions

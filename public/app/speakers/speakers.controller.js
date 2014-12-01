@@ -8,11 +8,11 @@
 
 
 
-    function SpeakersController(speakerResourceService) {
+    function SpeakersController(speakers) {
         var vm = this;
-        vm.speakers = speakerResourceService.query();
+        vm.speakers = speakers;
     }
 
-    SpeakersController.$inject = ['speakerResourceService'];
+    SpeakersController.$inject = ['speakers'];
 
 }());
