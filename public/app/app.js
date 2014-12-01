@@ -2,15 +2,15 @@
     'use strict';
 
 
-    var svccApp = angular.module('svccApp', [
-        'ui.router',
+    var app = angular.module('svccApp', [
         'ngMessages',
-        'ngResource'
+        'ngResource',
+        'ui.router'
     ]);
 
 
 
-    svccApp.config(['$stateProvider','$urlRouterProvider',
+    app.config(['$stateProvider','$urlRouterProvider',
 
         function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
@@ -47,10 +47,17 @@
                 //    templateUrl: 'app/speakers/speaker-detail-feedback.html',
                 //    controller: 'SpeakerDetailController as vm'
                 //}).
-                //state('/speakers/:id', {
-                //    templateUrl: 'app/speakers/speaker-detail.html',
-                //    controller: 'SpeakerDetailController as vm'
-                //}).
+                state('speakerdetail', {
+                    url: '/speakers/:id',
+                    templateUrl: 'app/speakers/speaker-detail.html',
+                    controller: 'SpeakerDetailController as vm',
+                    resolve: {
+                        speakerResourceService: 'speakerResourceService',
+                        speaker: function(speakerResourceService) {
+                            return speakerResourceService.get({id: 5443});
+                        }
+                    }
+                }).
                 state('speakers', {
                     url: '/speakers',
                     templateUrl: 'app/speakers/speakers.html',
@@ -72,7 +79,7 @@
 
         }]);
 
-    svccApp.run(function($rootScope) {
+    app.run(function($rootScope) {
 
 
         $rootScope.loginName = '';

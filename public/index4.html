@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SVCC AngularJS Migration</title>
+
+
+    <!-- build:js -->
+    <script src="vendor/angular/angular.js"></script>
+    <!-- angular-ui -->
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js" ></script>
+
+
+    <script src="index4.js"></script>
+
+
+</head>
+
+<body ng-app="svccApp">
+
+<ul>
+    <li> <a ui-sref="about">About</a></li>
+    <li> <a ui-sref="home">Home</a></li>
+</ul>
+
+
+<div ui-view class="view-frame"></div>
+
+
+</body>
+</html>
