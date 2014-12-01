@@ -53,8 +53,8 @@
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
-                        speaker: function(speakerResourceService) {
-                            return speakerResourceService.get({id: 5443});
+                        speaker: function(speakerResourceService,$stateParams) {
+                            return speakerResourceService.get({id: $stateParams.id}).$promise;
                         }
                     }
                 }).
