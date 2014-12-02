@@ -124,7 +124,7 @@
 
 
         }, function (errorResponse) {
-            console.log('error from isLoggedIn Post');
+            console.log('error from isLoggedIn Post ' + errorResponse);
             // Handle error case
         });
 
