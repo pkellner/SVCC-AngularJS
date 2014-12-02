@@ -1,24 +1,18 @@
 (function () {
+
     'use strict';
 
-    angular.module('svccApp')
+    angular
+        .module('svccApp')
         .controller('SessionsController', SessionsController);
 
-    function SessionsController($scope, sessionResourceService) {
+
+
+    function SessionsController(sessions) {
         var vm = this;
-
-        //$scope.htmlTooltip = 'I\'ve been made <b>bold</b>!';
-        vm.sessions = sessionResourceService.query();
-
-        //vm.onClick = function (myId) {
-        //    alert('clicked ' + myId);
-        //};
-
-        vm.orderProp = 'title';
-
+        vm.sessions = sessions;
     }
 
-    SessionsController.$inject = ['$scope', 'sessionResourceService'];
-
+    SessionsController.$inject = ['sessions'];
 
 }());

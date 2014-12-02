@@ -70,15 +70,28 @@
                     }
                 }).
 
-                // sessions
-                //state('/sessions/:id', {
-                //    templateUrl: 'app/sessions/session-detail.html',
-                //    controller: 'SessionDetailController as vm'
-                //}).
+                //sessions
+                state('sessiondetail', {
+                    url: '/sessions/:id',
+                    templateUrl: 'app/sessions/session-detail.html',
+                    controller: 'SessionDetailController as vm',
+                    resolve: {
+                        sessionResourceService: 'sessionResourceService',
+                        session: function(sessionResourceService,$stateParams) {
+                            return sessionResourceService.get({id: $stateParams.id}).$promise;
+                        }
+                    }
+                }).
                 state('sessions', {
                     url: '/sessions',
                     templateUrl: 'app/sessions/sessions.html',
-                    controller: 'SessionsController as vm'
+                    controller: 'SessionsController as vm',
+                    resolve: {
+                        sessionResourceService: 'sessionResourceService',
+                        sessions: function(sessionResourceService) {
+                            return sessionResourceService.query().$promise;
+                        }
+                    }
                 });
 
             //$locationProvider.html5Mode(true);

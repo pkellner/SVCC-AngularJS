@@ -5,7 +5,7 @@
         factory('sessionResourceService', sessionResourceService);
 
     function sessionResourceService($resource) {
-        return $resource('/rest/session?arrayOnly=true');
+        return $resource('/rest/session/arrayonly/:id');
         //return $resource('data/sessions.json');
     }
 
