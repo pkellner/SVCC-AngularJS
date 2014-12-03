@@ -43,21 +43,6 @@
                 }).
 
                 // speakers
-                //state('/speakers/:id/feedback', {
-                //    templateUrl: 'app/speakers/speaker-detail-feedback.html',
-                //    controller: 'SpeakerDetailController as vm'
-                //}).
-                state('speakerdetail', {
-                    url: '/speakers/:id',
-                    templateUrl: 'app/speakers/speaker-detail.html',
-                    controller: 'SpeakerDetailController as vm',
-                    resolve: {
-                        speakerResourceService: 'speakerResourceService',
-                        speaker: function(speakerResourceService,$stateParams) {
-                            return speakerResourceService.get({id: $stateParams.id}).$promise;
-                        }
-                    }
-                }).
                 state('speakers', {
                     url: '/speakers',
                     templateUrl: 'app/speakers/speakers.html',
@@ -69,6 +54,64 @@
                         }
                     }
                 }).
+
+                //state('speaker', {
+                //    url: '/speaker/:id',
+                //    templateUrl: 'app/speakers/speaker-detail.html',
+                //    controller: 'SpeakerDetailController as vm',
+                //    resolve: {
+                //        speakerResourceService: 'speakerResourceService',
+                //        speaker: function(speakerResourceService,$stateParams) {
+                //            return speakerResourceService.get({id: $stateParams.id}).$promise;
+                //        }
+                //    }
+                //}).
+
+
+                state('speaker', {
+                    abstract: true,
+                    url: '/speaker',
+                    //templateUrl: 'app/speakers/speaker-detail.html'
+                    template: '<div ui-view></div>'
+                }).
+                state('speaker.id', {
+                    parent: 'speaker',
+                    url: '/:id',
+                    templateUrl: 'app/speakers/speaker-detail.html',
+                    controller: 'SpeakerDetailController as vm',
+                    resolve: {
+                        speakerResourceService: 'speakerResourceService',
+                        speaker: function(speakerResourceService,$stateParams) {
+                            return speakerResourceService.get({id: $stateParams.id}).$promise;
+                        }
+                    }
+                }).
+
+                state('speaker.idfeedback', {
+                    parent: 'speaker',
+                    url: '/:id/feedback',
+                    templateUrl: 'app/speakers/speaker-detail-feedback.html',
+                    controller: 'SpeakerDetailController as vm',
+                    resolve: {
+                        speakerResourceService: 'speakerResourceService',
+                        speaker: function(speakerResourceService,$stateParams) {
+                            return speakerResourceService.get({id: $stateParams.id}).$promise;
+                        }
+                    }
+                }).
+
+                //state('speaker.feedback', {
+                //    parent: '/speaker',
+                //    url: '/feedback',
+                //    templateUrl: 'app/speakers/speaker-detail-feedback.html'
+                //}).
+
+
+                //state('speaker.feedback', {
+                //    url: '/:id/feedback',
+                //    templateUrl: 'app/speakers/speaker-detail-feedback.html'
+                //}).
+
 
                 //sessions
                 state('sessiondetail', {

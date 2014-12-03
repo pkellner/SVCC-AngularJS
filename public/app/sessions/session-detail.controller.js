@@ -5,8 +5,6 @@
         .controller('SessionDetailController', SessionDetailController);
 
     function SessionDetailController(session) {
-
-        debugger;
         var vm = this;
         vm.sessions = [session];
         vm.session = session;

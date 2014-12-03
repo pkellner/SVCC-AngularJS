@@ -9,7 +9,7 @@
 
     app.config(['$stateProvider', '$urlRouterProvider',
 
-        function ($stateProvider, $urlRouterProvider) {
+        function ($stateProvider, $urlRouterProvider,$q,$timeout) {
             $urlRouterProvider.otherwise('/');
 
             $stateProvider
@@ -24,7 +24,6 @@
                     controller: 'AboutController as vm',
 
                     resolve: {
-
                         title: function(){
                             return 'from title function';
                         }
