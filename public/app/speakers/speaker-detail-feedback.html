@@ -30,18 +30,20 @@
     <section class="module">
 
         <header class="top-bar">
-
             <div class="left">
                 <span class="icon typicons-message"></span>
                 <h1>Discussion</h1>
             </div>
-
-            <!--<div class="right">-->
-                <!--<span class="icon typicons-minus"></span>-->
-                <!--<span class="icon typicons-times"></span>-->
-            <!--</div>-->
-
         </header>
+
+
+        <form novalidate method="get"  style="margin: 10px 250px 10px 5px;"  >
+            <input type="submit" name="search" value="Message Speaker" style="float: right;margin-left: 10px;"
+                   ng-click="vm.discussionSendText()"/>
+            <div style="overflow: hidden; padding-right: .5em;">
+                <input type="text" name="term" style="width: 100%;" ng-model="vm.messageText"  />
+            </div>
+        </form>
 
         <ol class="discussion">
             <li class="other">
@@ -54,6 +56,7 @@
                 </div>
             </li>
         </ol>
+
 
 
 
@@ -89,12 +92,24 @@
             </li>
         </ol>
 
+
+
+
+
+
+
+
+
     </section>
 
 
 
 
+
+
 </div>
+
+
 
 <style>
 
