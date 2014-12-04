@@ -1,8 +1,7 @@
-<!--suppress ALL -->
 <div id="content" class="content">
 
 
-    <h1 class="title">SPEAKER DETAILS FEEDBACK</h1>
+    <h1 class="title">SPEAKER DISCUSSION</h1>
 
 
     <div class="listingWrap">
@@ -12,8 +11,8 @@
                      src="http://cache.siliconvalley-codecamp.com{{vm.speaker.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
             </div>
 
-            <div speaker-social-icon-directive speaker='vm.speaker' >
-            </div>
+            <!--<div speaker-social-icon-directive speaker='vm.speaker' >-->
+            <!--</div>-->
 
             <div class="listingInfo">
                 <header class="listingHeader">
@@ -24,11 +23,211 @@
                 <div class="listingDesc">
                     {{vm.speaker.bio}}
                 </div>
-                <a href="#/speakers/{{vm.speaker.id}}/Feedback" class="orangeIcon speakerContact">Email the speaker</a>
             </div>
         </section>
     </div>
-    <h2 class="smainTitle">Conversations</h2>
+
+    <section class="module">
+
+        <header class="top-bar">
+
+            <div class="left">
+                <span class="icon typicons-message"></span>
+                <h1>Discussion</h1>
+            </div>
+
+            <!--<div class="right">-->
+                <!--<span class="icon typicons-minus"></span>-->
+                <!--<span class="icon typicons-times"></span>-->
+            <!--</div>-->
+
+        </header>
+
+        <ol class="discussion">
+            <li class="other">
+                <div class="avatar">
+                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/5/profile/profile-80_9.jpg" />
+                </div>
+                <div class="messages">
+                    <p>yeah, they do early flights cause they connect with big airports.  they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.  they wanna get u to your connection</p>
+                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                </div>
+            </li>
+        </ol>
+
+
+
+        <ol class="discussion">
+            <li class="other">
+                <div class="avatar">
+                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/5/profile/profile-80_9.jpg" />
+                </div>
+                <div class="messages">
+                    <p>yeah, they do early flights cause they connect with big airports.  they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.  they wanna get u to your connection</p>
+                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                </div>
+            </li>
+            <li class="self">
+                <div class="avatar">
+                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/profile/profile-80_20.jpg" />
+                </div>
+                <div class="messages">
+                    <p>That makes sense.</p>
+                    <p>It's a pretty small airport.</p>
+                    <time datetime="2009-11-13T20:14">37 mins</time>
+                </div>
+            </li>
+            <li class="other">
+                <div class="avatar">
+                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/5/profile/profile-80_9.jpg" />
+                </div>
+                <div class="messages">
+                    <p>that mongodb thing looks good, huh?</p>
+                    <p>
+                        tiny master db, and huge document store</p>
+                </div>
+            </li>
+        </ol>
+
+    </section>
+
+
 
 
 </div>
+
+<style>
+
+    @import url(http://weloveiconfonts.com/api/?family=typicons);
+    [class*="typicons-"]:before {
+        font-family: 'Typicons', sans-serif;
+    }
+
+    .module {
+        width: 954px;
+        margin: 20px auto;
+    }
+
+    .top-bar {
+        background: #666;
+        color: white;
+        padding: 0.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+    .top-bar h1 {
+        display: inline;
+        font-size: 1.1rem;
+    }
+    .top-bar .typicons-message {
+        display: inline-block;
+        padding: 4px 5px 2px 5px;
+    }
+    .top-bar .typicons-minus {
+        position: relative;
+        top: 3px;
+    }
+    .top-bar .left {
+        float: left;
+    }
+    .top-bar .right {
+        float: right;
+        padding-top: 5px;
+    }
+    .top-bar > * {
+        position: relative;
+    }
+    .top-bar::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: 0;
+        right: 0;
+        bottom: -100%;
+        opacity: 0.25;
+        background: radial-gradient(#ffffff, #000000);
+        animation: pulse 1s ease alternate infinite;
+    }
+
+    .discussion {
+        list-style: none;
+        background: #e5e5e5;
+        margin: 0;
+        padding: 0 0 50px 0;
+    }
+    .discussion li {
+        padding: 0.5rem;
+        overflow: hidden;
+        display: flex;
+    }
+    .discussion .avatar {
+        width: 40px;
+        position: relative;
+    }
+    .discussion .avatar img {
+        display: block;
+        width: 100%;
+    }
+
+    .other .avatar:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border: 5px solid white;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+
+    .self {
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .self .messages {
+        order: 1;
+        border-bottom-right-radius: 0;
+    }
+    .self .avatar {
+        order: 2;
+    }
+    .self .avatar:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border: 5px solid white;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    .messages {
+        background: white;
+        padding: 10px;
+        border-radius: 2px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .messages p {
+        font-size: 0.8rem;
+        margin: 0 0 0.2rem 0;
+    }
+    .messages time {
+        font-size: 0.7rem;
+        color: #ccc;
+    }
+
+    @keyframes pulse {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 0.5;
+        }
+    }
+
+
+</style>
