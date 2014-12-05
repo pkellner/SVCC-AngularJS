@@ -4,6 +4,8 @@
     <h1 class="title">SPEAKER DISCUSSION</h1>
 
 
+
+
     <div class="listingWrap">
         <section class="listingBox speakerDetails noBorder">
             <div class="listingMedia">
@@ -40,57 +42,72 @@
         <form novalidate method="get"  style="margin: 10px 250px 10px 5px;"  >
             <input type="submit" name="search" value="Message Speaker" style="float: right;margin-left: 10px;"
                    ng-click="vm.discussionSendText()"/>
+
             <div style="overflow: hidden; padding-right: .5em;">
-                <input type="text" name="term" style="width: 100%;" ng-model="vm.messageText"  />
+                <input type="text" name="term" style="width: 85%;" ng-model="vm.messageText"  />
+                <input name="name" id="id" type="checkbox" ng-checked="true"  ng-model="vm.publicMessage" ng-disabled="true"  >Public
             </div>
         </form>
 
-        <ol class="discussion">
-            <li class="other">
-                <div class="avatar">
-                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/5/profile/profile-80_9.jpg" />
-                </div>
-                <div class="messages">
-                    <p>yeah, they do early flights cause they connect with big airports.  they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.  they wanna get u to your connection</p>
-                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                </div>
-            </li>
+        <ol class="discussion" ng-repeat="discussion in vm.discussions">
+
+                <li ng-class="{'self': discussion.isSpeaker, 'other': !discussion.isSpeaker}" >
+                    <div class="avatar">
+                        <img src="http://cache.siliconvalley-codecamp.com{{discussion.pictureUrl}}?format=jpg&width=39&Height=39&scale=both&mode=pad&Bgcolor=F6F4F6" />
+                    </div>
+                    <div class="messages">
+                        <p>{{ discussion.messageText}}</p>
+                        <time datetime="2009-11-13T20:00">{{discussion.userFirstName}} {{discussion.userLastName}} • {{discussion.timeSincePosted}}</time>
+                    </div>
+                </li>
+
         </ol>
 
 
 
+        <!--<ol class="discussion">-->
+            <!--<li class="other">-->
+                <!--<div class="avatar">-->
+                    <!--<img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/5/profile/profile-80_9.jpg" />-->
+                <!--</div>-->
+                <!--<div class="messages">-->
+                    <!--<p>yeah, they do early flights cause they connect with big airports.  they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.  they wanna get u to your connection</p>-->
+                    <!--<time datetime="2009-11-13T20:00">Timothy • 51 min</time>-->
+                <!--</div>-->
+            <!--</li>-->
+        <!--</ol>-->
 
-        <ol class="discussion">
-            <li class="other">
-                <div class="avatar">
-                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/5/profile/profile-80_9.jpg" />
-                </div>
-                <div class="messages">
-                    <p>yeah, they do early flights cause they connect with big airports.  they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.  they wanna get u to your connection</p>
-                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                </div>
-            </li>
-            <li class="self">
-                <div class="avatar">
-                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/profile/profile-80_20.jpg" />
-                </div>
-                <div class="messages">
-                    <p>That makes sense.</p>
-                    <p>It's a pretty small airport.</p>
-                    <time datetime="2009-11-13T20:14">37 mins</time>
-                </div>
-            </li>
-            <li class="other">
-                <div class="avatar">
-                    <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/5/profile/profile-80_9.jpg" />
-                </div>
-                <div class="messages">
-                    <p>that mongodb thing looks good, huh?</p>
-                    <p>
-                        tiny master db, and huge document store</p>
-                </div>
-            </li>
-        </ol>
+        <!--<ol class="discussion">-->
+            <!--<li class="other">-->
+                <!--<div class="avatar">-->
+                    <!--<img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/5/profile/profile-80_9.jpg" />-->
+                <!--</div>-->
+                <!--<div class="messages">-->
+                    <!--<p>yeah, they do early flights cause they connect with big airports.  they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.they wanna get u to your connection.  they wanna get u to your connection</p>-->
+                    <!--<time datetime="2009-11-13T20:00">Timothy • 51 min</time>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li class="self">-->
+                <!--<div class="avatar">-->
+                    <!--<img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/profile/profile-80_20.jpg" />-->
+                <!--</div>-->
+                <!--<div class="messages">-->
+                    <!--<p>That makes sense.</p>-->
+                    <!--<p>It's a pretty small airport.</p>-->
+                    <!--<time datetime="2009-11-13T20:14">37 mins</time>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li class="other">-->
+                <!--<div class="avatar">-->
+                    <!--<img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/5/profile/profile-80_9.jpg" />-->
+                <!--</div>-->
+                <!--<div class="messages">-->
+                    <!--<p>that mongodb thing looks good, huh?</p>-->
+                    <!--<p>-->
+                        <!--tiny master db, and huge document store</p>-->
+                <!--</div>-->
+            <!--</li>-->
+        <!--</ol>-->
 
 
 
