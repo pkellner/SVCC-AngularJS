@@ -9,7 +9,7 @@
         vm.speakers = [speaker];
         vm.speaker = speaker;
 
-       
+
         $http.get('/rest/discussion/arrayonly',
             {
                 params: {
