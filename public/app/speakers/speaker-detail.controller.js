@@ -9,26 +9,26 @@
         vm.speakers = [speaker];
         vm.speaker = speaker;
 
+       
         $http.get('/rest/discussion/arrayonly',
             {
-                messageText: this.messageText,
-                speakerId: this.speaker.id,
-                arrayonly: 1
+                params: {
+                    speakerId: this.speaker.id,
+                    arrayonly: 1
+                }
             })
-            .success(function(data) {
+            .success(function (data) {
                 vm.discussions = data[0].discussionItemResults;
             })
-            .error(function(){
+            .error(function () {
 
             });
-
 
 
         // POST the message if it exists and refresh the list with results (including one just posted)
         vm.discussionSendText = function () {
 
             if (this.messageText && this.messageText.length > 0) {
-                debugger;
                 $http.post('/rest/discussion/arrayonly',
                     {
                         messageText: this.messageText,
@@ -39,8 +39,10 @@
                     .success(function () {
                         $http.get('/rest/discussion/arrayonly',
                             {
-                                speakerId: vm.speaker.id,
-                                arrayonly: 1
+                                params: {
+                                    speakerId: vm.speaker.id,
+                                    arrayonly: 1
+                                }
                             })
                             .success(function (data) {
                                 vm.discussions = data[0].discussionItemResults;
