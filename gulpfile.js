@@ -9,6 +9,9 @@
     //npm install del gulp gulp-concat gulp-diff gulp-header; mkdir -p src; echo "foo" > src/foo.txt; echo "bar" > src/bar.txt
     // http://stackoverflow.com/questions/26939542/problems-with-gulp-and-gulp-diff
 
+    //npm install gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-uglify gulp-imagemin gulp-rename gulp-concat gulp-cache del gulp-diff gulp-header
+
+
     // Load plugins
     var gulp = require('gulp'),
         sass = require('gulp-ruby-sass'),
@@ -22,8 +25,9 @@
         notify = require('gulp-notify'),
         cache = require('gulp-cache'),
         del = require('del'),
-        htmlreplace = require('gulp-html-replace'),
-        ngAnnotate = require('gulp-ng-annotate');
+        htmlreplace = require('gulp-html-replace');
+
+    //ngAnnotate = require('gulp-ng-annotate');
     //del = require('del');
     //wait = require('gulp-wait'),
     //diff = require('gulp-diff'),
