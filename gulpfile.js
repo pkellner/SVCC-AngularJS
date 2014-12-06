@@ -14,7 +14,10 @@
 
     // Load plugins
     var gulp = require('gulp'),
+        debug = require('gulp-debug'),
         sass = require('gulp-ruby-sass'),
+        gulpsass = require('gulp-sass'),
+        compass = require('gulp-compass'),
         autoprefixer = require('gulp-autoprefixer'),
         minifycss = require('gulp-minify-css'),
         jshint = require('gulp-jshint'),
@@ -25,7 +28,9 @@
         notify = require('gulp-notify'),
         cache = require('gulp-cache'),
         del = require('del'),
+        plumber = require('gulp-plumber'),
         htmlreplace = require('gulp-html-replace');
+
 
     //ngAnnotate = require('gulp-ng-annotate');
     //del = require('del');
@@ -34,27 +39,55 @@
     //livereload = require('gulp-livereload'),
     //rsync = require('gulp-rsync'),
 
-    // Styles
-    gulp.task('styles', function () {
-        gulp.src('../../Content/Sass/site-svcc-relative.scss')
-            //.pipe(wait(20000))
-            .pipe(sass({style: 'expanded'}))
-            .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-            .pipe(gulp.dest('public/dist/styles'))
-            //.pipe(gulp.dest('Content/styles'))
-            .pipe(rename({suffix: '.min'}))
-            .pipe(minifycss())
-            .pipe(gulp.dest('public/dist/styles'))
-            .pipe(notify({message: 'Styles task complete'}));
-    });
+    //// Styles
+    //gulp.task('styles', function () {
+    //    gulp.src('../../Content/Sass/site-svcc-relative.scss')
+    //        //.pipe(wait(20000))
+    //        .pipe(sass({style: 'expanded'}))
+    //        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    //        .pipe(gulp.dest('public/dist/styles'))
+    //        //.pipe(gulp.dest('Content/styles'))
+    //        .pipe(rename({suffix: '.min'}))
+    //        .pipe(minifycss())
+    //        .pipe(gulp.dest('public/dist/styles'))
+    //        .pipe(notify({message: 'Styles task complete'}));
+    //});
 
-    gulp.task('stylesdev', function () {
-        gulp.src('../../Content/Sass/site-svcc-relative-dev.scss')
-            .pipe(sass({style: 'expanded'}))
-            .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-            .pipe(gulp.dest('public/Content/styles'))
-            .pipe(notify({message: 'Styles task complete'}));
-    });
+    //gulp.task('stylesdev', function () {
+    //    gulp.src('../../Content/Sass/_site-svcc.scss')
+    //        //.pipe(debug({verbose: true}))
+    //        .pipe(sass({
+    //            style: 'expanded',
+    //            trace: true,
+    //            debugInfo: true,
+    //            compass: true
+    //        }))
+    //        .pipe(debug({verbose: true}))
+    //        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    //        .pipe(gulp.dest('public/Content/styles'))
+    //        .pipe(notify({message: 'Styles task complete'}));
+    //});
+
+    //// notworking dec 2014
+    //gulp.task('adminCss', function () {
+    //    gulp.src('./Content/Sass/_site-svcc.scss')
+    //        .pipe(debug({verbose: true}))
+    //        .pipe(compass({
+    //            loadPath: 'Content/Sass',
+    //            sass: 'Content/Sass',
+    //            css: 'public/Content/Styles'
+    //        }))
+    //        .pipe(gulp.dest('./public/Content/Styles'))
+    //});
+    //
+    //gulp.task('gulpsass', function () {
+    //    gulp.src('./Content/Sass/_site-svcc.scss')
+    //        .pipe(gulpsass({
+    //            includePaths: ['./Content/Sass/'],
+    //            errLogToConsole: true
+    //        }))
+    //        .pipe(gulp.dest('./public/Content/Styles'));
+    //});
 
     //gulp.task('deploy', function () {
     //    gulp.src('dist/**')
@@ -114,6 +147,14 @@
 
     // Copy stuff
     gulp.task('copyfiles', function () {
+
+
+
+        gulp.src('../../Content/**/*')
+            .pipe(gulp.dest('public/dist/Content'));
+
+        gulp.src('../../Content/**/*')
+            .pipe(gulp.dest('public/Content'));
 
         gulp.src('public/Data/**/*')
             .pipe(gulp.dest('public/dist/Data'));
@@ -178,7 +219,8 @@
 
     // Default task
     gulp.task('default', ['clean'], function () {
-        gulp.start('scripts', 'scriptsnongannotate', 'styles', 'scriptsangular', 'images', 'copyfiles', 'indexhtml', 'indexhtmlmin');
+        gulp.start('scripts', 'scriptsnongannotate', 'styles', 'scriptsangular', 'images',
+            'copyfiles', 'indexhtml', 'indexhtmlmin');
     });
 
 
