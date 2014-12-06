@@ -3,4 +3,7 @@ azure.err
 *.publishsettings4
 node_modules
 .idea
-dist
+.sass-cache
+public/dist
+public/Content
+
