@@ -22,13 +22,13 @@
         notify = require('gulp-notify'),
         cache = require('gulp-cache'),
         del = require('del'),
-        //wait = require('gulp-wait'),
-        diff = require('gulp-diff'),
+    //wait = require('gulp-wait'),
+    //diff = require('gulp-diff'),
     //livereload = require('gulp-livereload'),
         htmlreplace = require('gulp-html-replace'),
     //rsync = require('gulp-rsync'),
-        ngAnnotate = require('gulp-ng-annotate'),
-        del = require('del');
+        ngAnnotate = require('gulp-ng-annotate');
+    //del = require('del');
 
     // Styles
     gulp.task('styles', function () {
@@ -65,8 +65,8 @@
     gulp.task('scriptsangular', function () {
         return gulp.src([
             'public/vendor/angular-messages/angular-messages.js',
-            'public/vendor/angular-route/angular-route.js',
-            'public/vendor/angular-resource/angular-resource.js'
+            'public/vendor/angular-resource/angular-resource.js',
+            'public/vendor/angular-ui-router/release/angular-ui-router.js'
         ])
             .pipe(concat('angularextras.js'))
             .pipe(gulp.dest('public/dist'))
@@ -109,9 +109,7 @@
             .pipe(concat('main.js'))
             .pipe(jshint('.jshintrc'))
             .pipe(jshint.reporter('default'))
-            .pipe(ngAnnotate())
-            //.pipe(diff())
-            //.pipe(diff.reporter({fail: true}))
+            //.pipe(ngAnnotate())
             .pipe(gulp.dest('public/dist'))
             .pipe(rename({suffix: '.min'}))
             .pipe(uglify())
@@ -149,7 +147,21 @@
 
     });
 
+
     gulp.task('indexhtml', function () {
+        gulp.src('public/index.html')
+            .pipe(rename('indexnomin.html'))
+            .pipe(htmlreplace({
+                'css': 'styles/site-svcc-relative.css',
+                'js': ['angular.js',
+                    'angularextras.js',
+                    'main.js']
+            }))
+            .pipe(gulp.dest('public/dist/'));
+        //console.log('2x');
+    });
+
+    gulp.task('indexhtmlmin', function () {
         gulp.src('public/index.html')
             .pipe(htmlreplace({
                 'css': 'styles/site-svcc-relative.min.css',
@@ -160,16 +172,7 @@
                 ]
             }))
             .pipe(gulp.dest('public/dist/'));
-
-        gulp.src('index.html')
-            .pipe(htmlreplace({
-                'css': 'styles/site-svcc-relative.css',
-                'js': ['angular.js',
-                    'angularextras.js',
-                    'main.js']
-            }))
-            .pipe(rename('index-nomin.html'))
-            .pipe(gulp.dest('public/dist/'));
+        //console.log('1');
     });
 
 
@@ -188,9 +191,8 @@
 
     // Default task
     gulp.task('default', ['clean'], function () {
-        gulp.start('scripts','scriptsnongannotate','styles','scriptsangular', 'images', 'copyfiles', 'indexhtml');
+        gulp.start('scripts', 'scriptsnongannotate', 'styles', 'scriptsangular', 'images', 'copyfiles', 'indexhtml', 'indexhtmlmin');
     });
-
 
 
     //// Watch
