@@ -1,0 +1,33 @@
+#middle {
+  @include clearfix;
+  padding: 16px 0 0;
+}
+
+#container {
+  width: 100%;
+  float: left;
+}
+
+.content {
+  @include roundBorder;
+  background-color: #fff;
+  padding: 16px;
+  min-height: 985px;
+  @include calibriFont;
+  font-size: 14px;
+  line-height: 20px;
+  color: $text-color;
+
+  .hasSidebars & {
+    margin: 0 190px;
+  }
+
+  iframe {
+    border: 0;
+  }
+}
+
+.pageContent {
+  @extend .clearfix;
+  @extend .tagStyling;
+}

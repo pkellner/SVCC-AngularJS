@@ -1,0 +1,26 @@
+/**
+ * Read more/less buttons
+ */
+.readMoreContent,
+.readMoreDown,
+.readMoreUp {
+  @include clearfix;
+}
+
+.readMoreContent,
+.readMoreUp {
+  display: none;
+}
+
+.readMoreDown {
+  display: block;
+}
+
+
+.readMoreUp,
+.readMoreDown {
+  .button {
+    float: right;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,328 @@
+//Arrows
+@mixin imageArrow {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAQAAADSxYyGAAAAUklEQVQIW2NgYIjZFzOdAQZi9sb8B8JKGHcHmPs/ph0mUIkukAIVWAvhqsf8BXPPgziyMY/AnJ0xbAwxzjE/wZxNEIVbwZw1MGO4Yp7HbIVyGABc/jE/u1ImpQAAAABJRU5ErkJggg==);
+}
+@mixin imageArrowWhite {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAQAAADSxYyGAAAAUUlEQVQIW2NgYPi/7/90Bhj4v/c/CFTCuDv+Q0A7TKASXSAFKrAWwlX//xfMPQ/iyP5/BObs/M/G8N/5/08wZxNE4VYwZw3MGK7/z/9vhXIYAH5CTUNh655IAAAAAElFTkSuQmCC);
+}
+
+/**
+ * Header container
+ */
+.mainHeader {
+  @include box-shadow(0px 2px 6px 3px rgba(0, 0, 0, 0.1));
+  height: 157px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background: #fff url($cdm-path + "/Content/Images/header-bg.png") no-repeat;
+}
+
+/**
+ * Logos & Venu Info Bar
+ */
+.logoInfoBar {
+  @include handelGothicFont;
+  overflow: hidden;
+  height: 108px;
+
+  > div {
+    float: left;
+    margin: 15px;
+  }
+}
+
+.logoWrap {
+  width: 350px;
+  height: 57px;
+  padding: 6px 10px 0;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.dateWrap,
+.venueWrap {
+  padding: 19px 15px;
+  border-left: 1px solid #e2e3e4;
+  text-shadow: 0 1px #fff;
+}
+
+.dateWrap {
+  width: 307px;
+  text-align: center;
+  color: $header-color;
+  font: {
+    size: 19px;
+    weight: bold;
+  }
+}
+
+.venueWrap {
+  font-size: 12px;
+  text-align: left;
+  color: #9ea0a4;
+
+  .logoInfoBar & {
+    margin-left: 0;
+  }
+
+  .name {
+    color: $header-color;
+    font: {
+      size: 16px;
+      weight: bold;
+    }
+  }
+}
+
+/**
+ * Navigation
+ */
+.menuUserBar {
+  clear: both;
+  height: 49px;
+  border-bottom-left-radius: 3px;
+  background: $nav-color;
+}
+
+.menuWrap {
+  @include handelGothicFont;
+  float: left;
+  height: 48px;
+  border-right: 1px solid #1d1915;
+}
+
+/* First Level */
+.menuListItem {
+  float: left;
+  height: 49px;
+  border-right: 1px solid #7c7b7b;
+  border-left: 1px solid #1d1915;
+  list-style-type: none;
+  font-size: 14px;
+  color: #fff;
+
+  &:first-child {
+    border-left: none;
+    border-bottom-left-radius: 3px;
+  }
+
+  &:hover,
+  &.hover {
+    background-color: $text-color;
+    
+    .menuSubList {
+      display: block;
+      visibility: visible;
+    }
+  }
+}
+
+.menuItemLink {
+  display: block;
+  position: relative;
+  padding: 17px 9px 17px 25px;
+  color: #fff;
+  text-shadow: 0 1px #000;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+
+    h2 {
+      text-shadow: 0 -1px 2px #000;
+    }
+  }
+  
+  &:before {
+    position: absolute;
+    top: 19px;
+    left: 9px;
+    @include imageSprites;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    content: '';
+
+    .program & {
+      background-position: -25px 0;
+    }
+
+    .giving & {
+      background-position: -50px 0;
+    }
+
+    .jobs & {
+      background-position: -75px 0;
+    }
+
+    .news & {
+      background-position: -75px 0;
+    }
+
+    .about & {
+      background-position: 0 0;
+    }
+  }
+}
+
+/* Dropdown first level */
+.menuSubList {
+  @include box-shadow(0px 0px 6px 2px rgba(0, 0, 0, 0.3));
+  @include scadaFont;
+  display: none;
+  visibility: hidden;
+  float: left;
+  position: absolute;
+  left: auto;
+  z-index: 9999;
+  width: 150px;
+  margin-top: 1px;
+  padding: 8px 18px 8px 12px;
+  list-style: none;
+  background-color: $light-gray;
+
+  li {
+    padding: 8px 0;
+    border-bottom: 1px dotted $dark-gray;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: 4px 4px 4px 18px;
+    margin-right: -8px;
+    text-shadow: 0 1px #fff;
+
+    &:hover {
+      text-decoration: none;
+      text-shadow: 0 1px #000;
+      color:  #fff;
+      background-color: $nav-color;
+    }
+
+    &:before {
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      @include imageSprites;
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin-right: 6px;
+      background-size: 219px 160px;
+      content: '';
+
+      .program & {
+        background-position: -20px 0;
+      }
+    }
+  }
+}
+
+/* Dropdown second level */
+.menuSubList .subAvailable {
+  position: relative;
+
+   > a {
+    @include imageArrow;
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    &:hover {
+      @include imageArrowWhite;
+      background-color: $nav-color;
+    }
+  }
+
+  .menuSubList {
+    @include box-shadow(7px 0px 11px -3px rgba(0, 0, 0, 0.3));
+    visibility: hidden;
+    top: 0;
+    left: 159px;
+  }
+
+  &:hover .menuSubList {
+    visibility: visible;
+  }
+}
+
+/**
+ * Login & Registration
+ */
+.userWrap {
+  float: right;
+  height: inherit;
+  padding: 0 10px;
+
+  .loginForm {
+    @include scadaFont;
+    padding-top: 17px;
+    text-align: right;
+    color: #fff;
+    font: {
+      size: 16px;
+    }
+  }
+
+  a {
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+/**
+ * Orange header variation
+ */
+.orangeHeader {
+
+  &.mainHeader {
+    background: white url($cdm-path + "/Content/Images/orange-header-bg.png") no-repeat;
+  }
+
+  .logoInfoBar {
+    height: 106px;
+  }
+
+  .menuUserBar {
+    border-top: 1px solid #eccca3;
+    border-bottom: 1px solid #da8d73;
+    @include background(linear-gradient(to bottom, #fcaa3e, #f1622a));
+  }
+
+  .menuWrap {
+    border-right: 1px solid #ec9d41;
+  }
+
+  .menuListItem {
+    border-right: 1px solid #ec9d41;
+    border-left: 1px solid #de8a34;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:hover {
+      background-color: #f1692d;
+    }
+  }
+
+  .menuItemLink:before {
+    background-position: -125px 0px;
+  }
+
+  .menuSubList {
+    a:hover,
+    .subAvailable > a:hover {
+      background-color: #f1692d;
+    }
+  }
+}

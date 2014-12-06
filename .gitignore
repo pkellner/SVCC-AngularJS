@@ -5,5 +5,4 @@ node_modules
 .idea
 .sass-cache
 public/dist
-public/Content
 
