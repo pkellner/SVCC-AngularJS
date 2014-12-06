@@ -231,17 +231,6 @@
 (function () {
     'use strict';
 
-    angular.module('svccApp')
-        .controller('GeneralController', GeneralController);
-
-    function GeneralController() {
-    }
-
-}());
-
-(function () {
-    'use strict';
-
     var app = angular.module('svccApp');
 
     app.controller('LoginController', LoginController);
@@ -369,6 +358,85 @@
     'use strict';
 
     angular.module('svccApp')
+        .controller('GeneralController', GeneralController);
+
+    function GeneralController() {
+    }
+
+}());
+
+(function () {
+    'use strict';
+
+    angular.module('svccApp')
+        .controller('SessionDetailController', SessionDetailController);
+
+    function SessionDetailController(session) {
+        var vm = this;
+        vm.sessions = [session];
+        vm.session = session;
+    }
+
+    SessionDetailController.$inject = ['session'];
+
+}());
+
+(function () {
+    'use strict';
+
+    angular.module('svccApp')
+        .filter('sessionLevels', function sessionLevelFilter() {
+            return function (sessionLevel) {
+                switch (sessionLevel) {
+                    case 1:
+                        return 'Beginner';
+                    case 2:
+                        return 'Intermediate';
+                    case 3:
+                        return 'Advanced';
+                    default:
+                        return 'unknown level';
+                }
+            };
+        });
+}());
+(function () {
+    'use strict';
+
+    angular.module('svccApp').
+        factory('sessionResourceService', sessionResourceService);
+
+    function sessionResourceService($resource) {
+        return $resource('/rest/session/arrayonly/:id');
+        //return $resource('data/sessions.json');
+    }
+
+    sessionResourceService.$inject = ['$resource'];
+
+
+}());
+(function () {
+
+    'use strict';
+
+    angular
+        .module('svccApp')
+        .controller('SessionsController', SessionsController);
+
+
+
+    function SessionsController(sessions) {
+        var vm = this;
+        vm.sessions = sessions;
+    }
+
+    SessionsController.$inject = ['sessions'];
+
+}());
+(function () {
+    'use strict';
+
+    angular.module('svccApp')
         .controller('SpeakerDetailController', SpeakerDetailController);
 
     function SpeakerDetailController(speaker, $http) {
@@ -471,73 +539,5 @@
     }
 
     SpeakersController.$inject = ['speakers'];
-
-}());
-(function () {
-    'use strict';
-
-    angular.module('svccApp')
-        .controller('SessionDetailController', SessionDetailController);
-
-    function SessionDetailController(session) {
-        var vm = this;
-        vm.sessions = [session];
-        vm.session = session;
-    }
-
-    SessionDetailController.$inject = ['session'];
-
-}());
-
-(function () {
-    'use strict';
-
-    angular.module('svccApp')
-        .filter('sessionLevels', function sessionLevelFilter() {
-            return function (sessionLevel) {
-                switch (sessionLevel) {
-                    case 1:
-                        return 'Beginner';
-                    case 2:
-                        return 'Intermediate';
-                    case 3:
-                        return 'Advanced';
-                    default:
-                        return 'unknown level';
-                }
-            };
-        });
-}());
-(function () {
-    'use strict';
-
-    angular.module('svccApp').
-        factory('sessionResourceService', sessionResourceService);
-
-    function sessionResourceService($resource) {
-        return $resource('/rest/session/arrayonly/:id');
-        //return $resource('data/sessions.json');
-    }
-
-    sessionResourceService.$inject = ['$resource'];
-
-
-}());
-(function () {
-
-    'use strict';
-
-    angular
-        .module('svccApp')
-        .controller('SessionsController', SessionsController);
-
-
-
-    function SessionsController(sessions) {
-        var vm = this;
-        vm.sessions = sessions;
-    }
-
-    SessionsController.$inject = ['sessions'];
 
 }());

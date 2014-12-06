@@ -22,13 +22,13 @@
         notify = require('gulp-notify'),
         cache = require('gulp-cache'),
         del = require('del'),
+        htmlreplace = require('gulp-html-replace'),
+        ngAnnotate = require('gulp-ng-annotate');
+    //del = require('del');
     //wait = require('gulp-wait'),
     //diff = require('gulp-diff'),
     //livereload = require('gulp-livereload'),
-        htmlreplace = require('gulp-html-replace'),
     //rsync = require('gulp-rsync'),
-        ngAnnotate = require('gulp-ng-annotate');
-    //del = require('del');
 
     // Styles
     gulp.task('styles', function () {
@@ -75,23 +75,6 @@
             .pipe(gulp.dest('public/dist'))
             .pipe(notify({message: 'scriptsangular task complete'}));
     });
-
-    //gulp.task('scriptstest', function () {
-    //
-    //    //gulp.src(['public/app/**/*.js'])
-    //    //    .pipe(concat('main1.js'))
-    //    //    .pipe(rename({suffix: '.noannotate'}));
-    //
-    //
-    //    gulp.src(['public/app/**/*.js'])
-    //        .pipe(concat('main1.js'))
-    //    .pipe(gulp.dest(''));
-    //
-    //    gulp.src(['main1.js'])
-    //        .pipe(ngAnnotate())
-    //        .pipe(diff())
-    //        .pipe(diff.reporter({ fail: false }));
-    //});
 
     gulp.task('scriptsnongannotate', function () {
 
