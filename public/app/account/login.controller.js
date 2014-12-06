@@ -29,11 +29,8 @@
             });
 
         };
-
-
-        LoginController.$inject = ['$http','$window','$rootScope'];
-
     }
+    LoginController.$inject = ['$http','$window','$rootScope'];
 })();
 
 

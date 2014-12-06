@@ -49,9 +49,9 @@
                     controller: 'SpeakersController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
-                        speakers: function(speakerResourceService) {
+                        speakers: ['speakerResourceService', function(speakerResourceService) {
                             return speakerResourceService.query().$promise;
-                        }
+                        }]
                     }
                 }).
 
@@ -81,9 +81,9 @@
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
-                        speaker: function(speakerResourceService,$stateParams) {
+                        speaker: ['speakerResourceService', '$stateParams', function(speakerResourceService,$stateParams) {
                             return speakerResourceService.get({id: $stateParams.id}).$promise;
-                        }
+                        }]
                     }
                 }).
 
@@ -94,9 +94,9 @@
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
-                        speaker: function(speakerResourceService,$stateParams) {
+                        speaker: ['speakerResourceService', '$stateParams', function(speakerResourceService,$stateParams) {
                             return speakerResourceService.get({id: $stateParams.id}).$promise;
-                        }
+                        }]
                     }
                 }).
 
@@ -120,9 +120,9 @@
                     controller: 'SessionDetailController as vm',
                     resolve: {
                         sessionResourceService: 'sessionResourceService',
-                        session: function(sessionResourceService,$stateParams) {
+                        session: ['sessionResourceService', '$stateParams', function(sessionResourceService,$stateParams) {
                             return sessionResourceService.get({id: $stateParams.id}).$promise;
-                        }
+                        }]
                     }
                 }).
                 state('sessions', {
@@ -131,9 +131,9 @@
                     controller: 'SessionsController as vm',
                     resolve: {
                         sessionResourceService: 'sessionResourceService',
-                        sessions: function(sessionResourceService) {
+                        sessions: ['sessionResourceService', function(sessionResourceService) {
                             return sessionResourceService.query().$promise;
-                        }
+                        }]
                     }
                 });
 
@@ -141,7 +141,7 @@
 
         }]);
 
-    app.run(function($rootScope) {
+    app.run(['$rootScope', function($rootScope) {
 
 
         $rootScope.loginName = '';
@@ -173,7 +173,7 @@
 
 
 
-    });
+    }]);
 
 
     // https://blog.mariusschulz.com/2014/10/22/asynchronously-bootstrapping-angularjs-applications-with-server-side-data
