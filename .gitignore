@@ -4,5 +4,5 @@ azure.err
 node_modules
 .idea
 .sass-cache
-public/dist
+
 

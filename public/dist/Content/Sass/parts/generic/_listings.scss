@@ -1,0 +1,399 @@
+/**
+ * Main listings
+ */
+.listingWrap {
+  clear: both;
+  padding: 10px 0;
+}
+
+.listingBox {
+  @include clearfix;
+  display: block;
+  padding: 5px 0;
+  margin-bottom: 5px;
+  border-bottom: 1px dotted $dark-gray;
+
+  .listingMedia {
+    float: left;
+    margin-right: 30px;
+    padding: 8px;
+    border: 1px solid $gray;
+    background: $light-gray;
+  }
+
+  .listingInfo {
+    overflow: hidden;
+    ul {
+      list-style-type: circle;
+      margin: 5px 0 5px 30px;
+      li {
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  .listingHeader {
+    @include clearfix;
+    margin: 0 10px 10px 0;
+
+    h2 {
+      margin: 5px 0;
+      font-size: 24px;
+      color: $header-color;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    h2,
+    h3 {
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        color: $primary-color-darker;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    .speakerUrl {
+      font-size: 16px;
+      color: #264179;
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin: 0;
+    line-height: 21px;
+  }
+
+  .listingMore {
+    @include clearfix;
+    clear: both;
+  }
+  
+  &.noBorder {
+    border: 0;
+  }
+}
+
+/* Adjustments for speaker listings */
+.speakerDetails {
+  .speakerContact {
+    margin: 10px 0 15px 0;
+  }
+
+  .sessionTime {
+    font-weight: bold;
+    font-size: 14px;
+    float: left;
+    width: 85px;
+    text-align: left;
+    margin: 6px 0 0 12px;
+  }
+  
+  .listingHeader h3 a {
+    color: #676767;
+    font-size: 21px;
+    font-weight: normal;
+  }
+}
+
+/* Adjustments for job listings */
+.jobDetails {
+  .listingHeader {
+    h2 {
+      margin: 0;
+      font-size: 18px;
+
+      a {
+        font-weight: normal;
+        text-decoration: none;
+        color: $primary-color;
+      }
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .jobPostingDate {
+    float: right;
+  }
+}
+
+/* Adjustments for video listings */
+.videoDetails {
+  //no changes from basic listings
+}
+
+.newsDetails {
+  .listingHeader {
+    h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+  
+  .newsPostingDate {
+    float: right;
+  }
+}
+
+/**
+ * Secondary listings
+ */
+.secondaryListingWrap {
+  @include lightGrayGradient;
+  border: 1px solid $gray;
+  padding: 15px 8px 0 8px;
+  margin: 10px 0;
+
+  h4 {
+    color: $header-color;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0 0 0 12px;
+  }
+
+  h5 {
+      font-size: 14px;
+      float: left;
+      text-align: left;
+      margin: 6px 0 0 15px;
+      width: 376px;
+  }
+
+  ul {
+      margin: 5px 0 0 0;
+  }
+
+  li {
+    @include clearfix;
+    padding: 10px 0;
+    border-top: 1px dotted $dark-gray;
+    font-size: 14px;
+    line-height: 18px;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  .go {
+    float: right;
+  }
+}
+
+.listingDetailsLink {
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: underline;
+  color: $header-color;
+  margin: 5px 0 0 20px;
+  display: inline-block;
+}
+
+.sessionSpeakers {
+	&.metaInfoBox {
+		border: 0;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+		font-size: 14px;
+		padding: 0;
+	}
+	
+	&.listingBox {
+		&.listingMedia {
+			padding: 5px;
+		}
+	} 
+  
+    .listingHeader h3 a {
+      color: #676767;
+      font-size: 21px;
+      font-weight: normal;
+    }
+}
+
+.presenters {
+  &.kidsSessions {
+    .presentersList {
+      @include clearfix;
+
+      .presentersCarousel {
+        text-align: center;
+      }
+
+      .presenter {
+        @include box-sizing(border-box);
+        width: 295px;
+        min-height: 430px;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        color: #5c5c5c;
+        padding: 0 10px 10px 10px;
+        margin: 0 10px 40px 10px;
+        -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
+        border: 3px solid #fff;
+        background: #f3f1f2;
+        -webkit-border-radius: 20px;
+        -webkit-border-top-left-radius: 2px;
+        -webkit-border-bottom-right-radius: 2px;
+        -moz-border-radius: 20px;
+        -moz-border-radius-topleft: 2px;
+        -moz-border-radius-bottomright: 2px;
+        border-radius: 20px;
+        border-top-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        
+        &.SpeakerCount2 { 
+          .names {
+            text-align: center;            
+            
+            li {
+              text-align: center;
+              display: inline-block;
+              width: 108px;
+              margin-left: 15px;
+              
+              &:first-child {
+                margin-left: 0;
+              }
+            }
+            
+            img {
+              max-width: 100%;
+            }
+            
+            h3 {
+              a {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        
+        &.SpeakerCount3 {
+          .names {
+            text-align: center;            
+            
+            li {
+              text-align: center;
+              display: inline-block;
+              width: 82px;
+              margin-left: 5px;
+              
+              &:first-child {
+                margin-left: 0;
+              }
+            }
+            
+            img {
+              max-width: 100%;
+            }
+            
+            h3 {
+              margin-top: 0;
+              
+              a {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+
+
+        .names {
+          min-height: 180px;
+
+          .photo {
+            margin-top: -21px;
+          }
+
+          img {
+            display: block;
+            border: 3px solid #282828;
+            margin: 0 auto;
+          }
+
+          h3 {
+            margin-top: 5px;
+          }
+
+          a {
+            font-size: 20px;
+            color: #5c5c5c; // this was green but I could not figure how to make it orange for css and green for kids
+            text-decoration: none;
+          }
+        }
+
+        .description {
+          margin-bottom: 15px;
+          min-height: 120px;
+
+          h3 {
+            margin: 5px 0 20px 0;
+            min-height: 40px;
+          }
+        }
+
+        .more {
+          a {
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            -webkit-border-top-right-radius: 8px;
+            -webkit-border-bottom-left-radius: 8px;
+            -moz-border-radius-topright: 8px;
+            -moz-border-radius-bottomleft: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            background: #39b54a;
+            width: 185px;
+            padding: 10px 0;
+            margin: 0 auto 25px auto;
+          }
+        }
+
+        .morecodestars {
+          a {
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            -webkit-border-top-right-radius: 8px;
+            -webkit-border-bottom-left-radius: 8px;
+            -moz-border-radius-topright: 8px;
+            -moz-border-radius-bottomleft: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            background: #f1602b;
+            width: 185px;
+            padding: 10px 0;
+            margin: 0 auto 25px auto;
+          }
+        }
+
+        .intrested {
+          label {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
