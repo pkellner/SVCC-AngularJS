@@ -1,23 +1,17 @@
 (function () {
     'use strict';
 
-    /*!
-     * gulp
-     * $ npm install gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
-     */
+
 
     //npm install del gulp gulp-concat gulp-diff gulp-header; mkdir -p src; echo "foo" > src/foo.txt; echo "bar" > src/bar.txt
     // http://stackoverflow.com/questions/26939542/problems-with-gulp-and-gulp-diff
 
-    //npm install gulp gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-uglify gulp-imagemin gulp-rename gulp-concat gulp-cache del gulp-diff gulp-header
+    //npm install  gulp gulp-debug gulp-plumber gulp-html-replace gulp-notify gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-uglify gulp-imagemin gulp-rename gulp-concat gulp-cache del gulp-diff gulp-header
 
 
     // Load plugins
     var gulp = require('gulp'),
         debug = require('gulp-debug'),
-        sass = require('gulp-ruby-sass'),
-        gulpsass = require('gulp-sass'),
-        compass = require('gulp-compass'),
         autoprefixer = require('gulp-autoprefixer'),
         minifycss = require('gulp-minify-css'),
         jshint = require('gulp-jshint'),
@@ -32,6 +26,9 @@
         htmlreplace = require('gulp-html-replace');
 
 
+    //sass = require('gulp-ruby-sass'),
+    //    gulpsass = require('gulp-sass'),
+    //    compass = require('gulp-compass'),
     //ngAnnotate = require('gulp-ng-annotate');
     //del = require('del');
     //wait = require('gulp-wait'),
@@ -113,14 +110,14 @@
             .pipe(notify({message: 'scriptsangular task complete'}));
     });
 
-    gulp.task('scriptsnongannotate', function () {
-
-        return gulp.src(['public/app/**/*.js'])
-            .pipe(concat('main.js'))
-            .pipe(rename({suffix: '.nongannotate'}))
-            .pipe(gulp.dest('public/dist'))
-            .pipe(notify({message: 'Scripts no ngAnnotate task complete'}));
-    });
+    //gulp.task('scriptsnongannotate', function () {
+    //
+    //    return gulp.src(['public/app/**/*.js'])
+    //        .pipe(concat('main.js'))
+    //        .pipe(rename({suffix: '.nongannotate'}))
+    //        .pipe(gulp.dest('public/dist'))
+    //        .pipe(notify({message: 'Scripts no ngAnnotate task complete'}));
+    //});
 
 
     gulp.task('scripts', function () {
@@ -219,7 +216,7 @@
 
     // Default task
     gulp.task('default', ['clean'], function () {
-        gulp.start('scripts', 'scriptsnongannotate', 'styles', 'scriptsangular', 'images',
+        gulp.start('scripts',  'scriptsangular', 'images',
             'copyfiles', 'indexhtml', 'indexhtmlmin');
     });
 
