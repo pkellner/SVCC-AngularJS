@@ -5,7 +5,8 @@
     var app = angular.module('svccApp', [
         'ngMessages',
         'ngResource',
-        'ui.router'
+        'ui.router',
+        'pusher-angular'
     ]);
 
 
