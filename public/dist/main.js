@@ -4911,12 +4911,16 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
     angular.module('svccApp')
         .controller('SpeakerDetailFeedbackController', SpeakerDetailFeedbackController);
 
-    function SpeakerDetailFeedbackController($scope,speaker, $http,$pusher,$timeout) {
+    function SpeakerDetailFeedbackController($scope,$rootScope,speaker, $http,$pusher) {
 
 
         var vm = this;
         vm.speakers = [speaker];
         vm.speaker = speaker;
+        vm.loginName = $rootScope.loginName;
+
+
+
 
         //var onTimeout = function() {
         //    timer = $timeout(onTimeout, 3000);
@@ -4970,7 +4974,12 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
         // POST the message if it exists and refresh the list with results (including one just posted)
         vm.discussionSendText = function () {
 
-            if (this.messageText && this.messageText.length > 0) {
+            if (!this.loginName || this.loginName.length === 0) {
+                alert('Must be logged in to post public discussion items.');
+            }
+
+            else if (this.messageText && this.messageText.length > 0) {
+                vm.disableSendButton = "true";
                 $http.post('/rest/discussion/arrayonly',
                     {
                         messageText: this.messageText,
@@ -4979,7 +4988,8 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
                         arrayonly: 1
                     })
                     .success(function () {
-
+                        vm.disableSendButton = false;
+                        vm.messageText = '';
                             // THIS WILL GET REFRESHED BECAUSE OF EVENT FIRING
                         //$http.get('/rest/discussion/arrayonly',
                         //    {
@@ -5005,7 +5015,7 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
 
     }
 
-    SpeakerDetailFeedbackController.$inject = ['$scope','speaker', '$http', '$pusher'];
+    SpeakerDetailFeedbackController.$inject = ['$scope','$rootScope','speaker', '$http', '$pusher'];
 
 }());
 
