@@ -51,7 +51,7 @@
                     <h3 id="sessionTitle_{{::session.id}}" title="{{::session.title}}">{{::session.title}}</h3>
                     <i>by</i>
                 <span ng-repeat="speaker in session.speakersList">
-                    <a ng-href="#/speakers/{{::speaker.attendeeId}}" class="author">{{::speaker.userFirstName}} {{::speaker.userLastName}}</a>
+                    <a ng-href="#/speaker/{{::speaker.attendeeId}}" class="author">{{::speaker.userFirstName}} {{::speaker.userLastName}}</a>
                 </span>
                     <span>Attending ({{::session.planAheadCount}})</span>
 
