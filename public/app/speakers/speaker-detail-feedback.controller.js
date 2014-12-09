@@ -42,13 +42,18 @@
         var channelName = 'svcc-speaker-channel-' + vm.speakers[0].id;
         var myChannel = pusher.subscribe(channelName);
         pusher.connection.bind_all(function (eventName, data) {
+
             console.log('bind_all channelName: ' + channelName + ' eventName: ' + eventName + ' data: ' + data.event);
-            refreshData(speaker.id);
+            if (data && data.event && data.event.indexOf("Discussion") !== -1) {
+                console.log('bind_all event processing event: ' + data.event);
+                refreshData(speaker.id);
+            }
         });
 
         refreshData(speaker.id);
 
         function refreshData(speakerId) {
+            console.log('refreshData with ' + speakerId);
             $http.get('/rest/discussion/arrayonly',
                 {
                     params: {
@@ -57,10 +62,17 @@
                     }
                 })
                 .success(function (data) {
-                    vm.discussions = data[0].discussionItemResults;
-                })
-                .error(function () {
 
+                    if (data && data.length > 0 && data[0].discussionItemResults && data[0].discussionItemResults.length > 0) {
+                        vm.discussions = data[0].discussionItemResults;
+
+                    } else {
+                        vm.discussions = [];
+                    }
+                    console.log('vm.discussions.length: ' + vm.discussions.length);
+                })
+                .error(function (error) {
+                    console.log('rest/discussion/arrayonly error ' + error);
                 });
         }
 
@@ -81,6 +93,7 @@
                         arrayonly: 1
                     })
                     .success(function () {
+                        console.log('discussionSendText success post');
                         vm.disableSendButton = false;
                         vm.messageText = '';
                             // THIS WILL GET REFRESHED BECAUSE OF EVENT FIRING
@@ -100,7 +113,7 @@
 
                     })
                     .error(function(error){
-
+                       console.log('discussionSendText failed ' + error);
                     });
             }
 
