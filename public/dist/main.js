@@ -92,7 +92,7 @@
                     parent: 'speaker',
                     url: '/:id/feedback',
                     templateUrl: 'app/speakers/speaker-detail-feedback.html',
-                    controller: 'SpeakerDetailController as vm',
+                    controller: 'SpeakerDetailFeedbackController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
                         speaker: ['speakerResourceService', '$stateParams', function(speakerResourceService,$stateParams) {
@@ -4841,133 +4841,6 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
     'use strict';
 
     angular.module('svccApp')
-        .controller('SpeakerDetailController', SpeakerDetailController);
-
-    function SpeakerDetailController(speaker, $http,$pusher) {
-        var vm = this;
-        vm.speakers = [speaker];
-        vm.speaker = speaker;
-
-        //https://github.com/pusher/pusher-angular
-        var client = new Pusher('d7beb8c73c89d031b8b1');
-        var pusher = $pusher(client);
-
-        var channelName = 'svcc-speaker-channel-' + vm.speakers[0].id;
-        var myChannel = pusher.subscribe(channelName);
-        pusher.connection.bind_all(function (eventName, data) {
-            console.log('bind_all eventName: ' + eventName + ' data: ' + data.event);
-            refreshData(speaker.id);
-        });
-
-        refreshData(speaker.id);
-
-        function refreshData(speakerId) {
-            $http.get('/rest/discussion/arrayonly',
-                {
-                    params: {
-                        speakerId: speakerId,
-                        arrayonly: 1
-                    }
-                })
-                .success(function (data) {
-                    vm.discussions = data[0].discussionItemResults;
-                })
-                .error(function () {
-
-                });
-        }
-
-        // POST the message if it exists and refresh the list with results (including one just posted)
-        vm.discussionSendText = function () {
-
-            if (this.messageText && this.messageText.length > 0) {
-                $http.post('/rest/discussion/arrayonly',
-                    {
-                        messageText: this.messageText,
-                        speakerId: this.speaker.id,
-                        publicMessage: this.publicMessage,
-                        arrayonly: 1
-                    })
-                    .success(function () {
-
-                            // THIS WILL GET REFRESHED BECAUSE OF EVENT FIRING
-                        //$http.get('/rest/discussion/arrayonly',
-                        //    {
-                        //        params: {
-                        //            speakerId: vm.speaker.id,
-                        //            arrayonly: 1
-                        //        }
-                        //    })
-                        //    .success(function (data) {
-                        //        vm.discussions = data[0].discussionItemResults;
-                        //    })
-                        //    .error(function () {
-                        //
-                        //    });
-
-                    })
-                    .error(function(error){
-
-                    });
-            }
-
-        };
-
-    }
-
-    SpeakerDetailController.$inject = ['speaker', '$http', '$pusher'];
-
-}());
-
-(function () {
-    'use strict';
-
-    angular.module('svccApp')
-        .factory('speakerResourceService',['$resource',
-        function ($resource) {
-            return $resource('/rest/presenter/arrayonly/:id');
-            //return $resource('data/speakers.json');
-        }]);
-}());
-(function () {
-    'use strict';
-
-    angular.module('svccApp')
-        .directive('speakerSocialIconDirective', speakerSocialIconDirective);
-    function speakerSocialIconDirective() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'app/speakers/speaker-social-icon.directive.html',
-            scope: {
-                speaker: '='
-            }
-        };
-    }
-
-}());
-
-(function () {
-
-    'use strict';
-
-    angular
-        .module('svccApp')
-        .controller('SpeakersController', SpeakersController);
-
-
-
-    function SpeakersController(speakers) {
-        var vm = this;
-        vm.speakers = speakers;
-    }
-
-    SpeakersController.$inject = ['speakers'];
-
-}());
-(function () {
-    'use strict';
-
-    angular.module('svccApp')
         .controller('SessionDetailController', SessionDetailController);
 
     function SessionDetailController(session) {
@@ -5030,5 +4903,170 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
     }
 
     SessionsController.$inject = ['sessions'];
+
+}());
+(function () {
+    'use strict';
+
+    angular.module('svccApp')
+        .controller('SpeakerDetailFeedbackController', SpeakerDetailFeedbackController);
+
+    function SpeakerDetailFeedbackController($scope,speaker, $http,$pusher,$timeout) {
+
+
+        var vm = this;
+        vm.speakers = [speaker];
+        vm.speaker = speaker;
+
+        //var onTimeout = function() {
+        //    timer = $timeout(onTimeout, 3000);
+        //    console.log('onTimeout fired and reset');
+        //};
+        //var timer = $timeout(onTimeout, 3000);
+
+        $scope.$on("$destroy", function() {
+
+
+            var channelName = 'svcc-speaker-channel-' + vm.speakers[0].id;
+            console.log('unsubscribing from: ' + channelName );
+            var myChannel = pusher.unsubscribe(channelName);
+
+            //if (timer) {
+            //    $timeout.cancel(timer);
+            //}
+        });
+
+
+
+        //https://github.com/pusher/pusher-angular
+        var client = new Pusher('d7beb8c73c89d031b8b1');
+        var pusher = $pusher(client);
+
+        var channelName = 'svcc-speaker-channel-' + vm.speakers[0].id;
+        var myChannel = pusher.subscribe(channelName);
+        pusher.connection.bind_all(function (eventName, data) {
+            console.log('bind_all channelName: ' + channelName + ' eventName: ' + eventName + ' data: ' + data.event);
+            refreshData(speaker.id);
+        });
+
+        refreshData(speaker.id);
+
+        function refreshData(speakerId) {
+            $http.get('/rest/discussion/arrayonly',
+                {
+                    params: {
+                        speakerId: speakerId,
+                        arrayonly: 1
+                    }
+                })
+                .success(function (data) {
+                    vm.discussions = data[0].discussionItemResults;
+                })
+                .error(function () {
+
+                });
+        }
+
+        // POST the message if it exists and refresh the list with results (including one just posted)
+        vm.discussionSendText = function () {
+
+            if (this.messageText && this.messageText.length > 0) {
+                $http.post('/rest/discussion/arrayonly',
+                    {
+                        messageText: this.messageText,
+                        speakerId: this.speaker.id,
+                        publicMessage: this.publicMessage,
+                        arrayonly: 1
+                    })
+                    .success(function () {
+
+                            // THIS WILL GET REFRESHED BECAUSE OF EVENT FIRING
+                        //$http.get('/rest/discussion/arrayonly',
+                        //    {
+                        //        params: {
+                        //            speakerId: vm.speaker.id,
+                        //            arrayonly: 1
+                        //        }
+                        //    })
+                        //    .success(function (data) {
+                        //        vm.discussions = data[0].discussionItemResults;
+                        //    })
+                        //    .error(function () {
+                        //
+                        //    });
+
+                    })
+                    .error(function(error){
+
+                    });
+            }
+
+        };
+
+    }
+
+    SpeakerDetailFeedbackController.$inject = ['$scope','speaker', '$http', '$pusher'];
+
+}());
+
+(function () {
+    'use strict';
+
+    angular.module('svccApp')
+        .controller('SpeakerDetailController', SpeakerDetailController);
+
+    function SpeakerDetailController(speaker) {
+        var vm = this;
+        vm.speakers = [speaker];
+        vm.speaker = speaker;
+    }
+
+    SpeakerDetailController.$inject = ['speaker'];
+
+}());
+
+(function () {
+    'use strict';
+
+    angular.module('svccApp')
+        .factory('speakerResourceService',['$resource',
+        function ($resource) {
+            return $resource('/rest/presenter/arrayonly/:id');
+            //return $resource('data/speakers.json');
+        }]);
+}());
+(function () {
+    'use strict';
+
+    angular.module('svccApp')
+        .directive('speakerSocialIconDirective', speakerSocialIconDirective);
+    function speakerSocialIconDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'app/speakers/speaker-social-icon.directive.html',
+            scope: {
+                speaker: '='
+            }
+        };
+    }
+
+}());
+
+(function () {
+
+    'use strict';
+
+    angular
+        .module('svccApp')
+        .controller('SpeakersController', SpeakersController);
+
+
+
+    function SpeakersController(speakers) {
+        var vm = this;
+        vm.speakers = speakers;
+    }
+
+    SpeakersController.$inject = ['speakers'];
 
 }());
