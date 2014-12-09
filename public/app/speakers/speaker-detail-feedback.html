@@ -40,11 +40,10 @@
 
 
         <form novalidate method="get"  style="margin: 10px 250px 10px 5px;"  >
-            <input type="submit" name="search" value="Message Speaker" style="float: right;margin-left: 10px;"
+            <input type="submit" name="search" value="Message Speaker" style="float: right;margin-left: 10px;" ng-disabled="vm.disableSendButton"
                    ng-click="vm.discussionSendText()"/>
-
             <div style="overflow: hidden; padding-right: .5em;">
-                <input type="text" name="term" style="width: 85%;" ng-model="vm.messageText"  />
+                <input type="text" name="term" style="width: 85%;"  ng-model="vm.messageText"  />
                 <input name="name" id="id" type="checkbox" ng-checked="true"  ng-model="vm.publicMessage" ng-disabled="true"  >Public
             </div>
         </form>
@@ -198,7 +197,8 @@
     }
     .discussion .avatar img {
         display: block;
-        width: 100%;
+        width: 39px;
+        height: 39px;
     }
 
     .other .avatar:after {
@@ -239,6 +239,7 @@
 
     .messages {
         background: white;
+        max-width: 700px;
         padding: 10px;
         border-radius: 2px;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
