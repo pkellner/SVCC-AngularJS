@@ -362,6 +362,74 @@
 
 }());
 
+(function () {
+    'use strict';
+
+    angular.module('svccApp')
+        .controller('SessionDetailController', SessionDetailController);
+
+    function SessionDetailController(session) {
+        var vm = this;
+        vm.sessions = [session];
+        vm.session = session;
+    }
+
+    SessionDetailController.$inject = ['session'];
+
+}());
+
+(function () {
+    'use strict';
+
+    angular.module('svccApp')
+        .filter('sessionLevels', function sessionLevelFilter() {
+            return function (sessionLevel) {
+                switch (sessionLevel) {
+                    case 1:
+                        return 'Beginner';
+                    case 2:
+                        return 'Intermediate';
+                    case 3:
+                        return 'Advanced';
+                    default:
+                        return 'unknown level';
+                }
+            };
+        });
+}());
+(function () {
+    'use strict';
+
+    angular.module('svccApp').
+        factory('sessionResourceService', sessionResourceService);
+
+    function sessionResourceService($resource) {
+        return $resource('/rest/session/arrayonly/:id');
+        //return $resource('data/sessions.json');
+    }
+
+    sessionResourceService.$inject = ['$resource'];
+
+
+}());
+(function () {
+
+    'use strict';
+
+    angular
+        .module('svccApp')
+        .controller('SessionsController', SessionsController);
+
+
+
+    function SessionsController(sessions) {
+        var vm = this;
+        vm.sessions = sessions;
+    }
+
+    SessionsController.$inject = ['sessions'];
+
+}());
 'use strict';
 
 angular.module('pusher-angular', [])
@@ -4841,74 +4909,6 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
     'use strict';
 
     angular.module('svccApp')
-        .controller('SessionDetailController', SessionDetailController);
-
-    function SessionDetailController(session) {
-        var vm = this;
-        vm.sessions = [session];
-        vm.session = session;
-    }
-
-    SessionDetailController.$inject = ['session'];
-
-}());
-
-(function () {
-    'use strict';
-
-    angular.module('svccApp')
-        .filter('sessionLevels', function sessionLevelFilter() {
-            return function (sessionLevel) {
-                switch (sessionLevel) {
-                    case 1:
-                        return 'Beginner';
-                    case 2:
-                        return 'Intermediate';
-                    case 3:
-                        return 'Advanced';
-                    default:
-                        return 'unknown level';
-                }
-            };
-        });
-}());
-(function () {
-    'use strict';
-
-    angular.module('svccApp').
-        factory('sessionResourceService', sessionResourceService);
-
-    function sessionResourceService($resource) {
-        return $resource('/rest/session/arrayonly/:id');
-        //return $resource('data/sessions.json');
-    }
-
-    sessionResourceService.$inject = ['$resource'];
-
-
-}());
-(function () {
-
-    'use strict';
-
-    angular
-        .module('svccApp')
-        .controller('SessionsController', SessionsController);
-
-
-
-    function SessionsController(sessions) {
-        var vm = this;
-        vm.sessions = sessions;
-    }
-
-    SessionsController.$inject = ['sessions'];
-
-}());
-(function () {
-    'use strict';
-
-    angular.module('svccApp')
         .controller('SpeakerDetailFeedbackController', SpeakerDetailFeedbackController);
 
     function SpeakerDetailFeedbackController($scope,$rootScope,speaker, $http,$pusher) {
@@ -4949,13 +4949,18 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
         var channelName = 'svcc-speaker-channel-' + vm.speakers[0].id;
         var myChannel = pusher.subscribe(channelName);
         pusher.connection.bind_all(function (eventName, data) {
+
             console.log('bind_all channelName: ' + channelName + ' eventName: ' + eventName + ' data: ' + data.event);
-            refreshData(speaker.id);
+            if (data && data.event && data.event.indexOf("Discussion") !== -1) {
+                console.log('bind_all event processing event: ' + data.event);
+                refreshData(speaker.id);
+            }
         });
 
         refreshData(speaker.id);
 
         function refreshData(speakerId) {
+            console.log('refreshData with ' + speakerId);
             $http.get('/rest/discussion/arrayonly',
                 {
                     params: {
@@ -4964,10 +4969,17 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
                     }
                 })
                 .success(function (data) {
-                    vm.discussions = data[0].discussionItemResults;
-                })
-                .error(function () {
 
+                    if (data && data.length > 0 && data[0].discussionItemResults && data[0].discussionItemResults.length > 0) {
+                        vm.discussions = data[0].discussionItemResults;
+
+                    } else {
+                        vm.discussions = [];
+                    }
+                    console.log('vm.discussions.length: ' + vm.discussions.length);
+                })
+                .error(function (error) {
+                    console.log('rest/discussion/arrayonly error ' + error);
                 });
         }
 
@@ -4988,6 +5000,7 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
                         arrayonly: 1
                     })
                     .success(function () {
+                        console.log('discussionSendText success post');
                         vm.disableSendButton = false;
                         vm.messageText = '';
                             // THIS WILL GET REFRESHED BECAUSE OF EVENT FIRING
@@ -5007,7 +5020,7 @@ function(b){a(!1,b)};f.src=this.options.authEndpoint+"?callback="+encodeURICompo
 
                     })
                     .error(function(error){
-
+                       console.log('discussionSendText failed ' + error);
                     });
             }
 
