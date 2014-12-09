@@ -92,7 +92,7 @@
                     parent: 'speaker',
                     url: '/:id/feedback',
                     templateUrl: 'app/speakers/speaker-detail-feedback.html',
-                    controller: 'SpeakerDetailController as vm',
+                    controller: 'SpeakerDetailFeedbackController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
                         speaker: ['speakerResourceService', '$stateParams', function(speakerResourceService,$stateParams) {
