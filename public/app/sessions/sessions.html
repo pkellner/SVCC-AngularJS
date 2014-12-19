@@ -1,6 +1,69 @@
 <!--suppress HtmlUnknownAnchorTarget -->
 <h1 class="title">Sessions</h1>
 
+
+<section class="collapsibleBox active sessionsFilterWrap">
+    <h2 class="boxHeader">FILTERS</h2>
+    <div class="boxContent filterContentWrap">
+        <div class="filterOptionsWrap daysFilterWrap">
+            <div class="labelWrap">
+                <span class="icon"></span><span class="label">Day : </span>
+            </div>
+            <div class="optionsWrap">
+                <ul id="sessionDaysCheckboxList">
+                    <li class="showAll selected"><span class="checkbox"></span><span class="label">Show all</span></li>
+                    <li class="saturday"><span class="checkbox"></span><span class="label">Saturday</span></li>
+                    <li class="sunday"><span class="checkbox"></span><span class="label">Sunday</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="filterOptionsWrap timeFilterWrap">
+            <div class="labelWrap">
+                <span class="icon"></span><span class="label">Time : </span>
+            </div>
+            <div class="optionsWrap">
+                @{
+                var previousDay = "";
+                var sessionDayTimeCount = Model.SessionTimeResults.Count - 1;
+                var i = 0;
+                }
+
+                @foreach (var timeResult in Model.SessionTimeResults)
+                {
+
+
+                if (previousDay != timeResult.StartTimeFriendlyDay)
+                {
+                previousDay = timeResult.StartTimeFriendlyDay;
+                @:<div class="timeOption @timeResult.StartTimeFriendlyDay">
+                <div class="dayLabel"><span class="icon"></span><span class="label">@(@timeResult.StartTimeFriendlyDay): </span></div>
+                @:<div class="timesWrap">
+                @:<ul>
+
+                }
+                <li><span class="checkbox"></span><span class="label">@(timeResult.StartTimeFriendlyTime)</span></li>
+
+                if (i == sessionDayTimeCount || Model.SessionTimeResults[i + 1].StartTimeFriendlyDay != previousDay)
+                {
+                @:</ul>
+                @:</div>
+                @:</div>
+
+                }
+
+                if (i <= sessionDayTimeCount)
+                {
+                i++;
+                }
+
+                }
+            </div>
+        </div>
+    </div>
+</section>
+}
+
+
 <div class="toolbarBg">
     <div class="searchBox alt">
 
