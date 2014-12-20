@@ -134,6 +134,10 @@
                         sessionResourceService: 'sessionResourceService',
                         sessions: ['sessionResourceService', function(sessionResourceService) {
                             return sessionResourceService.query().$promise;
+                        }],
+                        sessionDayOfWeekResourceService: 'sessionDayOfWeekResourceService',
+                        sessionDayOfWeeks: ['sessionDayOfWeekResourceService', function(sessionDayOfWeekResourceService) {
+                            return sessionDayOfWeekResourceService.query().$promise;
                         }]
                     }
                 });

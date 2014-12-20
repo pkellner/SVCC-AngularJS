@@ -1,19 +1,26 @@
 <!--suppress HtmlUnknownAnchorTarget -->
 <h1 class="title">Sessions</h1>
 
-
-<section class="collapsibleBox active sessionsFilterWrap">
+<section class="collapsibleBox sessionsFilterWrap active">
     <h2 class="boxHeader">FILTERS</h2>
-    <div class="boxContent filterContentWrap">
+    <div class="boxContent filterContentWrap" style="display: block;">
         <div class="filterOptionsWrap daysFilterWrap">
             <div class="labelWrap">
                 <span class="icon"></span><span class="label">Day : </span>
             </div>
             <div class="optionsWrap">
-                <ul id="sessionDaysCheckboxList">
-                    <li class="showAll selected"><span class="checkbox"></span><span class="label">Show all</span></li>
-                    <li class="saturday"><span class="checkbox"></span><span class="label">Saturday</span></li>
-                    <li class="sunday"><span class="checkbox"></span><span class="label">Sunday</span></li>
+                <ul ng-repeat="sessionDayOfWeek in vm.sessionDayOfWeeks"  id="sessionDaysCheckboxList">
+
+                    <!--<li class="showAll selected"><span class="checkbox"></span><span class="label">Show all</span></li>-->
+                    <li class="{{ ::sessionDayOfWeek.localClass }} selected"><span class="checkbox"></span><span class="label">{{ ::sessionDayOfWeek.dayOfWeek }}</span></li>
+
+
+
+
+
+
+                    <!--<li class="saturday selected"><span class="checkbox"></span><span class="label">Saturday</span></li>-->
+                    <!--<li class="sunday selected"><span class="checkbox"></span><span class="label">Sunday</span></li>-->
                 </ul>
             </div>
         </div>
@@ -22,46 +29,38 @@
                 <span class="icon"></span><span class="label">Time : </span>
             </div>
             <div class="optionsWrap">
-                @{
-                var previousDay = "";
-                var sessionDayTimeCount = Model.SessionTimeResults.Count - 1;
-                var i = 0;
-                }
-
-                @foreach (var timeResult in Model.SessionTimeResults)
-                {
 
 
-                if (previousDay != timeResult.StartTimeFriendlyDay)
-                {
-                previousDay = timeResult.StartTimeFriendlyDay;
-                @:<div class="timeOption @timeResult.StartTimeFriendlyDay">
-                <div class="dayLabel"><span class="icon"></span><span class="label">@(@timeResult.StartTimeFriendlyDay): </span></div>
-                @:<div class="timesWrap">
-                @:<ul>
-
-                }
-                <li><span class="checkbox"></span><span class="label">@(timeResult.StartTimeFriendlyTime)</span></li>
-
-                if (i == sessionDayTimeCount || Model.SessionTimeResults[i + 1].StartTimeFriendlyDay != previousDay)
-                {
-                @:</ul>
-                @:</div>
-                @:</div>
-
-                }
-
-                if (i <= sessionDayTimeCount)
-                {
-                i++;
-                }
-
-                }
+                <div class="timeOption Saturday">
+                    <div class="dayLabel"><span class="icon"></span><span class="label">Saturday: </span></div>
+                    <div class="timesWrap">
+                        <ul>
+                            <li class="selected"><span class="checkbox"></span><span class="label">9:45 AM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">11:15 AM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">1:45 PM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">3:30 PM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">5:00 PM </span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeOption Sunday">
+                    <div class="dayLabel"><span class="icon"></span><span class="label">Sunday: </span></div>
+                    <div class="timesWrap">
+                        <ul>
+                            <li class="selected"><span class="checkbox"></span><span class="label">9:15 AM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">10:45 AM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">1:15 PM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">2:45 PM </span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
-}
+
+
+
 
 
 <div class="toolbarBg">

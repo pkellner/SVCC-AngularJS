@@ -6,13 +6,12 @@
         .module('svccApp')
         .controller('SessionsController', SessionsController);
 
-
-
-    function SessionsController(sessions) {
+    function SessionsController(sessions,sessionDayOfWeeks) {
         var vm = this;
         vm.sessions = sessions;
+        vm.sessionDayOfWeeks = sessionDayOfWeeks;
     }
 
-    SessionsController.$inject = ['sessions'];
+    SessionsController.$inject = ['sessions','sessionDayOfWeeks'];
 
 }());

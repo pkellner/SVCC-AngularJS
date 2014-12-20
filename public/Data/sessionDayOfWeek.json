@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "dayOfWeek": "Show All",
+    "localClass": "showAll"
+  },
+  {
+    "id": 2,
+    "dayOfWeek": "Monday",
+    "localClass": "monday"
+  },
+  {
+    "id": 3,
+    "dayOfWeek": "Tuesday",
+    "localClass": "tuesday"
+  },
+  {
+    "id": 4,
+    "dayOfWeek": "Wednesday",
+    "localClass": "wednesday"
+  },
+  {
+    "id": 5,
+    "dayOfWeek": "Thursday",
+    "localClass": "thursday"
+  }
+]
