@@ -6,38 +6,46 @@
         'ui.router'
     ]);
 
+
     app.config(['$stateProvider', '$urlRouterProvider',
 
         function ($stateProvider, $urlRouterProvider,$q,$timeout) {
             $urlRouterProvider.otherwise('/');
 
             $stateProvider
-                .state('init', {
+                .state('home', {
                     url: '/',
-                    template: '<p>initialization</p>',
-                    controller: 'InitController as vm'
+                    template: '<p>HOME HERE</p>',
+                    controller: 'HomeController as vm'
                 }).
-                state('ready', {
+                state('about', {
                     url: '/about',
-                    template:   '<p>ready</p>',
-                    controller: 'ReadyController as vm',
-
+                    template:   '<p ui-view="">...loading...</p>',  //'index4template.html',
+                    controller: function($state){ $state.go("about.child"); },
+                    //controller: 'AboutController as vm',
+                }).
+                state('about.child', {
+                    template:   '<p>about here title: {{vm.title}}</p>',  //'index4template.html',
+                    controller: 'AboutController as vm',
                     resolve: {
-                        app: function ($q, $timeout) {
-                            var defer = $q.defer;
-                            // this will be http that gets init data
-                            $timeout(function () {
-                                console.log('timeout completed')
-                                defer.resolve();
-                            }, 3000);
-                            return defer.promise;
+                        title: function($timeout){
+                            return $timeout(function(){
+                                    return 'from title function';
+                                }, 2500
+                            );
                         }
                     }
                 });
         }]);
 
 
-    /*-----------------------------------------*/
+    var injectParamsAbout = ['title'];
+    var AboutController = function (title) {
+        var vm = this;
+        vm.title = title;
+    };
+    AboutController.$inject = injectParamsAbout;
+    angular.module('svccApp').controller('AboutController', AboutController);
 
     var injectParamsHome = [];
     var HomeController = function () {
@@ -45,46 +53,6 @@
     HomeController.$inject = injectParamsHome;
     angular.module('svccApp').controller('HomeController', HomeController);
 
-
-    var injectParamsAbout = ['title'];
-    var AboutController = function (title) {
-    };
-    AboutController.$inject = injectParamsAbout;
-    angular.module('svccApp').controller('AboutController', AboutController);
-
-    /*-----------------------------------------*/
-
-    var injectParamsInit = [];
-    var InitController = function () {
-
-
-
-    };
-    HomeController.$inject = injectParamsInit;
-    angular.module('svccApp').controller('InitController', InitController);
-
-
-
-    var injectParamsReady = ['$urlRouter'];
-    var ReadyController = function ($stateProvider) {
-
-        debugger;
-        $stateProvider
-            .state('home', {
-                url: '/',
-                template: '<p>HOME HERE</p>',
-                controller: 'HomeController as vm'
-            }).
-            state('about', {
-                url: '/about',
-                template:   '<p>about controller</p>',  //'index4template.html',
-                controller: 'AboutController as vm'
-            });
-    };
-    ReadyController.$inject = injectParamsReady;
-    angular.module('svccApp').controller('ReadyController', ReadyController);
-
-    /*-----------------------------------------*/
 
 
 }());

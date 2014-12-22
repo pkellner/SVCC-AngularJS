@@ -3,49 +3,51 @@
 
 
     var app = angular.module('svccApp', [
-        'ui.router'
+        'ui.router', 'ui.router.stateHelper',
     ]);
 
 
-    app.config(['$stateProvider', '$urlRouterProvider',
-
-        function ($stateProvider, $urlRouterProvider,$q,$timeout) {
-            $urlRouterProvider.otherwise('/');
-
-            $stateProvider
-                .state('home', {
-                    url: '/',
-                    template: '<p>HOME HERE</p>',
-                    controller: 'HomeController as vm'
-                }).
-                state('about', {
-                    url: '/about',
-                    template:   '<p>about here title: {{vm.title}}</p>',  //'index4template.html',
-                    controller: 'AboutController as vm',
-
+    app.config(function (stateHelperProvider) {
+        stateHelperProvider.state({
+            name: 'root',
+            template: '<p>loading...</p>',
+            controller: function($state){ $state.go("svcc"); },
+            children: [
+                {
+                    name: 'svcc',
+                    template: '<p>svcc</p>',
                     resolve: {
-                        title: function(){
-                            return 'from title function';
+                        title: function($timeout){
+                            return $timeout(function(){
+                                    return 'from title function';
+                                }
+                                , 2500 // wait 2,5 second - and then replace ...loading...
+                            );
                         }
                     }
-                });
-        }]);
+                },
+                {
+                    name: 'codestars',
+                    template: '<p>codestars</p>'
+                }
+            ]
+        });
+    });
 
 
-    var injectParamsAbout = ['title'];
-    var AboutController = function (title) {
-        var vm = this;
-        vm.title = title;
-    };
-    AboutController.$inject = injectParamsAbout;
-    angular.module('svccApp').controller('AboutController', AboutController);
+    //var injectParamsAbout = ['title'];
+    //var AboutController = function (title) {
+    //    var vm = this;
+    //    vm.title = title;
+    //};
+    //AboutController.$inject = injectParamsAbout;
+    //angular.module('svccApp').controller('AboutController', AboutController);
 
-    var injectParamsHome = [];
-    var HomeController = function () {
-    };
-    HomeController.$inject = injectParamsHome;
-    angular.module('svccApp').controller('HomeController', HomeController);
-
+    //var injectParamsHome = [];
+    //var BaseController = function () {
+    //};
+    //BaseController.$inject = injectParamsHome;
+    //angular.module('svccApp').controller('BaseController', BaseController);
 
 
 }());
