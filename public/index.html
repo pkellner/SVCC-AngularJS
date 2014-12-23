@@ -24,17 +24,8 @@
     <!--<script src="Content/JavaScript/Impromptu/jquery-impromptu.min.js"></script>-->
 
 
-
-
     <!--<script src="Content/JavaScript/tappize/tappize.min.js"></script>-->
     <!--<script src="Content/JavaScript/main-svcc.js"></script>-->
-
-
-
-
-
-
-
 
 
     <script src="vendor/angular/angular.js"></script>
@@ -43,11 +34,11 @@
     <script src="vendor/angular-resource/angular-resource.js"></script>
 
     <!-- angular-ui -->
-    <script src="vendor/angular-ui-router/release/angular-ui-router.js" ></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
 
     <!-- pusher libraries -->
-    <script src="app/services/pusher.js" ></script>
-    <script src="app/services/pusher-angular.js" ></script>
+    <script src="app/services/pusher.js"></script>
+    <script src="app/services/pusher-angular.js"></script>
 
 
     <script src="app/app.js"></script>
@@ -60,7 +51,6 @@
 
     <!--basics-->
     <!--<script src="app/app.constants.js"></script>-->
-
 
 
     <!--Speakers-->
@@ -79,13 +69,13 @@
     <script src="app/sessions/session-level.filter.js"></script>
 
     <!--Account-->
+    <script src="app/account/account-info.service.js"></script>
     <script src="app/account/registration.controller.js"></script>
-     <script src="app/account/login.controller.js"></script>
+    <script src="app/account/login.controller.js"></script>
     <script src="app/account/logout.controller.js"></script>
 
 
     <script src="app/general/general.controller.js"></script>
-
 
 
     <!-- endbuild -->
@@ -103,7 +93,7 @@
 <div id="wrapper">
 
     <!--<div id="initializing">-->
-        <!--<h2>Initializing...</h2>-->
+    <!--<h2>Initializing...</h2>-->
     <!--</div>-->
 
     <header id="header" class="mainHeader ">
@@ -132,9 +122,10 @@
 
             <div class="userWrap">
                 <div class="loginForm">
-                    <span ng-show='!loginName || loginName.length == 0'   ><a ui-sref="login">LOGIN</a></span>
-                    <span ng-show='loginName && loginName.length != 0'   ><a ui-sref="logout">LOGOUT</a> {{ loginName }}</span>
-                    <span ng-show='!loginName || loginName.length == 0'   >| <a ui-sref="register" class="colorwhite">REGISTER</a></span>
+                    <span ng-show='!loginName || loginName.length == 0'><a ui-sref="login">LOGIN</a></span>
+                    <span ng-show='loginName && loginName.length != 0'><a
+                            ui-sref="logout">LOGOUT</a> {{ loginName }}</span>
+                    <span ng-show='!loginName || loginName.length == 0'>| <a ui-sref="register" class="colorwhite">REGISTER</a></span>
                 </div>
             </div>
 

@@ -10,68 +10,19 @@
     ]);
 
 
-    app.config(['$stateProvider', '$urlRouterProvider',
+
+    app.config(['$stateProvider','$urlRouterProvider',
 
         function ($stateProvider, $urlRouterProvider) {
-            //$urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/');
 
             $stateProvider
-
-                .state('svcc', {
-                    url: '/svcc',
-                    templateUrl: 'app/general/svcc.html',
-                    controller: function ($scope) {
-                    },
-                    resolve: {
-                        title: function ($timeout,$rootScope) {
-
-                            return $timeout(function () {
-
-                                    $rootScope.hideLoadingIcon = true;
-
-                                    return 'from title function';
-                                }
-                                , 1500 // wait 2,5 second - and then replace ...loading...
-                            );
-                        }
-                    }
-                })
-                .state('svcc.about', {
-                    //url: '/svcc/about',
-                    templateUrl: 'app/general/about.html',
-                    resolve: {
-                        title: function ($timeout) {
-                            return $timeout(function () {
-                                    return 'from title function';
-                                }
-                                , 500 // wait 2,5 second - and then replace ...loading...
-                            );
-                        }
-                    }
-                })
-                .state('svcc.home', {
-                    //url: '/svcc/home',
+                .state('home', {
+                    url: '/',
                     templateUrl: 'app/general/home.html',
-                    resolve: {
-                        title: function ($timeout) {
-                            return $timeout(function () {
-                                    return 'from title function';
-                                }
-                                , 500 // wait 2,5 second - and then replace ...loading...
-                            );
-                        }
-                    }
-                })
-
-
-                //.state('home', {
-                //    url: '/',
-                //    templateUrl: 'app/general/home.html',
-                //    controller: 'GeneralController as vm'
-                //}).
-
-
-                .state('register', {
+                    controller: 'GeneralController as vm'
+                }).
+                state('register', {
                     url: '/register',
                     templateUrl: 'app/account/registration.html',
                     controller: 'RegistrationController as vm'
@@ -86,11 +37,11 @@
                     templateUrl: 'app/general/home.html',
                     controller: 'LogoutController as vm'
                 }).
-                //state('about', {
-                //    url: '/about',
-                //    templateUrl: 'app/general/about.html',
-                //    controller: 'GeneralController as vm'
-                //}).
+                state('about', {
+                    url: '/about',
+                    templateUrl: 'app/general/about.html',
+                    controller: 'GeneralController as vm'
+                }).
 
                 // speakers
                 state('speakers', {
@@ -99,7 +50,7 @@
                     controller: 'SpeakersController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
-                        speakers: ['speakerResourceService', function (speakerResourceService) {
+                        speakers: ['speakerResourceService', function(speakerResourceService) {
                             return speakerResourceService.query().$promise;
                         }]
                     }
@@ -131,7 +82,7 @@
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
-                        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
+                        speaker: ['speakerResourceService', '$stateParams', function(speakerResourceService,$stateParams) {
                             return speakerResourceService.get({id: $stateParams.id}).$promise;
                         }]
                     }
@@ -144,7 +95,7 @@
                     controller: 'SpeakerDetailFeedbackController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
-                        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
+                        speaker: ['speakerResourceService', '$stateParams', function(speakerResourceService,$stateParams) {
                             return speakerResourceService.get({id: $stateParams.id}).$promise;
                         }]
                     }
@@ -170,7 +121,7 @@
                     controller: 'SessionDetailController as vm',
                     resolve: {
                         sessionResourceService: 'sessionResourceService',
-                        session: ['sessionResourceService', '$stateParams', function (sessionResourceService, $stateParams) {
+                        session: ['sessionResourceService', '$stateParams', function(sessionResourceService,$stateParams) {
                             return sessionResourceService.get({id: $stateParams.id}).$promise;
                         }]
                     }
@@ -181,11 +132,11 @@
                     controller: 'SessionsController as vm',
                     resolve: {
                         sessionResourceService: 'sessionResourceService',
-                        sessions: ['sessionResourceService', function (sessionResourceService) {
+                        sessions: ['sessionResourceService', function(sessionResourceService) {
                             return sessionResourceService.query().$promise;
                         }],
                         sessionDayOfWeekResourceService: 'sessionDayOfWeekResourceService',
-                        sessionDayOfWeeks: ['sessionDayOfWeekResourceService', function (sessionDayOfWeekResourceService) {
+                        sessionDayOfWeeks: ['sessionDayOfWeekResourceService', function(sessionDayOfWeekResourceService) {
                             return sessionDayOfWeekResourceService.query().$promise;
                         }]
                     }
@@ -195,38 +146,90 @@
 
         }]);
 
-    app.run(['$rootScope', function ($rootScope) {
+    app.run(['$rootScope', function($rootScope) {
 
 
         $rootScope.loginName = '';
 
-        //var initInjector = angular.injector(['ng']);
-        //var $http = initInjector.get('$http', '$rootScope');
-        //
-        ////console.log('fetchData called');
-        //return $http.post('/rpc/Account/isLoggedIn').then(function (response) {
-        //
-        //    console.log('username: ' + response.data.attendeeResults.username);
-        //
-        //    //$rootScope.loginName = response.data.attendeeResults.sessionGuid;
-        //    $rootScope.loginName = response.data.attendeeResults.username;
-        //    $rootScope.sessionGuid = response.data.attendeeResults.sessionGuid;
-        //    $rootScope.$apply();
-        //
-        //    //angular.module('svccApp').value('configData', angular.fromJson(response.data));
-        //
-        //
-        //    //svccApp.value('configData', angular.fromJson(response.data));
-        //
-        //
-        //}, function (errorResponse) {
-        //    console.log('error from isLoggedIn Post ' + errorResponse);
-        //
-        //    // Handle error case
-        //});
+        var initInjector = angular.injector(['ng']);
+        var $http = initInjector.get('$http','$rootScope');
+
+        //console.log('fetchData called');
+        return $http.post('/rpc/Account/isLoggedIn').then(function (response) {
+
+            console.log('username: ' + response.data.attendeeResults.username);
+
+            //$rootScope.loginName = response.data.attendeeResults.sessionGuid;
+            $rootScope.loginName = response.data.attendeeResults.username;
+            $rootScope.sessionGuid = response.data.attendeeResults.sessionGuid;
+            $rootScope.$apply();
+
+            //angular.module('svccApp').value('configData', angular.fromJson(response.data));
+
+
+
+            //svccApp.value('configData', angular.fromJson(response.data));
+
+
+        }, function (errorResponse) {
+            console.log('error from isLoggedIn Post ' + errorResponse);
+            // Handle error case
+        });
+
 
 
     }]);
+
+
+    // https://blog.mariusschulz.com/2014/10/22/asynchronously-bootstrapping-angularjs-applications-with-server-side-data
+
+
+    // for now I can not get bootstrapping working
+    //fetchData().then(bootstrapApplication);
+    //fetchData();
+
+    function fetchData() {
+
+
+        var initInjector = angular.injector(['ng']);
+        var $http = initInjector.get('$http','$rootScope');
+
+        //console.log('fetchData called');
+        return $http.post('/rpc/Account/isLoggedIn').then(function (response) {
+
+            console.log('error from isLoggedIn Post. length returned: ' + response.data.length);
+            angular.module('svccApp').value('configData', angular.fromJson(response.data));
+
+
+
+            //svccApp.value('configData', angular.fromJson(response.data));
+
+
+        }, function (errorResponse) {
+            console.log('error from isLoggedIn Post');
+            // Handle error case
+        });
+    }
+
+
+    function bootstrapApplication() {
+        angular.element(document).ready(function () {
+
+            //document.getElementById('svccApp').style.display = 'none';
+            console.log('bootstrapApplication called');
+            var appDiv = document.getElementById('svccApp');
+            angular.bootstrap(angular.element(appDiv), ['svccApp']);
+
+
+
+            //var appDiv = document.getElementById('svccApp');
+            //setTimeout(function () {
+            //    angular.bootstrap(angular.element(appDiv), ['svccApp']);
+            //    //document.getElementById('initializing').set
+            //    //console.log('angular started');
+            //}, 4000);
+        });
+    }
 
 
 }());

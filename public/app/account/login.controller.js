@@ -4,7 +4,7 @@
     var app = angular.module('svccApp');
 
     app.controller('LoginController', LoginController);
-    function LoginController($http,$window,$rootScope) {
+    function LoginController($http,$window,$rootScope,AccountInfoService) {
         var vm = this;
         vm.login = {};
 
@@ -18,6 +18,9 @@
             }).success(function(data,status,headers,config) {
                 $http.post('/rpc/Account/isLoggedIn').then(function (response) {
                     console.log('error from isLoggedIn Post. length returned: ' + response.data.length);
+
+                    AccountInfoService.setInfo(response.data);
+
                     angular.module('svccApp').value('configData', angular.fromJson(response.data));
                     $rootScope.loginName = response.data.attendeeResults.username;
                     $rootScope.sessionGuid = response.data.attendeeResults.sessionGuid;
@@ -30,7 +33,7 @@
 
         };
     }
-    LoginController.$inject = ['$http','$window','$rootScope'];
+    LoginController.$inject = ['$http','$window','$rootScope','AccountInfoService'];
 })();
 
 

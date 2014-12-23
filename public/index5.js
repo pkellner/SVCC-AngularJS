@@ -9,27 +9,28 @@
 
     app.config(['$stateProvider', '$urlRouterProvider',
 
-        function ($stateProvider, $urlRouterProvider,$q,$timeout) {
+        function ($stateProvider, $urlRouterProvider, $q, $timeout) {
             $urlRouterProvider.otherwise('/');
 
             $stateProvider
-                .state('home', {
-                    url: '/',
-                    template: '<p>HOME HERE</p>',
-                    controller: 'HomeController as vm'
-                }).
-                state('about', {
+                .state('about', {
                     url: '/about',
-                    template:   '<p ui-view="">...loading...</p>',  //'index4template.html',
-                    controller: function($state){ $state.go("about.child"); },
-                    //controller: 'AboutController as vm',
-                }).
-                state('about.child', {
-                    template:   '<p>about here title: {{vm.title}}</p>',  //'index4template.html',
+                    template: '<p ui-view="">...loading...</p>',
+                    controller: function ($state) {
+
+
+
+
+
+                        $state.go("about.child");
+                    }
+                })
+                .state('about.child', {
+                    template: '<p>about here title: {{vm.title}}</p>',  //'index4template.html',
                     controller: 'AboutController as vm',
                     resolve: {
-                        title: function($timeout){
-                            return $timeout(function(){
+                        title: function ($timeout) {
+                            return $timeout(function () {
                                     return 'from title function';
                                 }, 2500
                             );
@@ -52,7 +53,6 @@
     };
     HomeController.$inject = injectParamsHome;
     angular.module('svccApp').controller('HomeController', HomeController);
-
 
 
 }());

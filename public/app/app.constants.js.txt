@@ -1,9 +1,0 @@
-(function() {
-    'use strict';
-
-    angular
-        .module('svccApp')
-        .constant('testconstant1', 101)
-        .constant('testconstant2', 102);
-
-})();
