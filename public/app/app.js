@@ -6,9 +6,9 @@
         'ngMessages',
         'ngResource',
         'ui.router',
-        'pusher-angular'
+        'pusher-angular',
+        'svccApp'
     ]);
-
 
     app.config(['$stateProvider', '$urlRouterProvider',
 
@@ -18,8 +18,6 @@
             $stateProvider
 
                 /*----------------svcc-----------*/
-
-
                 .state('svcc', {
                     url: '',
                     templateUrl: 'app/svcc/miscpages/svcc.html',
@@ -49,40 +47,10 @@
                     controller: 'LogoutController as vm'
                 }).
 
-                /*----------------angu-----------*/
-
-                state('angu', {
-                    url: '',
-                    templateUrl: 'app/angu/miscpages/angu.html',
-                    controller: function ($scope) {
-                    }
-                }).
-                state('angu.about', {
-                    url: '/about',
-                    templateUrl: 'app/angu/miscpages/about.html'
-                }).
-                state('angu.home', {
-                    templateUrl: 'app/angu/miscpages/home.html'
-                }).
-
-
-                //.state('home', {
-                //    url: '/',
-                //    templateUrl: 'app/general/home.html',
-                //    controller: 'GeneralController as vm'
-                //}).
-
-
-                //state('about', {
-                //    url: '/about',
-                //    templateUrl: 'app/general/about.html',
-                //    controller: 'GeneralController as vm'
-                //}).
-
                 // speakers
-                state('speakers', {
+                state('svcc.speakers', {
                     url: '/speakers',
-                    templateUrl: 'app/speakers/speakers.html',
+                    templateUrl: 'app/svcc/speakers/speakers.html',
                     controller: 'SpeakersController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
@@ -105,37 +73,37 @@
                 //}).
 
 
-                state('speaker', {
-                    abstract: true,
-                    url: '/speaker',
-                    //templateUrl: 'app/speakers/speaker-detail.html'
-                    template: '<div ui-view></div>'
-                }).
-                state('speaker.id', {
-                    parent: 'speaker',
-                    url: '/:id',
-                    templateUrl: 'app/speakers/speaker-detail.html',
-                    controller: 'SpeakerDetailController as vm',
-                    resolve: {
-                        speakerResourceService: 'speakerResourceService',
-                        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
-                            return speakerResourceService.get({id: $stateParams.id}).$promise;
-                        }]
-                    }
-                }).
+                //state('svcc.speakers', {
+                //    abstract: true,
+                //    url: '/speakers',
+                //    templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                //    template: '<div ui-view></div>'
+                //}).
+                //state('svcc.speaker.id', {
+                //    parent: 'speaker',
+                //    url: '/:id',
+                //    templateUrl: 'app/speakers/speaker-detail.html',
+                //    controller: 'SpeakerDetailController as vm',
+                //    resolve: {
+                //        speakerResourceService: 'speakerResourceService',
+                //        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
+                //            return speakerResourceService.get({id: $stateParams.id}).$promise;
+                //        }]
+                //    }
+                //}).
 
-                state('speaker.idfeedback', {
-                    parent: 'speaker',
-                    url: '/:id/feedback',
-                    templateUrl: 'app/speakers/speaker-detail-feedback.html',
-                    controller: 'SpeakerDetailFeedbackController as vm',
-                    resolve: {
-                        speakerResourceService: 'speakerResourceService',
-                        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
-                            return speakerResourceService.get({id: $stateParams.id}).$promise;
-                        }]
-                    }
-                }).
+                //state('speaker.idfeedback', {
+                //    parent: 'speaker',
+                //    url: '/:id/feedback',
+                //    templateUrl: 'app/speakers/speaker-detail-feedback.html',
+                //    controller: 'SpeakerDetailFeedbackController as vm',
+                //    resolve: {
+                //        speakerResourceService: 'speakerResourceService',
+                //        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
+                //            return speakerResourceService.get({id: $stateParams.id}).$promise;
+                //        }]
+                //    }
+                //}).
 
                 //state('speaker.feedback', {
                 //    parent: '/speaker',
@@ -176,6 +144,23 @@
                             return sessionDayOfWeekResourceService.query().$promise;
                         }]
                     }
+                }).
+
+
+                /*----------------angu-----------*/
+
+                state('angu', {
+                    url: '',
+                    templateUrl: 'app/angu/miscpages/angu.html',
+                    controller: function ($scope) {
+                    }
+                }).
+                state('angu.about', {
+                    url: '/about',
+                    templateUrl: 'app/angu/miscpages/about.html'
+                }).
+                state('angu.home', {
+                    templateUrl: 'app/angu/miscpages/home.html'
                 });
 
             //$locationProvider.html5Mode(true);

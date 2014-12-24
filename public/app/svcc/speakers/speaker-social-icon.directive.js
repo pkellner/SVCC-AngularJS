@@ -6,7 +6,7 @@
     function speakerSocialIconDirective() {
         return {
             restrict: 'EA',
-            templateUrl: 'app/speakers/speaker-social-icon.directive.html',
+            templateUrl: 'app/svcc/speakers/speaker-social-icon.directive.html',
             scope: {
                 speaker: '='
             }
