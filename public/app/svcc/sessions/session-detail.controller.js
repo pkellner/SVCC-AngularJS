@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('baseApp')
+    angular.module('svccApp')
         .controller('SessionDetailController', SessionDetailController);
 
     function SessionDetailController(session) {

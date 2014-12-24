@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('baseApp')
+    angular.module('svccApp')
         .controller('SpeakerDetailFeedbackController', SpeakerDetailFeedbackController);
 
     function SpeakerDetailFeedbackController($scope,$rootScope,speaker, $http,$pusher) {

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('baseApp')
+    angular.module('svccApp')
         .filter('sessionLevels', function sessionLevelFilter() {
             return function (sessionLevel) {
                 switch (sessionLevel) {

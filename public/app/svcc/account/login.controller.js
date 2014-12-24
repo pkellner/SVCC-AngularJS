@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module('baseApp');
+    var app = angular.module('svccApp');
 
     app.controller('LoginController', LoginController);
     function LoginController($http,$window,$rootScope,AccountInfoService) {

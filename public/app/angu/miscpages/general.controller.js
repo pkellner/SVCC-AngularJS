@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('baseApp')
+    angular.module('anguApp',[])
         .controller('GeneralControllerAngu', GeneralController);
 
     function GeneralController() {

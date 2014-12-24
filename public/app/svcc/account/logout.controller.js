@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module('baseApp');
+    var app = angular.module('svccApp');
 
     app.controller('LogoutController', LogoutController);
     function LogoutController($http, $window, $rootScope) {

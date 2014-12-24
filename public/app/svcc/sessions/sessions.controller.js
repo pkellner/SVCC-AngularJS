@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('baseApp')
+        .module('svccApp')
         .controller('SessionsController', SessionsController);
 
     function SessionsController(sessions,sessionDayOfWeeks) {

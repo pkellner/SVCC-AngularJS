@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('baseApp')
+        .module('svccApp')
         .controller('SpeakersController', SpeakersController);
 
 

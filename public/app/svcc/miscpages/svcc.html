@@ -31,10 +31,10 @@
 
             <div class="userWrap">
                 <div class="loginForm">
-                    <span ng-show='!loginName || loginName.length == 0'><a ui-sref="login">LOGIN</a></span>
+                    <span ng-show='!loginName || loginName.length == 0'><a ui-sref="svcc.login">LOGIN</a></span>
                     <span ng-show='loginName && loginName.length != 0'><a
-                            ui-sref="logout">LOGOUT</a> {{ loginName }}</span>
-                    <span ng-show='!loginName || loginName.length == 0'>| <a ui-sref="register" class="colorwhite">REGISTER</a></span>
+                            ui-sref="svcc.logout">LOGOUT</a> {{ loginName }}</span>
+                    <span ng-show='!loginName || loginName.length == 0'>| <a ui-sref="svcc.register" class="colorwhite">REGISTER</a></span>
                 </div>
             </div>
 
@@ -47,11 +47,11 @@
 
 
                     <li class="menuListItem sessions">
-                        <a ui-sref="sessions" class="menuItemLink">Sessions</a>
+                        <a ui-sref="svcc.sessions" class="menuItemLink">Sessions</a>
                     </li>
 
                     <li class="menuListItem program">
-                        <a ui-sref="speakers" class="menuItemLink">Presenters</a>
+                        <a ui-sref="svcc.speakers" class="menuItemLink">Presenters</a>
                     </li>
 
                     <li class="menuListItem jobs">

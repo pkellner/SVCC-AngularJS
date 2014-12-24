@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('baseApp')
+    angular.module('svccApp')
         .factory('speakerResourceService',['$resource',
         function ($resource) {
             return $resource('/rest/presenter/arrayonly/:id');

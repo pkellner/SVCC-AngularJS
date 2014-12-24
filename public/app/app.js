@@ -12,10 +12,13 @@
 
     app.config(['$stateProvider', '$urlRouterProvider',
 
-        function ($stateProvider, $urlRouterProvider,$rootScope) {
+        function ($stateProvider, $urlRouterProvider, $rootScope) {
             //$urlRouterProvider.otherwise('/');
 
             $stateProvider
+
+                /*----------------svcc-----------*/
+
 
                 .state('svcc', {
                     url: '',
@@ -30,33 +33,37 @@
                 .state('svcc.home', {
                     templateUrl: 'app/svcc/miscpages/home.html'
                 })
+                .state('svcc.register', {
+                    url: '/register',
+                    templateUrl: 'app/svcc/account/registration.html',
+                    controller: 'RegistrationController as vm'
+                }).
+                state('svcc.login', {
+                    url: '/login',
+                    templateUrl: 'app/svcc/account/login.html',
+                    controller: 'LoginController as vm'
+                }).
+                state('svcc.logout', {
+                    url: '/logout',
+                    templateUrl: 'app/svcc/general/home.html',
+                    controller: 'LogoutController as vm'
+                }).
 
+                /*----------------angu-----------*/
 
-
-                .state('angu', {
+                state('angu', {
                     url: '',
                     templateUrl: 'app/angu/miscpages/angu.html',
                     controller: function ($scope) {
                     }
-                })
-                .state('angu.about', {
+                }).
+                state('angu.about', {
                     url: '/about',
                     templateUrl: 'app/angu/miscpages/about.html'
-                })
-                .state('angu.home', {
+                }).
+                state('angu.home', {
                     templateUrl: 'app/angu/miscpages/home.html'
-                })
-
-
-
-
-
-
-
-
-
-
-
+                }).
 
 
                 //.state('home', {
@@ -66,21 +73,6 @@
                 //}).
 
 
-                .state('register', {
-                    url: '/register',
-                    templateUrl: 'app/account/registration.html',
-                    controller: 'RegistrationController as vm'
-                }).
-                state('login', {
-                    url: '/login',
-                    templateUrl: 'app/account/login.html',
-                    controller: 'LoginController as vm'
-                }).
-                state('logout', {
-                    url: '/logout',
-                    templateUrl: 'app/general/home.html',
-                    controller: 'LogoutController as vm'
-                }).
                 //state('about', {
                 //    url: '/about',
                 //    templateUrl: 'app/general/about.html',
