@@ -60,6 +60,32 @@
                     }
                 }).
 
+                state('svcc.speakerid', {
+                    //parent: 'svcc.speakers',
+                    url: '/speaker/:id',
+                    templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                    controller: 'SpeakerDetailController as vm',
+                    resolve: {
+                        speakerResourceService: 'speakerResourceService',
+                        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
+                            return speakerResourceService.get({id: $stateParams.id}).$promise;
+                        }]
+                    }
+                }).
+
+                //state('svcc.speakerid', {
+                //    parent: 'svcc.speaker',
+                //    url: '/:id',
+                //    templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                //    controller: 'SpeakerDetailController as vm',
+                //    resolve: {
+                //        speakerResourceService: 'speakerResourceService',
+                //        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
+                //            return speakerResourceService.get({id: $stateParams.id}).$promise;
+                //        }]
+                //    }
+                //}).
+
                 //state('speaker', {
                 //    url: '/speaker/:id',
                 //    templateUrl: 'app/speakers/speaker-detail.html',

@@ -13,6 +13,7 @@
         vm.speakers = speakers;
     }
 
+    // ['speakers'] refers to parameter speakers above which comes from resolve in app.js
     SpeakersController.$inject = ['speakers'];
 
 }());
