@@ -12,56 +12,51 @@
 
     app.config(['$stateProvider', '$urlRouterProvider',
 
-        function ($stateProvider, $urlRouterProvider) {
+        function ($stateProvider, $urlRouterProvider,$rootScope) {
             //$urlRouterProvider.otherwise('/');
 
             $stateProvider
 
                 .state('svcc', {
-                    url: '/svcc',
-                    templateUrl: 'app/general/svcc.html',
+                    url: '',
+                    templateUrl: 'app/svcc/miscpages/svcc.html',
                     controller: function ($scope) {
-                    },
-                    resolve: {
-                        title: function ($timeout,$rootScope) {
-
-                            return $timeout(function () {
-
-                                    $rootScope.hideLoadingIcon = true;
-
-                                    return 'from title function';
-                                }
-                                , 1500 // wait 2,5 second - and then replace ...loading...
-                            );
-                        }
                     }
                 })
                 .state('svcc.about', {
-                    //url: '/svcc/about',
-                    templateUrl: 'app/general/about.html',
-                    resolve: {
-                        title: function ($timeout) {
-                            return $timeout(function () {
-                                    return 'from title function';
-                                }
-                                , 500 // wait 2,5 second - and then replace ...loading...
-                            );
-                        }
-                    }
+                    url: '/about',
+                    templateUrl: 'app/svcc/miscpages/about.html'
                 })
                 .state('svcc.home', {
-                    //url: '/svcc/home',
-                    templateUrl: 'app/general/home.html',
-                    resolve: {
-                        title: function ($timeout) {
-                            return $timeout(function () {
-                                    return 'from title function';
-                                }
-                                , 500 // wait 2,5 second - and then replace ...loading...
-                            );
-                        }
+                    templateUrl: 'app/svcc/miscpages/home.html'
+                })
+
+
+
+                .state('angu', {
+                    url: '',
+                    templateUrl: 'app/angu/miscpages/angu.html',
+                    controller: function ($scope) {
                     }
                 })
+                .state('angu.about', {
+                    url: '/about',
+                    templateUrl: 'app/angu/miscpages/about.html'
+                })
+                .state('angu.home', {
+                    templateUrl: 'app/angu/miscpages/home.html'
+                })
+
+
+
+
+
+
+
+
+
+
+
 
 
                 //.state('home', {

@@ -37,29 +37,30 @@
 
 
     <!--Speakers-->
-    <script src="app/speakers/speaker-resource.service.js"></script>
-    <script src="app/speakers/speaker-social-icon.directive.js"></script>
-    <script src="app/speakers/speakers.controller.js"></script>
-    <script src="app/speakers/speaker-detail.controller.js"></script>
-    <script src="app/speakers/speaker-detail-feedback.controller.js"></script>
+    <script src="app/svcc/speakers/speaker-resource.service.js"></script>
+    <script src="app/svcc/speakers/speaker-social-icon.directive.js"></script>
+    <script src="app/svcc/speakers/speakers.controller.js"></script>
+    <script src="app/svcc/speakers/speaker-detail.controller.js"></script>
+    <script src="app/svcc/speakers/speaker-detail-feedback.controller.js"></script>
 
 
     <!--Sessions-->
-    <script src="app/sessions/sessions.controller.js"></script>
-    <script src="app/sessions/session-detail.controller.js"></script>
-    <script src="app/sessions/session-resource.service.js"></script>
-    <script src="app/sessions/session-dayofweek-resource.service.js"></script>
-    <script src="app/sessions/session-level.filter.js"></script>
+    <script src="app/svcc/sessions/sessions.controller.js"></script>
+    <script src="app/svcc/sessions/session-detail.controller.js"></script>
+    <script src="app/svcc/sessions/session-resource.service.js"></script>
+    <script src="app/svcc/sessions/session-dayofweek-resource.service.js"></script>
+    <script src="app/svcc/sessions/session-level.filter.js"></script>
 
     <!--Account-->
-    <script src="app/account/account-info.service.js"></script>
-    <script src="app/account/registration.controller.js"></script>
-    <script src="app/account/login.controller.js"></script>
-    <script src="app/account/logout.controller.js"></script>
+    <script src="app/general/account-info.service.js"></script>
+    <script src="app/svcc/account/registration.controller.js"></script>
+    <script src="app/svcc/account/login.controller.js"></script>
+    <script src="app/svcc/account/logout.controller.js"></script>
 
 
-    <script src="app/general/general.controller.js"></script>
-    <script src="app/general/svcc.controller.js"></script>
+    <script src="app/svcc/miscpages/general.controller.js"></script>
+    <script src="app/general/multihome.controller.js"></script>
+    <script src="app/svcc/miscpages/svcc.controller.js"></script>
 
 
     <!-- endbuild -->
@@ -68,17 +69,32 @@
 
     <link href="Content/Styles/site-svcc-relative-dev.css" rel="stylesheet"/>
 
+    <style>
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('Content/Images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
+        }
+    </style>
+
 
 </head>
 
-<body ng-app="svccApp">
+<body ng-app="svccApp" >
 
-    <div ng-hide="hideLoadingIcon">
-        <p>Loading... ...</p>
-    </div>
-    <div ng-controller="SvccController">
-        <div ui-view></div>
-    </div>
+<div class="loader"  ng-show="showLoadingIcon && showLoadingIcon===true"></div>
+
+<!--<div ng-controller="SvccController">-->
+    <!--<div ui-view></div>-->
+<!--</div>-->
+
+<div ng-controller="MultihomeController">
+    <div ui-view></div>
+</div>
 
 
 </body>

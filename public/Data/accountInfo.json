@@ -1,6 +1,6 @@
-{
+[{
   "returnStatus": "OK",
-  "codeCampType": "angu",
+  "codeCampType": "svcc",
   "registrationWords": "To attend Angular University you <b>must be registered and have a confirmed ticket</b>.",
   "registrationClosed": false,
   "isAdmin": false,
@@ -88,4 +88,4 @@
     "notificationDestinationEmail": true,
     "id": 11420
   }
-}
+}]
