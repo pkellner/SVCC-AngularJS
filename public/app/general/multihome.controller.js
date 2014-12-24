@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('svccApp')
+    angular.module('baseApp')
         .controller('MultihomeController', MultihomeController);
 
     function MultihomeController($state, AccountInfo, $rootScope, $timeout) {

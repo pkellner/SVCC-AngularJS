@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('svccApp').
+    angular.module('baseApp').
         factory('AccountInfo', AccountInfoResourceService);
 
     function AccountInfoResourceService($resource) {
