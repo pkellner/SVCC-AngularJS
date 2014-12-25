@@ -4,15 +4,19 @@
     angular.module('baseApp')
         .controller('MultihomeController', MultihomeController);
 
-    function MultihomeController($state, AccountInfo, $rootScope, $timeout) {
+    function MultihomeController($state, accountInfoService, $rootScope, $timeout) {
 
+        //debugger;
 
-        AccountInfo.query().$promise.then(
+        accountInfoService.query().$promise.then(
             function (data) {
                 if (data && data.length && data.length == 1 && data[0].codeCampType) {
                     var codeCampType = data[0].codeCampType;
                     $rootScope.configData = data[0];
                     $timeout(function () {
+
+                            debugger;
+
                             $rootScope.hideLoadingIcon = true;
                             if (codeCampType === 'svcc') {
                                 $state.transitionTo('svcc.home');
@@ -33,6 +37,6 @@
 
     }
 
-    MultihomeController.$inject = ['$state', 'AccountInfo', '$rootScope', '$timeout'];
+    MultihomeController.$inject = ['$state', 'accountInfoService', '$rootScope', '$timeout'];
 
 }());
