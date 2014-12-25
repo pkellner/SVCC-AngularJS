@@ -15,8 +15,6 @@
                     $rootScope.configData = data[0];
                     $timeout(function () {
 
-                            debugger;
-
                             $rootScope.hideLoadingIcon = true;
                             if (codeCampType === 'svcc') {
                                 $state.transitionTo('svcc.home');

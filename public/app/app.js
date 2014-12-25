@@ -242,21 +242,20 @@
             return [200, speakers, {}];
         });
 
-        //var editingRegex = new RegExp(speakerUrl + "/[0-9][0-9]*", '');
+        var editingRegex = new RegExp(speakerUrl + "/[0-9][0-9]*", '');
 
-        //$httpBackend.whenGET(editingRegex).respond(function (method, url, data) {
-        //
-        //    debugger;
-        //    var speaker = {"id": 0};
-        //    var parameters = url.split('/');
-        //    var length = parameters.length;
-        //    var id = parameters[length - 1];
-        //
-        //    if (id > 0) {
-        //
-        //    }
-        //    return [200, product, {}];
-        //}
+        $httpBackend.whenGET(editingRegex).respond(function (method, url, data) {
+
+            var speaker = {"id": 0};
+            var parameters = url.split('/');
+            var length = parameters.length;
+            var id = parameters[length - 1];
+
+            if (id > 0) {
+                speaker = speakerDataModelService.findOne(id);
+            }
+            return [200, speaker, {}];
+        });
 
 
 

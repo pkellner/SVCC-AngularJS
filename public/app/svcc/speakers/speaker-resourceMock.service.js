@@ -9,7 +9,7 @@
 
     app.run(function ($httpBackend) {
 
-        debugger;
+        //debugger;
 
         var speakers = [
             {
