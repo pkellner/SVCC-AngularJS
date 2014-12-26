@@ -14,10 +14,16 @@
 
     ]);
 
-    app.config(['$stateProvider', '$urlRouterProvider',
+    app.config(['$stateProvider', '$urlRouterProvider','$locationProvider',
 
-        function ($stateProvider, $urlRouterProvider, $rootScope) {
+        function ($stateProvider, $urlRouterProvider,$locationProvider) {
+
+            //http://www.algoworks.com/blog/a-developers-guide-to-perform-seo-on-angularjs-web-apps/
+            //https://prerender.io/js-seo/angularjs-seo-get-your-site-indexed-and-to-the-top-of-the-search-results/
+            //$locationProvider.hashPrefix('!');
+            //$locationProvider.html5Mode(true);
             //$urlRouterProvider.otherwise('/');
+
 
             $stateProvider
 
@@ -67,6 +73,64 @@
                 state('svcc.speakerid', {
                     //parent: 'svcc.speakers',
                     url: '/speaker/:id',
+                    templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                    controller: 'SpeakerDetailController as vm',
+                    resolve: {
+                        speakerResourceService: 'speakerResourceService',
+                        speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelUrlService',
+                            function (speakerResourceService, $stateParams, speakerDataModelUrlService) {
+                                debugger;
+                                var presenterId = 0;
+                                if (!isNaN($stateParams.id)) {
+                                    presenterId = $stateParams.id;
+                                } else {
+                                    // first-last-presenterId
+                                    var speakerUrls = speakerDataModelUrlService.getData();
+                                    var urlValue = $stateParam.id.toLowerCase();
+                                    var pos1 = speakerUrls.indexOf(urlValue);
+                                    if (pos1 !== -1) {
+                                        debugger;
+                                        var speaker = speakerUrls[pos1];
+                                        presenterId = speaker.presenterId;
+                                    }
+                                }
+
+
+                                return speakerResourceService.get({id: presenterId}).$promise;
+
+                            }]
+                    }
+                }).
+
+                state('svcc.speakeryearname', {
+                    //parent: 'svcc.speakers',
+                    url: '/speaker/:year/:name',
+                    templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                    controller: 'SpeakerDetailController as vm',
+                    resolve: {
+                        speakerResourceService: 'speakerResourceService',
+                        speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelUrlService',
+                            function (speakerResourceService, $stateParams, speakerDataModelUrlService) {
+                                debugger;
+                                var presenterId = 0;
+                                var urlString = $stateParams.year + '/' + $stateParams.name.toLowerCase();
+                                var speakerUrls = speakerDataModelUrlService.getData();
+                                var i;
+                                for (i = 0; i < speakerUrls.length; i++) {
+                                    if (speakerUrls[i].presenterUrl.indexOf(urlString) !== -1){
+                                        presenterId =  speakerUrls[i].presenterId;
+                                    }
+                                }
+                                debugger;
+                                return speakerResourceService.get({id: presenterId}).$promise;
+
+                            }]
+                    }
+                }).
+
+                state('svcc.speakername', {
+                    //parent: 'svcc.speakers',
+                    url: '/speaker/:name',
                     templateUrl: 'app/svcc/speakers/speaker-detail.html',
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
@@ -231,9 +295,7 @@
     }]);
 
 
-
-    app.run(function($httpBackend,speakerDataModelService) {
-
+    app.run(function ($httpBackend, speakerDataModelService) {
 
 
         var speakerUrl = "/rest/presenter/arrayonly";
@@ -256,8 +318,6 @@
             }
             return [200, speaker, {}];
         });
-
-
 
 
         var accountInfoUrl = "/rpc/Account/IsLoggedIn";
@@ -361,7 +421,6 @@
 
 
     });
-
 
 
 }());
