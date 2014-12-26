@@ -105,8 +105,8 @@
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
-                        speaker: ['speakerResourceService', '$stateParams','speakerDataModelService', 'speakerDataModelUrlService',
-                            function (speakerResourceService, $stateParams,speakerDataModelService, speakerDataModelUrlService) {
+                        speaker: ['speakerResourceService', '$stateParams','speakerDataModelService', 'speakerDataModelUrlService','$q',
+                            function (speakerResourceService, $stateParams,speakerDataModelService, speakerDataModelUrlService,$q) {
                                 debugger;
                                 var presenterId = 0;
                                 var urlString = $stateParams.year + '/' + $stateParams.name.toLowerCase();
@@ -122,14 +122,13 @@
                                 // check and see if data is is in cache, if not then get from server
                                 if (speakerData !== {}) {
                                     // need to return promise of data just like the $resource does on else here
+                                    var deferred = $q.defer();
+                                    deferred.resolve(speakerData);
+                                    return deferred.promise;
 
                                 } else {
                                     return speakerResourceService.get({id: $stateParams.id}).$promise;
                                 }
-
-
-
-                                return speakerResourceService.get({id: presenterId}).$promise;
                             }]
                     }
                 }).
