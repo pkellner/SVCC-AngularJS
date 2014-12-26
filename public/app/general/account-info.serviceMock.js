@@ -11,7 +11,7 @@
 
         //debugger;
 
-        var accountInfo = [{
+        var accountInfo = {
             "returnStatus": "OK",
             "codeCampType": "svcc",
             "registrationWords": "To attend Angular University you <b>must be registered and have a confirmed ticket</b>.",
@@ -49,7 +49,7 @@
                 "pkid": "00000000-0000-0000-0000-000000000000",
                 "username": "test77",
                 "applicationName": "",
-                "email": "pkellner99@gmail.com",
+                "email": "joe@gmail.com",
                 "comment": "",
                 "password": "",
                 "passwordQuestion": "",
@@ -71,7 +71,7 @@
                 "userZipCode": "asdfsadfsdf",
                 "userBio": "This is a bio for Joe The Plumber. Here it is again.  Go for it!  Now is the time for all good men to come to the aid of their country.  Why do I still see red?",
                 "fullNameUsernameZipcode": "",
-                "phoneNumber": "4082341385",
+                "phoneNumber": "4082341384",
                 "allowEmailToSpeakerPlanToAttend": false,
                 "allowEmailToSpeakerInterested": false,
                 "qrEmailAllow": true,
@@ -101,7 +101,7 @@
                 "notificationDestinationEmail": true,
                 "id": 11420
             }
-        }];
+        };
 
         var accountInfoUrl = "/rpc/Account/IsLoggedIn";
         $httpBackend.whenGET(accountInfoUrl).respond(accountInfo);

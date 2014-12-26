@@ -6,13 +6,11 @@
 
     function MultihomeController($state, accountInfoService, $rootScope, $timeout) {
 
-        //debugger;
-
-        accountInfoService.query().$promise.then(
+        accountInfoService.save().$promise.then(
             function (data) {
-                if (data && data.length && data.length == 1 && data[0].codeCampType) {
-                    var codeCampType = data[0].codeCampType;
-                    $rootScope.configData = data[0];
+                if (data && data.codeCampType) {
+                    var codeCampType = data.codeCampType;
+                    $rootScope.configData = data;
                     $timeout(function () {
 
                             $rootScope.hideLoadingIcon = true;

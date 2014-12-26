@@ -7,8 +7,8 @@
         'ngResource',
         'ui.router',
         'pusher-angular',
-        'svccApp',
-        'ngMockE2E'
+        'svccApp'
+        //'ngMockE2E'
         //'speakerResourceServiceMock',
         //'accountInfoServiceMock'
 
@@ -79,14 +79,14 @@
                         speakerResourceService: 'speakerResourceService',
                         speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelUrlService',
                             function (speakerResourceService, $stateParams, speakerDataModelUrlService) {
-                                debugger;
+                                //debugger;
                                 var presenterId = 0;
                                 if (!isNaN($stateParams.id)) {
                                     presenterId = $stateParams.id;
                                 } else {
                                     // first-last-presenterId
                                     var speakerUrls = speakerDataModelUrlService.getData();
-                                    var urlValue = $stateParam.id.toLowerCase();
+                                    var urlValue = $stateParams.id.toLowerCase();
                                     var pos1 = speakerUrls.indexOf(urlValue);
                                     if (pos1 !== -1) {
                                         var speaker = speakerUrls[pos1];
@@ -107,7 +107,7 @@
                         speakerResourceService: 'speakerResourceService',
                         speaker: ['speakerResourceService', '$stateParams','speakerDataModelService', 'speakerDataModelUrlService','$q',
                             function (speakerResourceService, $stateParams,speakerDataModelService, speakerDataModelUrlService,$q) {
-                                debugger;
+                                //debugger;
                                 var presenterId = 0;
                                 var urlString = $stateParams.year + '/' + $stateParams.name.toLowerCase();
                                 var speakerUrls = speakerDataModelUrlService.getData();
@@ -117,17 +117,17 @@
                                         presenterId = speakerUrls[i].presenterId;
                                     }
                                 }
-                                debugger;
+                                //debugger;
                                 var speakerData = speakerDataModelService.findOne(presenterId);
                                 // check and see if data is is in cache, if not then get from server
-                                if (speakerData !== {}) {
+                                if (speakerData && speakerData.id) {
                                     // need to return promise of data just like the $resource does on else here
                                     var deferred = $q.defer();
                                     deferred.resolve(speakerData);
                                     return deferred.promise;
 
                                 } else {
-                                    return speakerResourceService.get({id: $stateParams.id}).$promise;
+                                    return speakerResourceService.get({id: presenterId}).$promise;
                                 }
                             }]
                     }
@@ -308,7 +308,7 @@
 
     }]);
 
-
+/*
     app.run(function ($httpBackend, speakerDataModelService) {
 
         speakerDataModelService.initDummyData();
@@ -441,6 +441,7 @@
 
 
     });
+    */
 
 
 }());

@@ -6,7 +6,6 @@
 
     function SpeakerDetailController(speaker) {
 
-
         console.log('speakers-detail.controller  speaker.id: ' + speaker.id);
 
         var vm = this;

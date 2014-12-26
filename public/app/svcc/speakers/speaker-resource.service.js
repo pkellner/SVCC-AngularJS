@@ -6,9 +6,8 @@
             function ($resource) {
 
                 return $resource('/rest/presenter/arrayonly/:id', {}, {
-                    'get': {method: 'GET', cache: true},
+                    'get': {method: 'GET', cache: true, isArray: false},
                     'query': {method: 'GET', cache: true, isArray: true}
                 });
-                //return $resource('data/speakers.json');
             }]);
 }());
