@@ -70,6 +70,7 @@
                     }
                 }).
 
+                // TODO: THIS NEEDS TO HAVE CHECK FOR IN CLIENTSIDE CACHE LIKE svcc.speakeryearname
                 state('svcc.speakerid', {
                     //parent: 'svcc.speakers',
                     url: '/speaker/:id',
@@ -105,6 +106,10 @@
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
+                        // NEED TO PUT THIS IN MULTIHOME TO GET SPEAKERS CACHED WHEN SITE LOADS
+                        //speakers: ['speakerResourceService', function (speakerResourceService) {
+                        //    return speakerResourceService.query().$promise;
+                        //}],
                         speaker: ['speakerResourceService', '$stateParams','speakerDataModelService', 'speakerDataModelUrlService','$q',
                             function (speakerResourceService, $stateParams,speakerDataModelService, speakerDataModelUrlService,$q) {
                                 //debugger;
@@ -117,7 +122,7 @@
                                         presenterId = speakerUrls[i].presenterId;
                                     }
                                 }
-                                //debugger;
+                                debugger;
                                 var speakerData = speakerDataModelService.findOne(presenterId);
                                 // check and see if data is is in cache, if not then get from server
                                 if (speakerData && speakerData.id) {
