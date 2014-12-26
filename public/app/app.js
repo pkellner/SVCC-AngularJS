@@ -14,9 +14,9 @@
 
     ]);
 
-    app.config(['$stateProvider', '$urlRouterProvider','$locationProvider',
+    app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 
-        function ($stateProvider, $urlRouterProvider,$locationProvider) {
+        function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
             //http://www.algoworks.com/blog/a-developers-guide-to-perform-seo-on-angularjs-web-apps/
             //https://prerender.io/js-seo/angularjs-seo-get-your-site-indexed-and-to-the-top-of-the-search-results/
@@ -89,15 +89,11 @@
                                     var urlValue = $stateParam.id.toLowerCase();
                                     var pos1 = speakerUrls.indexOf(urlValue);
                                     if (pos1 !== -1) {
-                                        debugger;
                                         var speaker = speakerUrls[pos1];
                                         presenterId = speaker.presenterId;
                                     }
                                 }
-
-
                                 return speakerResourceService.get({id: presenterId}).$promise;
-
                             }]
                     }
                 }).
@@ -109,37 +105,56 @@
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
-                        speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelUrlService',
-                            function (speakerResourceService, $stateParams, speakerDataModelUrlService) {
+                        speaker: ['speakerResourceService', '$stateParams','speakerDataModelService', 'speakerDataModelUrlService',
+                            function (speakerResourceService, $stateParams,speakerDataModelService, speakerDataModelUrlService) {
                                 debugger;
                                 var presenterId = 0;
                                 var urlString = $stateParams.year + '/' + $stateParams.name.toLowerCase();
                                 var speakerUrls = speakerDataModelUrlService.getData();
                                 var i;
                                 for (i = 0; i < speakerUrls.length; i++) {
-                                    if (speakerUrls[i].presenterUrl.indexOf(urlString) !== -1){
-                                        presenterId =  speakerUrls[i].presenterId;
+                                    if (speakerUrls[i].presenterUrl.indexOf(urlString) !== -1) {
+                                        presenterId = speakerUrls[i].presenterId;
                                     }
                                 }
                                 debugger;
-                                return speakerResourceService.get({id: presenterId}).$promise;
+                                var speakerData = speakerDataModelService.findOne(presenterId);
+                                // check and see if data is is in cache, if not then get from server
+                                if (speakerData !== {}) {
+                                    // need to return promise of data just like the $resource does on else here
 
+                                } else {
+                                    return speakerResourceService.get({id: $stateParams.id}).$promise;
+                                }
+
+
+
+                                return speakerResourceService.get({id: presenterId}).$promise;
                             }]
                     }
                 }).
 
-                state('svcc.speakername', {
-                    //parent: 'svcc.speakers',
-                    url: '/speaker/:name',
-                    templateUrl: 'app/svcc/speakers/speaker-detail.html',
-                    controller: 'SpeakerDetailController as vm',
-                    resolve: {
-                        speakerResourceService: 'speakerResourceService',
-                        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
-                            return speakerResourceService.get({id: $stateParams.id}).$promise;
-                        }]
-                    }
-                }).
+                //state('svcc.speakername', {
+                //    //parent: 'svcc.speakers',
+                //    url: '/speaker/:name',
+                //    templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                //    controller: 'SpeakerDetailController as vm',
+                //    resolve: {
+                //        speakerResourceService: 'speakerResourceService',
+                //        speaker: ['speakerResourceService', 'speakerDataModelService', '$stateParams',
+                //            function (speakerResourceService, speakerDataModelService, $stateParams) {
+                //                debugger;
+                //                var speakerData = speakerDataModelService.findOne($stateParams.id)
+                //                // check and see if data is is in cache, if not then get from server
+                //                if (speakerData !== {}) {
+                //                    // need to return promise of data just like the $resource does on else here
+                //
+                //                } else {
+                //                    return speakerResourceService.get({id: $stateParams.id}).$promise;
+                //                }
+                //            }]
+                //    }
+                //}).
 
                 //state('svcc.speakerid', {
                 //    parent: 'svcc.speaker',
@@ -297,16 +312,22 @@
 
     app.run(function ($httpBackend, speakerDataModelService) {
 
+        speakerDataModelService.initDummyData();
 
         var speakerUrl = "/rest/presenter/arrayonly";
         $httpBackend.whenGET(speakerUrl).respond(function (method, url, data) {
+
+            console.log('app.js whenGET(speakerUrl)');
+
+
             var speakers = speakerDataModelService.getData();
             return [200, speakers, {}];
         });
 
         var editingRegex = new RegExp(speakerUrl + "/[0-9][0-9]*", '');
-
         $httpBackend.whenGET(editingRegex).respond(function (method, url, data) {
+
+            console.log('app.js whenGET(speakerUrl/###)');
 
             var speaker = {"id": 0};
             var parameters = url.split('/');
