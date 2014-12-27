@@ -6,7 +6,7 @@
             function ($resource) {
 
                 return $resource('/rest/presenterurls', {}, {
-                    'query': {method: 'GET', cache: true, isArray: false}
+                    'query': {method: 'GET', cache: true, isArray: true}
                 });
             }]);
 }());

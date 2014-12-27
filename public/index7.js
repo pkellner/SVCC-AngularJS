@@ -16,7 +16,7 @@
 
         var mainApp = angular.module('mainApp', ['baseApp']);
         mainApp.controller('myMainController',['testService', function (testService) {
-            debugger;
+            //debugger;
             var y = testService.myData();
             console.log('mainApp ' + y.length);
         }]);

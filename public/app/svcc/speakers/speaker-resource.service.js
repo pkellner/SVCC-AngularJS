@@ -5,7 +5,11 @@
         .factory('speakerResourceService', ['$resource',//'speakerResourceServiceMock',
             function ($resource) {
 
-                return $resource('/rest/presenter/arrayonly/:id', {}, {
+                return $resource('/rest/presenter/arrayonly/:urlPostToken/:name',
+                    {
+                        urlPostToken: '@urlPostToken',
+                        id: '@id'
+                    }, {
                     'get': {method: 'GET', cache: true, isArray: false},
                     'query': {method: 'GET', cache: true, isArray: true}
                 });

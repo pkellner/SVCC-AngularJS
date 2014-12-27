@@ -4,7 +4,7 @@
 
     angular
         .module('svccApp')
-        .controller('SpeakersController', SpeakersController)
+        .controller('SpeakersController', SpeakersController);
 
 
     // speakers first parameter comes from resolve in app.js
