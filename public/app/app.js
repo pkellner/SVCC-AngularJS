@@ -39,7 +39,14 @@
                     templateUrl: 'app/svcc/miscpages/about.html'
                 })
                 .state('svcc.home', {
-                    templateUrl: 'app/svcc/miscpages/home.html'
+                    templateUrl: 'app/svcc/miscpages/home.html',
+                    controller: 'HomeController as vm',
+                    resolve: {
+                        speakers: ['speakerResourceService', function (speakerResourceService) {
+                            debugger;
+                            return speakerResourceService.query().$promise;
+                        }]
+                    }
                 })
                 .state('svcc.register', {
                     url: '/register',

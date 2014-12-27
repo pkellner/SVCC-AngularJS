@@ -9,6 +9,10 @@
         // from http://plnkr.co/edit/arsvfe?p=info
 
         this.getData = function () {
+
+            if (!this.hasData()) {
+                return {};
+            }
             return this.data;
         };
 
@@ -16,6 +20,7 @@
             this.data = data;
         };
 
+        // TODO: NEED TO DUMP JQUERY $ OUT OF HERE
         this.findOne = function (id) {
             // find the game that matches that id
             var list = $.grep(this.getData(), function (element, index) {
@@ -32,9 +37,9 @@
             return this.getData();
         };
 
+        this.initDummyData = function() {
+            this.data = [
 
-        this.data =
-            [
                 {
                     "presenterId": 823,
                     "presenterUrl": "2008/kevin-nilson-823"
@@ -5760,6 +5765,11 @@
                     "presenterUrl": "2014/menka-gupta-11573"
                 }
             ];
+        };
+
+        this.hasData = function() {
+            return this.data && this.data.length > 0;
+        };
     });
 
 

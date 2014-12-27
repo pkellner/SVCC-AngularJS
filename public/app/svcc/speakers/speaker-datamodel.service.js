@@ -21213,11 +21213,11 @@
                     "presenterUrl": "2014/gabi-zuniga-110"
                 }
             ];
-        }
+        };
 
         this.hasData = function() {
             return this.data && this.data.length > 0;
-        }
+        };
         
 
     });
