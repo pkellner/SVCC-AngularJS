@@ -124,11 +124,6 @@
                     templateUrl: 'app/svcc/speakers/speaker-detail.html',
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
-                        //speakerResourceService: 'speakerResourceService',
-                        // NEED TO PUT THIS IN MULTIHOME TO GET SPEAKERS CACHED WHEN SITE LOADS
-                        //speakers: ['speakerResourceService', function (speakerResourceService) {
-                        //    return speakerResourceService.query().$promise;
-                        //}],
                         speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelService', 'speakerDataModelUrlService', '$q',
                             function (speakerResourceService, $stateParams, speakerDataModelService, speakerDataModelUrlService, $q) {
 
