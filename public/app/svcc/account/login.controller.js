@@ -16,7 +16,7 @@
                 data: 'username=' + vm.login.username + '&' + 'password=' + vm.login.password,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function (data, status, headers, config) {
-                $http.post('/rpc/Account/isLoggedIn').then(function (response) {
+                $http.post('/rpc/Account/IsLoggedIn').then(function (response) {
 
                     $rootScope.loginName = response.data.attendeeResults.username;
                     $rootScope.sessionGuid = response.data.attendeeResults.sessionGuid;

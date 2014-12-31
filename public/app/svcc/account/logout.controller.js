@@ -7,7 +7,7 @@
     function LogoutController($http, $window, $rootScope,$state) {
         var vm = this;
         vm.login = {};
-        
+
         $http({
             method: 'POST',
             url: '/rpc/account/LogOut'
