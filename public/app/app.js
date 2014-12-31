@@ -26,6 +26,8 @@
 
     ]);
 
+
+
     app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 
         function ($stateProvider, $urlRouterProvider, $locationProvider) {

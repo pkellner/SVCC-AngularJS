@@ -4,7 +4,7 @@
     var app = angular.module('baseApp');
 
     app.controller('LogoutController', LogoutController);
-    function LogoutController($http, $window, $rootScope,$state) {
+    function LogoutController($http, $window, $rootScope, $state) {
         var vm = this;
         vm.login = {};
 
@@ -21,7 +21,8 @@
             alert('logout failed');
         });
     }
-    LogoutController.$inject = ['$http', '$window', '$rootScope','$state'];
+
+    LogoutController.$inject = ['$http', '$window', '$rootScope', '$state'];
 
 })();
 

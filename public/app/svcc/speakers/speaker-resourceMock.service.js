@@ -1,4 +1,43 @@
 //(function () {
+//    'use strict';
+//
+//        angular.module('baseApp')
+//            .controller('MultihomeController', MultihomeController);
+//
+//        function MultihomeController($state, $rootScope) {
+//
+//
+//            if ($rootScope.codeCampType === 'svcc') {
+//                $state.transitionTo('svcc.home');
+//            } else if ($rootScope.codeCampType === 'conf') {
+//                $state.transitionTo('conf.home');
+//            } else if ($rootScope.codeCampType === 'angu') {
+//                $state.transitionTo('angu.home');
+//            }
+//        }
+//
+//        MultihomeController.$inject = ['$state', '$rootScope'];
+//
+//        angular.element(document).ready(function () {
+//
+//            var initInjector = angular.injector(["ng"]);
+//            var $http = initInjector.get("$http");
+//            $http.post('/rpc/Account/IsLoggedIn').then(function (response) {
+//
+//                $rootScope.codeCampType = response.data
+//
+//                angular.bootstrap(document, ['baseApp']);
+//            }, function (errorResponse) {
+//                // Handle error case
+//            });
+//
+//
+//        });
+//
+//}());
+
+
+//(function () {
 //    "use strict";
 //
 //    //debugger;
