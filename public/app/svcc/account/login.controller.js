@@ -4,7 +4,7 @@
     var app = angular.module('baseApp');
 
     app.controller('LoginController', LoginController);
-    function LoginController($http, $window, $rootScope, accountInfoService) {
+    function LoginController($http, $window, $rootScope,$state, accountInfoService) {
         var vm = this;
         vm.login = {};
 
@@ -17,19 +17,23 @@
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function (data, status, headers, config) {
                 $http.post('/rpc/Account/isLoggedIn').then(function (response) {
+
                     $rootScope.loginName = response.data.attendeeResults.username;
                     $rootScope.sessionGuid = response.data.attendeeResults.sessionGuid;
+                    $state.transitionTo('svcc.home');
+
                 });
 
-                $window.location = '#/';
+
             }).error(function (data, status, header, config) {
-                $window.location = '#/about';
+                alert('login failed');
+               // $state.transitionTo('svcc.home');
             });
 
         };
     }
 
-    LoginController.$inject = ['$http', '$window', '$rootScope', 'accountInfoService'];
+    LoginController.$inject = ['$http', '$window', '$rootScope','$state', 'accountInfoService'];
 })();
 
 

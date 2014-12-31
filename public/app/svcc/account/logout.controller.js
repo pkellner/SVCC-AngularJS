@@ -1,14 +1,13 @@
 (function () {
     'use strict';
 
-    var app = angular.module('svccApp');
+    var app = angular.module('baseApp');
 
     app.controller('LogoutController', LogoutController);
-    function LogoutController($http, $window, $rootScope) {
+    function LogoutController($http, $window, $rootScope,$state) {
         var vm = this;
         vm.login = {};
-
-
+        
         $http({
             method: 'POST',
             url: '/rpc/account/LogOut'
@@ -17,12 +16,12 @@
         }).success(function (data, status, headers, config) {
             $rootScope.sessionGuid = null;
             $rootScope.loginName = null;
-            $window.location = '#/';
+            $state.transitionTo('svcc.home');
         }).error(function (data, status, header, config) {
-            $window.location = '#/about';
+            alert('logout failed');
         });
     }
-    LogoutController.$inject = ['$http', '$window', '$rootScope'];
+    LogoutController.$inject = ['$http', '$window', '$rootScope','$state'];
 
 })();
 

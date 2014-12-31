@@ -72,7 +72,7 @@
                 }).
                 state('svcc.logout', {
                     url: '/logout',
-                    templateUrl: 'app/svcc/general/home.html',
+                    templateUrl: 'app/svcc/miscpages/home.html',
                     controller: 'LogoutController as vm'
                 }).
 
