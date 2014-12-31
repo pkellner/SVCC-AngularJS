@@ -99,9 +99,34 @@
         }
     </style>
 
+    <script>
+
+        angular.module('myApp', [])
+                .controller('MyController', ['$scope', function ($scope) {
+                    $scope.greetMe = 'World';
+                }]);
+
+        angular.element(document).ready(function() {
+
+            function f() {
+                alert('Hi2');
+                angular.bootstrap(document, ['baseApp']);
+            }
+            alert('Hi1');
+            setTimeout(f, 5000);
+
+
+
+
+        });
+
+    </script>
+
 </head>
 
-<body ng-app="baseApp">
+<!--<body ng-app="baseApp">-->
+
+<body>
 
 <div class="loader" ng-hide="hideLoadingIcon && hideLoadingIcon===true"></div>
 
