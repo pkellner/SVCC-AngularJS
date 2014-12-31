@@ -5,13 +5,15 @@
         .factory('speakerResourceService', ['$resource',//'speakerResourceServiceMock',
             function ($resource) {
 
-                return $resource('/rest/presenter/arrayonly/:urlPostToken/:name',
-                    {
-                        urlPostToken: '@urlPostToken',
-                        id: '@id'
-                    }, {
-                    'get': {method: 'GET', cache: true, isArray: false},
-                    'query': {method: 'GET', cache: true, isArray: true}
-                });
+                debugger;
+
+
+                return $resource('/rest/presenter/arrayonly/:urlPostToken/:name');
+
+                //return $resource('/rest/presenter/arrayonly/:urlPostToken/:name',{},
+                //    {
+                //        'get': {method: 'GET', cache: true, isArray: false},
+                //        'query': {method: 'GET', cache: true, isArray: true}
+                //    });
             }]);
 }());
