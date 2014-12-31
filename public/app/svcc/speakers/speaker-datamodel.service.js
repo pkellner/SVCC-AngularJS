@@ -27,7 +27,7 @@
                 //console.log(this.data[ii].urlPostToken + '+' + urlPostToken + ':' +
                 //    this.data[ii].id + ":" + presenterId);
 
-                if (this.data[ii].urlPostToken == urlPostToken && this.data[ii].id == presenterId) {
+                if (this.data[ii].urlPostToken === urlPostToken && this.data[ii].id == presenterId) {
                     found = ii;
                     break;
                 }

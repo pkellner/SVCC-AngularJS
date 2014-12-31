@@ -6,7 +6,7 @@
             function ($resource) {
 
                 return $resource('/rpc/Account/IsLoggedIn', {}, {
-                        'save': {method: 'POST', isArray: false} // really used to have POST do the read of data
+                        'save': {method: 'POST', isArray: false, cache: true} // really used to have POST do the read of data
                     }
                 );
                 //return $resource('app/data/accountInfo.json');

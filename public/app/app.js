@@ -18,8 +18,8 @@
         'ngResource',
         'ui.router',
         'pusher-angular',
-        'svccApp',
-        'ngMockE2E'
+        'svccApp'
+       // ,'ngMockE2E'
         //'speakerResourceServiceMock',
         //'accountInfoServiceMock'
 
@@ -5720,7 +5720,7 @@
         };
 
 
-        initUrlMocksAll();
+        //initUrlMocksAll();
 
     }]);
 
