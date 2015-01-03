@@ -16,21 +16,18 @@
         'ngResource',
         'ui.router',
         'pusher-angular',
-        'svccApp',
-        'ngMockE2E'   // comment this out when mockdata.enabled === false
-        //'speakerResourceServiceMock',
-        //'accountInfoServiceMock'
-
+        'svccApp'
+        //'ngMockE2E'
     ]);
 
     angular.element(document).ready(function () {
-        
-        var mockdata = {};
-        mockdata.enabled = true; // change this and enable ngMockE2E above
-        app.constant('MOCKDATA',mockdata);
 
         var initInjector = angular.injector(["ng"]);
         var $http = initInjector.get("$http");
+
+        var mockdata = {};
+        mockdata.enabled = false;
+        app.constant('MOCKDATA',mockdata);
 
         if (mockdata.enabled === true) {
             return $http.get("app/Data/accountInfo.json").then(function(response) {
@@ -50,7 +47,6 @@
 
     });
 
-
     app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 
         function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -68,6 +64,7 @@
                     url: '',
                     templateUrl: 'app/svcc/miscpages/svcc.html',
                     controller: function ($scope) {
+
                     }
                 })
                 .state('svcc.about', {
@@ -78,9 +75,10 @@
                     templateUrl: 'app/svcc/miscpages/home.html',
                     controller: 'HomeController as vm',
                     resolve: {
-                        speakers: ['speakerResourceService', function (speakerResourceService) {
-                            return speakerResourceService.query().$promise;
-                        }],
+                        //speakers: ['speakerResourceService', function (speakerResourceService) {
+                        //
+                        //    return speakerResourceService.query().$promise;
+                        //}],
                         speakerUrls: ['speakerUrlResourceService', function (speakerUrlResourceService) {
                             return speakerUrlResourceService.query().$promise;
                         }]
@@ -152,7 +150,6 @@
                     resolve: {
                         speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelService', 'speakerDataModelUrlService', '$q',
                             function (speakerResourceService, $stateParams, speakerDataModelService, speakerDataModelUrlService, $q) {
-
                                 var presenterId = 0;
                                 var urlPostToken = '';
                                 var urlString = $stateParams.year + '/' + $stateParams.name.toLowerCase();
@@ -164,6 +161,7 @@
                                         urlPostToken = speakerUrls[i].urlPostToken;
                                     }
                                 }
+
                                 var speakerData = speakerDataModelService.findOne(presenterId, urlPostToken);
                                 // check and see if data is is in cache, if not then get from server
                                 if (speakerData && speakerData.id) {
@@ -330,6 +328,7 @@
             $rootScope.loginName = '';
 
             var initUrlMocksAll = function () {
+
 
                 $httpBackend.whenGET(/app/).passThrough();
 
