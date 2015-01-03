@@ -24,8 +24,7 @@
     ]);
 
     angular.element(document).ready(function () {
-
-
+        
         var mockdata = {};
         mockdata.enabled = true; // change this and enable ngMockE2E above
         app.constant('MOCKDATA',mockdata);
@@ -331,7 +330,7 @@
             $rootScope.loginName = '';
 
             var initUrlMocksAll = function () {
-                
+
                 $httpBackend.whenGET(/app/).passThrough();
 
                 speakerDataModelService.initDummyData();
