@@ -79,6 +79,8 @@
     <script src="app/angu/miscpages/general.controller.js"></script>
 
 
+
+
     <!-- endbuild -->
 
     <!--http://localhost:63342/webnpm/public/Content/Images/sprites.png-->
@@ -97,73 +99,9 @@
         }
     </style>
 
-    <script>
-
-        //https://blog.mariusschulz.com/2014/10/22/asynchronously-bootstrapping-angularjs-applications-with-server-side-data
-
-
-//        (function () {
-//            //var myApplication = angular.module("baseApp", []);
-//
-//
-//
-//            fetchData().then(bootstrapApplication);
-//
-//            function fetchData() {
-//                var initInjector = angular.injector(["ng"]);
-//                var $http = initInjector.get("$http");
-//
-//                return $http.post('/rpc/Account/IsLoggedIn').then(function (response) {
-//                    debugger;
-//                    myApplication.constant("config", response.data);
-//                }, function (errorResponse) {
-//                    // Handle error case
-//                });
-//            }
-//
-//            function bootstrapApplication() {
-//                angular.element(document).ready(function () {
-//
-//
-//                    var app = angular.module('baseApp', [
-//                        'ngMessages',
-//                        'ngResource',
-//                        'ui.router',
-//                        'pusher-angular',
-//                        'svccApp'
-//
-//                        //,'ngMockE2E'
-//                        //'speakerResourceServiceMock',
-//                        //'accountInfoServiceMock'
-//
-//                    ]);
-//
-//                    angular.bootstrap(document, ['baseApp']);
-//                });
-//            }
-//        }());
-
-
-        //                angular.module('myApp', [])
-        //                        .controller('MyController', ['$scope', function ($scope) {
-        //                            $scope.greetMe = 'World';
-        //                        }]);
-        //
-        //                angular.element(document).ready(function() {
-        //
-        //                    function f() {
-        //                        angular.bootstrap(document, ['baseApp']);
-        //                    }
-        //                    setTimeout(f, 5000);
-        //
-        //                });
-
-    </script>
-
 </head>
 
 <!--<body ng-app="baseApp">-->
-
 <body>
 
 <div class="loader" ng-hide="hideLoadingIcon && hideLoadingIcon===true"></div>
