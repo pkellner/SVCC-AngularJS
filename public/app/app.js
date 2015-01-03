@@ -16,8 +16,8 @@
         'ngResource',
         'ui.router',
         'pusher-angular',
-        'svccApp'
-        //'ngMockE2E'
+        'svccApp',
+        'ngMockE2E'   // comment this out when mockdata.enabled === false
         //'speakerResourceServiceMock',
         //'accountInfoServiceMock'
 
@@ -25,12 +25,13 @@
 
     angular.element(document).ready(function () {
 
-        var initInjector = angular.injector(["ng"]);
-        var $http = initInjector.get("$http");
 
         var mockdata = {};
-        mockdata.enabled = false;
+        mockdata.enabled = true; // change this and enable ngMockE2E above
         app.constant('MOCKDATA',mockdata);
+
+        var initInjector = angular.injector(["ng"]);
+        var $http = initInjector.get("$http");
 
         if (mockdata.enabled === true) {
             return $http.get("app/Data/accountInfo.json").then(function(response) {
@@ -330,9 +331,7 @@
             $rootScope.loginName = '';
 
             var initUrlMocksAll = function () {
-
-                debugger;
-
+                
                 $httpBackend.whenGET(/app/).passThrough();
 
                 speakerDataModelService.initDummyData();
