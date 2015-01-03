@@ -7,8 +7,6 @@
     function MultihomeController($state, accountInfoService, $rootScope, $timeout, CONFIG) {
 
         var codeCampType = CONFIG.codeCampType;
-        debugger;
-
         $timeout(function () {
                 $rootScope.hideLoadingIcon = true;
                 if (codeCampType === 'svcc') {
@@ -51,20 +49,20 @@
 
     MultihomeController.$inject = ['$state', 'accountInfoService', '$rootScope', '$timeout', 'CONFIG'];
 
-    angular.element(document).ready(function () {
-
-        var initInjector = angular.injector(["ng"]);
-        var $http = initInjector.get("$http");
-        $http.post('/rpc/Account/IsLoggedIn').then(function (response) {
-
-            $rootScope.myDataForLater = response.data
-
-            angular.bootstrap(document, ['baseApp']);
-        }, function (errorResponse) {
-            // Handle error case
-        });
-
-
-    });
+    //angular.element(document).ready(function () {
+    //
+    //    var initInjector = angular.injector(["ng"]);
+    //    var $http = initInjector.get("$http");
+    //    $http.post('/rpc/Account/IsLoggedIn').then(function (response) {
+    //
+    //        $rootScope.myDataForLater = response.data
+    //
+    //        angular.bootstrap(document, ['baseApp']);
+    //    }, function (errorResponse) {
+    //        // Handle error case
+    //    });
+    //
+    //
+    //});
 
 }());

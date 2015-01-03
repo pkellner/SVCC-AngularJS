@@ -4,10 +4,6 @@
     angular.module('svccApp')
         .factory('speakerResourceService', ['$resource',//'speakerResourceServiceMock',
             function ($resource) {
-
-                debugger;
-
-
                 return $resource('/rest/presenter/arrayonly/:urlPostToken/:name');
 
                 //return $resource('/rest/presenter/arrayonly/:urlPostToken/:name',{},

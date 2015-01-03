@@ -16,26 +16,23 @@
         'ngResource',
         'ui.router',
         'pusher-angular',
-        'svccApp',
-        'ngMockE2E'
+        'svccApp'
+        //'ngMockE2E'
         //'speakerResourceServiceMock',
         //'accountInfoServiceMock'
 
     ]);
 
     angular.element(document).ready(function () {
-        var configData = {};
-        configData.url = "app/Data/AccountInfo.json";
-        app.constant('configdata', configData);
 
         var initInjector = angular.injector(["ng"]);
         var $http = initInjector.get("$http");
 
+        var mockdata = {};
+        mockdata.enabled = false;
+        app.constant('MOCKDATA',mockdata);
 
-        var localConfig = true;
-
-
-        if (localConfig === true) {
+        if (mockdata.enabled === true) {
             return $http.get("app/Data/accountInfo.json").then(function(response) {
                 app.constant("CONFIG", response.data[0]);
                 angular.bootstrap(document, ['baseApp']);
@@ -44,7 +41,7 @@
             });
         } else {
             return $http.post("/rpc/Account/IsLoggedIn").then(function(response) {
-                app.constant("CONFIG", response.data[0]);
+                app.constant("CONFIG", response.data);
                 angular.bootstrap(document, ['baseApp']);
             }, function(errorResponse) {
                 console.log('error on bootstrap:' + errorResponse);
@@ -328,11 +325,13 @@
 
         }]);
 
-    app.run(['$rootScope', '$httpBackend', 'speakerDataModelService', 'speakerDataModelUrlService',
-        function ($rootScope, $httpBackend, speakerDataModelService, speakerDataModelUrlService) {
+    app.run(['$rootScope', '$httpBackend', 'speakerDataModelService', 'speakerDataModelUrlService','MOCKDATA',
+        function ($rootScope, $httpBackend, speakerDataModelService, speakerDataModelUrlService,MOCKDATA) {
             $rootScope.loginName = '';
 
             var initUrlMocksAll = function () {
+
+                debugger;
 
                 $httpBackend.whenGET(/app/).passThrough();
 
@@ -5719,9 +5718,7 @@
                     return [200, speakerurlsdata, {}];
                 });
 
-
                 var speakerUrl = "/rest/presenter/arrayonly";
-
 
                 var editingRegex = new RegExp(speakerUrl + "/[0-9][0-9]/*", '');
                 $httpBackend.whenGET(editingRegex).respond(function (method, url, data) {
@@ -5744,12 +5741,11 @@
                     var speakers = speakerDataModelService.getData();
                     return [200, speakers, {}];
                 });
-
-
             };
 
-
-            initUrlMocksAll();
+            if (MOCKDATA.enabled === true) {
+                initUrlMocksAll();
+            }
 
         }]);
 
