@@ -143,7 +143,6 @@
                 //}).
 
                 state('svcc.speakeryearname', {
-                    //parent: 'svcc.speakers',
                     url: '/speaker/:year/:name',
                     templateUrl: 'app/svcc/speakers/speaker-detail.html',
                     controller: 'SpeakerDetailController as vm',
@@ -181,73 +180,6 @@
                     }
                 }).
 
-                //state('svcc.speakername', {
-                //    //parent: 'svcc.speakers',
-                //    url: '/speaker/:name',
-                //    templateUrl: 'app/svcc/speakers/speaker-detail.html',
-                //    controller: 'SpeakerDetailController as vm',
-                //    resolve: {
-                //        speakerResourceService: 'speakerResourceService',
-                //        speaker: ['speakerResourceService', 'speakerDataModelService', '$stateParams',
-                //            function (speakerResourceService, speakerDataModelService, $stateParams) {
-                //                debugger;
-                //                var speakerData = speakerDataModelService.findOne($stateParams.id)
-                //                // check and see if data is is in cache, if not then get from server
-                //                if (speakerData !== {}) {
-                //                    // need to return promise of data just like the $resource does on else here
-                //
-                //                } else {
-                //                    return speakerResourceService.get({id: $stateParams.id}).$promise;
-                //                }
-                //            }]
-                //    }
-                //}).
-
-                //state('svcc.speakerid', {
-                //    parent: 'svcc.speaker',
-                //    url: '/:id',
-                //    templateUrl: 'app/svcc/speakers/speaker-detail.html',
-                //    controller: 'SpeakerDetailController as vm',
-                //    resolve: {
-                //        speakerResourceService: 'speakerResourceService',
-                //        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
-                //            return speakerResourceService.get({id: $stateParams.id}).$promise;
-                //        }]
-                //    }
-                //}).
-
-                //state('speaker', {
-                //    url: '/speaker/:id',
-                //    templateUrl: 'app/speakers/speaker-detail.html',
-                //    controller: 'SpeakerDetailController as vm',
-                //    resolve: {
-                //        speakerResourceService: 'speakerResourceService',
-                //        speaker: function(speakerResourceService,$stateParams) {
-                //            return speakerResourceService.get({id: $stateParams.id}).$promise;
-                //        }
-                //    }
-                //}).
-
-
-                //state('svcc.speakers', {
-                //    abstract: true,
-                //    url: '/speakers',
-                //    templateUrl: 'app/svcc/speakers/speaker-detail.html',
-                //    template: '<div ui-view></div>'
-                //}).
-                //state('svcc.speaker.id', {
-                //    parent: 'speaker',
-                //    url: '/:id',
-                //    templateUrl: 'app/speakers/speaker-detail.html',
-                //    controller: 'SpeakerDetailController as vm',
-                //    resolve: {
-                //        speakerResourceService: 'speakerResourceService',
-                //        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
-                //            return speakerResourceService.get({id: $stateParams.id}).$promise;
-                //        }]
-                //    }
-                //}).
-
                 //state('speaker.idfeedback', {
                 //    parent: 'speaker',
                 //    url: '/:id/feedback',
@@ -275,20 +207,48 @@
 
 
                 //sessions
-                state('sessiondetail', {
-                    url: '/sessions/:id',
-                    templateUrl: 'app/sessions/session-detail.html',
-                    controller: 'SessionDetailController as vm',
-                    resolve: {
-                        sessionResourceService: 'sessionResourceService',
-                        session: ['sessionResourceService', '$stateParams', function (sessionResourceService, $stateParams) {
-                            return sessionResourceService.get({id: $stateParams.id}).$promise;
-                        }]
-                    }
+                state('svcc.sessiondetail', {
+                    url: '/session/:year/:title',
+                    templateUrl: 'app/svcc/sessions/session-detail.html',
+                    controller: 'SessionDetailController as vm'
+                    //resolve: {
+                    //    session: ['sessionResourceService', '$stateParams', 'sessionDataModelService', 'sessionDataModelUrlService', '$q',
+                    //        function (sessionResourceService, $stateParams, sessionDataModelService, sessionDataModelUrlService, $q) {
+                    //
+                    //            debugger;
+                    //            var sessionId = 0;
+                    //            var urlPostToken = '';
+                    //            var urlString = $stateParams.year + '/' + $stateParams.title.toLowerCase();
+                    //            var sessionUrls = sessionDataModelUrlService.getData();
+                    //            var i;
+                    //            for (i = 0; i < speakerUrls.length; i++) {
+                    //                if (sessionUrls[i].sessionUrl.indexOf(urlString) !== -1) {
+                    //                    sessionId = sessionUrls[i].sessionId;
+                    //                    urlPostToken = sessionUrls[i].urlPostToken;
+                    //                }
+                    //            }
+                    //
+                    //            var sessionData = sessionDataModelService.findOne(sessionId, urlPostToken);
+                    //            // check and see if data is is in cache, if not then get from server
+                    //            if (sessionData && sessionData.id) {
+                    //                // need to return promise of data just like the $resource does on else here
+                    //                var deferred = $q.defer();
+                    //                deferred.resolve(sessionData);
+                    //                return deferred.promise;
+                    //            } else {
+                    //                return sessionResourceService.get(
+                    //                    {
+                    //                        title: $stateParams.title,
+                    //                        urlPostToken: $stateParams.year
+                    //                    }
+                    //                ).$promise;
+                    //            }
+                    //        }]
+                    //}
                 }).
-                state('sessions', {
+                state('svcc.sessions', {
                     url: '/sessions',
-                    templateUrl: 'app/sessions/sessions.html',
+                    templateUrl: 'app/svcc/sessions/sessions.html',
                     controller: 'SessionsController as vm',
                     resolve: {
                         sessionResourceService: 'sessionResourceService',
