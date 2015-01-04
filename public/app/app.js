@@ -81,6 +81,9 @@
                         //}],
                         speakerUrls: ['speakerUrlResourceService', function (speakerUrlResourceService) {
                             return speakerUrlResourceService.query().$promise;
+                        }],
+                        sessionUrls:  ['sessionUrlResourceService', function (sessionUrlResourceService) {
+                            return sessionUrlResourceService.query().$promise;
                         }]
                     }
                 })
@@ -210,8 +213,13 @@
                 state('svcc.sessiondetail', {
                     url: '/session/:year/:title',
                     templateUrl: 'app/svcc/sessions/session-detail.html',
-                    controller: 'SessionDetailController as vm'
-                    //resolve: {
+                    controller: 'SessionDetailController as vm',
+                    resolve: {
+                        session: ['$q',function($q){
+                            var deferred = $q.defer();
+                            deferred.resolve({xx: '101'});
+                            return deferred.promise;
+                        }]
                     //    session: ['sessionResourceService', '$stateParams', 'sessionDataModelService', 'sessionDataModelUrlService', '$q',
                     //        function (sessionResourceService, $stateParams, sessionDataModelService, sessionDataModelUrlService, $q) {
                     //
@@ -244,7 +252,7 @@
                     //                ).$promise;
                     //            }
                     //        }]
-                    //}
+                    }
                 }).
                 state('svcc.sessions', {
                     url: '/sessions',

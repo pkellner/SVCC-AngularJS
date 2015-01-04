@@ -4,14 +4,14 @@
     angular.module('svccApp')
         .controller('SessionDetailController', SessionDetailController);
 
-    function SessionDetailController() {
+    function SessionDetailController(session) {
 
         debugger;
         var vm = this;
         vm.sessions = [session];
         vm.session = session;
-    }
 
-    //SessionDetailController.$inject = ['session'];
+    }
+    SessionDetailController.$inject = ['session'];
 
 }());
