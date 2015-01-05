@@ -67,7 +67,7 @@
                 .state('svcc', {
                     url: '',
 
-                    templateUrl:  'app/svcc/miscpages/svcc.html',
+                    templateUrl:  'app/svcc/miscpages/sitebase.html',
 
                     //templateProvider: function(CONFIG,$templateFactory) {
                     //    debugger;
@@ -86,7 +86,7 @@
                     templateUrl: 'app/svcc/miscpages/about.html'
                 })
                 .state('svcc.home', {
-                    templateUrl: 'app/svcc/miscpages/home.html',
+                    templateUrl: 'app/svcc/miscpages/sitehome.html',
                     controller: 'HomeController as vm',
                     resolve: {
                         //speakers: ['speakerResourceService', function (speakerResourceService) {
@@ -113,7 +113,7 @@
                 }).
                 state('svcc.logout', {
                     url: '/logout',
-                    templateUrl: 'app/svcc/general/home.html',
+                    templateUrl: 'app/svcc/miscpages/sitehome.html',
                     controller: 'LogoutController as vm'
                 }).
 
@@ -11046,8 +11046,6 @@
                                 "sessionUrl": "2014/fun-with-scratch---part-2"
                             }
                         ];
-
-                   // debugger;
                     return [200, sessionurlsdata, {}];
                 });
 
