@@ -5,6 +5,7 @@
         .controller('GeneralController', GeneralController);
 
     function GeneralController() {
+        debugger;
     }
 
 }());

@@ -5,6 +5,7 @@
         .controller('GeneralControllerAngu', GeneralController);
 
     function GeneralController() {
+
     }
 
 }());

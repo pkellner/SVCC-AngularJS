@@ -55,41 +55,298 @@
 
         function ($stateProvider, $urlRouterProvider, $locationProvider, CONFIG) {
 
+            //http://www.algoworks.com/blog/a-developers-guide-to-perform-seo-on-angularjs-web-apps/
+            //https://prerender.io/js-seo/angularjs-seo-get-your-site-indexed-and-to-the-top-of-the-search-results/
+            //$locationProvider.hashPrefix('!');
+            //$locationProvider.html5Mode(true);
+            //$urlRouterProvider.otherwise('/');
+
             $stateProvider
-                .state('index', {
-                    url: "",
-                    views: {
-                        "svcc": {
-                            template: "app/svcc/miscpages/svccbase.html"
-                        },
-                        "angu": {
-                            template: "index.viewB"
-                        }
+
+                //.state('multihome', {
+                //    url: '/',
+                //    controller: 'MultihomeController as vm',
+                //    templateUrl: 'app/svcc/miscpages/sitebase.html'
+                //})
+
+                //.state('angu', {
+                //    url: '',
+                //    templateUrl: 'app/angu/miscpages/angu.html',
+                //    controller: function ($scope) {
+                //    }
+                //})
+                //.state('angu.home', {
+                //    templateUrl: 'app/angu/miscpages/home.html'
+                //})
+                //
+                //.state('site.base',{
+                //    url: 'xxx',
+                //    controller: 'MultihomeController as vm',
+                //    templateUrl: 'app/svcc/miscpages/sitebase.html'
+                //})
+
+
+                /*----------------svcc-----------*/
+                //.state('svcc', {
+                //    url: '',
+                //
+                //    templateUrl: 'app/svcc/miscpages/sitebase.html',
+                //
+                //    //templateProvider: function(CONFIG,$templateFactory) {
+                //    //    debugger;
+                //    //    return $templateFactory.fromUrl('app/svcc/miscpages/svcc.html');
+                //    //},
+                //    controller: function ($scope) {
+                //    }
+                //})
+                .state('svcc.about', {
+                    url: '/about',
+                    templateUrl: 'app/svcc/miscpages/about.html'
+                })
+                .state('svcc.home', {
+                    //url: '',
+                    templateUrl: 'app/svcc/miscpages/svcchome.html',
+                    controller: 'HomeController as vm',
+                    resolve: {
+                        //speakers: ['speakerResourceService', function (speakerResourceService) {
+                        //
+                        //    return speakerResourceService.query().$promise;
+                        //}],
+                        speakerUrls: ['speakerUrlResourceService', function (speakerUrlResourceService) {
+                            return speakerUrlResourceService.query().$promise;
+                        }],
+                        sessionUrls: ['sessionUrlResourceService', function (sessionUrlResourceService) {
+                            return sessionUrlResourceService.query().$promise;
+                        }]
                     }
                 })
-                .state('route1', {
-                    url: "/route1",
-                    views: {
-                        "viewA": {
-                            template: "route1.viewA"
-                        },
-                        "viewB": {
-                            template: "route1.viewB"
-                        }
+                .state('svcc.register', {
+                    url: '/register',
+                    templateUrl: 'app/svcc/account/registration.html',
+                    controller: 'RegistrationController as vm'
+                }).
+                state('svcc.login', {
+                    url: '/login',
+                    templateUrl: 'app/svcc/account/login.html',
+                    controller: 'LoginController as vm'
+                }).
+                state('svcc.logout', {
+                    url: '/logout',
+                    templateUrl: 'app/svcc/miscpages/sitehome.html',
+                    controller: 'LogoutController as vm'
+                }).
+
+                // speakers
+                state('svcc.speakers', {
+                    url: '/speakers',
+                    templateUrl: 'app/svcc/speakers/speakers.html',
+                    controller: 'SpeakersController as vm',
+                    resolve: {
+                        speakerResourceService: 'speakerResourceService',
+                        speakers: ['speakerResourceService', function (speakerResourceService) {
+                            return speakerResourceService.query().$promise;
+                        }]
                     }
-                })
-                .state('route2', {
-                    url: "/route2",
-                    views: {
-                        "viewA": {
-                            template: "route2.viewA"
-                        },
-                        "viewB": {
-                            template: "route2.viewB"
-                        }
+                }).
+
+
+                //state('svcc.speakerid', {
+                //    //parent: 'svcc.speakers',
+                //    url: '/speaker/:id',
+                //    templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                //    controller: 'SpeakerDetailController as vm',
+                //    resolve: {
+                //        speakerResourceService: 'speakerResourceService',
+                //        speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelUrlService',
+                //            function (speakerResourceService, $stateParams, speakerDataModelUrlService) {
+                //                //debugger;
+                //                var presenterId = 0;
+                //                if (!isNaN($stateParams.id)) {
+                //                    presenterId = $stateParams.id;
+                //                } else {
+                //                    // first-last-presenterId
+                //                    var speakerUrls = speakerDataModelUrlService.getData();
+                //                    var urlValue = $stateParams.id.toLowerCase();
+                //                    var pos1 = speakerUrls.indexOf(urlValue);
+                //                    if (pos1 !== -1) {
+                //                        var speaker = speakerUrls[pos1];
+                //                        presenterId = speaker.presenterId;
+                //                    }
+                //                }
+                //                return speakerResourceService.get({id: presenterId}).$promise;
+                //            }]
+                //    }
+                //}).
+
+                state('svcc.speakeryearname', {
+                    url: '/speaker/:year/:name',
+                    templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                    controller: 'SpeakerDetailController as vm',
+                    resolve: {
+                        speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelService', 'speakerDataModelUrlService', '$q',
+                            function (speakerResourceService, $stateParams, speakerDataModelService, speakerDataModelUrlService, $q) {
+                                var presenterId = 0;
+                                var urlPostToken = '';
+                                var urlString = $stateParams.year + '/' + $stateParams.name.toLowerCase();
+                                var speakerUrls = speakerDataModelUrlService.getData();
+                                var i;
+                                for (i = 0; i < speakerUrls.length; i++) {
+                                    if (speakerUrls[i].presenterUrl.indexOf(urlString) !== -1) {
+                                        presenterId = speakerUrls[i].presenterId;
+                                        urlPostToken = speakerUrls[i].urlPostToken;
+                                    }
+                                }
+
+                                var speakerData = speakerDataModelService.findOne(presenterId, urlPostToken);
+                                // check and see if data is is in cache, if not then get from server
+                                if (speakerData && speakerData.id) {
+                                    // need to return promise of data just like the $resource does on else here
+                                    var deferred = $q.defer();
+                                    deferred.resolve(speakerData);
+                                    return deferred.promise;
+                                } else {
+                                    return speakerResourceService.get(
+                                        {
+                                            name: $stateParams.name,
+                                            urlPostToken: $stateParams.year
+                                        }
+                                    ).$promise;
+                                }
+                            }]
+                    }
+                }).
+
+                //state('speaker.idfeedback', {
+                //    parent: 'speaker',
+                //    url: '/:id/feedback',
+                //    templateUrl: 'app/speakers/speaker-detail-feedback.html',
+                //    controller: 'SpeakerDetailFeedbackController as vm',
+                //    resolve: {
+                //        speakerResourceService: 'speakerResourceService',
+                //        speaker: ['speakerResourceService', '$stateParams', function (speakerResourceService, $stateParams) {
+                //            return speakerResourceService.get({id: $stateParams.id}).$promise;
+                //        }]
+                //    }
+                //}).
+
+                //state('speaker.feedback', {
+                //    parent: '/speaker',
+                //    url: '/feedback',
+                //    templateUrl: 'app/speakers/speaker-detail-feedback.html'
+                //}).
+
+
+                //state('speaker.feedback', {
+                //    url: '/:id/feedback',
+                //    templateUrl: 'app/speakers/speaker-detail-feedback.html'
+                //}).
+
+
+                //sessions
+                state('svcc.sessiondetail', {
+                    url: '/session/:year/:title',
+                    templateUrl: 'app/svcc/sessions/session-detail.html',
+                    controller: 'SessionDetailController as vm',
+                    resolve: {
+                        session: ['$q', '$stateParams', 'sessionResourceService', 'sessionUrlResourceService', 'sessionDataModelService', 'sessionDataModelUrlService',
+                            function ($q, $stateParams, sessionResourceService, sessionUrlResourceService, sessionDataModelService, sessionDataModelUrlService) {
+                                var sessionId = 0;
+                                var urlPostToken = '';
+                                var urlString = $stateParams.year + '/' + $stateParams.title.toLowerCase();
+                                var sessionUrls = sessionDataModelUrlService.getData();
+                                var i;
+                                for (i = 0; i < sessionUrls.length; i++) {
+                                    if (sessionUrls[i].sessionUrl.indexOf(urlString) !== -1) {
+                                        sessionId = sessionUrls[i].sessionId;
+                                        urlPostToken = sessionUrls[i].urlPostToken;
+                                    }
+                                }
+
+                                var sessionData = sessionDataModelService.findOne(sessionId, urlPostToken);
+                                // check and see if data is is in cache, if not then get from server
+                                if (sessionData && sessionData.id) {
+                                    // need to return promise of data just like the $resource does on else here
+                                    var deferred = $q.defer();
+                                    deferred.resolve(sessionData);
+                                    return deferred.promise;
+                                } else {
+                                    return sessionResourceService.get(
+                                        {
+                                            title: $stateParams.title,
+                                            urlPostToken: $stateParams.year
+                                        }
+                                    ).$promise;
+                                }
+
+                            }]
+                        //    session: ['sessionResourceService', '$stateParams', 'sessionDataModelService', 'sessionDataModelUrlService', '$q',
+                        //        function (sessionResourceService, $stateParams, sessionDataModelService, sessionDataModelUrlService, $q) {
+                        //
+                        //            debugger;
+                        //            var sessionId = 0;
+                        //            var urlPostToken = '';
+                        //            var urlString = $stateParams.year + '/' + $stateParams.title.toLowerCase();
+                        //            var sessionUrls = sessionDataModelUrlService.getData();
+                        //            var i;
+                        //            for (i = 0; i < speakerUrls.length; i++) {
+                        //                if (sessionUrls[i].sessionUrl.indexOf(urlString) !== -1) {
+                        //                    sessionId = sessionUrls[i].sessionId;
+                        //                    urlPostToken = sessionUrls[i].urlPostToken;
+                        //                }
+                        //            }
+                        //
+                        //            var sessionData = sessionDataModelService.findOne(sessionId, urlPostToken);
+                        //            // check and see if data is is in cache, if not then get from server
+                        //            if (sessionData && sessionData.id) {
+                        //                // need to return promise of data just like the $resource does on else here
+                        //                var deferred = $q.defer();
+                        //                deferred.resolve(sessionData);
+                        //                return deferred.promise;
+                        //            } else {
+                        //                return sessionResourceService.get(
+                        //                    {
+                        //                        title: $stateParams.title,
+                        //                        urlPostToken: $stateParams.year
+                        //                    }
+                        //                ).$promise;
+                        //            }
+                        //        }]
+                    }
+                }).
+                state('svcc.sessions', {
+                    url: '/sessions',
+                    templateUrl: 'app/svcc/sessions/sessions.html',
+                    controller: 'SessionsController as vm',
+                    resolve: {
+                        sessionResourceService: 'sessionResourceService',
+                        sessions: ['sessionResourceService', function (sessionResourceService) {
+                            return sessionResourceService.query().$promise;
+                        }],
+                        sessionDayOfWeekResourceService: 'sessionDayOfWeekResourceService',
+                        sessionDayOfWeeks: ['sessionDayOfWeekResourceService', function (sessionDayOfWeekResourceService) {
+                            return sessionDayOfWeekResourceService.query().$promise;
+                        }]
                     }
                 });
 
+
+                ///*----------------angu-----------*/
+                //
+                //state('angu', {
+                //    url: '',
+                //    templateUrl: 'app/angu/miscpages/angu.html',
+                //    controller: function ($scope) {
+                //    }
+                //}).
+                //state('angu.about', {
+                //    url: '/about',
+                //    templateUrl: 'app/angu/miscpages/about.html'
+                //}).
+                //state('angu.home', {
+                //    templateUrl: 'app/angu/miscpages/home.html'
+                //});
+
+            //$locationProvider.html5Mode(true);
 
         }]);
 
