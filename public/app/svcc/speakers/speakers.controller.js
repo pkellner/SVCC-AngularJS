@@ -1,17 +1,11 @@
 (function () {
 
     'use strict';
-
-    var app = angular
+    angular
         .module('svccApp')
         .controller('SpeakersController', SpeakersController);
 
-    app.filter( 'cleanPresenterUrl', function() {
-        return function( input ) {
-            debugger;
-            return input.toUpperCase();
-        };
-    });
+
 
 
     // speakers first parameter comes from resolve in app.js

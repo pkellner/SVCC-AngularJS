@@ -2,9 +2,18 @@
 
     'use strict';
 
-    angular
+    var app = angular
         .module('svccApp')
         .controller('SessionsController', SessionsController);
+
+    app.filter("fixPresenterUrl", function() {
+
+        return function(input) {
+            var result = input.replace('/Presenter/','');
+            return result;
+        };
+    });
+
 
     function SessionsController(sessions,sessionDayOfWeeks) {
         var vm = this;

@@ -14,11 +14,6 @@
                     <!--<li class="showAll selected"><span class="checkbox"></span><span class="label">Show all</span></li>-->
                     <li class="{{ ::sessionDayOfWeek.localClass }} selected"><span class="checkbox"></span><span class="label">{{ ::sessionDayOfWeek.dayOfWeek }}</span></li>
 
-
-
-
-
-
                     <!--<li class="saturday selected"><span class="checkbox"></span><span class="label">Saturday</span></li>-->
                     <!--<li class="sunday selected"><span class="checkbox"></span><span class="label">Sunday</span></li>-->
                 </ul>
@@ -112,9 +107,10 @@
                 <div class="currentSession currentSessionVisible">
                     <h3 id="sessionTitle_{{::session.id}}" title="{{::session.title}}">{{::session.title}}</h3>
                     <i>by</i>
-                <span ng-repeat="presenter in session.speakersList">
-                    <a ng-href="#/speaker/{{::presenter.speakerlocalUrl | cleanPresenterUrl}}" class="author">{{::presenter.userFirstName}} {{::presenter.userLastName}}</a>
-                </span>
+                    <span ng-repeat="presenter in session.speakersList">
+
+                        <a ng-href="#/speaker/{{::presenter.speakerLocalUrl | fixPresenterUrl}}" class="author">{{::presenter.userFirstName}} {{::presenter.userLastName}}</a>
+                    </span>
                     <span>Attending ({{::session.planAheadCount}})</span>
 
                     <div>

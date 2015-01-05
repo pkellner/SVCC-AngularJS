@@ -1,8 +1,16 @@
 (function () {
     'use strict';
 
-    angular.module('svccApp')
+    var app = angular.module('svccApp')
         .controller('SessionDetailController', SessionDetailController);
+
+    app.filter("fixPresenterUrl", function() {
+
+        return function(input) {
+            var result = input.replace('/Presenter/','');
+            return result;
+        };
+    });
 
     function SessionDetailController(session) {
         var vm = this;
