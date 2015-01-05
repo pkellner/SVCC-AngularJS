@@ -9,7 +9,6 @@
         // from http://plnkr.co/edit/arsvfe?p=info
 
         this.getData = function () {
-            debugger;
             if (!this.hasData()) {
                 return {};
             }

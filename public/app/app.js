@@ -217,10 +217,6 @@
                     resolve: {
                         session: ['$q', '$stateParams', 'sessionResourceService', 'sessionUrlResourceService', 'sessionDataModelService','sessionDataModelUrlService',
                             function ($q, $stateParams, sessionResourceService, sessionUrlResourceService, sessionDataModelService,sessionDataModelUrlService) {
-
-
-                                debugger;
-
                                 var sessionId = 0;
                                 var urlPostToken = '';
                                 var urlString = $stateParams.year + '/' + $stateParams.title.toLowerCase();
@@ -11037,7 +11033,7 @@
                             }
                         ];
 
-                    debugger;
+                   // debugger;
                     return [200, sessionurlsdata, {}];
                 });
 
