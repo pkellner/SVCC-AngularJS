@@ -20,6 +20,10 @@
         //'ngMockE2E'
     ]);
 
+    //app.run(function($templateCache) {
+    //    $templateCache.put('templates/template1.html','<div><h4>dashboard</h4></div>');
+    //});
+
     angular.element(document).ready(function () {
 
         var initInjector = angular.injector(["ng"]);
@@ -47,9 +51,9 @@
 
     });
 
-    app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider','CONFIG',
 
-        function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        function ($stateProvider, $urlRouterProvider, $locationProvider,CONFIG) {
 
             //http://www.algoworks.com/blog/a-developers-guide-to-perform-seo-on-angularjs-web-apps/
             //https://prerender.io/js-seo/angularjs-seo-get-your-site-indexed-and-to-the-top-of-the-search-results/
@@ -62,7 +66,17 @@
                 /*----------------svcc-----------*/
                 .state('svcc', {
                     url: '',
-                    templateUrl: 'app/svcc/miscpages/svcc.html',
+
+                    templateUrl:  'app/svcc/miscpages/svcc.html',
+
+                    //templateProvider: function(CONFIG,$templateFactory) {
+                    //    debugger;
+                    //    return $templateFactory.fromUrl('app/svcc/miscpages/svcc.html');
+                    //},
+
+
+
+
                     controller: function ($scope) {
 
                     }

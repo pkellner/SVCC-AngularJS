@@ -6,55 +6,29 @@
         'ui.router'
     ]);
 
+    var myConstant = {};
+    myConstant.codeCampType = "svcc";
+    app.constant("CONFIG", myConstant);
 
-    app.config(['$stateProvider', '$urlRouterProvider',
-
-        function ($stateProvider, $urlRouterProvider, $q, $timeout) {
-            $urlRouterProvider.otherwise('/');
-
+    app.config(['$stateProvider', '$urlRouterProvider','CONFIG',
+        function ($stateProvider, $urlRouterProvider,CONFIG) {
+            console.log(CONFIG.codeCampType);
             $stateProvider
-                .state('about', {
-                    url: '/about',
-                    template: '<p ui-view="">...loading...</p>',
-                    controller: function ($state) {
-
-
-
-
-
-                        $state.go("about.child");
-                    }
-                })
-                .state('about.child', {
-                    template: '<p>about here title: {{vm.title}}</p>',  //'index4template.html',
-                    controller: 'AboutController as vm',
-                    resolve: {
-                        title: function ($timeout) {
-                            return $timeout(function () {
-                                    return 'from title function';
-                                }, 2500
-                            );
+                .state('home', {
+                    url: '/home',
+                    //templateUrl: 'index5templateA.html',   (THIS WORKS)
+                    templateUrl: function(CONFIG) {
+                        console.log('in templateUrl ' + CONFIG.codeCampType);
+                        if (CONFIG.codeCampType === "svcc") {
+                            return 'index5templateA.html';
+                        } else {
+                            return 'index5templateB.html';
                         }
+                    },
+                    controller: function ($state) {
                     }
                 });
         }]);
-
-
-    var injectParamsAbout = ['title'];
-    var AboutController = function (title) {
-        var vm = this;
-        vm.title = title;
-    };
-    AboutController.$inject = injectParamsAbout;
-    angular.module('svccApp').controller('AboutController', AboutController);
-
-    var injectParamsHome = [];
-    var HomeController = function () {
-    };
-    HomeController.$inject = injectParamsHome;
-    angular.module('svccApp').controller('HomeController', HomeController);
-
-
 }());
 
 

@@ -6,6 +6,7 @@
 
     function MultihomeController($state, accountInfoService, $rootScope, $timeout, CONFIG) {
 
+        debugger;
         var codeCampType = CONFIG.codeCampType;
         $timeout(function () {
                 $rootScope.hideLoadingIcon = true;
