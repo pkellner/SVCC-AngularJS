@@ -130,7 +130,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Database,Data Services,SQL,SQL Server 2012,SQL Server,SQL Azure,SSIS",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/intro-to-relational-database-design-entity-relationship-diagrams"
                         },
                         {
                             "id": 1436,
@@ -203,7 +204,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Database,SQL,SQL Azure,SQL Server,SQL Server 2012,SSIS",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2007-10-26T00:00:00"
+                            "sessionTimeDateTime": "2007-10-26T00:00:00",
+                            "sessionUrl": "2014/advanced-data-modeling-with-er-diagrams"
                         },
                         {
                             "id": 2577,
@@ -276,7 +278,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,Angel Investment,Business,lean,Lean Startup,Marketing",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/lean-startup-for-engineers"
                         }
                     ],
                     "allowHtml": false,
@@ -356,7 +359,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Java,JAX-RS,Spring",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/creating-rest-services-with-jax-rs"
                         }
                     ],
                     "allowHtml": false,
@@ -446,7 +450,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Google,HTML,math,SEO,Web",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/introduction-to-googles-pagerank-algorithm"
                         }
                     ],
                     "allowHtml": false,
@@ -541,7 +546,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Windows,Windows 8,Windows Phone,Windows Phone 8.1,WinRT,XAML",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/deep-dive-into-windows-phone-apps-sensors-bluetooth-cortana"
                         }
                     ],
                     "allowHtml": false,
@@ -651,7 +657,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Arduino,iOS,iPhone,Wearable",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/technology-and-fashion-awaken-the-soul-of-the-shoe"
                         },
                         {
                             "id": 2513,
@@ -709,7 +716,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Apple,iOS,Swift",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/swift-language-and-using-playgrounds"
                         }
                     ],
                     "allowHtml": false,
@@ -784,7 +792,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Bluemix,Database",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/enterprise-ready-mobile-app-consuming-dbaas-offered-by-bluemix"
                         }
                     ],
                     "allowHtml": false,
@@ -879,7 +888,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "nuget,teamcity,ASP.NET,Automation,Best Practices,Architecture",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/using-nuget-the-way-you-should"
                         }
                     ],
                     "allowHtml": false,
@@ -969,7 +979,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Apps,Graph Databases,Neo4j,NoSQL,Open Source",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/building-killer-apps-with-neo4j"
                         }
                     ],
                     "allowHtml": false,
@@ -1049,7 +1060,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,JavaScript,Testing",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/angularjs-app-testing-for-real"
                         },
                         {
                             "id": 3658,
@@ -1117,7 +1129,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,JavaScript,MongoDB,NodeJS,NoSQL",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/get-mean-mongodb-express-angular-node"
                         }
                     ],
                     "allowHtml": false,
@@ -1192,7 +1205,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "ASPNET,MVC",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/aspnet-mvc-tips-and-tricks"
                         }
                     ],
                     "allowHtml": false,
@@ -1277,7 +1291,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "ASP.NET,knockout,MVC,NET MVC",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/mvc-knockout-sing-and-dance"
                         }
                     ],
                     "allowHtml": false,
@@ -1372,7 +1387,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Arduino,Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/circuit-art"
                         }
                     ],
                     "allowHtml": false,
@@ -1452,7 +1468,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Arduino,IoT,Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/start-the-journey-to-internet-of-things-with-arduino"
                         },
                         {
                             "id": 2537,
@@ -1525,7 +1542,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Arduino,Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/circuit-art"
                         },
                         {
                             "id": 3670,
@@ -1583,7 +1601,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Arduino,IoT,Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/start-the-journey-to-internet-of-things-with-arduino---part-2"
                         }
                     ],
                     "allowHtml": false,
@@ -1673,7 +1692,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "hadoop,Java,Machine Learning,Scala,Spark",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/an-introduction-to-using-apache-spark-for-machine-learning"
                         }
                     ],
                     "allowHtml": false,
@@ -1768,7 +1788,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,Browsers,Compliance,Ethics,HTTP,Security",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/i-own-your-web-app"
                         }
                     ],
                     "allowHtml": false,
@@ -1868,7 +1889,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,Embedded Software,hardware,Innovation,management,Productivity,Project Management",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/debunking-the-agile-myth-agile-is-not-just-for-software"
                         }
                     ],
                     "allowHtml": false,
@@ -1948,7 +1970,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C#,F#,functional programming",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/f-for-the-c-developer"
                         },
                         {
                             "id": 3648,
@@ -2179,7 +2202,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Community,interviewing,Job Hunting,Networking",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/community-career-and-you-a-microsoft-mvp-panel"
                         }
                     ],
                     "allowHtml": true,
@@ -2274,7 +2298,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,Business,Development,Engineering Process,Productivity,Project Management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/fail-is-not-a-four-letter-word"
                         }
                     ],
                     "allowHtml": false,
@@ -2349,7 +2374,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Clean Code,JavaScript",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/improving-your-frontend-with-ember-mvc-js-framework"
                         }
                     ],
                     "allowHtml": false,
@@ -2419,7 +2445,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Web",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/plugins-for-the-web---a-way-to-allow-others-to-improve-your-application"
                         }
                     ],
                     "allowHtml": false,
@@ -2499,7 +2526,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Game Programming,JavaScript,Phaser",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/programming-a-graphical-web-game-part-1"
                         },
                         {
                             "id": 2548,
@@ -2557,7 +2585,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Game Programming,JavaScript,Phaser",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/programming-a-graphical-web-game-part-2"
                         }
                     ],
                     "allowHtml": false,
@@ -2657,7 +2686,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "application scalability,BigData,Distributed Application,distributed systems,hadoop,HBase,Programming Paradigms",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/distributed-systems---patterns-and-practices"
                         }
                     ],
                     "allowHtml": false,
@@ -2757,7 +2787,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Architecture,backbone,Client/Server,JavaScript,Push Notifications,reactive,Web services",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/reactive-unidirectional-data-without-a-required-clientserver-technology"
                         }
                     ],
                     "allowHtml": false,
@@ -2832,7 +2863,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C++,C++11",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/solving-problems-with-fusion"
                         }
                     ],
                     "allowHtml": false,
@@ -2902,7 +2934,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Google Glass",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/creating-html5-based-apps-for-wearable-technologies"
                         },
                         {
                             "id": 1404,
@@ -2950,7 +2983,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/google-glass-and-robots"
                         }
                     ],
                     "allowHtml": false,
@@ -3050,7 +3084,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Automation,CLI,Command Line,Parallel Computing,PowerShell,Scripting,Threading",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/parallel-and-async-scripting-with-powershell"
                         }
                     ],
                     "allowHtml": false,
@@ -3145,7 +3180,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Bluemix,Database",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/rapid-application-development-using-data-services-in-bluemix"
                         }
                     ],
                     "allowHtml": false,
@@ -3225,7 +3261,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Animation,Pov-Ray,Visualization",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/data-visualization-using-pov-ray-37"
                         }
                     ],
                     "allowHtml": false,
@@ -3325,7 +3362,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Cross Platform,CSS3,HTML5,JavaScript,Performance,Tuning,Web Performance",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/practical-performance-tips-tricks-make-your-htmljavascript-apps-faster"
                         },
                         {
                             "id": 3630,
@@ -3423,7 +3461,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,App Deployment,backbone,Cross Platform,JavaScript,Mobile,Open Source",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/angular-or-backbone-go-mobile"
                         }
                     ],
                     "allowHtml": false,
@@ -3503,7 +3542,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Java,JavaFX,Date/Time",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/zombietime---jsr-310-for-the-undead"
                         },
                         {
                             "id": 1439,
@@ -3566,7 +3606,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Embedded Software,Java,IoT,JavaME",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/iot-magic-show"
                         },
                         {
                             "id": 1494,
@@ -3634,7 +3675,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Game Programming,Java,JavaFX,Kids,Raspberry Pi",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/raspberry-pi-gaming-4-kids"
                         },
                         {
                             "id": 2542,
@@ -3697,7 +3739,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Java,Kids,LEGO,Mindstorms",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/lego-mindstorms-programming-4-kids"
                         }
                     ],
                     "allowHtml": false,
@@ -3797,7 +3840,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,App Engine,COM,Development,Django,Python,Scripting",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/what-is-python"
                         }
                     ],
                     "allowHtml": false,
@@ -3887,7 +3931,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Azure,BigData,Cloud,Machine Learning,Mobile",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/introduction-to-machine-learning-with-azure-ml"
                         }
                     ],
                     "allowHtml": false,
@@ -3960,7 +4005,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,Clean Code",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/clean-code-homicidal-maniacs-read-code-too"
                         },
                         {
                             "id": 2504,
@@ -4012,7 +4058,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C#,lambdas",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/learn-to-love-lambdas-c"
                         },
                         {
                             "id": 3648,
@@ -4243,7 +4290,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Community,interviewing,Job Hunting,Networking",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/community-career-and-you-a-microsoft-mvp-panel"
                         }
                     ],
                     "allowHtml": false,
@@ -4323,7 +4371,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C/C++,C++11,TDD",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/hardening-your-code"
                         }
                     ],
                     "allowHtml": false,
@@ -4413,7 +4462,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Speech Recognition,Android,Algorithms,Machine Learning,Wearable",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/offline-speech-recognition-for-mobile-developers"
                         }
                     ],
                     "allowHtml": false,
@@ -4493,7 +4543,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Database,MongoDB,NoSQL",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/advanced-mongodb"
                         }
                     ],
                     "allowHtml": false,
@@ -4563,7 +4614,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "PowerShell",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/powershell-and-devops"
                         }
                     ],
                     "allowHtml": false,
@@ -4648,7 +4700,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "JavaScript,JSON,Programming Paradigms,Software Craftsmanship",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/the-better-parts"
                         },
                         {
                             "id": 3643,
@@ -4701,7 +4754,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Project Management,Team Management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/managing-programmers-programmers-are-not-like-the-other-kids"
                         }
                     ],
                     "allowHtml": true,
@@ -4796,7 +4850,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Cloud,Cloud Foundry,containers,Java,Spring,Web",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/running-your-spring-apps-in-the-cloud"
                         },
                         {
                             "id": 3652,
@@ -4869,7 +4924,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Cloud,Cloud Foundry,Continuous Deployment,Continuous Integration,Paas,Pivotal",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/the-self-healing-elastic-runtime-that-is-cloud-foundry"
                         }
                     ],
                     "allowHtml": false,
@@ -4969,7 +5025,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "API,Architecture,Best Practices,Caching,Clean Code,JavaScript,Modular Architecture",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/everything-you-ever-wanted-to-know-about-node-authentication"
                         }
                     ],
                     "allowHtml": false,
@@ -5059,7 +5116,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "BigData,Cascading,hadoop,Java,Open Source",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/application-development-on-hadoop-using-cascading"
                         }
                     ],
                     "allowHtml": false,
@@ -5134,7 +5192,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "App Deployment,Travel",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/tap-into-the-112-trillion-dollar-business-travel-industry"
                         }
                     ],
                     "allowHtml": false,
@@ -5209,7 +5268,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Growth Hacking,Hackathon",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/how-to-win-a-hackathon"
                         }
                     ],
                     "allowHtml": false,
@@ -5284,7 +5344,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Database,NoSQL",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/introduction-to-nosql"
                         }
                     ],
                     "allowHtml": false,
@@ -5369,7 +5430,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "JavaScript,NodeJS,NoSQL,Server Side JavaScript",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/node-js-101"
                         }
                     ],
                     "allowHtml": false,
@@ -5444,7 +5506,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "JavaScript,WinJS",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/winjs-for-web-devs"
                         },
                         {
                             "id": 2585,
@@ -5532,7 +5595,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Azure,C#,Cloud,Internet of Things,Raspberry Pi",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/how-to-build-your-own-internet-of-things-product-with-raspberry-pi"
                         }
                     ],
                     "allowHtml": false,
@@ -5612,7 +5676,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Azure,BigData,hadoop",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/introduction-to-big-data"
                         },
                         {
                             "id": 3612,
@@ -5665,7 +5730,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "BigData,hadoop",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/big-data-introduction-to-hadoop-using-hdinsight"
                         },
                         {
                             "id": 3613,
@@ -5718,7 +5784,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "BigData,hadoop",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/big-data-introduction-to-machine-learning-using-mahout-on-hadoop"
                         }
                     ],
                     "allowHtml": false,
@@ -5813,7 +5880,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Virtualization,Windows Phone,WinRT,WPF,XAML,XAML Anti-Patterns",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/xaml-anti-patterns"
                         }
                     ],
                     "allowHtml": false,
@@ -5913,7 +5981,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "BigData,Business,Data analytics,Data Mining,Data Services,hadoop,Hiring",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/hiring-a-big-data-and-data-science-team"
                         }
                     ],
                     "allowHtml": false,
@@ -5991,7 +6060,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Cloud,JavaScript,NodeJS",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/javascript-game-microservers"
                         }
                     ],
                     "allowHtml": false,
@@ -6086,7 +6156,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Client/Server,IIS,IT,Networking,TCP,TCPIP",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/tcpip-networking-for-developers"
                         }
                     ],
                     "allowHtml": true,
@@ -6339,7 +6410,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Community,interviewing,Job Hunting,Networking",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/community-career-and-you-a-microsoft-mvp-panel"
                         }
                     ],
                     "allowHtml": false,
@@ -6429,7 +6501,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "F#,functional programming,SQL,SQL Azure,SQL Server",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/functional-programming-for-production-quality-code"
                         }
                     ],
                     "allowHtml": false,
@@ -6529,7 +6602,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Architecture,Azure,Best Practices,Caching,Design Patterns,Distributed,Distributed Application",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/net-distributed-caching"
                         }
                     ],
                     "allowHtml": false,
@@ -6614,7 +6688,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Automation,Best Practices,Testing,Tools",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/quality-dashboard---one-stop-shop-to-determine-product-quality"
                         }
                     ],
                     "allowHtml": false,
@@ -6699,7 +6774,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Distributed development,Internationalization,Skills,Team Management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/engineering-without-borders"
                         }
                     ],
                     "allowHtml": false,
@@ -6819,7 +6895,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Business,culture,Engineering,Entrepreneurship,Innovation,management,Product Management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/how-do-teams-reach-high-performance"
                         }
                     ],
                     "allowHtml": true,
@@ -6919,7 +6996,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Angel Investment,App Deployment,Apple,Cloud,Windows,Windows Phone",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/simple-contextual-user-doc-sdk-via-wordpad"
                         }
                     ],
                     "allowHtml": false,
@@ -7014,7 +7092,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Data analytics,Distributed,hadoop,Java,Machine Learning,Open Source",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/simplifying-big-data-development-using-spring-xd"
                         }
                     ],
                     "allowHtml": false,
@@ -7124,7 +7203,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Apps,Best Practices,iOS,Security",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/mobile-apps-security-beyond-xss-csrf-and-sqli"
                         }
                     ],
                     "allowHtml": false,
@@ -7209,7 +7289,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Algorithms,NLP,NUI,Parsing",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/introduction-to-natural-language-processing-nlp"
                         }
                     ],
                     "allowHtml": false,
@@ -7304,7 +7385,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "HTML,HTML5,JavaScript,JavaScript,SVG,WebUI",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/whirlwind-tour-of-scalable-vector-graphics"
                         }
                     ],
                     "allowHtml": false,
@@ -7404,7 +7486,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,CSS3,Development,HTML5,JavaScript,Open,Open Source",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/open-source-and-web-development-using-openui5"
                         }
                     ],
                     "allowHtml": false,
@@ -7474,7 +7557,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "API",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/api-mobile-app-driven-development-made-easy"
                         }
                     ],
                     "allowHtml": false,
@@ -7574,7 +7658,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Java,Kids,Minecraft",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/introductory-minecraft-modding-with-forge---part-1"
                         },
                         {
                             "id": 2557,
@@ -7647,7 +7732,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Kids,Minecraft",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/introductory-minecraft-modding-with-forge---part-ii"
                         }
                     ],
                     "allowHtml": false,
@@ -7727,7 +7813,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "JBoss,Red Hat,WildFly",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/all-about-wildfly-only-using-demos"
                         },
                         {
                             "id": 1441,
@@ -7785,7 +7872,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Eclipse,JBoss,Red Hat",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/java-ee-7-development-using-eclipse"
                         },
                         {
                             "id": 2529,
@@ -7863,7 +7951,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Java,Kids,Minecraft",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/introductory-minecraft-modding-with-forge---part-1"
                         },
                         {
                             "id": 2557,
@@ -7936,7 +8025,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Kids,Minecraft",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/introductory-minecraft-modding-with-forge---part-ii"
                         }
                     ],
                     "allowHtml": false,
@@ -8006,7 +8096,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/fun-with-scratch"
                         },
                         {
                             "id": 3673,
@@ -8059,7 +8150,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Kids,Scratch Programming",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/fun-with-scratch---part-2"
                         }
                     ],
                     "allowHtml": false,
@@ -8134,7 +8226,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "legal,Open Source",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/dont-screw-up-your-licensing"
                         }
                     ],
                     "allowHtml": false,
@@ -8219,7 +8312,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "MongoDB,MVC,NET MVC,NoSQL",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/first-steps-with-mongodb"
                         }
                     ],
                     "allowHtml": false,
@@ -8309,7 +8403,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Boot,ES6,functional programming,JavaScript,Modular Architecture",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/introducing-ravejs-zero-config-javascript-applications"
                         }
                     ],
                     "allowHtml": false,
@@ -8394,7 +8489,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Azure,Windows Phone,Xamarin",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/build-a-cross-platform-enterprise-lob-mobile-app-with-offline-sync"
                         },
                         {
                             "id": 2604,
@@ -8467,7 +8563,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Azure,Java,NodeJS,Open Source,PHP,Python",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/azure-for-open-source-developers"
                         }
                     ],
                     "allowHtml": false,
@@ -8547,7 +8644,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "blogging,Web Performance,Content Management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/blogging-to-fuel-the-seo-engine"
                         }
                     ],
                     "allowHtml": false,
@@ -8632,7 +8730,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "API,JSON,REST,restful",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/designing-a-beautiful-restjson-api"
                         }
                     ],
                     "allowHtml": false,
@@ -8717,7 +8816,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "App Deployment,Boot,Java,Spring",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/java-on-rails---using-spring-boot-for-rapid-application-development"
                         }
                     ],
                     "allowHtml": false,
@@ -8792,7 +8892,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "functional programming,JavaScript",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/functional-reactive-javascript-theory-practice"
                         }
                     ],
                     "allowHtml": false,
@@ -8882,7 +8983,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Angel Investment,Business,Lean Startup,startup,Venture Capital",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/about-venture-capital-fund-raising-for-your-startup"
                         }
                     ],
                     "allowHtml": false,
@@ -8962,7 +9064,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "API,REST,restful",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/designing-irresistible-apis"
                         }
                     ],
                     "allowHtml": false,
@@ -9062,7 +9165,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Engineering Process,hardware,Innovation,Linux,Open Source,Performance,Wearable",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/wearable-tech-with-arduino-woman"
                         },
                         {
                             "id": 3669,
@@ -9120,7 +9224,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Family,Groovy,SVCodeCamp",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/trick-or-treat-wearable-technology"
                         }
                     ],
                     "allowHtml": false,
@@ -9220,7 +9325,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Automation,Azure,Chef,Cloud,Command Line,DevOps,Windows",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/automating-windows-with-chef"
                         }
                     ],
                     "allowHtml": false,
@@ -9320,7 +9426,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,App Deployment,dart,GWT,HTML5,Java,JavaScript",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/dart---the-new-javascript"
                         }
                     ],
                     "allowHtml": false,
@@ -9420,7 +9527,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,Clean Code,Client/Server,Distributed Application,JavaScript,JavaScript,MongoDB",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/getting-restless-with-meteorjs-and-mongodb-in-the-browser"
                         }
                     ],
                     "allowHtml": false,
@@ -9515,7 +9623,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,Continuous Deployment,Continuous Integration,Database,SQL Server,SQL Server 2012",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/continuous-integration-for-databases"
                         }
                     ],
                     "allowHtml": false,
@@ -9595,7 +9704,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Engineering,management",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/accidentally-manager---a-survival-guide-for-first-time-engineering-managers"
                         },
                         {
                             "id": 2611,
@@ -9673,7 +9783,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,C#,Clean Code,Decoupling,Design,Productivity,Software Craftsmanship",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/clean-code-i---best-practices"
                         },
                         {
                             "id": 2612,
@@ -9751,7 +9862,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Architecture,Best Practices,C#,Clean Code,Decoupling,Dependency Injection,Inversion of Control",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/clean-code-ii---cut-your-dependencies-with-dependency-injection"
                         }
                     ],
                     "allowHtml": false,
@@ -9846,7 +9958,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,C++,C++11,Coding,Development,exception-safety",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/exception-safe-coding-in-c-part-i"
                         },
                         {
                             "id": 1469,
@@ -9919,7 +10032,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,C++,C++11,Coding,Development,exception-safety",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/exception-safe-coding-in-c-part-ii"
                         }
                     ],
                     "allowHtml": false,
@@ -9989,7 +10103,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Internet of Things",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/azure-net-and-the-internet-of-things"
                         }
                     ],
                     "allowHtml": false,
@@ -10079,7 +10194,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "JavaScript,phoneGap,iOS,Google Maps API,Android",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/phonegap-androidios-google-maps-plugin"
                         }
                     ],
                     "allowHtml": false,
@@ -10149,7 +10265,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "3D",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2007-10-26T00:00:00"
+                            "sessionTimeDateTime": "2007-10-26T00:00:00",
+                            "sessionUrl": "2014/test-session-do-not-delete-or-approve"
                         },
                         {
                             "id": 3648,
@@ -10380,7 +10497,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Community,interviewing,Job Hunting,Networking",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/community-career-and-you-a-microsoft-mvp-panel"
                         }
                     ],
                     "allowHtml": false,
@@ -10632,7 +10750,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Community,interviewing,Job Hunting,Networking",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/community-career-and-you-a-microsoft-mvp-panel"
                         }
                     ],
                     "allowHtml": false,
@@ -10722,7 +10841,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,Best Practices,Engineering Process,Lean Startup,Product Management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/we-dont-need-no-stinkin-product-manager"
                         }
                     ],
                     "allowHtml": false,
@@ -10812,7 +10932,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "JavaScript,Algorithms,Best Practices,Design,functional programming",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/learn-javascript-by-modeling-and-solving-rubiks-cuibe"
                         }
                     ],
                     "allowHtml": false,
@@ -10887,7 +11008,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,JavaScript",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/angularjs-or-how-i-learned-to-stop-worrying-and-love-web-development"
                         },
                         {
                             "id": 3648,
@@ -11118,7 +11240,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Community,interviewing,Job Hunting,Networking",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/community-career-and-you-a-microsoft-mvp-panel"
                         }
                     ],
                     "allowHtml": false,
@@ -11188,7 +11311,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/top-10-tips-for-effective-development-with-angularjs"
                         }
                     ],
                     "allowHtml": false,
@@ -11263,7 +11387,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Scala,Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/zero-to-fractals-in-75-minutes"
                         }
                     ],
                     "allowHtml": false,
@@ -11343,7 +11468,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C/C++,Debugging,Linux",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/real-world-reversible-debugging-for-cc-developers-on-linux"
                         }
                     ],
                     "allowHtml": false,
@@ -11423,7 +11549,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Arduino,JavaScript,NodeJS",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/javascript-and-internet-controlled-hardware-prototyping"
                         },
                         {
                             "id": 1476,
@@ -11481,7 +11608,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "hardware,Prototyping,Wearable",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/the-rise-of-wearable-technology"
                         }
                     ],
                     "allowHtml": false,
@@ -11734,7 +11862,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Community,interviewing,Job Hunting,Networking",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/community-career-and-you-a-microsoft-mvp-panel"
                         }
                     ],
                     "allowHtml": false,
@@ -11824,7 +11953,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Entrepreneurship,Lean Startup,Marketing,Product Management,startup",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/how-our-saas-startup-got-1000-early-beta-customers"
                         }
                     ],
                     "allowHtml": false,
@@ -11914,7 +12044,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "GWT,HTML5,Java,JavaScript,Web",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/web-ui-in-java-with-vaadin"
                         }
                     ],
                     "allowHtml": false,
@@ -12009,7 +12140,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,Extreme Programming,lean,management,Scrum,XP",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/if-we-are-agile-why-do-we-need-managers"
                         },
                         {
                             "id": 1464,
@@ -12107,7 +12239,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Business,culture,Engineering,Entrepreneurship,Innovation,management,Product Management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/how-do-teams-reach-high-performance"
                         }
                     ],
                     "allowHtml": true,
@@ -12187,7 +12320,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "App,REST,Spring",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/building-bootiful-applications-with-spring-boot"
                         }
                     ],
                     "allowHtml": false,
@@ -12272,7 +12406,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Azure,Cloud,Linux,Windows",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/azure-virtual-machines-iaas-in-the-microsoft-cloud"
                         }
                     ],
                     "allowHtml": false,
@@ -12367,7 +12502,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "App Perf Mgmnt,application scalability,Java,Performance,troubleshooting,Tuning",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/solving-performance-problems-on-java-web-applications---our-experiences"
                         }
                     ],
                     "allowHtml": false,
@@ -12450,7 +12586,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,Product Management,Project Management,startup",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/create-influence-on-demand"
                         },
                         {
                             "id": 1411,
@@ -12517,7 +12654,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,Project Design,Project Management,Team Management,management",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/agile-at-enterprise-scale-flipping-sticky-bits"
                         }
                     ],
                     "allowHtml": false,
@@ -12602,7 +12740,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "BigData,Career,hadoop,NoSQL",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/launching-your-career-in-big-data"
                         },
                         {
                             "id": 2534,
@@ -12650,7 +12789,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "BigData",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/spark----fast-and-easy-processing-of-big-data"
                         }
                     ],
                     "allowHtml": false,
@@ -12750,7 +12890,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "App Deployment,Business,Marketing,Mobile,monetization,Windows 8,Windows Phone 8.1",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/business-of-app-development"
                         },
                         {
                             "id": 3619,
@@ -12828,7 +12969,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C#,Mobile,Networking,NFC,Windows,Windows Phone,Windows Phone 8.1",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/proximity-api-for-windows-phone"
                         }
                     ],
                     "allowHtml": false,
@@ -12908,7 +13050,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Client/Server,Cloud,Data Services",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/syncing-is-hard"
                         }
                     ],
                     "allowHtml": false,
@@ -13003,7 +13146,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "HTML5,JavaScript,LightSwitch,Office 365,SharePoint 2013,Visual Studio",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/developing-office-365-cloud-business-apps-with-visual-studio"
                         },
                         {
                             "id": 2595,
@@ -13071,7 +13215,8 @@
                             "kidSession": false,
                             "tagsResultCsv": ".NET,C#,Office 365,Visual Studio,Xamarin",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/building-apps-with-the-office-365-api-client-libraries"
                         }
                     ],
                     "allowHtml": false,
@@ -13156,7 +13301,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Content Management,PowerShell,SharePoint 2013,Visual Studio",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/sharepoint-2013-columnscontent-types"
                         }
                     ],
                     "allowHtml": false,
@@ -13231,7 +13377,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching Skills",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/rock-your-technical-interview-part-1"
                         },
                         {
                             "id": 1449,
@@ -13279,7 +13426,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/rock-your-technical-interview-part-2"
                         },
                         {
                             "id": 1491,
@@ -13337,7 +13485,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,C#,Clean Code",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/rock-your-code-with-defensive-programming"
                         },
                         {
                             "id": 3648,
@@ -13568,7 +13717,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Community,interviewing,Job Hunting,Networking",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/community-career-and-you-a-microsoft-mvp-panel"
                         }
                     ],
                     "allowHtml": false,
@@ -13648,7 +13798,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,interviewing,Job Hunting",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/cracking-the-coding-interview"
                         },
                         {
                             "id": 1413,
@@ -13706,7 +13857,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Product Management,interviewing",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/cracking-the-product-manager-interview"
                         }
                     ],
                     "allowHtml": true,
@@ -13801,7 +13953,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Apple,Brain-Computer Interface,Google Glass,SDK,Wearable",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/exploring-the-brain-computer-interface"
                         }
                     ],
                     "allowHtml": false,
@@ -13876,7 +14029,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "REST,restful",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/real-world-restful-service-development-problems-and-solutions"
                         }
                     ],
                     "allowHtml": false,
@@ -13946,7 +14100,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Open Source",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/kicking-the-bukkit-anatomy-of-an-open-source-meltdown"
                         }
                     ],
                     "allowHtml": false,
@@ -14034,7 +14189,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Apple,C++,Game Programming,Windows Phone",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/intro-to-mobile-game-programming-with-cocos2d-x-part-1"
                         },
                         {
                             "id": 1445,
@@ -14101,7 +14257,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C++,Android,windows mobile,iOS,Game Programming",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/intro-to-mobile-game-programming-with-cocos2d-x-part-2"
                         }
                     ],
                     "allowHtml": false,
@@ -14196,7 +14353,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "ASP.NET,CSS3,JavaScript,JavaScript,Web,Web Performance",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/full-stack-web-performance"
                         }
                     ],
                     "allowHtml": false,
@@ -14271,7 +14429,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Cloud,hadoop",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/getting-started-with-hadoop-on-the-cloud"
                         }
                     ],
                     "allowHtml": false,
@@ -14346,7 +14505,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Education,Work Force",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/foothill-college-does-everything-learn-more"
                         }
                     ],
                     "allowHtml": true,
@@ -14446,7 +14606,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Active Directory,Database,Security,SQL,SQL Azure,SQL Server,SQL Server 2012",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/implementing-row-level-security-in-microsoft-sql-server"
                         },
                         {
                             "id": 2583,
@@ -14524,7 +14685,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,CRM,Enterprise maturity,Entrepreneurship,Product Management,Scalability,Standards",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/scaling-up-tame-key-business-processes-and-grow-fast"
                         },
                         {
                             "id": 2584,
@@ -14602,7 +14764,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "HTTP,IIS,PHP,REST,SQL Server,Web services,WebAPI",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/creating-a-restful-web-service-for-microsoft-sql-server"
                         }
                     ],
                     "allowHtml": false,
@@ -14697,7 +14860,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Apps,Architecture,Compiling,Cross Platform,HTML5",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/android-on-x86"
                         }
                     ],
                     "allowHtml": false,
@@ -14797,7 +14961,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C#,Cloud,Google Maps API,HTML,JavaScript,Maps,WPF",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/beyond-push-pins---creating-enhanced-map-displays"
                         }
                     ],
                     "allowHtml": false,
@@ -14872,7 +15037,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Game Programming,Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/gamemaker-studio-easy-game-development-for-all-ages"
                         }
                     ],
                     "allowHtml": false,
@@ -14947,7 +15113,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "API,RAML",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/from-idea-to-api-in-half-a-day-with-raml"
                         },
                         {
                             "id": 3638,
@@ -15000,7 +15167,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Cloud,Cloud Foundry",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/dive-into-cloud-foundry-paas"
                         },
                         {
                             "id": 3640,
@@ -15068,7 +15236,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Cloud,Command Line,DevOps,Linux,Virtualization",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/deploying-applications-into-docker-containers"
                         }
                     ],
                     "allowHtml": false,
@@ -15148,7 +15317,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Chromecast,JavaScript,video",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/bringing-web-content-to-the-big-screen-with-google-cast"
                         }
                     ],
                     "allowHtml": false,
@@ -15223,7 +15393,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Windows,Windows Phone",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/an-introduction-to-xaml-development"
                         },
                         {
                             "id": 3622,
@@ -15281,7 +15452,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Windows,Windows Phone,XAML",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/buidling-a-universal-app-in-an-hour"
                         }
                     ],
                     "allowHtml": false,
@@ -15364,7 +15536,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C++,C++11,Design Patterns,SQL",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/c11-in-the-wild-techniques-from-a-real-codebase"
                         }
                     ],
                     "allowHtml": false,
@@ -15449,7 +15622,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "ASP.NET,JavaScript,jQuery,signalr",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/obama-jquery-aspnet-signalr-getting-started-with-the-real-time-web"
                         }
                     ],
                     "allowHtml": false,
@@ -15529,7 +15703,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "BigData,Machine Learning,Python",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/agile-machine-learning-with-scikit-learn"
                         }
                     ],
                     "allowHtml": false,
@@ -15629,7 +15804,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "API,Architecture,Cloud,Distributed,Engineering,REST,SOA",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/api-antipatterns-how-to-identify-and-avoid-them"
                         }
                     ],
                     "allowHtml": false,
@@ -15704,7 +15880,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,iOS",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/monetize-your-ios-and-android-apps-with-multiple-ad-networks"
                         }
                     ],
                     "allowHtml": false,
@@ -15774,7 +15951,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "SEO",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/keyword-research-under-a-microscope-advanced-seo-techniques"
                         }
                     ],
                     "allowHtml": false,
@@ -15859,7 +16037,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Database,functional programming,Refactoring,Scala",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/manipulating-properties-in-scala-why-flat-properties-are-best"
                         }
                     ],
                     "allowHtml": false,
@@ -15929,7 +16108,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/saas-workflows-git-best-practices"
                         }
                     ],
                     "allowHtml": false,
@@ -16039,7 +16219,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Arduino,iOS,iPhone,Wearable",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/technology-and-fashion-awaken-the-soul-of-the-shoe"
                         }
                     ],
                     "allowHtml": false,
@@ -16134,7 +16315,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "App Deployment,App Perf Mgmnt,Browsers,Client/Server,JavaScript,Performance",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/maximize-your-cache-for-no-cash"
                         }
                     ],
                     "allowHtml": false,
@@ -16224,7 +16406,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Java,JavaScript,vert.x,Web services,WebSocket",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/mongodb-vertx-red-hot-goodness"
                         }
                     ],
                     "allowHtml": false,
@@ -16299,7 +16482,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Java,Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/greenfoot-games-and-simulations-1"
                         },
                         {
                             "id": 2541,
@@ -16352,7 +16536,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Java,Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/greenfoot-games-and-simulations-2"
                         }
                     ],
                     "allowHtml": false,
@@ -16427,7 +16612,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "REST,restful",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/understanding-http-and-rest-the-road-to-simple-scalable-web-services"
                         },
                         {
                             "id": 3633,
@@ -16485,7 +16671,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "ASP.NET,REST,restful",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/the-rest-of-the-story-using-aspnet-web-api-to-create-restful-web-services"
                         }
                     ],
                     "allowHtml": false,
@@ -16590,7 +16777,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,AngularJS,JavaScript,TypeScript",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/design-strategies-with-angularjs"
                         },
                         {
                             "id": 2568,
@@ -16673,7 +16861,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,JavaScript,JavaScript,TypeScript",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/test-driven-development-with-typescriptjasmineangularjs"
                         }
                     ],
                     "allowHtml": false,
@@ -16758,7 +16947,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Coaching Skills,Education",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/growing-technologists-through-autonomy-mastery-and-purpose"
                         }
                     ],
                     "allowHtml": false,
@@ -16853,7 +17043,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Bluemix,Database",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/rapid-application-development-using-data-services-in-bluemix"
                         }
                     ],
                     "allowHtml": false,
@@ -16953,7 +17144,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Best Practices,Big Table,BigData,Development,hadoop,HBase,Java",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/getting-started-with-developing-big-data-solutions-using-hbase"
                         }
                     ],
                     "allowHtml": false,
@@ -17048,7 +17240,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Azure,Testing,Web services,Web Performance,Web,Visual Studio",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/performance-testing-with-visual-studio"
                         }
                     ],
                     "allowHtml": false,
@@ -17143,7 +17336,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "API,ExtJS,JavaScript,REST,restful,Sencha",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/secure-rest-with-sencha-ext-js-nodejs"
                         }
                     ],
                     "allowHtml": false,
@@ -17223,7 +17417,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Architecture,events,Web services",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/developing-applications-with-a-micro-service-architecture"
                         },
                         {
                             "id": 1455,
@@ -17281,7 +17476,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "functional programming,Java,Scala",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/map-flatmap-and-reduce-are-your-new-best-friends"
                         }
                     ],
                     "allowHtml": false,
@@ -17381,7 +17577,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "ASP.NET,F#,functional programming,SQL,SQL Server,Web,WebAPI",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/f-on-the-web"
                         },
                         {
                             "id": 3648,
@@ -17612,7 +17809,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Career,Coaching,Community,interviewing,Job Hunting,Networking",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/community-career-and-you-a-microsoft-mvp-panel"
                         }
                     ],
                     "allowHtml": false,
@@ -17687,7 +17885,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Business,startup",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/selling-basics-for-startups"
                         }
                     ],
                     "allowHtml": false,
@@ -17777,7 +17976,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "hadoop,models,recommendation,scalding,scoring",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/developing-real-time-recommendation-engine"
                         }
                     ],
                     "allowHtml": false,
@@ -17897,7 +18097,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,App Deployment,backbone,Cross Platform,JavaScript,Mobile,Open Source",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/angular-or-backbone-go-mobile"
                         }
                     ],
                     "allowHtml": false,
@@ -17977,7 +18178,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "ASP.NET,Azure,Cloud",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/get-started-with-azure-tonight"
                         }
                     ],
                     "allowHtml": false,
@@ -18047,7 +18249,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Azure",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/how-to-use-the-azure-file-service"
                         }
                     ],
                     "allowHtml": false,
@@ -18147,7 +18350,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "ASP.NET,Azure,Azure DocumentDB,Azure Search,C#,Command Line,Database",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/test-driving-azure-search-and-documentdb"
                         }
                     ],
                     "allowHtml": false,
@@ -18232,7 +18436,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Architecture,Azure,Best Practices,Internet of Things",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/connecting-stuff-to-azure-and-what-happens-along-the-way"
                         },
                         {
                             "id": 2600,
@@ -18290,7 +18495,8 @@
                             "kidSession": false,
                             "tagsResultCsv": ".NET,Azure,Design Patterns",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/code-shaming-anti-patterns-in-action"
                         }
                     ],
                     "allowHtml": false,
@@ -18390,7 +18596,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Architecture,Automation,Business,C/C++,Java,NET,Project Management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/azure-development-with-the-visual-studio-tools"
                         }
                     ],
                     "allowHtml": false,
@@ -18490,7 +18697,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Architecture,Best Practices,C#,Clean Code,Design,Design Patterns,Development",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/evolve-your-code-fundamental-design-principles"
                         }
                     ],
                     "allowHtml": false,
@@ -18580,7 +18788,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "API,JavaScript,MongoDB,NodeJS,REST",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/beer-locker-building-a-restful-api-with-nodejs"
                         }
                     ],
                     "allowHtml": false,
@@ -18665,7 +18874,8 @@
                             "kidSession": false,
                             "tagsResultCsv": ".NET,C,F#,Game Programming",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/porting-quake-iii-to-f-a-journey-to-functional-programming"
                         }
                     ],
                     "allowHtml": false,
@@ -18765,7 +18975,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Cloud,KVM,Networking,Open Source,Red Hat,Ubuntu,Virtualization",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/high-performance-networking-for-qemukvm-based-virtual-machines"
                         },
                         {
                             "id": 2536,
@@ -18838,7 +19049,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Eclipse,facebook,JavaScript,PHP,Social App Development,Social Platform",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/writing-facebook-applications-with-eclipse"
                         }
                     ],
                     "allowHtml": false,
@@ -18923,7 +19135,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "lean,Lean Startup,Marketing,Product Management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/what-lean-brings-to-product-marketing-management"
                         }
                     ],
                     "allowHtml": false,
@@ -19023,7 +19236,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "App,Apple,Apps,iOS,iPhone,Kids,Mac OS",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/build-your-first-ios-app"
                         }
                     ],
                     "allowHtml": false,
@@ -19093,7 +19307,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "IoT",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/the-internet-of-things-iot-enable-proactive-data-access-from-any-device"
                         }
                     ],
                     "allowHtml": false,
@@ -19183,7 +19398,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Concurrency,Data analytics,Distributed,Distributed Application,reactive",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/reactive-programming-with-dds-and-rx"
                         },
                         {
                             "id": 3617,
@@ -19241,7 +19457,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C++11,functional programming,lambdas",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/fun-with-lambdas-c14-style"
                         }
                     ],
                     "allowHtml": true,
@@ -19351,7 +19568,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Azure,C#,Cloud,Internet of Things,Raspberry Pi",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/how-to-build-your-own-internet-of-things-product-with-raspberry-pi"
                         }
                     ],
                     "allowHtml": true,
@@ -19431,7 +19649,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C#,F#,functional programming",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/why-what-functional-programming"
                         }
                     ],
                     "allowHtml": false,
@@ -19516,7 +19735,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Coding,Free,Game Programming,Kids",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/kodu-with-kids"
                         }
                     ],
                     "allowHtml": false,
@@ -19586,7 +19806,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Python",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/introduction-to-python---beginners---level-1"
                         },
                         {
                             "id": 2544,
@@ -19639,7 +19860,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Kids,Python",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T14:45:00"
+                            "sessionTimeDateTime": "2014-10-12T14:45:00",
+                            "sessionUrl": "2014/introduction-to-python---beginners---level-2"
                         }
                     ],
                     "allowHtml": false,
@@ -19739,7 +19961,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Algorithms,App,Boost,C++,C++11,Electronics,Engineering",
                             "sessionLevelId": 3,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/analyzing-on-chip-interconnect-with-modern-c"
                         }
                     ],
                     "allowHtml": false,
@@ -19819,7 +20042,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Debugging,diagnostics,Performance",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/modern-web-diagnostics-with-a-glimpse-into-aspnet"
                         }
                     ],
                     "allowHtml": false,
@@ -19894,7 +20118,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Database,mysql",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/mysql-enterprise-monitor"
                         }
                     ],
                     "allowHtml": false,
@@ -19994,7 +20219,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Cloud,HTML,Office,REST,SkyDrive,Web,Windows Phone 8.1",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T09:45:00"
+                            "sessionTimeDateTime": "2014-10-11T09:45:00",
+                            "sessionUrl": "2014/apps-evolved-with-the-onenote-api"
                         }
                     ],
                     "allowHtml": false,
@@ -20069,7 +20295,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Game Programming,Kids",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/kids-play---build-your-first-mobile-game-for-the-google-play-store"
                         }
                     ],
                     "allowHtml": false,
@@ -20179,7 +20406,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Apps,Best Practices,iOS,Security",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/mobile-apps-security-beyond-xss-csrf-and-sqli"
                         }
                     ],
                     "allowHtml": false,
@@ -20264,7 +20492,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,iPhone,Mobile,Windows Phone",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/ui-and-ux-design-principles-to-keep-the-user-engaged-within-your-mobile-app"
                         }
                     ],
                     "allowHtml": false,
@@ -20349,7 +20578,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Architecture,Product Engineering,UI design,User Experience",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/develop-the-right-product-faster-design-thinking-for-engineers"
                         }
                     ],
                     "allowHtml": false,
@@ -20439,7 +20669,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Database,Graph Databases,Neo4j,NoSQL,Open Source",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/intro-to-neo4j"
                         }
                     ],
                     "allowHtml": false,
@@ -20524,7 +20755,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Brain Storming,Design,UI design,User Experience",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T09:15:00"
+                            "sessionTimeDateTime": "2014-10-12T09:15:00",
+                            "sessionUrl": "2014/put-pencil-to-paper-sketching-skills-for-engineers"
                         }
                     ],
                     "allowHtml": false,
@@ -20604,7 +20836,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Azure,DevOps,PowerShell",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T11:15:00"
+                            "sessionTimeDateTime": "2014-10-11T11:15:00",
+                            "sessionUrl": "2014/being-efficient-with-azure-automation"
                         }
                     ],
                     "allowHtml": false,
@@ -20709,7 +20942,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Agile,AngularJS,JavaScript,TypeScript",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/design-strategies-with-angularjs"
                         },
                         {
                             "id": 2568,
@@ -20792,7 +21026,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,JavaScript,JavaScript,TypeScript",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/test-driven-development-with-typescriptjasmineangularjs"
                         }
                     ],
                     "allowHtml": false,
@@ -20887,7 +21122,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C++,CLI,JavaScript,JavaScript,NodeJS,Open Source",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/developing-automated-stock-trading-system-with-nodejs"
                         }
                     ],
                     "allowHtml": false,
@@ -20982,7 +21218,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Framework,MVC,MVVM,Open Source,Productivity,WPF",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/code-framework-wpf-mvcmvvm-projects"
                         }
                     ],
                     "allowHtml": false,
@@ -21072,7 +21309,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "C++11,Concurrency,Testing,Threading,Unit Testing",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/mtut-a-c-framework-for-cross-thread-unit-testing"
                         }
                     ],
                     "allowHtml": false,
@@ -21147,7 +21385,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,JavaScript",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/angularjs-for-non-javascripters"
                         }
                     ],
                     "allowHtml": false,
@@ -21227,7 +21466,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "JavaScript,Unit Testing,Jasmine",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T15:30:00"
+                            "sessionTimeDateTime": "2014-10-11T15:30:00",
+                            "sessionUrl": "2014/javascript-testing-with-jasmine-101"
                         }
                     ],
                     "allowHtml": false,
@@ -21322,7 +21562,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "BigData,Data analytics,hadoop,Java,search,Solr",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/why-would-you-integrate-solr-and-hadoop-and-why-would-you-do-that"
                         }
                     ],
                     "allowHtml": false,
@@ -21422,7 +21663,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Automation,Code Generation,Concurrency,Embedded Software,IoT,Operating system,Productivity enhancer",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/synthesizing-an-optimized-application-specific-os-for-your-iot-device"
                         }
                     ],
                     "allowHtml": false,
@@ -21507,7 +21749,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "goal management,health management,Project Management,time management",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T10:45:00"
+                            "sessionTimeDateTime": "2014-10-12T10:45:00",
+                            "sessionUrl": "2014/manage-your-life-web-based-goal-time-project-health-management"
                         },
                         {
                             "id": 1487,
@@ -21565,7 +21808,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Architecture,Open Source House,Smart Home",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-12T13:15:00"
+                            "sessionTimeDateTime": "2014-10-12T13:15:00",
+                            "sessionUrl": "2014/apply-software-development-principles-to-livework-spaces"
                         }
                     ],
                     "allowHtml": false,
@@ -21640,7 +21884,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "AngularJS,JavaScript",
                             "sessionLevelId": 1,
-                            "sessionTimeDateTime": "2014-10-11T13:45:00"
+                            "sessionTimeDateTime": "2014-10-11T13:45:00",
+                            "sessionUrl": "2014/launch-an-angular-app-in-75-minutes"
                         }
                     ],
                     "allowHtml": false,
@@ -21730,7 +21975,8 @@
                             "kidSession": false,
                             "tagsResultCsv": "Android,Mobile,Smartwatch,Wearable,JavaScript",
                             "sessionLevelId": 2,
-                            "sessionTimeDateTime": "2014-10-11T17:00:00"
+                            "sessionTimeDateTime": "2014-10-11T17:00:00",
+                            "sessionUrl": "2014/introduction-to-smartwatch-programming"
                         }
                     ],
                     "allowHtml": false,
