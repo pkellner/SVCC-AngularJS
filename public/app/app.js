@@ -57,13 +57,54 @@
 
             $stateProvider
                 .state('svcc', {
-                    templateUrl: 'app/svcc/miscpages/svcc.html',
+                    //templateUrl: 'app/svcc/miscpages/svcc.html',
+                    templateProvider: function(CONFIG, $http, $templateCache) {
+                        var templateName;
+                        if (CONFIG.codeCampType === 'svcc') {
+                            templateName = 'app/svcc/miscpages/svcc.html';
+                        } else {
+                            templateName = 'app/angu/miscpages/angu.html';
+                        }
+                        var tpl = $templateCache.get(templateName);
+                        if(tpl){
+                            return tpl;
+                        }
+
+                        return $http
+                            .get(templateName)
+                            .then(function(response){
+                                tpl = response.data;
+                                $templateCache.put(templateName, tpl);
+                                return tpl;
+                            });
+                    },
                     controller: function($scope){
-                        $scope.contacts = [{ name: 'Alice' }, { name: 'Bob' }];
                     }
                 })
                 .state('svcc.home', {
-                    templateUrl: 'app/svcc/miscpages/svcchome.html'
+                    //templateUrl: 'app/svcc/miscpages/svcchome.html'
+                    templateProvider: function(CONFIG, $http, $templateCache) {
+                        var templateName;
+                        if (CONFIG.codeCampType === 'svcc') {
+                            templateName = 'app/svcc/miscpages/svcchome.html';
+                        } else {
+                            templateName = 'app/angu/miscpages/anguhome.html';
+                        }
+                        var tpl = $templateCache.get(templateName);
+                        if(tpl){
+                            return tpl;
+                        }
+
+                        return $http
+                            .get(templateName)
+                            .then(function(response){
+                                tpl = response.data;
+                                $templateCache.put(templateName, tpl);
+                                return tpl;
+                            });
+                    },
+                    controller: function($scope){
+                    }
                 });
 
         }]);
