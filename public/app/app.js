@@ -51,32 +51,33 @@
 
     });
 
+    function templateCalc(templateMask,CONFIG, $templateCache, $http) {
+        var codeCampType = CONFIG.codeCampType;
+        // just works for 0 to 2 occurances
+        var templateName = templateMask.replace('{0}',codeCampType).replace('{0}',codeCampType);
+        var tpl = $templateCache.get(templateName);
+        var retVal;
+        if (tpl) {
+            retVal = tpl;
+        }
+        retVal = $http
+            .get(templateName)
+            .then(function (response) {
+                tpl = response.data;
+                $templateCache.put(templateName, tpl);
+                return tpl;
+            });
+        return retVal;
+    }
+
     app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'CONFIG',
 
         function ($stateProvider, $urlRouterProvider, $locationProvider, CONFIG) {
 
             $stateProvider
                 .state('base', {
-                    //templateUrl: 'app/svcc/miscpages/svcc.html',
                     templateProvider: function (CONFIG, $http, $templateCache) {
-                        var templateName;
-                        if (CONFIG.codeCampType === 'svcc') {
-                            templateName = 'app/svcc/miscpages/svcc.html';
-                        } else {
-                            templateName = 'app/angu/miscpages/angu.html';
-                        }
-                        var tpl = $templateCache.get(templateName);
-                        if (tpl) {
-                            return tpl;
-                        }
-                        var promise = $http
-                            .get(templateName)
-                            .then(function (response) {
-                                tpl = response.data;
-                                $templateCache.put(templateName, tpl);
-                                return tpl;
-                            });
-                        return promise;
+                        return templateCalc('app/{0}/miscpages/{0}.html',CONFIG, $templateCache, $http);
                     },
                     controller: function ($scope) {
                     }
@@ -84,24 +85,7 @@
                 .state('base.home', {
                     //templateUrl: 'app/svcc/miscpages/svcchome.html'
                     templateProvider: function (CONFIG, $http, $templateCache) {
-                        var templateName;
-                        if (CONFIG.codeCampType === 'svcc') {
-                            templateName = 'app/svcc/miscpages/svcchome.html';
-                        } else {
-                            templateName = 'app/angu/miscpages/anguhome.html';
-                        }
-                        var tpl = $templateCache.get(templateName);
-                        if (tpl) {
-                            return tpl;
-                        }
-
-                        return $http
-                            .get(templateName)
-                            .then(function (response) {
-                                tpl = response.data;
-                                $templateCache.put(templateName, tpl);
-                                return tpl;
-                            });
+                        return templateCalc('app/{0}/miscpages/{0}home.html',CONFIG, $templateCache, $http);
                     },
                     controller: function ($scope) {
                     }
@@ -110,24 +94,7 @@
                     url: '/about',
                     //templateUrl: 'app/svcc/miscpages/about.html'
                     templateProvider: function (CONFIG, $http, $templateCache) {
-                        var templateName;
-                        if (CONFIG.codeCampType === 'svcc') {
-                            templateName = 'app/svcc/miscpages/about.html';
-                        } else {
-                            templateName = 'app/angu/miscpages/about.html';
-                        }
-                        var tpl = $templateCache.get(templateName);
-                        if (tpl) {
-                            return tpl;
-                        }
-
-                        return $http
-                            .get(templateName)
-                            .then(function (response) {
-                                tpl = response.data;
-                                $templateCache.put(templateName, tpl);
-                                return tpl;
-                            });
+                        return templateCalc('app/{0}/miscpages/about.html',CONFIG, $templateCache, $http);
                     },
                     controller: function ($scope) {
                     }
