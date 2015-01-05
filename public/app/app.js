@@ -56,42 +56,24 @@
         function ($stateProvider, $urlRouterProvider, $locationProvider, CONFIG) {
 
             $stateProvider
-                .state('index', {
-                    url: "",
-                    views: {
-                        "svcc": {
-                            template: "app/svcc/miscpages/svccbase.html"
-                        },
-                        "angu": {
-                            template: "index.viewB"
-                        }
+                .state('svcc', {
+                    templateUrl: 'app/svcc/miscpages/svcc.html',
+                    controller: function($scope){
+                        $scope.contacts = [{ name: 'Alice' }, { name: 'Bob' }];
                     }
                 })
-                .state('route1', {
-                    url: "/route1",
-                    views: {
-                        "viewA": {
-                            template: "route1.viewA"
-                        },
-                        "viewB": {
-                            template: "route1.viewB"
-                        }
-                    }
-                })
-                .state('route2', {
-                    url: "/route2",
-                    views: {
-                        "viewA": {
-                            template: "route2.viewA"
-                        },
-                        "viewB": {
-                            template: "route2.viewB"
-                        }
-                    }
+                .state('svcc.home', {
+                    templateUrl: 'app/svcc/miscpages/svcchome.html'
                 });
 
-
         }]);
+
+    app.controller('MainController',['$state','$rootScope', function ($state,$rootScope) {
+        $rootScope.hideLoadingIcon = true;
+        $state.transitionTo('svcc.home');
+    }]);
+
+
 
     app.run(['$rootScope', '$httpBackend', 'speakerDataModelService', 'speakerDataModelUrlService',
         'sessionDataModelService', 'sessionDataModelUrlService',
