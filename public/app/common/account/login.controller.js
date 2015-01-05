@@ -20,7 +20,7 @@
 
                     $rootScope.loginName = response.data.attendeeResults.username;
                     $rootScope.sessionGuid = response.data.attendeeResults.sessionGuid;
-                    $state.transitionTo('svcc.home');
+                    $state.transitionTo('base.home');
 
                 });
 

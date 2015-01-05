@@ -16,7 +16,7 @@
         }).success(function (data, status, headers, config) {
             $rootScope.sessionGuid = null;
             $rootScope.loginName = null;
-            $state.transitionTo('svcc.home');
+            $state.transitionTo('base.home');
         }).error(function (data, status, header, config) {
             alert('logout failed');
         });
