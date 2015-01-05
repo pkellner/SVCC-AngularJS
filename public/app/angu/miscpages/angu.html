@@ -31,9 +31,9 @@
 
             <div class="userWrap">
                 <div class="loginForm">
-                    <span ng-show='!loginName || loginName.length == 0'><a ui-sref="login">LOGIN</a></span>
+                    <span ng-show='!loginName || loginName.length == 0'><a ui-sref="base.login">LOGIN</a></span>
                     <span ng-show='loginName && loginName.length != 0'><a
-                            ui-sref="logout">LOGOUT</a> {{ loginName }}</span>
+                            ui-sref="base.logout">LOGOUT</a> {{ loginName }}</span>
                     <span ng-show='!loginName || loginName.length == 0'>| <a ui-sref="register" class="colorwhite">REGISTER</a></span>
                 </div>
             </div>

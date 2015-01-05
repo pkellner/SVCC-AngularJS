@@ -3,7 +3,7 @@
     'use strict';
 
     var app = angular
-        .module('svccApp')
+        .module('baseApp')
         .controller('SessionsController', SessionsController);
 
     app.filter("fixPresenterUrl", function() {

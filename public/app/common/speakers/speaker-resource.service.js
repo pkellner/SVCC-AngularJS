@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('svccApp')
+    angular.module('baseApp')
         .factory('speakerResourceService', ['$resource',//'speakerResourceServiceMock',
             function ($resource) {
                 return $resource('/rest/presenter/arrayonly/:urlPostToken/:name');

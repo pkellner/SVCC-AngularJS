@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('svccApp')
+    angular.module('baseApp')
         .directive('speakerSocialIconDirective', speakerSocialIconDirective);
     function speakerSocialIconDirective() {
         return {

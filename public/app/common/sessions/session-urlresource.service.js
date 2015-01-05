@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('svccApp')
+    angular.module('baseApp')
         .factory('sessionUrlResourceService', ['$resource',//'speakerResourceServiceMock',
             function ($resource) {
 

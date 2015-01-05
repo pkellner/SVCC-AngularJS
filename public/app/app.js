@@ -15,8 +15,8 @@
         'ngMessages',
         'ngResource',
         'ui.router',
-        'pusher-angular',
-        'svccApp'
+        'pusher-angular'
+        //'svccApp'
         //'ngMockE2E'
     ]);
 
@@ -51,10 +51,10 @@
 
     });
 
-    function templateCalc(templateMask,CONFIG, $templateCache, $http) {
+    function templateCalc(templateMask, CONFIG, $templateCache, $http) {
         var codeCampType = CONFIG.codeCampType;
         // just works for 0 to 2 occurances
-        var templateName = templateMask.replace('{0}',codeCampType).replace('{0}',codeCampType);
+        var templateName = templateMask.replace('{0}', codeCampType).replace('{0}', codeCampType);
         var tpl = $templateCache.get(templateName);
         var retVal;
         if (tpl) {
@@ -77,27 +77,34 @@
             $stateProvider
                 .state('base', {
                     templateProvider: function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/miscpages/{0}.html',CONFIG, $templateCache, $http);
-                    },
-                    controller: function ($scope) {
+                        return templateCalc('app/{0}/miscpages/{0}.html', CONFIG, $templateCache, $http);
                     }
                 })
                 .state('base.home', {
                     //templateUrl: 'app/svcc/miscpages/svcchome.html'
                     templateProvider: function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/miscpages/{0}home.html',CONFIG, $templateCache, $http);
-                    },
-                    controller: function ($scope) {
+                        return templateCalc('app/{0}/miscpages/{0}home.html', CONFIG, $templateCache, $http);
                     }
                 })
                 .state('base.about', {
                     url: '/about',
-                    //templateUrl: 'app/svcc/miscpages/about.html'
                     templateProvider: function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/miscpages/about.html',CONFIG, $templateCache, $http);
-                    },
-                    controller: function ($scope) {
+                        return templateCalc('app/{0}/miscpages/about.html', CONFIG, $templateCache, $http);
                     }
+                })
+                .state('base.login', {
+                    url: '/login',
+                    templateProvider: function (CONFIG, $http, $templateCache) {
+                        return templateCalc('app/{0}/account/login.html', CONFIG, $templateCache, $http);
+                    },
+                    controller: 'LoginController as vm'
+                }).
+                state('base.logout', {
+                    url: '/logout',
+                    templateProvider: function (CONFIG, $http, $templateCache) {
+                        return templateCalc('app/{0}/miscpages/{0}home.html', CONFIG, $templateCache, $http);
+                    },
+                    controller: 'LogoutController as vm'
                 });
 
         }]);

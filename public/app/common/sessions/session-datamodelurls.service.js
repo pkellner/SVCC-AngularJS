@@ -2,7 +2,7 @@
     'use strict';
 
     //  this is nasty because it forces the user to download a big js file every time the page is loaded (assuming not cached)
-    angular.module('svccApp').service('sessionDataModelUrlService', function speakerDataModelService() {
+    angular.module('baseApp').service('sessionDataModelUrlService', function speakerDataModelService() {
 
 
         // http://www.jeremyzerr.com/angularjs-backend-less-development-using-httpbackend-mock
