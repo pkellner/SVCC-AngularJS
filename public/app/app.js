@@ -105,6 +105,13 @@
                         return templateCalc('app/{0}/miscpages/{0}home.html', CONFIG, $templateCache, $http);
                     },
                     controller: 'LogoutController as vm'
+                })
+                .state('base.register', {
+                    url: '/register',
+                    templateProvider: function (CONFIG, $http, $templateCache) {
+                        return templateCalc('app/{0}/account/registration.html', CONFIG, $templateCache, $http);
+                    },
+                    controller: 'RegistrationController as vm'
                 });
 
         }]);
