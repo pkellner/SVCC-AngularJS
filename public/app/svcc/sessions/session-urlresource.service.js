@@ -5,7 +5,7 @@
         .factory('sessionUrlResourceService', ['$resource',//'speakerResourceServiceMock',
             function ($resource) {
 
-                return $resource('/rest/session/urls', {}, {
+                return $resource('/rest/sessionurls', {}, {
                     'query': {method: 'GET', cache: true, isArray: true}
                 });
             }]);
