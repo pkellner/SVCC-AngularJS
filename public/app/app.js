@@ -16,8 +16,8 @@
         'ngResource',
         'ui.router',
         'pusher-angular',
-        'svccApp',
-        'ngMockE2E'
+        'svccApp'
+        //'ngMockE2E'
     ]);
 
     angular.element(document).ready(function () {
@@ -26,7 +26,7 @@
         var $http = initInjector.get("$http");
 
         var mockdata = {};
-        mockdata.enabled = true;
+        mockdata.enabled = false;
         app.constant('MOCKDATA', mockdata);
 
         if (mockdata.enabled === true) {
