@@ -56,9 +56,9 @@
         function ($stateProvider, $urlRouterProvider, $locationProvider, CONFIG) {
 
             $stateProvider
-                .state('svcc', {
+                .state('base', {
                     //templateUrl: 'app/svcc/miscpages/svcc.html',
-                    templateProvider: function(CONFIG, $http, $templateCache) {
+                    templateProvider: function (CONFIG, $http, $templateCache) {
                         var templateName;
                         if (CONFIG.codeCampType === 'svcc') {
                             templateName = 'app/svcc/miscpages/svcc.html';
@@ -66,24 +66,24 @@
                             templateName = 'app/angu/miscpages/angu.html';
                         }
                         var tpl = $templateCache.get(templateName);
-                        if(tpl){
+                        if (tpl) {
                             return tpl;
                         }
-
-                        return $http
+                        var promise = $http
                             .get(templateName)
-                            .then(function(response){
+                            .then(function (response) {
                                 tpl = response.data;
                                 $templateCache.put(templateName, tpl);
                                 return tpl;
                             });
+                        return promise;
                     },
-                    controller: function($scope){
+                    controller: function ($scope) {
                     }
                 })
-                .state('svcc.home', {
+                .state('base.home', {
                     //templateUrl: 'app/svcc/miscpages/svcchome.html'
-                    templateProvider: function(CONFIG, $http, $templateCache) {
+                    templateProvider: function (CONFIG, $http, $templateCache) {
                         var templateName;
                         if (CONFIG.codeCampType === 'svcc') {
                             templateName = 'app/svcc/miscpages/svcchome.html';
@@ -91,29 +91,54 @@
                             templateName = 'app/angu/miscpages/anguhome.html';
                         }
                         var tpl = $templateCache.get(templateName);
-                        if(tpl){
+                        if (tpl) {
                             return tpl;
                         }
 
                         return $http
                             .get(templateName)
-                            .then(function(response){
+                            .then(function (response) {
                                 tpl = response.data;
                                 $templateCache.put(templateName, tpl);
                                 return tpl;
                             });
                     },
-                    controller: function($scope){
+                    controller: function ($scope) {
+                    }
+                })
+                .state('base.about', {
+                    url: '/about',
+                    //templateUrl: 'app/svcc/miscpages/about.html'
+                    templateProvider: function (CONFIG, $http, $templateCache) {
+                        var templateName;
+                        if (CONFIG.codeCampType === 'svcc') {
+                            templateName = 'app/svcc/miscpages/about.html';
+                        } else {
+                            templateName = 'app/angu/miscpages/about.html';
+                        }
+                        var tpl = $templateCache.get(templateName);
+                        if (tpl) {
+                            return tpl;
+                        }
+
+                        return $http
+                            .get(templateName)
+                            .then(function (response) {
+                                tpl = response.data;
+                                $templateCache.put(templateName, tpl);
+                                return tpl;
+                            });
+                    },
+                    controller: function ($scope) {
                     }
                 });
 
         }]);
 
-    app.controller('MainController',['$state','$rootScope', function ($state,$rootScope) {
+    app.controller('MainController', ['$state', '$rootScope', function ($state, $rootScope) {
         $rootScope.hideLoadingIcon = true;
-        $state.transitionTo('svcc.home');
+        $state.transitionTo('base.home');
     }]);
-
 
 
     app.run(['$rootScope', '$httpBackend', 'speakerDataModelService', 'speakerDataModelUrlService',
