@@ -1,10 +1,27 @@
 (function () {
     'use strict';
 
+    var app = angular
+            .module('svccApp', [
+                'ui.router'
+            ])
+            .config(['$stateProvider', '$urlRouterProvider',
+                function ($stateProvider, $urlRouterProvider) {
 
-    var app = angular.module('svccApp', [
-        'ui.router'
-    ]);
+                    $urlRouterProvider.otherwise('/home');
+
+                    // States
+                    $stateProvider
+                        .state('other', {
+                            url: "/other",
+                            templateUrl: 'tpl.html'
+                        });
+                }
+            ])
+        ;
+    app.controller('myController', function ($scope,$stateParams) {
+        console.log("fromMyController" + $stateParams.id);
+    });
 
     var myConstant = {};
     myConstant.codeCampType = "svcc";
@@ -12,23 +29,47 @@
 
     app.config(['$stateProvider', '$urlRouterProvider','CONFIG',
         function ($stateProvider, $urlRouterProvider,CONFIG) {
-            console.log(CONFIG.codeCampType);
+            console.log('CONFIG.codeCampType: ' + CONFIG.codeCampType);
+            console.log(myConstant.codeCampType);
+            debugger;
             $stateProvider
                 .state('home', {
                     url: '/home',
                     //templateUrl: 'index5templateA.html',   (THIS WORKS)
-                    templateUrl: function(CONFIG) {
+                    templateProvider: function(CONFIG, $http, $templateCache) {
                         console.log('in templateUrl ' + CONFIG.codeCampType);
+
+                        var templateName = 'index5templateB.html';
+
                         if (CONFIG.codeCampType === "svcc") {
-                            return 'index5templateA.html';
-                        } else {
-                            return 'index5templateB.html';
+                            templateName = 'index5templateA.html';
                         }
+                        var tpl = $templateCache.get(templateName);
+
+                        if(tpl){
+                            return tpl;
+                        }
+
+                        return $http
+                            .get(templateName)
+                            .then(function(response){
+                                tpl = response.data
+                                $templateCache.put(templateName, tpl);
+                                return tpl;
+                            });
                     },
                     controller: function ($state) {
                     }
                 });
         }]);
+
+
+
+
+
+
+
+
 }());
 
 
