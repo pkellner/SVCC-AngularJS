@@ -15,9 +15,8 @@
         'ngMessages',
         'ngResource',
         'ui.router',
-        'pusher-angular'
-        //'svccApp'
-        //'ngMockE2E'
+        'pusher-angular',
+        'ngMockE2E'
     ]);
 
     //app.run(function($templateCache) {
@@ -30,8 +29,9 @@
         var $http = initInjector.get("$http");
 
         var mockdata = {};
-        mockdata.enabled = false;
+        mockdata.enabled = true;
         app.constant('MOCKDATA', mockdata);
+
 
         if (mockdata.enabled === true) {
             return $http.get("app/Data/accountInfo.json").then(function (response) {
@@ -52,7 +52,8 @@
     });
 
     function templateCalc(templateMask, CONFIG, $templateCache, $http) {
-        var codeCampType = CONFIG.codeCampType;
+        var codeCampType = CONFIG.codeCampType;  // this comes from both .json file and httpbackend because of bootstrap init
+
         // just works for 0 to 2 occurances
         var templateName = templateMask.replace('{0}', codeCampType).replace('{0}', codeCampType);
         var tpl = $templateCache.get(templateName);
@@ -254,9 +255,10 @@
 
                 var accountInfoUrl = "/rpc/Account/IsLoggedIn";
                 $httpBackend.whenPOST(accountInfoUrl).respond(function (method, url, data) {
+                    debugger;
                     var accountInfo = {
                         "returnStatus": "OK",
-                        "codeCampType": "svcc",
+                        "codeCampType": "angu",
                         "registrationWords": "To attend Angular University you <b>must be registered and have a confirmed ticket</b>.",
                         "registrationClosed": false,
                         "isAdmin": false,

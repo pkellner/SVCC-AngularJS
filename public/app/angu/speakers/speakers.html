@@ -1,0 +1,123 @@
+<!--suppress ALL -->
+<h1 class="title">Presenters</h1>
+
+
+<!--<div class="searchBox">-->
+<!--<div class="searchBoxField">-->
+<!--<label for="speakerFilter">Search :</label>-->
+<!--<div class="searchInput">-->
+<!--<input ng-model="search.$"  placeholder="search here..." type="text">-->
+<!--<button id="btnsearch" type="button"></button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<div class="toolbarBg">
+    <div class="searchBox alt">
+        <div class="searchBoxField">
+            <div class="searchInput">
+                <input ng-model="search.$" placeholder="search here..." type="text">
+                <button type="button"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / searchBox -->
+<h1 class="searchTitle title">Search Results</h1>
+<div id="en_speakerlist" class="listingWrap">
+    <section class="listingBox speakerDetails" ng-repeat="speaker in vm.speakers | filter:search">
+        <div class="listingWrap">
+            <section class="listingBox speakerDetails noBorder">
+                <div class="listingMedia">
+                    <img alt="img" width="135" height="135"
+                         src="http://cache.siliconvalley-codecamp.com{{speaker.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+                </div>
+
+                <div speaker-social-icon-directive speaker='speaker' >
+                </div>
+
+                <div class="listingInfo">
+                    <header class="listingHeader">
+                        <h3>{{speaker.firstName}} {{speaker.lastName}}</h3>
+                        <a ng-href="{{::speaker.webSite}}" target="_blank" class="speakerUrl">{{::speaker.webSite}}</a>
+                    </header>
+                    <div class="listingDesc">
+                        {{::speaker.bio}}
+                    </div>
+
+                    <div class="" style="margin-top: 5px;">
+                        <h2><!--suppress HtmlUnknownAnchorTarget -->
+                            <a href="#/speaker/{{::speaker.presenterUrl}}">More Details Including Sessions</a></h2>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+        <!--<div class="listingMedia">-->
+        <!--<img width="135" height="135" src="http://cache.siliconvalley-codecamp.com/attendeeimage/20140906033629-903.jpg?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad" alt="">-->
+        <!--</div>-->
+        <!--<div class="listingInfo">-->
+        <!--<header class="listingHeader">-->
+        <!--<h2>{{speaker.firstName}} {{speaker.lastName}}</h2>-->
+
+        <!--<h3><a href="http://peterkellner.net" target="_blank">http://peterkellner.net</a></h3>-->
+        <!--</header>-->
+
+        <!--<div class="listingDesc" id="listing-desc-8014eca4-b012-4846-b8b6-cd7f5947ca63">-->
+        <!--<p>Peter Kellner, a Microsoft ASP.NET MVP since 2007, is founder and president of 73rd Street Associates and a seasoned software professional specializing in high quality, scalable and extensible .Net web applications.  His experience includes building and leading engineering teams both on and off shore. When not working, Peter spends most his free time biking. </p>-->
+        <!--</div>-->
+        <!--<div class="listingDesc d-none" id="listing-desc1-8014eca4-b012-4846-b8b6-cd7f5947ca63">-->
+        <!--<p>Peter Kellner, a Microsoft ASP.NET MVP since 2007, is founder and president of 73rd Street Associates and a seasoned software professional specializing in high quality, scalable and extensible .Net web applications.  His experience includes building and leading engineering teams both on and off shore. When not working, Peter spends most his free time biking. </p>-->
+        <!--</div>-->
+        <!--</div>-->
+
+
+        <!--<div class="listingMore">-->
+        <!--<div id="list-of-event-8014eca4-b012-4846-b8b6-cd7f5947ca63" class="secondaryListingWrap readMoreContent">-->
+        <!--<h4>Sessions conducted by Peter Kellner</h4>-->
+        <!--<ul>-->
+
+
+        <!--<li class="border-b-None  ProfessionalSession ">-->
+        <!--<div class="sessionTime">3:30 PM Saturday</div>-->
+        <!--<h5>Community, Career and You: a Microsoft MVP...</h5>-->
+        <!--<a href="/Session/2014/community-career-and-you-a-microsoft-mvp-panel" class="button gray alt go">Details</a>-->
+        <!--</li>-->
+
+        <!--</ul>-->
+        <!--</div>-->
+        <!--<div id="ReadLess-8014eca4-b012-4846-b8b6-cd7f5947ca63" class="readMoreUp">-->
+        <!--<a href="/Session/2014/Presenter/Peter-Kellner-903" id="line-link-8014eca4-b012-4846-b8b6-cd7f5947ca63" class="listingDetailsLink">Details for all Sessions for Peter Kellner</a>-->
+        <!--<a id="read-more-8014eca4-b012-4846-b8b6-cd7f5947ca63-less" class="button gray alt less">Read less</a>-->
+        <!--</div>-->
+        <!--<div class="readMoreDown">-->
+        <!--<a id="read-more-8014eca4-b012-4846-b8b6-cd7f5947ca63-More" class="button gray alt more">Read more</a>-->
+        <!--</div>-->
+
+        <!--<script type="text/javascript">-->
+        <!--var x = $(document).ready(function () {-->
+        <!--$('#read-more-8014eca4-b012-4846-b8b6-cd7f5947ca63-More').click(function () {-->
+        <!--$('#listing-desc1-8014eca4-b012-4846-b8b6-cd7f5947ca63').css("display", "block")-->
+        <!--$('#listing-desc-8014eca4-b012-4846-b8b6-cd7f5947ca63').css("display", "none");-->
+        <!--$('#list-of-event-8014eca4-b012-4846-b8b6-cd7f5947ca63').slideDown();-->
+        <!--$('#read-more-8014eca4-b012-4846-b8b6-cd7f5947ca63-More').css("display", "none");-->
+        <!--$('#ReadLess-8014eca4-b012-4846-b8b6-cd7f5947ca63').css("display", "block");-->
+        <!--});-->
+        <!--$('#read-more-8014eca4-b012-4846-b8b6-cd7f5947ca63-less').click(function () {-->
+        <!--$('#list-of-event-8014eca4-b012-4846-b8b6-cd7f5947ca63').slideUp();-->
+        <!--$('#read-more-8014eca4-b012-4846-b8b6-cd7f5947ca63-More').css("display", "inline");-->
+        <!--$('#listing-desc1-8014eca4-b012-4846-b8b6-cd7f5947ca63').css("display", "none")-->
+        <!--$('#listing-desc-8014eca4-b012-4846-b8b6-cd7f5947ca63').css("display", "block");-->
+        <!--$('#ReadLess-8014eca4-b012-4846-b8b6-cd7f5947ca63').css("display", "none");-->
+        <!--});-->
+        <!--});-->
+        <!--</script>-->
+        <!--</div>-->
+        <!-- / listingMore -->
+
+    </section>
+
+
+</div>

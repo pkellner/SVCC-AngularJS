@@ -1,6 +1,8 @@
 
 <div id="wrapper">
 
+    <b>angu.html</b>
+
     <!--<div id="initializing">-->
     <!--<h2>Initializing...</h2>-->
     <!--</div>-->
@@ -20,7 +22,7 @@
                 OCTOBER 11TH &amp; 12TH 2014
             </div>
             <div class="venueWrap">
-                <span class="name">HYATT HOTEL</span><br/>
+                <span class="name">FOOTHILL COLLEGE</span><br/>
                 12345 EL MONTE RD.<br/>
                 LOS ALTOS HILLS, CA
             </div>
@@ -34,7 +36,7 @@
                     <span ng-show='!loginName || loginName.length == 0'><a ui-sref="base.login">LOGIN</a></span>
                     <span ng-show='loginName && loginName.length != 0'><a
                             ui-sref="base.logout">LOGOUT</a> {{ loginName }}</span>
-                    <span ng-show='!loginName || loginName.length == 0'>| <a ui-sref="register" class="colorwhite">REGISTER</a></span>
+                    <span ng-show='!loginName || loginName.length == 0'>| <a ui-sref="base.register" class="colorwhite">REGISTER</a></span>
                 </div>
             </div>
 
@@ -43,6 +45,13 @@
 
                     <li class="menuListItem jobs">
                         <a ui-sref="base.home" class="menuItemLink">Home</a>
+                    </li>
+                    <li class="menuListItem sessions">
+                        <a ui-sref="base.sessions" class="menuItemLink">Sessions</a>
+                    </li>
+
+                    <li class="menuListItem program">
+                        <a ui-sref="base.speakers" class="menuItemLink">Presenters</a>
                     </li>
 
                     <li class="menuListItem jobs">

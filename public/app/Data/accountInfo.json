@@ -1,6 +1,6 @@
 [{
   "returnStatus": "OK",
-  "codeCampType": "svcc",
+  "codeCampType": "angu",
   "registrationWords": "To attend Angular University you <b>must be registered and have a confirmed ticket</b>.",
   "registrationClosed": false,
   "isAdmin": false,
