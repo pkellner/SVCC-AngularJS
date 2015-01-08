@@ -16,6 +16,7 @@
         'ngResource',
         'ui.router',
         'pusher-angular',
+        'ui.bootstrap',
         'ngMockE2E'
     ]);
 
