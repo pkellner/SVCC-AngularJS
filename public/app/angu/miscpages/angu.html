@@ -1,75 +1,144 @@
+<div ng-controller="AnguController">
 
-<div id="wrapper">
 
-    <b>angu.html</b>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
 
-    <!--<div id="initializing">-->
-    <!--<h2>Initializing...</h2>-->
-    <!--</div>-->
+            <!--<a class="navbar-brand">Angular U</a>-->
 
-    <header id="header" class="mainHeader ">
 
-        <div class="logoInfoBar">
-            <div class="logoWrap">
-                <a href="/">
+            <div class="navbar-header">
+                <button type="button"
+                        class="navbar-toggle"
+                        data-toggle="collapse"
+                        data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
 
-                    <img src="http://cache.siliconvalley-codecamp.com/Images/silicon-valley-code-camp.png"
-                         alt="Silicon Valley Code Camp"/>
-                </a>
+                    <span class="icon-bar navbar-text"></span>
+
+
+                </button>
             </div>
-            <div class="dateWrap">
-                <br/>
-                OCTOBER 11TH &amp; 12TH 2014
-            </div>
-            <div class="venueWrap">
-                <span class="name">FOOTHILL COLLEGE</span><br/>
-                12345 EL MONTE RD.<br/>
-                LOS ALTOS HILLS, CA
-            </div>
-        </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
 
-        <div class="menuUserBar">
-
-
-            <div class="userWrap">
-                <div class="loginForm">
-                    <span ng-show='!loginName || loginName.length == 0'><a ui-sref="base.login">LOGIN</a></span>
-                    <span ng-show='loginName && loginName.length != 0'><a
-                            ui-sref="base.logout">LOGOUT</a> {{ loginName }}</span>
-                    <span ng-show='!loginName || loginName.length == 0'>| <a ui-sref="base.register" class="colorwhite">REGISTER</a></span>
-                </div>
-            </div>
-
-            <div class="menuWrap">
-                <ul class="menuList">
-
-                    <li class="menuListItem jobs">
-                        <a ui-sref="base.home" class="menuItemLink">Home</a>
-                    </li>
-                    <li class="menuListItem sessions">
-                        <a ui-sref="base.sessions" class="menuItemLink">Sessions</a>
-                    </li>
-
-                    <li class="menuListItem program">
-                        <a ui-sref="base.speakers" class="menuItemLink">Presenters</a>
-                    </li>
-
-                    <li class="menuListItem jobs">
-                        <a ui-sref="base.about" class="menuItemLink">About</a>
+                    <li><a ng-click="anguLocationClick()">Location</a></li>
+                    <li><a ng-click="anguSpeakersClick()">Speakers</a></li>
+                    <li><a ng-click="anguProgramClick()">Program</a></li>
+                    <li><a ng-click="anguSponsorsClick()">Sponsors</a></li>
+                    <li>
+                        <span style="color: #ffffff">Ping me when Tickets go on sale:</span>
+                        <input ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="Email Address">
+                        <button ng-click="anguPingMe()">Ping Me</button>
                     </li>
 
                 </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <section id="middle">
-        <div id="container">
-            <div id="content" class="content">
-                <div class="view-container">
-                    <div ui-view class="view-frame"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 </div>
+
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+<!--<div class="navbar navbar-default navbar-static-top">-->
+<!--<div class="container">-->
+<!--<div class="navbar-header">-->
+<!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--</button>-->
+<!--<a class="navbar-brand" href="#">Brand</a>-->
+<!--</div>-->
+<!--<div class="collapse navbar-collapse">-->
+<!--<ul class="nav navbar-nav">-->
+<!--<li class="active"><a href="#">Home</a></li>-->
+<!--<li><a href="#contact">Contact</a></li>-->
+<!--</ul>-->
+<!--<ul class="nav navbar-nav navbar-right">-->
+<!--<li><a href="#about">About</a></li>-->
+<!--</ul>-->
+<!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<div id="wrapper">-->
+
+<!--<b>angu.html</b>-->
+
+<!---->
+<!--<header id="header" class="mainHeader ">-->
+
+<!--<div class="logoInfoBar">-->
+<!--<div class="logoWrap">-->
+<!--<a href="/">-->
+
+<!--<img src="http://cache.siliconvalley-codecamp.com/Images/silicon-valley-code-camp.png"-->
+<!--alt="Silicon Valley Code Camp"/>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div class="dateWrap">-->
+<!--<br/>-->
+<!--OCTOBER 11TH &amp; 12TH 2014-->
+<!--</div>-->
+<!--<div class="venueWrap">-->
+<!--<span class="name">FOOTHILL COLLEGE</span><br/>-->
+<!--12345 EL MONTE RD.<br/>-->
+<!--LOS ALTOS HILLS, CA-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="menuUserBar">-->
+
+
+<!--<div class="userWrap">-->
+<!--<div class="loginForm">-->
+<!--<span ng-show='!loginName || loginName.length == 0'><a ui-sref="base.login">LOGIN</a></span>-->
+<!--<span ng-show='loginName && loginName.length != 0'><a-->
+<!--ui-sref="base.logout">LOGOUT</a> {{ loginName }}</span>-->
+<!--<span ng-show='!loginName || loginName.length == 0'>| <a ui-sref="base.register" class="colorwhite">REGISTER</a></span>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="menuWrap">-->
+<!--<ul class="menuList">-->
+
+<!--<li class="menuListItem jobs">-->
+<!--<a ui-sref="base.home" class="menuItemLink">Home</a>-->
+<!--</li>-->
+<!--<li class="menuListItem sessions">-->
+<!--<a ui-sref="base.sessions" class="menuItemLink">Sessions</a>-->
+<!--</li>-->
+
+<!--<li class="menuListItem program">-->
+<!--<a ui-sref="base.speakers" class="menuItemLink">Presenters</a>-->
+<!--</li>-->
+
+<!--<li class="menuListItem jobs">-->
+<!--<a ui-sref="base.about" class="menuItemLink">About</a>-->
+<!--</li>-->
+
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</header>-->
+
+<!--<section id="middle">-->
+<!--<div id="container">-->
+<!--<div id="content" class="content">-->
+<!--<div class="view-container">-->
+<!--<div ui-view class="view-frame"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
+<!--</div>-->
