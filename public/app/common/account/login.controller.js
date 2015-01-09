@@ -4,7 +4,7 @@
     var app = angular.module('baseApp');
 
     app.controller('LoginController', LoginController);
-    function LoginController($http, $window, $rootScope,$state, accountInfoService) {
+    function LoginController($http, $rootScope,$state) {
         var vm = this;
         vm.login = {};
 
@@ -33,7 +33,7 @@
         };
     }
 
-    LoginController.$inject = ['$http', '$window', '$rootScope','$state', 'accountInfoService'];
+    LoginController.$inject = ['$http',  '$rootScope','$state'];
 })();
 
 

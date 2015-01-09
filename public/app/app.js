@@ -279,7 +279,7 @@
 
                 var accountInfoUrl = "/rpc/Account/IsLoggedIn";
                 $httpBackend.whenPOST(accountInfoUrl).respond(function (method, url, data) {
-                    debugger;
+
                     var accountInfo = {
                         "returnStatus": "OK",
                         "codeCampType": "angu",

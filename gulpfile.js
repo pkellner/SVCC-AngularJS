@@ -122,12 +122,18 @@
     //        .pipe(notify({message: 'Scripts no ngAnnotate task complete'}));
     //});
 
+    gulp.task('lint', function() {
+        gulp.src('public/app/**/*.js')
+            .pipe(jshint('.jshintrcPROD'))
+            .pipe(jshint.reporter('default'))
+    });
+
 
     gulp.task('scripts', function () {
 
         return gulp.src(['public/app/**/*.js'])
             .pipe(concat('main.js'))
-            .pipe(jshint('.jshintrc'))
+            .pipe(jshint('.jshintrcPROD'))
             .pipe(jshint.reporter('default'))
             //.pipe(ngAnnotate())
             .pipe(gulp.dest('public/dist'))

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module('baseApp')
+    angular.module('baseApp')
         .controller('SessionDetailController', SessionDetailController);
 
 

@@ -10,8 +10,6 @@
         vm.speaker = speaker;
     }
 
-
-
     SpeakerDetailController.$inject = ['speaker'];
 
 }());
