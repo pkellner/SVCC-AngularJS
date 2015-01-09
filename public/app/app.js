@@ -20,20 +20,20 @@
         'ngMockE2E'
     ]);
 
-    angular.module('baseApp').controller('AlertDemoCtrl', function ($scope) {
-        $scope.alerts = [
-            { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
-            { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
-        ];
-
-        $scope.addAlert = function() {
-            $scope.alerts.push({msg: 'Another alert!'});
-        };
-
-        $scope.closeAlert = function(index) {
-            $scope.alerts.splice(index, 1);
-        };
-    });
+    //angular.module('baseApp').controller('AlertDemoCtrl', function ($scope) {
+    //    $scope.alerts = [
+    //        { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
+    //        { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+    //    ];
+    //
+    //    $scope.addAlert = function() {
+    //        $scope.alerts.push({msg: 'Another alert!'});
+    //    };
+    //
+    //    $scope.closeAlert = function(index) {
+    //        $scope.alerts.splice(index, 1);
+    //    };
+    //});
 
 
     //app.run(function($templateCache) {
@@ -94,48 +94,48 @@
 
             $stateProvider
                 .state('base', {
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/miscpages/{0}.html', CONFIG, $templateCache, $http);
-                    }
+                    }]
                 })
                 .state('base.home', {
                     //templateUrl: 'app/svcc/miscpages/svcchome.html'
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/miscpages/{0}home.html', CONFIG, $templateCache, $http);
-                    }
+                    }]
                 })
                 .state('base.about', {
                     url: '/about',
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/miscpages/about.html', CONFIG, $templateCache, $http);
-                    }
+                    }]
                 })
                 .state('base.login', {
                     url: '/login',
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/account/login.html', CONFIG, $templateCache, $http);
-                    },
+                    }],
                     controller: 'LoginController as vm'
                 }).
                 state('base.logout', {
                     url: '/logout',
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/miscpages/{0}home.html', CONFIG, $templateCache, $http);
-                    },
+                    }],
                     controller: 'LogoutController as vm'
                 })
                 .state('base.register', {
                     url: '/register',
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/account/registration.html', CONFIG, $templateCache, $http);
-                    },
+                    }],
                     controller: 'RegistrationController as vm'
                 })
                 .state('base.speakers', {
                     url: '/speakers',
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/speakers/speakers.html', CONFIG, $templateCache, $http);
-                    },
+                    }],
                     controller: 'SpeakersController as vm',
                     resolve: {
                         speakerResourceService: 'speakerResourceService',
@@ -147,9 +147,9 @@
                 .state('base.speakeryearname', {
                     url: '/speaker/:year/:name',
                     templateUrl: 'app/svcc/speakers/speaker-detail.html',
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/speakers/speaker-detail.html', CONFIG, $templateCache, $http);
-                    },
+                    }],
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
                         speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelService', 'speakerDataModelUrlService', '$q',
@@ -186,9 +186,9 @@
                 })
                 .state('base.sessiondetail', {
                     url: '/session/:year/:title',
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/sessions/session-detail.html', CONFIG, $templateCache, $http);
-                    },
+                    }],
                     controller: 'SessionDetailController as vm',
                     resolve: {
                         session: ['$q', '$stateParams', 'sessionResourceService', 'sessionUrlResourceService', 'sessionDataModelService', 'sessionDataModelUrlService',
@@ -226,9 +226,9 @@
                 }).
                 state('base.sessions', {
                     url: '/sessions',
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/sessions/sessions.html', CONFIG, $templateCache, $http);
-                    },
+                    }],
                     controller: 'SessionsController as vm',
                     resolve: {
                         sessionResourceService: 'sessionResourceService',
@@ -244,9 +244,9 @@
 
                 // angulur university special below:
                 state('angupingmeonfirmation', {
-                    templateProvider: function (CONFIG, $http, $templateCache) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/angu/miscpages/angupingmeconfirmation.html', CONFIG, $templateCache, $http);
-                    },
+                    }],
                     controller: 'AnguController'
                 });
 

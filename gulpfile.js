@@ -100,7 +100,10 @@
         return gulp.src([
             'public/vendor/angular-messages/angular-messages.js',
             'public/vendor/angular-resource/angular-resource.js',
-            'public/vendor/angular-ui-router/release/angular-ui-router.js'
+            'public/vendor/angular-ui-router/release/angular-ui-router.js',
+            'public/vendor/angular-mocks/angular-mocks.js',
+            'public/vendor/angular-bootstrap/ui-bootstrap-tpls.js',
+
         ])
             .pipe(concat('angularextras.js'))
             .pipe(gulp.dest('public/dist'))
