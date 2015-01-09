@@ -133,8 +133,8 @@
 
         return gulp.src(['public/app/**/*.js'])
             .pipe(concat('main.js'))
-            .pipe(jshint('.jshintrcPROD'))
-            .pipe(jshint.reporter('default'))
+            //.pipe(jshint('.jshintrcPROD'))
+            //.pipe(jshint.reporter('default'))
             //.pipe(ngAnnotate())
             .pipe(gulp.dest('public/dist'))
             .pipe(rename({suffix: '.min'}))
@@ -162,8 +162,8 @@
         gulp.src('../../Content/**/*')
             .pipe(gulp.dest('public/Content'));
 
-        gulp.src('public/Data/**/*')
-            .pipe(gulp.dest('public/dist/Data'));
+        gulp.src('public/app/Data/**/*')
+            .pipe(gulp.dest('public/dist/app/Data'));
 
         gulp.src('public/vendor/angular/angular.js')
             .pipe(gulp.dest('public/dist'));
