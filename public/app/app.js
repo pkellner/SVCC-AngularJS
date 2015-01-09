@@ -240,8 +240,15 @@
                             return sessionDayOfWeekResourceService.query().$promise;
                         }]
                     }
-                });
+                }).
 
+                // angulur university special below:
+                state('angupingmeonfirmation', {
+                    templateProvider: function (CONFIG, $http, $templateCache) {
+                        return templateCalc('app/angu/miscpages/angupingmeconfirmation.html', CONFIG, $templateCache, $http);
+                    },
+                    controller: 'AnguController'
+                });
 
         }]);
 
