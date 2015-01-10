@@ -1,0 +1,144 @@
+<!--suppress HtmlUnknownAnchorTarget -->
+<h1 class="title">Sessions</h1>
+
+<section class="collapsibleBox sessionsFilterWrap active">
+    <h2 class="boxHeader">FILTERS</h2>
+    <div class="boxContent filterContentWrap" style="display: block;">
+        <div class="filterOptionsWrap daysFilterWrap">
+            <div class="labelWrap">
+                <span class="icon"></span><span class="label">Day : </span>
+            </div>
+            <div class="optionsWrap">
+                <ul ng-repeat="sessionDayOfWeek in vm.sessionDayOfWeeks"  id="sessionDaysCheckboxList">
+
+                    <!--<li class="showAll selected"><span class="checkbox"></span><span class="label">Show all</span></li>-->
+                    <li class="{{ ::sessionDayOfWeek.localClass }} selected"><span class="checkbox"></span><span class="label">{{ ::sessionDayOfWeek.dayOfWeek }}</span></li>
+
+                    <!--<li class="saturday selected"><span class="checkbox"></span><span class="label">Saturday</span></li>-->
+                    <!--<li class="sunday selected"><span class="checkbox"></span><span class="label">Sunday</span></li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="filterOptionsWrap timeFilterWrap">
+            <div class="labelWrap">
+                <span class="icon"></span><span class="label">Time : </span>
+            </div>
+            <div class="optionsWrap">
+
+
+                <div class="timeOption Saturday">
+                    <div class="dayLabel"><span class="icon"></span><span class="label">Saturday: </span></div>
+                    <div class="timesWrap">
+                        <ul>
+                            <li class="selected"><span class="checkbox"></span><span class="label">9:45 AM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">11:15 AM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">1:45 PM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">3:30 PM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">5:00 PM </span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeOption Sunday">
+                    <div class="dayLabel"><span class="icon"></span><span class="label">Sunday: </span></div>
+                    <div class="timesWrap">
+                        <ul>
+                            <li class="selected"><span class="checkbox"></span><span class="label">9:15 AM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">10:45 AM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">1:15 PM </span></li>
+                            <li class="selected"><span class="checkbox"></span><span class="label">2:45 PM </span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<div class="toolbarBg">
+    <div class="searchBox alt">
+
+        <div class="searchBoxField">
+            <label for='SortByList'>Sort by :</label>
+
+            <div class="searchSelect">
+                <select id="SortByList">
+                    <option value="title">Title</option>
+                    <option value="sessionTimeDateTime">Time</option>
+                    <option value="roomNumber">Room</option>
+                    <option value="interestCount">Interest</option>
+                </select>
+            </div>
+        </div>
+
+        <!--<div class="sessionSearchFor">-->
+        <!--<div class="icheckbox_square-green checked" style="position: relative;"><input type="checkbox" id="showKidsSessions" name="showKidsSessions" checked="" class="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>-->
+        <!--<label for="showKidsSessions">Kids</label>-->
+        <!--<div class="icheckbox_square-green checked" style="position: relative;"><input type="checkbox" id="showProfSessions" name="showProfSessions" checked="" class="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>-->
+        <!--<label for="showProfSessions">Professionals</label>-->
+        <!--</div>-->
+
+        <div class="searchBoxField">
+            <div class="searchInput">
+                <!--<input ng-model="search.title"  placeholder="search here..." type="text">-->
+                <input ng-model="search.$" placeholder="search here..." type="text">
+                <button type="button"></button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<h1 class="searchTitle title">Search Results</h1>
+
+<table id="sessionsTable" class="sessionsTable">
+    <tbody>
+
+    <tr ng-repeat="session in vm.sessions | filter:search | orderBy:vm.orderProp    " class="ProfessionalSession">
+        <td class="name">
+            <div data-id="{{::session.id}}">
+                <div class="currentSession currentSessionVisible">
+                    <h3 id="sessionTitle_{{::session.id}}" title="{{::session.title}}">{{::session.title}}</h3>
+                    <i>by</i>
+                    <span ng-repeat="presenter in session.speakersList">
+
+                        <a ng-href="#/speaker/{{::presenter.speakerLocalUrl | fixPresenterUrl}}" class="author">{{::presenter.userFirstName}} {{::presenter.userLastName}}</a>
+                    </span>
+                    <span>Attending ({{::session.planAheadCount}})</span>
+
+                    <div>
+                        <span>{{::session.sessionTime}} &nbsp;&nbsp;  {{::session.roomNumber}}</span>
+                    </div>
+                </div>
+                <!-- / currentSession -->
+            </div>
+        </td>
+
+        <td>
+        </td>
+
+
+
+        <td>
+
+
+
+        </td>
+
+        <td class="details">
+            <a class="button gray alt" href="#{{::session.sessionUrl | lowercase }}" >
+                Details
+            </a>
+        </td>
+
+
+    </tbody>
+</table>
+<!-- / sessionsTable -->

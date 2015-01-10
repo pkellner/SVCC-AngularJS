@@ -113,15 +113,6 @@
             .pipe(notify({message: 'scriptsangular task complete'}));
     });
 
-    //gulp.task('scriptsnongannotate', function () {
-    //
-    //    return gulp.src(['public/app/**/*.js'])
-    //        .pipe(concat('main.js'))
-    //        .pipe(rename({suffix: '.nongannotate'}))
-    //        .pipe(gulp.dest('public/dist'))
-    //        .pipe(notify({message: 'Scripts no ngAnnotate task complete'}));
-    //});
-
     gulp.task('lint', function() {
         gulp.src('public/app/**/*.js')
             .pipe(jshint('.jshintrcPROD'))
@@ -195,6 +186,7 @@
         //console.log('2x');
     });
 
+
     gulp.task('indexhtmlmin', function () {
         gulp.src('public/index.html')
             .pipe(htmlreplace({
@@ -208,6 +200,21 @@
             .pipe(gulp.dest('public/dist/'));
         //console.log('1');
     });
+
+    gulp.task('indexhtmlmincshtml', function () {
+        gulp.src('public/index.html')
+            .pipe(htmlreplace({
+                'css': '@Model.cssFileName',
+                'js': [
+                    '/content/ng/angular.min.js',
+                    '/content/ng/angularextras.min.js',
+                    '/content/ng/main.min.js'
+                ]
+            }))
+            .pipe(gulp.dest('public/dist/'));
+        //console.log('1');
+    });
+
 
 
     // Clean
