@@ -19,7 +19,7 @@ gulp.task('build', ['concat'], function() {
         .pipe(ngAnnotate())
         .pipe(diff())
         .pipe(diff.reporter())
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./public/dist'));
 });
 
 gulp.task('concat', function() {

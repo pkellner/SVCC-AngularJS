@@ -11,14 +11,19 @@
      ]);
      */
 
-    var app = angular.module('baseApp', [
+    var depArray = [
         'ngMessages',
         'ngResource',
         'ui.router',
         'pusher-angular',
-        'ui.bootstrap',
-        'ngMockE2E'
-    ]);
+        'ui.bootstrap'
+    ];
+
+    if (usingMockDataGlobal === true) {
+        depArray.push('ngMockE2E');
+    }
+
+    var app = angular.module('baseApp', depArray);
 
     //angular.module('baseApp').controller('AlertDemoCtrl', function ($scope) {
     //    $scope.alerts = [
@@ -45,26 +50,28 @@
         var initInjector = angular.injector(["ng"]);
         var $http = initInjector.get("$http");
 
-        var mockdata = {};
-        mockdata.enabled = true;
-        app.constant('MOCKDATA', mockdata);
+        angular.bootstrap(document, ['baseApp']);
 
-
-        if (mockdata.enabled === true) {
-            return $http.get("app/Data/accountInfo.json").then(function (response) {
-                app.constant("CONFIG", response.data[0]);
-                angular.bootstrap(document, ['baseApp']);
-            }, function (errorResponse) {
-                console.log('error on bootstrap:' + errorResponse);
-            });
-        } else {
-            return $http.post("/rpc/Account/IsLoggedIn").then(function (response) {
-                app.constant("CONFIG", response.data);
-                angular.bootstrap(document, ['baseApp']);
-            }, function (errorResponse) {
-                console.log('error on bootstrap:' + errorResponse);
-            });
-        }
+        //var mockdata = {};
+        //mockdata.enabled = true;
+        //app.constant('MOCKDATA', mockdata);
+        //
+        //
+        //if (mockdata.enabled === true) {
+        //    return $http.get("app/Data/accountInfo.json").then(function (response) {
+        //        app.constant("CONFIG", response.data[0]);
+        //        angular.bootstrap(document, ['baseApp']);
+        //    }, function (errorResponse) {
+        //        console.log('error on bootstrap:' + errorResponse);
+        //    });
+        //} else {
+        //    return $http.post("/rpc/Account/IsLoggedIn").then(function (response) {
+        //        app.constant("CONFIG", response.data);
+        //        angular.bootstrap(document, ['baseApp']);
+        //    }, function (errorResponse) {
+        //        console.log('error on bootstrap:' + errorResponse);
+        //    });
+        //}
 
     });
 
@@ -259,11 +266,9 @@
 
 
     app.run(['$rootScope', '$httpBackend', 'speakerDataModelService', 'speakerDataModelUrlService',
-        'sessionDataModelService', 'sessionDataModelUrlService',
-        'MOCKDATA',
+        'sessionDataModelService', 'sessionDataModelUrlService','CONFIG',
         function ($rootScope, $httpBackend, speakerDataModelService, speakerDataModelUrlService,
-                  sessionDataModelService, sessionDataModelUrlService,
-                  MOCKDATA) {
+                  sessionDataModelService, sessionDataModelUrlService,CONFIG) {
             $rootScope.loginName = '';
 
             var initUrlMocksAll = function () {
@@ -11027,7 +11032,7 @@
 
             };
 
-            if (MOCKDATA.enabled === true) {
+            if (CONFIG.mockData === true) {
                 initUrlMocksAll();
             }
 

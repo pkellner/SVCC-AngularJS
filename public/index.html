@@ -4,11 +4,16 @@
     <meta charset="utf-8">
     <title>SVCC AngularJS Migration</title>
 
+    <script type="text/javascript">
+        var usingMockDataGlobal = true;
+    </script>
+
+
 
     <!-- build:js -->
 
 
-    <script src="Content/JavaScript/jquery-1.10.1.js"></script>
+    <!--<script src="Content/JavaScript/jquery-1.10.1.js"></script>-->
 
 
     <!--<script src="Content/JavaScript/tinycarousel/jquery.tinycarousel.min.js"></script>-->
@@ -77,7 +82,7 @@
     <script src="app/common/sessions/session-level.filter.js"></script>
 
     <!--angu special items -->
-    <script src="app/angu/miscpages/AnguController.js" ></script>
+    <script src="app/angu/miscpages/AnguController.js"></script>
 
 
     <!-- endbuild -->
@@ -105,14 +110,29 @@
 <body>
 
 
-
 <div ng-controller="MainController">
     <div class="loader" ng-hide="hideLoadingIcon && hideLoadingIcon===true"></div>
     <div ui-view></div>
 </div>
 
 
+<script type="text/javascript">
+    (function () {
+        'use strict';
 
+        // setting constants in this fashion so that the server can dynamically create this (index.html)
+        // with appropriate constants filled in.  usingMockDataGlobal ust be a global since angular has not
+        // been initialized when this needs to be set.
+        var configData = {
+            loggedInUsername: 'pkellner',
+            baseDir: '/Content/ng',
+            mockData: usingMockDataGlobal,
+            codeCampType: 'angu'
+        };
+        angular.module('baseApp').constant('CONFIG',configData);
+
+    })();
+</script>
 
 
 </body>
