@@ -204,13 +204,14 @@
     gulp.task('indexhtmlmincshtml', function () {
         gulp.src('public/index.html')
             .pipe(htmlreplace({
-                'css': '@Model.cssFileName',
+                'css': 'replacemecss.css',
                 'js': [
                     '/content/ng/angular.min.js',
                     '/content/ng/angularextras.min.js',
                     '/content/ng/main.min.js'
                 ]
             }))
+            .pipe(rename('index.cshtml'))
             .pipe(gulp.dest('public/dist/'));
         //console.log('1');
     });
@@ -233,7 +234,7 @@
     // Default task
     gulp.task('default', ['clean'], function () {
         gulp.start('scripts',  'scriptsangular', 'images',
-            'copyfiles', 'indexhtml', 'indexhtmlmin');
+            'copyfiles', 'indexhtml', 'indexhtmlmin','indexhtmlmincshtml');
     });
 
 

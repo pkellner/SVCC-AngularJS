@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SVCC AngularJS Migration</title>
+
+    <script type="text/javascript">
+        var usingMockDataGlobal = true;
+    </script>
+
+
+
+    <script src="/content/ng/angular.min.js"></script>
+    <script src="/content/ng/angularextras.min.js"></script>
+    <script src="/content/ng/main.min.js"></script>
+
+    <link rel="stylesheet" href="replacemecss.css">
+
+
+
+
+    <style>
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('Content/Images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
+        }
+    </style>
+
+</head>
+
+<!--<body ng-app="baseApp">-->
+<body>
+
+
+<div ng-controller="MainController">
+    <div class="loader" ng-hide="hideLoadingIcon && hideLoadingIcon===true"></div>
+    <div ui-view></div>
+</div>
+
+
+<script type="text/javascript">
+    (function () {
+        'use strict';
+
+        // setting constants in this fashion so that the server can dynamically create this (index.html)
+        // with appropriate constants filled in.  usingMockDataGlobal ust be a global since angular has not
+        // been initialized when this needs to be set.
+        var configData = {
+            loggedInUsername: 'pkellner',
+            baseDir: '/Content/ng',
+            mockData: usingMockDataGlobal,
+            codeCampType: 'angu'
+        };
+        angular.module('baseApp').constant('CONFIG',configData);
+
+    })();
+</script>
+
+
+</body>
+</html>
