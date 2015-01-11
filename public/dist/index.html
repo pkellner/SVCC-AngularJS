@@ -52,10 +52,11 @@
         // been initialized when this needs to be set.
         var configData = {
             loggedInUsername: 'pkellner',
-            //baseDir: '/Content/ng', // asp.net MVC
-            baseDir: '',
+            //baseDir: '/Content/ng/', // asp.net MVC    MUST END WITH SLASH     /webnpm/public/app/angu/miscpages/angu.html
+            baseDir: '/webnpm/public/', // this is useful for testing the string append of html into templates in angular on mac osx running locally
+            //baseDir: '', // use blank for debugging localhost on mac with webstorm
             mockData: usingMockDataGlobal,
-            codeCampType: 'angu'
+            codeCampType: 'svcc'
         };
         angular.module('baseApp').constant('CONFIG',configData);
 
