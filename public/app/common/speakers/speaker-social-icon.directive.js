@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('baseApp')
-        .directive('speakerSocialIconDirective', speakerSocialIconDirective);
-    function speakerSocialIconDirective() {
+        .directive('speakerSocialIconDirective',['CONFIG',speakerSocialIconDirective]);
+    function speakerSocialIconDirective(CONFIG) {
         return {
             restrict: 'EA',
-            templateUrl: 'app/svcc/speakers/speaker-social-icon.directive.html',
+            templateUrl: CONFIG.baseDir + 'app/svcc/speakers/speaker-social-icon.directive.html',
             scope: {
                 speaker: '='
             }

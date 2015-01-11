@@ -88,9 +88,9 @@
     <!-- build:css -->
 
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>-->
 
-    <!--<link rel="stylesheet" href="//cache.siliconvalley-codecamp.com/Content/Styles/site-svcc-cdn.css">-->
+    <link rel="stylesheet" href="//cache.siliconvalley-codecamp.com/Content/Styles/site-svcc-cdn.css">
 
 
 
@@ -133,10 +133,11 @@
         // been initialized when this needs to be set.
         var configData = {
             loggedInUsername: 'pkellner',
-            //baseDir: '/Content/ng', // asp.net MVC
-            baseDir: '',
+            //baseDir: '/Content/ng/', // asp.net MVC    MUST END WITH SLASH     /webnpm/public/app/angu/miscpages/angu.html
+            baseDir: '/webnpm/public/', // this is useful for testing the string append of html into templates in angular on mac osx running locally
+            //baseDir: '', // use blank for debugging localhost on mac with webstorm
             mockData: usingMockDataGlobal,
-            codeCampType: 'angu'
+            codeCampType: 'svcc'
         };
         angular.module('baseApp').constant('CONFIG',configData);
 

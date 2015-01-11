@@ -21,8 +21,12 @@
     });
 
     app.controller('RegistrationController', RegistrationController);
-    function RegistrationController($scope, $http) {
+    function RegistrationController($scope, $http,CONFIG) {
         var vm = this;
+
+       // debugger;
+        vm.registrationMessagesUrl = CONFIG.baseDir + 'app/' + CONFIG.codeCampType + '/account/registrationMessages.html';
+
         vm.registration = {
             firstName: 'George',
             lastName: 'Bush',
@@ -48,7 +52,7 @@
         };
     }
 
-    RegistrationController.$inject = ['$scope', '$http'];
+    RegistrationController.$inject = ['$scope', '$http','CONFIG'];
 
 }());
 
