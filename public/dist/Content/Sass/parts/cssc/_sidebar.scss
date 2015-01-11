@@ -1,0 +1,73 @@
+.side {
+  width: 328px;
+  float: right;
+
+  .cta {
+  	margin: 13px 0;
+  	display: block;
+  }
+}
+
+.sidePhotoPromo {
+	border: 3px solid #c9c9c9;
+	border-bottom-width: 11px;
+	padding: 7px;
+
+	P {
+		@include antennaFont;
+		margin: 10px 0;
+		font-size: 14px;
+		line-height: 1.5;
+		text-align: center;
+		color: $text-color;
+
+		strong {
+			@include arboriaFont;
+			font-size: 15px;
+		}
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+}
+
+.sideImageBox {
+	@include borderRadius(2px);
+	padding: 4px;
+	width: auto;
+	max-width: 310px;
+	margin-right: 4px;
+	font-size: 0;
+
+	img {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 1020px) {
+	.sideImageBox {
+		float: none;
+		margin: 0 auto;
+		max-width: 446px;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.side {
+		padding-bottom: 15px;
+
+		.cta {
+			text-align: center;
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
