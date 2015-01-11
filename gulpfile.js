@@ -102,8 +102,7 @@
             'public/vendor/angular-resource/angular-resource.js',
             'public/vendor/angular-ui-router/release/angular-ui-router.js',
             'public/vendor/angular-mocks/angular-mocks.js',
-            'public/vendor/angular-bootstrap/ui-bootstrap-tpls.js',
-
+            'public/vendor/angular-bootstrap/ui-bootstrap-tpls.js'
         ])
             .pipe(concat('angularextras.js'))
             .pipe(gulp.dest('public/dist'))
@@ -111,12 +110,6 @@
             .pipe(uglify())
             .pipe(gulp.dest('public/dist'))
             .pipe(notify({message: 'scriptsangular task complete'}));
-    });
-
-    gulp.task('lint', function() {
-        gulp.src('public/app/**/*.js')
-            .pipe(jshint('.jshintrcPROD'))
-            .pipe(jshint.reporter('default'))
     });
 
 

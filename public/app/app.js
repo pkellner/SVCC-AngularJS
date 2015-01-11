@@ -78,8 +78,21 @@
     function templateCalc(templateMask, CONFIG, $templateCache, $http) {
         var codeCampType = CONFIG.codeCampType;  // this comes from both .json file and httpbackend because of bootstrap init
 
-        // just works for 0 to 2 occurances
-        var templateName = templateMask.replace('{0}', codeCampType).replace('{0}', codeCampType);
+        // just works for 0 to 2 occurances of {0}
+
+
+        function endsWith(str,suffix) {
+            return str.indexOf(suffix, str.length - suffix.length) !== -1;
+        }
+        var baseDir = CONFIG.baseDir;
+        if (baseDir && baseDir.length > 0) {
+            if (!endsWith(CONFIG.baseDir,'/')) {
+                baseDir += '/';
+            }
+        }
+
+        var templateName = baseDir + templateMask.replace('{0}', codeCampType).replace('{0}', codeCampType);
+
         var tpl = $templateCache.get(templateName);
         var retVal;
         if (tpl) {
@@ -94,6 +107,8 @@
             });
         return retVal;
     }
+    
+    
 
     app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'CONFIG',
 
