@@ -46,3 +46,9 @@
 <div class="container">
     <div ui-view></div>
 </div>
+
+<div ng-if="config.mockData">
+    <b>USING MOCK DATA NOT FROM SERVER.  TESTING ONLY</b>
+    {{ vm.config | json }}
+</div>
+
