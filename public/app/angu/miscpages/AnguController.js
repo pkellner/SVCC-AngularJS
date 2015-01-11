@@ -34,7 +34,7 @@
         };
 
         $scope.anguPingMe = function() {
-            console.log('email from pingme: ' + $scope.pingMeEmailAddress);
+            //console.log('email from pingme: ' + $scope.pingMeEmailAddress);
             $rootScope.pingMeEmailAddress = $scope.pingMeEmailAddress;
             $state.transitionTo('angupingmeonfirmation');
         };

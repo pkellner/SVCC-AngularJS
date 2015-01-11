@@ -71,3 +71,9 @@
         </div>
     </section>
 </div>
+
+
+<div ng-if="vm.config.mockData">
+    <b>USING MOCK DATA NOT FROM SERVER.  TESTING ONLY</b>
+    {{vm.config | json }}
+</div>

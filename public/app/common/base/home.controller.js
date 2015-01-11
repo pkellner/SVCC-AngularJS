@@ -4,10 +4,12 @@
     angular.module('baseApp')
         .controller('HomeController', HomeController);
 
-    function HomeController(speakerUrls, speakerDataModelUrlService) {
-        speakerDataModelUrlService.setData(speakerUrls);
+    function HomeController(speakerUrlResourceService, speakerDataModelUrlService,CONFIG) {
+        speakerDataModelUrlService.setData(speakerUrlResourceService);
+        var vm = this;
+        vm.config = CONFIG;
     }
 
-    HomeController.$inject = ['speakerUrls', 'speakerDataModelUrlService'];
+    HomeController.$inject = ['speakerUrlResourceService', 'speakerDataModelUrlService','CONFIG'];
 
 }());

@@ -106,13 +106,15 @@
                 .state('base', {
                     templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/miscpages/{0}.html', CONFIG, $templateCache, $http);
-                    }]
+                    }],
+                    controller: 'HomeController as vm'
                 })
                 .state('base.home', {
                     //templateUrl: 'app/svcc/miscpages/svcchome.html'
                     templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/miscpages/{0}home.html', CONFIG, $templateCache, $http);
                     }]
+                   // controller: 'HomeController as vm'
                 })
                 .state('base.about', {
                     url: '/about',
