@@ -81,18 +81,22 @@
         // just works for 0 to 2 occurances of {0}
         var templateName = CONFIG.baseDir + templateMask.replace('{0}', codeCampType).replace('{0}', codeCampType);
 
+        //console.log('trying to get from templateCache: ' + templateName);
         var tpl = $templateCache.get(templateName);
         var retVal;
         if (tpl) {
+            //console.log('template found in cache ' + templateName);
             retVal = tpl;
+        } else {
+            retVal = $http
+                .get(templateName)
+                .then(function (response) {
+                    tpl = response.data;
+                    //console.log('pushing to templateCache: ' + templateName);
+                    $templateCache.put(templateName, tpl);
+                    return tpl;
+                });
         }
-        retVal = $http
-            .get(templateName)
-            .then(function (response) {
-                tpl = response.data;
-                $templateCache.put(templateName, tpl);
-                return tpl;
-            });
         return retVal;
     }
 
