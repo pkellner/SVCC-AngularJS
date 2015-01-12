@@ -21991,6 +21991,7 @@
         };
 
         this.hasData = function () {
+            debugger;
             return this.data && this.data.length > 0;
         };
 

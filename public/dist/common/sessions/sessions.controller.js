@@ -17,8 +17,8 @@
 
     function SessionsController(sessions,sessionDayOfWeeks) {
         var vm = this;
-        vm.sessions = sessions;
-        vm.sessionDayOfWeeks = sessionDayOfWeeks;
+        vm.sessions = sessions.data;
+        vm.sessionDayOfWeeks = sessionDayOfWeeks.data.data;
     }
 
     SessionsController.$inject = ['sessions','sessionDayOfWeeks'];

@@ -5,7 +5,7 @@
     <title>SVCC AngularJS Migration</title>
 
     <script type="text/javascript">
-        var usingMockDataGlobal = false;
+        var usingMockDataGlobal = true;
     </script>
 
 
@@ -53,8 +53,11 @@
         var configData = {
             loggedInUsername: 'pkellner',
             //baseDir: '/Content/ng/', // asp.net MVC    MUST END WITH SLASH     /webnpm/public/app/angu/miscpages/angu.html
-            baseDir: '/webnpm/public/', // this is useful for testing the string append of html into templates in angular on mac osx running locally
-            //baseDir: '', // use blank for debugging localhost on mac with webstorm
+
+           baseDir: '/webnpm/public/', // running in webstorm
+           //baseDir: '/angularjs/webnpm/public/', // running in visual studio
+
+            //baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
             mockData: usingMockDataGlobal,
             codeCampType: 'svcc'
         };
