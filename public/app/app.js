@@ -221,7 +221,7 @@
 
                 .state('base.speakeryearname', {
                     url: '/speaker/:year/:name',
-                    templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                    //templateUrl: 'app/svcc/speakers/speaker-detail.html',
                     templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/speakers/speaker-detail.html', CONFIG, $templateCache, $http);
                     }],
