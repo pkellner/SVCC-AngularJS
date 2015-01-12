@@ -6,8 +6,8 @@
 
     function SpeakerDetailController(speaker) {
         var vm = this;
-        vm.speakers = [speaker];
-        vm.speaker = speaker;
+        vm.speakers = [speaker.data];
+        vm.speaker = speaker.data;
     }
 
     SpeakerDetailController.$inject = ['speaker'];

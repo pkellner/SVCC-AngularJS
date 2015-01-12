@@ -8,8 +8,8 @@
 
     function SessionDetailController(session) {
         var vm = this;
-        vm.sessions = [session];
-        vm.session = session;
+        vm.sessions = [session.data.data[0]];
+        vm.session = session.data.data[0];
     }
     SessionDetailController.$inject = ['session'];
 

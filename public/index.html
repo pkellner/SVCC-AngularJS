@@ -63,7 +63,6 @@
 
     <!--common speakers-->
     <script src="app/common/speakers/speakers.controller.js"></script>
-    <script src="app/common/speakers/speaker-resource.service.js"></script>
     <script src="app/common/speakers/speaker-urlresource.service.js"></script>
     <script src="app/common/speakers/speaker-datamodel.service.js"></script>
     <script src="app/common/speakers/speaker-datamodelurls.service.js"></script>
@@ -77,7 +76,6 @@
     <script src="app/common/sessions/session-datamodel.service.js"></script>
     <script src="app/common/sessions/session-datamodelurls.service.js"></script>
     <script src="app/common/sessions/session-detail.controller.js"></script>
-    <script src="app/common/sessions/session-resource.service.js"></script>
     <script src="app/common/sessions/session-dayofweek-resource.service.js"></script>
     <script src="app/common/sessions/session-level.filter.js"></script>
 
@@ -134,8 +132,11 @@
         var configData = {
             loggedInUsername: 'pkellner',
             //baseDir: '/Content/ng/', // asp.net MVC    MUST END WITH SLASH     /webnpm/public/app/angu/miscpages/angu.html
-            baseDir: '/webnpm/public/', // this is useful for testing the string append of html into templates in angular on mac osx running locally
-            //baseDir: '', // use blank for debugging localhost on mac with webstorm
+
+           //baseDir: '/webnpm/public/', // running in webstorm
+           baseDir: '/angularjs/webnpm/public/', // running in visual studio
+
+            //baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
             mockData: usingMockDataGlobal,
             codeCampType: 'svcc'
         };
