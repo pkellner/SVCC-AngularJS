@@ -385,6 +385,39 @@
                 sessionDataModelService.initDummyData();
                 sessionDataModelUrlService.initDummyData();
 
+                var sessionDayOfWeekUrl = "/rest/sessiondayofweek/";
+                $httpBackend.whenGET(sessionDayOfWeekUrl).respond(function (method, url, data) {
+                    var sessionDayOfWeekRecs =
+                        [
+                            {
+                                "id": 1,
+                                "dayOfWeek": "Show All",
+                                "localClass": "showAll"
+                            },
+                            {
+                                "id": 2,
+                                "dayOfWeek": "Monday",
+                                "localClass": "monday"
+                            },
+                            {
+                                "id": 3,
+                                "dayOfWeek": "Tuesday",
+                                "localClass": "tuesday"
+                            },
+                            {
+                                "id": 4,
+                                "dayOfWeek": "Wednesday",
+                                "localClass": "wednesday"
+                            },
+                            {
+                                "id": 5,
+                                "dayOfWeek": "Thursday",
+                                "localClass": "thursday"
+                            }
+                        ];
+                    return [200, sessionDayOfWeekRecs, {}];
+                });
+
                 var accountInfoUrl = "/rpc/Account/IsLoggedIn";
                 $httpBackend.whenPOST(accountInfoUrl).respond(function (method, url, data) {
 
@@ -11085,8 +11118,14 @@
                     return [200, sessionurlsdata, {}];
                 });
 
-                var speakerUrl = "/rest/presenter/arrayonly";
-                var editingRegex = new RegExp(speakerUrl + "/[0-9][0-9]/*", '');
+                var speakerUrl = "/rest/presenter/arrayonly/";
+                $httpBackend.whenGET(speakerUrl).respond(function (method, url, data) {
+                    var speakers = speakerDataModelService.getData();
+                    return [200, speakers, {}];
+                });
+
+
+                var editingRegex = new RegExp(speakerUrl + "[0-9][0-9]/*", '');
                 $httpBackend.whenGET(editingRegex).respond(function (method, url, data) {
                     // grab peter kellner record. could mock all sessions forever but this
                     // data can also be gotten when not going directly to the speaker but by
@@ -11103,14 +11142,16 @@
                     return [200, speakers[i], {}];
                 });
 
-                $httpBackend.whenGET(speakerUrl).respond(function (method, url, data) {
-                    var speakers = speakerDataModelService.getData();
-                    return [200, speakers, {}];
+
+
+
+                var sessionUrl = "/rest/session/arrayonly/";
+                $httpBackend.whenGET(sessionUrl).respond(function (method, url, data) {
+                    var sessions = sessionDataModelService.getData();
+                    return [200, sessions, {}];
                 });
 
-
-                var sessionUrl = "/rest/session/arrayonly";
-                var editingRegexSession = new RegExp(sessionUrl + "/[0-9][0-9]/*", '');
+                var editingRegexSession = new RegExp("/rest/session/[0-9][0-9]/*", '');
                 $httpBackend.whenGET(editingRegexSession).respond(function (method, url, data) {
                     // grab peter kellner record. could mock all sessions forever but this
                     // data can also be gotten when not going directly to the speaker but by
@@ -11124,13 +11165,12 @@
                     //        break;
                     //    }
                     //}
-                    return [200, sessions[0], {}];
+                    var session = {};
+                    session.data = [sessions[0]];
+                    return [200, session, {}];
                 });
 
-                $httpBackend.whenGET(sessionUrl).respond(function (method, url, data) {
-                    var sessions = sessionDataModelService.getData();
-                    return [200, sessions, {}];
-                });
+
 
 
             };

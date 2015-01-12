@@ -4,8 +4,6 @@
     angular.module('baseApp')
         .controller('SessionDetailController', SessionDetailController);
 
-
-
     function SessionDetailController(session) {
         var vm = this;
         vm.sessions = [session.data.data[0]];
