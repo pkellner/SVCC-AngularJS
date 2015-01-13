@@ -2,30 +2,28 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>SVCC AngularJS Migration</title>
+    <title>Cache Prime Test</title>
 
-
-    <!-- build:js -->
-    <script src="../public/vendor/angular/angular.js"></script>
-    <!-- angular-ui -->
-    <script src="../public/vendor/angular-ui-router/release/angular-ui-router.js" ></script>
-
-
-    <script src="index4.js"></script>
+    <script src="../vendor/angular/angular.js"></script>
+    <script src="indexcacheprime.js"></script>
 
 
 </head>
 
-<body ng-app="svccApp">
+<body>
 
-<ul>
-    <li> <a ui-sref="about">About</a></li>
-    <li> <a ui-sref="home">Home</a></li>
-</ul>
+<div ng-app="myApp" ng-controller="personController">
 
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+    <br>
+    Full Name: {{firstName + " " + lastName}}
 
-<div ui-view class="view-frame"></div>
+</div>
+
 
 
 </body>
+
+
 </html>

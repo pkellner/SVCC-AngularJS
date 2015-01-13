@@ -1,23 +1,6 @@
-(function () {
-    'use strict';
+var myApp = angular.module('myApp', []);
 
-    angular.module('svccApp', []);
-
-    angular.module('svccApp').
-        factory('bareService',[
-            function () {
-                var myValue = {};
-                myValue.str1 = 'xyz';
-                return myValue;
-            }]);
-
-    angular.module('svccApp').controller('MyController',MyController);
-
-    // WHY IS THIS NOT NECESSARY?
-    //MyController.$inject = ['bareService'];
-
-    function MyController($scope,bareService){
-        $scope.testVal = bareService.str1;
-    }
-
-}());
+myApp.controller('personController', ['$scope', function ($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+}]);
