@@ -14,10 +14,13 @@
 
 <div ng-app="myApp" ng-controller="personController">
 
-    First Name: <input type="text" ng-model="firstName"><br>
-    Last Name: <input type="text" ng-model="lastName"><br>
-    <br>
-    Full Name: {{firstName + " " + lastName}}
+   <button ng-click="getAllSpeakers()">getAllSpeakers</button>
+    <br/>
+    <button ng-click="getAllSessions()">getAllSessions</button>
+    <br/>
+    <button ng-click="getOneSpeaker()">getOneSpeaker</button>
+    <br/>
+    <button ng-click="checkit()">checkit</button>
 
 </div>
 

@@ -1,16 +1,6 @@
 (function () {
     'use strict';
 
-    /*
-     // CAN NOT SEEM TO GET THIS TO WORK
-     angular.module('mockData', [])
-     .service('mockresturls', ['$rootScope', '$q',
-     function ($rootScope, $q) {
-     debugger;
-     }
-     ]);
-     */
-
     var depArray = [
         'ngMessages',
         'ngResource',
@@ -25,54 +15,12 @@
 
     var app = angular.module('baseApp', depArray);
 
-    //angular.module('baseApp').controller('AlertDemoCtrl', function ($scope) {
-    //    $scope.alerts = [
-    //        { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
-    //        { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
-    //    ];
-    //
-    //    $scope.addAlert = function() {
-    //        $scope.alerts.push({msg: 'Another alert!'});
-    //    };
-    //
-    //    $scope.closeAlert = function(index) {
-    //        $scope.alerts.splice(index, 1);
-    //    };
-    //});
-
-
-    //app.run(function($templateCache) {
-    //    $templateCache.put('templates/template1.html','<div><h4>dashboard</h4></div>');
-    //});
-
     angular.element(document).ready(function () {
 
         var initInjector = angular.injector(["ng"]);
         var $http = initInjector.get("$http");
 
         angular.bootstrap(document, ['baseApp']);
-
-        //var mockdata = {};
-        //mockdata.enabled = true;
-        //app.constant('MOCKDATA', mockdata);
-        //
-        //
-        //if (mockdata.enabled === true) {
-        //    return $http.get("app/Data/accountInfo.json").then(function (response) {
-        //        app.constant("CONFIG", response.data[0]);
-        //        angular.bootstrap(document, ['baseApp']);
-        //    }, function (errorResponse) {
-        //        console.log('error on bootstrap:' + errorResponse);
-        //    });
-        //} else {
-        //    return $http.post("/rpc/Account/IsLoggedIn").then(function (response) {
-        //        app.constant("CONFIG", response.data);
-        //        angular.bootstrap(document, ['baseApp']);
-        //    }, function (errorResponse) {
-        //        console.log('error on bootstrap:' + errorResponse);
-        //    });
-        //}
-
     });
 
     function templateCalc(templateMask, CONFIG, $templateCache, $http) {
@@ -153,10 +101,18 @@
                     }],
                     controller: 'SpeakersController as vm',
                     resolve: {
-                        speakers: ['$http', function ($http) {
+                        speakers: ['$http', 'speakerDataModelService', function ($http, speakerDataModelService) {
                             var promise =
-                                $http.get('/rest/presenter/arrayonly/', {cache: true}).
+                                $http.get('/rest/presenter/arrayonly/', {
+                                    cache: true,
+                                    speakerDataModelService: speakerDataModelService
+                                }).
                                     success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!speakerDataModelService.hasData()) {
+                                            speakerDataModelService.setData(data);
+                                        }
                                         return data;
                                     }).
                                     error(function (data, status, headers, config) {
@@ -164,6 +120,81 @@
                                     });
                             return promise;
                         }]
+
+                        // THIS DOES NOT WORK BECAUSE speakerhttpservice INJECTED MAKES IT FAIL QUIETLY,
+                        //   LIKELY TO DO WITH THIS IS INSIDE APP.CONFIG
+                        //speakers: ['$http','$q','speakerhttpservice', function ($http,$q,speakerhttpservice) {
+                        //
+                        //    debugger;
+                        //
+                        //    var def = $q.defer();
+                        //    var data = [{id: 1, firstName: 'Peter', lastName: 'Kellner'}, {
+                        //        id: 2,
+                        //        firstName: 'Tammy',
+                        //        lastName: 'Baker'
+                        //    }];
+                        //    def.resolve(data);
+                        //    return def.promise;
+                        //}]
+
+                        // THIS WORKS BUT DOES NOT SHOW REAL DATA BUT 2 RECORDS MAKE IT TO CONTROLLER
+                        //speakers: ['$http','$q', function ($http,$q) {
+                        //    var def = $q.defer();
+                        //    var data = [{id: 1, firstName: 'Peter', lastName: 'Kellner'}, {
+                        //        id: 2,
+                        //        firstName: 'Tammy',
+                        //        lastName: 'Baker'
+                        //    }];
+                        //    def.resolve(data);
+                        //    return def.promise;
+                        //}]
+
+
+                    }
+                })
+
+                .state('base.speakeryearname', {
+                    url: '/speaker/:year/:name',
+                    //templateUrl: 'app/svcc/speakers/speaker-detail.html',
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
+                        return templateCalc('app/{0}/speakers/speaker-detail.html', CONFIG, $templateCache, $http);
+                    }],
+                    controller: 'SpeakerDetailController as vm',
+                    resolve: {
+
+                        //todo needhelp   move this mess here under speaker into it's own service
+                        speaker: ['$stateParams', '$http', 'speakerDataModelService','$q',
+                            function ($stateParams, $http, speakerDataModelService,$q) {
+                                var partialUrl = $stateParams.year + '/' + $stateParams.name.toLowerCase();
+                                var speaker;
+                                if (speakerDataModelService.hasData()) {
+                                    var localData = speakerDataModelService.getData();
+                                    var i;
+                                    for (i = 0; i < localData.length; i++) {
+                                        if (localData[i].presenterUrl === partialUrl) {
+                                            speaker = localData[i];
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                // if we find the speaker, return a promise with the data wrapped, otherwise do the rest call
+                                if (speaker) {
+                                    var def = $q.defer();
+                                    def.resolve({ data: speaker});
+                                    return def.promise;
+                                } else {
+                                    var urlString = '/rest/presenter/arrayonly/' + partialUrl;
+                                    var promise = $http.get(urlString, {cache: true}).
+                                        success(function (data, status, headers, config) {
+                                            return data;
+                                        }).
+                                        error(function (data, status, headers, config) {
+                                            return {id: -1};
+                                        });
+                                    return promise;
+                                }
+                            }]
                     }
                 })
 
@@ -178,6 +209,8 @@
                         session: ['$stateParams', '$http',
                             function ($stateParams, $http) {
                                 var urlString = '/rest/session/' + $stateParams.year + '?title=' + $stateParams.title.toLowerCase();
+                                // first see if this is in the local data
+
                                 var promise = $http.get(urlString, {cache: true}).
                                     success(function (data, status, headers, config) {
                                         return data;
@@ -192,7 +225,7 @@
 
                 .state('base.sessions', {
                     url: '/sessions',
-                    templateProvider: ["CONFIG", "$http", "$templateCache",'$q', function (CONFIG, $http, $templateCache,$q) {
+                    templateProvider: ["CONFIG", "$http", "$templateCache", '$q', function (CONFIG, $http, $templateCache, $q) {
                         return templateCalc('app/{0}/sessions/sessions.html', CONFIG, $templateCache, $http);
                     }],
                     controller: 'SessionsController as vm',
@@ -219,30 +252,6 @@
                                     });
                             return promise;
                         }]
-                    }
-                })
-
-
-                .state('base.speakeryearname', {
-                    url: '/speaker/:year/:name',
-                    //templateUrl: 'app/svcc/speakers/speaker-detail.html',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/speakers/speaker-detail.html', CONFIG, $templateCache, $http);
-                    }],
-                    controller: 'SpeakerDetailController as vm',
-                    resolve: {
-                        speaker: ['$stateParams', '$http',
-                            function ($stateParams, $http) {
-                                var urlString = '/rest/presenter/arrayonly/' + $stateParams.year + '/' + $stateParams.name.toLowerCase();
-                                var promise = $http.get(urlString, {cache: true}).
-                                    success(function (data, status, headers, config) {
-                                        return data;
-                                    }).
-                                    error(function (data, status, headers, config) {
-                                        return {id: -1};
-                                    });
-                                return promise;
-                            }]
                     }
                 })
 
@@ -11147,8 +11156,6 @@
                 });
 
 
-
-
                 var sessionUrl = "/rest/session/arrayonly/";
                 $httpBackend.whenGET(sessionUrl).respond(function (method, url, data) {
                     var sessions = sessionDataModelService.getData();
@@ -11173,8 +11180,6 @@
                     session.data = [sessions[0]];
                     return [200, session, {}];
                 });
-
-
 
 
             };
