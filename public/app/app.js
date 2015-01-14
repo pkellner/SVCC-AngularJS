@@ -104,8 +104,7 @@
                         speakers: ['$http', 'speakerDataModelService', function ($http, speakerDataModelService) {
                             var promise =
                                 $http.get('/rest/presenter/arrayonly/', {
-                                    cache: true,
-                                    speakerDataModelService: speakerDataModelService
+                                    cache: true
                                 }).
                                     success(function (data, status, headers, config) {
                                         // only reload this service if it is empty. It can be full from previous production call or from
@@ -120,35 +119,6 @@
                                     });
                             return promise;
                         }]
-
-                        // THIS DOES NOT WORK BECAUSE speakerhttpservice INJECTED MAKES IT FAIL QUIETLY,
-                        //   LIKELY TO DO WITH THIS IS INSIDE APP.CONFIG
-                        //speakers: ['$http','$q','speakerhttpservice', function ($http,$q,speakerhttpservice) {
-                        //
-                        //    debugger;
-                        //
-                        //    var def = $q.defer();
-                        //    var data = [{id: 1, firstName: 'Peter', lastName: 'Kellner'}, {
-                        //        id: 2,
-                        //        firstName: 'Tammy',
-                        //        lastName: 'Baker'
-                        //    }];
-                        //    def.resolve(data);
-                        //    return def.promise;
-                        //}]
-
-                        // THIS WORKS BUT DOES NOT SHOW REAL DATA BUT 2 RECORDS MAKE IT TO CONTROLLER
-                        //speakers: ['$http','$q', function ($http,$q) {
-                        //    var def = $q.defer();
-                        //    var data = [{id: 1, firstName: 'Peter', lastName: 'Kellner'}, {
-                        //        id: 2,
-                        //        firstName: 'Tammy',
-                        //        lastName: 'Baker'
-                        //    }];
-                        //    def.resolve(data);
-                        //    return def.promise;
-                        //}]
-
 
                     }
                 })
@@ -206,19 +176,48 @@
                     }],
                     controller: 'SessionDetailController as vm',
                     resolve: {
-                        session: ['$stateParams', '$http',
-                            function ($stateParams, $http) {
-                                var urlString = '/rest/session/' + $stateParams.year + '?title=' + $stateParams.title.toLowerCase();
-                                // first see if this is in the local data
+                        //todo needhelp   move this mess here under session into it's own service
+                        session: ['$stateParams', '$http','sessionDataModelService','$q',
+                            function ($stateParams, $http,sessionDataModelService,$q) {
 
-                                var promise = $http.get(urlString, {cache: true}).
-                                    success(function (data, status, headers, config) {
-                                        return data;
-                                    }).
-                                    error(function (data, status, headers, config) {
-                                        return {id: -1};
-                                    });
-                                return promise;
+                                var partialUrl = $stateParams.year + '?title=' + $stateParams.title.toLowerCase();
+                                var urlForSessionMatch = '/Session/' + $stateParams.year + '/' + $stateParams.title.toLowerCase();
+
+                                // localData[i].sessionUrl  "/Session/2014/creating-html5-based-apps-for-wearable-technologies"
+                                // partialUrl:  "2014?title=swift-language-and-using-playgrounds"
+                                //var urlForSessionMatch = $stateParams.year + '?title=' + $stateParams.title.toLowerCase();
+                                var session;
+                                if (sessionDataModelService.hasData()) {
+                                    var localData = sessionDataModelService.getData();
+                                    var i;
+                                    for (i = 0; i < localData.length; i++) {
+                                        if (localData[i].sessionUrl === urlForSessionMatch) {
+                                            session = localData[i];
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                // if we find the speaker, return a promise with the data wrapped, otherwise do the rest call
+                                if (session) {
+                                    var def = $q.defer();
+                                    def.resolve({ data: {data: [session]}});
+                                    return def.promise;
+                                } else {
+
+
+                                    var urlString = '/rest/session/' + partialUrl;
+                                    // first see if this is in the local data
+
+                                    var promise = $http.get(urlString, {cache: true}).
+                                        success(function (data, status, headers, config) {
+                                            return data;
+                                        }).
+                                        error(function (data, status, headers, config) {
+                                            return {id: -1};
+                                        });
+                                    return promise;
+                                }
                             }]
                     }
                 })
@@ -241,10 +240,15 @@
                                     });
                             return promise;
                         }],
-                        sessions: ['$http', function ($http) {
+                        sessions: ['$http','sessionDataModelService', function ($http,sessionDataModelService) {
                             var promise =
                                 $http.get('/rest/session/arrayonly/', {cache: true}).
                                     success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!sessionDataModelService.hasData()) {
+                                            sessionDataModelService.setData(data);
+                                        }
                                         return data;
                                     }).
                                     error(function (data, status, headers, config) {
@@ -255,115 +259,6 @@
                     }
                 })
 
-
-                //.state('base.speakeryearname', {
-                //    url: '/speaker/:year/:name',
-                //    templateUrl: 'app/svcc/speakers/speaker-detail.html',
-                //    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                //        return templateCalc('app/{0}/speakers/speaker-detail.html', CONFIG, $templateCache, $http);
-                //    }],
-                //    controller: 'SpeakerDetailController as vm',
-                //    resolve: {
-                //        speaker: ['speakerResourceService', '$stateParams', 'speakerDataModelService', 'speakerDataModelUrlService', '$q',
-                //            function (speakerResourceService, $stateParams, speakerDataModelService, speakerDataModelUrlService, $q) {
-                //
-                //                debugger;
-                //                var xxx = speakerDataModelUrlService.hasData();
-                //
-                //
-                //                var presenterId = 0;
-                //                var urlPostToken = '';
-                //                var urlString = $stateParams.year + '/' + $stateParams.name.toLowerCase();
-                //                var speakerUrls = speakerDataModelUrlService.getData();
-                //                var i;
-                //                for (i = 0; i < speakerUrls.length; i++) {
-                //                    if (speakerUrls[i].presenterUrl.indexOf(urlString) !== -1) {
-                //                        presenterId = speakerUrls[i].presenterId;
-                //                        urlPostToken = speakerUrls[i].urlPostToken;
-                //                    }
-                //                }
-                //
-                //                var speakerData = speakerDataModelService.findOne(presenterId, urlPostToken);
-                //                // check and see if data is is in cache, if not then get from server
-                //                if (speakerData && speakerData.id) {
-                //                    // need to return promise of data just like the $resource does on else here
-                //                    var deferred = $q.defer();
-                //                    deferred.resolve(speakerData);
-                //                    return deferred.promise;
-                //                } else {
-                //                    return speakerResourceService.get(
-                //                        {
-                //                            name: $stateParams.name,
-                //                            urlPostToken: $stateParams.year
-                //                        }
-                //                    ).$promise;
-                //                }
-                //            }]
-                //    }
-                //})
-
-                //.state('base.sessiondetail', {
-                //    url: '/session/:year/:title',
-                //    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                //        return templateCalc('app/{0}/sessions/session-detail.html', CONFIG, $templateCache, $http);
-                //    }],
-                //    controller: 'SessionDetailController as vm',
-                //    resolve: {
-                //        session: ['$q', '$stateParams', 'sessionResourceService', 'sessionUrlResourceService', 'sessionDataModelService', 'sessionDataModelUrlService',
-                //            function ($q, $stateParams, sessionResourceService, sessionUrlResourceService, sessionDataModelService, sessionDataModelUrlService) {
-                //
-                //                debugger;
-                //                var xxx = sessionDataModelUrlService.hasData();
-                //
-                //                var sessionId = 0;
-                //                var urlPostToken = '';
-                //                var urlString = $stateParams.year + '/' + $stateParams.title.toLowerCase();
-                //                var sessionUrls = sessionDataModelUrlService.getData();
-                //                var i;
-                //                for (i = 0; i < sessionUrls.length; i++) {
-                //                    if (sessionUrls[i].sessionUrl.indexOf(urlString) !== -1) {
-                //                        sessionId = sessionUrls[i].sessionId;
-                //                        urlPostToken = sessionUrls[i].urlPostToken;
-                //                    }
-                //                }
-                //
-                //                var sessionData = sessionDataModelService.findOne(sessionId, urlPostToken);
-                //                // check and see if data is is in cache, if not then get from server
-                //                if (sessionData && sessionData.id) {
-                //                    // need to return promise of data just like the $resource does on else here
-                //                    var deferred = $q.defer();
-                //                    deferred.resolve(sessionData);
-                //                    return deferred.promise;
-                //                } else {
-                //                    return sessionResourceService.get(
-                //                        {
-                //                            title: $stateParams.title,
-                //                            urlPostToken: $stateParams.year
-                //                        }
-                //                    ).$promise;
-                //                }
-                //
-                //            }]
-                //    }
-                //}).
-
-                //state('base.sessions', {
-                //    url: '/sessions',
-                //    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                //        return templateCalc('app/{0}/sessions/sessions.html', CONFIG, $templateCache, $http);
-                //    }],
-                //    controller: 'SessionsController as vm',
-                //    resolve: {
-                //        sessionResourceService: 'sessionResourceService',
-                //        sessions: ['sessionResourceService', function (sessionResourceService) {
-                //            return sessionResourceService.query().$promise;
-                //        }],
-                //        sessionDayOfWeekResourceService: 'sessionDayOfWeekResourceService',
-                //        sessionDayOfWeeks: ['sessionDayOfWeekResourceService', function (sessionDayOfWeekResourceService) {
-                //            return sessionDayOfWeekResourceService.query().$promise;
-                //        }]
-                //    }
-                //}).
 
                 // angulur university special below:
                 .state('angupingmeonfirmation', {
@@ -11189,141 +11084,6 @@
             }
 
         }]);
-
-    /*
-     app.run(function ($httpBackend, speakerDataModelService) {
-
-     speakerDataModelService.initDummyData();
-
-     var speakerUrl = "/rest/presenter/arrayonly";
-     $httpBackend.whenGET(speakerUrl).respond(function (method, url, data) {
-
-     console.log('app.js whenGET(speakerUrl)');
-
-
-     var speakers = speakerDataModelService.getData();
-     return [200, speakers, {}];
-     });
-
-     var editingRegex = new RegExp(speakerUrl + "/[0-9][0-9]*", '');
-     $httpBackend.whenGET(editingRegex).respond(function (method, url, data) {
-
-     console.log('app.js whenGET(speakerUrl/###)');
-
-     var speaker = {"id": 0};
-     var parameters = url.split('/');
-     var length = parameters.length;
-     var id = parameters[length - 1];
-
-     if (id > 0) {
-     speaker = speakerDataModelService.findOne(id);
-     }
-     return [200, speaker, {}];
-     });
-
-
-     var accountInfoUrl = "/rpc/Account/IsLoggedIn";
-     $httpBackend.whenGET(accountInfoUrl).respond(function (method, url, data) {
-     var accountInfo = [{
-     "returnStatus": "OK",
-     "codeCampType": "svcc",
-     "registrationWords": "To attend Angular University you <b>must be registered and have a confirmed ticket</b>.",
-     "registrationClosed": false,
-     "isAdmin": false,
-     "eventName": "Angular University San Francisco 2014",
-     "success": true,
-     "okToSubmitSessions": false,
-     "presentationLimit": 0,
-     "sessionsSubmittedTotal": 0,
-     "currentCodeCampYear": "2015sf",
-     "codeCampYearId": 201,
-     "showAgendaOnSchedule": true,
-     "showTrackOnSession": true,
-     "showRoomOnSchedule": true,
-     "showSessionInterest": false,
-     "scheduleAllowCheckAttend": true,
-     "showSessionInterestCount": false,
-     "showSessionPlanAheadCount": false,
-     "submitSessionsOpen": false,
-     "cloudFrontCacheServer": "x",
-     "attendeesImageUrl": "/attendeeimage/20140411190526-11420.jpg",
-     "attendeeResults": {
-     "interestLevel": 0,
-     "donationAmount": 0.0,
-     "kidDonationOverride": false,
-     "registeredCurrentYear": false,
-     "hasSessionsCurrentYear": false,
-     "volunteeredCurrentYear": false,
-     "attendeesId": 11420,
-     "saturdayClasses": false,
-     "hasLedgerEntriesCurrentCodeCampYear": false,
-     "allowPartialSessionEdit": false,
-     "allowFullSessionEdit": false,
-     "pkid": "00000000-0000-0000-0000-000000000000",
-     "username": "test77",
-     "applicationName": "",
-     "email": "pkellner99@gmail.com",
-     "comment": "",
-     "password": "",
-     "passwordQuestion": "",
-     "passwordAnswer": "",
-     "isApproved": true,
-     "lastActivityDate": "2014-12-22T17:32:36Z",
-     "lastLoginDate": "2014-12-22T17:32:36.11Z",
-     "creationDate": "2013-09-03T22:00:20.107Z",
-     "isLockedOut": false,
-     "lastLockedOutDate": "2013-09-03T22:00:20.107Z",
-     "failedPasswordAttemptCount": 1,
-     "failedPasswordAttemptWindowStart": "2014-09-22T16:56:50.05Z",
-     "failedPasswordAnswerAttemptCount": 0,
-     "failedPasswordAnswerAttemptWindowStart": "2013-09-03T22:00:20.107Z",
-     "lastPasswordChangedDate": "2013-09-03T22:00:20.107Z",
-     "userWebsite": "http://biohazard.com",
-     "userFirstName": "Joe",
-     "userLastName": "Plumber",
-     "userZipCode": "asdfsadfsdf",
-     "userBio": "This is a bio for Joe The Plumber. Here it is again.  Go for it!  Now is the time for all good men to come to the aid of their country.  Why do I still see red?",
-     "fullNameUsernameZipcode": "",
-     "phoneNumber": "4082341385",
-     "allowEmailToSpeakerPlanToAttend": false,
-     "allowEmailToSpeakerInterested": false,
-     "qrEmailAllow": true,
-     "shirtSize": "Mens-S",
-     "twitterHandle": "@joetheplumber",
-     "optInSponsoredMailingsLevel": 1,
-     "optInSponsorSpecialsLevel": 1,
-     "city": "asdfsdfsdfs",
-     "state": "asdfsadf",
-     "presentationLimit": 0,
-     "presentationApprovalRequired": true,
-     "company": "My Big Company",
-     "principleJob": "xxx",
-     "optInSvccKids": "1",
-     "lastUpdateDate": "2014-04-11T19:05:26.093Z",
-     "sessionGuid": "5a181f04-2a0b-4a01-a186-cbdeb17a7cff",
-     "sessionGuidExpiration": "2015-01-06T01:32:36.1933338Z",
-     "meetupShareInfo": true,
-     "allowAttendeeToEmailMe": false,
-     "userBioShort": "This is a bio for Joe The Plumber. Here it is again.",
-     "workStudyInterest": false,
-     "donationOnHonorRoll": false,
-     "isKid": false,
-     "kidBirthYear": 0,
-     "notificationLevel": "interestedandplantoattend",
-     "notificationDestinationText": true,
-     "notificationDestinationEmail": true,
-     "id": 11420
-     }
-     }];
-     return [200, accountInfo, {}];
-     });
-
-     // Pass through any requests for application files
-     $httpBackend.whenGET(/app/).passThrough();
-
-
-     });
-     */
 
 
 }());
