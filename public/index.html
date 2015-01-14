@@ -9,29 +9,7 @@
     </script>
 
 
-
     <!-- build:js -->
-
-
-    <!--<script src="Content/JavaScript/jquery-1.10.1.js"></script>-->
-
-
-    <!--<script src="Content/JavaScript/tinycarousel/jquery.tinycarousel.min.js"></script>-->
-    <!--<script src="Content/JavaScript/owl.carousel.min.js"></script>-->
-    <!--<script src="Content/JavaScript/cluetip/jquery.hoverIntent.min.js"></script>-->
-    <!--<script src="Content/JavaScript/cluetip/jquery.cluetip.min.js"></script>-->
-    <!--<script src="Content/JavaScript/validate/jquery.validate.min.js"></script>-->
-    <!--<script src="Content/JavaScript/validate/jquery.validate.unobtrusive.min.js"></script>-->
-    <!--<script src="Content/JavaScript/icheck.min.js"></script>-->
-    <!--<script src="Content/JavaScript/jquery.placeholder.js"></script>-->
-    <!--<script src="Content/JavaScript/jquery.selectbox-0.2.min.js"></script>-->
-
-    <!--<script src="Content/JavaScript/Impromptu/jquery-impromptu.min.js"></script>-->
-
-
-    <!--<script src="Content/JavaScript/tappize/tappize.min.js"></script>-->
-    <!--<script src="Content/JavaScript/main-svcc.js"></script>-->
-
 
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/angular-messages/angular-messages.js"></script>
@@ -73,7 +51,6 @@
     <script src="app/common/speakers/speaker-http.service.js"></script>
 
 
-
     <!--common-Sessions-->
     <script src="app/common/sessions/sessions.controller.js"></script>
     <script src="app/common/sessions/session-urlresource.service.js"></script>
@@ -90,16 +67,12 @@
     <!-- build:css -->
 
 
-    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="//cache.siliconvalley-codecamp.com/Content/Styles/site-svcc-cdn.css">
-
-
+    <!--<link rel="stylesheet" href="//cache.siliconvalley-codecamp.com/Content/Styles/site-svcc-cdn.css">-->
 
 
     <!-- endbuild -->
-
-
 
 
     <style>
@@ -125,26 +98,30 @@
     <div ui-view></div>
 </div>
 
-
 <script type="text/javascript">
+
+
     (function () {
+
+
+
         'use strict';
 
         // setting constants in this fashion so that the server can dynamically create this (index.html)
         // with appropriate constants filled in.  usingMockDataGlobal ust be a global since angular has not
         // been initialized when this needs to be set.
         var configData = {
-            loggedInUsername: 'pkellner',
             //baseDir: '/Content/ng/', // asp.net MVC    MUST END WITH SLASH     /webnpm/public/app/angu/miscpages/angu.html
-
-           baseDir: '/webnpm/public/', // running in webstorm
-           //baseDir: '/angularjs/webnpm/public/', // running in visual studio
-
+            baseDir: '/webnpm/public/', // running in webstorm
+            //baseDir: '/angularjs/webnpm/public/', // running in visual studio
             //baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
-            mockData: usingMockDataGlobal,
-            codeCampType: 'svcc'
+
+            codeCampType: 'angu', // options: 'angu','svcc'
+
+            loggedInUsername: 'pkellner',
+            mockData: usingMockDataGlobal
         };
-        angular.module('baseApp').constant('CONFIG',configData);
+        angular.module('baseApp').constant('CONFIG', configData);
 
 
     })();

@@ -261,7 +261,7 @@
 
 
                 // angulur university special below:
-                .state('angupingmeonfirmation', {
+                .state('base.angupingmeonfirmation', {
                     templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/angu/miscpages/angupingmeconfirmation.html', CONFIG, $templateCache, $http);
                     }],

@@ -5,7 +5,10 @@
     angular.module('baseApp')
         .controller('AnguController', AnguController);
 
-    function AnguController($scope,$rootScope,$anchorScroll,$location,$state) {
+    function AnguController($scope,$rootScope,$anchorScroll,$location,$state,CONFIG) {
+
+        $rootScope.baseDir = CONFIG.baseDir;
+
 
        $scope.anguHomeClick = function() {
            $location.hash('anguHome');
@@ -36,7 +39,7 @@
         $scope.anguPingMe = function() {
             //console.log('email from pingme: ' + $scope.pingMeEmailAddress);
             $rootScope.pingMeEmailAddress = $scope.pingMeEmailAddress;
-            $state.transitionTo('angupingmeonfirmation');
+            $state.transitionTo('base.angupingmeonfirmation');
         };
 
         $scope.backToHomePage = function() {
@@ -44,6 +47,6 @@
         };
     }
 
-    AnguController.$inject = ['$scope','$rootScope','$anchorScroll','$location','$state'];
+    AnguController.$inject = ['$scope','$rootScope','$anchorScroll','$location','$state','CONFIG'];
 
 }());
