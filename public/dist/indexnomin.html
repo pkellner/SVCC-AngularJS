@@ -9,14 +9,11 @@
     </script>
 
 
-
     <script src="angular.js"></script>
     <script src="angularextras.js"></script>
     <script src="main.js"></script>
 
     <link rel="stylesheet" href="styles/site-svcc-relative.css">
-
-
 
 
     <style>
@@ -42,26 +39,30 @@
     <div ui-view></div>
 </div>
 
-
 <script type="text/javascript">
+
+
     (function () {
+
+
+
         'use strict';
 
         // setting constants in this fashion so that the server can dynamically create this (index.html)
         // with appropriate constants filled in.  usingMockDataGlobal ust be a global since angular has not
         // been initialized when this needs to be set.
         var configData = {
-            loggedInUsername: 'pkellner',
             //baseDir: '/Content/ng/', // asp.net MVC    MUST END WITH SLASH     /webnpm/public/app/angu/miscpages/angu.html
-
-           baseDir: '/webnpm/public/', // running in webstorm
-           //baseDir: '/angularjs/webnpm/public/', // running in visual studio
-
+            baseDir: '/webnpm/public/', // running in webstorm
+            //baseDir: '/angularjs/webnpm/public/', // running in visual studio
             //baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
-            mockData: usingMockDataGlobal,
-            codeCampType: 'svcc'
+
+            codeCampType: 'angu', // options: 'angu','svcc'
+
+            loggedInUsername: 'pkellner',
+            mockData: usingMockDataGlobal
         };
-        angular.module('baseApp').constant('CONFIG',configData);
+        angular.module('baseApp').constant('CONFIG', configData);
 
 
     })();
