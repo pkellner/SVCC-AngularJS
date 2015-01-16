@@ -1,0 +1,62 @@
+// Use with @extend %clearfix;
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+@mixin icomoon {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin respond-to($media) {
+  @if $media == phone {
+    @media only screen and (min-width: $screen-xs-min) { @content; }
+  }
+
+  @else if $media == tablet {
+    @media only screen and (min-width: $screen-sm-min) { @content; }
+  }
+
+  @else if $media == desktop {
+    @media only screen and (min-width: $screen-md-min) { @content; }
+  }
+
+  @else if $media == wide {
+    @media only screen and (min-width: $screen-lg-min) { @content; }
+  }
+
+  @else {
+    @media only screen and (min-width: $media) { @content; }
+  }
+}
