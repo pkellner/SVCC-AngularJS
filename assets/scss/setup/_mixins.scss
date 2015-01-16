@@ -38,3 +38,25 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@mixin respond-to($media) {
+  @if $media == phone {
+    @media only screen and (min-width: $screen-xs-min) { @content; }
+  }
+
+  @else if $media == tablet {
+    @media only screen and (min-width: $screen-sm-min) { @content; }
+  }
+
+  @else if $media == desktop {
+    @media only screen and (min-width: $screen-md-min) { @content; }
+  }
+
+  @else if $media == wide {
+    @media only screen and (min-width: $screen-lg-min) { @content; }
+  }
+
+  @else {
+    @media only screen and (min-width: $media) { @content; }
+  }
+}

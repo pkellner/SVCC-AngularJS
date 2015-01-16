@@ -27,7 +27,8 @@
       "precision": "10",
       "includePaths": [
         "public/vendor/bootstrap-sass-official/assets/stylesheets"
-      ]
+      ],
+      "errLogToConsole": "true"
     }
   },
   "assets": {

@@ -1,0 +1,33 @@
+.nav {
+  background: $gray-darker;
+  color: $white;
+  border-bottom: 1px solid $gray-lighter;
+  font-size: 17px;
+
+  &--list {
+    @extend %clearfix;
+    float: left;
+    margin: 0;
+    font-weight: bold;
+    color: $white;
+
+    li {
+      float: left;
+
+      &.active,
+      &:hover {
+        a {
+          background: $brand-primary;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      padding: 16px 23px;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.56);
+      color: $white;
+    }
+  }
+}
