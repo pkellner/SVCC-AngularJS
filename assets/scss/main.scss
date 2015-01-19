@@ -51,12 +51,16 @@
 // Bootstrap Overrides - need to be after Bootstrap Components styles
 @import "vendor/bootstrap/grid";
 @import "vendor/bootstrap/buttons";
+@import "vendor/bootstrap/type";
+
+@import "vendor/sosa-font.scss";
 
 @import "components/common";
+@import "components/loader";
 @import "components/header";
 @import "components/hero";
-@import "components/loader";
 @import "components/nav";
+@import "components/content";
 @import "components/brand";
 @import "components/ping-tickets";
 @import "components/type";

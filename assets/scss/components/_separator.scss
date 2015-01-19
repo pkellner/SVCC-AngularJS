@@ -19,6 +19,10 @@
   &--icon {
     position: relative;
     display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
     margin: 0 auto;
     width: 52px;
     height: 52px;
@@ -28,5 +32,11 @@
     border-radius: 50%;
     background: $body-bg;
     box-shadow: 0 0 0 17px $body-bg;
+
+    &.icon-question {
+      font-family: 'Lato';
+      font-weight: normal;
+      font-size: 33px;
+    }
   }
 }

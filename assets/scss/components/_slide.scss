@@ -1,17 +1,19 @@
 .slide {
-
   &--container {
     max-width: 1050px;
-    height: 425px;
     margin: 0 auto;
     padding: 45px;
+
+    @include respond-to(tablet) {
+      height: 425px;
+    }
   }
 
   &--content {
     position: relative;
     background: $white;
     max-width: 530px;
-    padding: 15px;
+    padding: 15px 15px 10px;
     margin: 0 auto;
     font-size: 20px;
     line-height: 1.667;
@@ -19,23 +21,28 @@
     font-style: italic;
 
     @include respond-to(tablet) {
-      padding: 30px;
+      padding: 30px 40px 10px;
       font-size: 24px;
     }
 
     .btn {
       position: relative;
       font-style: normal;
-      bottom: -35px;
+      bottom: -25px;
 
       @include respond-to(tablet) {
-        bottom: -55px;
+        bottom: -35px;
       }
+    }
+
+    p {
+      margin-bottom: 0;
     }
   }
 }
 
 .slider {
+  margin: 5px 0 20px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
