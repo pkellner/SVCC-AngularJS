@@ -1,27 +1,38 @@
 .slide {
 
- &--container {
-  max-width: 1050px;
-  height: 425px;
-  margin: 0 auto;
-  padding: 45px;
- }
-
- &--content {
-  background: $white;
-  max-width: 530px;
-  padding: 15px;
-  margin: 0 auto;
-  font-size: 20px;
-  line-height: 1.667;
-  text-align: center;
-  font-style: italic;
-
-  @include respond-to(tablet) {
-    padding: 30px;
-    font-size: 24px;
+  &--container {
+    max-width: 1050px;
+    height: 425px;
+    margin: 0 auto;
+    padding: 45px;
   }
- }
+
+  &--content {
+    position: relative;
+    background: $white;
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.667;
+    text-align: center;
+    font-style: italic;
+
+    @include respond-to(tablet) {
+      padding: 30px;
+      font-size: 24px;
+    }
+
+    .btn {
+      position: relative;
+      font-style: normal;
+      bottom: -35px;
+
+      @include respond-to(tablet) {
+        bottom: -55px;
+      }
+    }
+  }
 }
 
 .slider {

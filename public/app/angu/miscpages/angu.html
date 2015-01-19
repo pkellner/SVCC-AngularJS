@@ -12,7 +12,7 @@
 
                 <div class="col-md-8">
                     <div class="ping-tickets">
-                        <label for="pingMeEmail" class="hidden-xs hidden-sm">Ping me when tickets go on sale:</label>
+                        <label for="pingMeEmail" class="hidden-xs hidden-sm uppercase">Ping me when tickets go on sale:</label>
                         <div class="input-group hidden-xs">
                             <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
                             <span class="input-group-btn">
@@ -141,6 +141,28 @@ more details</p>
     </div>
 
     <footer class="footer">
+        <div class="footer--top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="ping-tickets">
+                            <label for="pingMeEmail" class="hidden-xs hidden-sm">Ping me when tickets go on sale:</label>
+                            <div class="input-group hidden-xs">
+                                <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">OK</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <a href="#">Contact us</a>
+                        <span> | </span>
+                        <span>Follow us: </span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="sponsors">
             <div class="container">
                 <img src="{{baseDir}}/assets/img/sponsors-wall.jpg" alt="">
