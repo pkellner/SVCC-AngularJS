@@ -32,7 +32,7 @@
 
     <div class="container">
         <div class="separator">
-            <span class="icon-code"></span>
+            <span class="separator--icon icon-code"></span>
         </div>
 
         <div class="row row-centered">
@@ -43,18 +43,111 @@
                 </h2>
                 <p class="text-center">Angular University gather over 30 presenters for 3 days packed with conferences and workshops. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <button class="btn btn-primary btn-lg center-block">Read More</button>
+                <div class="social">
+                    <span>Follow us on: </span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="persona">
+                        <div class="persona--img">
+                            <img src="{{baseDir}}/assets/img/speaker-spiekermann.jpg" alt="Erik Spiekermann">
+                        </div>
+                        <h3>Erik Spiekermann</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit cumque rem harum dolor quibusdam voluptas.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="persona">
+                        <div class="persona--img">
+                            <img src="{{baseDir}}/assets/img/speaker-boulton.jpg" alt="Matt Boulton">
+                        </div>
+                        <h3>Matt Boulton</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit cumque rem harum dolor quibusdam voluptas.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="persona">
+                        <div class="persona--img">
+                            <img src="{{baseDir}}/assets/img/speaker-leonidas.jpg" alt="Gerry Leonidas">
+                        </div>
+                        <h3>Gerry Leonidas</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit cumque rem harum dolor quibusdam voluptas.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg center-block">View all speakers</button>
+        </div>
+
+        <div class="separator">
+            <span class="separator--icon icon-pin"></span>
+        </div>
+    </div>
+
+    <div class="slider" style="background-image: url({{baseDir}}/assets/img/bg-slider-1.jpg)">
+        <div class="slide--container">
+            <div class="slide">
+                <div class="slide--content">
+                    <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a short distance from the San Francisco Airport and within a short taxi or Bart ride from San Francisco Downtown</p>
+                    <button class="btn btn-primary btn-lg">More details</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="separator">
+            <span class="separator--icon icon-question"></span>
+        </div>
+
+        <div class="">
+            <h2 class="type--lead">FAQ</h2>
+
+            <ul class="list--block list--centered">
+                <li>
+                    <p>How are the <span class="type--color">workshop presenters</span> selected?</p>
+                    <p>All our speakers are of the highest quality and reputation.</p>
+                </li>
+                <li>
+                    <p><span class="type--color">How many days</span> is Code Stars summit?</p>
+                    <p>Typically 2 to 4.</p>
+                </li>
+                <li>
+                    <p>Can I attend <span class="type--color">just one workshop</span>?</p>
+                    <p>Yes, you can attend as many workshops that do not overlap as you like.</p>
+                </li>
+                <li>
+                    <p>I would like to take just <span class="type--color">one day of a 2-day workshop</span>. Can I do that?</p>
+                    <p>No, sorry you cannot. If you are attending a 2-day workshop, you must pay for both days.</p>
+                </li>
+                <li>
+                    <p>Are <span class="type--color">meals and snacks</span> served at Code Stars Summit?</p>
+                    <p>Yes, we will be providing lunch and snacks during the day.</p>
+                </li>
+                <li>
+                    <p><span class="type--color">Where</span> is Code Stars Summit being held?</p>
+                    <p>Typically 2 to 4.</p>
+                </li>
+                <li>
+                    <p>What are the <span class="type--color">workshop hours</span>?</p>
+                    <p>Typically 9 to 5 with a break for lunch. Expect a welcome email before the workshop with
+more details</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="sponsors">
+            <div class="container">
+                <img src="{{baseDir}}/assets/img/sponsors-wall.jpg" alt="">
+            </div>
+        </div>
+
+    </footer>
 </div>
 
-<div class="container">
-    <div ui-view></div>
-</div>
-
-<div ng-if="vm.config.mockData">
-    <hr/>
-    <b>USING MOCK DATA NOT FROM SERVER.  TESTING ONLY</b>
-    {{ vm.config | json }}
-</div>
 

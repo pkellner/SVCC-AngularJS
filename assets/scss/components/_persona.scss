@@ -1,0 +1,22 @@
+.persona {
+  max-width: 290px;
+  margin: 0 auto;
+  text-align: center;
+
+  &--img {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h3 {
+    color: $brand-primary;
+    font-weight: bold;
+    font-style: italic;
+  }
+}

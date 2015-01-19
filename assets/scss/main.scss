@@ -49,6 +49,7 @@
 
 // Bootstrap Overrides - need to be after Bootstrap Components styles
 @import "vendor/bootstrap/grid";
+@import "vendor/bootstrap/buttons";
 
 @import "components/common";
 @import "components/header";
@@ -58,6 +59,11 @@
 @import "components/brand";
 @import "components/ping-tickets";
 @import "components/type";
+@import "components/separator";
+@import "components/persona";
+@import "components/slide";
+@import "components/list";
+@import "components/sponsors";
 
 
 

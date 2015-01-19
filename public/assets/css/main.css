@@ -2043,6 +2043,9 @@ p {
   /* inline-block space fix */
   margin-right: -4px; }
 
+.btn {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.56); }
+
 body {
   margin: 0;
   padding: 0; }
@@ -2166,3 +2169,90 @@ body {
 .type--color {
   color: #dd1b16;
   font-weight: normal; }
+
+.separator {
+  position: relative;
+  display: block;
+  margin: 24px 0; }
+  .separator:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -1px;
+    height: 2px;
+    background: #b3b3b3;
+    border-top: 1px solid #eee;
+    opacity: 0.5; }
+  .separator--icon {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 52px;
+    height: 52px;
+    font-size: 30px;
+    color: #b3b3b3;
+    border: 1px solid #b3b3b3;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 17px #fff; }
+
+.persona {
+  max-width: 290px;
+  margin: 0 auto;
+  text-align: center; }
+  .persona--img {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    margin-bottom: 20px; }
+    .persona--img img {
+      width: 100%; }
+  .persona h3 {
+    color: #dd1b16;
+    font-weight: bold;
+    font-style: italic; }
+
+.slide--container {
+  max-width: 1050px;
+  height: 425px;
+  margin: 0 auto;
+  padding: 45px; }
+.slide--content {
+  background: #fff;
+  max-width: 530px;
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.667;
+  text-align: center;
+  font-style: italic; }
+  @media only screen and (min-width: 768px) {
+    .slide--content {
+      padding: 30px;
+      font-size: 24px; } }
+
+.slider {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.list--centered {
+  text-align: center; }
+.list--block {
+  max-width: 585px;
+  margin: 0 auto 30px; }
+  .list--block li {
+    padding: 4px 0;
+    border-top: 1px solid #d9d9d9;
+    line-height: 1.714; }
+    .list--block li:first-child {
+      border-top: none; }
+    .list--block li p {
+      margin-bottom: 0; }
+      .list--block li p:first-child {
+        font-weight: bold; }
+
+.sponsors {
+  background: #f2efef; }
