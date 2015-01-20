@@ -61,6 +61,6 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-var port = process.env.port;
+var port = process.env.port || 3000;
 app.listen(port);
 console.log('Listening on ' + port);
