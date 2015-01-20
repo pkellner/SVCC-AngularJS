@@ -1,46 +1,51 @@
 <div ng-controller="AnguController">
-
-
-    <nav class="navbar navbar-inverse">
+    <nav class="nav">
         <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="nav--list">
+                        <li class="active"><a href="">Home</a></li>
+                        <li><a href="">Venue</a></li>
+                        <li><a href="">FAQ</a></li>
+                    </ul>
+                </div>
 
-            <!--<a class="navbar-brand">Angular U</a>-->
-
-
-            <div class="navbar-header">
-                <button type="button"
-                        class="navbar-toggle"
-                        data-toggle="collapse"
-                        data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-
-                    <span class="icon-bar navbar-text"></span>
-
-
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-
-                    <li><a ng-click="anguLocationClick()">Location</a></li>
-                    <li><a ng-click="anguSpeakersClick()">Speakers</a></li>
-                    <li><a ng-click="anguProgramClick()">Program</a></li>
-                    <li><a ng-click="anguSponsorsClick()">Sponsors</a></li>
-                    <li>
-                        <span style="color: #ffffff">Ping me when Tickets go on sale:</span>
-                        <input ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="Email Address">
-                        <button ng-click="anguPingMe()">Ping Me</button>
-                    </li>
-
-                </ul>
+                <div class="col-md-8">
+                    <div class="ping-tickets">
+                        <label for="pingMeEmail" class="hidden-xs hidden-sm">Ping me when tickets go on sale:</label>
+                        <div class="input-group hidden-xs">
+                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">OK</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
+    <section class="hero" style="">
+        <h1 class="hero--heading"><span class="brand--logo angular"></span>Angular U</h1>
+        <span class="hero--extra">June 22 to 25 2015 - Hyatt Regency, San Francisco Airport</span>
+    </section>
 
+    <div class="container">
+        <div class="separator">
+            <span class="icon-code"></span>
+        </div>
+
+        <div class="row row-centered">
+            <div class="col-md-9 col-centered">
+                <h2 class="type--lead">
+                    <span class="type--color">A 4-day event</span> covering Angular, Polymer, <br>
+                    Web Components and ECMAScript 6
+                </h2>
+                <p class="text-center">Angular University gather over 30 presenters for 3 days packed with conferences and workshops. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button class="btn btn-primary btn-lg center-block">Read More</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container">
