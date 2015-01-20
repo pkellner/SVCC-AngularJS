@@ -5,7 +5,6 @@
         <div ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} ">
 
             <a href="{{ sponsor.webSite }}" target="_blank"
-               onclick='javascript:pageTracker._trackPageview("/outbound/Sponsor-{{ sponsor.sponsorName }}");'
                class="sponsorDiv">
                 <span ng-if="sponsor.showFeatured == true" class="feature"></span>
                 <span class="image"><img
@@ -28,7 +27,6 @@
         <div ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} ">
 
             <a href="{{ sponsor.webSite }}" target="_blank"
-               onclick='javascript:pageTracker._trackPageview("/outbound/Sponsor-{{ sponsor.sponsorName }}");'
                class="sponsorDiv">
                 <span ng-if="sponsor.showFeatured == true" class="feature"></span>
                 <span class="image"><img
@@ -52,7 +50,6 @@
         <div ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} ">
 
             <a href="{{ sponsor.webSite }}" target="_blank"
-               onclick='javascript:pageTracker._trackPageview("/outbound/Sponsor-{{ sponsor.sponsorName }}");'
                class="sponsorDiv">
                 <span ng-if="sponsor.showFeatured == true" class="feature"></span>
                 <span class="image"><img
