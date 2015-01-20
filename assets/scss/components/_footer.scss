@@ -1,0 +1,44 @@
+.footer {
+  &--top {
+    color: $white;
+    font-size: 16px;
+    font-weight: normal;
+    background: $gray-dark;
+
+    a {
+      color: $white;
+    }
+
+    .ping-tickets {
+      text-align: center;
+      margin-top: 10px;
+
+      @include respond-to(tablet) {
+        margin-top: 0;
+      }
+
+      @include respond-to(desktop) {
+        text-align: right;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+
+        @include respond-to(desktop) {
+          display: inline-block;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &--contact {
+    margin: 6px 0;
+    text-align: center;
+
+    @include respond-to(desktop) {
+      text-align: right;
+    }
+  }
+}

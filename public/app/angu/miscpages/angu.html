@@ -3,10 +3,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
+                    <button class="nav--toggle icon-nav">
+                        <span class="icon-burger"></span>
+                    </button>
                     <ul class="nav--list">
-                        <li class="active"><a href="">Home</a></li>
-                        <li><a href="">Venue</a></li>
-                        <li><a href="">FAQ</a></li>
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#venue">Venue</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
 
@@ -43,8 +46,13 @@
                 </h2>
                 <p class="text-center">Angular University gather over 30 presenters for 3 days packed with conferences and workshops. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <button class="btn btn-primary btn-lg center-block">Read More</button>
-                <div class="social">
-                    <span>Follow us on: </span>
+                <div class="social center-block">
+                    <h4>Follow us on: </h4>
+                    <ul>
+                        <li><a href="#" class="icon-twitter"></a></li>
+                        <li><a href="#" class="icon-fb"></a></li>
+                        <li><a href="#" class="icon-gplus"></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -87,8 +95,12 @@
         </div>
     </div>
 
-    <div class="slider" style="background-image: url({{baseDir}}/assets/img/bg-slider-1.jpg)">
+    <div id="venue" class="slider" style="background-image: url({{baseDir}}/assets/img/bg-slider-1.jpg)">
         <div class="slide--container">
+            <div class="slide--controls">
+                <span class="slide--control icon-arrow-left"></span>
+                <span class="slide--control icon-arrow-right"></span>
+            </div>
             <div class="slide">
                 <div class="slide--content">
                     <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a short distance from the San Francisco Airport and within a short taxi or Bart ride from San Francisco Downtown</p>
@@ -103,7 +115,7 @@
             <span class="separator--icon icon-question">?</span>
         </div>
 
-        <div class="">
+        <div id="faq" class="">
             <h2 class="type--lead">FAQ</h2>
 
             <ul class="list--block list--centered">
@@ -146,19 +158,26 @@ more details</p>
                 <div class="row">
                     <div class="col-md-7">
                         <div class="ping-tickets">
-                            <label for="pingMeEmail" class="hidden-xs hidden-sm">Ping me when tickets go on sale:</label>
-                            <div class="input-group hidden-xs">
-                                <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
+                            <label for="pingMeEmail2">Ping me when tickets go on sale:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="pingMeEmail2" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
                                 <span class="input-group-btn">
                                     <button class="btn btn-primary" type="button">OK</button>
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5 footer--contact">
                         <a href="#">Contact us</a>
                         <span> | </span>
-                        <span>Follow us: </span>
+                        <div class="social alt">
+                            <h4>Follow us on: </h4>
+                            <ul>
+                                <li><a href="#" class="icon-twitter"></a></li>
+                                <li><a href="#" class="icon-fb"></a></li>
+                                <li><a href="#" class="icon-gplus"></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

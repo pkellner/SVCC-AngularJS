@@ -1,5 +1,6 @@
 .slide {
   &--container {
+    position: relative;
     max-width: 1050px;
     margin: 0 auto;
     padding: 45px;
@@ -37,6 +38,47 @@
 
     p {
       margin-bottom: 0;
+    }
+  }
+
+  &--controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -31px;
+
+    @include respond-to(tablet) {
+      left: 10px;
+      right: 10px;
+    }
+
+    @include respond-to(desktop) {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &--control {
+    font-size: 20px;
+    padding: 20px 10px;
+    color: $gray-lighter;
+    background: $black;
+    border: 1px solid $gray-lighter;
+    cursor: pointer;
+    opacity: .8;
+    transition: opacity .25s ease-in-out;
+
+    &:hover {
+      opacity: .95;
+    }
+
+    &.icon-arrow-left {
+      float: left;
+    }
+
+    &.icon-arrow-right {
+      float: right;
     }
   }
 }

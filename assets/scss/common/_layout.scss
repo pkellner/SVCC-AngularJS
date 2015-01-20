@@ -22,3 +22,7 @@ ul {
 p {
   margin: 0 0 30px;
 }
+
+a {
+  transition: background .25s ease-in-out, color .25s ease-in-out;
+}
