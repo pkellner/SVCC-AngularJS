@@ -461,7 +461,7 @@
                 });
 
                 var sponsorUrl = "/rest/sponsor/arrayonly/";
-                $httpBackend.whenGET(speakerUrl).respond(function (method, url, data) {
+                $httpBackend.whenGET(sponsorUrl).respond(function (method, url, data) {
                     var sponsors = sponsorDataModelService.getData();
                     return [200, sponsors, {}];
                 });

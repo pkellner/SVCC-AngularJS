@@ -10,7 +10,7 @@
         <section class="listingBox speakerDetails noBorder">
             <div class="listingMedia">
                 <img alt="img" width="135" height="135"
-                     src="http://cache.siliconvalley-codecamp.com{{vm.speaker.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+                     src="{{vm.speaker.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
             </div>
 
             <!--<div speaker-social-icon-directive speaker='vm.speaker' >-->
@@ -52,7 +52,7 @@
 
                 <li ng-class="{'self': discussion.isSpeaker, 'other': !discussion.isSpeaker}" >
                     <div class="avatar">
-                        <img src="http://cache.siliconvalley-codecamp.com{{discussion.pictureUrl}}?format=jpg&width=39&Height=39&scale=both&mode=pad&Bgcolor=F6F4F6" />
+                        <img src="{{discussion.pictureUrl}}?format=jpg&width=39&Height=39&scale=both&mode=pad&Bgcolor=F6F4F6" />
                     </div>
                     <div class="messages">
                         <p>{{ discussion.messageText}}</p>

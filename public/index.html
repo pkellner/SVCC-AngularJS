@@ -16,7 +16,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- build:css -->
     <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/> -->
-    <!--<link rel="stylesheet" href="//cache.siliconvalley-codecamp.com/Content/Styles/site-svcc-cdn.css">-->
+    <link rel="stylesheet" href="//cache.siliconvalley-codecamp.com/Content/Styles/site-svcc-cdn.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <!-- endbuild -->
 </head>
@@ -73,6 +73,12 @@
 <script src="app/common/sessions/session-dayofweek-resource.service.js"></script>
 <script src="app/common/sessions/session-level.filter.js"></script>
 
+
+<!--common-Sponsors-->
+<script src="app/common/sponsors/sponsors.controller.js"></script>
+<script src="app/common/sponsors/sponsor-datamodel.service.js"></script>
+
+
 <!--angu special items -->
 <script src="app/angu/miscpages/AnguController.js"></script>
 
@@ -90,7 +96,7 @@
             //baseDir: '/angularjs/webnpm/public/', // running in visual studio
             baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
 
-            codeCampType: 'angu', // options: 'angu','svcc'
+            codeCampType: 'svcc', // options: 'angu','svcc'
 
             loggedInUsername: 'pkellner',
             mockData: usingMockDataGlobal
