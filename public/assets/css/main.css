@@ -2037,6 +2037,9 @@ a {
   -webkit-transition: background .25s ease-in-out, color .25s ease-in-out;
           transition: background .25s ease-in-out, color .25s ease-in-out; }
 
+.body-bag {
+  margin-top: 58px; }
+
 .uppercase {
   text-transform: uppercase; }
 
@@ -2152,11 +2155,17 @@ body {
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.7); }
 
 .nav {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
   background: #2c292b;
   color: #fff;
   border-bottom: 1px solid #b3b3b3;
   font-size: 17px;
-  font-weight: normal; }
+  font-weight: normal;
+  height: 58px; }
   .nav--list {
     display: none;
     float: left;

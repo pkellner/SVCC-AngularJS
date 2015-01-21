@@ -26,3 +26,7 @@ p {
 a {
   transition: background .25s ease-in-out, color .25s ease-in-out;
 }
+
+.body-bag {
+  margin-top: $nav-height;
+}

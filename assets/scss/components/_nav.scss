@@ -1,9 +1,15 @@
 .nav {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
   background: $gray-darker;
   color: $white;
   border-bottom: 1px solid $gray-lighter;
   font-size: 17px;
   font-weight: normal;
+  height: $nav-height;
 
   &--list {
     @extend %clearfix;

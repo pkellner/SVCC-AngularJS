@@ -260,6 +260,40 @@
                 })
 
 
+
+
+                .state('base.sponsors', {
+                    url: '/sponsors',
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
+                        return templateCalc('app/{0}/sponsors/sponsors.html', CONFIG, $templateCache, $http);
+                    }],
+                    controller: 'SponsorsController as vm',
+                    resolve: {
+                        sponsors: ['$http', 'sponsorDataModelService', function ($http, sponsorDataModelService) {
+                            var promise =
+                                $http.get('/rest/sponsor/arrayonly/', {
+                                    cache: true
+                                }).
+                                    success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!sponsorDataModelService.hasData()) {
+                                            sponsorDataModelService.setData(data);
+                                        }
+                                        return data;
+                                    }).
+                                    error(function (data, status, headers, config) {
+                                        return [];
+                                    });
+                            return promise;
+                        }]
+
+                    }
+                })
+
+
+
+
                 // angulur university special below:
                 .state('base.angupingmeonfirmation', {
                     templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
@@ -276,9 +310,10 @@
     }]);
 
 
-    app.run(['$rootScope', '$httpBackend', 'speakerDataModelService', 'speakerDataModelUrlService',
+    app.run(['$rootScope', '$httpBackend',
+        'sponsorDataModelService','speakerDataModelService', 'speakerDataModelUrlService',
         'sessionDataModelService', 'sessionDataModelUrlService', 'CONFIG',
-        function ($rootScope, $httpBackend, speakerDataModelService, speakerDataModelUrlService,
+        function ($rootScope, $httpBackend,sponsorDataModelService, speakerDataModelService, speakerDataModelUrlService,
                   sessionDataModelService, sessionDataModelUrlService, CONFIG) {
             $rootScope.loginName = '';
 
@@ -286,6 +321,8 @@
 
 
                 $httpBackend.whenGET(/app/).passThrough();
+
+                sponsorDataModelService.initDummyData();
 
                 speakerDataModelService.initDummyData();
                 speakerDataModelUrlService.initDummyData();
@@ -422,6 +459,14 @@
                     };
                     return [200, accountInfo, {}];
                 });
+
+                var sponsorUrl = "/rest/sponsor/arrayonly/";
+                $httpBackend.whenGET(sponsorUrl).respond(function (method, url, data) {
+                    var sponsors = sponsorDataModelService.getData();
+                    return [200, sponsors, {}];
+                });
+
+
 
                 var speakerUrlsOnly = '/rest/presenterurls';
                 $httpBackend.whenGET(speakerUrlsOnly).respond(function (method, url, data) {

@@ -73,7 +73,7 @@
     <div class="listingWrap" ng-repeat="presenter in vm.session.speakersList">
         <section class="listingBox speakerDetails">
             <div class="listingMedia">
-                <img alt="img" width="135" height="135" src="http://cache.siliconvalley-codecamp.com{{::presenter.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
+                <img alt="img" width="135" height="135" src="{{::presenter.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
             </div>
             <div speaker-social-icon-directive speaker='presenter' >
             </div>
