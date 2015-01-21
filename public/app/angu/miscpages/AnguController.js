@@ -47,6 +47,32 @@
         };
     }
 
+    angular.module('baseApp')
+        .directive('scrollPosition', function($window) {
+          return {
+            scope: {
+              scroll: '=scrollPosition',
+              activeSection: '=activeSection'
+            },
+            link: function(scope, element, attrs) {
+              var windowEl = angular.element($window);
+              var navSections = angular.element(document.querySelectorAll('.nav--section'));
+              var handler = function () {
+                scope.scroll = $window.scrollY;
+                for (var i = 0; i < navSections.length; i++) {
+                    if (scope.scroll > navSections[i].offsetTop) {
+                        scope.activeSection = navSections[i].id;
+                        console.log(navSections[i].offsetTop);
+                        break;
+                    }
+                }
+              };
+              windowEl.on('scroll', scope.$apply.bind(scope, handler));
+              handler();
+            }
+          };
+        });
+
     AnguController.$inject = ['$scope','$rootScope','$anchorScroll','$location','$state','CONFIG'];
 
 }());
