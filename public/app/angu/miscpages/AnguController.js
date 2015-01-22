@@ -36,6 +36,7 @@
             }
 
             function scrollDown() {
+                if (step === 0) return;
                 for (var i = startY; i < stopY; i += step) {
                     setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
                     leapY += step;
@@ -47,6 +48,7 @@
             }
 
             function scrollUp() {
+                if (step === 0) return;
                 for (var j = startY; j > stopY; j -= step) {
                     setTimeout('window.scrollTo(0, '+leapY+')', timer * speed);
                     leapY -= step;
