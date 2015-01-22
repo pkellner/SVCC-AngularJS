@@ -19,7 +19,9 @@
             'public/vendor/angular-resource/angular-resource.js',
             'public/vendor/angular-ui-router/release/angular-ui-router.js',
             'public/vendor/angular-mocks/angular-mocks.js',
-            'public/vendor/angular-bootstrap/ui-bootstrap-tpls.js'
+            'public/vendor/angular-bootstrap/ui-bootstrap-tpls.js',
+            'public/vendor/angular-carousel/dist/angular-carousel.js',
+            'public/vendor/angular-touch/angular-touch.js'
         ])
             .pipe(concat('angularextras.js'))
             .pipe(gulp.dest('public/dist'))
