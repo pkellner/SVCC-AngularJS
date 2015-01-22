@@ -15,7 +15,8 @@
     }
 
     &.angular {
-      background-image: url($img-path + 'logo-angular.png')
+      // background-image: url($img-path + 'logo-angular.png')
+      background-image: url($img-path + 'logo-angular.svg')
     }
   }
 }

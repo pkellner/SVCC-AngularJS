@@ -1,0 +1,22 @@
+.sponsor {
+  &--box {
+    h3 {
+      color: $black;
+    }
+  }
+
+  &--img {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+  }
+
+  &--links {
+    margin-bottom: 20px;
+  }
+}
+
+.sponsors {
+  background: #f2efef;
+  overflow: hidden;
+  padding-top: 90px;
+}

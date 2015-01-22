@@ -10,7 +10,7 @@ button {
 .container {
   position: relative;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
   max-width: 1080px;
 }
 
@@ -21,4 +21,16 @@ ul {
 
 p {
   margin: 0 0 30px;
+}
+
+a {
+  transition: background .25s ease-in-out, color .25s ease-in-out;
+}
+
+.body-bag {
+  margin-top: $nav-height-mobile;
+
+  @include respond-to(mobile) {
+    margin-top: $nav-height;
+  }
 }

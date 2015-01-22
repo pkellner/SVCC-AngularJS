@@ -1,12 +1,14 @@
 .ping-tickets {
-  padding: 9px 0;
   text-align: right;
+
+  @include respond-to(tablet) {
+    padding: 9px 0;
+  }
 
   label {
     display: inline-block;
     vertical-align: middle;
     margin: 0 10px 0 0;
-    text-transform: uppercase;
     font-weight: normal;
     font-size: 16px;
   }
@@ -21,6 +23,16 @@
     .btn {
       font-size: 14px;
       height: 37px;
+      margin-bottom: 0;
+    }
+  }
+
+  .form-control {
+    font-size: 16px;
+    @include placeholder {
+      color: $gray;
+      font-style: italic;
+      opacity: 1;
     }
   }
 }
