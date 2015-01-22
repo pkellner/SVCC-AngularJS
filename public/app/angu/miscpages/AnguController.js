@@ -85,7 +85,7 @@
     }
 
     angular.module('baseApp')
-        .directive('ngWaypoint', function($window) {
+        .directive('ngWaypoint', ["$window", function($window) {
           return {
             scope: {
               scroll: '=scrollPosition',
@@ -107,7 +107,7 @@
               handler();
             }
           };
-        });
+        }]);
 
 
     AnguController.$inject = ['$scope','$rootScope','$anchorScroll','$location','$state','CONFIG'];
