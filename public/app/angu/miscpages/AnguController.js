@@ -78,7 +78,7 @@
                     node = node.offsetParent;
                     y += node.offsetTop;
                 }
-                return y - windowHeight/3;
+                return y - Math.round(windowHeight/3);
             }
         };
 

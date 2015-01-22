@@ -18,11 +18,10 @@
     max-width: 300px;
     display: inline-table;
     vertical-align: middle;
-    height: 37px;
 
     .btn {
       font-size: 14px;
-      height: 37px;
+      height: $input-height-base;
       margin-bottom: 0;
     }
   }
