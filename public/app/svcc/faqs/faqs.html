@@ -1,11 +1,14 @@
 <section class="pageContent">
     <h2>FAQ</h2>
     <div class="faqWrap">
-        <p><strong>Question:    How can I attend the Silicon Valley Code Camp?</strong></p>
-        <p>Answer:     <b>Attendance is free</b>, but space is limited so you need to register. Visit our&nbsp;<b><a href="Register">Attendee Registration Page</a></b> &nbsp;to reserve your spot.</p>
-        <p><strong>Question:    What is Code Camp?</strong></p>
-        <p>Answer:     Code Camp is a new type of community event where developers learn from fellow developers. All are welcome to attend and speak.</p><p>This Code Camp consists of these points: (1) by and for the developer community; (2) always free; (3) community developed material; (4) never occur during working hours.</p>
-        <p><strong>Question:    Where is Code Camp?</strong></p>
-        <p>Answer:     Silicon Valley Code Camp has been always held at Foothill College in Los Altos California.&nbsp; For more details click <b><a href="About#">here</a></b>.</p>
+
+        <div ng-repeat="faq in vm.faqs">
+
+            <p><strong>Question:    {{ faq.question }}</strong></p>
+            <p>Answer:     {{ faq.answer  }}</p>
+            <br/>
+
+        </div>
+
     </div>
 </section>
