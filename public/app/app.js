@@ -6,7 +6,8 @@
         'ngResource',
         'ui.router',
         'pusher-angular',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'angular-carousel'
     ];
 
     if (usingMockDataGlobal === true) {

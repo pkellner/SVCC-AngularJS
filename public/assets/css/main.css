@@ -2023,7 +2023,7 @@ button {
 .container {
   position: relative;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
   max-width: 1080px; }
 
 ul {
@@ -2357,6 +2357,9 @@ body {
   max-width: 290px;
   margin: 0 auto;
   text-align: center; }
+  @media only screen and (min-width: 480px) {
+    .persona {
+      margin: 0 15px; } }
   .persona--img {
     width: 100%;
     height: 190px;
@@ -2364,6 +2367,19 @@ body {
     margin-bottom: 20px; }
     .persona--img img {
       width: 100%; }
+  .persona--container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    max-width: 960px;
+    margin: 0 auto; }
   .persona h3, .persona h3 a {
     color: #dd1b16;
     font-weight: bold;
@@ -2373,7 +2389,9 @@ body {
   position: relative;
   max-width: 1050px;
   margin: 0 auto;
-  padding: 45px; }
+  padding: 45px 0;
+  overflow: hidden;
+  height: 425px; }
   @media only screen and (min-width: 768px) {
     .slide--container {
       height: 425px; } }
@@ -2416,7 +2434,7 @@ body {
       right: 0; } }
 .slide--control {
   font-size: 20px;
-  padding: 20px 10px;
+  padding: 10px 2px;
   color: #b3b3b3;
   background: #232222;
   border: 1px solid #b3b3b3;
@@ -2424,12 +2442,25 @@ body {
   opacity: .8;
   -webkit-transition: opacity .25s ease-in-out;
           transition: opacity .25s ease-in-out; }
+  @media only screen and (min-width: 480px) {
+    .slide--control {
+      padding: 20px 10px; } }
   .slide--control:hover {
     opacity: .95; }
   .slide--control.icon-arrow-left {
     float: left; }
   .slide--control.icon-arrow-right {
     float: right; }
+.slide--list {
+  height: 100%; }
+  .slide--list li {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 15px; }
+    @media only screen and (min-width: 480px) {
+      .slide--list li {
+        padding: 0 45px; } }
 
 .slider {
   margin: 5px 0 20px;
@@ -2453,18 +2484,18 @@ body {
       .list--block li p:first-child {
         font-weight: bold; }
 
-.sponsor--img {
-  display: inline-block;
-  margin-right: 15px; }
-.sponsor--links {
-  margin-bottom: 20px; }
 .sponsor--box h3 {
   color: #232222; }
+.sponsor--img {
+  display: inline-block;
+  margin: 0 10px 10px 0; }
+.sponsor--links {
+  margin-bottom: 20px; }
 
 .sponsors {
   background: #f2efef;
   overflow: hidden;
-  padding-top: 30px; }
+  padding-top: 90px; }
 
 .social {
   display: inline-block; }
@@ -2523,10 +2554,22 @@ body {
     font-weight: lighter; }
 
 .footer--top {
+  position: relative;
   color: #fff;
   font-size: 16px;
   font-weight: normal;
+  border-bottom: 2px solid #fff;
   background: #292628; }
+  .footer--top:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 40px 35px rgba(0, 0, 0, 0.3); }
   .footer--top a {
     color: #fff; }
   .footer--top .ping-tickets {

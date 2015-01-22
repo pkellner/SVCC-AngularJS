@@ -3,7 +3,9 @@
     position: relative;
     max-width: 1050px;
     margin: 0 auto;
-    padding: 45px;
+    padding: 45px 0;
+    overflow: hidden;
+    height: 425px;
 
     @include respond-to(tablet) {
       height: 425px;
@@ -61,13 +63,17 @@
 
   &--control {
     font-size: 20px;
-    padding: 20px 10px;
+    padding: 10px 2px;
     color: $gray-lighter;
     background: $black;
     border: 1px solid $gray-lighter;
     cursor: pointer;
     opacity: .8;
     transition: opacity .25s ease-in-out;
+
+    @include respond-to(phone) {
+      padding: 20px 10px;
+    }
 
     &:hover {
       opacity: .95;
@@ -79,6 +85,21 @@
 
     &.icon-arrow-right {
       float: right;
+    }
+  }
+
+  &--list {
+    height: 100%;
+
+    li {
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: 0 15px;
+
+      @include respond-to(phone) {
+        padding: 0 45px;
+      }
     }
   }
 }

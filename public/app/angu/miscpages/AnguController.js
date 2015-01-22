@@ -107,6 +107,7 @@
           };
         });
 
+
     AnguController.$inject = ['$scope','$rootScope','$anchorScroll','$location','$state','CONFIG'];
 
 }());
