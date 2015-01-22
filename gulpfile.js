@@ -55,6 +55,9 @@
     // Copy stuff
     gulp.task('copyfiles', function () {
 
+        gulp.src('public/assets/**/*')
+            .pipe(gulp.dest('public/dist/assets'));
+
         gulp.src('../../Content/**/*')
             .pipe(gulp.dest('public/dist/Content'));
 

@@ -292,6 +292,40 @@
                 })
 
 
+                .state('base.faqs', {
+                    url: '/faq',
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
+                        return templateCalc('app/{0}/faq/faqs.html', CONFIG, $templateCache, $http);
+                    }],
+                    controller: 'FaqsController as vm',
+                    resolve: {
+                        faqs: ['$http', 'faqDataModelService', function ($http, faqDataModelService) {
+                            var promise =
+                                $http.get('/rest/faq/arrayonly/', {
+                                    cache: true
+                                }).
+                                    success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!faqDataModelService.hasData()) {
+                                            faqDataModelService.setData(data);
+                                        }
+                                        return data;
+                                    }).
+                                    error(function (data, status, headers, config) {
+                                        return [];
+                                    });
+                            return promise;
+                        }]
+
+                    }
+                })
+
+
+
+
+
+
 
 
                 // angulur university special below:
