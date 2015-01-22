@@ -80,6 +80,15 @@
 <script src="app/common/sessions/session-dayofweek-resource.service.js"></script>
 <script src="app/common/sessions/session-level.filter.js"></script>
 
+<!--common-Sponsors-->
+<script src="app/common/sponsors/sponsors.controller.js"></script>
+<script src="app/common/sponsors/sponsor-datamodel.service.js"></script>
+
+<!--common-Faq-->
+<script src="app/common/faq/faqs.controller.js"></script>
+<script src="app/common/faq/faq-datamodel.service.js"></script>
+
+
 <!--angu special items -->
 <script src="app/angu/miscpages/AnguController.js"></script>
 
@@ -93,9 +102,9 @@
         // been initialized when this needs to be set.
         var configData = {
             //baseDir: '/Content/ng/', // asp.net MVC    MUST END WITH SLASH     /webnpm/public/app/angu/miscpages/angu.html
-            //baseDir: '/webnpm/public/', // running in webstorm
+            baseDir: '/webnpm/public/', // running in webstorm
             //baseDir: '/angularjs/webnpm/public/', // running in visual studio
-            baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
+            //baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
 
             codeCampType: 'svcc', // options: 'angu','svcc'
 

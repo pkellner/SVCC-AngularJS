@@ -58,14 +58,52 @@
                     templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/miscpages/{0}.html', CONFIG, $templateCache, $http);
                     }],
-                    controller: 'HomeController as vm'
+                    controller: 'HomeController as vm',
+                    resolve: {
+                        faqs: ['$http', 'faqDataModelService', function ($http, faqDataModelService) {
+                            var promise =
+                                $http.get('/rest/faq/arrayonly/', {
+                                    cache: true
+                                }).
+                                    success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!faqDataModelService.hasData()) {
+                                            faqDataModelService.setData(data);
+                                        }
+                                        return data;
+                                    }).
+                                    error(function (data, status, headers, config) {
+                                        return [];
+                                    });
+                            return promise;
+                        }],
+                        sponsors: ['$http', 'sponsorDataModelService', function ($http, sponsorDataModelService) {
+                            var promise =
+                                $http.get('/rest/sponsor/arrayonly/', {
+                                    cache: true
+                                }).
+                                    success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!sponsorDataModelService.hasData()) {
+                                            sponsorDataModelService.setData(data);
+                                        }
+                                        return data;
+                                    }).
+                                    error(function (data, status, headers, config) {
+                                        return [];
+                                    });
+                            return promise;
+                        }]
+
+                    }
                 })
                 .state('base.home', {
                     //templateUrl: 'app/svcc/miscpages/svcchome.html'
                     templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
                         return templateCalc('app/{0}/miscpages/{0}home.html', CONFIG, $templateCache, $http);
                     }]
-                    // controller: 'HomeController as vm'
                 })
                 .state('base.about', {
                     url: '/about',
@@ -292,6 +330,40 @@
                 })
 
 
+                .state('base.faqs', {
+                    url: '/faq',
+                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
+                        return templateCalc('app/{0}/faqs/faqs.html', CONFIG, $templateCache, $http);
+                    }],
+                    controller: 'FaqsController as vm',
+                    resolve: {
+                        faqs: ['$http', 'faqDataModelService', function ($http, faqDataModelService) {
+                            var promise =
+                                $http.get('/rest/faq/arrayonly/', {
+                                    cache: true
+                                }).
+                                    success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!faqDataModelService.hasData()) {
+                                            faqDataModelService.setData(data);
+                                        }
+                                        return data;
+                                    }).
+                                    error(function (data, status, headers, config) {
+                                        return [];
+                                    });
+                            return promise;
+                        }]
+
+                    }
+                })
+
+
+
+
+
+
 
 
                 // angulur university special below:
@@ -312,9 +384,9 @@
 
     app.run(['$rootScope', '$httpBackend',
         'sponsorDataModelService','speakerDataModelService', 'speakerDataModelUrlService',
-        'sessionDataModelService', 'sessionDataModelUrlService', 'CONFIG',
+        'sessionDataModelService', 'sessionDataModelUrlService','faqDataModelService', 'CONFIG',
         function ($rootScope, $httpBackend,sponsorDataModelService, speakerDataModelService, speakerDataModelUrlService,
-                  sessionDataModelService, sessionDataModelUrlService, CONFIG) {
+                  sessionDataModelService, sessionDataModelUrlService,faqDataModelService, CONFIG) {
             $rootScope.loginName = '';
 
             var initUrlMocksAll = function () {
@@ -323,6 +395,8 @@
                 $httpBackend.whenGET(/app/).passThrough();
 
                 sponsorDataModelService.initDummyData();
+
+                faqDataModelService.initDummyData();
 
                 speakerDataModelService.initDummyData();
                 speakerDataModelUrlService.initDummyData();
@@ -466,7 +540,11 @@
                     return [200, sponsors, {}];
                 });
 
-
+                var faqUrl = "/rest/faq/arrayonly/";
+                $httpBackend.whenGET(faqUrl).respond(function (method, url, data) {
+                    var faqs = faqDataModelService.getData();
+                    return [200, faqs, {}];
+                });
 
                 var speakerUrlsOnly = '/rest/presenterurls';
                 $httpBackend.whenGET(speakerUrlsOnly).respond(function (method, url, data) {

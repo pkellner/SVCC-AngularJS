@@ -28,5 +28,9 @@ a {
 }
 
 .body-bag {
-  margin-top: $nav-height;
+  margin-top: $nav-height-mobile;
+
+  @include respond-to(mobile) {
+    margin-top: $nav-height;
+  }
 }

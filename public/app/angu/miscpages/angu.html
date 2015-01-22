@@ -3,10 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <button class="nav--toggle icon-nav">
-                        <span class="icon-burger"></span>
+                    <button class="nav--toggle icon-nav"
+                        ng-class="{'open': isNavOpen, '': isNavOpen}"
+                        ng-init="isNavOpen = false"
+                        ng-click="isNavOpen = !isNavOpen">
+                    <span class="icon-burger"></span>
                     </button>
-                    <ul class="nav--list">
+                    <ul class="nav--list"
+                        ng-class="{'open': isNavOpen, '': isNavOpen}">
                         <li ng-class="{active: activeNavSection == 'home'}"><a href="" ng-click="scrollTo('home')">Home</a></li>
                         <li ng-class="{active: activeNavSection == 'venue'}"><a href="" ng-click="scrollTo('venue')">Venue</a></li>
                         <li ng-class="{active: activeNavSection == 'faq'}"><a href="" ng-click="scrollTo('faq')">FAQ</a></li>
@@ -123,34 +127,9 @@
                 <h2 class="type--lead">FAQ</h2>
 
                 <ul class="list--block list--centered">
-                    <li>
-                        <p>How are the <span class="type--color">workshop presenters</span> selected?</p>
-                        <p>All our speakers are of the highest quality and reputation.</p>
-                    </li>
-                    <li>
-                        <p><span class="type--color">How many days</span> is Code Stars summit?</p>
-                        <p>Typically 2 to 4.</p>
-                    </li>
-                    <li>
-                        <p>Can I attend <span class="type--color">just one workshop</span>?</p>
-                        <p>Yes, you can attend as many workshops that do not overlap as you like.</p>
-                    </li>
-                    <li>
-                        <p>I would like to take just <span class="type--color">one day of a 2-day workshop</span>. Can I do that?</p>
-                        <p>No, sorry you cannot. If you are attending a 2-day workshop, you must pay for both days.</p>
-                    </li>
-                    <li>
-                        <p>Are <span class="type--color">meals and snacks</span> served at Code Stars Summit?</p>
-                        <p>Yes, we will be providing lunch and snacks during the day.</p>
-                    </li>
-                    <li>
-                        <p><span class="type--color">Where</span> is Code Stars Summit being held?</p>
-                        <p>Typically 2 to 4.</p>
-                    </li>
-                    <li>
-                        <p>What are the <span class="type--color">workshop hours</span>?</p>
-                        <p>Typically 9 to 5 with a break for lunch. Expect a welcome email before the workshop with
-    more details</p>
+                    <li ng-repeat="faq in vm.faqs">
+                        <p><strong>Question:    {{ faq.question }}</strong></p>
+                        <p>Answer:     {{ faq.answer  }}</p>
                     </li>
                 </ul>
             </div>
@@ -185,80 +164,54 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="sponsors">
-                <div class="container">
-                    <section class="sponsor">
-                        <h3>PLATINUM</h3>
-                        <div class="sponsor--links">
-                            <div ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} ">
 
-                                <a href="{{ sponsor.webSite }}" target="_blank"
-                                   class="sponsorDiv">
-                                    <span ng-if="sponsor.showFeatured == true" class="feature"></span>
-                                    <span class="image"><img
-                                            src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad&amp;bgcolor=white"
-                                            alt=""></span>
-                                    <strong class="caption">
-                                        {{ sponsor.sponsorName }}
-                                    </strong>
-                                </a>
+                <div class="sponsors">
+                    <div class="container">
+                        <section class="sponsor--box">
+                            <h3 class="uppercase">Platinum</h3>
+                            <div class="sponsor--links">
+                                <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} ">
+                                    <a href="{{ sponsor.webSite }}" target="_blank"
+                                       class="sponsorDiv">
+                                        <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+                                        <img src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+                                                alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        </section>
 
-                    </section>
-
-                    <section class="sponsor">
-
-                        <h3>GOLD</h3>
-
-                        <div class="sponsor--links">
-                            <div ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} ">
-
-                                <a href="{{ sponsor.webSite }}" target="_blank"
-                                   class="sponsorDiv">
-                                    <span ng-if="sponsor.showFeatured == true" class="feature"></span>
-                                    <span class="image"><img
-                                            src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad&amp;bgcolor=white"
-                                            alt=""></span>
-                                    <strong class="caption">
-                                        {{ sponsor.sponsorName }}
-                                    </strong>
-                                </a>
+                        <section class="sponsor--box">
+                            <h3 class="uppercase">Gold</h3>
+                            <div class="sponsor--links">
+                                <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} ">
+                                    <a href="{{ sponsor.webSite }}" target="_blank"
+                                       class="sponsorDiv">
+                                        <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+                                        <img src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+                                                alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        </section>
 
+                        <section class="sponsor--box">
+                            <h3 class="uppercase">Silver</h3>
+                            <div class="sponsor--links">
+                                <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} ">
 
-                    </section>
-
-                    <section class="sponsor">
-
-                        <h3>SILVER</h3>
-
-                        <div class="sponsor--links">
-                            <div ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} ">
-
-                                <a href="{{ sponsor.webSite }}" target="_blank"
-                                   class="sponsorDiv">
-                                    <span ng-if="sponsor.showFeatured == true" class="feature"></span>
-                                    <span class="image"><img
-                                            src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad&amp;bgcolor=white"
-                                            alt=""></span>
-                                    <strong class="caption">
-                                        {{ sponsor.sponsorName }}
-                                    </strong>
-                                </a>
+                                    <a href="{{ sponsor.webSite }}" target="_blank"
+                                       class="sponsorDiv">
+                                        <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+                                        <img src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+                                                alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-
-
-                    </section>
-
+                        </section>
+                    </div>
                 </div>
             </div>
-
         </footer>
     </div>
 </div>
-
-
