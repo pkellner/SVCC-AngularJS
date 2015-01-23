@@ -106,4 +106,21 @@
       }
     }
   }
+
+  .ping-tickets {
+    &.open {
+      display: block;
+      position: absolute;
+      left: 0;
+      text-align: left;
+      top: $nav-height-mobile - 1;
+      background: #2c292b;
+      z-index: 1;
+      padding: 0 22px 10px;
+
+      .input-group {
+        max-width: initial;
+      }
+    }
+  }
 }

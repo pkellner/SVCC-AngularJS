@@ -7,7 +7,7 @@
                         ng-class="{'open': isNavOpen, '': isNavOpen}"
                         ng-init="isNavOpen = false"
                         ng-click="isNavOpen = !isNavOpen">
-                    <span class="icon-burger"></span>
+                        <span class="icon-burger"></span>
                     </button>
                     <ul class="nav--list"
                         ng-class="{'open': isNavOpen, '': isNavOpen}">
@@ -18,9 +18,15 @@
                 </div>
 
                 <div class="col-md-8">
-                    <div class="ping-tickets">
-                        <label for="pingMeEmail" class="hidden-xs hidden-sm uppercase">Ping me when tickets go on sale:</label>
-                        <div class="input-group hidden-xs">
+                    <button class="ping-tickets--toggle uppercase"
+                        ng-class="{'open': isTicketOpen, '': isTicketOpen}"
+                        ng-init="isTicketOpen = false"
+                        ng-click="isTicketOpen = !isTicketOpen">
+                        Tickets
+                    </button>
+                    <div class="ping-tickets" ng-class="{'open': isTicketOpen, '': isTicketOpen}">
+                        <label for="pingMeEmail" class="hidden-sm uppercase">Ping me when tickets go on sale:</label>
+                        <div class="input-group">
                             <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" type="button">OK</button>
