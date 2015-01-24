@@ -16,14 +16,6 @@
 
     var app = angular.module('baseApp', depArray);
 
-    angular.element(document).ready(function () {
-
-        var initInjector = angular.injector(["ng"]);
-        var $http = initInjector.get("$http");
-
-        angular.bootstrap(document, ['baseApp']);
-    });
-
     app.factory('getTemplate', ['CONFIG', '$templateRequest', function(CONFIG, $templateRequest) {
         return function(templateMask) {
             var codeCampType = CONFIG.codeCampType;
