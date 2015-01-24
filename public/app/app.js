@@ -159,19 +159,16 @@
 
                                 // if we find the speaker, return a promise with the data wrapped, otherwise do the rest call
                                 if (speaker) {
-                                    var def = $q.defer();
-                                    def.resolve({ data: speaker});
-                                    return def.promise;
+                                    return $q.when({ data: speaker});
                                 } else {
                                     var urlString = '/rest/presenter/arrayonly/' + partialUrl;
-                                    var promise = $http.get(urlString, {cache: true}).
-                                        success(function (data, status, headers, config) {
+                                    return $http.get(urlString, {cache: true})
+                                        .success(function (data, status, headers, config) {
                                             return data;
-                                        }).
-                                        error(function (data, status, headers, config) {
+                                        })
+                                        .error(function (data, status, headers, config) {
                                             return {id: -1};
                                         });
-                                    return promise;
                                 }
                             }]
                     }
@@ -209,23 +206,20 @@
 
                                 // if we find the speaker, return a promise with the data wrapped, otherwise do the rest call
                                 if (session) {
-                                    var def = $q.defer();
-                                    def.resolve({ data: {data: [session]}});
-                                    return def.promise;
+                                    return $q.when({ data: {data: [session]}});
                                 } else {
 
 
                                     var urlString = '/rest/session/' + partialUrl;
                                     // first see if this is in the local data
 
-                                    var promise = $http.get(urlString, {cache: true}).
-                                        success(function (data, status, headers, config) {
+                                    return $http.get(urlString, {cache: true})
+                                        .success(function (data, status, headers, config) {
                                             return data;
-                                        }).
-                                        error(function (data, status, headers, config) {
+                                        })
+                                        .error(function (data, status, headers, config) {
                                             return {id: -1};
                                         });
-                                    return promise;
                                 }
                             }]
                     }
