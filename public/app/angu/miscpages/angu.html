@@ -21,9 +21,9 @@
                     <div class="ping-tickets">
                         <label for="pingMeEmail" class="hidden-xs hidden-sm uppercase">Ping me when tickets go on sale:</label>
                         <div class="input-group hidden-xs">
-                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
+                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
                             <span class="input-group-btn">
-                                <button class="btn btn-primary" type="button">OK</button>
+                                <button class="btn btn-primary" ng-click="vm.anguPingMe()" type="button">OK</button>
                             </span>
                         </div>
                     </div>
@@ -31,6 +31,13 @@
             </div>
         </div>
     </nav>
+
+    <!--THIS NEXT LINE IS NECESSARY BECAUSE IT PULLS IN CONTENT FROM INDIVIDUAL HTML FILES
+        I'M GUESSING ALL THIS CODE BELOW SHOULD GO INTO anguhome.html AND THAT THE FOOTER THAT IS CURRENTLY
+        IN anguhome.html SHOULD GO BELOW THIS view-frame LINE. I'M NOT SURE THE SCROLLING WORKS CORRECTLY AFTER THAT
+        BUT IT'S IMPORTANT BECAUSE WE WILL BRING OTHER PAGES IN THAT DO NOT SCROLL (LIKE LOGIN, REGISTER, ETC.) -->
+    <div class="container" ui-view class="view-frame"></div>
+
 
     <div class="body-bag">
         <section class="hero" style="">
@@ -162,7 +169,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="pingMeEmail2" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button">OK</button>
+                                        <button ng-click="$scope.anguPingMe" class="btn btn-primary" type="button">OK</button>
                                     </span>
                                 </div>
                             </div>
