@@ -10,7 +10,7 @@
         'angular-carousel'
     ];
 
-    if (usingMockDataGlobal === true) {
+    if (window.usingMockDataGlobal) {
         depArray.push('ngMockE2E');
     }
 
