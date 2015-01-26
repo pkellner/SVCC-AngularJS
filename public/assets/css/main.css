@@ -2546,7 +2546,8 @@ body {
 .sponsors {
   background: #f2efef;
   overflow: hidden;
-  padding-top: 90px; }
+  padding-top: 90px;
+  margin: 0; }
 
 .social {
   display: inline-block; }
