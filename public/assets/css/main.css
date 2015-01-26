@@ -2014,7 +2014,8 @@ tbody.collapse.in {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: lighter; }
+  font-weight: lighter;
+  background: #fff; }
 
 button {
   -webkit-font-smoothing: antialiased;
@@ -2288,7 +2289,7 @@ body {
       display: block;
       padding: 9px 0; } }
   .ping-tickets--toggle {
-    display: inline-block;
+    float: left;
     -webkit-appearance: none;
     background: none;
     border: none;

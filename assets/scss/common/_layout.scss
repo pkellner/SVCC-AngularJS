@@ -1,6 +1,7 @@
 body {
   @include font-smoothing(on);
   font-weight: lighter;
+  background: #fff;
 }
 
 button {
