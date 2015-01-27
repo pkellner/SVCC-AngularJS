@@ -1,18 +1,23 @@
 'use strict';
 
-module.exports = require('angular')
+var angular = require('angular');
+
+
+
+module.exports = 
   .module('baseApp', [
     // 3rd party modules
-    'ngMessages',
-    'ui.router',
-    'pusher-angular',
-    'ui.bootstrap',
-    'angular-carousel',
+    require('angular-messages'),
+    require('angular-ui-router'),
+    require('pusher-angular'),
+    require('angular-carousel'),
+    require('ui.bootstrap'),
     // our modules
-    require('./account').name,
-    require('./main').name,
-    require('./faq').name,
-    require('./sessions').name,
-    require('./speakers').name,
-    require('./sponsors').name
+    require('./account'),
+    require('./main'),
+    require('./faq'),
+    require('./sessions'),
+    require('./speakers'),
+    require('./sponsors')
   ]);
+
