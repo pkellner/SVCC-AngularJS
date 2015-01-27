@@ -31,7 +31,7 @@ a {
 .body-bag {
   margin-top: $nav-height-mobile;
 
-  @include respond-to(mobile) {
+  @include respond-to(tablet) {
     margin-top: $nav-height;
   }
 }

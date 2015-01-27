@@ -1,13 +1,308 @@
-<!--<h2>Ping Me Confirmation</h2>-->
-<!--<p>We have registered you as requesting an email as soon as our tickets go on-->
-<!--sale for Angular U.  We anticipate that happening in mid February so keep an eye on your-->
-<!--email.  We will also be sending you a confirmation so please make sure you can receive emails from-->
-<!--staff@angularu.com by adding us to your contact list.</p>-->
-<!--<p>Email Registered: {{ pingMeEmailAddress }}</p>-->
-<!--<p>Thanks for your interest.</p>-->
+<div class="body-bag">
+    <section class="hero" style="">
+        <h1 class="hero--heading"><span class="brand--logo angular"></span>Angular U</h1>
+        <span class="hero--extra">June 22 to 25 2015 - Hyatt Regency, San&nbsp;Francisco Airport</span>
+    </section>
 
-<!--<hr/>-->
+    <div class="container">
 
-<img src="{{baseDir}}/assets/img/registration-simulation.png" alt="Brad Green">
+        <div class="separator">
+          <span class="separator--icon icon-mail"></span>
+        </div>
 
-<!--<button ng-click="backToHomePage()" >Return To Angular U Home Page</button>-->
+        <div class="row row-centered">
+            <div class="col-md-7 col-centered">
+                <h2 class="type--lead">Sign up to be notified when tickets go on sale!</h2>
+                <p class="type--bigger text-center">Angular University gather over 30 presenters for 3 days packed with conferences and workshops. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <header class="heading centered">
+                    <h3 class="color">1. Ticket Selections</h3>
+                </header>
+
+                <div class="col-sm-11 col-centered">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="select-purchase" class="col-sm-4 control-label">I intend to purchase</label>
+                            <div class="col-sm-3">
+                                <select class="form-control" id="select-purchase">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <p class="col-sm-5 form-control-static">ticket(s)</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="select-stay" class="col-sm-4 control-label">I intend to stay</label>
+                            <div class="col-sm-3">
+                                <select class="form-control" id="select-stay">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <p class="col-sm-5 form-control-static">night(s) at the conference hotel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-11 col-centered">
+                    <ul class="list--radio">
+                        <li>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                    <b>2-day conference</b>, including AngularJS Keynote (June 22-23) - $995
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <b>2-day conference plus 1-day workshop</b>, (June 22-24) - $1395<span class="type--color">*</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="radio disabled">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                    <b>2-day conference plus 2 days of workshop</b>, (June 22-25) - $1750<span class="type--color">*</span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <p class="type--bigger"><span class="type--color">*</span> Workshops will be one or two days. Topics will range from Angular fundamentals and incluse both intermediate and advanced topics. There will also be sessions on Angular-related technologies</p>
+
+                <header class="heading centered">
+                    <h3>Events I plan on attending at Angular U:</h3>
+                </header>
+
+                <div class="col-sm-11 col-centered">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value=""><b>Attendee party</b> (June 22 - Attendees plus guests)
+                        </label>
+                    </div>
+
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="select-guests" class="col-sm-4 control-label">Number of guests</label>
+                            <div class="col-sm-3">
+                                <select class="form-control" id="select-guests">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value=""><b>Angular Community event</b>, open to non-attendees (Tuesday night)
+                      </label>
+                    </div>
+                </div>
+
+
+                <header class="heading centered">
+                    <h3 class="color">2. Your personal details</h3>
+                </header>
+
+                <div class="col-sm-8 col-centered">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="email" class="col-sm-3 control-label"></label>
+                            <div class="col-sm-9">
+                                <span class="type--bigger italic">All fields are optional</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="email"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="first-name" class="col-sm-3 control-label">First Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="first-name"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name" class="col-sm-3 control-label">Last Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="last-name"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="addr" class="col-sm-3 control-label">Address</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="addr"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="city" class="col-sm-3 control-label">City</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="city"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="state" class="col-sm-3 control-label">State</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="state">
+                                    <option value=""></option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip" class="col-sm-3 control-label">Zip</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="zip"></input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="country" class="col-sm-3 control-label">Country</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="country">
+                                    <option value="us">United States</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-title" class="col-sm-3 control-label">Job Title</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="job-title"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <header class="heading centered">
+                    <h3 class="color">3. Email communications</h3>
+                </header>
+
+                <div class="col-md-10 col-centered">
+                    <ul class="list--checkbox">
+                        <li>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="c1">I want to be contacted when Angular U tickets go on sale</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="c2">Keep  up-to-date with information on this year’s Angular U</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="c3">Keep me posted on Future AngularU Events</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="c4">Receive updates and offers from selected sponsors</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="btn btn-primary btn-lg center-block">Save and return to the homepage</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer--top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="ping-tickets">
+                            <label for="pingMeEmail2">Ping me when tickets go on sale:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="pingMeEmail2" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
+                                <span class="input-group-btn">
+                                    <button ng-click="$scope.anguPingMe" class="btn btn-primary" type="button">OK</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 footer--contact">
+                        <a href="#">Contact us</a>
+                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <div class="social alt">
+                            <h4>Follow us on: </h4>
+                            <ul>
+                                <li><a href="#" class="icon-twitter"></a></li>
+                                <li><a href="#" class="icon-fb"></a></li>
+                                <li><a href="#" class="icon-gplus"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sponsors">
+            <div class="container">
+                <section class="sponsor--box">
+                    <h3 class="uppercase">Platinum</h3>
+                    <div class="sponsor--links">
+                        <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} ">
+                            <a href="{{ sponsor.webSite }}" target="_blank"
+                               class="sponsorDiv">
+                                <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+                                <img src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+                                        alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="sponsor--box">
+                    <h3 class="uppercase">Gold</h3>
+                    <div class="sponsor--links">
+                        <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} ">
+                            <a href="{{ sponsor.webSite }}" target="_blank"
+                               class="sponsorDiv">
+                                <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+                                <img src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+                                        alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="sponsor--box">
+                    <h3 class="uppercase">Silver</h3>
+                    <div class="sponsor--links">
+                        <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} ">
+
+                            <a href="{{ sponsor.webSite }}" target="_blank"
+                               class="sponsorDiv">
+                                <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+                                <img src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+                                        alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+
+<!-- <button ng-click="backToHomePage()" >Return To Angular U Home Page</button> -->

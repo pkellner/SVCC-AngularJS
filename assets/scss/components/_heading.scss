@@ -1,0 +1,33 @@
+.heading {
+  position: relative;
+  padding: 10px 0;
+  margin: 20px 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #b3b3b3;
+    border-top: 1px solid #eee;
+    opacity: 0.5;
+  }
+
+  &.centered {
+    text-align: center;
+  }
+
+  h1, h2, h3,
+  .h1, .h2, .h3 {
+    font-weight: lighter;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .color {
+    font-weight: normal;
+    color: $brand-primary;
+  }
+}
