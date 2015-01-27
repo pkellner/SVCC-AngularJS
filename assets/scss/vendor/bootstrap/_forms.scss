@@ -2,4 +2,20 @@
   line-height: 1;
   padding-top: 7px;
   padding-bottom: 7px;
+
+  &-static {
+    padding-left: 0;
+  }
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+.control-label {
+  padding-right: 0;
+}
+
+label {
+  font-weight: inherit;
 }
