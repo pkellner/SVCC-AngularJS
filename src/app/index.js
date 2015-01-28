@@ -9,8 +9,8 @@ module.exports = require('angular')
     require('angular-carousel'),
     require('ui.bootstrap'),
     // our modules
-    require('./account'),
     require('./main'),
+    require('./account'),
     require('./faq'),
     require('./sessions'),
     require('./speakers'),
