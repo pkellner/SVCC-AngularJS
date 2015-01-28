@@ -108,18 +108,32 @@
   }
 
   .ping-tickets {
-    &.open {
-      display: block;
-      position: absolute;
-      left: 0;
-      text-align: left;
-      top: $nav-height-mobile - 1;
-      background: #2c292b;
-      z-index: 1;
-      padding: 0 22px 10px;
+    text-align: left;
 
-      .input-group {
-        max-width: initial;
+    @include respond-to(tablet) {
+      text-align: right;
+    }
+
+    .input-group {
+      @include respond-to(phone-tablet) {
+        max-width: 240px;
+        float: left;
+        clear: left;
+        margin-top: 4px;
+      }
+    }
+
+    .form-control,
+    .input-group .btn {
+      @include respond-to(phone-tablet) {
+        height: 30px;
+        padding: 0px 8px;
+      }
+    }
+
+    label {
+      @include respond-to(phone-tablet) {
+        display: none;
       }
     }
   }

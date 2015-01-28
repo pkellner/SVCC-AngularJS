@@ -86,28 +86,47 @@
     }
 
     angular.module('baseApp')
-        .directive('ngWaypoint', ["$window", function($window) {
-          return {
-            scope: {
-              scroll: '=scrollPosition',
-              activeNavSection: '=activeNavSection'
-            },
-            link: function(scope, element, attrs) {
-              var windowEl = angular.element($window);
-              var navSections = angular.element(document.querySelectorAll('.nav--section'));
-              var windowHeight = $window.innerHeight;
-              var handler = function () {
-                scope.scroll = $window.scrollY + windowHeight/3;
-                for (var i = 0; i < navSections.length; i++) {
-                    if (scope.scroll > navSections[i].offsetTop) {
-                        scope.activeNavSection = navSections[i].id;
-                    }
+        .directive('ngWaypoint', ['$window', function($window) {
+            return {
+                scope: {
+                    scroll: '=scrollPosition',
+                    activeNavSection: '=activeNavSection'
+                },
+                link: function(scope, element, attrs) {
+                    var windowEl = angular.element($window);
+                    var navSections = angular.element(document.querySelectorAll('.nav--section'));
+                    var windowHeight = $window.innerHeight;
+                    var handler = function () {
+
+                    scope.scroll = $window.scrollY + windowHeight/3;
+                        for (var i = 0; i < navSections.length; i++) {
+                            if (scope.scroll > navSections[i].offsetTop) {
+                                scope.activeNavSection = navSections[i].id;
+                            }
+                        }
+                    };
+                    windowEl.on('scroll', scope.$apply.bind(scope, handler));
+                    handler();
                 }
-              };
-              windowEl.on('scroll', scope.$apply.bind(scope, handler));
-              handler();
-            }
-          };
+            };
+        }]);
+
+    angular.module('baseApp')
+        .directive('resizeWindow', ['$window', function($window) {
+            return {
+                scope: {
+                    windowWidth: '=windowWidth'
+                },
+                link: function(scope, element, attrs) {
+                    var windowEl = angular.element($window);
+                    var handler = function () {
+                        scope.windowWidth = $window.innerWidth;
+                    };
+
+                    windowEl.on('resize', scope.$apply.bind(scope, handler));
+                    handler();
+                }
+            };
         }]);
 
 
