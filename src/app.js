@@ -20,19 +20,7 @@
 
         function ($stateProvider, $urlRouterProvider, $locationProvider, CONFIG) {
 
-            $stateProvider
-                .state('base.home', {
-                    //templateUrl: 'app/svcc/miscpages/svcchome.html'
-                    templateProvider: ['getTemplate', function (getTemplate) {
-                        return getTemplate('app/{0}/miscpages/{0}home.html');
-                    }]
-                })
-                .state('base.about', {
-                    url: '/about',
-                    templateProvider: ['getTemplate', function (getTemplate) {
-                        return getTemplate('app/{0}/miscpages/about.html');
-                    }]
-                })
+            $stateProvider                
                 .state('base.login', {
                     url: '/login',
                     templateProvider: ['getTemplate', function (getTemplate) {

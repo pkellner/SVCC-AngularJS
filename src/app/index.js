@@ -10,6 +10,7 @@ module.exports = require('angular')
     require('ui.bootstrap'),
     // our modules
     require('./main'),
+    require('./static'),
     require('./account'),
     require('./faq'),
     require('./sessions'),
