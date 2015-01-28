@@ -1,5 +1,5 @@
 <div ng-controller="AnguController">
-    <nav class="nav" ng-waypoint scroll-position="scroll" active-nav-section="activeNavSection">
+    <nav class="nav">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -11,9 +11,9 @@
                     </button>
                     <ul class="nav--list"
                         ng-class="{'open': isNavOpen, '': isNavOpen}">
-                        <li ng-class="{active: activeNavSection == 'home'}"><a href="" ng-click="scrollTo('home')">Home</a></li>
-                        <li ng-class="{active: activeNavSection == 'venue'}"><a href="" ng-click="scrollTo('venue')">Venue</a></li>
-                        <li ng-class="{active: activeNavSection == 'faq'}"><a href="" ng-click="scrollTo('faq')">FAQ</a></li>
+                        <li du-scrollspy="home"><a du-smooth-scroll href="#home">Home</a></li>
+                        <li du-scrollspy="venue"><a du-smooth-scroll href="#venue">Venue</a></li>
+                        <li du-scrollspy="faq"><a du-smooth-scroll href="#faq">FAQ</a></li>
                     </ul>
                 </div>
 

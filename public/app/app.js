@@ -7,7 +7,8 @@
         'ui.router',
         'pusher-angular',
         'ui.bootstrap',
-        'angular-carousel'
+        'angular-carousel',
+        'duScroll'
     ];
 
     if (window.usingMockDataGlobal) {
