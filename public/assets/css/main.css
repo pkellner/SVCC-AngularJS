@@ -2267,17 +2267,24 @@ body {
       .nav--toggle .icon-burger:after {
         top: auto;
         bottom: -9px; }
-  .nav .ping-tickets.open {
-    display: block;
-    position: absolute;
-    left: 0;
-    text-align: left;
-    top: 40px;
-    background: #2c292b;
-    z-index: 1;
-    padding: 0 22px 10px; }
-    .nav .ping-tickets.open .input-group {
-      max-width: initial; }
+  .nav .ping-tickets {
+    text-align: left; }
+    @media only screen and (min-width: 768px) {
+      .nav .ping-tickets {
+        text-align: right; } }
+    @media only screen and (max-width: 768px) {
+      .nav .ping-tickets .input-group {
+        max-width: 240px;
+        float: left;
+        clear: left;
+        margin-top: 4px; } }
+    @media only screen and (max-width: 768px) {
+      .nav .ping-tickets .form-control, .nav .ping-tickets .input-group .btn {
+        height: 30px;
+        padding: 0px 8px; } }
+    @media only screen and (max-width: 768px) {
+      .nav .ping-tickets label {
+        display: none; } }
 
 .content--section {
   margin: 50px 0; }
@@ -2299,7 +2306,6 @@ body {
     background-image: url('../img/logo-angular.svg'); }
 
 .ping-tickets {
-  display: none;
   text-align: right; }
   @media only screen and (min-width: 768px) {
     .ping-tickets {

@@ -18,16 +18,11 @@
                 </div>
 
                 <div class="col-md-8">
-                    <button class="ping-tickets--toggle uppercase"
-                        ng-class="{'open': isTicketOpen, '': isTicketOpen}"
-                        ng-init="isTicketOpen = false"
-                        ng-click="isTicketOpen = !isTicketOpen">
-                        Tickets
-                    </button>
-                    <div class="ping-tickets" ng-class="{'open': isTicketOpen, '': isTicketOpen}">
+                    <div class="ping-tickets">
                         <label for="pingMeEmail" class="hidden-sm uppercase">Ping me when tickets go on sale:</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
+                        <div class="input-group" resize-window window-width="windowWidth">
+                            <!-- terrible directive, to refactor -->
+                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Type Email to get tickets'}}">
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" ng-click="vm.anguPingMe(vm.pingMeEmailAddress)" type="button">OK</button>
                             </span>
