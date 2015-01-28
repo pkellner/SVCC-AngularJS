@@ -16,14 +16,6 @@
 
     var app = angular.module('baseApp', depArray);
 
-    app.factory('getTemplate', ['CONFIG', '$templateRequest', function(CONFIG, $templateRequest) {
-        return function(templateMask) {
-            var codeCampType = CONFIG.codeCampType;
-            var templateName = CONFIG.baseDir + templateMask.replace(/\{0\}/g, codeCampType);
-            return $templateRequest(templateName);
-        };
-    }]);
-
     app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'CONFIG',
 
         function ($stateProvider, $urlRouterProvider, $locationProvider, CONFIG) {

@@ -1,10 +1,6 @@
 'use strict';
 
-var angular = require('angular');
-
-
-
-module.exports = 
+module.exports = require('angular')
   .module('baseApp', [
     // 3rd party modules
     require('angular-messages'),
@@ -19,5 +15,6 @@ module.exports =
     require('./sessions'),
     require('./speakers'),
     require('./sponsors')
-  ]);
+  ])
+  .factory('getTemplateUrl', require('./template'));
 
