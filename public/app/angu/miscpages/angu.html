@@ -22,9 +22,12 @@
                         <label for="pingMeEmail" class="hidden-sm uppercase">Ping me when tickets go on sale:</label>
                         <div class="input-group" resize-window window-width="windowWidth">
                             <!-- terrible directive, to refactor -->
-                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Type Email to get tickets'}}">
+                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress" name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Type Email to get tickets'}}">
                             <span class="input-group-btn">
-                                <button class="btn btn-primary" ng-click="vm.anguPingMe(vm.pingMeEmailAddress)" type="button">OK</button>
+                                <!--<button class="btn btn-primary" ng-click="vm.anguPingMe(vm.pingMeEmailAddress)" type="button">OK</button>-->
+
+                                <a href="/ng/signuptobenotified/email={{ vm.pingMeEmailAddress }}" class="btn btn-primary" >OK</a>
+
                             </span>
                         </div>
                     </div>
