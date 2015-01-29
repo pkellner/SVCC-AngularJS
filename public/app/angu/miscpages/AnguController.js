@@ -8,6 +8,8 @@
     function AnguController($scope,$rootScope,$location,$state,CONFIG) {
         $rootScope.baseDir = CONFIG.baseDir;
 
+
+
         //$scope.anguPingMe = function () {
         //    debugger;
         //    $rootScope.pingMeEmailAddress = $scope.pingMeEmailAddress;
@@ -19,7 +21,7 @@
         };
 
         $scope.scrollTo = function (section) {
-            $location.hash(section);
+            $location.path(section);
             // based on http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
             var windowHeight = window.innerHeight;
             var startY = currentYPosition();
