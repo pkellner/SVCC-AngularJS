@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SVCC AngularJS Migration</title>
 
     <script type="text/javascript">
@@ -11,76 +12,94 @@
 
     <!-- build:js -->
 
+
+
+
+
+
     <script src="vendor/angular/angular.js"></script>
+
+
+
+    <script src="vendor/angular-messages/angular-messages.js"></script>
+    <script src="vendor/angular-resource/angular-resource.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="vendor/angular-mocks/angular-mocks.js"></script>
+
+    <!--This currently just for AngularJS (angu) site but probably does not hurt to have it in svcc also-->
+    <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <!-- pusher libraries -->
+    <script src="app/services/pusher.js"></script>
+    <script src="app/services/pusher-angular.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <!--base-General-->
+    <script src="app/common/base/home.controller.js"></script>
+
+    <!--basics-->
+
+    <!--common account-->
+    <script src="app/common/account/account-info.service.js"></script>
+    <script src="app/common/account/registration.controller.js"></script>
+    <script src="app/common/account/login.controller.js"></script>
+    <script src="app/common/account/logout.controller.js"></script>
+
+    <!--common speakers-->
+    <script src="app/common/speakers/speakers.controller.js"></script>
+    <script src="app/common/speakers/speaker-urlresource.service.js"></script>
+    <script src="app/common/speakers/speaker-datamodel.service.js"></script>
+    <script src="app/common/speakers/speaker-datamodelurls.service.js"></script>
+    <script src="app/common/speakers/speaker-social-icon.directive.js"></script>
+    <script src="app/common/speakers/speaker-detail.controller.js"></script>
+    <script src="app/common/speakers/speaker-detail-feedback.controller.js"></script>
+    <script src="app/common/speakers/speaker-cache.factory.js"></script>
+    <script src="app/common/speakers/speaker-http.service.js"></script>
+
+    <!--common-Sessions-->
+    <script src="app/common/sessions/sessions.controller.js"></script>
+    <script src="app/common/sessions/session-urlresource.service.js"></script>
+    <script src="app/common/sessions/session-datamodel.service.js"></script>
+    <script src="app/common/sessions/session-datamodelurls.service.js"></script>
+    <script src="app/common/sessions/session-detail.controller.js"></script>
+    <script src="app/common/sessions/session-dayofweek-resource.service.js"></script>
+    <script src="app/common/sessions/session-level.filter.js"></script>
+
+
+    <!--common-Sponsors-->
+    <script src="app/common/sponsors/sponsors.controller.js"></script>
+    <script src="app/common/sponsors/sponsor-datamodel.service.js"></script>
+
+
+    <!--common-Faq-->
+    <script src="app/common/faq/faqs.controller.js"></script>
+    <script src="app/common/faq/faq-datamodel.service.js"></script>
+
+
+    <!--angu special items -->
+    <script src="app/angu/miscpages/AnguController.js"></script>
+    <script src="vendor/angular-touch/angular-touch.js"></script>
+    <script src="vendor/angular-carousel/dist/angular-carousel.js"></script>
+
+
+
+
     <!-- endbuild -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- build:css -->
-    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/> -->
-    <!--<link rel="stylesheet" href="//cache.siliconvalley-codecamp.com/Content/Styles/site-svcc-cdn.css">-->
+    <link rel="stylesheet" href="//cache.siliconvalley-codecamp.com/Content/Styles/site-svcc-cdn.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <!-- endbuild -->
 </head>
 
-<body>
+<body ng-app="baseApp">
     <div ng-controller="MainController">
-        <div class="loader" ng-hide="hideLoadingIcon && hideLoadingIcon===true"></div>
+        <div class="loader" ng-hide="hideLoadingIcon"></div>
         <div ui-view></div>
     </div>
 
 
-<script src="vendor/angular-messages/angular-messages.js"></script>
-<script src="vendor/angular-resource/angular-resource.js"></script>
-<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="vendor/angular-mocks/angular-mocks.js"></script>
-
-<!--This currently just for AngularJS (angu) site but probably does not hurt to have it in svcc also-->
-<script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-
-<!-- pusher libraries -->
-<script src="app/services/pusher.js"></script>
-<script src="app/services/pusher-angular.js"></script>
-
-<script src="app/app.js"></script>
-
-<!--base-General-->
-<script src="app/common/base/home.controller.js"></script>
-
-<!--basics-->
-
-<!--common account-->
-<script src="app/common/account/account-info.service.js"></script>
-<script src="app/common/account/registration.controller.js"></script>
-<script src="app/common/account/login.controller.js"></script>
-<script src="app/common/account/logout.controller.js"></script>
-
-<!--common speakers-->
-<script src="app/common/speakers/speakers.controller.js"></script>
-<script src="app/common/speakers/speaker-urlresource.service.js"></script>
-<script src="app/common/speakers/speaker-datamodel.service.js"></script>
-<script src="app/common/speakers/speaker-datamodelurls.service.js"></script>
-<script src="app/common/speakers/speaker-social-icon.directive.js"></script>
-<script src="app/common/speakers/speaker-detail.controller.js"></script>
-<script src="app/common/speakers/speaker-detail-feedback.controller.js"></script>
-<script src="app/common/speakers/speaker-cache.factory.js"></script>
-<script src="app/common/speakers/speaker-http.service.js"></script>
-
-<!--common-Sessions-->
-<script src="app/common/sessions/sessions.controller.js"></script>
-<script src="app/common/sessions/session-urlresource.service.js"></script>
-<script src="app/common/sessions/session-datamodel.service.js"></script>
-<script src="app/common/sessions/session-datamodelurls.service.js"></script>
-<script src="app/common/sessions/session-detail.controller.js"></script>
-<script src="app/common/sessions/session-dayofweek-resource.service.js"></script>
-<script src="app/common/sessions/session-level.filter.js"></script>
-
-
-<!--common-Sponsors-->
-<script src="app/common/sponsors/sponsors.controller.js"></script>
-<script src="app/common/sponsors/sponsor-datamodel.service.js"></script>
-
-
-<!--angu special items -->
-<script src="app/angu/miscpages/AnguController.js"></script>
 
 <script type="text/javascript">
 

@@ -1,11 +1,10 @@
 .row-centered {
-    text-align:center;
+    text-align: center;
 }
 .col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
+
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
     text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
 }

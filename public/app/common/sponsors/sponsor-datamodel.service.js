@@ -17,23 +17,23 @@
         };
 
 
-        this.findOne = function (presenterId, urlPostToken) {
-            if (!this.hasData()) {
-                return {};
-            }
-            var found = -1;
-            var ii;
-            for (ii = 0; ii < this.data.length; ii++) {
-                //console.log(this.data[ii].urlPostToken + '+' + urlPostToken + ':' +
-                //    this.data[ii].id + ":" + presenterId);
-
-                if (this.data[ii].urlPostToken === urlPostToken && this.data[ii].id === presenterId) {
-                    found = ii;
-                    break;
-                }
-            }
-            return found >= 0 ? this.data[found] : {};
-        };
+        //this.findOne = function (presenterId, urlPostToken) {
+        //    if (!this.hasData()) {
+        //        return {};
+        //    }
+        //    var found = -1;
+        //    var ii;
+        //    for (ii = 0; ii < this.data.length; ii++) {
+        //        //console.log(this.data[ii].urlPostToken + '+' + urlPostToken + ':' +
+        //        //    this.data[ii].id + ":" + presenterId);
+        //
+        //        if (this.data[ii].urlPostToken === urlPostToken && this.data[ii].id === presenterId) {
+        //            found = ii;
+        //            break;
+        //        }
+        //    }
+        //    return found >= 0 ? this.data[found] : {};
+        //};
 
         this.findAll = function () {
             return this.getData();

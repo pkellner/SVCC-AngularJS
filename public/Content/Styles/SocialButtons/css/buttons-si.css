@@ -1,6 +1,7 @@
 /* Social Buttons Style */
 .btn-si {
-    margin: 0px 10px 10px 10px;
+  width: 100%;
+  margin: 0px 10px 10px 0;
   background-position: 1em;
   background-repeat: no-repeat;
   background-size: 2em;

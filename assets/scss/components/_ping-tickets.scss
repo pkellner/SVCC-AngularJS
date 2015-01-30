@@ -1,12 +1,27 @@
 .ping-tickets {
-  padding: 9px 0;
   text-align: right;
+
+  @include respond-to(tablet) {
+    display: block;
+    padding: 9px 0;
+  }
+
+  &--toggle {
+    float: left;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    padding-top: 7px;
+
+    @include respond-to(tablet) {
+      display: none;
+    }
+  }
 
   label {
     display: inline-block;
     vertical-align: middle;
     margin: 0 10px 0 0;
-    text-transform: uppercase;
     font-weight: normal;
     font-size: 16px;
   }
@@ -16,11 +31,22 @@
     max-width: 300px;
     display: inline-table;
     vertical-align: middle;
-    height: 37px;
 
     .btn {
       font-size: 14px;
-      height: 37px;
+      height: $input-height-base;
+      margin-bottom: 0;
+    }
+  }
+
+  .form-control {
+    font-size: 16px;
+    border-radius: 0;
+
+    @include placeholder {
+      color: $gray;
+      font-style: italic;
+      opacity: 1;
     }
   }
 }

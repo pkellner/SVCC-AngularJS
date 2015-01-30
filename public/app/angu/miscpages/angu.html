@@ -1,22 +1,33 @@
 <div ng-controller="AnguController">
-    <nav class="nav">
+    <nav class="nav" ng-waypoint scroll-position="scroll" active-nav-section="activeNavSection">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <ul class="nav--list">
-                        <li class="active"><a href="">Home</a></li>
-                        <li><a href="">Venue</a></li>
-                        <li><a href="">FAQ</a></li>
+                    <button class="nav--toggle icon-nav"
+                        ng-class="{'open': isNavOpen, '': isNavOpen}"
+                        ng-init="isNavOpen = false"
+                        ng-click="isNavOpen = !isNavOpen">
+                        <span class="icon-burger"></span>
+                    </button>
+                    <ul class="nav--list"
+                        ng-class="{'open': isNavOpen, '': isNavOpen}">
+                        <li ng-class="{active: activeNavSection == 'home'}"><a href="" ng-click="scrollTo('home')">Home</a></li>
+                        <li ng-class="{active: activeNavSection == 'venue'}"><a href="" ng-click="scrollTo('venue')">Venue</a></li>
+                        <li ng-class="{active: activeNavSection == 'faq'}"><a href="" ng-click="scrollTo('faq')">FAQ</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-8">
                     <div class="ping-tickets">
-                        <label for="pingMeEmail" class="hidden-xs hidden-sm">Ping me when tickets go on sale:</label>
-                        <div class="input-group hidden-xs">
-                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">
+                        <label for="pingMeEmail" class="hidden-sm uppercase">Ping me when tickets go on sale:</label>
+                        <div class="input-group" resize-window window-width="windowWidth">
+                            <!-- terrible directive, to refactor -->
+                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress" name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Type Email to get tickets'}}">
                             <span class="input-group-btn">
-                                <button class="btn btn-primary" type="button">OK</button>
+                                <!--<button class="btn btn-primary" ng-click="vm.anguPingMe(vm.pingMeEmailAddress)" type="button">OK</button>-->
+
+                                <a href="/ng/signuptobenotified/email={{ vm.pingMeEmailAddress }}" class="btn btn-primary" >OK</a>
+
                             </span>
                         </div>
                     </div>
@@ -25,36 +36,9 @@
         </div>
     </nav>
 
-    <section class="hero" style="">
-        <h1 class="hero--heading"><span class="brand--logo angular"></span>Angular U</h1>
-        <span class="hero--extra">June 22 to 25 2015 - Hyatt Regency, San Francisco Airport</span>
-    </section>
-
-    <div class="container">
-        <div class="separator">
-            <span class="icon-code"></span>
-        </div>
-
-        <div class="row row-centered">
-            <div class="col-md-9 col-centered">
-                <h2 class="type--lead">
-                    <span class="type--color">A 4-day event</span> covering Angular, Polymer, <br>
-                    Web Components and ECMAScript 6
-                </h2>
-                <p class="text-center">Angular University gather over 30 presenters for 3 days packed with conferences and workshops. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button class="btn btn-primary btn-lg center-block">Read More</button>
-            </div>
-        </div>
-    </div>
+    <!--THIS NEXT LINE IS NECESSARY BECAUSE IT PULLS IN CONTENT FROM INDIVIDUAL HTML FILES
+        I'M GUESSING ALL THIS CODE BELOW SHOULD GO INTO anguhome.html AND THAT THE FOOTER THAT IS CURRENTLY
+        IN anguhome.html SHOULD GO BELOW THIS view-frame LINE. I'M NOT SURE THE SCROLLING WORKS CORRECTLY AFTER THAT
+        BUT IT'S IMPORTANT BECAUSE WE WILL BRING OTHER PAGES IN THAT DO NOT SCROLL (LIKE LOGIN, REGISTER, ETC.) -->
+    <div ui-view class="view-frame"></div>
 </div>
-
-<div class="container">
-    <div ui-view></div>
-</div>
-
-<div ng-if="vm.config.mockData">
-    <hr/>
-    <b>USING MOCK DATA NOT FROM SERVER.  TESTING ONLY</b>
-    {{ vm.config | json }}
-</div>
-

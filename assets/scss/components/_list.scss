@@ -1,0 +1,44 @@
+.list {
+  &--centered {
+    text-align: center;
+  }
+
+  &--block {
+    max-width: 585px;
+    margin: 20px auto 30px;
+
+    li {
+      padding: 4px 0;
+      border-top: 1px solid #d9d9d9;
+      line-height: 1.714;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      p {
+        margin-bottom: 0;
+
+        &:first-child {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &--radio {
+    margin: 30px 0;
+
+    li {
+      margin-bottom: 15px;
+    }
+  }
+
+  &--checkbox {
+    margin: 30px 0;
+
+    li {
+      margin-bottom: 21px;
+    }
+  }
+}

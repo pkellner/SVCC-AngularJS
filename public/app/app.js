@@ -6,48 +6,23 @@
         'ngResource',
         'ui.router',
         'pusher-angular',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'angular-carousel'
     ];
 
-    if (usingMockDataGlobal === true) {
+    if (window.usingMockDataGlobal) {
         depArray.push('ngMockE2E');
     }
 
     var app = angular.module('baseApp', depArray);
 
-    angular.element(document).ready(function () {
-
-        var initInjector = angular.injector(["ng"]);
-        var $http = initInjector.get("$http");
-
-        angular.bootstrap(document, ['baseApp']);
-    });
-
-    function templateCalc(templateMask, CONFIG, $templateCache, $http) {
-        var codeCampType = CONFIG.codeCampType;  // this comes from both .json file and httpbackend because of bootstrap init
-
-        // just works for 0 to 2 occurances of {0}
-        var templateName = CONFIG.baseDir + templateMask.replace('{0}', codeCampType).replace('{0}', codeCampType);
-
-        //console.log('trying to get from templateCache: ' + templateName);
-        var tpl = $templateCache.get(templateName);
-        var retVal;
-        if (tpl) {
-            //console.log('template found in cache ' + templateName);
-            retVal = tpl;
-        } else {
-            retVal = $http
-                .get(templateName)
-                .then(function (response) {
-                    tpl = response.data;
-                    //console.log('pushing to templateCache: ' + templateName);
-                    $templateCache.put(templateName, tpl);
-                    return tpl;
-                });
-        }
-        return retVal;
-    }
-
+    app.factory('getTemplate', ['CONFIG', '$templateRequest', function(CONFIG, $templateRequest) {
+        return function(templateMask) {
+            var codeCampType = CONFIG.codeCampType;
+            var templateName = CONFIG.baseDir + templateMask.replace(/\{0\}/g, codeCampType);
+            return $templateRequest(templateName);
+        };
+    }]);
 
     app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'CONFIG',
 
@@ -55,49 +30,83 @@
 
             $stateProvider
                 .state('base', {
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/miscpages/{0}.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/miscpages/{0}.html');
                     }],
-                    controller: 'HomeController as vm'
+                    controller: 'HomeController as vm',
+                    resolve: {
+                        faqs: ['$http', 'faqDataModelService', function ($http, faqDataModelService) {
+                            return $http.get('/rest/faq/arrayonly/', {
+                                cache: true
+                            })
+                            .success(function (data, status, headers, config) {
+                                // only reload this service if it is empty. It can be full from previous production call or from
+                                // testing environment load.
+                                if (!faqDataModelService.hasData()) {
+                                    faqDataModelService.setData(data);
+                                }
+                                return data;
+                            })
+                            .error(function (data, status, headers, config) {
+                                return [];
+                            });
+                        }],
+                        sponsors: ['$http', 'sponsorDataModelService', function ($http, sponsorDataModelService) {
+                            return $http.get('/rest/sponsor/arrayonly/', {
+                                cache: true
+                            })
+                            .success(function (data, status, headers, config) {
+                                // only reload this service if it is empty. It can be full from previous production call or from
+                                // testing environment load.
+                                if (!sponsorDataModelService.hasData()) {
+                                    sponsorDataModelService.setData(data);
+                                }
+                                return data;
+                            })
+                            .error(function (data, status, headers, config) {
+                                return [];
+                            });
+                        }]
+
+                    }
                 })
                 .state('base.home', {
                     //templateUrl: 'app/svcc/miscpages/svcchome.html'
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/miscpages/{0}home.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/miscpages/{0}home.html');
                     }]
-                    // controller: 'HomeController as vm'
                 })
                 .state('base.about', {
                     url: '/about',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/miscpages/about.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/miscpages/about.html');
                     }]
                 })
                 .state('base.login', {
                     url: '/login',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/account/login.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/account/login.html');
                     }],
                     controller: 'LoginController as vm'
                 }).
                 state('base.logout', {
                     url: '/logout',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/miscpages/{0}home.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/miscpages/{0}home.html');
                     }],
                     controller: 'LogoutController as vm'
                 })
                 .state('base.register', {
                     url: '/register',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/account/registration.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/account/registration.html');
                     }],
                     controller: 'RegistrationController as vm'
                 })
                 .state('base.speakers', {
                     url: '/speakers',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/speakers/speakers.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/speakers/speakers.html');
                     }],
                     controller: 'SpeakersController as vm',
                     resolve: {
@@ -126,8 +135,8 @@
                 .state('base.speakeryearname', {
                     url: '/speaker/:year/:name',
                     //templateUrl: 'app/svcc/speakers/speaker-detail.html',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/speakers/speaker-detail.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/speakers/speaker-detail.html');
                     }],
                     controller: 'SpeakerDetailController as vm',
                     resolve: {
@@ -150,19 +159,16 @@
 
                                 // if we find the speaker, return a promise with the data wrapped, otherwise do the rest call
                                 if (speaker) {
-                                    var def = $q.defer();
-                                    def.resolve({ data: speaker});
-                                    return def.promise;
+                                    return $q.when({ data: speaker});
                                 } else {
                                     var urlString = '/rest/presenter/arrayonly/' + partialUrl;
-                                    var promise = $http.get(urlString, {cache: true}).
-                                        success(function (data, status, headers, config) {
+                                    return $http.get(urlString, {cache: true})
+                                        .success(function (data, status, headers, config) {
                                             return data;
-                                        }).
-                                        error(function (data, status, headers, config) {
+                                        })
+                                        .error(function (data, status, headers, config) {
                                             return {id: -1};
                                         });
-                                    return promise;
                                 }
                             }]
                     }
@@ -171,8 +177,8 @@
 
                 .state('base.sessiondetail', {
                     url: '/session/:year/:title',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/sessions/session-detail.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/sessions/session-detail.html');
                     }],
                     controller: 'SessionDetailController as vm',
                     resolve: {
@@ -200,23 +206,20 @@
 
                                 // if we find the speaker, return a promise with the data wrapped, otherwise do the rest call
                                 if (session) {
-                                    var def = $q.defer();
-                                    def.resolve({ data: {data: [session]}});
-                                    return def.promise;
+                                    return $q.when({ data: {data: [session]}});
                                 } else {
 
 
                                     var urlString = '/rest/session/' + partialUrl;
                                     // first see if this is in the local data
 
-                                    var promise = $http.get(urlString, {cache: true}).
-                                        success(function (data, status, headers, config) {
+                                    return $http.get(urlString, {cache: true})
+                                        .success(function (data, status, headers, config) {
                                             return data;
-                                        }).
-                                        error(function (data, status, headers, config) {
+                                        })
+                                        .error(function (data, status, headers, config) {
                                             return {id: -1};
                                         });
-                                    return promise;
                                 }
                             }]
                     }
@@ -224,8 +227,8 @@
 
                 .state('base.sessions', {
                     url: '/sessions',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", '$q', function (CONFIG, $http, $templateCache, $q) {
-                        return templateCalc('app/{0}/sessions/sessions.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/sessions/sessions.html');
                     }],
                     controller: 'SessionsController as vm',
                     resolve: {
@@ -264,8 +267,8 @@
 
                 .state('base.sponsors', {
                     url: '/sponsors',
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/{0}/sponsors/sponsors.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/sponsors/sponsors.html');
                     }],
                     controller: 'SponsorsController as vm',
                     resolve: {
@@ -292,12 +295,46 @@
                 })
 
 
+                .state('base.faqs', {
+                    url: '/faq',
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/{0}/faqs/faqs.html');
+                    }],
+                    controller: 'FaqsController as vm',
+                    resolve: {
+                        faqs: ['$http', 'faqDataModelService', function ($http, faqDataModelService) {
+                            var promise =
+                                $http.get('/rest/faq/arrayonly/', {
+                                    cache: true
+                                }).
+                                    success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!faqDataModelService.hasData()) {
+                                            faqDataModelService.setData(data);
+                                        }
+                                        return data;
+                                    }).
+                                    error(function (data, status, headers, config) {
+                                        return [];
+                                    });
+                            return promise;
+                        }]
+
+                    }
+                })
+
+
+
+
+
+
 
 
                 // angulur university special below:
                 .state('base.angupingmeonfirmation', {
-                    templateProvider: ["CONFIG", "$http", "$templateCache", function (CONFIG, $http, $templateCache) {
-                        return templateCalc('app/angu/miscpages/angupingmeconfirmation.html', CONFIG, $templateCache, $http);
+                    templateProvider: ['getTemplate', function (getTemplate) {
+                        return getTemplate('app/angu/miscpages/angupingmeconfirmation.html');
                     }],
                     controller: 'AnguController'
                 });
@@ -312,9 +349,9 @@
 
     app.run(['$rootScope', '$httpBackend',
         'sponsorDataModelService','speakerDataModelService', 'speakerDataModelUrlService',
-        'sessionDataModelService', 'sessionDataModelUrlService', 'CONFIG',
+        'sessionDataModelService', 'sessionDataModelUrlService','faqDataModelService', 'CONFIG',
         function ($rootScope, $httpBackend,sponsorDataModelService, speakerDataModelService, speakerDataModelUrlService,
-                  sessionDataModelService, sessionDataModelUrlService, CONFIG) {
+                  sessionDataModelService, sessionDataModelUrlService,faqDataModelService, CONFIG) {
             $rootScope.loginName = '';
 
             var initUrlMocksAll = function () {
@@ -323,6 +360,8 @@
                 $httpBackend.whenGET(/app/).passThrough();
 
                 sponsorDataModelService.initDummyData();
+
+                faqDataModelService.initDummyData();
 
                 speakerDataModelService.initDummyData();
                 speakerDataModelUrlService.initDummyData();
@@ -466,7 +505,11 @@
                     return [200, sponsors, {}];
                 });
 
-
+                var faqUrl = "/rest/faq/arrayonly/";
+                $httpBackend.whenGET(faqUrl).respond(function (method, url, data) {
+                    var faqs = faqDataModelService.getData();
+                    return [200, faqs, {}];
+                });
 
                 var speakerUrlsOnly = '/rest/presenterurls';
                 $httpBackend.whenGET(speakerUrlsOnly).respond(function (method, url, data) {

@@ -5,13 +5,13 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url($img-path + 'hero-bg-la.jpg');
-  margin-bottom: 75px;
+  background-image: url($img-path + 'hero-golden-gate-3.jpg');
+  margin-bottom: 20px;
   padding: 30px 0 0;
 
   @include respond-to(tablet) {
-
     min-height: 180px;
+    margin-bottom: 75px;
   }
 
   &--extra {
