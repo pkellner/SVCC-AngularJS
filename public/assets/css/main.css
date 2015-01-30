@@ -2245,6 +2245,9 @@ fieldset {
 .icon-mail:before {
   content: "É"; }
 
+.icon-user:before {
+  content: "Ü"; }
+
 body {
   margin: 0;
   padding: 0; }
@@ -2377,24 +2380,76 @@ body {
       .nav--toggle .icon-burger:after {
         top: auto;
         bottom: -9px; }
+  .nav--user {
+    position: absolute;
+    top: 7px;
+    right: 55px;
+    width: 30px;
+    float: right;
+    color: #fff;
+    text-transform: uppercase; }
+    @media only screen and (min-width: 768px) {
+      .nav--user {
+        right: 0;
+        top: 17px;
+        width: 115px; } }
+    .nav--user--toggle {
+      float: left;
+      font-size: 20px;
+      border: none;
+      background: none; }
+    .nav--user--name {
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      padding-top: 3px;
+      font-size: 12px; }
+      @media only screen and (max-width: 768px) {
+        .nav--user--name {
+          display: none; } }
+    .nav--user--list {
+      display: none; }
+      .nav--user--list.open {
+        top: 33px;
+        right: -55px;
+        left: auto;
+        width: 300px;
+        display: block; }
+        @media only screen and (min-width: 768px) {
+          .nav--user--list.open {
+            right: 0;
+            top: 41px; } }
+    .nav--user a {
+      color: #fff; }
   .nav .ping-tickets {
-    text-align: left; }
+    text-align: left;
+    padding-right: 90px; }
     @media only screen and (min-width: 768px) {
       .nav .ping-tickets {
-        text-align: right; } }
+        text-align: right;
+        padding-right: 110px; } }
+    @media only screen and (min-width: 992px) {
+      .nav .ping-tickets {
+        padding-right: 120px; } }
     @media only screen and (max-width: 768px) {
       .nav .ping-tickets .input-group {
         max-width: 240px;
         float: left;
         clear: left;
         margin-top: 4px; } }
+    @media only screen and (min-width: 768px) {
+      .nav .ping-tickets .input-group {
+        max-width: 220px; } }
     @media only screen and (max-width: 768px) {
       .nav .ping-tickets .form-control, .nav .ping-tickets .input-group .btn {
         height: 30px;
-        padding: 0px 8px; } }
-    @media only screen and (max-width: 768px) {
-      .nav .ping-tickets label {
-        display: none; } }
+        padding: 3px 8px; } }
+    .nav .ping-tickets label {
+      font-size: 13px; }
+      @media only screen and (max-width: 768px) {
+        .nav .ping-tickets label {
+          display: none; } }
 
 .content--section {
   margin: 50px 0; }
