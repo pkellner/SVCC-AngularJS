@@ -87,6 +87,7 @@
   // Custom Globals
   "globals"       : {
     "angular": false,
+    "Waypoint": false,
     "require": false
   }        // additional predefined global variables
 
