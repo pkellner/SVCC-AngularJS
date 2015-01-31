@@ -22,7 +22,7 @@
                         <label for="pingMeEmail" class="hidden-sm uppercase">Notify me when tickets go on sale:</label>
                         <div class="input-group" resize-window window-width="windowWidth">
                             <!-- terrible directive, to refactor -->
-                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress" name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Get Notified - Enter Email'}}">
+                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress" name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Email for Notify'}}">
                             <span class="input-group-btn">
                                 <!--<button class="btn btn-primary" ng-click="vm.anguPingMe(vm.pingMeEmailAddress)" type="button">OK</button>-->
 
@@ -51,9 +51,5 @@
         </div>
     </nav>
 
-    <!--THIS NEXT LINE IS NECESSARY BECAUSE IT PULLS IN CONTENT FROM INDIVIDUAL HTML FILES
-        I'M GUESSING ALL THIS CODE BELOW SHOULD GO INTO anguhome.html AND THAT THE FOOTER THAT IS CURRENTLY
-        IN anguhome.html SHOULD GO BELOW THIS view-frame LINE. I'M NOT SURE THE SCROLLING WORKS CORRECTLY AFTER THAT
-        BUT IT'S IMPORTANT BECAUSE WE WILL BRING OTHER PAGES IN THAT DO NOT SCROLL (LIKE LOGIN, REGISTER, ETC.) -->
     <div ui-view class="view-frame"></div>
 </div>

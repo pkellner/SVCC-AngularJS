@@ -297,7 +297,7 @@
 
 
                 .state('base.faqs', {
-                    url: '/faq',
+                    url: '/faqxxx',
                     templateProvider: ['getTemplate', function (getTemplate) {
                         return getTemplate('app/{0}/faqs/faqs.html');
                     }],

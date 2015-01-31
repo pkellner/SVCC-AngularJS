@@ -1,10 +1,28 @@
 <h2>FAQ</h2>
 
-<div>
-    <div ng-repeat="faq in vm.faqs">
 
-       <p>{{ faq.question }}</p><br/><p>{{ faq.answer }}</p>
-        <br/>
+<div id="faq" class="nav--section container">
+    <div class="separator">
+        <span class="separator--icon icon-question">?</span>
+    </div>
 
+    <div>
+        <h2 class="type--lead">FAQ</h2>
+
+        <ul class="list--block list--centered">
+            <li ng-repeat="faq in vm.faqs">
+                <p><strong>Question: {{ faq.question }}</strong></p>
+
+                <p>Answer: {{ faq.answer }}</p>
+            </li>
+        </ul>
     </div>
 </div>
+
+<!--<div>-->
+<!--<div ng-repeat="faq in vm.faqs">-->
+
+<!--<p>{{ faq.question }}</p><br/><p>{{ faq.answer }}</p>-->
+<!--<br/>-->
+<!--</div>-->
+<!--</div>-->
