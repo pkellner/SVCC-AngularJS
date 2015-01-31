@@ -8,8 +8,6 @@
     function AnguController($scope,$rootScope,$state,CONFIG) {
         $rootScope.baseDir = CONFIG.baseDir;
 
-        debugger;
-        //$scope.googleUrl = CONFIG.
 
         $scope.googleMap = function() {
             // kevin to make new url

@@ -29,9 +29,6 @@
             </div>
         </div>
 
-
-
-
         <div class="content--section">
             <h2 class="type--lead">Keynote Presenters</h2>
             <div class="persona--container">
@@ -51,6 +48,23 @@
                     <h3><a href="#">Brad Green</a></h3>
                     <p>Brad is an engineering director at Google where he manages development of the AngularJS framework and
                         Google's internal sales productivity products.</p>
+                </div>
+
+                <div class="persona">
+                    <div class="persona--img">
+                        <img src="{{baseDir}}/assets/img/misko-hevery.png" alt="Misko Hevery">
+                    </div>
+                    <h3><a href="#">Misko Hevery</a></h3>
+                    <p>Creator of AngularJS, Works at Google and also known as the Father of AngularJS</p>
+                </div>
+
+                <div class="persona">
+                    <div class="persona--img">
+                        <img src="{{baseDir}}/assets/img/douglas-crockford.png" alt="Douglas Crockford">
+                    </div>
+                    <h3><a href="#">Douglas Crockford</a></h3>
+                    <p>Douglas Crockford is an American computer programmer and entrepreneur who is best known for his ongoing involvement
+                        in the development of the JavaScript language, for having popularized the data format JSON</p>
                 </div>
 
                 <!--<div class="persona">-->
@@ -77,30 +91,30 @@
                         <div class="slide--content">
                             <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi or Bart ride from San&nbsp;Francisco Downtown.</p>
 
-                            <button class="btn btn-primary btn-lg">More details</button>
+                            <!--<button class="btn btn-primary btn-lg">More details</button>-->
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="slide">
-                        <div class="slide--content">
-                            <p>Lorem ipsum dolor sit. <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi Bao Downtown</p>
-                            <button class="btn btn-primary btn-lg">More details</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="slide">
-                        <div class="slide--content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, obcaecati rerum provident. <span class="type--color">Hyatt Regency</span>, a short dis ntown</p>
-                            <button class="btn btn-primary btn-lg">More details</button>
-                        </div>
-                    </div>
-                </li>
-                <div class="slide--controls">
-                    <span class="slide--control icon-arrow-left" ng-click="prevSlide()"></span>
-                    <span class="slide--control icon-arrow-right" ng-click="nextSlide()"></span>
-                </div>
+                <!--<li>-->
+                    <!--<div class="slide">-->
+                        <!--<div class="slide--content">-->
+                            <!--<p>Lorem ipsum dolor sit. <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi Bao Downtown</p>-->
+                            <!--<button class="btn btn-primary btn-lg">More details</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<div class="slide">-->
+                        <!--<div class="slide--content">-->
+                            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, obcaecati rerum provident. <span class="type--color">Hyatt Regency</span>, a short dis ntown</p>-->
+                            <!--<button class="btn btn-primary btn-lg">More details</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<div class="slide--controls">-->
+                    <!--<span class="slide--control icon-arrow-left" ng-click="prevSlide()"></span>-->
+                    <!--<span class="slide--control icon-arrow-right" ng-click="nextSlide()"></span>-->
+                <!--</div>-->
             </ul>
         </div>
     </div>
@@ -129,7 +143,7 @@
         <div class="footer--top">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7">
+                    <!--<div class="col-md-7">-->
                         <!--<div class="ping-tickets">-->
                             <!--<label for="pingMeEmail2">Ping me when tickets go on sale:</label>-->
                             <!--<div class="input-group">-->
@@ -139,9 +153,9 @@
                                 <!--</span>-->
                             <!--</div>-->
                         <!--</div>-->
-                    </div>
-                    <div class="col-md-5 footer--contact">
-                        <a href="#">Contact us</a>
+                    <!--</div>-->
+                    <div class="col-md-12 footer--contact">
+                        <a mailto="service2015@angularu.com">Contact us</a>
                         <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                         <div class="social alt">
                             <h4>Follow us on:</h4>
@@ -157,7 +171,7 @@
         </div>
         <div class="sponsors">
             <div class="container">
-                <section class="sponsor--box">
+                <section class="sponsor--box" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'}).length > 0"  >
                     <h3 class="uppercase">Platinum</h3>
                     <div class="sponsor--links">
                         <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} ">
@@ -171,7 +185,7 @@
                     </div>
                 </section>
 
-                <section class="sponsor--box">
+                <section class="sponsor--box" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Gold'}).length > 0">
                     <h3 class="uppercase">Gold</h3>
                     <div class="sponsor--links">
                         <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} ">
@@ -185,7 +199,7 @@
                     </div>
                 </section>
 
-                <section class="sponsor--box">
+                <section class="sponsor--box" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Silver'}).length > 0">
                     <h3 class="uppercase">Silver</h3>
                     <div class="sponsor--links">
                         <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} ">
