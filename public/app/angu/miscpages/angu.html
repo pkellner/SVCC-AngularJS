@@ -31,6 +31,21 @@
                             </span>
                         </div>
                     </div>
+
+                    <div class="nav--user"
+                        ng-class="{'open': isUserOpen, '': isUserOpen}"
+                        ng-init="isUserOpen = false"
+                        ng-click="isUserOpen = !isUserOpen">
+                        <button class="nav--user--toggle icon-user">
+                        </button>
+                        <a class="nav--user--name" href="#">username12</a>
+
+                        <ul class="nav--list nav--user--list"
+                            ng-class="{'open': isUserOpen, '': isUserOpen}">
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
