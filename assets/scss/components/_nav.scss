@@ -107,11 +107,74 @@
     }
   }
 
+  &--user {
+    position: absolute;
+    top: 7px;
+    right: 55px;
+    width: 30px;
+    float: right;
+    color: #fff;
+    text-transform: uppercase;
+
+    @include respond-to(tablet) {
+      right: 0;
+      top: 17px;
+      width: 115px;
+    }
+
+    &--toggle {
+      float: left;
+      font-size: 20px;
+      border: none;
+      background: none;
+    }
+
+    &--name {
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      padding-top: 3px;
+      font-size: 12px;
+
+      @include respond-to(phone-tablet) {
+        display: none;
+      }
+    }
+
+    &--list {
+      display: none;
+
+      &.open {
+        top: 33px;
+        right: -55px;
+        left: auto;
+        width: 300px;
+        display: block;
+
+        @include respond-to(tablet) {
+          right: 0;
+          top: 41px;
+        }
+      }
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+
   .ping-tickets {
     text-align: left;
+    padding-right: 90px;
 
     @include respond-to(tablet) {
       text-align: right;
+      padding-right: 110px;
+    }
+
+    @include respond-to(desktop) {
+      padding-right: 120px;
     }
 
     .input-group {
@@ -121,17 +184,22 @@
         clear: left;
         margin-top: 4px;
       }
+
+      @include respond-to(tablet) {
+        max-width: 220px;
+      }
     }
 
     .form-control,
     .input-group .btn {
       @include respond-to(phone-tablet) {
         height: 30px;
-        padding: 0px 8px;
+        padding: 3px 8px;
       }
     }
 
     label {
+      font-size: 13px;
       @include respond-to(phone-tablet) {
         display: none;
       }
