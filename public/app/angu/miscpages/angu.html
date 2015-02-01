@@ -22,31 +22,41 @@
                         <label for="pingMeEmail" class="hidden-sm uppercase">Notify me when tickets go on sale:</label>
                         <div class="input-group" resize-window window-width="windowWidth">
                             <!-- terrible directive, to refactor -->
-                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress" name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'My Notification Email'}}">
+                            <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress" name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Notification Email'}}">
                             <span class="input-group-btn">
                                 <!--<button class="btn btn-primary" ng-click="vm.anguPingMe(vm.pingMeEmailAddress)" type="button">OK</button>-->
-
                                 <a href="/angu/signuptobenotified/email={{ vm.pingMeEmailAddress }}" class="btn btn-primary" >OK</a>
 
                             </span>
                         </div>
                     </div>
 
+
+
                     <div class="nav--user"
                         ng-class="{'open': isUserOpen, '': isUserOpen}"
                         ng-init="isUserOpen = false"
                         ng-click="isUserOpen = !isUserOpen">
-                        <button class="nav--user--toggle icon-user">
-                        </button>
-                        <a class="nav--user--name" href="#">username12</a>
 
-                        <ul class="nav--list nav--user--list"
-                            ng-class="{'open': isUserOpen, '': isUserOpen}">
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Register</a></li>
-                        </ul>
+                        <button ng-hide="username.length > 0" class="nav--user--toggle icon-user">
+                        </button>
+
+                        <a class="nav--user--name" href="/Account/logout"  ng-show="username.length > 0"      >logout {{ username }}</a>
+                        <a class="nav--user--name" href="#"  ng-show="username.length == 0"      >login</a>
+
+
+                        <div ng-hide="username.length > 0"></div>
+                            <ul class="nav--list nav--user--list"
+                                ng-class="{'open': isUserOpen, '': isUserOpen}">
+                                <li><a href="/Account/Login">Login</a></li>
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+
+
             </div>
         </div>
     </nav>

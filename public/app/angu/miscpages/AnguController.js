@@ -14,6 +14,9 @@
             window.open('https://goo.gl/maps/uBzdM','_blank');
         }
 
+
+        $scope.username = CONFIG.loggedInUsername;
+
         //$scope.anguPingMe = function () {
         //    debugger;
         //    $rootScope.pingMeEmailAddress = $scope.pingMeEmailAddress;
