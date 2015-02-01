@@ -4,9 +4,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <button class="nav--toggle icon-nav"
-                        ng-class="{'open': isNavOpen, '': isNavOpen}"
-                        ng-init="isNavOpen = false"
-                        ng-click="isNavOpen = !isNavOpen">
+                            ng-class="{'open': isNavOpen, '': isNavOpen}"
+                            ng-init="isNavOpen = false"
+                            ng-click="isNavOpen = !isNavOpen">
                         <span class="icon-burger"></span>
                     </button>
                     <ul class="nav--list"
@@ -18,57 +18,68 @@
                 </div>
 
                 <div class="col-md-8">
-                    <form name="formnotify">
-                    <div class="ping-tickets">
-                        <label for="pingMeEmail" class="hidden-sm uppercase">Notify me when tickets go on sale:</label>
-                        <div class="input-group" resize-window window-width="windowWidth">
-                            <!-- terrible directive, to refactor -->
 
-                            <input  class="form-control" type="text" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress"
-                                    ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required
-                                    name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Notification Email'}}" />
-                            <span class="input-group-btn"  ng-show="formnotify.pingMeEmail.$valid">
-                                <!--<button class="btn btn-primary" ng-click="vm.anguPingMe(vm.pingMeEmailAddress)" type="button">OK</button>-->
-                                <a href="/angu/signuptobenotified/email={{ vm.pingMeEmailAddress }}" class="btn btn-primary" >OK</a>
-                            </span>
 
+                    <form name="formnotify" ng-show="username.length == 0">
+                        <div class="ping-tickets">
+                            <label for="pingMeEmail" class="hidden-sm uppercase">Notify me when tickets go on sale:</label>
+                            <div class="input-group" resize-window window-width="windowWidth">
+                                <input class="form-control" type="text" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress"
+                                       ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/"
+                                       name="pingMeEmail" required
+                                       placeholder="{{windowWidth > 992 && 'My Email' || 'Notification Email'}}"/>
+                                <span class="input-group-btn" ng-show="formnotify.pingMeEmail.$valid">
+                                    <a href="/angu/signuptobenotified/email={{ vm.pingMeEmailAddress }}"
+                                       class="btn btn-primary">OK</a>
+                                </span>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+
+                    <form name="formprofile" ng-show="username.length > 0">
+                        <div class="ping-tickets">
+                            <div class="input-group" resize-window window-width="windowWidth">
+                                <span class="input-group-btn">
+                                    <a href="/angu/signuptobenotified"
+                                       class="btn btn-primary">View and Update Ticket Options</a>
+                                </span>
+                            </div>
+                        </div>
                     </form>
 
 
-
                     <div class="nav--user"
-                        ng-class="{'open': isUserOpen, '': isUserOpen}"
-                        ng-init="isUserOpen = false"
-                        ng-click="isUserOpen = !isUserOpen">
+                         ng-class="{'open': isUserOpen, '': isUserOpen}"
+                         ng-init="isUserOpen = false"
+                         ng-click="isUserOpen = !isUserOpen">
 
                         <button class="nav--user--toggle icon-user">
                         </button>
 
-                        <a class="nav--user--name" href="/Account/logout"  ng-show="username.length > 0"      >logout {{ username }}</a>
-                        <a class="nav--user--name" href="#"  ng-show="username.length == 0">login</a>
+                        <a class="nav--user--name" href="/Account/logout" ng-show="username.length > 0">logout {{
+                            username }}</a>
+                        <a class="nav--user--name" href="#" ng-show="username.length == 0">login</a>
 
 
                         <div></div>
-                            <ul class="nav--list nav--user--list"
-                                ng-class="{'open': isUserOpen, '': isUserOpen}">
-                                <li ng-show="username.length === 0" ><a href="/Account/Login">Login</a></li>
-                                <li ng-show="username.length === 0" ><a href="/Register/ForgotPassword">Forgot Password</a></li>
-                                <li ng-show="username.length > 0" ><a href="/Register/ForgotPassword">Reset Password</a></li>
-                                <li><a href="/Angu/CallForPapers">Call For Speakers</a></li>
+                        <ul class="nav--list nav--user--list"
+                            ng-class="{'open': isUserOpen, '': isUserOpen}">
+                            <li ng-show="username.length === 0"><a href="/Account/Login">Login</a></li>
+                            <li ng-show="username.length === 0"><a href="/Register/ForgotPassword">Forgot Password</a>
+                            </li>
+                            <li ng-show="username.length > 0"><a href="/Register/ForgotPassword">Reset Password</a></li>
+                            <li><a href="/Angu/CallForPapers">Call For Speakers</a></li>
 
-                            </ul>
-                        </div>
+                        </ul>
                     </div>
                 </div>
-
-
-
             </div>
+
+
         </div>
-    </nav>
+</div>
+</nav>
 
 
-    <div ui-view class="view-frame"></div>
+<div ui-view class="view-frame"></div>
 </div>

@@ -93,9 +93,9 @@
 
 
     <!--<link rel="stylesheet" href="//cache.siliconvalley-codecamp.com/Content/Styles/site-svcc-cdn.css">-->
-    <!--<link rel="stylesheet" href="../assets/css/main.css">-->
+    <link rel="stylesheet" href="../assets/css/main.css">
 
-    <link rel="stylesheet" href="/AngularJS/webnpm/public/assets/css/main.css" >
+    <!--<link rel="stylesheet" href="/AngularJS/webnpm/public/assets/css/main.css" >-->
 
 
     <!-- endbuild -->
@@ -120,12 +120,12 @@
         var configData = {
             //baseDir: '/Content/ng/', // asp.net MVC    MUST END WITH SLASH     /webnpm/public/app/angu/miscpages/angu.html
             // baseDir: '/webnpm/public/', // running in webstorm
-            baseDir: '/angularjs/webnpm/public/', // running in visual studio
-            //baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
+            //baseDir: '/angularjs/webnpm/public/', // running in visual studio
+            baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
 
             codeCampType: 'angu', // options: 'angu','svcc'
 
-            loggedInUsername: '',
+            loggedInUsername: 'abcd',
             mockData: usingMockDataGlobal
         };
         angular.module('baseApp').constant('CONFIG', configData);
