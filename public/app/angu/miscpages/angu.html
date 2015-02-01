@@ -29,7 +29,7 @@
                                        name="pingMeEmail" required
                                        placeholder="{{windowWidth > 992 && 'My Email' || 'Notification Email'}}"/>
                                 <span class="input-group-btn" ng-show="formnotify.pingMeEmail.$valid">
-                                    <a href="/angu/signuptobenotified/email={{ vm.pingMeEmailAddress }}"
+                                    <a href="/angu/signuptobenotified?email={{ vm.pingMeEmailAddress }}"
                                        class="btn btn-primary">OK</a>
                                 </span>
                             </div>
