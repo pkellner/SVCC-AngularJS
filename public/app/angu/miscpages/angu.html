@@ -25,7 +25,7 @@
                             <input type="text" class="form-control" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress" name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Notification Email'}}">
                             <span class="input-group-btn">
                                 <!--<button class="btn btn-primary" ng-click="vm.anguPingMe(vm.pingMeEmailAddress)" type="button">OK</button>-->
-                                <a href="/angu/signuptobenotified/email={{ vm.pingMeEmailAddress }}" class="btn btn-primary" >OK</a>
+                                <a href="/angu/signuptobenotified?email={{ vm.pingMeEmailAddress }}" class="btn btn-primary" >OK</a>
 
                             </span>
                         </div>
