@@ -18,24 +18,20 @@
                 </div>
 
                 <div class="col-md-8">
-                    <form name="formnotify">
                     <div class="ping-tickets">
                         <label for="pingMeEmail" class="hidden-sm uppercase">Notify me when tickets go on sale:</label>
-                        <div class="input-group" resize-window window-width="windowWidth">
-                            <!-- terrible directive, to refactor -->
-
-                            <input  class="form-control" type="text" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress"
-                                    ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required
-                                    name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Notification Email'}}" />
-                            <span class="input-group-btn"  ng-show="formnotify.pingMeEmail.$valid">
-                                <!--<button class="btn btn-primary" ng-click="vm.anguPingMe(vm.pingMeEmailAddress)" type="button">OK</button>-->
-                                <a href="/angu/signuptobenotified/email={{ vm.pingMeEmailAddress }}" class="btn btn-primary" >OK</a>
-                            </span>
-
-                        </div>
+                        <form name="formnotify">
+                            <div class="input-group" resize-window window-width="windowWidth">
+                                <!-- terrible directive, to refactor -->
+                                <input  class="form-control" type="text" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress"
+                                        ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required
+                                        name="pingMeEmail" placeholder="{{windowWidth > 992 && 'My Email' || 'Notification Email'}}">
+                                <span class="input-group-btn"   ng-show="formnotify.pingMeEmail.$valid"    >
+                                    <a href="/angu/signuptobenotified/email={{ vm.pingMeEmailAddress }}" class="btn btn-primary" >OK</a>
+                                </span>
+                            </div>
+                        </form>
                     </div>
-                    </form>
-
 
 
                     <div class="nav--user"
@@ -46,16 +42,17 @@
                         <button class="nav--user--toggle icon-user">
                         </button>
 
-                        <a class="nav--user--name" href="/Account/logout"  ng-show="username.length > 0"      >logout {{ username }}</a>
-                        <a class="nav--user--name" href="#"  ng-show="username.length == 0">login</a>
+                        <a class="nav--user--name" href="#"  ng-show="username.length > 0" > {{ username }}</a>
+                        <!--<a class="nav--user--name" href="/Account/logout"  ng-show="username.length > 0"      >logout {{ username }}</a>-->
+                        <!--<a class="nav--user--name" href="#"  ng-show="username.length == 0"      >login</a>-->
 
 
-                        <div></div>
+                        <div ng-hide="username.length > 0"></div>
                             <ul class="nav--list nav--user--list"
                                 ng-class="{'open': isUserOpen, '': isUserOpen}">
-                                <li ng-show="username.length === 0" ><a href="/Account/Login">Login</a></li>
-                                <li ng-show="username.length === 0" ><a href="/Register/ForgotPassword">Forgot Password</a></li>
-                                <li ng-show="username.length > 0" ><a href="/Register/ForgotPassword">Reset Password</a></li>
+                                <li ng-hide="username.length > 0"><a href="/Account/Login">Login</a></li>
+                                <li ng-hide="username.length === 0"><a href="/Account/Logout">Logout</a></li>
+                                <li ng-hide="username.length === 0"><a href="/Register/ForgotPassword">Forgot Password or Reset Password</a></li>
                                 <li><a href="/Angu/CallForPapers">Call For Speakers</a></li>
 
                             </ul>
