@@ -9,6 +9,9 @@
         $rootScope.baseDir = CONFIG.baseDir;
 
 
+
+
+
         $scope.googleMap = function() {
             // kevin to make new url
             window.open('https://goo.gl/maps/uBzdM','_blank');

@@ -13,6 +13,9 @@
         vm.faqs = faqs.data;
         vm.sponsors = sponsors.data;
 
+        debugger;
+        vm.baseDirImage = CONFIG.baseDirImage;
+
         //debugger;
         //vm.backgroundslider1 = "background-image: url(" + CONFIG.baseDir + "/assets/img/bg-slider-1.jpg)";
 
