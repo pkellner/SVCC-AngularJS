@@ -2071,7 +2071,7 @@ a {
 
 .btn-google {
   background-color: #dd4b39;
-  background-image: url('../img/social-buttons/google.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/google.svg'); }
   .btn-google:hover {
     background-color: #e47365; }
   .btn-google:active {
@@ -2079,7 +2079,7 @@ a {
 
 .btn-facebook {
   background-color: #3b5998;
-  background-image: url('../img/social-buttons/facebook.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/facebook.svg'); }
   .btn-facebook:hover {
     background-color: #4c70ba; }
   .btn-facebook:active {
@@ -2087,7 +2087,7 @@ a {
 
 .btn-twitter {
   background-color: #00aced;
-  background-image: url('../img/social-buttons/twitter.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/twitter.svg'); }
   .btn-twitter:hover {
     background-color: #21c2ff; }
   .btn-twitter:active {
@@ -2095,7 +2095,7 @@ a {
 
 .btn-microsoft {
   background-color: #e3b30d;
-  background-image: url('../img/social-buttons/microsoft.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/microsoft.svg'); }
   .btn-microsoft:hover {
     background-color: #f3c730; }
   .btn-microsoft:active {
@@ -2103,7 +2103,7 @@ a {
 
 .btn-github {
   background-color: #2a2a2a;
-  background-image: url('../img/social-buttons/github.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/github.svg'); }
   .btn-github:hover {
     background-color: #444444; }
   .btn-github:active {
@@ -2111,7 +2111,7 @@ a {
 
 .btn-foursquare {
   background-color: #95c330;
-  background-image: url('../img/social-buttons/foursquare.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/foursquare.svg'); }
   .btn-foursquare:hover {
     background-color: #abd452; }
   .btn-foursquare:active {
@@ -2119,7 +2119,7 @@ a {
 
 .btn-instagram {
   background-color: #906248;
-  background-image: url('../img/social-buttons/instagram.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/instagram.svg'); }
   .btn-instagram:hover {
     background-color: #ae7a5d; }
   .btn-instagram:active {
@@ -2127,7 +2127,7 @@ a {
 
 .btn-linkedin {
   background-color: #0b5ea3;
-  background-image: url('../img/social-buttons/linkedin.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/linkedin.svg'); }
   .btn-linkedin:hover {
     background-color: #0e7ad3; }
   .btn-linkedin:active {
@@ -2135,7 +2135,7 @@ a {
 
 .btn-evernote {
   background-color: #5ca629;
-  background-image: url('../img/social-buttons/evernote.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/evernote.svg'); }
   .btn-evernote:hover {
     background-color: #73cd35; }
   .btn-evernote:active {
@@ -2143,7 +2143,7 @@ a {
 
 .btn-dropbox {
   background-color: #1b73d1;
-  background-image: url('../img/social-buttons/dropbox.svg'); }
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/social-buttons/dropbox.svg'); }
   .btn-dropbox:hover {
     background-color: #3a8de5; }
   .btn-dropbox:active {
@@ -2259,7 +2259,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url('../img/page-loader.gif') 50% 50% no-repeat #f9f9f9; }
+  background: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/page-loader.gif') 50% 50% no-repeat #f9f9f9; }
 
 .hero {
   position: relative;
@@ -2268,7 +2268,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url('../img/hero-golden-gate-3.jpg');
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/hero-golden-gate-3.jpg');
   margin-bottom: 20px;
   padding: 30px 0 0; }
   @media only screen and (min-width: 768px) {
@@ -2468,7 +2468,7 @@ body {
       width: 93px;
       height: 99px; } }
   .brand--logo.angular {
-    background-image: url('../img/logo-angular.svg'); }
+    background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/logo-angular.svg'); }
 
 .ping-tickets {
   text-align: right; }
@@ -2706,6 +2706,7 @@ body {
 
 .slider {
   margin: 5px 0 20px;
+  background-image: url('https://d2qdiycv16sgrp.cloudfront.net/content/ng/assets/img/bg-slider-1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
