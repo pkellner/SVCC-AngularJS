@@ -1,10 +1,13 @@
 'use strict';
 
+var angular = require('angular');
+
 exports = module.exports = function ($http) {
 
-  function Model (url) {
+  function Model (url, methods) {
     this.url = url;
     this.set([]);
+    angular.extend(this, methods);
   }
 
   Model.prototype.get = function () {
