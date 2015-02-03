@@ -40,7 +40,7 @@
 
                     <dl class="metaHorizontal">
                         <dt class="horseIcon metaIcon">Level :</dt>
-                        <dd>{{session.sessionLevelId | sessionLevels }}</dd>
+                        <dd>{{session.$levelName() }}</dd>
                         <dt class="timeIcon metaIcon">Date :</dt>
                         <dd>{{session.sessionTimeDateTime | date:'MMM-dd h:mm a' }}</dd>
                         <dt class="mapLocationIcon metaIcon">Room :</dt>
