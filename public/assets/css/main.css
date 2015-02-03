@@ -2202,6 +2202,9 @@ label {
 fieldset {
   margin-bottom: 20px; }
 
+.radio input[type="radio"], .checkbox input[type="checkbox"] {
+  margin-left: 0; }
+
 @font-face {
   font-family: 'sosa';
   src: url('../fonts/sosa/sosa-regular-webfont.eot');
