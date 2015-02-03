@@ -24,7 +24,7 @@
                         <div class="ping-tickets">
                             <label for="pingMeEmail" class="hidden-sm uppercase">Notify me when tickets go on sale:</label>
                             <div class="input-group" resize-window window-width="windowWidth">
-                                <input class="form-control" type="text" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress"
+                                <input class="form-control" type="email" id="pingMeEmail" class="input-" ng-model="vm.pingMeEmailAddress"
                                        ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/"
                                        name="pingMeEmail" required
                                        placeholder="{{windowWidth > 992 && 'My Email' || 'Notification Email'}}"/>
