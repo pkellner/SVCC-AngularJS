@@ -2357,7 +2357,7 @@ body {
   .nav--toggle {
     float: right;
     -webkit-appearance: none;
-    padding: 3px 6px;
+    padding: 3px 0;
     border: none;
     background: none; }
     @media only screen and (min-width: 768px) {
@@ -2385,9 +2385,10 @@ body {
         bottom: -9px; }
   .nav--user {
     position: absolute;
+    display: block;
     top: 7px;
     right: 55px;
-    width: 30px;
+    width: 32px;
     float: right;
     color: #fff;
     text-transform: uppercase; }
@@ -2398,6 +2399,7 @@ body {
         width: 115px; } }
     .nav--user--toggle {
       float: left;
+      display: block;
       font-size: 20px;
       border: none;
       background: none; }
