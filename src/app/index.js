@@ -12,7 +12,7 @@ module.exports = require('angular')
     require('./main'),
     require('./static'),
     require('./account'),
-    require('./faq'),
+    require('./faqs'),
     require('./sessions'),
     require('./speakers'),
     require('./sponsors')
