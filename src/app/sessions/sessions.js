@@ -1,7 +1,8 @@
 'use strict';
 
 exports = module.exports = function (Model, $q) {
-  return new Model('/rest/sessions', {
+  return Model.extend({}, {
+    url: '/rest/sessions',
     findByUrl: function (url) {
       return this.find(function (session) {
         return session.sessionUrl === url;

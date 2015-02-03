@@ -4,44 +4,70 @@ var angular = require('angular');
 
 exports = module.exports = function ($http) {
 
-  function Model (url, methods) {
-    this.url = url;
-    this.set([]);
-    angular.extend(this, methods);
+  function BaseModel (attributes) {
+    angular.extend(this, attributes);
   }
 
-  Model.prototype.get = function () {
+  BaseModel.$$data = [];
+
+  BaseModel.all = function () {
     return this.$$data;
   };
-  Model.prototype.set = function (data) {
-    this.$$data = data;
-    this.length = data.length;
+
+  BaseModel.cast = function (attributes) {
+    return new this(attributes);
   };
-  Model.prototype.at = function (index) {
+
+  BaseModel.set = function (data) {
+    this.$$data = data.map(this.cast, this);
+    this.length = data.length;
+    return this;
+  };
+
+  BaseModel.at = function (index) {
     return this.$$data[index];
   };
-  Model.prototype.fetchOne = function (urlSuffix) {
+
+  BaseModel.fetchOne = function (urlSuffix) {
+    var self = this;
     return $http.get(this.url + '/' + urlSuffix, {
       cache: true
+    })
+    .then(function (response) {
+      return self.cast(response.data);
     });
   };
-  Model.prototype.fetchAll = function () {
+
+  BaseModel.fetchAll = function () {
     var self = this;
     return $http.get(this.url + '/arrayonly', {
       cache: true
     })
     .then(function (response) {
-      self.set(response.data);
+      return self.set(response.data);
     });
   };
-  Model.prototype.find = function (callback) {
+
+  BaseModel.find = function (callback) {
     for (var i = 0; i < this.length; i++) {
       var result = callback.call(this, this.at(i));
       if (result) return result;
     }
   };
 
-  return Model;
+  BaseModel.extend = function (proto, ctor) {
+    var parent = this;
+    function Model () {
+      parent.apply(this, arguments);
+    }
+    angular.extend(Model, ctor);
+    Model.prototype = angular.extend(Object.create(parent.prototype), proto, {
+      constructor: parent
+    });
+    return Model;
+  };
+
+  return BaseModel;
 
 };
 exports.$inject = ['$http'];
