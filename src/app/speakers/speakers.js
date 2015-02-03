@@ -1,7 +1,7 @@
 'use strict';
 
 exports = module.exports = function (Model, $q) {
-  return new Model('/rest/presenter/arrayonly', {
+  return new Model('/rest/presenter', {
     findByUrl: function (url) {
       return this.find(function (speaker) {
         return speaker.presenterUrl === url;
