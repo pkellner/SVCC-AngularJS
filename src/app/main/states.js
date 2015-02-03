@@ -13,12 +13,12 @@ module.exports = function ($stateProvider, interpolateTemplateUrl) {
 };
 module.exports.$inject = ['$stateProvider', 'interpolateTemplateUrl'];
 
-function getFaqs () {
-  return faqs.fetch();
+function getFaqs (Faqs) {
+  return Faqs.fetchAll();
 }
-getFaqs.$inject = ['faqs'];
+getFaqs.$inject = ['Faqs'];
 
-function getSponsors () {
-  return sponsors.fetch();
+function getSponsors (Sponsors) {
+  return Sponsors.fetchAll();
 }
-getSponsors.$inject = ['sponsors'];
+getSponsors.$inject = ['Sponsors'];

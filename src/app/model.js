@@ -45,6 +45,9 @@ exports = module.exports = function ($http) {
     })
     .then(function (response) {
       return self.set(response.data);
+    })
+    .then(function (Model) {
+      return Model.all();
     });
   };
 
