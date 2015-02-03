@@ -36,7 +36,7 @@ exports = module.exports = function ($http) {
   };
   Model.prototype.find = function (callback) {
     for (var i = 0; i < this.length; i++) {
-      var result = callback(this.at(i));
+      var result = callback.call(this, this.at(i));
       if (result) return result;
     }
   };
