@@ -13,7 +13,7 @@
         vm.faqs = faqs.data;
         vm.sponsors = sponsors.data;
 
-        debugger;
+        //debugger;
         vm.baseDirImage = CONFIG.baseDirImage;
 
         //debugger;
