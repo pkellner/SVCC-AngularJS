@@ -1,0 +1,3 @@
+echo starting
+time rsync --delete -rcv --chmod=a+rwx   ~/Documents/bitbucket/svcccss/WebAPI/AngularJS/webnpm/public/dist/ pkellner@siliconvalley-codecamp.com::AngularBeta
+echo done
