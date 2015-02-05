@@ -40,10 +40,10 @@ exports = module.exports = function ($http) {
     function Model () {
       parent.apply(this, arguments);
     }
-    angular.extend(Model, ctor);
+    angular.extend(Model, parent, ctor);
     Model.$$data = [];
     Model.prototype = angular.extend(Object.create(parent.prototype), proto, {
-      constructor: parent
+      constructor: Model
     });
     return Model;
   };
