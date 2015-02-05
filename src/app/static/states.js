@@ -1,10 +1,10 @@
 'use strict';
 
-exports = module.exports = function ($stateProvider, interpolateTemplateUrl) {
+exports = module.exports = function ($stateProvider, interpolateUrl) {
   $stateProvider
     .state('base.about', {
       url: '/about',
-      templateUrl: interpolateTemplateUrl('app/{0}/miscpages/about.html')
+      templateUrl: interpolateUrl('app/{{codeCampType}}/miscpages/about.html')
     });
 };
-exports.$inject = ['$stateProvider', 'interpolateTemplateUrl'];
+exports.$inject = ['$stateProvider', 'interpolateUrl'];

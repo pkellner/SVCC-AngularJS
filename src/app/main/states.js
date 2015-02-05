@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function ($stateProvider, interpolateTemplateUrl) {
+module.exports = function ($stateProvider, interpolateUrl) {
   $stateProvider.state('base', {
-    templateUrl: interpolateTemplateUrl('app/{0}/miscpages/{0}.html'),
+    templateUrl: interpolateUrl('app/{{codeCampType}}/miscpages/{{codeCampType}}.html'),
     controller: 'MainController',
     controllerAs: 'main',
     resolve: {
@@ -11,7 +11,7 @@ module.exports = function ($stateProvider, interpolateTemplateUrl) {
     }
   });
 };
-module.exports.$inject = ['$stateProvider', 'interpolateTemplateUrl'];
+module.exports.$inject = ['$stateProvider', 'interpolateUrl'];
 
 function getFaqs (Faqs) {
   return Faqs.fetchAll();

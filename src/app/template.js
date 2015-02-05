@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function (CONFIG) {
-  return function templateUrlInterpolator (urlTemplate) {
-    return CONFIG.baseDir + urlTemplate.replace(/\{0\}/g, CONFIG.codeCampType);
+exports.interpolateUrl = function ($interpolate, CONFIG) {
+  return function urlInterpolator (urlTemplate) {
+    return CONFIG.baseDir + $interpolate(urlTemplate)(CONFIG);
   };
 };
-module.exports.$inject = ['CONFIG'];
+module.exports.$inject = ['$interpolate', 'CONFIG'];

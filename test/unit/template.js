@@ -12,10 +12,10 @@ module.exports = function () {
     });
   }));
 
-  describe('interpolateTemplateUrl', function () {
+  describe('interpolateUrl', function () {
 
-    it('replaces {0} tokens with the camp type', angular.mock.inject(function (interpolateTemplateUrl) {
-      expect(interpolateTemplateUrl('/foo/{0}/bar/{0}')).to.equal('/foo/angu/bar/angu');
+    it('interpolates using the config', angular.mock.inject(function (interpolateUrl) {
+      expect(interpolateUrl('/foo/{{codeCampType}}/bar/{{codeCampType}}')).to.equal('/foo/angu/bar/angu');
     }));
 
   });
