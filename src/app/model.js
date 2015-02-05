@@ -64,6 +64,7 @@ exports = module.exports = function ($http) {
       parent.apply(this, arguments);
     }
     angular.extend(Model, ctor);
+    Model.$$data = [];
     Model.prototype = angular.extend(Object.create(parent.prototype), proto, {
       constructor: parent
     });
