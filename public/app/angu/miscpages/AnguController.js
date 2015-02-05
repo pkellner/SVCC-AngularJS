@@ -21,6 +21,7 @@
         //$scope.backgroundslider1 = "background-image: url(" + CONFIG.baseDir + "/assets/img/bg-slider-1.jpg)";
 
         $scope.username = CONFIG.loggedInUsername;
+        // $scope.username = '';
 
         //$scope.anguPingMe = function () {
         //    debugger;

@@ -1,3 +1,13 @@
+// Core mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Bootstrap Overrides - modified variables
+@import "vendor/bootstrap/variables";
+
+@import "setup/variables";
+@import "setup/mixins";
+
 @font-face {
     font-family: 'sosa';
     src: url('../fonts/sosa/sosa-regular-webfont.eot');

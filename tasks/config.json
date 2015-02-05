@@ -6,9 +6,9 @@
     "build": "public"
   },
   "styles": {
-    "base": "assets/scss",
-    "tmp": ".tmp/css",
-    "build": "public/assets/css",
+    "base": "assets/scss/",
+    "tmp": ".tmp/css/",
+    "build": "public/assets/css/",
     "files": "assets/scss/*.{css,scss,sass}",
     "AUTOPREFIXER_BROWSERS": [
       "ie >= 10",
@@ -26,7 +26,7 @@
       "style": "expanded",
       "precision": "10",
       "includePaths": [
-        "public/vendor/bootstrap-sass-official/assets/stylesheets"
+        "public/vendor/bootstrap-sass-official/assets/stylesheets/"
       ],
       "errLogToConsole": "true"
     }
@@ -36,13 +36,13 @@
     "files": "assets/**/*"
   },
   "images": {
-    "base": "assets/img",
-    "build": "public/assets/img",
+    "base": "assets/img/",
+    "build": "public/assets/img/",
     "files": "assets/img/**/*.{png,jpg,gif}"
   },
   "fonts": {
-    "base": "assets/fonts",
-    "build": "public/assets/fonts",
+    "base": "assets/fonts/",
+    "build": "public/assets/fonts/",
     "files": "assets/fonts/**/*.{eot,ttf,woff,svg}"
   }
 }

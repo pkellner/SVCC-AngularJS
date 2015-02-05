@@ -23,3 +23,8 @@ label {
 fieldset {
   margin-bottom: 20px;
 }
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  margin-left: 0;
+}
