@@ -50,7 +50,7 @@ exports = module.exports = function ($http) {
 
   BaseModel.fetchOne = function (urlSuffix) {
     var self = this;
-    return $http.get(this.url + '/' + urlSuffix, {
+    return $http.get(this.url + urlSuffix, {
       cache: true
     })
     .then(function (response) {
