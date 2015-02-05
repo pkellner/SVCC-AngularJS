@@ -81,6 +81,26 @@ module.exports = function () {
 
     });
 
+    describe('#find', function () {
+
+      it('finds the first model where the callback returns truthy', function () {
+        Model.set([{val: 0}, {val: 1}, {val: 2}]);
+        expect(Model.find(function (model) {
+          return model.val === 1;
+        }))
+        .to.equal(Model.at(1));
+      });
+
+      it('returns undefined if there is no match', function () {
+        Model.set([{val: 0}]);
+        expect(Model.find(function (model) {
+          return model.val === 1;
+        }))
+        .to.equal(undefined);
+      });
+
+    });
+
   });
 
 };

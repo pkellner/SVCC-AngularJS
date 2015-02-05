@@ -20,12 +20,32 @@ exports = module.exports = function ($http) {
 
   BaseModel.set = function (data) {
     this.$$data = data.map(this.forge, this);
-    this.length = data.length;
     return this;
   };
 
   BaseModel.at = function (index) {
     return this.$$data[index];
+  };
+
+  BaseModel.find = function (callback) {
+    for (var i = 0; i < this.$$data.length; i++) {
+      var model = this.at(i);
+      var result = callback.call(this, model);
+      if (result) return model;
+    }
+  };
+
+  BaseModel.extend = function (proto, ctor) {
+    var parent = this;
+    function Model () {
+      parent.apply(this, arguments);
+    }
+    angular.extend(Model, ctor);
+    Model.$$data = [];
+    Model.prototype = angular.extend(Object.create(parent.prototype), proto, {
+      constructor: parent
+    });
+    return Model;
   };
 
   BaseModel.fetchOne = function (urlSuffix) {
@@ -49,26 +69,6 @@ exports = module.exports = function ($http) {
     .then(function (Model) {
       return Model.all();
     });
-  };
-
-  BaseModel.find = function (callback) {
-    for (var i = 0; i < this.length; i++) {
-      var result = callback.call(this, this.at(i));
-      if (result) return result;
-    }
-  };
-
-  BaseModel.extend = function (proto, ctor) {
-    var parent = this;
-    function Model () {
-      parent.apply(this, arguments);
-    }
-    angular.extend(Model, ctor);
-    Model.$$data = [];
-    Model.prototype = angular.extend(Object.create(parent.prototype), proto, {
-      constructor: parent
-    });
-    return Model;
   };
 
   return BaseModel;
