@@ -25,126 +25,122 @@ module.exports = function () {
 
   });
 
-  describe('Class', function () {
+  describe('#all', function () {
 
-    describe('#all', function () {
-
-      it('returns the data', function () {
-        expect(Model.all()).to.equal(Model.$$data);
-      });
-
+    it('returns the data', function () {
+      expect(Model.all()).to.equal(Model.$$data);
     });
 
-    describe('#forge', function () {
+  });
 
-      it('casts data into a Model instance', function () {
-        expect(Model.forge({
-          foo: 'bar'
-        }))
+  describe('#forge', function () {
+
+    it('casts data into a Model instance', function () {
+      expect(Model.forge({
+        foo: 'bar'
+      }))
+      .to.contain({
+        foo: 'bar'
+      })
+      .and.to.be.an.instanceOf(Model);
+    });
+
+  });
+
+  describe('#set', function () {
+
+    it('maps an array of data to Models and sets as $$data', function () {
+      Model.set([{
+        foo: 'bar'
+      }]);
+      expect(Model.at(0))
         .to.contain({
           foo: 'bar'
         })
-        .and.to.be.an.instanceOf(Model);
-      });
-
+        .and.be.an.instanceOf(Model);
     });
 
-    describe('#set', function () {
-
-      it('maps an array of data to Models and sets as $$data', function () {
-        Model.set([{
-          foo: 'bar'
-        }]);
-        expect(Model.at(0))
-          .to.contain({
-            foo: 'bar'
-          })
-          .and.be.an.instanceOf(Model);
-      });
-
-      it('returns itself', function () {
-        expect(Model.set([])).to.equal(Model);
-      });
-
+    it('returns itself', function () {
+      expect(Model.set([])).to.equal(Model);
     });
 
-    describe('#at', function () {
+  });
 
-      it('gets the model at the specified index', function () {
-        Model.set([{
-          foo: 'bar'
-        }]);
-        expect(Model.at(0)).to.contain({
-          foo: 'bar'
-        });
+  describe('#at', function () {
+
+    it('gets the model at the specified index', function () {
+      Model.set([{
+        foo: 'bar'
+      }]);
+      expect(Model.at(0)).to.contain({
+        foo: 'bar'
       });
-
     });
 
-    describe('#find', function () {
+  });
 
-      it('finds the first model where the callback returns truthy', function () {
-        Model.set([{val: 0}, {val: 1}, {val: 2}]);
-        expect(Model.find(function (model) {
-          return model.val === 1;
-        }))
-        .to.equal(Model.at(1));
-      });
+  describe('#find', function () {
 
-      it('returns undefined if there is no match', function () {
-        Model.set([{val: 0}]);
-        expect(Model.find(function (model) {
-          return model.val === 1;
-        }))
-        .to.equal(undefined);
-      });
-
+    it('finds the first model where the callback returns truthy', function () {
+      Model.set([{val: 0}, {val: 1}, {val: 2}]);
+      expect(Model.find(function (model) {
+        return model.val === 1;
+      }))
+      .to.equal(Model.at(1));
     });
 
-    describe('#extend', function () {
+    it('returns undefined if there is no match', function () {
+      Model.set([{val: 0}]);
+      expect(Model.find(function (model) {
+        return model.val === 1;
+      }))
+      .to.equal(undefined);
+    });
 
-      it('calls through to the parent', function () {
-        var Child = Model.extend();
-        expect(new Child({
-          foo: 'bar'
-        }))
-        .to.contain({
-          foo: 'bar'
-        });
+  });
+
+  describe('#extend', function () {
+
+    it('calls through to the parent', function () {
+      var Child = Model.extend();
+      expect(new Child({
+        foo: 'bar'
+      }))
+      .to.contain({
+        foo: 'bar'
       });
+    });
 
-      it('copies parent ctor properties', function () {
-        expect(Model.extend()).to.itself.respondTo('extend');
-      });
+    it('copies parent ctor properties', function () {
+      expect(Model.extend()).to.itself.respondTo('extend');
+    });
 
-      it('can add ctor properties', function () {
-        expect(Model.extend({}, {
-          newMethod: angular.noop
-        }))
-        .to.itself.respondTo('newMethod');
-      });
+    it('can add ctor properties', function () {
+      expect(Model.extend({}, {
+        newMethod: angular.noop
+      }))
+      .to.itself.respondTo('newMethod');
+    });
 
-      it('sets up a new internal data array', function () {
-        expect(Model.all()).to.not.equal(Model.extend().all());
-      });
+    it('sets up a new internal data array', function () {
+      expect(Model.all()).to.not.equal(Model.extend().all());
+    });
 
-      it('copies parent proto properties', function () {
-        Model.prototype.method = angular.noop;
-        expect(Model.extend()).to.respondTo('method');
-      });
+    it('copies parent proto properties', function () {
+      Model.prototype.method = angular.noop;
+      expect(Model.extend()).to.respondTo('method');
+    });
 
-      it('can add new proto properties', function () {
-        expect(Model.extend({
-          method: angular.noop
-        }))
-        .to.respondTo('method');
-      });
+    it('can add new proto properties', function () {
+      expect(Model.extend({
+        method: angular.noop
+      }))
+      .to.respondTo('method');
+    });
 
-      it('sets the correct constructor', function () {
-        var Child = Model.extend();
-        expect(new Child().constructor).to.equal(Child);
-      });
-
+    it('sets the correct constructor', function () {
+      var Child = Model.extend();
+      expect(new Child().constructor).to.equal(Child);
     });
 
   });
