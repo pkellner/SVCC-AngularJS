@@ -14,12 +14,12 @@ exports = module.exports = function ($http) {
     return this.$$data;
   };
 
-  BaseModel.cast = function (attributes) {
+  BaseModel.forge = function (attributes) {
     return new this(attributes);
   };
 
   BaseModel.set = function (data) {
-    this.$$data = data.map(this.cast, this);
+    this.$$data = data.map(this.forge, this);
     this.length = data.length;
     return this;
   };
@@ -34,7 +34,7 @@ exports = module.exports = function ($http) {
       cache: true
     })
     .then(function (response) {
-      return self.cast(response.data);
+      return self.forge(response.data);
     });
   };
 

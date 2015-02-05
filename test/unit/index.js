@@ -7,5 +7,6 @@ describe('App', function () {
   beforeEach(angular.mock.module(require('../../')));
 
   describe('Template Helpers', require('./template'));
+  describe('BaseModel', require('./model'));
 
 });
