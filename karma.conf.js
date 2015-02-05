@@ -11,7 +11,10 @@ module.exports = function (config) {
     preprocessors: {
       './test/unit/index.js': 'browserify'
     },
-    reporters: ['progress'],
+    browserify: {
+      transform: ['browserify-istanbul']
+    },
+    reporters: ['progress', 'coverage'],
     port: 9876,
     autoWatch: true,
     browsers: ['PhantomJS'],
