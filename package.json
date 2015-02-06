@@ -49,6 +49,8 @@
     "sinon-chai": "~2.6.0"
   },
   "browser": {
+    "angular": "./node_modules/angular/angular.js",
+    "angular-mocks": "./node_modules/angular-mocks/angular-mocks.js",
     "ui.bootstrap": "./vendor/ui-bootstrap-tpls.js"
   },
   "browserify": {
@@ -57,6 +59,13 @@
     ]
   },
   "browserify-shim": {
-    "angular": "global:angular"
+    "angular": {
+      "exports": "angular"
+    },
+    "angular-mocks": {
+      "depends": [
+        "angular"
+      ]
+    }
   }
 }
