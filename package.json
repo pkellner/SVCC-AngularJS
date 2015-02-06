@@ -51,6 +51,7 @@
   "browser": {
     "angular": "./node_modules/angular/angular.js",
     "angular-mocks": "./node_modules/angular-mocks/angular-mocks.js",
+    "angular-messages": "./node_modules/angular-messages/angular-messages.js",
     "ui.bootstrap": "./vendor/ui-bootstrap-tpls.js"
   },
   "browserify": {
@@ -66,6 +67,12 @@
       "depends": [
         "angular"
       ]
+    },
+    "angular-messages": {
+      "depends": [
+        "angular"
+      ],
+      "exports": "angular.module('ngMessages').name"
     }
   }
 }
