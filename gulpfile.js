@@ -38,6 +38,11 @@ gulp.task('bundle', function () {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('index', function () {
+  return gulp.src('./src/index.html')
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('server', function (done) {
   server({
     port: 8000,
