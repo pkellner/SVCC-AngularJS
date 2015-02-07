@@ -17,7 +17,7 @@ module.exports = function () {
     it('creates an template provider that will interpolate and fetch a templateUrl', function () {
       var templateProvider;
       angular.mock.module(function (campTemplateProvider) {
-        templateProvider = campTemplateProvider.provideTemplate('/foo/{{codeCampType}}')
+        templateProvider = campTemplateProvider.provide('/foo/{{codeCampType}}')
       });
       angular.mock.inject(function ($injector, $httpBackend) {
         $httpBackend

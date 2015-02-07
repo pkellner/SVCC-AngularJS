@@ -2,7 +2,7 @@
 
 exports = module.exports = function (Model) {
   return Model.extend({}, {
-    url: '/rest/sponsors'
+    url: '/rest/sponsor'
   });
 };
 exports.$inject = ['Model'];

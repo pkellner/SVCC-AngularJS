@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function () {
-  this.provideTemplate = function (urlTemplate) {
+  this.provide = function (urlTemplate) {
     return createTemplateProvider(urlTemplate);
   };
   this.$get = function () {};
