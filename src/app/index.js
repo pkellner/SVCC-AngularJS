@@ -17,6 +17,6 @@ module.exports = require('angular')
     // require('./speakers'),
     // require('./sponsors')
   ])
-  .factory('interpolateUrl', require('./template').interpolateUrl)
+  .provider('campTemplate', require('./template'))
   .factory('Model', require('./model'))
   .name;

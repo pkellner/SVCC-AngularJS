@@ -1,8 +1,16 @@
 'use strict';
 
-exports.interpolateUrl = function ($interpolate, CONFIG) {
-  return function urlInterpolator (urlTemplate) {
-    return CONFIG.baseDir + $interpolate(urlTemplate)(CONFIG);
+module.exports = function () {
+  this.provideTemplate = function (urlTemplate) {
+    return createTemplateProvider(urlTemplate);
   };
+  this.$get = function () {};
 };
-module.exports.$inject = ['$interpolate', 'CONFIG'];
+
+function createTemplateProvider (template) {
+  function templateProvider ($interpolate, CONFIG, $templateFactory) {
+    return $templateFactory.fromUrl(CONFIG.baseDir + $interpolate(template)(CONFIG));
+  }
+  templateProvider.$inject = ['$interpolate', 'CONFIG', '$templateFactory'];
+  return templateProvider;
+}

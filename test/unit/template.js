@@ -12,11 +12,24 @@ module.exports = function () {
     });
   }));
 
-  describe('interpolateUrl', function () {
+  describe('campTemplateProvider#interpolateUrl', function () {
 
-    it('interpolates using the config', angular.mock.inject(function (interpolateUrl) {
-      expect(interpolateUrl('/foo/{{codeCampType}}/bar/{{codeCampType}}')).to.equal('/foo/angu/bar/angu');
-    }));
+    it('creates an template provider that will interpolate and fetch a templateUrl', function () {
+      var templateProvider;
+      angular.mock.module(function (campTemplateProvider) {
+        templateProvider = campTemplateProvider.provideTemplate('/foo/{{codeCampType}}')
+      });
+      angular.mock.inject(function ($injector, $httpBackend) {
+        $httpBackend
+          .expectGET('/foo/angu')
+          .respond(200, 'theTemplate');
+        $injector.invoke(templateProvider)
+          .then(function (template) {
+            expect(template).to.equal('theTemplate');
+          });
+        $httpBackend.flush();
+      });
+    });
 
   });
 
