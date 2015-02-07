@@ -50,6 +50,7 @@
     "require-dir": "^0.1.0",
     "sinon": "~1.12.2",
     "sinon-chai": "~2.6.0",
+    "superstatic": "~2.0.2",
     "vinyl-source-stream": "~1.0.0"
   },
   "browser": {

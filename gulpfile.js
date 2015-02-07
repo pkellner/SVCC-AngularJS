@@ -5,6 +5,7 @@ var plugins    = require('gulp-load-plugins')();
 var karma      = require('karma-as-promised');
 var browserify = require('browserify');
 var source     = require('vinyl-source-stream');
+var server     = require('superstatic/lib/server');
 
 gulp.task('unit', function () {
   return karma.server.start({
@@ -34,5 +35,15 @@ gulp.task('bundle', function () {
     .add(pkg.main)
     .bundle()
     .pipe(source('main.js'))
-    .pipe(gulp.dest('public/dist'));
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('server', function (done) {
+  server({
+    port: 8000,
+    config: {
+      root: 'dist'
+    }
+  })
+  .listen(done);
 });
