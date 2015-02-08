@@ -4,6 +4,7 @@ var gulp       = require('gulp');
 var plugins    = require('gulp-load-plugins')();
 var karma      = require('karma-as-promised');
 var browserify = require('browserify');
+var watchify   = require('watchify');
 var source     = require('vinyl-source-stream');
 var server     = require('superstatic/lib/server');
 
@@ -29,13 +30,25 @@ gulp.task('unit', function () {
   });
 });
 
-gulp.task('bundle', function () {
+function identity (input) {
+  return input;
+}
+
+function bundler (watch) {
   var pkg = require('./package.json');
-  return browserify()
-    .add(pkg.main)
+  return (watch ? watchify : identity)(browserify(watch && watchify.args))
+    .add(pkg.main);
+}
+
+function bundle (bundler) {
+  return bundler
     .bundle()
     .pipe(source('main.js'))
     .pipe(gulp.dest('dist/app'));
+}
+
+gulp.task('bundle', function () {
+  return bundle(bundler());
 });
 
 gulp.task('index', function () {
@@ -54,6 +67,14 @@ gulp.task('styles', function () {
       includePaths: ['bower_components/bootstrap-sass-official/assets/stylesheets']
     }))
     .pipe(gulp.dest('dist/assets'));
+});
+
+gulp.task('watch', function () {
+  var b = bundler(true);
+  b.on('update', function () {
+    bundle(b);
+  });
+  return bundle(b);
 });
 
 gulp.task('server', function (done) {
