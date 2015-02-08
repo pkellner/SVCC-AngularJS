@@ -9,6 +9,7 @@
   "dependencies": {
     "angular": "~1.3.11",
     "angular-messages": "~1.3.11",
+    "angular-router-exception-handler": "~1.0.1",
     "angular-ui-router": "~0.2.13",
     "browserify-istanbul": "~0.1.4",
     "es5-shim": "~4.1.0",
