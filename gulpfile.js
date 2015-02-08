@@ -7,6 +7,7 @@ var browserify = require('browserify');
 var watchify   = require('watchify');
 var source     = require('vinyl-source-stream');
 var server     = require('superstatic/lib/server');
+var template   = require('lodash.template');
 
 var paths = {};
 
@@ -88,10 +89,14 @@ gulp.task('watch', ['index', 'templates', 'styles'], function () {
 
 gulp.task('server', function (done) {
   server({
-    port: 8000,
     config: {
       root: 'dist'
     }
   })
-  .listen(done);
+  .listen(function (err) {
+    if (err) return done(err);
+    var util = plugins.util;
+    util.log(template('Server running at http://${address}:${port}')(this.address()));
+    done();
+  });
 });
