@@ -73,7 +73,7 @@ gulp.task('styles', function () {
     .pipe(plugins.sass({
       includePaths: ['bower_components/bootstrap-sass-official/assets/stylesheets']
     }))
-    .pipe(gulp.dest('dist/assets'));
+    .pipe(gulp.dest('dist/styles'));
 });
 
 gulp.task('watch', ['index', 'templates', 'styles'], function () {
