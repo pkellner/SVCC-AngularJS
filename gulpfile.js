@@ -43,6 +43,11 @@ gulp.task('index', function () {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('templates', function () {
+  return gulp.src(['src/**/*.html', '!index.html'])
+    .pipe(gulp.dest('dist/app'));
+});
+
 gulp.task('server', function (done) {
   server({
     port: 8000,
