@@ -35,7 +35,7 @@ gulp.task('bundle', function () {
     .add(pkg.main)
     .bundle()
     .pipe(source('main.js'))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist/app'));
 });
 
 gulp.task('index', function () {
