@@ -2,11 +2,17 @@
 
 require('angular-mocks');
 
-module.exports = require('angular')
-  .module('mockData', [
-    'baseApp',
-    'ngMockE2E'
-  ])
-  .run(function ($httpBackend) {
-    $httpBackend.whenGET('/rest/faq/arrayonly/').respond(require('./faqs'));
-  });
+var baseModule = require('angular').module('baseApp');
+
+baseModule.requires.push('ngMockE2E')
+baseModule.run(provideMocks);
+
+
+function provideMocks ($httpBackend) {
+  $httpBackend.whenGET(function (url) {
+    return !/^\/rest\//.test(url);
+  })
+  .passThrough();
+  $httpBackend.whenGET('/rest/faq/arrayonly/').respond(require('./data/faqs.json'));
+}
+provideMocks.$inject = ['$httpBackend'];

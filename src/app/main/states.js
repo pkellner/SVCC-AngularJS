@@ -2,7 +2,8 @@
 
 module.exports = function ($stateProvider, campTemplate) {
   $stateProvider.state('base', {
-    templateProvider: campTemplate.provide('app/{{codeCampType}}/miscpages/{{codeCampType}}.html'),
+    url: '',
+    template: '<div ui-view></div>',
     controller: 'MainController',
     controllerAs: 'main',
     resolve: {

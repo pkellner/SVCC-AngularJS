@@ -38,10 +38,12 @@ function identity (input) {
   return input;
 }
 
-function bundler (watch) {
+function bundler (watch, mocks) {
   var pkg = require('./package.json');
-  return (watch ? watchify : identity)(browserify(watch && watchify.args))
-    .add(pkg.main);
+  var b = (watch ? watchify : identity)(browserify(watch && watchify.args))
+  b.add(pkg.main)
+  if (mocks) b.add('./mock');
+  return b;
 }
 
 function bundle (bundler) {
@@ -81,7 +83,7 @@ gulp.task('watch', ['index', 'templates', 'styles'], function () {
   gulp.watch(paths.templates, ['templates']);
   gulp.watch(paths.styles, ['styles']);
 
-  var b = bundler(true);
+  var b = bundler(true, true);
   b.on('update', function () {
     bundle(b);
   });

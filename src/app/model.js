@@ -60,7 +60,7 @@ exports = module.exports = function ($http) {
 
   BaseModel.fetchAll = function () {
     var self = this;
-    return $http.get(this.url + '/arrayonly', {
+    return $http.get(this.url + '/arrayonly/', {
       cache: true
     })
     .then(function (response) {
