@@ -50,6 +50,7 @@
     "karma-phantomjs-launcher": "~0.1.4",
     "lodash.template": "~3.0.1",
     "mocha": "~2.1.0",
+    "opn": "~1.0.1",
     "require-dir": "^0.1.0",
     "sinon": "~1.12.2",
     "sinon-chai": "~2.6.0",

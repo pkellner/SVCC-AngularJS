@@ -8,6 +8,7 @@ var watchify   = require('watchify');
 var source     = require('vinyl-source-stream');
 var server     = require('superstatic/lib/server');
 var template   = require('lodash.template');
+var open       = require('opn');
 
 var paths = {};
 
@@ -79,7 +80,7 @@ gulp.task('watch', ['index', 'templates', 'styles'], function () {
   gulp.watch(paths.index, ['index']);
   gulp.watch(paths.templates, ['templates']);
   gulp.watch(paths.styles, ['styles']);
-  
+
   var b = bundler(true);
   b.on('update', function () {
     bundle(b);
@@ -87,6 +88,7 @@ gulp.task('watch', ['index', 'templates', 'styles'], function () {
   return bundle(b);
 });
 
+var host;
 gulp.task('server', function (done) {
   server({
     config: {
@@ -95,8 +97,12 @@ gulp.task('server', function (done) {
   })
   .listen(function (err) {
     if (err) return done(err);
-    var util = plugins.util;
-    util.log(template('Server running at http://${address}:${port}')(this.address()));
+    host = template('http://${address}:${port}')(this.address());
+    plugins.util.log('Server running at', host);
     done();
   });
+});
+
+gulp.task('serve', ['watch', 'server'], function (done) {
+  open(host, done);
 });
