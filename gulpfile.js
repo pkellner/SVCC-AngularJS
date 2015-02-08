@@ -8,6 +8,8 @@ var watchify   = require('watchify');
 var source     = require('vinyl-source-stream');
 var server     = require('superstatic/lib/server');
 
+var paths = {};
+
 gulp.task('unit', function () {
   return karma.server.start({
     frameworks: ['browserify', 'mocha'],
@@ -51,25 +53,32 @@ gulp.task('bundle', function () {
   return bundle(bundler());
 });
 
+paths.index = './src/index.html';
 gulp.task('index', function () {
-  return gulp.src('./src/index.html')
+  return gulp.src(paths.index)
     .pipe(gulp.dest('dist'));
 });
 
+paths.templates = ['src/**/*.html', '!index.html'];
 gulp.task('templates', function () {
-  return gulp.src(['src/**/*.html', '!index.html'])
+  return gulp.src(paths.templates)
     .pipe(gulp.dest('dist/app'));
 });
 
+paths.styles = 'styles/*.scss';
 gulp.task('styles', function () {
-  return gulp.src('styles/*.scss')
+  return gulp.src(paths.styles)
     .pipe(plugins.sass({
       includePaths: ['bower_components/bootstrap-sass-official/assets/stylesheets']
     }))
     .pipe(gulp.dest('dist/assets'));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', ['index', 'templates', 'styles'], function () {
+  gulp.watch(paths.index, ['index']);
+  gulp.watch(paths.templates, ['templates']);
+  gulp.watch(paths.styles, ['styles']);
+  
   var b = bundler(true);
   b.on('update', function () {
     bundle(b);
