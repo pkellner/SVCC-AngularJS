@@ -48,6 +48,14 @@ gulp.task('templates', function () {
     .pipe(gulp.dest('dist/app'));
 });
 
+gulp.task('styles', function () {
+  return gulp.src('styles/*.scss')
+    .pipe(plugins.sass({
+      includePaths: ['bower_components/bootstrap-sass-official/assets/stylesheets']
+    }))
+    .pipe(gulp.dest('dist/assets'));
+});
+
 gulp.task('server', function (done) {
   server({
     port: 8000,

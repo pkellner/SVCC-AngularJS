@@ -8,3 +8,5 @@ node_modules
 public/dist
 dist/
 coverage
+vendor/
+bower_components/

@@ -7,7 +7,7 @@
 @import "bootstrap/mixins";
 
 // Bootstrap Overrides - modified variables
-@import "vendor/bootstrap/variables";
+@import "overrides/variables";
 
 // Our vars & mixins
 @import "setup/variables";
@@ -49,13 +49,12 @@
 @import "common/utility";
 
 // Bootstrap Overrides - need to be after Bootstrap Components styles
-@import "vendor/bootstrap/grid";
-@import "vendor/bootstrap/buttons";
-@import "vendor/bootstrap/type";
-
-@import "vendor/sosa-font.scss";
+@import "overrides/grid";
+@import "overrides/buttons";
+@import "overrides/type";
 
 @import "components/common";
+@import "components/fonts.scss";
 @import "components/loader";
 @import "components/header";
 @import "components/hero";
