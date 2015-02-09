@@ -2,8 +2,14 @@ $cdn: '//d2qdiycv16sgrp.cloudfront.net/';
 
 // assets path
 $assets-path: $cdn + 'content/ng/assets/';
+$angu-assets-path: $assets-path + 'angu/';
+$svcc-assets-path: $assets-path + 'svcc/';
 
 // images path
-$img-path:  $cdn + 'content/ng/assets/img/';
+$img-path:  $assets-path + 'img/';
+$angu-img-path: $angu-assets-path + 'img/';
+$svcc-img-path: $svcc-assets-path + 'img/';
+
+
 $social-buttons-path: $img-path + 'social-buttons/';
 

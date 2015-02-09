@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@font-face{font-family:sosa;src:url(//d2qdiycv16sgrp.cloudfront.net/content/ng/assets/angufonts/sosa/sosa-regular-webfont.eot);src:url(//d2qdiycv16sgrp.cloudfront.net/content/ng/assets/angufonts/sosa/sosa-regular-webfont.eot?#iefix) format('embedded-opentype'),url(//d2qdiycv16sgrp.cloudfront.net/content/ng/assets/angufonts/sosa/sosa-regular-webfont.ttf) format('truetype'),url(//d2qdiycv16sgrp.cloudfront.net/content/ng/assets/angufonts/sosa/sosa-regular-webfont.svg#sosa) format('svg');font-weight:400;font-style:normal}
+@font-face{font-family:sosa;src:url(//d2qdiycv16sgrp.cloudfront.net/content/ng/assets/fonts/sosa/sosa-regular-webfont.eot);src:url(//d2qdiycv16sgrp.cloudfront.net/content/ng/assets/fonts/sosa/sosa-regular-webfont.eot?#iefix) format('embedded-opentype'),url(//d2qdiycv16sgrp.cloudfront.net/content/ng/assets/fonts/sosa/sosa-regular-webfont.ttf) format('truetype'),url(//d2qdiycv16sgrp.cloudfront.net/content/ng/assets/fonts/sosa/sosa-regular-webfont.svg#sosa) format('svg');font-weight:400;font-style:normal}
 [class*=" icon-"],[class^=icon-]{font-family:sosa;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .icon-code:before{content:"D"}
 .icon-pin:before{content:"o"}
