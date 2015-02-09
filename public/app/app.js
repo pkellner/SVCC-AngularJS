@@ -67,7 +67,43 @@
                             .error(function (data, status, headers, config) {
                                 return [];
                             });
+                        }],
+                        speakers: ['$http', 'speakerDataModelService', function ($http, speakerDataModelService) {
+                            var promise =
+                                $http.get('/rest/presenter/arrayonly/', {
+                                    cache: true
+                                }).
+                                    success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!speakerDataModelService.hasData()) {
+                                            speakerDataModelService.setData(data);
+                                        }
+                                        return data;
+                                    }).
+                                    error(function (data, status, headers, config) {
+                                        return [];
+                                    });
+                            return promise;
+                        }],
+                        sessions: ['$http','sessionDataModelService', function ($http,sessionDataModelService) {
+                            var promise =
+                                $http.get('/rest/session/arrayonly/', {cache: true}).
+                                    success(function (data, status, headers, config) {
+                                        // only reload this service if it is empty. It can be full from previous production call or from
+                                        // testing environment load.
+                                        if (!sessionDataModelService.hasData()) {
+                                            sessionDataModelService.setData(data);
+                                        }
+                                        return data;
+                                    }).
+                                    error(function (data, status, headers, config) {
+                                        return [];
+                                    });
+                            return promise;
                         }]
+
+
 
                     }
                 })
