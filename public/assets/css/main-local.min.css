@@ -1,4 +1,4 @@
-.nav--list:after,.social ul:after{content:"";display:table;clear:both}
+.nav--list:after,.persona.small:after,.social ul:after{content:"";display:table;clear:both}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
@@ -710,6 +710,10 @@ body{margin:0;padding:0}
 .persona--img{width:100%;height:190px;overflow:hidden;margin-bottom:20px}
 .persona--img img{width:100%}
 .persona--container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;max-width:960px;margin:0 auto}
+.persona.small{max-width:initial;padding:20px;margin:0 0 12px;background:#f3f2f2;text-align:left}
+.persona.small img{float:left;height:75px;margin-right:20px}
+.persona.small h3{font-size:21px;margin:13px 0 2px}
+.persona.small p{font-size:16px;margin:0}
 .persona h3,.persona h3 a{color:#dd1b16;font-weight:700;font-style:italic}
 .slide--container{position:relative;max-width:1050px;margin:0 auto;padding:45px 0;overflow:hidden;height:425px}
 @media only screen and (min-width:768px){.slide--container{height:425px}}

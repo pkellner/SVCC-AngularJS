@@ -1,7 +1,7 @@
 /* =========================================================================
    Setup
    ========================================================================= */
-.nav--list:after, .social ul:after {
+.nav--list:after, .persona.small:after, .social ul:after {
   content: "";
   display: table;
   clear: both; }
@@ -2566,6 +2566,22 @@ body {
             justify-content: space-around;
     max-width: 960px;
     margin: 0 auto; }
+  .persona.small {
+    max-width: initial;
+    padding: 20px;
+    margin: 0 0 12px;
+    background: #f3f2f2;
+    text-align: left; }
+    .persona.small img {
+      float: left;
+      height: 75px;
+      margin-right: 20px; }
+    .persona.small h3 {
+      font-size: 21px;
+      margin: 13px 0 2px; }
+    .persona.small p {
+      font-size: 16px;
+      margin: 0; }
   .persona h3, .persona h3 a {
     color: #dd1b16;
     font-weight: bold;
