@@ -26,6 +26,31 @@
      margin: 0 auto;
   }
 
+  &.small {
+    @extend %clearfix;
+    max-width: initial;
+    padding: 20px;
+    margin: 0 0 12px;
+    background: #f3f2f2;
+    text-align: left;
+
+    img {
+      float: left;
+      height: 75px;
+      margin-right: 20px;
+    }
+
+    h3 {
+      font-size: 21px;
+      margin: 13px 0 2px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+
   h3,
   h3 a {
     color: $brand-primary;

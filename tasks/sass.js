@@ -12,6 +12,6 @@ gulp.task('sass', function () {
     .pipe($.sass(config.styles.sassOptions))
     .pipe($.autoprefixer(config.styles.AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest(config.styles.build))
-    .pipe(filter('**/*.css'))
+    .pipe(filter('**/*.min.css'))
     .pipe(browserSync.reload({stream: true}));
 });

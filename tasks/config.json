@@ -8,7 +8,7 @@
   "styles": {
     "base": "assets/scss/",
     "tmp": ".tmp/css/",
-    "build": "public/assets/css/",
+    "build": "public/assets/angu/css/",
     "files": "assets/scss/*.{css,scss,sass}",
     "AUTOPREFIXER_BROWSERS": [
       "ie >= 10",
