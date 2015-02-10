@@ -76,51 +76,21 @@
                     <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit cumque rem harum dolor quibusdam voluptas.</p>-->
                 <!--</div>-->
             </div>
+
+            <button ng-show="{{ !vm.config.mockData }}" class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon</button>
         </div>
 
-        <section class="content--section">
+        <section class="content--section" ng-show="{{ vm.config.mockData }}" id="en_speakerlist">
             <h2 class="type--lead">All the speakers</h2>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6" ng-repeat="speaker in vm.speakers | filter:search">
                     <div class="persona small">
-                        <img src="assets/angu/img/speakers/speaker-smith.jpg" alt="">
-                        <h3><a href="#">Dave Smith</a></h3>
-                        <p>Software Engineer at HireVue</p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="persona small">
-                        <img src="assets/angu/img/speakers/speaker-dodds.jpg" alt="">
-                        <h3><a href="#">Kent C. Dodds</a></h3>
-                        <p>Software Engineer at HireVue</p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="persona small">
-                        <img src="assets/angu/img/speakers/speaker-tamplin.jpg" alt="">
-                        <h3><a href="#">James Tamplin</a></h3>
-                        <p>Software Engineer at HireVue</p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="persona small">
-                        <img src="assets/angu/img/speakers/speaker-wahlin.jpg" alt="">
-                        <h3><a href="#">Dan Wahlin</a></h3>
-                        <p>Software Engineer at HireVue</p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="persona small">
-                        <img src="assets/angu/img/speakers/speaker-van-weerdenburg.jpg" alt="">
-                        <h3><a href="#">Nick Van Weerdenburg</a></h3>
-                        <p>Software Engineer at HireVue</p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="persona small">
-                        <img src="assets/angu/img/speakers/speaker-gontovnikas.jpg" alt="">
-                        <h3><a href="#">Margin Gontovnikas</a></h3>
-                        <p>Software Engineer at HireVue</p>
+                        <img ng-src="{{speaker.imageUrl}}?format=jpg&amp;height=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2" alt="">
+                        <h3>{{speaker.firstName}} {{speaker.lastName}}</h3>
+                        <span speaker-social-icon-directive speaker='speaker'></span>
+                        <a ng-href="{{::speaker.webSite}}" target="_blank" title="{{speaker.firstName}} {{speaker.lastName}}'s website" class="icon-outside"></a>
+                        <p>{{::speaker.bio}}</p>
+                        <a href="#/speaker/{{::speaker.presenterUrl}}" class="btn btn-primary">More Details Including Sessions</a>
                     </div>
                 </div>
             </div>
@@ -131,10 +101,6 @@
         </div>
     </div>
 
-    <!--<div id="venue" class="slider nav--section" style="background-image: url({{baseDir}}/assets/img/bg-slider-1.jpg)">-->
-    <!--<div id="venue" class="slider nav--section"  ng-style="vm.backgroundslider1">-->
-    <!--ng-style comes from controller and can not eval expressions inside it.  this controller is homeController in common so don't want to use that.-->
-    <!--for now, hardwiring server path to this asset. (should think thru nested controllers here) -->
     <div id="venue" class="slider nav--section">
         <div class="slide--container">
             <ul rn-carousel slides="slides" class="slide--list">
@@ -147,7 +113,7 @@
                         </div>
                     </div>
                 </li>
-                <!--<li>-->
+                <!--<li>  PLEASE leave these commented out lines of code in so that we can easily add a carousel of pictures without refactoring. -Peter -->
                     <!--<div class="slide">-->
                         <!--<div class="slide--content">-->
                             <!--<p>Lorem ipsum dolor sit. <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi Bao Downtown</p>-->
@@ -192,17 +158,6 @@
         <div class="footer--top">
             <div class="container">
                 <div class="row">
-                    <!--<div class="col-md-7">-->
-                        <!--<div class="ping-tickets">-->
-                            <!--<label for="pingMeEmail2">Ping me when tickets go on sale:</label>-->
-                            <!--<div class="input-group">-->
-                                <!--<input type="text" class="form-control" id="pingMeEmail2" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">-->
-                                <!--<span class="input-group-btn">-->
-                                    <!--<button ng-click="$scope.anguPingMe" class="btn btn-primary" type="button">OK</button>-->
-                                <!--</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
                     <div class="col-md-12 footer--contact">
                         <a href="mailto:service2015@angularu.com">Contact us</a>
                         <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>

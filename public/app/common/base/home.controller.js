@@ -4,16 +4,14 @@
     angular.module('baseApp')
         .controller('HomeController', HomeController);
 
-    function HomeController(CONFIG,$rootScope,$state,faqs,sponsors) {
-
-        //debugger;
-        //speakerDataModelUrlService.setData(speakerUrlResourceService);
+    function HomeController(CONFIG,$rootScope,$state,faqs,sponsors,speakers,sessions) {
+        
         var vm = this;
         vm.config = CONFIG;
         vm.faqs = faqs.data;
         vm.sponsors = sponsors.data;
-
-        //debugger;
+        vm.speakers = speakers.data;
+        vm.sessions = sessions.data;
         vm.baseDirImage = CONFIG.baseDirImage;
 
         //debugger;
@@ -25,7 +23,7 @@
             $state.go('base.angupingmeonfirmation');
         };
     }
-    HomeController.$inject = ['CONFIG','$rootScope','$state','faqs','sponsors'];
+    HomeController.$inject = ['CONFIG','$rootScope','$state','faqs','sponsors','speakers','sessions'];
 
 
 }());
