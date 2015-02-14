@@ -6,7 +6,6 @@ module.exports = require('angular')
     require('angular-messages'),
     require('angular-ui-router'),
     require('angular-router-exception-handler'),
-    // require('pusher-angular'),
     // require('angular-carousel'),
     // require('ui.bootstrap'),
     // our modules
