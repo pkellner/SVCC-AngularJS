@@ -36,10 +36,10 @@ module.exports = function () {
 
     it('resolves the faqs and sponsors', angular.mock.inject(function ($resolve, $httpBackend, $state) {
       $httpBackend
-        .expectGET('/rest/faq/arrayonly')
+        .expectGET('/rest/faq/arrayonly/')
         .respond(200, [{}]);
       $httpBackend
-        .expectGET('/rest/sponsor/arrayonly')
+        .expectGET('/rest/sponsor/arrayonly/')
         .respond(200, [{}]);
       $resolve.resolve($state.get('base').resolve).then(function (resolves) {
         expect(resolves.faqs).to.have.length(1);

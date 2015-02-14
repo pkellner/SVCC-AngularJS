@@ -149,7 +149,7 @@ module.exports = function () {
 
     it('gets a single model using a specified suffix', angular.mock.inject(function ($httpBackend) {
       $httpBackend
-        .expectGET('/model/suffix')
+        .expectGET('/model/suffix/')
         .respond(200, {
           foo: 'bar'
         });
@@ -171,7 +171,7 @@ module.exports = function () {
 
     it('fetches and saves all models', angular.mock.inject(function () {
       $httpBackend
-        .expectGET('/model/arrayonly')
+        .expectGET('/model/arrayonly/')
         .respond(200, [{
           foo: 'bar'
         }]);
