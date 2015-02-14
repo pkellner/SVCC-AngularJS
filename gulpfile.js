@@ -1,18 +1,16 @@
 'use strict';
 
-var gulp       = require('gulp');
-var plugins    = require('gulp-load-plugins')();
-var karma      = require('karma-as-promised');
-var browserify = require('browserify');
-var watchify   = require('watchify');
-var source     = require('vinyl-source-stream');
-var server     = require('superstatic/lib/server');
-var template   = require('lodash.template');
-var open       = require('opn');
-var argv       = require('yargs').argv;
-var chalk      = require('chalk');
-var format     = require('util').format;
-var app        = argv.app;
+var gulp        = require('gulp');
+var plugins     = require('gulp-load-plugins')();
+var karma       = require('karma-as-promised');
+var browserify  = require('browserify');
+var watchify    = require('watchify');
+var source      = require('vinyl-source-stream');
+var argv        = require('yargs').argv;
+var chalk       = require('chalk');
+var format      = require('util').format;
+var browserSync = require('browser-sync');
+var app         = argv.app;
 
 if (!app) {
   app = 'angu';
@@ -98,21 +96,13 @@ gulp.task('watch', ['index', 'templates', 'styles'], function () {
   return bundle(b);
 });
 
-var host;
 gulp.task('server', function (done) {
-  server({
-    config: {
-      root: 'dist'
-    }
-  })
-  .listen(function (err) {
-    if (err) return done(err);
-    host = template('http://${address}:${port}')(this.address());
-    plugins.util.log('Server running at', host);
-    done();
-  });
+  browserSync({
+    server: {
+      baseDir: './dist'
+    },
+    files: './dist/**/*'
+  }, done);
 });
 
-gulp.task('serve', ['watch', 'server'], function (done) {
-  open(host, done);
-});
+gulp.task('serve', ['watch', 'server']);
