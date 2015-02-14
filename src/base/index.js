@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = require('angular')
-  .module('baseApp', [
+  .module('codeCampBase', [
     // 3rd party modules
     require('angular-messages'),
     require('angular-ui-router'),
