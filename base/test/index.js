@@ -12,6 +12,4 @@ describe('Code Camp Base', function () {
   describe('Mutli-Tenant Helpers', require('./multi'));
   describe('BaseModel', require('./model'));
 
-  describe('Main', require('./main'));
-
 });
