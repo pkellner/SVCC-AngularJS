@@ -71,7 +71,7 @@ gulp.task('index', function () {
     .pipe(gulp.dest('dist'));
 });
 
-paths.templates = format('./%s/src/**/*.html');
+paths.templates = format('./%s/src/**/*.html', app);
 gulp.task('templates', function () {
   return gulp.src(paths.templates)
     .pipe(gulp.dest('dist/app'));
