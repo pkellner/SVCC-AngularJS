@@ -1,0 +1,210 @@
+.nav {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: $gray-darker;
+  color: $white;
+  border-bottom: 1px solid $gray-lighter;
+  font-size: 17px;
+  font-weight: normal;
+  height: $nav-height-mobile;
+
+  @include respond-to(tablet) {
+    height: $nav-height;
+  }
+
+  &--list {
+    @extend %clearfix;
+    display: none;
+    float: left;
+    margin: 0;
+    font-weight: bold;
+    color: $white;
+
+    @include respond-to(tablet) {
+      display: block;
+    }
+
+    &.open {
+      display: block;
+      position: absolute;
+      top: $nav-height-mobile;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      background: $gray-darker;
+
+      li {
+        display: block;
+        width: 100%;
+        text-align: right;
+        float: none;
+
+        a {
+          padding: 5px 15px 5px 5px;
+        }
+      }
+    }
+
+    li {
+      float: left;
+
+      &.active,
+      &:hover {
+        a {
+          background: $brand-primary;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      padding: 16px 23px;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.56);
+      color: $white;
+    }
+  }
+
+  &--toggle {
+    float: right;
+    -webkit-appearance: none;
+    padding: 3px 0;
+    border: none;
+    background: none;
+
+    @include respond-to(tablet) {
+      display: none;
+    }
+
+    .icon-burger {
+      position: relative;
+      background: $white;
+      display: block;
+      margin: 15px 0;
+      height: 4px;
+      width: 25px;
+      border-radius: 5px;
+
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -9px;
+        height: 4px;
+        width: 25px;
+        border-radius: 5px;
+        background: $white;
+      }
+
+      &:after {
+        top: auto;
+        bottom: -9px;
+      }
+    }
+  }
+
+  &--user {
+    position: absolute;
+    display: block;
+    top: 7px;
+    right: 55px;
+    width: 32px;
+    float: right;
+    color: #fff;
+    text-transform: uppercase;
+
+    @include respond-to(tablet) {
+      right: 0;
+      top: 17px;
+      width: 115px;
+    }
+
+    &--toggle {
+      float: left;
+      display: block;
+      font-size: 20px;
+      border: none;
+      background: none;
+    }
+
+    &--name {
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      padding-top: 3px;
+      font-size: 12px;
+
+      @include respond-to(phone-tablet) {
+        display: none;
+      }
+    }
+
+    &--list {
+      display: none;
+
+      &.open {
+        top: 33px;
+        right: -55px;
+        left: auto;
+        width: 300px;
+        display: block;
+
+        @include respond-to(tablet) {
+          right: 0;
+          top: 41px;
+        }
+      }
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+
+  .ping-tickets {
+    text-align: left;
+    padding-right: 90px;
+
+    @include respond-to(tablet) {
+      text-align: right;
+      padding-right: 110px;
+    }
+
+    @include respond-to(desktop) {
+      padding-right: 120px;
+    }
+
+    .input-group {
+      @include respond-to(phone-tablet) {
+        max-width: 240px;
+        float: left;
+        clear: left;
+        margin-top: 4px;
+      }
+
+      @include respond-to(tablet) {
+        max-width: 220px;
+      }
+    }
+
+    .form-control,
+    .input-group .btn {
+      @include respond-to(phone-tablet) {
+        height: 30px;
+        padding: 3px 8px;
+      }
+    }
+
+    label {
+      font-size: 13px;
+      @include respond-to(phone-tablet) {
+        display: none;
+      }
+    }
+  }
+}

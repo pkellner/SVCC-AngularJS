@@ -1,0 +1,52 @@
+.ping-tickets {
+  text-align: right;
+
+  @include respond-to(tablet) {
+    display: block;
+    padding: 9px 0;
+  }
+
+  &--toggle {
+    float: left;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    padding-top: 7px;
+
+    @include respond-to(tablet) {
+      display: none;
+    }
+  }
+
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+  .input-group {
+    width: 100%;
+    max-width: 300px;
+    display: inline-table;
+    vertical-align: middle;
+
+    .btn {
+      font-size: 14px;
+      height: $input-height-base;
+      margin-bottom: 0;
+    }
+  }
+
+  .form-control {
+    font-size: 16px;
+    border-radius: 0;
+
+    @include placeholder {
+      color: $gray;
+      font-style: italic;
+      opacity: 1;
+    }
+  }
+}

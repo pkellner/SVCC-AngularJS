@@ -1,0 +1,42 @@
+.separator {
+  position: relative;
+  display: block;
+  margin: 24px 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -1px;
+    height: 2px;
+    background: $gray-lighter;
+    border-top: 1px solid $gray-lightest;
+    opacity: 0.5;
+  }
+
+  &--icon {
+    position: relative;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0 auto;
+    width: 52px;
+    height: 52px;
+    font-size: 30px;
+    color: $gray-lighter;
+    border: 1px solid $gray-lighter;
+    border-radius: 50%;
+    background: $body-bg;
+    box-shadow: 0 0 0 17px $body-bg;
+
+    &.icon-question {
+      font-family: 'Lato';
+      font-weight: normal;
+      font-size: 33px;
+    }
+  }
+}
