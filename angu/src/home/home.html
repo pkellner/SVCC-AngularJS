@@ -1,0 +1,225 @@
+<!-- <nav></nav>
+<div class="body-bag">
+  <section class="hero" style="">
+    <h1 class="hero--heading"><span class="brand--logo angular"></span>Angular U</h1>
+    <span ng-click="googleMap()" class="hero--extra">June 22 to 25 2015 - Hyatt Regency, San&nbsp;Francisco Airport</span>
+  </section>
+
+  <div id="home" class="container nav--section">
+    <div class="separator">
+      <span class="separator--icon icon-code"></span>
+    </div>
+
+    <div class="row row-centered">
+      <div class="col-md-9 col-centered">
+        <h2 class="type--lead">
+          <span class="type--color">A 4-day event</span> covering Angular,<br>
+          Web Components and ECMAScript 6
+        </h2>
+        <p class="text-center">Angular University gathers over 30 presenters for 4 days
+          packed with presentations and hands on workshops</p>
+          <!--<button class="btn btn-primary btn-lg center-block">Read More</button>-->
+          <div class="social center-block">
+            <h4>Follow us on: </h4>
+            <ul>
+              <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+              <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+              <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank"  target="_blank" class="icon-gplus"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="content--section">
+        <h2 class="type--lead">Keynote Presenters</h2>
+        <div class="persona--container">
+          <div class="persona">
+            <div class="persona--img">
+              <img ng-src="{{vm.baseDirImage}}assets/angu/img/igor-minar.png"  alt="Igor Minar">
+            </div>
+            <h3><a href="#">Igor Minar</a></h3>
+            <!--<h3>baseDirImage: {{vm.baseDirImage}}</h3>-->
+            <p>Igor is a software engineer at Google. He is the lead of the AngularJS, practitioner of
+              test driven development, open source enthusiast, hacker.</p>
+            </div>
+
+            <div class="persona">
+              <div class="persona--img">
+                <img ng-src="{{vm.baseDirImage}}assets/angu/img/brad-green.png" alt="Brad Green">
+              </div>
+              <h3><a href="#">Brad Green</a></h3>
+              <p>Brad is an engineering director at Google where he manages development of the AngularJS framework and
+                Google's internal sales productivity products.</p>
+              </div>
+
+              <div class="persona">
+                <div class="persona--img">
+                  <img ng-src="{{vm.baseDirImage}}assets/angu/img/misko-hevery.png" alt="Misko Hevery">
+                </div>
+                <h3><a href="#">Misko Hevery</a></h3>
+                <p>Creator of AngularJS, Works at Google and also known as the Father of AngularJS.</p>
+              </div>
+
+              <div class="persona">
+                <div class="persona--img">
+                  <img ng-src="{{vm.baseDirImage}}assets/angu/img/douglas-crockford.png" alt="Douglas Crockford">
+                </div>
+                <h3><a href="#">Douglas Crockford</a></h3>
+                <p>Douglas Crockford is an American computer programmer and entrepreneur who is best known for his ongoing involvement
+                  in the development of the JavaScript language and for having popularized the data format JSON.</p>
+                </div>
+
+                <!--<div class="persona">-->
+                <!--<div class="persona--img">-->
+                <!--<img src="{{baseDir}}/assets/img/speaker-leonidas.jpg" alt="Gerry Leonidas">-->
+                <!--</div>-->
+                <!--<h3><a href="#">Gerry Leonidas</a></h3>-->
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit cumque rem harum dolor quibusdam voluptas.</p>-->
+                <!--</div>-->
+              </div>
+
+              <button ng-show="{{ !vm.showPresenters }}" class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon</button>
+            </div>
+
+            <section class="content--section" ng-show="{{ vm.showPresenters }}" id="en_speakerlist">
+              <h2 class="type--lead">Partial Speaker List (more coming)</h2>
+              <div class="row">
+                <div class="col-sm-6" ng-repeat="speaker in vm.speakers | filter:search">
+                  <div class="persona small">
+                    <img ng-src="{{speaker.imageUrl}}?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2" alt="">
+                    <h3>{{speaker.firstName}} {{speaker.lastName}}</h3>
+                    <!--<span speaker-social-icon-directive speaker='speaker'></span>-->
+                    <!--<a ng-href="{{::speaker.webSite}}" target="_blank" title="{{speaker.firstName}} {{speaker.lastName}}'s website" class="icon-outside"></a>-->
+                    <p>{{::speaker.bioShort}}</p>
+                    <!--<a href="#/speaker/{{::speaker.presenterUrl}}" class="btn btn-primary">More Details Including Sessions</a>-->
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="separator">
+              <span ng-click="googleMap()" class="separator--icon icon-pin"></span>
+            </div>
+          </div>
+
+          <div id="venue" class="slider nav--section">
+            <div class="slide--container">
+              <ul rn-carousel slides="slides" class="slide--list">
+                <li>
+                  <div class="slide">
+                    <div class="slide--content">
+                      <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi or Bart ride from San&nbsp;Francisco Downtown.</p>
+
+                      <!--<button class="btn btn-primary btn-lg">More details</button>-->
+                    </div>
+                  </div>
+                </li>
+                <!--<li>  PLEASE leave these commented out lines of code in so that we can easily add a carousel of pictures without refactoring. -Peter -->
+                <!--<div class="slide">-->
+                <!--<div class="slide--content">-->
+                <!--<p>Lorem ipsum dolor sit. <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi Bao Downtown</p>-->
+                <!--<button class="btn btn-primary btn-lg">More details</button>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<div class="slide">-->
+                <!--<div class="slide--content">-->
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, obcaecati rerum provident. <span class="type--color">Hyatt Regency</span>, a short dis ntown</p>-->
+                <!--<button class="btn btn-primary btn-lg">More details</button>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--<div class="slide--controls">-->
+                <!--<span class="slide--control icon-arrow-left" ng-click="prevSlide()"></span>-->
+                <!--<span class="slide--control icon-arrow-right" ng-click="nextSlide()"></span>-->
+                <!--</div>-->
+              </ul>
+            </div>
+          </div>
+
+          <div id="faq" class="nav--section container">
+            <div class="separator">
+              <span class="separator--icon icon-question">?</span>
+            </div>
+
+            <div>
+              <h2 class="type--lead">FAQ</h2>
+
+              <ul class="list--block list--centered">
+                <li ng-repeat="faq in vm.faqs">
+                  <p><strong>Question:    {{ faq.question }}</strong></p>
+                  <p>Answer:     {{ faq.answer  }}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <div class="footer--top">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 footer--contact">
+                    <a href="mailto:service2015@angularu.com">Contact us</a>
+                    <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <div class="social alt">
+                      <h4>Follow us on:</h4>
+                      <ul>
+                        <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+                        <li><a href="https://www.facebook.com/angularu" target="_blank"  class="icon-fb"></a></li>
+                        <li><a href="https://plus.google.com/b/100446488804563546766/"  target="_blank"  class="icon-gplus"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sponsors">
+              <div class="container">
+                <section class="sponsor--box" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'}).length > 0"  >
+                  <h3 class="uppercase">Platinum</h3>
+                  <div class="sponsor--links">
+                    <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} ">
+                      <a href="{{ sponsor.webSite }}" target="_blank"
+                      class="sponsorDiv">
+                      <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+                      <img ng-src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+                      alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+                    </a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="sponsor--box" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Gold'}).length > 0">
+                <h3 class="uppercase">Gold</h3>
+                <div class="sponsor--links">
+                  <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} ">
+                    <a href="{{ sponsor.webSite }}" target="_blank"
+                    class="sponsorDiv">
+                    <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+                    <img ng-src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+                    alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <section class="sponsor--box" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Silver'}).length > 0">
+              <h3 class="uppercase">Silver</h3>
+              <div class="sponsor--links">
+                <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} ">
+
+                  <a href="{{ sponsor.webSite }}" target="_blank"
+                  class="sponsorDiv">
+                  <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+                  <img ng-src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+                  alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </footer>
+  </div>
+ -->

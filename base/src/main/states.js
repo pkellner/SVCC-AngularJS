@@ -1,11 +1,24 @@
 'use strict';
 
-module.exports = function ($stateProvider, $urlRouterProvider) {
-  $stateProvider.state('base', {
-    abstract: true,
-    url: '',
-    template: '<div ui-view id="base-view"></div>'
-  });
+module.exports = function ($stateProvider, campTemplate, $urlRouterProvider) {
+  $stateProvider
+    .state('layout', {
+      abstract: true,
+      template: '<div ui-view="header"></div><div ui-view></div><div ui-view="footer"></div>'
+    })
+    .state('base', {
+      abstract: true,
+      url: '',
+      parent: 'layout',
+      views: {
+        header: {
+          templateUrl: 'app/header.html'
+        },
+        footer: {
+          templateUrl: 'app/footer.html'
+        }
+      }
+    });
   $urlRouterProvider.when('', '/');
 };
-module.exports.$inject = ['$stateProvider', '$urlRouterProvider'];
+module.exports.$inject = ['$stateProvider', 'campTemplateProvider', '$urlRouterProvider'];
