@@ -84,10 +84,24 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('dist/styles'));
 });
 
-gulp.task('watch', ['index', 'templates', 'styles'], function () {
+paths.images = format('./%s/images/**/*', app);
+gulp.task('images', function () {
+  return gulp.src(paths.images)
+    .pipe(gulp.dest('dist/images'));
+});
+
+paths.fonts = format('./%s/fonts/**/*', app);
+gulp.task('fonts', function () {
+  return gulp.src(paths.fonts)
+    .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task('watch', ['index', 'templates', 'styles', 'images', 'fonts'], function () {
   gulp.watch(paths.index, ['index']);
   gulp.watch(paths.templates, ['templates']);
   gulp.watch(paths.styles, ['styles']);
+  gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.fonts, ['fonts']);
 
   var b = bundler(true, true);
   b.on('update', function () {
