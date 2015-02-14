@@ -2,6 +2,7 @@
 
 module.exports = require('angular')
   .module('angUApp', [
-    require('../../base')
+    require('../../base'),
+    require('./home')
   ])
   .name;
