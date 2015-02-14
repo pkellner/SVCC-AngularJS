@@ -2,10 +2,10 @@
 
 require('angular-mocks');
 
-var baseModule = require('angular').module('baseApp');
+var app = require('angular').module('angUApp');
 
-baseModule.requires.push('ngMockE2E')
-baseModule.run(provideMocks);
+app.requires.push('ngMockE2E')
+app.run(provideMocks);
 
 
 function provideMocks ($httpBackend) {
