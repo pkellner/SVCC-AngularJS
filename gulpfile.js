@@ -9,6 +9,15 @@ var source     = require('vinyl-source-stream');
 var server     = require('superstatic/lib/server');
 var template   = require('lodash.template');
 var open       = require('opn');
+var argv       = require('yargs').argv;
+var chalk      = require('chalk');
+var format     = require('util').format;
+var app        = argv.app;
+
+if (!app) {
+  app = 'angu';
+  plugins.util.log('no app defined with --app, defaulting to', chalk.magenta('angu'));
+}
 
 var paths = {};
 
@@ -39,10 +48,9 @@ function identity (input) {
 }
 
 function bundler (watch, mocks) {
-  var pkg = require('./package.json');
   var b = (watch ? watchify : identity)(browserify(watch && watchify.args))
-  b.add(pkg.main)
-  if (mocks) b.add('./mock');
+  b.add(format('./%s', app))
+  if (mocks) b.add(format('./%s/mock', app));
   return b;
 }
 
@@ -57,19 +65,19 @@ gulp.task('bundle', function () {
   return bundle(bundler());
 });
 
-paths.index = './src/index.html';
+paths.index = format('./%s/index.html', app);
 gulp.task('index', function () {
   return gulp.src(paths.index)
     .pipe(gulp.dest('dist'));
 });
 
-paths.templates = ['src/**/*.html', '!index.html'];
+paths.templates = [format('./%s/**/*.html'), format('!./%s/index.html')];
 gulp.task('templates', function () {
   return gulp.src(paths.templates)
     .pipe(gulp.dest('dist/app'));
 });
 
-paths.styles = 'styles/*.scss';
+paths.styles = format('./%s/styles/*.scss', app);
 gulp.task('styles', function () {
   return gulp.src(paths.styles)
     .pipe(plugins.sass({
