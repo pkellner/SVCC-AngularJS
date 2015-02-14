@@ -16,12 +16,12 @@ gulp.task('unit', function () {
   return karma.server.start({
     frameworks: ['browserify', 'mocha'],
     files: [
-      './test/unit/index.js'
+      './base/test/index.js'
     ],
     exclude: [
     ],
     preprocessors: {
-      './test/unit/index.js': 'browserify'
+      './base/test/index.js': 'browserify'
     },
     browserify: {
       transform: ['browserify-istanbul']
