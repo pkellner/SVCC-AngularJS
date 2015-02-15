@@ -11,6 +11,7 @@ exports = module.exports = function ($compile) {
     compile: function (element, attributes) {
       var item = element.find('li');
       item.attr('du-scrollspy', attributes.target);
+      item.attr('offset', 50);
       item.find('a').attr('du-smooth-scroll', attributes.target);
     }
   }
