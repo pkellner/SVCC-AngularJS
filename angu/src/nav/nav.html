@@ -2,17 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <button class="nav--toggle icon-nav"
-                ng-class="{'open': nav.isOpen}"
-                ng-click="nav.toggle()">
-          <span class="icon-burger"></span>
-        </button>
-        <ul class="nav--list"
-            ng-class="{'open': nav.isOpen}">
-            <li du-scrollspy="home"><a du-smooth-scroll href="#home">Home</a></li>
-            <li du-scrollspy="venue"><a du-smooth-scroll href="#venue">Venue</a></li>
-            <li du-scrollspy="faq"><a du-smooth-scroll href="#faq">FAQ</a></li>
-        </ul>
+        <nav-toggle></nav-toggle>
+        <page-nav open="nav.isOpen"></page-nav>
       </div>
       <div class="col-md-8">
         <form name="formnotify" ng-show="username.length == 0">

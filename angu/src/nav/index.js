@@ -3,4 +3,6 @@
 module.exports = require('angular')
   .module('angu.nav', [])
   .directive('mainNav', require('./nav'))
+  .directive('pageNav', require('./pages'))
+  .directive('navToggle', require('./toggle'))
   .name;
