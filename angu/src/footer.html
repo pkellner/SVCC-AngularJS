@@ -1,0 +1,77 @@
+<footer class="footer">
+  <div class="footer--top">
+    <div class="container">
+      <div class="row">
+        <!--<div class="col-md-7">-->
+        <!--<div class="ping-tickets">-->
+        <!--<label for="pingMeEmail2">Ping me when tickets go on sale:</label>-->
+        <!--<div class="input-group">-->
+        <!--<input type="text" class="form-control" id="pingMeEmail2" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">-->
+        <!--<span class="input-group-btn">-->
+        <!--<button ng-click="$scope.anguPingMe" class="btn btn-primary" type="button">OK</button>-->
+        <!--</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="col-md-12 footer--contact">
+          <a href="mailto:service2015@angularu.com">Contact us</a>
+          <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          <div class="social alt">
+            <h4>Follow us on:</h4>
+            <ul>
+              <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+              <li><a href="https://www.facebook.com/angularu" target="_blank"  class="icon-fb"></a></li>
+              <li><a href="https://plus.google.com/b/100446488804563546766/"  target="_blank"  class="icon-gplus"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sponsors">
+    <div class="container">
+      <section class="sponsor--box" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'}).length > 0"  >
+        <h3 class="uppercase">Platinum</h3>
+        <div class="sponsor--links">
+          <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} ">
+            <a href="{{ sponsor.webSite }}" target="_blank"
+            class="sponsorDiv">
+            <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+            <img ng-src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+            alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsor--box" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Gold'}).length > 0">
+      <h3 class="uppercase">Gold</h3>
+      <div class="sponsor--links">
+        <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} ">
+          <a href="{{ sponsor.webSite }}" target="_blank"
+          class="sponsorDiv">
+          <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+          <img ng-src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+          alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sponsor--box" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Silver'}).length > 0">
+    <h3 class="uppercase">Silver</h3>
+    <div class="sponsor--links">
+      <div class="sponsor--img" ng-repeat="sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} ">
+
+        <a href="{{ sponsor.webSite }}" target="_blank"
+        class="sponsorDiv">
+        <span ng-if="sponsor.showFeatured == true" class="feature"></span>
+        <img ng-src="{{ sponsor.imageUrl }}?format=png&amp;w=87&amp;h=87&amp;scale=both&amp;mode=pad"
+        alt="{{ sponsor.sponsorName }}" title="{{ sponsor.sponsorName }}">
+      </a>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+</footer>
