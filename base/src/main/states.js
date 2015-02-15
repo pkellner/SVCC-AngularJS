@@ -4,7 +4,9 @@ module.exports = function ($stateProvider, campTemplate, $urlRouterProvider) {
   $stateProvider
     .state('layout', {
       abstract: true,
-      template: '<div ui-view="header"></div><div ui-view></div><div ui-view="footer"></div>'
+      template: '<div ui-view="header"></div><div ui-view></div><div ui-view="footer"></div>',
+      controller: 'AppController',
+      controllerAs: 'app'
     })
     .state('base', {
       abstract: true,
