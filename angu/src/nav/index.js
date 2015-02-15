@@ -6,4 +6,5 @@ module.exports = require('angular')
   .directive('pageNav', require('./pages'))
   .directive('navToggle', require('./toggle'))
   .directive('homeNavItem', require('./pages/home-item'))
+  .directive('ticketSignup', require('./tickets'))
   .name;

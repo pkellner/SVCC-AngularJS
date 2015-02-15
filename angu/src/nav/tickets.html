@@ -1,0 +1,21 @@
+<form name="ticketForm" ng-hide="ticket.username" ng-submit="ticket.request(ticket.email)">
+  <div class="ping-tickets">
+    <label for="ticketEmail" class="hidden-sm uppercase">Notify me when tickets go on sale:</label>
+    <div class="input-group">
+      <input 
+        class="form-control" 
+        type="email"
+        id="ticketEmail"
+        ng-model="ticket.email"
+        name="ticketEmail"
+        required
+        placeholder="Email"
+      />
+      <span class="input-group-btn" ng-show="ticketForm.$valid">
+        <button class="btn btn-primary">
+          OK
+        </button>
+      </span>
+    </div>
+  </div>
+</form>
