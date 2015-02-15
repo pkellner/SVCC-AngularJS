@@ -5,4 +5,5 @@ module.exports = require('angular')
   .directive('mainNav', require('./nav'))
   .directive('pageNav', require('./pages'))
   .directive('navToggle', require('./toggle'))
+  .directive('homeNavItem', require('./pages/home-item'))
   .name;
