@@ -76,7 +76,6 @@
         <div class="slide">
           <div class="slide--content">
             <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi or Bart ride from San&nbsp;Francisco Downtown.</p>
-
             <!--<button class="btn btn-primary btn-lg">More details</button>-->
           </div>
         </div>
@@ -95,11 +94,10 @@
 
   <div>
     <h2 class="type--lead">FAQ</h2>
-
     <ul class="list--block list--centered">
-      <li ng-repeat="faq in vm.faqs">
-        <p><strong>Question:    {{ faq.question }}</strong></p>
-        <p>Answer:     {{ faq.answer  }}</p>
+      <li ng-repeat="faq in faqs">
+        <p><strong>Question: {{faq.question}}</strong></p>
+        <p>Answer: {{faq.answer}}</p>
       </li>
     </ul>
   </div>
