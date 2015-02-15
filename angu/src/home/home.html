@@ -26,38 +26,18 @@
   <div class="content--section">
     <h2 class="type--lead">Keynote Presenters</h2>
     <div class="persona--container">
-      <div class="persona">
-        <div class="persona--img">
-          <img ng-src="{{app.config.baseDirImage}}/images/igor-minar.png"  alt="Igor Minar">
-        </div>
-        <h3><a href="#">Igor Minar</a></h3>
-        <p>Igor is a software engineer at Google. He is the lead of the AngularJS, practitioner of
-          test driven development, open source enthusiast, hacker.</p>
-      </div>
-      <div class="persona">
-        <div class="persona--img">
-          <img ng-src="{{app.config.baseDirImage}}/images/brad-green.png" alt="Brad Green">
-        </div>
-        <h3><a href="#">Brad Green</a></h3>
-        <p>Brad is an engineering director at Google where he manages development of the AngularJS framework and
-          Google's internal sales productivity products.</p>
-      </div>
-      <div class="persona">
-        <div class="persona--img">
-          <img ng-src="{{app.config.baseDirImage}}/images/misko-hevery.png" alt="Misko Hevery">
-        </div>
-        <h3><a href="#">Misko Hevery</a></h3>
-        <p>Creator of AngularJS, Works at Google and also known as the Father of AngularJS.</p>
-      </div>
-
-      <div class="persona">
-        <div class="persona--img">
-          <img ng-src="{{app.config.baseDirImage}}/images/douglas-crockford.png" alt="Douglas Crockford">
-        </div>
-        <h3><a href="#">Douglas Crockford</a></h3>
-        <p>Douglas Crockford is an American computer programmer and entrepreneur who is best known for his ongoing involvement
-          in the development of the JavaScript language and for having popularized the data format JSON.</p>
-      </div>
+      <keynote-presenter name="Igor Minar" photo="/images/igor-minar.png">
+        Igor is a software engineer at Google. He is the lead of the AngularJS, practitioner of test driven development, open source enthusiast, hacker.
+      </keynote-presenter>
+      <keynote-presenter name="Brad Green" photo="/images/brad-green.png">
+        Brad is an engineering director at Google where he manages development of the AngularJS framework and Google's internal sales productivity products.
+      </keynote-presenter>
+      <keynote-presenter name="Misko Hevery" photo="/images/misko-hevery.png">
+        Creator of AngularJS, Works at Google and also known as the Father of AngularJS.
+      </keynote-presenter>
+      <keynote-presenter name="Douglas Crockford" photo="/images/douglas-crockford.png">
+        Douglas Crockford is an American computer programmer and entrepreneur who is best known for his ongoing involvement in the development of the JavaScript language and for having popularized the data format JSON.
+      </keynote-presenter>
     </div>
     <button class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon</button>
   </div>
