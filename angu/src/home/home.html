@@ -39,7 +39,7 @@
         Douglas Crockford is an American computer programmer and entrepreneur who is best known for his ongoing involvement in the development of the JavaScript language and for having popularized the data format JSON.
       </keynote-presenter>
     </div>
-    <button class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon</button>
+    <button ng-hide="home.showSpeakers" class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon</button>
   </div>
 </div>
 
@@ -61,8 +61,21 @@
   </div>
 </div>
 
-
-
+<section class="content--section" ng-show="home.showSpeakers" id="en_speakerlist">
+  <h2 class="type--lead">Partial Speaker List (more coming)</h2>
+  <div class="row">
+    <div class="col-sm-6" ng-repeat="speaker in speakers">
+      <div class="persona small">
+        <img ng-src="{{speaker.imageUrl}}?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2" alt="">
+        <h3>{{speaker.firstName}} {{speaker.lastName}}</h3>
+        <!--<span speaker-social-icon-directive speaker='speaker'></span>-->
+        <!--<a ng-href="{{::speaker.webSite}}" target="_blank" title="{{speaker.firstName}} {{speaker.lastName}}'s website" class="icon-outside"></a>-->
+        <p>{{::speaker.bioShort}}</p>
+        <!--<a href="#/speaker/{{::speaker.presenterUrl}}" class="btn btn-primary">More Details Including Sessions</a>-->
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="faq" class="nav--section container">
   <div class="separator">

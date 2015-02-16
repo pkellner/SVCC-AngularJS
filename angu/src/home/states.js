@@ -5,11 +5,13 @@ exports = module.exports = function ($stateProvider) {
     url: '/',
     parent: 'base',
     resolve: {
-      faqs: getFaqs
+      faqs: getFaqs,
+      speakers: getSpeakers
     },
     views: {
       '@layout': {
         controller: 'HomeController',
+        controllerAs: 'home',
         templateUrl: 'app/home/home.html'
       }
 
@@ -22,3 +24,8 @@ function getFaqs (Faqs) {
   return Faqs.fetchAll();
 }
 getFaqs.$inject = ['Faqs'];
+
+function getSpeakers (Speakers) {
+  return Speakers.fetchAll();
+}
+getSpeakers.$inject = ['Speakers'];

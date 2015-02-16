@@ -15,7 +15,7 @@ module.exports = require('angular')
     // require('./account'),
     require('./faqs'),
     // require('./sessions'),
-    // require('./speakers'),
+    require('./speakers'),
     require('./sponsors')
   ])
   .factory('Model', require('./model'))
