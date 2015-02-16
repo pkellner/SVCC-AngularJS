@@ -96,6 +96,8 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('dist/fonts'));
 });
 
+gulp.task('build', ['index', 'templates', 'styles', 'images', 'fonts', 'bundle']);
+
 gulp.task('watch', ['index', 'templates', 'styles', 'images', 'fonts'], function () {
   gulp.watch(paths.index, ['index']);
   gulp.watch(paths.templates, ['templates']);
