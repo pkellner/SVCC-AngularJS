@@ -1,0 +1,63 @@
+// Core Bootstrap mixins, variables and Overrides - modified variables
+@import "setup/bootstrap-core";
+
+@import "setup/variables";
+@import "setup/mixins";
+
+@font-face {
+    font-family: 'sosa';
+    src: url($assets-path + 'fonts/sosa/sosa-regular-webfont.eot');
+    src: url($assets-path + 'fonts/sosa/sosa-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url($assets-path + 'fonts/sosa/sosa-regular-webfont.ttf') format('truetype'),
+         url($assets-path + 'fonts/sosa/sosa-regular-webfont.svg#sosa') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  @include sosa;
+}
+
+.icon-code:before {
+  content: "D";
+}
+
+.icon-pin:before {
+  content: "o";
+}
+
+.icon-fb:before {
+  content: "v";
+}
+
+.icon-twitter:before {
+  content: "t";
+}
+
+.icon-gplus:before {
+  content: "Ć";
+}
+
+.icon-arrow-left:before {
+  content: "‹";
+}
+
+.icon-arrow-right:before {
+  content: "›";
+}
+
+.icon-mail:before {
+  content: "É";
+}
+
+.icon-user:before {
+  content: "Ü";
+}
+
+.icon-linkedin:before {
+  content: "ļ";
+}
+
+.icon-outside:before {
+  content: "p";
+}
