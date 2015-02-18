@@ -5,6 +5,8 @@ module.exports = require('angular')
     require('../../base'),
     require('angular-scroll'),
     require('./nav'),
-    require('./home')
+    require('./home'),
+    require('./speakers'),
+    require('./sessions')
   ])
   .name;
