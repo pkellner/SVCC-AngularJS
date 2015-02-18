@@ -5,3 +5,9 @@ module.exports = require('angular')
   .controller('SessionDetailsController', require('./controller'))
   .config(require('./states'))
   .name;
+
+module.exports = require('angular')
+  .module('sessions', [])
+  .controller('SessionsController', require('./controller'))
+  .config(require('./states'))
+  .name;
