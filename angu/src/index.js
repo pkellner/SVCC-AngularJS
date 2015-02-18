@@ -6,6 +6,7 @@ module.exports = require('angular')
     require('angular-scroll'),
     require('./nav'),
     require('./home'),
-    require('./speakers')
+    require('./speakers'),
+    require('./sessions')
   ])
   .name;

@@ -29,5 +29,10 @@
   .color {
     font-weight: normal;
     color: $brand-primary;
+
+    & > span {
+      color: $text-color;
+      font-weight: lighter;
+    }
   }
 }

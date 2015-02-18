@@ -1,108 +1,42 @@
-<h1 class="title">Session Details</h1>
-
-<h2  class="sessionTitle hTitle ProfessionalSession ">{{::vm.session.title}}
-    &nbsp;
-</h2>
-<div id="SessionID" class="sessionDetailsWrap">
-    <div class="sessionMeta" >
-        <dl class="metaHorizontal">
-            <dt class="horseIcon metaIcon">Level :</dt>
-                <dd>{{::vm.session.$levelName() }}</dd>
-            <dt class="timeIcon metaIcon">Date :</dt>
-            <dd>{{ ::vm.session.sessionTimeDateTime | date:'MMM-dd h:mm a' }}</dd>
-            <dt class="mapLocationIcon metaIcon">Room :</dt>
-            <dd>{{::vm.session.roomNumber}}</dd>
-        </dl>
-
-
-        <div class="speakerAction">
-
-
-            <!-- / selectOptionsWrap -->
-            <div class="narrow">
-                <dl class="metaVertical">
-                    <dt><span>Interested : {{::vm.session.interestCount}}</span><span></span> Registered : {{::vm.session.planAheadCount}}</dt>
-                </dl>
-            </div>
-
-            <!-- metaInfoBox -->
-
-        </div>
-        <!-- / speakerAction -->
-        <div class="tagsBox">
-            <div class="tagIcon metaIcon">Tag(s) : </div>
-            <div class="medium sessionTags">
-                {{::vm.session.sessionTagsCsvAll}}
-                <!--<ul class="metaVertical"  ng-repeat="session.sessionTags" >-->
-                <!--<li><a href="/Session/2014/Tag/architecture">Architecture</a>, </li>-->
-                <!--</ul>-->
-            </div>
-        </div>
+<div id="session-details" class="container">
+    <div class="separator">
+      <span class="separator--icon icon-search"></span>
     </div>
-    <!-- / metaInfoBox -->
+    <h2 class="type--lead">Session details</h2>
 
-    <!--<div class="socialButtons">-->
-    <!--<ul>-->
-    <!--<li class="socialTitle">Share this session :</li>-->
-    <!--&lt;!&ndash; <li><a href="#" class="facebook">Facebook</a></li> &ndash;&gt;-->
-    <!--<li><a href="http://twitter.com/home?status=@sv_code_camp+10/11/2014+9:45+AM++Paul+Fryer++%23svcc++http://www.SiliconValley-CodeCamp.com//Session/2014/net-distributed-caching" class="twitter">Twitter</a></li>-->
-    <!--&lt;!&ndash; <li><a href="#" class="gplus">Google+</a></li> &ndash;&gt;-->
-    <!--&lt;!&ndash; <li><a href="#" class="linkedin">LinkedIn</a></li> &ndash;&gt;-->
-    <!--</ul>-->
-    <!--</div>-->
-
-    <!-- / buttonsBox -->
-
-    <h2 class="session-subh">Presentation</h2>
-
-    <div class="sessionDescription" >
-
-        <p>{{::vm.session.description}}</p>
-
-        <div ng-hide="(vm.session.sessionsMaterialUrl.length == 0)">
-            <a ng-href="{{::vm.session.sessionsMaterialUrl}}" target="_blank" class="orangeIcon sessionMaterial">Download the speaker slides and material</a>
+    <section class="session-details">
+        <div class="heading">
+            <h3 class="color">Building platforms with AngularJS <span>by Matt Bolton</span></h3>
         </div>
-    </div>
-    <!-- / detailDescription -->
+        <div class="speaker-details--desc">
+            <span class="speaker-details--date">Tuesday, June 23 - 10 AM</span> <span class="label label-default">angular as we know it</span>
+        </div>
 
-</div>
-<!-- / sessionWrap -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora <b>Veritatis, recusandae, voluptates</b>. incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
 
-<h2 class="session-subh">The Speakers</h2>
-<div class="sessionSpeakers">
-    <div class="listingWrap" ng-repeat="presenter in vm.session.speakersList">
-        <section class="listingBox speakerDetails">
-            <div class="listingMedia">
-                <img alt="img" width="135" height="135" src="{{::presenter.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
-            </div>
-            <div speaker-social-icon-directive speaker='presenter' >
-            </div>
-            <div class="listingInfo">
-                <header class="listingHeader">
-                    <a ng-href="#/speaker/{{::presenter.speakerLocalUrl | fixPresenterUrl}}"> <h3 class="larger">{{::presenter.userFirstName}} {{::presenter.userLastName}}</h3></a>
-                </header>
+        <div class="social center-block colored">
+            <h3>Share: </h3>
+            <ul>
+              <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+              <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+              <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank"  target="_blank" class="icon-gplus"></a></li>
+            </ul>
+        </div>
+    </section>
 
-                <div class="listingDesc">
-                    {{::presenter.bio}}
+    <div class="speaker-details row">
+        <div class="speaker-details--image col-sm-3">
+            <img ng-src="/images/douglas-crockford.png" alt="Douglas Crockford" src="/images/douglas-crockford.png">
+        </div>
+        <div class="speaker-details--info col-sm-9">
+            <section>
+                <div class="heading">
+                    <h3 class="color">Matt Bolton</h3>
                 </div>
-                <a href="/Presenter/2014/Paul-Fryer-16189/Feedback" class="orangeIcon speakerContact">Email the speaker</a>
-            </div>
-        </section>
+                <h4 class="speaker-details--desc italic">Digital Transformation Practice Manager and Senior Manager Consultant at Sogeti</h4>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. <a href="#" class="more">Read more</a></p>
+            </section>
+        </div>
     </div>
-    <!-- / listingWrap -->
 </div>
-<ul id="selectOptionsWrap" class="selectOptionsWrap">
-    <li class="option" id="NotIntrested">
-        Not Interested
-    </li>
-    <li class="option interested" id="Intrested">
-        Interested
-    </li>
-    <li class="option attending" id="Attending">
-        Attending
-    </li>
-</ul>
-
-
-
-
