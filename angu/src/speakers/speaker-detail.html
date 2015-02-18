@@ -1,122 +1,49 @@
-<!--suppress ALL -->
-<div id="content" class="content">
-
-
-    <h1 class="title">SPEAKER DETAILS</h1>
-
-
-    <div class="listingWrap">
-        <section class="listingBox speakerDetails noBorder">
-            <div class="listingMedia">
-                <img alt="img" width="135" height="135"
-                     src="{{vm.speaker.imageUrl}}?format=jpg&amp;width=135&amp;Height=135&amp;scale=both&amp;mode=pad&amp;Bgcolor=F6F4F6">
-            </div>
-
-            <div speaker-social-icon-directive speaker='vm.speaker' >
-            </div>
-
-            <div class="listingInfo">
-                <header class="listingHeader">
-                    <h3><h3>{{vm.speaker.firstName}} {{vm.speaker.lastName}}</h3></h3>
-                    <a ng-href="{{vm.speaker.webSite}}" target="_blank" class="speakerUrl">{{ vm.speaker.webSite}}</a>
-                </header>
-
-                <div class="listingDesc">
-                    {{vm.speaker.bio}}
-                </div>
-                <a href="#/speaker/{{vm.speaker.id}}/feedback" class="orangeIcon speakerContact">Post Message to Speaker</a>
-            </div>
-        </section>
+<div id="speaker-details" class="container">
+    <div class="separator">
+      <span class="separator--icon icon-search"></span>
     </div>
-    <h2 class="smainTitle">Sessions</h2>
+    <h2 class="type--lead">Speaker details</h2>
 
-    <div ng-repeat="session in vm.speaker.sessions">
-        <section class="sessionBox">
-            <h2 id="session_1435" class="hTitle"><a href="#/sessions/{{session.id}}">
-                {{session.title}}</a></h2>
-
-            <div class="sessionDetailsWrap">
-                <div class="sessionMeta" id="sessionDetails_1435">
-
-                    <dl class="metaHorizontal">
-                        <dt class="horseIcon metaIcon">Level :</dt>
-                        <dd>{{session.$levelName() }}</dd>
-                        <dt class="timeIcon metaIcon">Date :</dt>
-                        <dd>{{session.sessionTimeDateTime | date:'MMM-dd h:mm a' }}</dd>
-                        <dt class="mapLocationIcon metaIcon">Room :</dt>
-                        <dd>{{session.room}}</dd>
-                    </dl>
-
-
-                    <div class="speakerAction">
-
-
-                        <!--<a href="/Session/2014/intro-to-relational-database-design-entity-relationship-diagrams/Eval" -->
-                        <!--class="button orange evaluate">Evaluate This Session</a>-->
-                        <!--<div class="metaTitle">Your Status :</div>-->
-                        <!--<div class="interestSelectBtn " id="interestSelectBtn_1435">-->
-                        <!--<div class="button gray alt more select">-->
-                        <!--<span class="label">Not Interested</span>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!-- / interestSelectBtn -->
-
-
-                        <!-- / selectOptionsWrap -->
-                        <div class="narrow">
-                            <dl class="metaVertical">
-                                <dt><span id="Interestcounter_1435">Interested : (188)</span> - <span
-                                        id="WillAttendcounter_1435"></span>Registered : (35)
-                                </dt>
-                            </dl>
-                        </div>
-
-                    </div>
-                    <!-- / speakerAction -->
-
-                    <div class="tagsBox">
-                        <div class="tagIcon metaIcon">Tag(s) :</div>
-                        <div class="medium sessionTags">
-                            {{session.tagsResultCsv}}
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- / metaInfoBox -->
-
-                <br/>
-
-                <!--<div class="sessionSpeakers" ng-repeat="speakerinsession in speaker.sessions.speakers">-->
-                    <!--<p>-->
-                        <!--Speakers:-->
-                        <!--<a href="#/speaker/{{speakerinsession.id}}" >{{speakerinsession.firstName}}-->
-                            <!--{{ speakerinsession.lastName}}</a></p>-->
-                <!--</div>-->
-                <!-- / sessionSpeakers -->
-
-                <div class="sessionDescription" id="sessionDescription_1435">
-                    <p>{{session.description}}</p>
-                </div>
-                <!-- / detailDescription -->
-
-                <a class="button gray alt pointer loadLocal"
-                   href="#/session/{{::session.sessionUrl}}">Details</a>
+    <div class="speaker-details row">
+        <div class="speaker-details--image col-sm-3">
+            <img ng-src="/images/douglas-crockford.png" alt="Douglas Crockford" src="/images/douglas-crockford.png">
+            <div class="social center-block colored">
+                <ul>
+                    <li><a href="#" target="_blank" class="icon-twitter"></a></li>
+                    <li><a href="#" target="_blank"  target="_blank" class="icon-gplus"></a></li>
+                </ul>
             </div>
-        </section>
+
+        </div>
+        <div class="speaker-details--info col-sm-9">
+            <section>
+                <div class="heading">
+                    <h3 class="color">Matt Bolton</h3>
+                </div>
+                <h4 class="speaker-details--desc italic">Digital Transformation Practice Manager and Senior Manager Consultant at Sogeti</h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora <b>Veritatis, recusandae, voluptates</b>. incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+            </section>
+
+            <section>
+                <div class="heading">
+                    <h3 class="color">Sessions</h3>
+                </div>
+                <ul class="list--squared">
+                    <li>
+                        <h4>Building platforms with AngularJS</h4>
+                        <div><span class="speaker-details--info--date">Tuesday, June 23 - 10 AM</span> <span class="label label-default">angular as we know it</span></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, in, numquam corrupti nemo ea nam quod optio doloremque. Consectetur, adipisci velit. <a href="#" class="more">More</a></p>
+                    </li>
+                    <li>
+                        <h4>Run digest cycle with web worker</h4>
+                        <div><span class="speaker-details--info--date">Wednesday, June 24 - 2 PM</span> <span class="label label-default">angular as we know it</span></div>
+                        <p>Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
     </div>
-
-    <!--<ul id="selectOptionsWrap" class="selectOptionsWrap">-->
-    <!--<li class="option" id="NotIntrested">-->
-    <!--Not Interested-->
-    <!--</li>-->
-    <!--<li class="option interested" id="Intrested">-->
-    <!--Interested-->
-    <!--</li>-->
-    <!--<li class="option attending" id="Attending">-->
-    <!--Attending-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!-- / selectOptionsWrap -->
-
 </div>
