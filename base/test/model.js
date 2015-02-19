@@ -101,35 +101,29 @@ module.exports = function () {
 
   describe('#sort', function () {
 
-    function inverseSort (a, b) {
-      a = a.v;
-      b = b.v;
-      if (a < b) {
-        return 1;
-      }
-      else if (a > b) {
-        return -1;
-      }
-      else {
-        return 0;
-      }
-    }
-
     it('is a noop with no comparator', function () {
       Model.sort();
     });
 
-    it('can sort by a static comparator', function () {
-      Model.comparator = inverseSort;
-      Model.set([{v: 1}, {v: 2}, {v: 3}]);
-      Model.sort();
-      expect(Model.all()).to.deep.equal([{v: 3}, {v: 2}, {v: 1}]);
+    it('can sort by a property', function () {
+      Model.comparator = 'v';
+      Model.set([{v: 'c'}, {v: 'b'}, {v: 'a'}]);
+      expect(Model.all()).to.deep.equal([{v: 'a'}, {v: 'b'}, {v: 'c'}]);
     });
 
-    it('can sort by a dynamic comparator', function () {
-      Model.set([{v: 1}, {v: 2}, {v: 3}]);
-      Model.sort(inverseSort);
+    it('can sort by a value returned by a function', function () {
+      Model.comparator = function (el) {
+        return el.v
+      };
+      Model.set([{v: 3}, {v: 2}, {v: 1}]);
+      expect(Model.all()).to.deep.equal([{v: 1}, {v: 2}, {v: 3}]);
+    });
+
+    it('can receive a comparator', function () {
+      Model.set([{v: 3}, {v: 2}, {v: 1}]);
       expect(Model.all()).to.deep.equal([{v: 3}, {v: 2}, {v: 1}]);
+      Model.sort('v');
+      expect(Model.all()).to.deep.equal([{v: 1}, {v: 2}, {v: 3}]);
     });
 
   });

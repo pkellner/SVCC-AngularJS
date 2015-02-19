@@ -1,6 +1,7 @@
 'use strict';
 
 var angular = require('angular');
+var sortOn  = require('sort-on');
 
 exports = module.exports = function ($http) {
 
@@ -20,6 +21,7 @@ exports = module.exports = function ($http) {
 
   BaseModel.set = function (data) {
     this.$$data = data.map(this.forge, this);
+    this.sort();
     return this;
   };
 
@@ -36,8 +38,12 @@ exports = module.exports = function ($http) {
   };
 
   BaseModel.sort = function (comparator) {
-    if (typeof comparator !== 'function') comparator = this.comparator;
-    if (comparator) this.$$data.sort(comparator);
+    if (typeof comparator !== 'undefined') {
+      this.$$data = sortOn(this.$$data, comparator);
+    }
+    else if (this.comparator) {
+      this.$$data = sortOn(this.$$data, this.comparator);
+    }
     return this;
   };
 
