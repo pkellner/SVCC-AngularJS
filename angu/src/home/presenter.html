@@ -1,9 +1,9 @@
-<div class="persona">
-  <div class="persona--img">
-    <img ng-src="{{presenter.imageUrl()}}" alt="{{presenter.name}}">
+<div class="persona" ng-class="{small: !presenter.isKeynote}">
+  <div ng-class="{'persona--img': presenter.isKeynote}">
+    <img ng-src="{{presenter.image}}" alt="{{presenter.name}}">
   </div>
   <h3><a href="#">{{presenter.name}}</a></h3>
   <p>
-    <ng-transclude></ng-transclude>
+    {{presenter.bio}}
   </p>
 </div>

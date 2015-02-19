@@ -10,7 +10,8 @@ exports = module.exports = function (Model, $q) {
     },
     fetchByUrl: function (url) {
       return $q.when(this.findByUrl(url) || this.fetchOne(url));
-    }
+    },
+    comparator: 'speakerSequence'
   });
 };
 exports.$inject = ['Model', '$q'];
