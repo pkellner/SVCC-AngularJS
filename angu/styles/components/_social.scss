@@ -21,11 +21,25 @@
       }
     }
 
-    h4 {
+    h3, h4 {
       color: $white;
       font-size: 16px;
       font-weight: normal;
       font-style: normal;
+    }
+  }
+
+  &.colored {
+    .icon-twitter {
+      color: #6caddf;
+    }
+
+    .icon-gplus {
+      color: #dd1b16;
+    }
+
+    .icon-fb {
+      color: #3d5a99;
     }
   }
 
@@ -60,12 +74,16 @@
     }
   }
 
-  h4 {
+  h3, h4 {
     display: inline-block;
-    margin: 10px 15px 10px 0;
-    font-size: 20px;
+    vertical-align: middle;
+    margin: 0 15px 0 0;
     font-style: italic;
     font-weight: lighter;
+  }
+
+  h4 {
+    font-size: 20px
   }
 
   &--buttons {
