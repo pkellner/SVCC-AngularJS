@@ -70,10 +70,13 @@
 
   &--horizontal {
     margin: 15px 0;
+
     li {
-      display: inline-block;
-      margin-left: 10px;
-      margin-right: 10px;
+      @include respond-to(tablet) {
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
     }
   }
 }
