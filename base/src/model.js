@@ -35,6 +35,12 @@ exports = module.exports = function ($http) {
     }
   };
 
+  BaseModel.sort = function (comparator) {
+    if (typeof comparator !== 'function') comparator = this.comparator;
+    if (comparator) this.$$data.sort(comparator);
+    return this;
+  };
+
   BaseModel.extend = function (proto, ctor) {
     var parent = this;
     function Model () {
