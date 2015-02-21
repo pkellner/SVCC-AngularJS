@@ -128,48 +128,11 @@ module.exports = function () {
 
   });
 
-  describe('#extend', function () {
+  describe('#init', function () {
 
-    it('calls through to the parent', function () {
-      var Child = Model.extend();
-      expect(new Child({
-        foo: 'bar'
-      }))
-      .to.contain({
-        foo: 'bar'
-      });
-    });
-
-    it('copies parent ctor properties', function () {
-      expect(Model.extend()).to.itself.respondTo('extend');
-    });
-
-    it('can add ctor properties', function () {
-      expect(Model.extend({}, {
-        newMethod: angular.noop
-      }))
-      .to.itself.respondTo('newMethod');
-    });
-
-    it('sets up a new internal data array', function () {
-      expect(Model.all()).to.not.equal(Model.extend().all());
-    });
-
-    it('copies parent proto properties', function () {
-      Model.prototype.method = angular.noop;
-      expect(Model.extend()).to.respondTo('method');
-    });
-
-    it('can add new proto properties', function () {
-      expect(Model.extend({
-        method: angular.noop
-      }))
-      .to.respondTo('method');
-    });
-
-    it('sets the correct constructor', function () {
-      var Child = Model.extend();
-      expect(new Child().constructor).to.equal(Child);
+    it('creates an empty data cache', function () {
+      Model.init();
+      expect(Model.all()).to.have.length(0);
     });
 
   });
