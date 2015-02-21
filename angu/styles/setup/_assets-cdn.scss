@@ -1,14 +1,14 @@
 $cdn: '//d1n4bbuvjcnilu.cloudfront.net/';
 
 // assets path
-$assets-path: $cdn + 'content/ng/assets/';
+$assets-path: $cdn + 'content/ng/assets/angu/';
 $angu-assets-path: $assets-path + 'angu/';
 $svcc-assets-path: $assets-path + 'svcc/';
 
 // images path
-$img-path:  $assets-path + 'images/';
-$angu-img-path: $angu-assets-path + 'images/';
-$svcc-img-path: $svcc-assets-path + 'images/';
+$img-path:  $assets-path + 'img/';
+$angu-img-path: $angu-assets-path + 'img/';
+$svcc-img-path: $svcc-assets-path + 'img/';
 
 
 $social-buttons-path: $img-path + 'social-buttons/';
