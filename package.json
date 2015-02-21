@@ -12,9 +12,11 @@
     "angular-router-exception-handler": "~1.0.1",
     "angular-scroll": "~0.6.4",
     "angular-ui-router": "~0.2.13",
+    "babel": "~4.4.3",
     "babelify": "~5.0.3",
     "browserify-istanbul": "~0.1.4",
     "es5-shim": "~4.1.0",
+    "escape-string-regexp": "~1.0.2",
     "pusher-angular": "~0.1.4",
     "qs": "~2.3.3",
     "sort-on": "bendrucker/sort-on"

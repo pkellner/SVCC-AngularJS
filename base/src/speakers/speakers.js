@@ -13,6 +13,6 @@ exports = module.exports = function (Model, $q) {
   }
   Speaker.url = '/rest/presenter';
   Speaker.comparator = 'speakerSequence';
-  return Speaker;
+  return Speaker.init();
 };
 exports.$inject = ['Model', '$q'];
