@@ -1,2 +1,3 @@
-$img-path: '../images/';
+$assets-path: '../';
+$img-path: $assets-path + 'images/';
 $social-buttons-path: $img-path + 'social-buttons/';
