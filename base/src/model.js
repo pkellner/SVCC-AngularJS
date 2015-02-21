@@ -13,6 +13,7 @@ function factory ($http) {
     }
     static init () {
       this.$$data = [];
+      return this;
     }
     static all () {
       return this.$$data;

@@ -1,17 +1,18 @@
 'use strict';
 
 exports = module.exports = function (Model, $q) {
-  return Model.extend({}, {
-    url: '/rest/presenter',
-    findByUrl: function (url) {
+  class Speaker extends Model {
+    static findByUrl (url) {
       return this.find(function (speaker) {
         return speaker.presenterUrl === url;
       });
-    },
-    fetchByUrl: function (url) {
+    }
+    static fetchByUrl (url) {
       return $q.when(this.findByUrl(url) || this.fetchOne(url));
-    },
-    comparator: 'speakerSequence'
-  });
+    }
+  }
+  Speaker.url = '/rest/presenter';
+  Speaker.comparator = 'speakerSequence';
+  return Speaker;
 };
 exports.$inject = ['Model', '$q'];
