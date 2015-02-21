@@ -31,7 +31,7 @@ gulp.task('unit', function () {
       './base/test/index.js': 'browserify'
     },
     browserify: {
-      transform: ['browserify-istanbul']
+      debug: true
     },
     reporters: ['progress', 'coverage'],
     port: 9876,
