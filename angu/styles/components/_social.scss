@@ -29,6 +29,20 @@
     }
   }
 
+  &.colored {
+    .icon-twitter {
+      color: #6caddf;
+    }
+
+    .icon-gplus {
+      color: #dd1b16;
+    }
+
+    .icon-fb {
+      color: #1066d0;
+    }
+  }
+
   ul {
     @extend %clearfix;
     display: inline-block;
