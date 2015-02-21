@@ -1,8 +1,8 @@
 'use strict';
 
 exports = module.exports = function (Model) {
-  return Model.extend({}, {
-    url: '/rest/sponsor'
-  });
+  class Sponsor extends Model {};
+  Sponsor.url = '/rest/sponsor';
+  return Sponsor.init();
 };
 exports.$inject = ['Model'];
