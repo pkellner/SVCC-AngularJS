@@ -8,10 +8,7 @@
     <div class="speaker-details--image col-sm-3">
       <img ng-src="{{details.speaker.imageUrl}}" alt="{{details.speaker.name}}">
       <div class="social center-block colored">
-        <ul>
-          <li><a href="#" target="_blank" class="icon-twitter"></a></li>
-          <li><a href="#" target="_blank"  target="_blank" class="icon-gplus"></a></li>
-        </ul>
+        <speaker-social-icons speaker="details.speaker"></speaker-social-icons>
       </div>
 
     </div>
