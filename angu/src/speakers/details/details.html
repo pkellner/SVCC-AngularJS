@@ -6,7 +6,7 @@
 
   <div class="speaker-details row">
     <div class="speaker-details--image col-sm-3">
-      <img ng-src="/images/douglas-crockford.png" alt="Douglas Crockford" src="/images/douglas-crockford.png">
+      <img ng-src="{{details.speaker.imageUrl}}" alt="{{details.speaker.name}}">
       <div class="social center-block colored">
         <ul>
           <li><a href="#" target="_blank" class="icon-twitter"></a></li>
@@ -18,12 +18,10 @@
     <div class="speaker-details--info col-sm-9">
       <section>
         <div class="heading">
-          <h3 class="color">Matt Bolton</h3>
+          <h3 class="color">{{details.speaker.name}}</h3>
         </div>
-        <h4 class="speaker-details--desc italic">Digital Transformation Practice Manager and Senior Manager Consultant at Sogeti</h4>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora <b>Veritatis, recusandae, voluptates</b>. incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+        <h4 class="speaker-details--desc italic">{{details.speaker.bioShort}}</h4>
+        <p>{{details.speaker.bio}}</p>
       </section>
 
       <section>
