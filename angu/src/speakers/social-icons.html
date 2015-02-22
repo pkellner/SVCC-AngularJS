@@ -1,0 +1,5 @@
+<ul>
+  <li ng-repeat="network in social.networks" ng-if="social.has(network)">
+    <a ng-href="{{social.url(network)}}" target="_blank" class="icon-{{network.class}}"></a>
+  </li>
+</ul>

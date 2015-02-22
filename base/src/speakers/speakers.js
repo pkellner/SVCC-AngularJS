@@ -13,6 +13,11 @@ exports = module.exports = function (Model, $q) {
   }
   Speaker.url = '/rest/presenter';
   Speaker.comparator = 'speakerSequence';
-  return Speaker;
+  Object.defineProperty(Speaker.prototype, 'name', {
+    get () {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  });
+  return Speaker.init();
 };
 exports.$inject = ['Model', '$q'];

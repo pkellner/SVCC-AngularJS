@@ -1,0 +1,48 @@
+.speaker-details {
+  margin-top: 30px;
+
+  @include respond-to(tablet) {
+    margin-top: 50px;
+  }
+
+  .heading {
+    margin: 0;
+    padding-top: 0;
+  }
+
+  &--desc {
+    margin-bottom: 20px;
+  }
+
+  &--image {
+    text-align: center;
+    @include respond-to(tablet) {
+      img {
+        width: 100%;
+      }
+    }
+
+
+    .social {
+      margin-top: 15px;
+    }
+  }
+
+  &--info {
+    &--date {
+      font-style: italic;
+      font-size: 18px;
+      margin-right: 10px;
+
+
+      & ~ .label {
+        top: -2px;
+      }
+    }
+  }
+
+  .more {
+    font-weight: 700;
+    color: $brand-primary;
+  }
+}

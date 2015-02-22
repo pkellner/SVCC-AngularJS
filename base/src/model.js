@@ -46,7 +46,7 @@ function factory ($http) {
       return this;
     }
     static fetchOne (urlSuffix) {
-      return $http.get(this.url + urlSuffix + '/', {
+      return $http.get(`${this.url}/arrayonly/${urlSuffix}`, {
         cache: true
       })
       .then((response) => {
@@ -54,7 +54,7 @@ function factory ($http) {
       });
     }
     static fetchAll () {
-      return $http.get(this.url + '/arrayonly/', {
+      return $http.get(`${this.url}/arrayonly`, {
         cache: true
       })
       .then((response) => {

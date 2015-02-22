@@ -1,0 +1,22 @@
+.label {
+  position: relative;
+  display: inline-block;
+  padding: 5px 9px 4px 13px;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: #1066d0;
+    width: 7px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &-default {
+    background: $gray-lightest;
+    color: $gray-dark;
+  }
+}

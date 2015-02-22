@@ -47,7 +47,7 @@ function identity (input) {
 
 function bundler (watch, mocks) {
   var b = (watch ? watchify : identity)(browserify(watch && watchify.args))
-  b.add(format('./%s', app))
+  b.add(format('./%s', app)).add('babel/polyfill');
   if (mocks) b.add(format('./%s/mock', app));
   return b;
 }
