@@ -1,24 +1,24 @@
 'use strict';
 
-states.$inject = ['$stateProvider'];
-function states ($stateProvider) {
+state.$inject = ['$stateProvider'];
+function state ($stateProvider) {
   $stateProvider.state('speaker', {
     url: '/speakers/:camp/:speaker',
     parent: 'base',
     resolve: {
       speakerUrl: speakerUrl,
-      speakers: getSpeaker
+      speaker: getSpeaker
     },
     views: {
       '@layout': {
-        controller: 'SpeakerDetailController',
-        controllerAs: 'speaker',
-        templateUrl: 'app/speakers/speaker-detail.html'
+        controller: 'SpeakerDetailsController',
+        controllerAs: 'details',
+        templateUrl: 'app/speakers/details/details.html'
       }
     }
   });
 }
-export default states;
+export default state;
 
 speakerUrl.$inject = ['$stateParams'];
 function speakerUrl ($stateParams) {
@@ -28,5 +28,5 @@ function speakerUrl ($stateParams) {
 
 getSpeaker.$inject = ['Speakers', 'speakerUrl'];
 function getSpeaker (Speakers, speakerUrl) {
-  return Speakers.fetchByUrl(speakerUrl).then(val => console.log(val));
+  return Speakers.fetchByUrl(speakerUrl);
 }

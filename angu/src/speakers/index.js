@@ -1,8 +1,9 @@
 'use strict';
 
 import angular from 'angular';
-import states from './states';
+import details from './details';
 
-export default angular.module('angu.speakers', [])
-  .config(states)
+export default angular.module('angu.speakers', [
+    details
+  ])
   .name;
