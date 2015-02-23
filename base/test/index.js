@@ -1,15 +1,18 @@
 'use strict';
 
-require('es5-shim');
+import 'es5-shim';
 
-var angular = require('angular');
-require('angular-mocks');
+import angular from 'angular'
+import 'angular-mocks';
+import codeCampBase from '../';
+import multiTenant from './multi';
+import baseModel from './model';
 
 describe('Code Camp Base', function () {
 
-  beforeEach(angular.mock.module(require('../')));
+  beforeEach(angular.mock.module(codeCampBase));
 
-  describe('Mutli-Tenant Helpers', require('./multi'));
-  describe('BaseModel', require('./model'));
+  describe('Mutli-Tenant Helpers', multiTenant);
+  describe('BaseModel', baseModel);
 
 });

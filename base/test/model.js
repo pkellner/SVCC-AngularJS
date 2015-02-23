@@ -99,48 +99,40 @@ module.exports = function () {
 
   });
 
-  describe('#extend', function () {
+  describe('#sort', function () {
 
-    it('calls through to the parent', function () {
-      var Child = Model.extend();
-      expect(new Child({
-        foo: 'bar'
-      }))
-      .to.contain({
-        foo: 'bar'
-      });
+    it('is a noop with no comparator', function () {
+      Model.sort();
     });
 
-    it('copies parent ctor properties', function () {
-      expect(Model.extend()).to.itself.respondTo('extend');
+    it('can sort by a property', function () {
+      Model.comparator = 'v';
+      Model.set([{v: 'c'}, {v: 'b'}, {v: 'a'}]);
+      expect(Model.all()).to.deep.equal([{v: 'a'}, {v: 'b'}, {v: 'c'}]);
     });
 
-    it('can add ctor properties', function () {
-      expect(Model.extend({}, {
-        newMethod: angular.noop
-      }))
-      .to.itself.respondTo('newMethod');
+    it('can sort by a value returned by a function', function () {
+      Model.comparator = function (el) {
+        return el.v
+      };
+      Model.set([{v: 3}, {v: 2}, {v: 1}]);
+      expect(Model.all()).to.deep.equal([{v: 1}, {v: 2}, {v: 3}]);
     });
 
-    it('sets up a new internal data array', function () {
-      expect(Model.all()).to.not.equal(Model.extend().all());
+    it('can receive a comparator', function () {
+      Model.set([{v: 3}, {v: 2}, {v: 1}]);
+      expect(Model.all()).to.deep.equal([{v: 3}, {v: 2}, {v: 1}]);
+      Model.sort('v');
+      expect(Model.all()).to.deep.equal([{v: 1}, {v: 2}, {v: 3}]);
     });
 
-    it('copies parent proto properties', function () {
-      Model.prototype.method = angular.noop;
-      expect(Model.extend()).to.respondTo('method');
-    });
+  });
 
-    it('can add new proto properties', function () {
-      expect(Model.extend({
-        method: angular.noop
-      }))
-      .to.respondTo('method');
-    });
+  describe('#init', function () {
 
-    it('sets the correct constructor', function () {
-      var Child = Model.extend();
-      expect(new Child().constructor).to.equal(Child);
+    it('creates an empty data cache', function () {
+      Model.init();
+      expect(Model.all()).to.have.length(0);
     });
 
   });

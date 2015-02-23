@@ -1,8 +1,8 @@
 'use strict';
 
 exports = module.exports = function (Model, $q) {
-  return Model.extend({
-    $levelName: function () {
+  class Session extends Model {
+    levelName () {
       switch (this.sessionLevelId) {
         case 1:
           return 'Beginner';
@@ -14,17 +14,16 @@ exports = module.exports = function (Model, $q) {
           return 'Unknown';
       }
     }
-  },
-  {
-    url: '/rest/sessions',
-    findByUrl: function (url) {
+    static findByUrl (url) {
       return this.find(function (session) {
         return session.sessionUrl === url;
       });
-    },
-    fetchByUrl: function (url) {
+    }
+    static fetchByUrl (url) {
       return $q.when(this.findByUrl(url) || this.fetchOne(url));
     }
-  });
+  }
+  Session.url = '/rest/sessions';
+  return Session.init();
 };
 exports.$inject = ['Model', '$q'];

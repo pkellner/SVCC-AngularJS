@@ -1,0 +1,47 @@
+<div id="speaker-details" class="container">
+  <div class="separator">
+    <span class="separator--icon icon-search"></span>
+  </div>
+  <h2 class="type--lead">Speaker details</h2>
+
+  <div class="speaker-details row">
+    <div class="speaker-details--image col-sm-3">
+      <img ng-src="{{details.speaker.imageUrl}}" alt="{{details.speaker.name}}">
+      <div class="social center-block colored">
+        <speaker-social-icons speaker="details.speaker"></speaker-social-icons>
+      </div>
+
+    </div>
+    <div class="speaker-details--info col-sm-9">
+      <section>
+        <div class="heading">
+          <h3 class="color">{{details.speaker.name}}</h3>
+        </div>
+        <h4 class="speaker-details--desc italic">{{details.speaker.bioShort}}</h4>
+        <p>{{details.speaker.bio}}</p>
+      </section>
+
+      <section>
+        <div class="heading">
+          <h3 class="color">Sessions</h3>
+        </div>
+        <ul class="list--squared">
+          <li ng-repeat="session in details.speaker.sessions">
+            <h4>{{session.title}}</h4>
+            <div>
+              <span class="speaker-details--info--date">
+                {{session.startTimeDateTime | date:'EEEE, MMMM d - h a'}}
+              </span>
+              <span class="label label-default">angular as we know it</span>
+            </div>
+            <p>
+              {{session.description}}
+              <!-- <a href="#" class="more">More</a> -->
+            </p>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</div>

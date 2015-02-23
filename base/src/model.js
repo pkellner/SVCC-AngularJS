@@ -1,77 +1,68 @@
 'use strict';
 
-var angular = require('angular');
+import angular from 'angular';
+import sort from 'sort-on';
 
-exports = module.exports = function ($http) {
+export default factory;
 
-  function BaseModel (attributes) {
-    angular.extend(this, attributes);
-  }
-
-  BaseModel.$$data = [];
-
-  BaseModel.all = function () {
-    return this.$$data;
-  };
-
-  BaseModel.forge = function (attributes) {
-    return new this(attributes);
-  };
-
-  BaseModel.set = function (data) {
-    this.$$data = data.map(this.forge, this);
-    return this;
-  };
-
-  BaseModel.at = function (index) {
-    return this.$$data[index];
-  };
-
-  BaseModel.find = function (callback) {
-    for (var i = 0; i < this.$$data.length; i++) {
-      var model = this.at(i);
-      var result = callback.call(this, model);
-      if (result) return model;
+factory.$inject = ['$http'];
+function factory ($http) {
+  return class BaseModel {
+    constructor (attributes) {
+      angular.extend(this, attributes);
+    }
+    static init () {
+      this.$$data = [];
+      return this;
+    }
+    static all () {
+      return this.$$data;
+    }
+    static forge (attributes) {
+      return new this(attributes);
+    }
+    static set (data) {
+      this.$$data = data.map(this.forge, this);
+      this.sort();
+      return this;
+    }
+    static at (index) {
+      return this.$$data[index];
+    }
+    static find (callback) {
+      for (let i = 0; i < this.$$data.length; i++) {
+        let model = this.at(i);
+        let result = callback.call(this, model);
+        if (result) return model;
+      }
+    }
+    static sort (comparator) {
+      if (typeof comparator !== 'undefined') {
+        this.$$data = sort(this.$$data, comparator);
+      }
+      else if (this.comparator) {
+        this.$$data = sort(this.$$data, this.comparator);
+      }
+      return this;
+    }
+    static fetchOne (urlSuffix) {
+      return $http.get(`${this.url}/arrayonly/${urlSuffix}`, {
+        cache: true
+      })
+      .then((response) => {
+        return this.forge(response.data);
+      });
+    }
+    static fetchAll () {
+      return $http.get(`${this.url}/arrayonly`, {
+        cache: true
+      })
+      .then((response) => {
+        return this.set(response.data);
+      })
+      .then(function (Model) {
+        return Model.all();
+      });
     }
   };
-
-  BaseModel.extend = function (proto, ctor) {
-    var parent = this;
-    function Model () {
-      parent.apply(this, arguments);
-    }
-    angular.extend(Model, parent, ctor);
-    Model.$$data = [];
-    Model.prototype = angular.extend(Object.create(parent.prototype), proto, {
-      constructor: Model
-    });
-    return Model;
-  };
-
-  BaseModel.fetchOne = function (urlSuffix) {
-    var self = this;
-    return $http.get(this.url + urlSuffix + '/', {
-      cache: true
-    })
-    .then(function (response) {
-      return self.forge(response.data);
-    });
-  };
-
-  BaseModel.fetchAll = function () {
-    var self = this;
-    return $http.get(this.url + '/arrayonly/', {
-      cache: true
-    })
-    .then(function (response) {
-      return self.set(response.data);
-    })
-    .then(function (Model) {
-      return Model.all();
-    });
-  };
-
-  return BaseModel;
-
-};
-exports.$inject = ['$http'];
+}

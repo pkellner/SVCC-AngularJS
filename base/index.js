@@ -1,3 +1,5 @@
 'use strict';
 
-module.exports = require('./src');
+import codeCampBase from './src';
+
+export default codeCampBase;

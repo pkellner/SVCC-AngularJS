@@ -1,24 +1,34 @@
 'use strict';
 
-exports = module.exports = function (CONFIG) {
+var qs = require('qs');
 
-  function PresenterController () {}
-
-  PresenterController.prototype.imageUrl = function () {
-    return CONFIG.baseDirImage + this.photo;
-  };
-
+exports = module.exports = function () {
   return {
     restrict: 'EA',
-    transclude: true,
     scope: {
-      photo: '@',
-      name: '@'
+      data: '=',
+      imageWidth: '@',
+      imageHeight: '@',
+      imageBackground: '@'
     },
+    bindToController: true,
     controller: PresenterController,
     controllerAs: 'presenter',
-    bindToController: true,
     templateUrl: 'app/home/presenter.html'
   };
 };
-exports.$inject = ['CONFIG'];
+
+function PresenterController (CONFIG, $attributes) {
+  this.isKeynote = typeof $attributes.keynote !== 'undefined';
+  this.name = this.data.firstName + ' ' + this.data.lastName;
+  this.bio = this.data.bioShort;
+  this.image = this.data.imageUrl + '?' + qs.stringify({
+    format: 'jpg',
+    height: this.imageHeight,
+    width: this.imageWidth,
+    scale: 'both',
+    mode: 'pad',
+    Bgcolor: this.imageBackground
+  });
+}
+PresenterController.$inject = ['CONFIG', '$attrs'];

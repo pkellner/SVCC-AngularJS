@@ -20,6 +20,7 @@
 
     img {
       max-width: 100%;
+
       @include respond-to(tablet) {
         width: 100%;
       }
@@ -30,6 +31,7 @@
     }
   }
 
+
   &--date {
     font-style: italic;
     font-size: 18px;
@@ -38,6 +40,9 @@
     & ~ .label {
       top: -2px;
     }
+  }
+
+  &--info {
   }
 
   .more {

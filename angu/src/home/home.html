@@ -25,70 +25,46 @@
 
   <div class="content--section">
     <h2 class="type--lead">Keynote Presenters</h2>
-    <div class="persona--container">
-      <keynote-presenter name="Igor Minar" photo="/images/igor-minar.png">
-        Igor is a software engineer at Google. He is the lead of the AngularJS, practitioner of test driven development, open source enthusiast, hacker.
-      </keynote-presenter>
-      <keynote-presenter name="Brad Green" photo="/images/brad-green.png">
-        Brad is an engineering director at Google where he manages development of the AngularJS framework and Google's internal sales productivity products.
-      </keynote-presenter>
-      <keynote-presenter name="Misko Hevery" photo="/images/misko-hevery.png">
-        Creator of AngularJS, Works at Google and also known as the Father of AngularJS.
-      </keynote-presenter>
-      <keynote-presenter name="Douglas Crockford" photo="/images/douglas-crockford.png">
-        Douglas Crockford is an American computer programmer and entrepreneur who is best known for his ongoing involvement in the development of the JavaScript language and for having popularized the data format JSON.
-      </keynote-presenter>
-    </div>
+    <keynote-presenters presenters="speakers.keynotes"></keynote-presenters>
     <button ng-hide="home.showSpeakers" class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon</button>
   </div>
-</div>
 
-<div class="separator">
-  <span ng-click="googleMap()" class="separator--icon icon-pin"></span>
-</div>
-<div id="venue" class="slider nav--section">
-  <div class="slide--container">
-    <ul rn-carousel slides="slides" class="slide--list">
-      <li>
-        <div class="slide">
-          <div class="slide--content">
-            <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi or Bart ride from San&nbsp;Francisco Downtown.</p>
-            <!--<button class="btn btn-primary btn-lg">More details</button>-->
-          </div>
-        </div>
-      </li>
-    </ul>
+  <div class="separator">
+    <span ng-click="googleMap()" class="separator--icon icon-pin"></span>
   </div>
-</div>
-
-<section class="content--section" ng-show="home.showSpeakers" id="en_speakerlist">
-  <h2 class="type--lead">Partial Speaker List (more coming)</h2>
-  <div class="row">
-    <div class="col-sm-6" ng-repeat="speaker in speakers">
-      <div class="persona small">
-        <img ng-src="{{speaker.imageUrl}}?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2" alt="">
-        <h3>{{speaker.firstName}} {{speaker.lastName}}</h3>
-        <!--<span speaker-social-icon-directive speaker='speaker'></span>-->
-        <!--<a ng-href="{{::speaker.webSite}}" target="_blank" title="{{speaker.firstName}} {{speaker.lastName}}'s website" class="icon-outside"></a>-->
-        <p>{{::speaker.bioShort}}</p>
-        <!--<a href="#/speaker/{{::speaker.presenterUrl}}" class="btn btn-primary">More Details Including Sessions</a>-->
-      </div>
+  <div id="venue" class="slider nav--section">
+    <div class="slide--container">
+      <ul rn-carousel slides="slides" class="slide--list">
+        <li>
+          <div class="slide">
+            <div class="slide--content">
+              <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi or Bart ride from San&nbsp;Francisco Downtown.</p>
+              <!--<button class="btn btn-primary btn-lg">More details</button>-->
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
-</section>
 
-<div id="faq" class="nav--section container">
-  <div class="separator">
-    <span class="separator--icon icon-question">?</span>
-  </div>
+  <section class="content--section" ng-show="home.showSpeakers" id="en_speakerlist">
+    <h2 class="type--lead">Partial Speaker List (more coming)</h2>
+    <regular-presenters presenters="speakers.regular"></regular-presenters>
+  </section>
 
-  <div>
-    <h2 class="type--lead">FAQ</h2>
-    <ul class="list--block list--centered">
-      <li ng-repeat="faq in faqs">
-        <p><strong>Question: {{faq.question}}</strong></p>
-        <p>Answer: {{faq.answer}}</p>
-      </li>
-    </ul>
+  <div id="faq" class="nav--section container">
+    <div class="separator">
+      <span class="separator--icon icon-question">?</span>
+    </div>
+
+    <div>
+      <h2 class="type--lead">FAQ</h2>
+      <ul class="list--block list--centered">
+        <li ng-repeat="faq in faqs">
+          <p><strong>Question: {{faq.question}}</strong></p>
+          <p>Answer: {{faq.answer}}</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

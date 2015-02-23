@@ -1,22 +1,29 @@
 'use strict';
 
-module.exports = require('angular')
-  .module('codeCampBase', [
+import angular from 'angular';
+import messages from 'angular-messages';
+import router from 'angular-ui-router';
+import routerExceptionHandler from 'angular-router-exception-handler';
+import multiTenant from './multi';
+import main from './main';
+import staticPages from './static';
+import faqs from './faqs';
+import speakers from './speakers';
+import sponsors from './sponsors';
+import Model from './model';
+
+export default angular.module('codeCampBase', [
     // 3rd party modules
-    require('angular-messages'),
-    require('angular-ui-router'),
-    require('angular-router-exception-handler'),
-    // require('angular-carousel'),
-    // require('ui.bootstrap'),
+    messages,
+    router,
+    routerExceptionHandler,
     // our modules
-    require('./multi'),
-    require('./main'),
-    require('./static'),
-    // require('./account'),
-    require('./faqs'),
-    // require('./sessions'),
-    require('./speakers'),
-    require('./sponsors')
+    multiTenant,
+    main,
+    staticPages,
+    faqs,
+    speakers,
+    sponsors    
   ])
-  .factory('Model', require('./model'))
+  .factory('Model', Model)
   .name;

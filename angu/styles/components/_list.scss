@@ -79,4 +79,27 @@
       }
     }
   }
+
+  &--default {
+    margin: 10px 0;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 7px;
+        width: 6px;
+        height: 6px;
+        background: $brand-primary;
+      }
+    }
+
+    h4 {
+      margin-top: 0;
+    }
+  }
 }

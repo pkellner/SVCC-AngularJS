@@ -7,6 +7,7 @@ module.exports = require('angular')
     require('./nav'),
     require('./home'),
     require('./speakers'),
-    require('./sessions')
+    require('./sessions'),
+    require('./speakers')
   ])
   .name;

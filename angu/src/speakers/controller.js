@@ -1,6 +1,8 @@
 'use strict';
 
-function SpeakerDetailsController ($scope, CONFIG) {}
-SpeakerDetailsController.$inject = ['$scope', 'CONFIG'];
+function SpeakersController (speaker) {
+  this.speaker = speaker;
+}
+SpeakersController.$inject = ['speaker'];
 
-module.exports = SpeakerDetailsController;
+export default SpeakersController;

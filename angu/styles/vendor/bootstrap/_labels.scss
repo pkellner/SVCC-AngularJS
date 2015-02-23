@@ -36,4 +36,9 @@
       background: $brand-success;
     }
   }
+
+  &-default {
+    background: $gray-lightest;
+    color: $gray-dark;
+  }
 }
