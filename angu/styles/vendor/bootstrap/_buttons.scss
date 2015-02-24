@@ -8,6 +8,27 @@
     border-color: transparent;
     z-index: 0;
   }
+
+  &[disabled] {
+    background: #b2a4a3;
+    opacity: 1;
+  }
+}
+
+.btn-default {
+  text-shadow: none;
+}
+
+.btn-full {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+}
+
+.btn-submit {
+  min-width: 210px;
+  display: block;
+  margin: 12px auto;
 }
 
 .form-control {
