@@ -11,7 +11,7 @@ function state ($stateProvider) {
     views: {
       '@layout': {
         controller: 'SpeakerListController',
-        controllerAs: 'speakerList',
+        controllerAs: 'list',
         templateUrl: 'app/speakers/list/speakers.html'
       }
     }
