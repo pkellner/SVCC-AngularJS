@@ -29,10 +29,21 @@
   &.small {
     @extend %clearfix;
     max-width: initial;
-    padding: 20px;
+    padding: 15px 10px 15px 15px;
     margin: 0 0 12px;
     background: #f3f2f2;
     text-align: left;
+
+
+
+    @include respond-to(tablet) {
+      height: 124px;
+    }
+
+    @include respond-to(desktop) {
+      height: auto;
+      padding: 20px;
+    }
 
     img {
       float: left;
@@ -41,13 +52,22 @@
     }
 
     h3 {
-      font-size: 21px;
+      font-size: 18px;
       margin: 0 0 2px;
+
+      @include respond-to(desktop) {
+        font-size: 21px;
+      }
     }
 
     p {
-      font-size: 16px;
+      font-size: 14px;
       margin: 0;
+      line-height: 1.4;
+
+      @include respond-to(desktop) {
+        font-size: 16px;
+      }
     }
 
     .btn {

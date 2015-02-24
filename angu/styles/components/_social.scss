@@ -21,7 +21,7 @@
       }
     }
 
-    h4 {
+    h3, h4 {
       color: $white;
       font-size: 16px;
       font-weight: normal;
@@ -39,7 +39,7 @@
     }
 
     .icon-fb {
-      color: #1066d0;
+      color: #3d5a99;
     }
   }
 
@@ -61,8 +61,6 @@
       justify-content: center;
       align-items: center;
       padding: 9px;
-      width: 43px;
-      height: 43px;
       color: $gray-lighter;
       border-radius: 50%;
       border: 1px solid $gray-lighter;
@@ -74,12 +72,16 @@
     }
   }
 
-  h4 {
+  h3, h4 {
     display: inline-block;
-    margin: 10px 15px 10px 0;
-    font-size: 20px;
+    vertical-align: middle;
+    margin: 0 15px 0 0;
     font-style: italic;
     font-weight: lighter;
+  }
+
+  h4 {
+    font-size: 20px
   }
 
   &--buttons {

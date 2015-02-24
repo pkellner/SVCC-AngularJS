@@ -1,0 +1,15 @@
+.speakers {
+  &--image {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &--info {
+
+  }
+
+  & > li {
+    margin-bottom: 40px;
+  }
+}
