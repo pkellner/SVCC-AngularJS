@@ -43,6 +43,16 @@
     }
   }
 
+  &.icon-red {
+    li {
+      [class^="icon-"], [class*=" icon-"] {
+        background: $brand-primary;
+        color: $white;
+        text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+      }
+    }
+  }
+
   ul {
     @extend %clearfix;
     display: inline-block;

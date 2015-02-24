@@ -1,7 +1,8 @@
 .form-control {
-  line-height: 1;
   padding-top: 7px;
   padding-bottom: 7px;
+  line-height: 1;
+  font-weight: normal;
 
   &-static {
     padding-left: 0;
@@ -27,4 +28,26 @@ fieldset {
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
   margin-left: 0;
+}
+
+select {
+  width: 100%;
+  background: none;
+  height: 38px;
+  border-color: $input-border;
+}
+
+textarea {
+  &.form-control {
+    padding: 14px;
+  }
+}
+
+.checkbox,
+.radio {
+  input {
+    & + label {
+      font-weight: normal;
+    }
+  }
 }
