@@ -1,14 +1,13 @@
 .type {
   &--lead {
     margin-bottom: 20px;
-    font-size: 20px;
     line-height: 1.333;
     text-align: center;
     font-style: italic;
     font-weight: lighter;
 
-    @include respond-to(tablet) {
-      font-size: 30px;
+    &.small {
+      font-size: $font-size-h3;
     }
   }
 
@@ -19,5 +18,9 @@
 
   &--bigger {
     font-size: 16px;
+  }
+
+  &--centered {
+    text-align: center;
   }
 }
