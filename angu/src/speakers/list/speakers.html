@@ -24,7 +24,9 @@
       </div>
       <div class="speakers--info col-sm-10">
         <header class="heading small">
-          <h4 class="color">{{speaker.name}}</h4>
+          <a ui-sref="speaker(speaker.$stateParams())">
+            <h4 class="color">{{speaker.name}}</h4>
+          </a>
           <div class="social colored">
             <speaker-social-icons speaker="speaker"></speaker-social-icons>
           </div>

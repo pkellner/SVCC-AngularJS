@@ -30,5 +30,6 @@ function PresenterController (CONFIG, $attributes) {
     mode: 'pad',
     Bgcolor: this.imageBackground
   });
+  this.$stateParams = this.data.$stateParams();
 }
 PresenterController.$inject = ['CONFIG', '$attrs'];

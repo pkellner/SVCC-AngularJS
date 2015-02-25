@@ -20,9 +20,9 @@ function state ($stateProvider) {
 }
 export default state;
 
-speakerUrl.$inject = ['$stateParams'];
-function speakerUrl ($stateParams) {
-  return `${$stateParams.camp}/${$stateParams.speaker}`;
+speakerUrl.$inject = ['Speakers', '$stateParams'];
+function speakerUrl (Speakers, $stateParams) {
+  return Speakers.formatUrl($stateParams);
 }
 
 

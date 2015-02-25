@@ -2,7 +2,7 @@
   <div ng-class="{'persona--img': presenter.isKeynote}">
     <img ng-src="{{presenter.image}}" alt="{{presenter.name}}">
   </div>
-  <h3><a href="#">{{presenter.name}}</a></h3>
+  <h3><a ui-sref="speaker(presenter.$stateParams)">{{presenter.name}}</a></h3>
   <p>
     {{presenter.bio}}
   </p>
