@@ -29,6 +29,11 @@
     <button ng-hide="home.showSpeakers" class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon</button>
   </div>
 
+  <section class="content--section" ng-show="home.showSpeakers" id="en_speakerlist">
+    <h2 class="type--lead">Partial Speaker List (more coming)</h2>
+    <regular-presenters presenters="speakers.regular"></regular-presenters>
+  </section>
+
   <div class="separator">
     <span ng-click="googleMap()" class="separator--icon icon-pin"></span>
   </div>
@@ -46,11 +51,6 @@
       </ul>
     </div>
   </div>
-
-  <section class="content--section" ng-show="home.showSpeakers" id="en_speakerlist">
-    <h2 class="type--lead">Partial Speaker List (more coming)</h2>
-    <regular-presenters presenters="speakers.regular"></regular-presenters>
-  </section>
 
   <div id="faq" class="nav--section container">
     <div class="separator">
