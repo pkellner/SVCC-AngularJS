@@ -9,9 +9,15 @@ module.exports = require('angular')
     require('./speakers')
   ])
   .config(enableHtml5Mode)
+  .config(anchorScroll)
   .name;
 
 enableHtml5Mode.$inject = ['$locationProvider'];
 function enableHtml5Mode ($locationProvider) {
   $locationProvider.html5Mode(true);
+}
+
+anchorScroll.$inject = ['$uiViewScrollProvider'];
+function anchorScroll ($uiViewScrollProvider) {
+  $uiViewScrollProvider.useAnchorScroll();
 }
