@@ -9,7 +9,7 @@ var source      = require('vinyl-source-stream');
 var argv        = require('yargs').argv;
 var chalk       = require('chalk');
 var format      = require('util').format;
-var browserSync = require('browser-sync');
+var superstatic = require('superstatic');
 var app         = argv.app;
 
 if (!app) {
@@ -113,12 +113,16 @@ gulp.task('watch', ['index', 'templates', 'styles', 'images', 'fonts'], function
 });
 
 gulp.task('server', function (done) {
-  browserSync({
-    server: {
-      baseDir: './dist'
-    },
-    files: './dist/**/*'
-  }, done);
+  superstatic.server({
+    port: 3000,
+    config: {
+      root: './dist',
+      routes: {
+        "**": "index.html"
+      }
+    }
+  })
+  .listen(done);
 });
 
 gulp.task('serve', ['watch', 'server']);
