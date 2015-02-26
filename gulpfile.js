@@ -86,7 +86,7 @@ gulp.task('templates', function () {
     .pipe(gulp.dest('dist/app'));
 });
 
-paths.styles = format('./%s/styles/*.scss', app);
+paths.styles = format('./%s/styles/**/*.scss', app);
 gulp.task('styles', function () {
   return gulp.src(paths.styles)
     .pipe(plugins.sass({
