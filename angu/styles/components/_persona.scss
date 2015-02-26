@@ -34,14 +34,11 @@
     background: #f3f2f2;
     text-align: left;
 
-
-
     @include respond-to(tablet) {
       height: 124px;
     }
 
     @include respond-to(desktop) {
-      height: auto;
       padding: 20px;
     }
 
