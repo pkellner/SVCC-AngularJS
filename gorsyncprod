@@ -1,0 +1,3 @@
+echo starting
+time rsync --delete -rcv --chmod=a+rwx ./dist/ pkellner@siliconvalley-codecamp.com::Angular
+echo done
