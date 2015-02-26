@@ -96,6 +96,11 @@ gulp.task('styles', function () {
       browsers: ['last 2 versions'],
       cascade: false
     }))
+    .pipe(gulp.dest('dist/styles'))
+    .pipe(plugins.minifyCss())
+    .pipe(plugins.rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest('dist/styles'));
 });
 
