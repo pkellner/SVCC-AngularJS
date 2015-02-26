@@ -6,6 +6,7 @@ var karma       = require('karma-as-promised');
 var browserify  = require('browserify');
 var watchify    = require('watchify');
 var source      = require('vinyl-source-stream');
+var buffer      = require('vinyl-buffer');
 var argv        = require('yargs').argv;
 var chalk       = require('chalk');
 var format      = require('util').format;
@@ -16,6 +17,8 @@ if (!app) {
   app = 'angu';
   plugins.util.log('no app defined with --app, defaulting to', chalk.magenta('angu'));
 }
+
+var production = argv.production;
 
 var paths = {};
 
@@ -60,7 +63,15 @@ function bundle (bundler) {
 }
 
 gulp.task('bundle', function () {
-  return bundle(bundler());
+  var bundled = bundle(bundler())
+  if (!production) return bundled;
+  return bundled
+    .pipe(buffer())
+    .pipe(plugins.uglify())
+    .pipe(plugins.rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('dist/app'));
 });
 
 paths.index = format('./%s/index.html', app);
