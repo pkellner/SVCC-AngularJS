@@ -92,6 +92,10 @@ gulp.task('styles', function () {
     .pipe(plugins.sass({
       includePaths: ['bower_components/bootstrap-sass-official/assets/stylesheets']
     }))
+    .pipe(plugins.autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest('dist/styles'));
 });
 
