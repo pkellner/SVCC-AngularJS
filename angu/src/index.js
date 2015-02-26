@@ -25,14 +25,21 @@ function anchorScroll ($uiViewScrollProvider) {
 
 prependTemplateUrls.$inject = ['CONFIG', '$provide'];
 function prependTemplateUrls (CONFIG, $provide) {
-  $provide.decorator('$templateFactory', decorate);
-  decorate.$inject = ['$delegate'];
-  function decorate ($templateFactory) {
+  $provide.decorator('$templateFactory', decorateTemplateFactory);
+  decorateTemplateFactory.$inject = ['$delegate'];
+  function decorateTemplateFactory ($templateFactory) {
     var fromUrl = $templateFactory.fromUrl;
     $templateFactory.fromUrl = function (url, params) {
       url = CONFIG.baseDir + url;
       return fromUrl(url, params);
     };
     return $templateFactory;
+  }
+  $provide.decorator('$templateRequest', decorateTemplateRequest);
+  decorateTemplateRequest.$inject = ['$delegate'];
+  function decorateTemplateRequest ($templateRequest) {
+    return function (url, ignoreErr) {
+      return $templateRequest(CONFIG.baseDir + url, ignoreErr);
+    };
   }
 }
