@@ -1,18 +1,7 @@
 .heading {
-  @extend %clearfix;
   position: relative;
   padding: 10px 0;
   margin: 20px 0;
-
-  &--sub {
-    font-size: 14px;
-    margin: 0;
-    clear: left;
-
-    @include respond-to(tablet) {
-      font-size: 16px;
-    }
-  }
 
   &:before {
     content: "";
@@ -30,16 +19,6 @@
     text-align: center;
   }
 
-  &.small {
-    margin: 0;
-    padding: 10px 0;
-
-    h4 {
-      margin: 0 10px 5px 0;
-      float: left;
-    }
-  }
-
   h1, h2, h3,
   .h1, .h2, .h3 {
     font-weight: lighter;
@@ -54,36 +33,6 @@
     & > span {
       color: $text-color;
       font-weight: lighter;
-    }
-  }
-
-  .social {
-    @include respond-to(phone-tablet) {
-      float: left;
-      margin-top: -2px;
-
-      li {
-        a {
-          padding: 5px;
-        }
-      }
-    }
-
-    @include respond-to(tablet) {
-      float: right;
-      clear: left;
-      margin-top: -14px;
-    }
-
-    ul {
-      font-size: 14px;
-      @include respond-to(tablet){
-        font-size: 18px;
-      }
-    }
-
-    li {
-      margin-right: 5px;
     }
   }
 }
