@@ -119,11 +119,15 @@ gulp.task('fonts', function () {
 gulp.task('build', ['index', 'templates', 'styles', 'images', 'fonts', 'bundle']);
 
 gulp.task('watch', ['index', 'templates', 'styles', 'images', 'fonts'], function () {
+  var lr = plugins.livereload;
+  lr.listen();
   gulp.watch(paths.index, ['index']);
   gulp.watch(paths.templates, ['templates']);
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.fonts, ['fonts']);
+
+  gulp.watch('dist/**/*', lr.reload.bind(lr));
 
   var b = bundler(true, true);
   b.on('update', function () {
