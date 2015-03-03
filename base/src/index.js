@@ -10,6 +10,7 @@ import main from './main';
 import staticPages from './static';
 import faqs from './faqs';
 import speakers from './speakers';
+import sessions from './sessions'
 import sponsors from './sponsors';
 import Model from './model';
 
@@ -25,6 +26,7 @@ export default angular.module('codeCampBase', [
     staticPages,
     faqs,
     speakers,
+    sessions,
     sponsors    
   ])
   .factory('Model', Model)

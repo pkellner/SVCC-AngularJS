@@ -1,6 +1,7 @@
 'use strict';
 
-exports = module.exports = function (Model, $q) {
+factory.$inject = ['Model', 'SessionUrls', '$q'];
+function factory (Model, SessionUrls) {
   class Session extends Model {
     levelName () {
       switch (this.sessionLevelId) {
@@ -14,16 +15,31 @@ exports = module.exports = function (Model, $q) {
           return 'Unknown';
       }
     }
-    static findByUrl (url) {
-      return this.find(function (session) {
-        return session.sessionUrl === url;
-      });
-    }
     static fetchByUrl (url) {
-      return $q.when(this.findByUrl(url) || this.fetchOne(url));
+      return SessionUrls.fetchAll()
+        .then(function () {
+          return SessionUrls.find(url => url.sessionUrl === url).id;
+        })
+        .then(function (sessionId) {
+          return Session.fetchOne(sessionId);
+        });
+    }
+    static formatUrl (params) {
+      return `${params.camp}/${params.session}`;
+    }
+    static parseUrl (url) {
+      const parts = url.split('/');
+      return {
+        camp: parts[1],
+        session: parts[2]
+      };
+    }
+    $stateParams () {
+      return Session.parseUrl(this.presenterUrl);
     }
   }
-  Session.url = '/rest/sessions';
+  Session.url = '/rest/session';
   return Session.init();
-};
-exports.$inject = ['Model', '$q'];
+}
+
+export default factory;
