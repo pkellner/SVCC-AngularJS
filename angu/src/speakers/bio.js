@@ -1,5 +1,7 @@
 'use strict';
 
+import strip from 'striptags';
+
 export default function () {
   return {
     restrict: 'EA',
@@ -13,10 +15,9 @@ export default function () {
   };
 }
 
-BioController.$inject = ['$sce'];
-function BioController ($sce) {
+BioController.$inject = ['$sanitize'];
+function BioController ($sanitize) {
   const speaker = this.speaker;
-  const allowHtml = this.allowHtml = speaker.allowHtml;
-  const bio = speaker.bio;
-  this.contents = allowHtml ? $sce.trustAsHtml(bio) : bio;
+  const transform = speaker.allowHtml ? $sanitize : strip; 
+  this.content = transform(speaker.bio);
 }
