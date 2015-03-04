@@ -9,6 +9,8 @@ factory.$inject = ['$http'];
 function factory ($http) {
   return class BaseModel {
     constructor (attributes) {
+      attributes = attributes || {};
+      if (typeof this.parse === 'function') attributes = this.parse(attributes);
       angular.extend(this, attributes);
     }
     static init () {
