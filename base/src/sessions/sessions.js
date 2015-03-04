@@ -18,7 +18,7 @@ function factory (Model, SessionUrls) {
     static fetchByUrl (url) {
       return SessionUrls.fetchAll()
         .then(function () {
-          return SessionUrls.find(url => url.sessionUrl === url).id;
+          return SessionUrls.find(s => s.sessionUrl === url).sessionId;
         })
         .then(function (sessionId) {
           return Session.fetchOne(sessionId);

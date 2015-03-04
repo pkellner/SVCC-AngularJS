@@ -3,7 +3,7 @@
 state.$inject = ['$stateProvider'];
 function state ($stateProvider) {
   $stateProvider.state('session', {
-    url: '/sessions/:camp/:speaker',
+    url: '/sessions/:camp/:session',
     parent: 'base',
     resolve: {
       sessionUrl: sessionUrl,
@@ -28,6 +28,5 @@ function sessionUrl (Sessions, $stateParams) {
 
 getSpeaker.$inject = ['Sessions', 'sessionUrl'];
 function getSpeaker (Sessions, sessionUrl) {
-  console.log(sessionUrl);
-  // return Sessions.fetchByUrl(sessionUrl);
+  return Sessions.fetchByUrl(sessionUrl);
 }
