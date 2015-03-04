@@ -5,7 +5,7 @@
     "lastName": "Bacon Darwin",
     "email": "",
     "phoneNumber": "",
-    "bio": "Pete is now the development lead on the 1.x branch of AngularJS, having spent the last few years working on the AngularJS team. He works remotely, living in London and spends a large proportion of his time looking after his kids, when he is not on a hangout to Mountain View.",
+    "bio": "Pete is now the <b>development</b> lead on the 1.x branch of AngularJS, having spent the last few years working on the AngularJS team. He works remotely, living in London and spends a large proportion of his time looking after his kids, when he is not on a hangout to Mountain View.",
     "webSite": "www.bacondarwin.com",
     "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217195300-30649.jpg",
     "allowAttendeeToEmailMe": true,
