@@ -2,10 +2,6 @@
 
 exports = module.exports = function (Model, $sce, $q) {
   class Speaker extends Model {
-    parse (attributes) {
-      attributes.bio = $sce.trustAsHtml(attributes.bio);
-      return attributes;
-    }
     static findByUrl (url) {
       return this.find(function (speaker) {
         return speaker.presenterUrl === url;
