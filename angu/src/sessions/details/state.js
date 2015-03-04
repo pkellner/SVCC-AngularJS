@@ -7,7 +7,8 @@ function state ($stateProvider) {
     parent: 'base',
     resolve: {
       sessionUrl: sessionUrl,
-      session: getSpeaker
+      session: getSession,
+      times: getTimes
     },
     views: {
       '@layout': {
@@ -26,7 +27,12 @@ function sessionUrl (Sessions, $stateParams) {
 }
 
 
-getSpeaker.$inject = ['Sessions', 'sessionUrl'];
-function getSpeaker (Sessions, sessionUrl) {
+getSession.$inject = ['Sessions', 'sessionUrl'];
+function getSession (Sessions, sessionUrl) {
   return Sessions.fetchByUrl(sessionUrl);
+}
+
+getTimes.$inject = ['SessionTimes', 'sessionUrl'];
+function getTimes (SessionTimes, sessionUrl) {
+  return SessionTimes.fetchAll();
 }

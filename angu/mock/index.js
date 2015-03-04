@@ -36,5 +36,7 @@ function provideMocks ($httpBackend) {
   });
   $httpBackend.whenGET('/rest/sessionurls/arrayonly').respond(sessionUrls);
 
+  $httpBackend.whenGET('/rest/sessiontimes/arrayonly').respond(require('./data/sessionTimes.json'));
+
 }
 provideMocks.$inject = ['$httpBackend'];
