@@ -23,6 +23,16 @@ module.exports = function () {
       });
     });
 
+    it('calls a parse function to mutate the attributes', function () {
+      Model.prototype.parse = function (attributes) {
+        attributes.foo = 'bar';
+        return attributes;
+      };
+      expect(new Model()).to.contain({
+        foo: 'bar'
+      });
+    });
+
   });
 
   describe('#all', function () {
