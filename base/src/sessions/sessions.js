@@ -1,6 +1,6 @@
 'use strict';
 
-factory.$inject = ['Model', 'SessionUrls', '$q'];
+factory.$inject = ['Model', 'SessionUrls'];
 function factory (Model, SessionUrls) {
   class Session extends Model {
     levelName () {
