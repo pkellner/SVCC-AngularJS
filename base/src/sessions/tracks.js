@@ -1,6 +1,6 @@
 'use strict';
 
-exports.$inject = ['Model', '$q'];
+factory.$inject = ['Model'];
 function factory (Model) {
   class Track extends Model {}
   Track.url = '/rest/track';
