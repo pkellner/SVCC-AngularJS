@@ -42,85 +42,21 @@
 
 
   <ul class="sessions">
-    <li class="row">
+    <li class="row" ng-repeat="session in list.sessions">
       <div class="col-xs-4 col-sm-3">
         <span class="sessions--time">9:30 AM - 10:30 AM</span>
         <span class="label label-danger">the future of angular</span>
       </div>
       <div class="sessions--info col-xs-8 col-sm-9">
-        <h4>Angular Behind The Scenes</h4>
-        <div class="sessions--image">
-          <img src="http://placekitten.com/g/114/77" alt="">
-        </div>
-        <div class="sessions--info--detail">
-          <h4 class="color">Erik Spiekermann</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur minima fugiat reprehenderit, cumque aliquid iusto repellendus perferendis. Numquam, vero molestiae. <a href="#" class="more">More</a></p>
-        </div>
-      </div>
-    </li>
-    <li class="row">
-      <div class="col-xs-4 col-sm-3">
-        <span class="sessions--time">9:30 AM - 10:30 AM</span>
-        <span class="label label-success">Web Components <br> in ECMAScript 6</span>
-      </div>
-      <div class="sessions--info col-xs-8 col-sm-9">
-        <h4>Building Platforms with angular.js</h4>
-        <div class="sessions--image">
-          <img src="http://placekitten.com/g/114/77" alt="">
-        </div>
-        <div class="sessions--info--detail">
-          <h4 class="color">Erik Spiekermann</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur minima fugiat reprehenderit, cumque aliquid iusto repellendus perferendis. Numquam, vero molestiae. <a href="#" class="more">More</a></p>
-        </div>
-      </div>
-    </li>
-    <li class="row">
-      <div class="col-xs-4 col-sm-3">
-        <span class="sessions--time">9:30 AM - 10:30 AM</span>
-        <span class="label label-default">angular as we know it</span>
-      </div>
-      <div class="sessions--info col-xs-8 col-sm-9">
-        <h4>Angular Behind The Scenes</h4>
-        <div class="sessions--image">
-          <img src="http://placekitten.com/g/114/77" alt="">
-        </div>
-        <div class="sessions--info--detail">
-          <h4 class="color">Erik Spiekermann</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur minima fugiat reprehenderit, cumque aliquid iusto repellendus perferendis. Numquam, vero molestiae. <a href="#" class="more">More</a></p>
-        </div>
-      </div>
-    </li>
-    <li class="row">
-      <div class="col-xs-4 col-sm-3">
-        <span class="sessions--time">9:30 AM - 10:30 AM</span>
-        <span class="label label-success">Web Components <br> in ECMAScript 6</span>
-      </div>
-      <div class="sessions--info col-xs-8 col-sm-9">
-        <h4>Building Platforms with angular.js</h4>
-        <div class="sessions--image">
-          <img src="http://placekitten.com/g/114/77" alt="">
-        </div>
-        <div class="sessions--info--detail">
-          <h4 class="color">Erik Spiekermann</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur minima fugiat reprehenderit, cumque aliquid iusto repellendus perferendis. Numquam, vero molestiae. <a href="#" class="more">More</a></p>
-        </div>
-      </div>
-    </li>
-    <li class="row">
-      <div class="col-xs-4 col-sm-3">
-        <span class="sessions--time">9:30 AM - 10:30 AM</span>
-        <span class="label label-default">angular as we know it</span>
-      </div>
-      <div class="sessions--info col-xs-8 col-sm-9">
-        <h4>Angular + React = Speed</h4>
-        <div class="sessions--image">
-          <img src="http://placekitten.com/g/114/77" alt="">
-          <img src="http://placekitten.com/g/114/77" alt="">
-        </div>
-        <div class="sessions--info--detail">
-          <h4 class="color">Dave Smith & Kent C. Dodds</h4>
-          <p><strong>Dave Smith</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur minima fugiat reprehenderit, cumque aliquid iusto repellendus perferendis. Numquam, vero molestiae. <a href="#" class="more">More</a></p>
-          <p><strong>Kent C. Dodds</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur minima fugiat reprehenderit, cumque aliquid iusto repellendus perferendis. Numquam, vero molestiae. <a href="#" class="more">More</a></p>
+        <h4>{{session.title}}</h4>
+        <div class="row sessions--info--speaker" ng-repeat="speaker in session.speakersList">
+          <div class="sessions--image">
+            <img ng-src="{{speaker.imageUrl}}" />
+          </div>
+          <div class="sessions--info--detail">
+            <h4 class="color">{{speaker.userFirstName}} {{speaker.userLastName}}</h4>
+            <p>{{speaker.userBioShort}}</p>
+          </div>
         </div>
       </div>
     </li>
