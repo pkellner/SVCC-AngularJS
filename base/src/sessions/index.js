@@ -5,4 +5,5 @@ module.exports = require('angular')
   .factory('Sessions', require('./sessions'))
   .factory('SessionUrls', require('./urls'))
   .factory('SessionTimes', require('./times'))
+  .factory('Tracks', require('./tracks'))
   .name;
