@@ -1,24 +1,29 @@
 'use strict';
 
-state.$inject = ['$stateProvider'];
-function state ($stateProvider) {
-  $stateProvider.state('session', {
-    url: '/sessions/:camp/:session',
-    parent: 'base',
-    resolve: {
-      sessionUrl: sessionUrl,
-      session: getSession
-    },
-    views: {
-      '@layout': {
-        controller: 'SessionDetailsController',
-        controllerAs: 'details',
-        templateUrl: 'app/sessions/details/details.html'
+states.$inject = ['$stateProvider'];
+function states ($stateProvider) {
+  ['session', 'workshop'].forEach(function (type) {
+    $stateProvider.state(type, {
+      url: `/${type}s/:camp/:session`,
+      parent: 'base',
+      resolve: {
+        sessionType: function () {
+          return type;
+        },
+        sessionUrl: sessionUrl,
+        session: getSession
+      },
+      views: {
+        '@layout': {
+          controller: 'SessionDetailsController',
+          controllerAs: 'details',
+          templateUrl: 'app/sessions/details/details.html'
+        }
       }
-    }
+    });
   });
 }
-export default state;
+export default states;
 
 sessionUrl.$inject = ['Sessions', '$stateParams'];
 function sessionUrl (Sessions, $stateParams) {
