@@ -126,9 +126,11 @@
     &--toggle {
       float: left;
       display: block;
+      padding: 2px 10px;
       font-size: 20px;
       border: none;
       background: none;
+      -webkit-appearance: none;
     }
 
     &--name {
