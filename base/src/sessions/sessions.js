@@ -39,6 +39,9 @@ function factory (Model, SessionUrls) {
     }
   }
   Session.url = '/rest/session';
+  Session.comparator = function (session) {
+    return new Date(session.sessionTimeDateTime);
+  }
   return Session.init();
 }
 
