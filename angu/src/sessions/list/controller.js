@@ -2,9 +2,11 @@
 
 import angular from 'angular';
 
-function SessionListController (sessions) {
+function SessionListController (sessions, days) {
   this.sessions = sessions;
+  this.days = days;
+  this.day = days[0];
 }
-SessionListController.$inject = ['sessions'];
+SessionListController.$inject = ['sessions', 'days'];
 
 export default SessionListController;

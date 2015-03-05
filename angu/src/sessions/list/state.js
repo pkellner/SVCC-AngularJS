@@ -6,7 +6,8 @@ function state ($stateProvider) {
     url: '/sessions',
     parent: 'base',
     resolve: {
-      sessions: getSessions
+      sessions: getSessions,
+      days: getDays
     },
     views: {
       '@layout': {
@@ -22,4 +23,9 @@ export default state;
 getSessions.$inject = ['Sessions'];
 function getSessions (Sessions) {
   return Sessions.fetchAll();
+}
+
+getDays.$inject = ['Days'];
+function getDays (Days) {
+  return Days.fetchAll();
 }

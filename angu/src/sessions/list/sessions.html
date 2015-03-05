@@ -7,10 +7,7 @@
   <div class="separator">
     <div class="separator--item">
       <span>View: </span>
-      <select name="s1" id="s2">
-        <option value="1">Monday, June 22</option>
-        <option value="2">Tuesday, June 23</option>
-      </select>
+      <select ng-options="day.dayOfWeek for day in list.days" ng-model="list.day"></select>
     </div>
   </div>
 
