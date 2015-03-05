@@ -30,7 +30,7 @@
 
 
   <ul class="sessions">
-    <li class="row" ng-repeat="session in list.sessions">
+    <li class="row" ng-repeat="session in list.sessions | filter:list.filter">
       <div class="col-xs-4 col-sm-3">
         <span class="sessions--time">{{session.sessionTime}}</span>
         <span class="label label-danger">{{session.sessionTrackName}}</span>
