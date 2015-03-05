@@ -29,6 +29,7 @@ function provideMocks ($httpBackend) {
   var sessions = require('./data/sessions.json');
   var sessionUrls = require('./data/sessionUrls.json');
   var sessionEndpoint = '/rest/session/arrayonly';
+  $httpBackend.whenGET(sessionEndpoint).respond(sessions);
   $httpBackend.whenGET(new RegExp(`${escape(sessionEndpoint)}/.`)).respond(function (method, url) {
     var id = parseInt(url.split(`${sessionEndpoint}/`)[1]);
     var session = sessions.find(session => session.id === id);
