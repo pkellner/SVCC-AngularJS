@@ -7,7 +7,8 @@ function state ($stateProvider) {
     parent: 'base',
     resolve: {
       sessions: getSessions,
-      days: getDays
+      days: getDays,
+      tracks: getTracks
     },
     views: {
       '@layout': {
@@ -28,4 +29,9 @@ function getSessions (Sessions) {
 getDays.$inject = ['Days'];
 function getDays (Days) {
   return Days.fetchAll();
+}
+
+getTracks.$inject = ['Tracks'];
+function getTracks (Tracks) {
+  return Tracks.fetchAll();
 }

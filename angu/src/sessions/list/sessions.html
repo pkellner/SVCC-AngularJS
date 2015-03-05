@@ -15,26 +15,14 @@
     <ul class="list--radio list--centered list--horizontal">
       <li>
         <div class="radio">
-          <input type="radio" name="check" id="c1" checked>
-          <label for="c1">All tracks</label>
+          <input type="radio" name="check" id="radio-all-tracks" checked ng-model="list.track">
+          <label for="radio-all-tracks">All tracks</label>
         </div>
       </li>
-      <li>
+      <li ng-repeat="track in list.tracks">
         <div class="radio">
-          <input type="radio" name="check" id="c2">
-          <label for="c2">The future of Angular</label>
-        </div>
-      </li>
-      <li>
-        <div class="radio">
-          <input type="radio" name="check" id="c3">
-          <label for="c3">Angular as we know it</label>
-        </div>
-      </li>
-      <li>
-        <div class="radio">
-          <input type="radio" name="check" id="c4">
-          <label for="c4">Web components in ECMAScript 6</label>
+          <input type="radio" id="radio-track-{{$index}}" ng-model="list.track" ng-value="track">
+          <label for="radio-track-{{$index}}">{{track.named}}</label>
         </div>
       </li>
     </ul>
