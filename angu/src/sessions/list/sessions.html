@@ -36,7 +36,9 @@
         <span class="label label-danger">{{session.sessionTrackName}}</span>
       </div>
       <div class="sessions--info col-xs-8 col-sm-9">
-        <h4>{{session.title}}</h4>
+        <session-link session="session">
+          <h4>{{session.title}}</h4>
+        </session-link>
         <div class="row sessions--info--speaker" ng-repeat="speaker in session.speakersList">
           <div class="sessions--image">
             <img ng-src="{{speaker.imageUrl}}" />

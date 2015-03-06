@@ -1,0 +1,10 @@
+<span ng-if="link.workshop">
+  <a ui-sref="workshop(link.session.$stateParams())">
+    <ng-transclude></ng-transclude>
+  </a>
+</span>
+<span ng-if="!link.workshop">
+  <a ui-sref="session(link.session.$stateParams())">
+    <ng-transclude></ng-transclude>
+  </a>
+</span>

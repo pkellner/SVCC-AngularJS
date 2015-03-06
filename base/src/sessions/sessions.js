@@ -30,12 +30,12 @@ function factory (Model, SessionUrls) {
     static parseUrl (url) {
       const parts = url.split('/');
       return {
-        camp: parts[1],
-        session: parts[2]
+        camp: parts[2],
+        session: parts[3]
       };
     }
     $stateParams () {
-      return Session.parseUrl(this.presenterUrl);
+      return Session.parseUrl(this.sessionUrl);
     }
   }
   Session.url = '/rest/session';
