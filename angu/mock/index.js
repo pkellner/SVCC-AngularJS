@@ -37,7 +37,7 @@ function provideMocks ($httpBackend) {
   });
   $httpBackend.whenGET('/rest/sessionurls/arrayonly').respond(sessionUrls);
 
-  $httpBackend.whenGET('/rest/sessiontimes/arrayonly').respond(require('./data/sessionTimes.json'));
+  $httpBackend.whenGET('/rest/sessiontime/arrayonly').respond(require('./data/sessionTimes.json'));
   $httpBackend.whenGET('/rest/track/arrayonly').respond(require('./data/tracks.json'));
   $httpBackend.whenGET('/rest/sessiondayofweek/arrayonly').respond(require('./data/sessionDayOfWeek.json'));
 

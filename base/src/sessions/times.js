@@ -3,7 +3,7 @@
 factory.$inject = ['Model', '$q'];
 function factory (Model) {
   class SessionTime extends Model {}
-  SessionTime.url = '/rest/sessiontimes';
+  SessionTime.url = '/rest/sessiontime';
   return SessionTime.init();
 }
 
