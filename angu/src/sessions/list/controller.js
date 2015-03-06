@@ -1,13 +1,22 @@
 'use strict';
 
-import angular from 'angular';
-
-function SessionListController (sessions, days, tracks) {
+function SessionListController (sessions, days, tracks, Speakers) {
   this.sessions = sessions;
   this.days = days;
   this.day = days[0];
   this.tracks = tracks;
   this.track = undefined;
+
+  this.sessions.reduce(function (speakers, session) {
+    speakers.push.apply(speakers, session.speakersList);
+    return speakers;
+  }, [])
+  .forEach(function (speaker) {
+    speaker.$stateParams = function () {
+      const url = this.speakerLocalUrl.replace('/Presenter/', '').toLowerCase();
+      return Speakers.parseUrl(url);
+    };
+  });
 
   this.filter = (session) => {
     if (this.day.dayOfWeek !== 'Show All') {
@@ -18,8 +27,8 @@ function SessionListController (sessions, days, tracks) {
       return;
     }
     return true;
-  }
+  };
 }
-SessionListController.$inject = ['sessions', 'days', 'tracks'];
+SessionListController.$inject = ['sessions', 'days', 'tracks', 'Speakers'];
 
 export default SessionListController;

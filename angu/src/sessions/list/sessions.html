@@ -49,7 +49,9 @@
             <img ng-src="{{speaker.imageUrl}}?format=jpg&height=400&width=400&scale=both&mode=pad&Bgcolor=ffffff" />
           </div>
           <div class="sessions--info--detail">
-            <h4 class="color">{{speaker.userFirstName}} {{speaker.userLastName}}</h4>
+            <a ui-sref="speaker(speaker.$stateParams())">
+              <h4 class="color">{{speaker.userFirstName}} {{speaker.userLastName}}</h4>
+            </a>
             <p>{{speaker.userBioShort}}</p>
           </div>
         </div>
