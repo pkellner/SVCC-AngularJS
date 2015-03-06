@@ -1,9 +1,8 @@
 'use strict';
 
-exports = module.exports = function (Model, $sce, $q, $injector) {
+exports = module.exports = function (Model, $sce, $q, Session) {
   class Speaker extends Model {
     parse (attributes) {
-      const Session = $injector.get('Sessions');
       attributes.sessions = attributes.sessions.map(function (data) {
         return new Session(data);
       });
@@ -40,4 +39,4 @@ exports = module.exports = function (Model, $sce, $q, $injector) {
   });
   return Speaker.init();
 };
-exports.$inject = ['Model', '$sce', '$q', '$injector'];
+exports.$inject = ['Model', '$sce', '$q', 'Sessions'];

@@ -1,9 +1,6 @@
 'use strict';
 
-export default factory;
-
-factory.$inject = ['$compile'];
-function factory ($compile) {
+export default function () {
   return {
     restrict: 'EA',
     transclude: true,
@@ -16,5 +13,5 @@ function factory ($compile) {
     },
     controllerAs: 'link',
     bindToController: true
-  }
-};
+  };
+}
