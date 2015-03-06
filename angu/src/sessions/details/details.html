@@ -9,7 +9,7 @@
             <h3 class="color">{{details.session.title}} <span>by {{details.byline}}</span></h3>
         </div>
         <div class="speaker-details--desc">
-            <span class="speaker-details--date">{{details.session.time.startTime | date:'EEEE, MMMM d - h a'}}</span> <span class="label label-default">{{details.session.track.named}}</span>
+            <span class="speaker-details--date">{{details.session.time.startTimeFriendlyDay}} {{details.session.time.description}}</span> <span class="label label-default">{{details.session.track.named}}</span>
         </div>
 
         <!-- <p>{{details.session.description}}</p> -->
