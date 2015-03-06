@@ -1,6 +1,7 @@
 'use strict';
 
 import angular from 'angular';
+import list from 'listify';
 
 function SessionDetailsController (session, Speakers) {
   this.session = session;
@@ -15,7 +16,7 @@ function SessionDetailsController (session, Speakers) {
       }
     });
   });
-  this.byline = this.speakers.map(s => s.name).join(' and ');
+  this.byline = list(this.speakers.map(s => s.name));
 }
 SessionDetailsController.$inject = ['session', 'Speakers'];
 

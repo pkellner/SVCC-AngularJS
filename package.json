@@ -18,6 +18,7 @@
     "browserify-istanbul": "~0.1.4",
     "es5-shim": "~4.1.0",
     "escape-string-regexp": "~1.0.2",
+    "listify": "~1.0.0",
     "pusher-angular": "~0.1.4",
     "qs": "~2.3.3",
     "sort-on": "bendrucker/sort-on",
