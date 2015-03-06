@@ -35,7 +35,7 @@ function factory (Model, SessionUrls) {
       };
     }
     $stateParams () {
-      return Session.parseUrl(this.sessionUrl);
+      return Session.parseUrl(this.sessionUrlPre);
     }
   }
   Session.url = '/rest/session';

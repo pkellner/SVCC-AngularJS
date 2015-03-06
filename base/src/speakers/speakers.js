@@ -1,7 +1,14 @@
 'use strict';
 
-exports = module.exports = function (Model, $sce, $q) {
+exports = module.exports = function (Model, $sce, $q, $injector) {
   class Speaker extends Model {
+    parse (attributes) {
+      const Session = $injector.get('Sessions');
+      attributes.sessions = attributes.sessions.map(function (data) {
+        return new Session(data);
+      });
+      return attributes;
+    }
     static findByUrl (url) {
       return this.find(function (speaker) {
         return speaker.presenterUrl === url;
@@ -33,4 +40,4 @@ exports = module.exports = function (Model, $sce, $q) {
   });
   return Speaker.init();
 };
-exports.$inject = ['Model', '$sce', '$q'];
+exports.$inject = ['Model', '$sce', '$q', '$injector'];

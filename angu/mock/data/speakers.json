@@ -5,7 +5,7 @@
     "lastName": "Bacon Darwin",
     "email": "",
     "phoneNumber": "",
-    "bio": "Pete is now the <b>development</b> lead on the 1.x branch of AngularJS, having spent the last few years working on the AngularJS team. He works remotely, living in London and spends a large proportion of his time looking after his kids, when he is not on a hangout to Mountain View.",
+    "bio": "Pete is now the development lead on the 1.x branch of AngularJS, having spent the last few years working on the AngularJS team. He works remotely, living in London and spends a large proportion of his time looking after his kids, when he is not on a hangout to Mountain View.",
     "webSite": "www.bacondarwin.com",
     "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217195300-30649.jpg",
     "allowAttendeeToEmailMe": true,
@@ -63,11 +63,15 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-23T13:30:00",
         "sessionUrl": "2015sf/you-can-teach-an-old-dog-new-tricks",
+        "sessionUrlPre": "/session/2015sf/you-can-teach-an-old-dog-new-tricks",
         "sessionTrackId": 64,
-        "sessionTrackName": "Track 3"
+        "sessionTrackName": "Track 3",
+        "workshop": false,
+        "sessionTimesId": 86,
+        "keynote": false
       }
     ],
-    "allowHtml": true,
+    "allowHtml": false,
     "facebookUrl": "",
     "googlePlusUrl": "https://plus.google.com/+PeteBaconDarwin/about",
     "linkedInUrl": "",
@@ -143,8 +147,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T16:00:00",
         "sessionUrl": "2015sf/get-mean-mongodb-express-angular-node",
+        "sessionUrlPre": "/session/2015sf/get-mean-mongodb-express-angular-node",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 80,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -243,8 +251,12 @@
         "sessionLevelId": 2,
         "sessionTimeDateTime": "2015-06-23T11:00:00",
         "sessionUrl": "2015sf/building-office-365-spas-with-angular-and-cors",
+        "sessionUrlPre": "/session/2015sf/building-office-365-spas-with-angular-and-cors",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 84,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -323,8 +335,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T16:30:00",
         "sessionUrl": "2015sf/ecma6",
+        "sessionUrlPre": "/session/2015sf/ecma6",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 81,
+        "keynote": true
       }
     ],
     "allowHtml": true,
@@ -384,7 +400,7 @@
             "linkedInUrl": "http://www.linkedin.com/in/bendrucker",
             "twitterUrl": "http://twitter.com/bendrucker",
             "urlPostToken": "2015sf",
-            "bioShort": "JavaScript developer and open source advocate. Founder of Valet.io.",
+            "bioShort": "JavaScript devleoper and open source advocate. Founder of Valet.io.",
             "isKeyNoteSpeaker": false,
             "isWorkshopSpeaker": false
           }
@@ -408,7 +424,114 @@
         "sessionLevelId": 2,
         "sessionTimeDateTime": "2000-01-01T00:00:00",
         "sessionUrl": "2015sf/realtime-angular-with-firebase",
-        "sessionTrackId": 0
+        "sessionUrlPre": "/session/2015sf/realtime-angular-with-firebase",
+        "sessionTrackId": 0,
+        "workshop": false,
+        "sessionTimesId": 0,
+        "keynote": false
+      },
+      {
+        "id": 4742,
+        "title": "This is the firebase workshop with ben drucker co taught by david east dan",
+        "description": "x",
+        "room": "Room 0 Not Found",
+        "logDate": "0001-01-01T00:00:00",
+        "startTime": "Wed 9:00 AM",
+        "startTimeDateTime": "0001-01-01T00:00:00",
+        "interestedCount": 0,
+        "planToAttendCount": 0,
+        "interested": false,
+        "willAttend": false,
+        "presenters": [
+          {
+            "id": 30482,
+            "firstName": "Ben",
+            "lastName": "Drucker",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "Ben is a JavaScript developer and an active participant in the open source Node, Angular, and Browserify communities. He's currently working on Valet.io and building applications to help nonprofits raise more money at their events.\n\nBen maintains a number of popular open source projects, including Knex.js, Bookshelf.js, karma-browserify, and MockFirebase, along with more than a dozen open source Angular modules. ",
+            "webSite": "http://www.bendrucker.me",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150224115156-30482.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Valet.io",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "http://www.facebook.com/bendrucker",
+            "googlePlusUrl": "",
+            "linkedInUrl": "http://www.linkedin.com/in/bendrucker",
+            "twitterUrl": "http://twitter.com/bendrucker",
+            "urlPostToken": "2015sf",
+            "bioShort": "JavaScript devleoper and open source advocate. Founder of Valet.io.",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          },
+          {
+            "id": 823,
+            "firstName": "Kevin",
+            "lastName": "Nilson",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "Team Lead of the Chromecast Technical Solutions Engineer team, a Java Champion and three time JavaOne Rock Star Presenter. Kevin has spoken at conferences such as JavaOne, Devoxx, JAX, O'Reilly Fluent, Silicon Valley Code Camp, JAX, HTML5DevConf, On Android, NFJS SpringOne and AjaxWorld. Kevin is the co-author of Web 2.0 Fundamentals. In the past Kevin was an adjunct professor at the College of San Mateo. Kevin holds a MS and BS in Computer Science from Southern Illinois University. Kevin is the leader of the Silicon Valley JavaScript Meetup, Silicon Valley Java User Group, Silicon Valley Google Developer Group, and Devoxx4Kids Bay Area.",
+            "webSite": "http://www.javaclimber.com",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140429205640-823.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Google",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "http://www.facebook.com/javaclimber",
+            "googlePlusUrl": "https://plus.google.com/115904610891053142665/about",
+            "linkedInUrl": "http://www.linkedin.com/in/kevinnilson",
+            "twitterUrl": "http://twitter.com/javaclimber",
+            "urlPostToken": "2015sf",
+            "bioShort": "Chromecast Technical Solutions Engineering Lead at Google, Java Champion, 3 time JavaOne Rock Star",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          },
+          {
+            "id": 14842,
+            "firstName": "Dan",
+            "lastName": "Wahlin",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "<br /><hr /><br /><p>Dan Wahlin founded The Wahlin Group (<a href=\"http://www.thewahlingroup.com/\">http://www.TheWahlinGroup.com</a>) which provides consulting and training services on Web technologies such as JavaScript, AngularJS and other SPA frameworks, jQuery, HTML5, Node.js, C#, ASP.NET MVC, Web API, and SharePoint. He’s also one of the top video course authors at Pluralsight.com and has published several courses covering a range of technologies. Dan speaks at conferences and user groups around the world and has written several books on Web technologies.&#160; Dan blogs at <a href=\"http://weblogs.asp.net/dwahlin\">http://weblogs.asp.net/dwahlin</a>, runs the Web Weekly newsletter, and writes columns for various technical magazines. Follow Dan on Twitter @DanWahlin.</p>",
+            "webSite": "http://www.TheWahlinGroup.com",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131216053752-14842.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Wahlin Consulting",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "",
+            "googlePlusUrl": "",
+            "linkedInUrl": "",
+            "twitterUrl": "http://twitter.com/DanWahlin",
+            "urlPostToken": "2015sf",
+            "bioShort": "Dan Wahlin is the founder of Wahlin Consulting which specializes in Web technologies.",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          }
+        ],
+        "tags": [
+          {
+            "id": 945,
+            "tagName": "Modular Architecture",
+            "sessions": []
+          }
+        ],
+        "allowHtml": false,
+        "kidOrProfessionalSession": "ProfessionalSession",
+        "kidSession": false,
+        "tagsResultCsv": "Modular Architecture",
+        "sessionLevelId": 1,
+        "sessionTimeDateTime": "2015-06-24T09:00:00",
+        "sessionUrl": "2015sf/this-is-the-firebase-workshop-with-ben-drucker-co-taught-by-david-east-dan",
+        "sessionUrlPre": "/workshop/2015sf/this-is-the-firebase-workshop-with-ben-drucker-co-taught-by-david-east-dan",
+        "sessionTrackId": 0,
+        "workshop": true,
+        "sessionTimesId": 91,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -418,9 +541,9 @@
     "twitterUrl": "http://twitter.com/bendrucker",
     "presenterUrl": "2015sf/ben-drucker-30482",
     "urlPostToken": "2015sf",
-    "bioShort": "JavaScript developer and open source advocate. Founder of Valet.io.",
+    "bioShort": "JavaScript devleoper and open source advocate. Founder of Valet.io.",
     "isKeyNoteSpeaker": false,
-    "isWorkshopSpeaker": false,
+    "isWorkshopSpeaker": true,
     "speakerSequence": "a"
   },
   {
@@ -487,8 +610,12 @@
         "sessionLevelId": 2,
         "sessionTimeDateTime": "2015-06-23T15:30:00",
         "sessionUrl": "2015sf/migrating-to-angular2",
+        "sessionUrlPre": "/session/2015sf/migrating-to-angular2",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 88,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -613,8 +740,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T09:00:00",
         "sessionUrl": "2015sf/key-note",
+        "sessionUrlPre": "/session/2015sf/key-note",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 65,
+        "keynote": true
       }
     ],
     "allowHtml": false,
@@ -739,8 +870,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T09:00:00",
         "sessionUrl": "2015sf/key-note",
+        "sessionUrlPre": "/session/2015sf/key-note",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 65,
+        "keynote": true
       }
     ],
     "allowHtml": false,
@@ -754,6 +889,146 @@
     "isKeyNoteSpeaker": true,
     "isWorkshopSpeaker": false,
     "speakerSequence": "200"
+  },
+  {
+    "id": 903,
+    "firstName": "Peter",
+    "lastName": "Kellner",
+    "email": "",
+    "phoneNumber": "",
+    "bio": "Peter Kellner, a Microsoft ASP.NET MVP since 2007, is founder and president of 73rd Street Associates and a seasoned software professional specializing in high quality, scalable and extensible .Net web applications.  His experience includes building and leading engineering teams both on and off shore. When not working, Peter spends most his free time biking. ",
+    "webSite": "peterkellner.net",
+    "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140906033629-903.jpg",
+    "allowAttendeeToEmailMe": false,
+    "company": "73rd Street Associates",
+    "presentationLimit": 0,
+    "sessions": [
+      {
+        "id": 4739,
+        "title": "testtitle",
+        "description": "afs sad sad fsa fsad fsad fsad fsad fsda",
+        "room": "Room 0 Not Found",
+        "logDate": "0001-01-01T00:00:00",
+        "startTime": "Time 0 Not Found",
+        "startTimeDateTime": "0001-01-01T00:00:00",
+        "interestedCount": 0,
+        "planToAttendCount": 0,
+        "interested": false,
+        "willAttend": false,
+        "presenters": [
+          {
+            "id": 903,
+            "firstName": "Peter",
+            "lastName": "Kellner",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "Peter Kellner, a Microsoft ASP.NET MVP since 2007, is founder and president of 73rd Street Associates and a seasoned software professional specializing in high quality, scalable and extensible .Net web applications.  His experience includes building and leading engineering teams both on and off shore. When not working, Peter spends most his free time biking. ",
+            "webSite": "peterkellner.net",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140906033629-903.jpg",
+            "allowAttendeeToEmailMe": false,
+            "company": "73rd Street Associates",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "http://www.facebook.com/peterkellner99",
+            "googlePlusUrl": "https://plus.google.com/+PeterKellner/about",
+            "linkedInUrl": "http://www.linkedin.com/in/peterkellner",
+            "twitterUrl": "http://twitter.com/pkellner",
+            "urlPostToken": "2015sf",
+            "bioShort": "Peter Kellner, a Microsoft ASP.NET MVP since 2007, is founder and president of 73rd Street.",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          }
+        ],
+        "tags": [
+          {
+            "id": 945,
+            "tagName": "Modular Architecture",
+            "sessions": []
+          }
+        ],
+        "allowHtml": false,
+        "kidOrProfessionalSession": "ProfessionalSession",
+        "kidSession": false,
+        "tagsResultCsv": "Modular Architecture",
+        "sessionLevelId": 1,
+        "sessionTimeDateTime": "2000-01-01T00:00:00",
+        "sessionUrl": "2015sf/testtitle",
+        "sessionUrlPre": "/session/2015sf/testtitle",
+        "sessionTrackId": 0,
+        "workshop": false,
+        "sessionTimesId": 0,
+        "keynote": false
+      },
+      {
+        "id": 4745,
+        "title": "lukeday2thurs",
+        "description": "x",
+        "room": "Room 0 Not Found",
+        "logDate": "0001-01-01T00:00:00",
+        "startTime": "Thur 9:00 AM",
+        "startTimeDateTime": "0001-01-01T00:00:00",
+        "interestedCount": 0,
+        "planToAttendCount": 0,
+        "interested": false,
+        "willAttend": false,
+        "presenters": [
+          {
+            "id": 903,
+            "firstName": "Peter",
+            "lastName": "Kellner",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "Peter Kellner, a Microsoft ASP.NET MVP since 2007, is founder and president of 73rd Street Associates and a seasoned software professional specializing in high quality, scalable and extensible .Net web applications.  His experience includes building and leading engineering teams both on and off shore. When not working, Peter spends most his free time biking. ",
+            "webSite": "peterkellner.net",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140906033629-903.jpg",
+            "allowAttendeeToEmailMe": false,
+            "company": "73rd Street Associates",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "http://www.facebook.com/peterkellner99",
+            "googlePlusUrl": "https://plus.google.com/+PeterKellner/about",
+            "linkedInUrl": "http://www.linkedin.com/in/peterkellner",
+            "twitterUrl": "http://twitter.com/pkellner",
+            "urlPostToken": "2015sf",
+            "bioShort": "Peter Kellner, a Microsoft ASP.NET MVP since 2007, is founder and president of 73rd Street.",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          }
+        ],
+        "tags": [
+          {
+            "id": 945,
+            "tagName": "Modular Architecture",
+            "sessions": []
+          }
+        ],
+        "allowHtml": false,
+        "kidOrProfessionalSession": "ProfessionalSession",
+        "kidSession": false,
+        "tagsResultCsv": "Modular Architecture",
+        "sessionLevelId": 1,
+        "sessionTimeDateTime": "2015-06-25T09:00:00",
+        "sessionUrl": "2015sf/lukeday2thurs",
+        "sessionUrlPre": "/workshop/2015sf/lukeday2thurs",
+        "sessionTrackId": 0,
+        "workshop": true,
+        "sessionTimesId": 92,
+        "keynote": false
+      }
+    ],
+    "allowHtml": false,
+    "facebookUrl": "http://www.facebook.com/peterkellner99",
+    "googlePlusUrl": "https://plus.google.com/+PeterKellner/about",
+    "linkedInUrl": "http://www.linkedin.com/in/peterkellner",
+    "twitterUrl": "http://twitter.com/pkellner",
+    "presenterUrl": "2015sf/peter-kellner-903",
+    "urlPostToken": "2015sf",
+    "bioShort": "Peter Kellner, a Microsoft ASP.NET MVP since 2007, is founder and president of 73rd Street.",
+    "isKeyNoteSpeaker": false,
+    "isWorkshopSpeaker": true,
+    "speakerSequence": ""
   },
   {
     "id": 653,
@@ -800,7 +1075,7 @@
             "linkedInUrl": "http://www.linkedin.com/in/www.linkedin.com/in/deborahkurata",
             "twitterUrl": "http://twitter.com/DeborahKurata",
             "urlPostToken": "2015sf",
-            "bioShort": "An independent consultant, mentor, and developer focusing on Windows and Web.",
+            "bioShort": "Deborah Kurata is an independent consultant, mentor, and developer focusing on Windows and Web.",
             "isKeyNoteSpeaker": false,
             "isWorkshopSpeaker": false
           }
@@ -819,8 +1094,12 @@
         "sessionLevelId": 2,
         "sessionTimeDateTime": "2015-06-23T10:30:00",
         "sessionUrl": "2015sf/something-interesting",
+        "sessionUrlPre": "/session/2015sf/something-interesting",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 83,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -830,10 +1109,10 @@
     "twitterUrl": "http://twitter.com/DeborahKurata",
     "presenterUrl": "2015sf/deborah-kurata-653",
     "urlPostToken": "2015sf",
-    "bioShort": "An independent consultant, mentor, and developer focusing on Windows and Web.",
+    "bioShort": "Deborah Kurata is an independent consultant, mentor, and developer focusing on Windows and Web.",
     "isKeyNoteSpeaker": false,
     "isWorkshopSpeaker": false,
-    "speakerSequence": ""
+    "speakerSequence": "zzzzzzzz"
   },
   {
     "id": 31710,
@@ -899,8 +1178,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T15:00:00",
         "sessionUrl": "2015sf/ang2za",
+        "sessionUrlPre": "/session/2015sf/ang2za",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 78,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -979,8 +1262,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T14:00:00",
         "sessionUrl": "2015sf/angu2z",
+        "sessionUrlPre": "/session/2015sf/angu2z",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 73,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -1105,8 +1392,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T09:00:00",
         "sessionUrl": "2015sf/key-note",
+        "sessionUrlPre": "/session/2015sf/key-note",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 65,
+        "keynote": true
       }
     ],
     "allowHtml": false,
@@ -1185,8 +1476,115 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2000-01-01T00:00:00",
         "sessionUrl": "2015sf/bringing-web-content-to-the-big-screen-with-google-cast",
+        "sessionUrlPre": "/session/2015sf/bringing-web-content-to-the-big-screen-with-google-cast",
         "sessionTrackId": 64,
-        "sessionTrackName": "Track 3"
+        "sessionTrackName": "Track 3",
+        "workshop": false,
+        "sessionTimesId": 70,
+        "keynote": false
+      },
+      {
+        "id": 4742,
+        "title": "This is the firebase workshop with ben drucker co taught by david east dan",
+        "description": "x",
+        "room": "Room 0 Not Found",
+        "logDate": "0001-01-01T00:00:00",
+        "startTime": "Wed 9:00 AM",
+        "startTimeDateTime": "0001-01-01T00:00:00",
+        "interestedCount": 0,
+        "planToAttendCount": 0,
+        "interested": false,
+        "willAttend": false,
+        "presenters": [
+          {
+            "id": 30482,
+            "firstName": "Ben",
+            "lastName": "Drucker",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "Ben is a JavaScript developer and an active participant in the open source Node, Angular, and Browserify communities. He's currently working on Valet.io and building applications to help nonprofits raise more money at their events.\n\nBen maintains a number of popular open source projects, including Knex.js, Bookshelf.js, karma-browserify, and MockFirebase, along with more than a dozen open source Angular modules. ",
+            "webSite": "http://www.bendrucker.me",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150224115156-30482.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Valet.io",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "http://www.facebook.com/bendrucker",
+            "googlePlusUrl": "",
+            "linkedInUrl": "http://www.linkedin.com/in/bendrucker",
+            "twitterUrl": "http://twitter.com/bendrucker",
+            "urlPostToken": "2015sf",
+            "bioShort": "JavaScript devleoper and open source advocate. Founder of Valet.io.",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          },
+          {
+            "id": 823,
+            "firstName": "Kevin",
+            "lastName": "Nilson",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "Team Lead of the Chromecast Technical Solutions Engineer team, a Java Champion and three time JavaOne Rock Star Presenter. Kevin has spoken at conferences such as JavaOne, Devoxx, JAX, O'Reilly Fluent, Silicon Valley Code Camp, JAX, HTML5DevConf, On Android, NFJS SpringOne and AjaxWorld. Kevin is the co-author of Web 2.0 Fundamentals. In the past Kevin was an adjunct professor at the College of San Mateo. Kevin holds a MS and BS in Computer Science from Southern Illinois University. Kevin is the leader of the Silicon Valley JavaScript Meetup, Silicon Valley Java User Group, Silicon Valley Google Developer Group, and Devoxx4Kids Bay Area.",
+            "webSite": "http://www.javaclimber.com",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140429205640-823.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Google",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "http://www.facebook.com/javaclimber",
+            "googlePlusUrl": "https://plus.google.com/115904610891053142665/about",
+            "linkedInUrl": "http://www.linkedin.com/in/kevinnilson",
+            "twitterUrl": "http://twitter.com/javaclimber",
+            "urlPostToken": "2015sf",
+            "bioShort": "Chromecast Technical Solutions Engineering Lead at Google, Java Champion, 3 time JavaOne Rock Star",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          },
+          {
+            "id": 14842,
+            "firstName": "Dan",
+            "lastName": "Wahlin",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "<br /><hr /><br /><p>Dan Wahlin founded The Wahlin Group (<a href=\"http://www.thewahlingroup.com/\">http://www.TheWahlinGroup.com</a>) which provides consulting and training services on Web technologies such as JavaScript, AngularJS and other SPA frameworks, jQuery, HTML5, Node.js, C#, ASP.NET MVC, Web API, and SharePoint. He’s also one of the top video course authors at Pluralsight.com and has published several courses covering a range of technologies. Dan speaks at conferences and user groups around the world and has written several books on Web technologies.&#160; Dan blogs at <a href=\"http://weblogs.asp.net/dwahlin\">http://weblogs.asp.net/dwahlin</a>, runs the Web Weekly newsletter, and writes columns for various technical magazines. Follow Dan on Twitter @DanWahlin.</p>",
+            "webSite": "http://www.TheWahlinGroup.com",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131216053752-14842.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Wahlin Consulting",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "",
+            "googlePlusUrl": "",
+            "linkedInUrl": "",
+            "twitterUrl": "http://twitter.com/DanWahlin",
+            "urlPostToken": "2015sf",
+            "bioShort": "Dan Wahlin is the founder of Wahlin Consulting which specializes in Web technologies.",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          }
+        ],
+        "tags": [
+          {
+            "id": 945,
+            "tagName": "Modular Architecture",
+            "sessions": []
+          }
+        ],
+        "allowHtml": false,
+        "kidOrProfessionalSession": "ProfessionalSession",
+        "kidSession": false,
+        "tagsResultCsv": "Modular Architecture",
+        "sessionLevelId": 1,
+        "sessionTimeDateTime": "2015-06-24T09:00:00",
+        "sessionUrl": "2015sf/this-is-the-firebase-workshop-with-ben-drucker-co-taught-by-david-east-dan",
+        "sessionUrlPre": "/workshop/2015sf/this-is-the-firebase-workshop-with-ben-drucker-co-taught-by-david-east-dan",
+        "sessionTrackId": 0,
+        "workshop": true,
+        "sessionTimesId": 91,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -1198,7 +1596,7 @@
     "urlPostToken": "2015sf",
     "bioShort": "Chromecast Technical Solutions Engineering Lead at Google, Java Champion, 3 time JavaOne Rock Star",
     "isKeyNoteSpeaker": false,
-    "isWorkshopSpeaker": false,
+    "isWorkshopSpeaker": true,
     "speakerSequence": ""
   },
   {
@@ -1288,8 +1686,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T11:00:00",
         "sessionUrl": "2015sf/dan-and-john-show",
+        "sessionUrlPre": "/session/2015sf/dan-and-john-show",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 66,
+        "keynote": false
       },
       {
         "id": 4738,
@@ -1342,7 +1744,11 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-23T11:00:00",
         "sessionUrl": "2015sf/johns-other-session",
-        "sessionTrackId": 0
+        "sessionUrlPre": "/session/2015sf/johns-other-session",
+        "sessionTrackId": 0,
+        "workshop": false,
+        "sessionTimesId": 84,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -1356,6 +1762,147 @@
     "isKeyNoteSpeaker": false,
     "isWorkshopSpeaker": false,
     "speakerSequence": "2000"
+  },
+  {
+    "id": 11420,
+    "firstName": "Joe",
+    "lastName": "Plumber",
+    "email": "",
+    "phoneNumber": "",
+    "bio": "This is a bio for Joe The Plumber. Here it is again.  Go for it!  Now is the time for all good men to come to the aid of their country.  Why do I still see red?a sdfsda fdsf sad fsd fsdf dsaf sd",
+    "webSite": "http://biohazard.com",
+    "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150117022645-11420.jpg",
+    "allowAttendeeToEmailMe": false,
+    "company": "My Big Company",
+    "presentationLimit": 0,
+    "sessions": [
+      {
+        "id": 4743,
+        "title": "kyleday1Wedn",
+        "description": "x",
+        "room": "Room 0 Not Found",
+        "logDate": "0001-01-01T00:00:00",
+        "startTime": "Wed 9:00 AM",
+        "startTimeDateTime": "0001-01-01T00:00:00",
+        "interestedCount": 0,
+        "planToAttendCount": 0,
+        "interested": false,
+        "willAttend": false,
+        "presenters": [
+          {
+            "id": 11420,
+            "firstName": "Joe",
+            "lastName": "Plumber",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "This is a bio for Joe The Plumber. Here it is again.  Go for it!  Now is the time for all good men to come to the aid of their country.  Why do I still see red?a sdfsda fdsf sad fsd fsdf dsaf sd",
+            "webSite": "http://biohazard.com",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150117022645-11420.jpg",
+            "allowAttendeeToEmailMe": false,
+            "company": "My Big Company",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "",
+            "googlePlusUrl": "",
+            "linkedInUrl": "",
+            "twitterUrl": "http://twitter.com/joetheplumber",
+            "urlPostToken": "2015sf",
+            "bioShort": "This is a bio for Joe The Plumber. Here it is again. asd sdaf sdsa fsa fsadf sd fsadf sda fsd fds ",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          }
+        ],
+        "tags": [
+          {
+            "id": 943,
+            "tagName": "Smart House",
+            "sessions": []
+          }
+        ],
+        "allowHtml": false,
+        "kidOrProfessionalSession": "ProfessionalSession",
+        "kidSession": false,
+        "tagsResultCsv": "Smart House",
+        "sessionLevelId": 1,
+        "sessionTimeDateTime": "2015-06-24T09:00:00",
+        "sessionUrl": "2015sf/kyleday1wedn",
+        "sessionUrlPre": "/workshop/2015sf/kyleday1wedn",
+        "sessionTrackId": 63,
+        "sessionTrackName": "Track 2",
+        "workshop": true,
+        "sessionTimesId": 91,
+        "keynote": false
+      },
+      {
+        "id": 4744,
+        "title": "kyleday2thursday",
+        "description": "x",
+        "room": "Room 0 Not Found",
+        "logDate": "0001-01-01T00:00:00",
+        "startTime": "Thur 9:00 AM",
+        "startTimeDateTime": "0001-01-01T00:00:00",
+        "interestedCount": 0,
+        "planToAttendCount": 0,
+        "interested": false,
+        "willAttend": false,
+        "presenters": [
+          {
+            "id": 11420,
+            "firstName": "Joe",
+            "lastName": "Plumber",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "This is a bio for Joe The Plumber. Here it is again.  Go for it!  Now is the time for all good men to come to the aid of their country.  Why do I still see red?a sdfsda fdsf sad fsd fsdf dsaf sd",
+            "webSite": "http://biohazard.com",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150117022645-11420.jpg",
+            "allowAttendeeToEmailMe": false,
+            "company": "My Big Company",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "",
+            "googlePlusUrl": "",
+            "linkedInUrl": "",
+            "twitterUrl": "http://twitter.com/joetheplumber",
+            "urlPostToken": "2015sf",
+            "bioShort": "This is a bio for Joe The Plumber. Here it is again. asd sdaf sdsa fsa fsadf sd fsadf sda fsd fds ",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          }
+        ],
+        "tags": [
+          {
+            "id": 945,
+            "tagName": "Modular Architecture",
+            "sessions": []
+          }
+        ],
+        "allowHtml": false,
+        "kidOrProfessionalSession": "ProfessionalSession",
+        "kidSession": false,
+        "tagsResultCsv": "Modular Architecture",
+        "sessionLevelId": 1,
+        "sessionTimeDateTime": "2015-06-25T09:00:00",
+        "sessionUrl": "2015sf/kyleday2thursday",
+        "sessionUrlPre": "/workshop/2015sf/kyleday2thursday",
+        "sessionTrackId": 0,
+        "workshop": true,
+        "sessionTimesId": 92,
+        "keynote": false
+      }
+    ],
+    "allowHtml": false,
+    "facebookUrl": "",
+    "googlePlusUrl": "",
+    "linkedInUrl": "",
+    "twitterUrl": "http://twitter.com/joetheplumber",
+    "presenterUrl": "2015sf/joe-plumber-11420",
+    "urlPostToken": "2015sf",
+    "bioShort": "This is a bio for Joe The Plumber. Here it is again. asd sdaf sdsa fsa fsadf sd fsadf sda fsd fds ",
+    "isKeyNoteSpeaker": false,
+    "isWorkshopSpeaker": true,
+    "speakerSequence": "zzzzzzzz"
   },
   {
     "id": 31679,
@@ -1402,7 +1949,7 @@
             "linkedInUrl": "http://www.linkedin.com/in/sara-robinson/24/779/403",
             "twitterUrl": "http://twitter.com/SRobTweets",
             "urlPostToken": "2015sf",
-            "bioShort": "Sara is a Developer Advocate and realtime aficionado on the Firebase team at Google.",
+            "bioShort": "I like to write (about) code.",
             "isKeyNoteSpeaker": false,
             "isWorkshopSpeaker": false
           }
@@ -1421,8 +1968,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-23T15:30:00",
         "sessionUrl": "2015sf/realtime-awesomess-with-firebase-and-angular",
+        "sessionUrlPre": "/session/2015sf/realtime-awesomess-with-firebase-and-angular",
         "sessionTrackId": 63,
-        "sessionTrackName": "Track 2"
+        "sessionTrackName": "Track 2",
+        "workshop": false,
+        "sessionTimesId": 88,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -1432,10 +1983,10 @@
     "twitterUrl": "http://twitter.com/SRobTweets",
     "presenterUrl": "2015sf/sara-robinson-31679",
     "urlPostToken": "2015sf",
-    "bioShort": "Sara is a Developer Advocate and realtime aficionado on the Firebase team at Google.",
+    "bioShort": "I like to write (about) code.",
     "isKeyNoteSpeaker": false,
     "isWorkshopSpeaker": false,
-    "speakerSequence": ""
+    "speakerSequence": "zzzzzzzz"
   },
   {
     "id": 31685,
@@ -1501,8 +2052,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T13:30:00",
         "sessionUrl": "2015sf/angu2x",
+        "sessionUrlPre": "/session/2015sf/angu2x",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 68,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -1581,8 +2136,12 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-23T09:00:00",
         "sessionUrl": "2015sf/keynote5",
+        "sessionUrlPre": "/session/2015sf/keynote5",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 82,
+        "keynote": true
       }
     ],
     "allowHtml": false,
@@ -1684,8 +2243,173 @@
         "sessionLevelId": 1,
         "sessionTimeDateTime": "2015-06-22T11:00:00",
         "sessionUrl": "2015sf/dan-and-john-show",
+        "sessionUrlPre": "/session/2015sf/dan-and-john-show",
         "sessionTrackId": 62,
-        "sessionTrackName": "Track 1"
+        "sessionTrackName": "Track 1",
+        "workshop": false,
+        "sessionTimesId": 66,
+        "keynote": false
+      },
+      {
+        "id": 4741,
+        "title": "DanJohnWorkshopThursday",
+        "description": "asdf as sad f",
+        "room": "Room 0 Not Found",
+        "logDate": "0001-01-01T00:00:00",
+        "startTime": "Thur 9:00 AM",
+        "startTimeDateTime": "0001-01-01T00:00:00",
+        "interestedCount": 0,
+        "planToAttendCount": 0,
+        "interested": false,
+        "willAttend": false,
+        "presenters": [
+          {
+            "id": 14842,
+            "firstName": "Dan",
+            "lastName": "Wahlin",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "<br /><hr /><br /><p>Dan Wahlin founded The Wahlin Group (<a href=\"http://www.thewahlingroup.com/\">http://www.TheWahlinGroup.com</a>) which provides consulting and training services on Web technologies such as JavaScript, AngularJS and other SPA frameworks, jQuery, HTML5, Node.js, C#, ASP.NET MVC, Web API, and SharePoint. He’s also one of the top video course authors at Pluralsight.com and has published several courses covering a range of technologies. Dan speaks at conferences and user groups around the world and has written several books on Web technologies.&#160; Dan blogs at <a href=\"http://weblogs.asp.net/dwahlin\">http://weblogs.asp.net/dwahlin</a>, runs the Web Weekly newsletter, and writes columns for various technical magazines. Follow Dan on Twitter @DanWahlin.</p>",
+            "webSite": "http://www.TheWahlinGroup.com",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131216053752-14842.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Wahlin Consulting",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "",
+            "googlePlusUrl": "",
+            "linkedInUrl": "",
+            "twitterUrl": "http://twitter.com/DanWahlin",
+            "urlPostToken": "2015sf",
+            "bioShort": "Dan Wahlin is the founder of Wahlin Consulting which specializes in Web technologies.",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          }
+        ],
+        "tags": [
+          {
+            "id": 945,
+            "tagName": "Modular Architecture",
+            "sessions": []
+          }
+        ],
+        "allowHtml": false,
+        "kidOrProfessionalSession": "ProfessionalSession",
+        "kidSession": false,
+        "tagsResultCsv": "Modular Architecture",
+        "sessionLevelId": 1,
+        "sessionTimeDateTime": "2015-06-25T09:00:00",
+        "sessionUrl": "2015sf/danjohnworkshopthursday",
+        "sessionUrlPre": "/workshop/2015sf/danjohnworkshopthursday",
+        "sessionTrackId": 62,
+        "sessionTrackName": "Track 1",
+        "workshop": true,
+        "sessionTimesId": 92,
+        "keynote": false
+      },
+      {
+        "id": 4742,
+        "title": "This is the firebase workshop with ben drucker co taught by david east dan",
+        "description": "x",
+        "room": "Room 0 Not Found",
+        "logDate": "0001-01-01T00:00:00",
+        "startTime": "Wed 9:00 AM",
+        "startTimeDateTime": "0001-01-01T00:00:00",
+        "interestedCount": 0,
+        "planToAttendCount": 0,
+        "interested": false,
+        "willAttend": false,
+        "presenters": [
+          {
+            "id": 30482,
+            "firstName": "Ben",
+            "lastName": "Drucker",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "Ben is a JavaScript developer and an active participant in the open source Node, Angular, and Browserify communities. He's currently working on Valet.io and building applications to help nonprofits raise more money at their events.\n\nBen maintains a number of popular open source projects, including Knex.js, Bookshelf.js, karma-browserify, and MockFirebase, along with more than a dozen open source Angular modules. ",
+            "webSite": "http://www.bendrucker.me",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150224115156-30482.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Valet.io",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "http://www.facebook.com/bendrucker",
+            "googlePlusUrl": "",
+            "linkedInUrl": "http://www.linkedin.com/in/bendrucker",
+            "twitterUrl": "http://twitter.com/bendrucker",
+            "urlPostToken": "2015sf",
+            "bioShort": "JavaScript devleoper and open source advocate. Founder of Valet.io.",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          },
+          {
+            "id": 823,
+            "firstName": "Kevin",
+            "lastName": "Nilson",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "Team Lead of the Chromecast Technical Solutions Engineer team, a Java Champion and three time JavaOne Rock Star Presenter. Kevin has spoken at conferences such as JavaOne, Devoxx, JAX, O'Reilly Fluent, Silicon Valley Code Camp, JAX, HTML5DevConf, On Android, NFJS SpringOne and AjaxWorld. Kevin is the co-author of Web 2.0 Fundamentals. In the past Kevin was an adjunct professor at the College of San Mateo. Kevin holds a MS and BS in Computer Science from Southern Illinois University. Kevin is the leader of the Silicon Valley JavaScript Meetup, Silicon Valley Java User Group, Silicon Valley Google Developer Group, and Devoxx4Kids Bay Area.",
+            "webSite": "http://www.javaclimber.com",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140429205640-823.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Google",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "http://www.facebook.com/javaclimber",
+            "googlePlusUrl": "https://plus.google.com/115904610891053142665/about",
+            "linkedInUrl": "http://www.linkedin.com/in/kevinnilson",
+            "twitterUrl": "http://twitter.com/javaclimber",
+            "urlPostToken": "2015sf",
+            "bioShort": "Chromecast Technical Solutions Engineering Lead at Google, Java Champion, 3 time JavaOne Rock Star",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          },
+          {
+            "id": 14842,
+            "firstName": "Dan",
+            "lastName": "Wahlin",
+            "email": "",
+            "phoneNumber": "",
+            "bio": "<br /><hr /><br /><p>Dan Wahlin founded The Wahlin Group (<a href=\"http://www.thewahlingroup.com/\">http://www.TheWahlinGroup.com</a>) which provides consulting and training services on Web technologies such as JavaScript, AngularJS and other SPA frameworks, jQuery, HTML5, Node.js, C#, ASP.NET MVC, Web API, and SharePoint. He’s also one of the top video course authors at Pluralsight.com and has published several courses covering a range of technologies. Dan speaks at conferences and user groups around the world and has written several books on Web technologies.&#160; Dan blogs at <a href=\"http://weblogs.asp.net/dwahlin\">http://weblogs.asp.net/dwahlin</a>, runs the Web Weekly newsletter, and writes columns for various technical magazines. Follow Dan on Twitter @DanWahlin.</p>",
+            "webSite": "http://www.TheWahlinGroup.com",
+            "imageUrl": "https://d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131216053752-14842.jpg",
+            "allowAttendeeToEmailMe": true,
+            "company": "Wahlin Consulting",
+            "presentationLimit": 0,
+            "sessions": [],
+            "allowHtml": false,
+            "facebookUrl": "",
+            "googlePlusUrl": "",
+            "linkedInUrl": "",
+            "twitterUrl": "http://twitter.com/DanWahlin",
+            "urlPostToken": "2015sf",
+            "bioShort": "Dan Wahlin is the founder of Wahlin Consulting which specializes in Web technologies.",
+            "isKeyNoteSpeaker": false,
+            "isWorkshopSpeaker": false
+          }
+        ],
+        "tags": [
+          {
+            "id": 945,
+            "tagName": "Modular Architecture",
+            "sessions": []
+          }
+        ],
+        "allowHtml": false,
+        "kidOrProfessionalSession": "ProfessionalSession",
+        "kidSession": false,
+        "tagsResultCsv": "Modular Architecture",
+        "sessionLevelId": 1,
+        "sessionTimeDateTime": "2015-06-24T09:00:00",
+        "sessionUrl": "2015sf/this-is-the-firebase-workshop-with-ben-drucker-co-taught-by-david-east-dan",
+        "sessionUrlPre": "/workshop/2015sf/this-is-the-firebase-workshop-with-ben-drucker-co-taught-by-david-east-dan",
+        "sessionTrackId": 0,
+        "workshop": true,
+        "sessionTimesId": 91,
+        "keynote": false
       }
     ],
     "allowHtml": false,
@@ -1697,7 +2421,7 @@
     "urlPostToken": "2015sf",
     "bioShort": "Dan Wahlin is the founder of Wahlin Consulting which specializes in Web technologies.",
     "isKeyNoteSpeaker": false,
-    "isWorkshopSpeaker": false,
+    "isWorkshopSpeaker": true,
     "speakerSequence": "1000"
   }
 ]

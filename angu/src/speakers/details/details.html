@@ -27,9 +27,9 @@
         </div>
         <ul class="list--squared">
           <li ng-repeat="session in details.speaker.sessions">
-            <a ng-href="/sessions/{{session.sessionUrl}}">
+            <session-link session="session">
               <h4>{{session.title}}</h4>
-            </a>
+            </session-link>
             <div>
               <span class="speaker-details--date">
                 {{session.startTimeDateTime | date:'EEEE, MMMM d - h a'}}
