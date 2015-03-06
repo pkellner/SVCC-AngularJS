@@ -35,7 +35,9 @@
         <div class="speakers--info--detail" ng-if="list.showSessions">
           <ul class="list--default">
             <li ng-repeat="session in speaker.sessions">
-              <b>{{session.title}}</b>
+              <a ng-href="/sessions/{{session.sessionUrl}}">
+                <b>{{session.title}}</b>
+              </a>
               <span ng-show="list.showSessionDetails">
                 {{session.startTimeDateTime | date:'EEEE, MMMM d - h a'}} &nbsp;&nbsp;<span class="label label-danger">{{session.sessionTrackName}}</span>
               </span>
