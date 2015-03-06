@@ -29,9 +29,10 @@ function provideMocks ($httpBackend) {
   var sessions = require('./data/sessions.json');
   var sessionUrls = require('./data/sessionUrls.json');
   var sessionEndpoint = '/rest/session/arrayonly';
+  var sessionSingleEndpoint = '/rest/sessionandws';
   $httpBackend.whenGET(sessionEndpoint).respond(sessions);
-  $httpBackend.whenGET(new RegExp(`${escape(sessionEndpoint)}/.`)).respond(function (method, url) {
-    var id = parseInt(url.split(`${sessionEndpoint}/`)[1]);
+  $httpBackend.whenGET(new RegExp(`${escape(sessionSingleEndpoint)}/.`)).respond(function (method, url) {
+    var id = parseInt(url.split(`${sessionSingleEndpoint}/`)[1].split('/')[1]);
     var session = sessions.find(session => session.id === id);
     return [200, session];
   });

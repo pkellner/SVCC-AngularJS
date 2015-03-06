@@ -1,7 +1,7 @@
 'use strict';
 
-factory.$inject = ['Model', 'SessionUrls'];
-function factory (Model, SessionUrls) {
+factory.$inject = ['Model', 'SessionUrls', '$http'];
+function factory (Model, SessionUrls, $http) {
   class Session extends Model {
     levelName () {
       switch (this.sessionLevelId) {
@@ -20,8 +20,14 @@ function factory (Model, SessionUrls) {
         .then(function () {
           return SessionUrls.find(s => s.sessionUrl === url).sessionId;
         })
-        .then(function (sessionId) {
-          return Session.fetchOne(sessionId);
+        .then((sessionId) => {
+          const campId = url.split('/')[0];
+          return $http.get(`/rest/sessionandws/${campId}/${sessionId}`, {
+            cache: true
+          })
+          .then((response) => {
+            return this.forge(response.data);
+          });
         });
     }
     static formatUrl (params) {
