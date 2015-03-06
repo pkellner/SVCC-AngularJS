@@ -31,7 +31,9 @@
         <div class="speaker-details--info col-sm-9">
             <section>
                 <div class="heading">
-                    <h3 class="color">{{speaker.name}}</h3>
+                    <a ui-sref="speaker(speaker.$stateParams())">
+                        <h3 class="color">{{speaker.name}}</h3>
+                    </a>
                 </div>
                 <h4 class="speaker-details--desc italic">{{speaker.bioShort}}</h4>
                 <p speaker-bio speaker="speaker"></p>
