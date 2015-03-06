@@ -8,6 +8,7 @@ function SessionDetailsController (session) {
     return angular.extend(speaker, {
       name: `${speaker.userFirstName} ${speaker.userLastName}`,
       bio: speaker.userBio,
+      bioShort: speaker.userBioShort
     });
   });
   this.byline = this.speakers.map(s => s.name).join(' and ');
