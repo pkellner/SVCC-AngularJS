@@ -2,8 +2,8 @@
   <div class="ping-tickets">
     <label for="ticketEmail" class="hidden-sm uppercase">Notify me when tickets go on sale:</label>
     <div class="input-group">
-      <input 
-        class="form-control" 
+      <input
+        class="form-control"
         type="email"
         id="ticketEmail"
         ng-model="ticket.email"
@@ -21,8 +21,14 @@
 </form>
 <div class="ping-tickets" ng-show="ticket.username">
   <div class="input-group" resize-window window-width="windowWidth">
-      <span class="input-group-btn">
+    <span class="input-group-btn">
+      <span>
         <a href="/angu/signuptobenotified" class="btn btn-primary">View and Update Ticket Options</a>
       </span>
+      <span>
+        <!-- <a href="#" class="btn btn-info uppercase"><span class="hidden-xs">Book a hotel room</span><span class="visible-xs">Book a room</span></a>
+        <a href="#" class="btn btn-primary uppercase">Get tickets</a> -->
+      </span>
+    </span>
   </div>
 </div>
