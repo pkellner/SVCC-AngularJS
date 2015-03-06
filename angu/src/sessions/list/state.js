@@ -8,7 +8,8 @@ function state ($stateProvider) {
     resolve: {
       sessions: getSessions,
       days: getDays,
-      tracks: getTracks
+      tracks: getTracks,
+      times: sessionTimes
     },
     views: {
       '@layout': {
@@ -34,4 +35,15 @@ function getDays (Days) {
 getTracks.$inject = ['Tracks'];
 function getTracks (Tracks) {
   return Tracks.fetchAll();
+}
+
+sessionTimes.$inject = ['SessionTimes', 'sessions'];
+function sessionTimes (Times, sessions) {
+  return Times.fetchAll()
+    .then(function (times) {
+      return sessions.map(function (session) {
+        session.time = times.find(t => t.id === session.sessionTimesId);
+        return session;
+      });
+    });
 }
