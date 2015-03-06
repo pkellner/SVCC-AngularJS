@@ -46,7 +46,7 @@
         </session-link>
         <div class="row sessions--info--speaker" ng-repeat="speaker in session.speakersList">
           <div class="sessions--image">
-            <img ng-src="{{speaker.imageUrl}}" />
+            <img ng-src="{{speaker.imageUrl}}?format=jpg&height=400&width=400&scale=both&mode=pad&Bgcolor=ffffff" />
           </div>
           <div class="sessions--info--detail">
             <h4 class="color">{{speaker.userFirstName}} {{speaker.userLastName}}</h4>
