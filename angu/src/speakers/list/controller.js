@@ -5,6 +5,7 @@ function SpeakerListController (speakers, CONFIG) {
   const regular = speakers.filter(speaker => !speaker.isKeyNoteSpeaker);
   this.speakers = keynotes.concat(regular);
   this.showSessions = CONFIG.showSessions === 'True';
+  this.showSessionDetails = false;
 }
 SpeakerListController.$inject = ['speakers', 'CONFIG'];
 
