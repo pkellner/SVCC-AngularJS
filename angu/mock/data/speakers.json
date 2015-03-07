@@ -183,7 +183,7 @@
       {
         "id": 4720,
         "title": "Building Office 365 SPAs with Angular and CORS",
-        "description": "Microsoft recently announced support for CORS in some of their APIs in Office 365 and more coming soon. What this means for developers is that you can create fully client-side solutions that authenticate securely with Azure AD and access data in SharePoint sites using the REST API or files in a user's OneDrive folder. In this session we will look at how we can exploit this in a custom single page app (SPA) using AngularJS.",
+        "description": "Microsoft recently announced support for <b>CORS</b> in some of their APIs in Office 365 and more coming soon. What this means for developers is that you can create fully client-side solutions that authenticate securely with Azure AD and access data in SharePoint sites using the REST API or files in a user's OneDrive folder. In this session we will look at how we can exploit this in a custom single page app (SPA) using AngularJS.",
         "room": "Room 0 Not Found",
         "logDate": "0001-01-01T00:00:00",
         "startTime": "Tues 11:00 AM",
@@ -244,7 +244,7 @@
             "sessions": []
           }
         ],
-        "allowHtml": false,
+        "allowHtml": true,
         "kidOrProfessionalSession": "ProfessionalSession",
         "kidSession": false,
         "tagsResultCsv": "Active Directory,AngularJS,Azure,JavaScript,Office 365",

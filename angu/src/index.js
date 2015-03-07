@@ -1,5 +1,7 @@
 'use strict';
 
+var description = require('./description');
+
 module.exports = require('angular')
   .module('angUApp', [
     require('../../base'),
@@ -12,6 +14,7 @@ module.exports = require('angular')
   .config(enableHtml5Mode)
   .config(anchorScroll)
   .config(prependTemplateUrls)
+  .directive('description', description)
   .name;
 
 enableHtml5Mode.$inject = ['$locationProvider'];
