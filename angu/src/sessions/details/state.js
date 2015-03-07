@@ -4,7 +4,7 @@ states.$inject = ['$stateProvider'];
 function states ($stateProvider) {
   ['session', 'workshop'].forEach(function (type) {
     $stateProvider.state(type, {
-      url: `/${type}s/:camp/:session`,
+      url: `/${type}/:camp/:session`,
       parent: 'base',
       resolve: {
         sessionType: function () {

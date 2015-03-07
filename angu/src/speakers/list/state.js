@@ -3,7 +3,7 @@
 state.$inject = ['$stateProvider'];
 function state ($stateProvider) {
   $stateProvider.state('speakers', {
-    url: '/speakers',
+    url: '/speaker',
     parent: 'base',
     resolve: {
       speakers: getSpeakers

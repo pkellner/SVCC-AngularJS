@@ -3,7 +3,7 @@
 state.$inject = ['$stateProvider'];
 function state ($stateProvider) {
   $stateProvider.state('sessions', {
-    url: '/sessions',
+    url: '/session',
     parent: 'base',
     resolve: {
       sessions: getSessions,
