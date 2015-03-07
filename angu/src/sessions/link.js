@@ -10,6 +10,7 @@ export default function () {
     },
     controller: function () {
       this.workshop = this.session.workshop;
+      this.enabled = !this.session.title.startsWith('Session Title Coming');
     },
     controllerAs: 'link',
     bindToController: true
