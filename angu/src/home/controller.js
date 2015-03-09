@@ -1,6 +1,6 @@
 'use strict';
 
-function HomeController ($scope, faqs, speakers, CONFIG) {
+function HomeController ($scope, faqs, speakers, config) {
   $scope.faqs = faqs;
   
   $scope.speakers = {
@@ -12,9 +12,8 @@ function HomeController ($scope, faqs, speakers, CONFIG) {
     })
   };
 
-  // TODO: Create an insertion point for config parsing and cast there
-  this.showSpeakers = CONFIG.showPresenters === 'True';
+  this.showSpeakers = config.speakers.show;
 }
-HomeController.$inject = ['$scope', 'faqs', 'speakers', 'CONFIG'];
+HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config'];
 
 module.exports = HomeController;

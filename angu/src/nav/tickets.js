@@ -1,11 +1,11 @@
 'use strict';
 
-exports = module.exports = function ($window, CONFIG) {
+exports = module.exports = function ($window, config) {
 
   function TicketNotificationController () {
-    this.email = null
-    this.username = CONFIG.loggedInUsername;
-    this.hotelBookingUrl = CONFIG.hotelBookingUrl;
+    this.email = null;
+    this.username = config.user.active;
+    this.hotelBookingUrl = config.hotel.bookingUrl;
   };
 
   TicketNotificationController.prototype.request = function (email) {
@@ -21,4 +21,4 @@ exports = module.exports = function ($window, CONFIG) {
   };
 
 };
-exports.$inject = ['$window', 'CONFIG']
+exports.$inject = ['$window', 'config']
