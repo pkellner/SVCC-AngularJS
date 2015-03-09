@@ -1,6 +1,7 @@
 'use strict';
 
-var description = require('./description');
+import parseConfig from './config';
+import description from './description';
 
 module.exports = require('angular')
   .module('angUApp', [
@@ -11,6 +12,7 @@ module.exports = require('angular')
     require('./speakers'),
     require('./sessions')
   ])
+  .config(parseConfig)
   .config(enableHtml5Mode)
   .config(anchorScroll)
   .config(prependTemplateUrls)
