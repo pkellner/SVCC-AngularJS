@@ -26,8 +26,8 @@
         <a href="/angu/signuptobenotified" class="btn btn-primary">View and Update Ticket Options</a>
       </span>
       <span>
-        <!-- <a href="#" class="btn btn-info uppercase"><span class="hidden-xs">Book a hotel room</span><span class="visible-xs">Book a room</span></a>
-        <a href="#" class="btn btn-primary uppercase">Get tickets</a> -->
+        <a ng-if="ticket.hotelBookingUrl" ng-href="{{ticket.hotelBookingUrl}}" class="btn btn-info uppercase hidden-xs">Book a hotel room</a>
+        <!-- <a href="#" class="btn btn-primary uppercase">Get tickets</a> -->
       </span>
     </span>
   </div>

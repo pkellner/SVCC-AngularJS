@@ -5,6 +5,7 @@ exports = module.exports = function ($window, CONFIG) {
   function TicketNotificationController () {
     this.email = null
     this.username = CONFIG.loggedInUsername;
+    this.hotelBookingUrl = CONFIG.hotelBookingUrl;
   };
 
   TicketNotificationController.prototype.request = function (email) {
