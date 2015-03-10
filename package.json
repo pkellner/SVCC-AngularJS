@@ -22,7 +22,7 @@
     "listify": "~1.0.0",
     "pusher-angular": "~0.1.4",
     "qs": "~2.3.3",
-    "sort-on": "bendrucker/sort-on",
+    "sort-on": "~1.0.2",
     "striptags": "~2.0.1"
   },
   "devDependencies": {
