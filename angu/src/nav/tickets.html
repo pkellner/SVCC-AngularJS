@@ -19,10 +19,10 @@
     </div>
   </div>
 </form>
-<div class="ping-tickets" ng-show="ticket.username">
-  <div class="input-group" resize-window window-width="windowWidth">
+<div class="ping-tickets">
+  <div class="input-group">
     <span class="input-group-btn">
-      <span>
+      <span ng-if="ticket.username">
         <a href="/angu/signuptobenotified" class="btn btn-primary">View and Update Ticket Options</a>
       </span>
       <span>
