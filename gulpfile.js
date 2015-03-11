@@ -12,7 +12,6 @@ var chalk       = require('chalk');
 var format      = require('util').format;
 var superstatic = require('superstatic');
 var app         = argv.app;
-var pkg         = require('./package.json');
 
 if (!app) {
   app = 'angu';
@@ -24,10 +23,6 @@ var production = argv.production;
 var paths = {};
 
 gulp.task('unit', function () {
-  var transform = pkg.browserify.transform.slice()
-  transform.push(['browserify-istanbul', {
-    ignore: '**/*.spec.js'
-  }]);
   return karma.server.start({
     frameworks: ['browserify', 'mocha'],
     files: [
@@ -36,15 +31,28 @@ gulp.task('unit', function () {
     exclude: [
     ],
     preprocessors: {
-      './!(node_modules)/**/*.spec.js': 'browserify'
+      './!(node_modules)/**/*.spec.js': ['browserify']
     },
     browserify: {
       debug: true,
-      transform: transform
+      transform: [
+        ['browserify-istanbul', {
+          ignore: '**/*.spec.js',
+          instrumenter: require('isparta')
+        }],
+        'browserify-shim'
+      ]
     },
     reporters: ['progress', 'coverage'],
     coverageReporter: {
-      type: 'text'
+      reporters: [
+        {
+          type: 'text-summary'
+        },
+        {
+          type: 'lcov'
+        }
+      ]
     },
     port: 9876,
     autoWatch: true,
