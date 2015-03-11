@@ -69,6 +69,8 @@
   }
 
   &--toggle {
+    position: relative;
+    z-index: 1;
     float: right;
     -webkit-appearance: none;
     padding: 3px 0;
@@ -170,7 +172,7 @@
 
   .ping-tickets {
     text-align: left;
-    padding-right: 90px;
+    padding-right: 80px;
 
     @include respond-to(tablet) {
       text-align: right;
@@ -186,7 +188,6 @@
         max-width: 240px;
         float: left;
         clear: left;
-        margin-top: 4px;
       }
 
       @include respond-to(tablet) {
@@ -195,10 +196,14 @@
     }
 
     .form-control,
+    .btn,
     .input-group .btn {
       @include respond-to(phone-tablet) {
         height: 30px;
         padding: 3px 8px;
+        margin: 4px 0 2px;
+        font-size: 12px;
+        line-height: 1.9;
       }
     }
 
@@ -206,6 +211,27 @@
       font-size: 13px;
       @include respond-to(phone-tablet) {
         display: none;
+      }
+    }
+  }
+
+  .ticket-form {
+    .input-group {
+      display: none;
+
+      &.active {
+        display: inline-table;
+
+        @include respond-to(phone-tablet) {
+            position: absolute;
+            max-width: 180px;
+            left: 15px;
+            top: 0;
+        }
+
+        @include respond-to(tablet) {
+          max-width: 210px;
+        }
       }
     }
   }
