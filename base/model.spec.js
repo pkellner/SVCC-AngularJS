@@ -1,9 +1,12 @@
 'use strict';
 
 var angular = require('angular');
+require('angular-mocks');
 var expect  = require('chai').expect;
 
-module.exports = function () {
+describe('BaseModel', function () {
+
+  beforeEach(angular.mock.module(require('./')));
 
   var Model, model, $httpBackend;
   beforeEach(angular.mock.inject(function (_Model_, _$httpBackend_) {
@@ -186,4 +189,4 @@ module.exports = function () {
 
   });
 
-};
+});

@@ -1,8 +1,0 @@
-{
-  "node": true,
-  "globals": {
-    "describe": "false",
-    "beforeEach": false,
-    "it": false
-  }
-}

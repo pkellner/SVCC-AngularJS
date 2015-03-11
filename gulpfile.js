@@ -26,12 +26,12 @@ gulp.task('unit', function () {
   return karma.server.start({
     frameworks: ['browserify', 'mocha'],
     files: [
-      './base/test/index.js'
+      './!(node_modules)/**/*.spec.js'
     ],
     exclude: [
     ],
     preprocessors: {
-      './base/test/index.js': 'browserify'
+      './!(node_modules)/**/*.spec.js': 'browserify'
     },
     browserify: {
       debug: true

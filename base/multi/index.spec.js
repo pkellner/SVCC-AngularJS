@@ -1,9 +1,12 @@
 'use strict';
 
 var angular = require('angular');
+require('angular-mocks');
 var expect  = require('chai').expect;
 
 module.exports = function () {
+
+  beforeEach(angular.mock.module(require('../')));
 
   beforeEach(angular.mock.module(function ($provide) {
     $provide.constant('CONFIG', {
