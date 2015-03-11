@@ -3,18 +3,6 @@
 factory.$inject = ['Model', 'SessionUrls', '$http'];
 function factory (Model, SessionUrls, $http) {
   class Session extends Model {
-    levelName () {
-      switch (this.sessionLevelId) {
-        case 1:
-          return 'Beginner';
-        case 2:
-          return 'Intermediate';
-        case 3:
-          return 'Advanced';
-        default:
-          return 'Unknown';
-      }
-    }
     static fetchByUrl (url) {
       return SessionUrls.fetchAll()
         .then(function () {
