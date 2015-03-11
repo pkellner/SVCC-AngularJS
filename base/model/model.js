@@ -5,11 +5,15 @@ import sort from 'sort-on';
 
 class BaseModel {
   constructor (attributes) {
-    attributes = this.parse(angular.copy(attributes) || {});
+    attributes = angular.extend(this.defaults(), angular.copy(attributes));
+    attributes = this.parse(attributes);
     angular.extend(this, attributes);
   }
   parse (attributes) {
     return attributes;
+  }
+  defaults () {
+    return {};
   }
   static $data () {
     return this.$$data || (this.$$data = []);
