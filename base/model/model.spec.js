@@ -92,22 +92,12 @@ describe('Model Base', function () {
 
   });
 
-  describe('#find', function () {
+  describe('Array methods', function () {
 
-    it('finds the first model where the callback returns truthy', function () {
-      Model.set([{val: 0}, {val: 1}, {val: 2}]);
-      expect(Model.find(function (model) {
-        return model.val === 1;
-      }))
-      .to.equal(Model.at(1));
-    });
-
-    it('returns undefined if there is no match', function () {
-      Model.set([{val: 0}]);
-      expect(Model.find(function (model) {
-        return model.val === 1;
-      }))
-      .to.equal(undefined);
+    it('proxies to the data cache array', function () {
+      Model.set([{v: 1}, {v: 2}, {v: 3}]);
+      expect(Model.filter(model => model.v % 2 === 0))
+        .to.have.length(1);
     });
 
   });

@@ -27,13 +27,6 @@ class BaseModel {
   static at (index) {
     return this.$$data[index];
   }
-  static find (callback) {
-    for (let i = 0; i < this.$$data.length; i++) {
-      let model = this.at(i);
-      let result = callback.call(this, model);
-      if (result) return model;
-    }
-  }
   static sort (comparator) {
     if (typeof comparator !== 'undefined') {
       this.$$data = sort(this.$$data, comparator);
@@ -44,5 +37,11 @@ class BaseModel {
     return this;
   }
 };
+
+['filter', 'find', 'forEach', 'map', 'reduce'].forEach(function (method) {
+  BaseModel[method] = function () {
+    return this.$$data[method].apply(this.$$data, arguments);
+  };
+});
 
 export default BaseModel;

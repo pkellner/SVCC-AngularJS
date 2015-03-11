@@ -35,6 +35,9 @@ gulp.task('unit', function () {
     },
     browserify: {
       debug: true,
+      configure: function (b) {
+        b.add('babel/polyfill');
+      },
       transform: [
         ['browserify-istanbul', {
           ignore: '**/*.spec.js',
