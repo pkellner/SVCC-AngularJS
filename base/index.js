@@ -10,7 +10,7 @@ import model from './model';
 import main from './main';
 import staticPages from './static';
 import faqs from './faqs';
-import speakers from './speakers';
+import speaker from './speaker';
 import sessions from './sessions'
 import sponsors from './sponsors';
 
@@ -26,7 +26,7 @@ export default angular.module('codeCampBase', [
     main,
     staticPages,
     faqs,
-    speakers,
+    speaker,
     sessions,
     sponsors    
   ])
