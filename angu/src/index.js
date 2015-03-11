@@ -1,16 +1,22 @@
 'use strict';
 
+import parseConfig from './config';
+import description from './description';
+
 module.exports = require('angular')
   .module('angUApp', [
     require('../../base'),
     require('angular-scroll'),
     require('./nav'),
     require('./home'),
-    require('./speakers')
+    require('./speakers'),
+    require('./sessions')
   ])
+  .config(parseConfig)
   .config(enableHtml5Mode)
   .config(anchorScroll)
   .config(prependTemplateUrls)
+  .directive('description', description)
   .name;
 
 enableHtml5Mode.$inject = ['$locationProvider'];

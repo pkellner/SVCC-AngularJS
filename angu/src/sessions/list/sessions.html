@@ -1,0 +1,62 @@
+<div id="sessions" class="container">
+  <div class="separator">
+    <span class="separator--icon icon-clock"></span>
+  </div>
+  <h2 class="type--lead">The program</h2>
+
+  <div class="separator">
+    <div class="separator--item">
+      <span>View: </span>
+      <select ng-options="day.dayOfWeek for day in list.days" ng-model="list.day"></select>
+    </div>
+  </div>
+
+  <div class="">
+    <ul class="list--radio list--centered list--horizontal">
+      <li>
+        <div class="radio">
+          <input type="radio" name="check" id="radio-all-tracks" checked ng-model="list.track">
+          <label for="radio-all-tracks">All tracks</label>
+        </div>
+      </li>
+      <li ng-repeat="track in list.tracks">
+        <div class="radio">
+          <input type="radio" id="radio-track-{{$index}}" ng-model="list.track" ng-value="track">
+          <label for="radio-track-{{$index}}">{{track.named}}</label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <ul class="sessions">
+    <li class="row" ng-repeat="session in list.sessions | filter:list.filter">
+      <div class="col-xs-4 col-sm-3">
+        <span class="sessions--time">
+          <span ng-if="list.day === list.days[0]">
+            {{session.time.startTimeFriendlyDay}} <br>
+          </span>
+          {{session.time.description}}
+        </span>
+        <span class="label label-danger">{{session.sessionTrackName}}</span>
+      </div>
+      <div class="sessions--info col-xs-8 col-sm-9">
+        <session-link session="session">
+          <h4>{{session.title}}</h4>
+        </session-link>
+        <div class="row sessions--info--speaker" ng-repeat="speaker in session.speakersList">
+          <div class="sessions--image">
+            <img ng-src="{{speaker.imageUrl}}?format=jpg&height=400&width=400&scale=both&mode=pad&Bgcolor=ffffff" />
+          </div>
+          <div class="sessions--info--detail">
+            <a ui-sref="speaker(speaker.$stateParams())">
+              <h4 class="color">{{speaker.userFirstName}} {{speaker.userLastName}}</h4>
+            </a>
+            <p>{{speaker.userBioShort}}</p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</div>

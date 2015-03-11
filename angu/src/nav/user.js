@@ -1,6 +1,6 @@
 'use strict';
 
-exports = module.exports = function (CONFIG) {
+exports = module.exports = function (config) {
   return {
     restrict: 'E',
     require: 'userNav',
@@ -9,8 +9,8 @@ exports = module.exports = function (CONFIG) {
     controllerAs: 'userNav',
     scope: {},
     link: function (scope, element, attributes, controller) {
-      controller.username = CONFIG.loggedInUsername;
+      controller.username = config.user.active;
     }
-  }
-}
-exports.$inject = ['CONFIG'];
+  };
+};
+exports.$inject = ['config'];

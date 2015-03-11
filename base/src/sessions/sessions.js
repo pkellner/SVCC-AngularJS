@@ -1,6 +1,7 @@
 'use strict';
 
-exports = module.exports = function (Model, $q) {
+factory.$inject = ['Model', 'SessionUrls', '$http'];
+function factory (Model, SessionUrls, $http) {
   class Session extends Model {
     levelName () {
       switch (this.sessionLevelId) {
@@ -14,16 +15,40 @@ exports = module.exports = function (Model, $q) {
           return 'Unknown';
       }
     }
-    static findByUrl (url) {
-      return this.find(function (session) {
-        return session.sessionUrl === url;
-      });
-    }
     static fetchByUrl (url) {
-      return $q.when(this.findByUrl(url) || this.fetchOne(url));
+      return SessionUrls.fetchAll()
+        .then(function () {
+          return SessionUrls.find(s => s.sessionUrl === url).sessionId;
+        })
+        .then((sessionId) => {
+          const campId = url.split('/')[0];
+          return $http.get(`/rest/sessionandws/${campId}/${sessionId}`, {
+            cache: true
+          })
+          .then((response) => {
+            return this.forge(response.data);
+          });
+        });
+    }
+    static formatUrl (params) {
+      return `${params.camp}/${params.session}`;
+    }
+    static parseUrl (url) {
+      const parts = url.split('/');
+      return {
+        camp: parts[2],
+        session: parts[3]
+      };
+    }
+    $stateParams () {
+      return Session.parseUrl(this.sessionUrlPre);
     }
   }
-  Session.url = '/rest/sessions';
+  Session.url = '/rest/session';
+  Session.comparator = function (session) {
+    return new Date(session.sessionTimeDateTime);
+  }
   return Session.init();
-};
-exports.$inject = ['Model', '$q'];
+}
+
+export default factory;

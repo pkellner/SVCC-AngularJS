@@ -1,9 +1,11 @@
 'use strict';
 
-exports = module.exports = function (Model, $sce, $q) {
+exports = module.exports = function (Model, $sce, $q, Session) {
   class Speaker extends Model {
     parse (attributes) {
-      attributes.bio = $sce.trustAsHtml(attributes.bio);
+      attributes.sessions = attributes.sessions.map(function (data) {
+        return new Session(data);
+      });
       return attributes;
     }
     static findByUrl (url) {
@@ -37,4 +39,4 @@ exports = module.exports = function (Model, $sce, $q) {
   });
   return Speaker.init();
 };
-exports.$inject = ['Model', '$sce', '$q'];
+exports.$inject = ['Model', '$sce', '$q', 'Sessions'];

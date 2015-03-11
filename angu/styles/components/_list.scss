@@ -101,5 +101,12 @@
     h4 {
       margin-top: 0;
     }
+    li {
+      @include respond-to(tablet) {
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
   }
 }

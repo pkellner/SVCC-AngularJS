@@ -6,7 +6,7 @@ require('angular-mocks');
 var app = require('angular').module('angUApp');
 var speakers = require('./data/speakers.json');
 
-app.requires.push('ngMockE2E')
+app.requires.push('ngMockE2E');
 app.run(provideMocks);
 
 
@@ -25,6 +25,22 @@ function provideMocks ($httpBackend) {
     var speaker = speakers.find(speaker => speaker.presenterUrl === presenterUrl);
     return [200, speaker];
   });
+
+  var sessions = require('./data/sessions.json');
+  var sessionUrls = require('./data/sessionUrls.json');
+  var sessionEndpoint = '/rest/session/arrayonly';
+  var sessionSingleEndpoint = '/rest/sessionandws';
+  $httpBackend.whenGET(sessionEndpoint).respond(sessions);
+  $httpBackend.whenGET(new RegExp(`${escape(sessionSingleEndpoint)}/.`)).respond(function (method, url) {
+    var id = parseInt(url.split(`${sessionSingleEndpoint}/`)[1].split('/')[1]);
+    var session = sessions.find(session => session.id === id);
+    return [200, session];
+  });
+  $httpBackend.whenGET('/rest/sessionurls/arrayonly').respond(sessionUrls);
+
+  $httpBackend.whenGET('/rest/sessiontime/arrayonly').respond(require('./data/sessionTimes.json'));
+  $httpBackend.whenGET('/rest/track/arrayonly').respond(require('./data/tracks.json'));
+  $httpBackend.whenGET('/rest/sessiondayofweek/arrayonly').respond(require('./data/sessionDayOfWeek.json'));
 
 }
 provideMocks.$inject = ['$httpBackend'];

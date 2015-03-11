@@ -18,7 +18,7 @@ exports = module.exports = function () {
   };
 };
 
-function PresenterController (CONFIG, $attributes) {
+function PresenterController ($attributes) {
   this.isKeynote = typeof $attributes.keynote !== 'undefined';
   this.name = this.data.firstName + ' ' + this.data.lastName;
   this.bio = this.data.bioShort;
@@ -32,4 +32,4 @@ function PresenterController (CONFIG, $attributes) {
   });
   this.$stateParams = this.data.$stateParams();
 }
-PresenterController.$inject = ['CONFIG', '$attrs'];
+PresenterController.$inject = ['$attrs'];

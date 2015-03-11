@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/main-local.css">
     <link rel="stylesheet" href="styles/sosa-font-local.css">
   </head>
-  <body ng-app="angUApp">
+  <body ng-app="angUApp" ng-strict-di>
     <div ui-view ui-view-name="entry-view"></div>
     <script src="app/main.js"></script>
     <script type="text/javascript">
@@ -23,7 +23,9 @@
           baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
           loggedInUsername: 'pkellner',
           baseDirImage: '',
-          showPresenters: 'True'
+          showPresenters: 'True',
+          showSessions: 'True',
+          hotelBookingUrl: 'https://resweb.passkey.com/go/angularu'
         };
         angular.module('angUApp').constant('CONFIG', configData);
       })();

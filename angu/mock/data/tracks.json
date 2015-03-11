@@ -1,0 +1,26 @@
+[
+  {
+    "codeCampYearId": 201,
+    "named": "Track 1",
+    "visible": true,
+    "id": 62
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Track 2",
+    "visible": true,
+    "id": 63
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Track 3",
+    "visible": true,
+    "id": 64
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Track 4",
+    "visible": true,
+    "id": 65
+  }
+]

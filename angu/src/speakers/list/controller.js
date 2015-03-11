@@ -1,11 +1,12 @@
 'use strict';
 
-function SpeakerListController (speakers, CONFIG) {
+function SpeakerListController (speakers, config) {
   const keynotes = speakers.filter(speaker => speaker.isKeyNoteSpeaker);
   const regular = speakers.filter(speaker => !speaker.isKeyNoteSpeaker);
   this.speakers = keynotes.concat(regular);
-  this.showSessions = CONFIG.showSessions === 'True';
+  this.showSessions = config.sessions.show;
+  this.showSessionDetails = false;
 }
-SpeakerListController.$inject = ['speakers', 'CONFIG'];
+SpeakerListController.$inject = ['speakers', 'config'];
 
 export default SpeakerListController;
