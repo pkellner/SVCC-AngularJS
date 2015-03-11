@@ -37,6 +37,6 @@ exports = module.exports = function (Model, $sce, $q, Session) {
       return `${this.firstName} ${this.lastName}`;
     }
   });
-  return Speaker.init();
+  return Speaker;
 };
 exports.$inject = ['Model', '$sce', '$q', 'Sessions'];

@@ -3,6 +3,6 @@
 exports = module.exports = function (Model) {
   class Sponsor extends Model {};
   Sponsor.url = '/rest/sponsor';
-  return Sponsor.init();
+  return Sponsor;
 };
 exports.$inject = ['Model'];
