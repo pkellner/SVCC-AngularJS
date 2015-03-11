@@ -11,12 +11,15 @@ class BaseModel {
   parse (attributes) {
     return attributes;
   }
-  static init () {
+  static $data () {
+    return this.$$data || (this.$$data = []);
+  }
+  static reset () {
     this.$$data = [];
     return this;
   }
   static all () {
-    return this.$$data;
+    return this.$data();
   }
   static forge (attributes) {
     return new this(attributes);
@@ -39,7 +42,8 @@ class BaseModel {
 
 ['filter', 'find', 'forEach', 'map', 'reduce'].forEach(function (method) {
   BaseModel[method] = function () {
-    return this.$$data[method].apply(this.$$data, arguments);
+    const data = this.$data();
+    return data[method].apply(data, arguments);
   };
 });
 

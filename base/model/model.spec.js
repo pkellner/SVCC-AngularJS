@@ -123,10 +123,12 @@ describe('Model Base', function () {
 
   });
 
-  describe('#init', function () {
+  describe('#reset', function () {
 
-    it('creates an empty data cache', function () {
-      Model.init();
+    it('empties the data cache', function () {
+      Model.set([{}]);
+      expect(Model.all()).to.have.length(1);
+      Model.reset();
       expect(Model.all()).to.have.length(0);
     });
 
