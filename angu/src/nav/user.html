@@ -4,7 +4,7 @@
   ng-click="userNav.toggle()"
 >
   <button class="nav--user--toggle icon-user"></button>
-  <a class="nav--user--name"  ng-show="userNav.username">{{ userNav.username }}</a>
+  <a class="nav--user--name" href="/Account/logout" ng-show="userNav.username">{{ userNav.username }}</a>
   <a class="nav--user--name" href="#" ng-hide="userNav.username">login</a>
   <ul
     class="nav--list nav--user--list"
