@@ -27,7 +27,15 @@ describe('BaseModel', function () {
       });
     });
 
-    it('calls a parse function to mutate the attributes', function () {
+    it('copies data', function () {
+      const obj = {};
+      model = new Model({
+        foo: obj
+      });
+      expect(model.foo).to.not.equal(obj);
+    });
+
+    it('calls a parse function with the attributes', function () {
       Model.prototype.parse = function (attributes) {
         attributes.foo = 'bar';
         return attributes;

@@ -9,7 +9,7 @@ factory.$inject = ['$http'];
 function factory ($http) {
   return class BaseModel {
     constructor (attributes) {
-      attributes = attributes || {};
+      attributes = angular.copy(attributes || {});
       if (typeof this.parse === 'function') attributes = this.parse(attributes);
       angular.extend(this, attributes);
     }
