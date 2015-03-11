@@ -5,9 +5,11 @@ import sort from 'sort-on';
 
 class BaseModel {
   constructor (attributes) {
-    attributes = angular.copy(attributes || {});
-    if (typeof this.parse === 'function') attributes = this.parse(attributes);
+    attributes = this.parse(angular.copy(attributes) || {});
     angular.extend(this, attributes);
+  }
+  parse (attributes) {
+    return attributes;
   }
   static init () {
     this.$$data = [];
@@ -33,7 +35,7 @@ class BaseModel {
     }
     return this;
   }
-};
+}
 
 ['filter', 'find', 'forEach', 'map', 'reduce'].forEach(function (method) {
   BaseModel[method] = function () {
