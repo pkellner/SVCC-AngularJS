@@ -66,7 +66,7 @@ describe('Model Base', function () {
       Model.set([{
         foo: 'bar'
       }]);
-      expect(Model.at(0))
+      expect(Model.all()[0])
         .to.contain({
           foo: 'bar'
         })
@@ -75,19 +75,6 @@ describe('Model Base', function () {
 
     it('returns itself', function () {
       expect(Model.set([])).to.equal(Model);
-    });
-
-  });
-
-  describe('#at', function () {
-
-    it('gets the model at the specified index', function () {
-      Model.set([{
-        foo: 'bar'
-      }]);
-      expect(Model.at(0)).to.contain({
-        foo: 'bar'
-      });
     });
 
   });

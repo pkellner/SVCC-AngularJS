@@ -24,9 +24,6 @@ class BaseModel {
     this.sort();
     return this;
   }
-  static at (index) {
-    return this.$$data[index];
-  }
   static sort (comparator) {
     if (typeof comparator !== 'undefined') {
       this.$$data = sort(this.$$data, comparator);
