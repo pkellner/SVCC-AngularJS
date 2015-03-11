@@ -48,7 +48,7 @@ function factory (Model, SessionUrls, $http) {
   Session.comparator = function (session) {
     return new Date(session.sessionTimeDateTime);
   }
-  return Session.init();
+  return Session;
 }
 
 export default factory;

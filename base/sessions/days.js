@@ -18,7 +18,7 @@ function factory (Model) {
     }
   }
   Day.url = '/rest/sessiondayofweek';
-  return Day.init();
+  return Day;
 }
 
 export default factory;
