@@ -1,20 +1,9 @@
 'use strict';
 
-import angular from 'angular';
-import 'angular-mocks';
 import {expect} from 'chai';
-import base from './';
+import Model from './model';
 
-describe('BaseModel', function () {
-
-  beforeEach(angular.mock.module(base));
-
-  let Model, model, $httpBackend;
-  beforeEach(angular.mock.inject(function (_Model_, _$httpBackend_) {
-    Model        = _Model_;
-    model        = new Model();
-    $httpBackend = _$httpBackend_;
-  }));
+describe('Model Base', function () {
 
   describe('Constructor', function () {
 
@@ -29,18 +18,20 @@ describe('BaseModel', function () {
 
     it('copies data', function () {
       const obj = {};
-      model = new Model({
+      const model = new Model({
         foo: obj
       });
       expect(model.foo).to.not.equal(obj);
     });
 
     it('calls a parse function with the attributes', function () {
-      Model.prototype.parse = function (attributes) {
-        attributes.foo = 'bar';
-        return attributes;
-      };
-      expect(new Model()).to.contain({
+      class Child extends Model {
+        parse (attributes) {
+          attributes.foo = 'bar';
+          return attributes;
+        }
+      }
+      expect(new Child()).to.contain({
         foo: 'bar'
       });
     });
@@ -123,6 +114,11 @@ describe('BaseModel', function () {
 
   describe('#sort', function () {
 
+    beforeEach(function () {
+      Model.comparator = undefined;
+      Model.$$data = [];
+    });
+
     it('is a noop with no comparator', function () {
       Model.sort();
     });
@@ -135,7 +131,7 @@ describe('BaseModel', function () {
 
     it('can sort by a value returned by a function', function () {
       Model.comparator = function (el) {
-        return el.v
+        return el.v;
       };
       Model.set([{v: 3}, {v: 2}, {v: 1}]);
       expect(Model.all()).to.deep.equal([{v: 1}, {v: 2}, {v: 3}]);
@@ -156,45 +152,6 @@ describe('BaseModel', function () {
       Model.init();
       expect(Model.all()).to.have.length(0);
     });
-
-  });
-
-  describe('#fetchOne', function () {
-
-    it('gets a single model using a specified suffix', angular.mock.inject(function ($httpBackend) {
-      $httpBackend
-        .expectGET('/model/arrayonly/suffix')
-        .respond(200, {
-          foo: 'bar'
-        });
-      Model.url = '/model';
-      Model.fetchOne('suffix')
-        .then(function (model) {
-          expect(model)
-            .to.contain({
-              foo: 'bar'
-            })
-            .and.be.an.instanceOf(Model);
-        });
-      $httpBackend.flush();
-    }));
-
-  });
-
-  describe('#fetchAll', function () {
-
-    it('fetches and saves all models', angular.mock.inject(function () {
-      $httpBackend
-        .expectGET('/model/arrayonly')
-        .respond(200, [{
-          foo: 'bar'
-        }]);
-      Model.url = '/model';
-      Model.fetchAll().then(function (models) {
-        expect(models).to.have.length(1);
-      });
-      $httpBackend.flush();
-    }));
 
   });
 
