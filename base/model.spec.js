@@ -1,14 +1,15 @@
 'use strict';
 
-var angular = require('angular');
-require('angular-mocks');
-var expect  = require('chai').expect;
+import angular from 'angular';
+import 'angular-mocks';
+import {expect} from 'chai';
+import base from './';
 
 describe('BaseModel', function () {
 
-  beforeEach(angular.mock.module(require('./')));
+  beforeEach(angular.mock.module(base));
 
-  var Model, model, $httpBackend;
+  let Model, model, $httpBackend;
   beforeEach(angular.mock.inject(function (_Model_, _$httpBackend_) {
     Model        = _Model_;
     model        = new Model();
