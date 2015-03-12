@@ -64,14 +64,43 @@ describe('Speaker', function () {
 
   });
 
-  describe('Speaker#formatUrl', function () {
+  describe('Static methods', function () {
 
-    it('transforms state params into a speaker url', function () {
-      expect(Speaker.formatUrl({
-        camp: 'sf2015',
-        speaker: 'ben-drucker'
-      }))
-      .to.equal('sf2015/ben-drucker');
+    describe('#formatUrl', function () {
+
+      it('transforms state params into a speaker url', function () {
+        expect(Speaker.formatUrl({
+          camp: 'sf2015',
+          speaker: 'ben-drucker'
+        }))
+        .to.equal('sf2015/ben-drucker');
+      });
+
+    });
+
+    describe('#fetchByUrl', function () {
+
+      it('fetches a speaker by url', function (done) {
+        angular.mock.inject(function ($httpBackend) {
+          $httpBackend.expectGET('/rest/presenterurls/arrayonly').respond(200, [{
+            presenterId: 1,
+            presenterUrl: 'sf2015/ben-drucker-1',
+            urlPostToken: '2015sf'
+          }]);
+          $httpBackend.expectGET('/rest/presenter/arrayonly/1').respond(200, [{
+            firstName: 'Ben',
+            lastName: 'Drucker'
+          }]);
+          Speaker.fetchByUrl('sf2015/ben-drucker-1')
+            .then(function (speaker) {
+              expect(speaker.firstName).to.equal('Ben');
+              expect(speaker).to.be.an.instanceOf(Speaker);
+            })
+            .finally(done);
+          $httpBackend.flush();
+        });
+      });
+
     });
 
   });

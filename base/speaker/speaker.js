@@ -4,8 +4,8 @@ import {equal as assertEqual} from 'assert';
 
 export default factory;
 
-factory.$inject = ['Model', '$sce', '$q', 'Sessions'];
-function factory (Model, $sce, $q, Session) {
+factory.$inject = ['Model', 'Sessions', 'SpeakerUrl'];
+function factory (Model, Session, SpeakerUrl) {
   class Speaker extends Model {
     defaults () {
       return {
@@ -18,13 +18,13 @@ function factory (Model, $sce, $q, Session) {
       });
       return attributes;
     }
-    static findByUrl (url) {
-      return this.find(function (speaker) {
-        return speaker.presenterUrl === url;
-      });
-    }
     static fetchByUrl (url) {
-      return $q.when(this.findByUrl(url) || this.fetchOne(url));
+      return SpeakerUrl
+        .fetchAll()
+        .then((urls) => {
+          return urls.find(u => u.presenterUrl === url).presenterId;
+        })
+        .then(this.fetchOne.bind(this));
     }
     static parseUrl (url) {
       assertValidUrl(url);
