@@ -1,3 +1,4 @@
 echo starting
+gulp build --production
 time rsync --delete -rcv --chmod=a+rwx ./dist/ pkellner@siliconvalley-codecamp.com::Angular
 echo done
