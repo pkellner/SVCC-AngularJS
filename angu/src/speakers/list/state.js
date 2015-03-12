@@ -19,7 +19,21 @@ function state ($stateProvider) {
 }
 export default state;
 
-getSpeakers.$inject = ['Speakers'];
-function getSpeakers (Speakers) {
-  return Speakers.fetchAll();
+getSpeakers.$inject = ['Speakers', 'SessionTimes', '$q'];
+function getSpeakers (Speakers, SessionTimes, $q) {
+  return $q.all([
+    Speakers.fetchAll(),
+    SessionTimes.fetchAll()
+  ])
+  .then(function (results) {
+    const [speakers, times] = results;
+    speakers.reduce(function (sessions, speaker) {
+      sessions.push.apply(sessions, speaker.sessions);
+      return sessions;
+    }, [])
+    .forEach(function (session) {
+      session.time = times.find(t => t.id === session.sessionTimesId);
+    });
+    return speakers;
+  });
 }

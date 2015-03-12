@@ -39,7 +39,7 @@
                 <b>{{session.title}}</b>
               </session-link>
               <span ng-show="list.showSessionDetails">
-                {{session.startTimeDateTime | date:'EEEE, MMMM d - h a'}} &nbsp;&nbsp;<span class="label label-danger">{{session.sessionTrackName}}</span>
+                {{session.time.startTimeFriendlyDay}} {{session.time.description}} &nbsp;&nbsp;<span class="label label-danger">{{session.sessionTrackName}}</span>
               </span>
             </li>
           </ul>

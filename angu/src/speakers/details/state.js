@@ -26,7 +26,18 @@ function speakerUrl (Speakers, $stateParams) {
 }
 
 
-getSpeaker.$inject = ['Speakers', 'speakerUrl'];
-function getSpeaker (Speakers, speakerUrl) {
-  return Speakers.fetchByUrl(speakerUrl);
+getSpeaker.$inject = ['Speakers', 'speakerUrl', '$q', 'SessionTimes'];
+function getSpeaker (Speakers, speakerUrl, $q, SessionTime) {
+  return $q.all([
+    Speakers.fetchByUrl(speakerUrl),
+    SessionTime.fetchAll()
+  ])
+  .then(function (results) {
+    const [speaker, times] = results;
+    speaker.sessions
+      .forEach(function (session) {
+        session.time = times.find(t => t.id === session.sessionTimesId);
+      });
+    return speaker;
+  });
 }

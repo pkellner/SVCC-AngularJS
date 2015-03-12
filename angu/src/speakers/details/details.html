@@ -31,9 +31,9 @@
               <h4>{{session.title}}</h4>
             </session-link>
             <div>
-              <!-- <span class="speaker-details--date">
-                {{session.startTimeDateTime | date:'EEEE, MMMM d - h a'}}
-              </span> -->
+              <span class="speaker-details--date">
+                {{session.time.startTimeFriendlyDay}} {{session.time.description}}
+              </span>
               <span class="label label-default">{{session.sessionTrackName}}</span>
             </div>
             <p description="description" for="session"></p>
