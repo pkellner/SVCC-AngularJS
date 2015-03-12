@@ -12,7 +12,7 @@ function factory ($http) {
         cache: true
       })
       .then((response) => {
-        return this.forge(response.data);
+        return this.forge(response.data[0]);
       });
     }
     static fetchAll () {
