@@ -1,7 +1,7 @@
 [
   {
     "sessionId": 3678,
-    "sessionUrl": "2015sf/bringing-web-content-to-the-big-screen-with-google-cast"
+    "sessionUrl": "2015sf/chromecast---bringing-web-content-to-the-big-screen-with-google-cast"
   },
   {
     "sessionId": 3683,
@@ -9,11 +9,7 @@
   },
   {
     "sessionId": 3711,
-    "sessionUrl": "2015sf/dan-and-john-show"
-  },
-  {
-    "sessionId": 4717,
-    "sessionUrl": "2015sf/something-interesting"
+    "sessionUrl": "2015sf/dan-and-john-bringing-their-view-on-the-latest-in-angular"
   },
   {
     "sessionId": 4718,
@@ -33,54 +29,86 @@
   },
   {
     "sessionId": 4722,
-    "sessionUrl": "2015sf/key-note"
+    "sessionUrl": "2015sf/angular-2-roadmap-update"
   },
   {
     "sessionId": 4725,
-    "sessionUrl": "2015sf/keynote5"
+    "sessionUrl": "2015sf/typescript"
   },
   {
     "sessionId": 4726,
-    "sessionUrl": "2015sf/ecma6"
+    "sessionUrl": "2015sf/javascript-futures"
   },
   {
     "sessionId": 4728,
-    "sessionUrl": "2015sf/angu2x"
-  },
-  {
-    "sessionId": 4729,
-    "sessionUrl": "2015sf/angu2z"
+    "sessionUrl": "2015sf/crazy-fast-prototyping-with-angularjs"
   },
   {
     "sessionId": 4731,
-    "sessionUrl": "2015sf/ang2za"
+    "sessionUrl": "2015sf/session-title-coming-stay-tuned-to-this"
   },
   {
     "sessionId": 4737,
     "sessionUrl": "2015sf/realtime-angular-with-firebase"
   },
   {
-    "sessionId": 4739,
-    "sessionUrl": "2015sf/testtitle"
-  },
-  {
-    "sessionId": 4741,
-    "sessionUrl": "2015sf/danjohnworkshopthursday"
+    "sessionId": 4738,
+    "sessionUrl": "2015sf/gulp-with-javascript-and-angular"
   },
   {
     "sessionId": 4742,
-    "sessionUrl": "2015sf/this-is-the-firebase-workshop-with-ben-drucker-co-taught-by-david-east-dan"
-  },
-  {
-    "sessionId": 4743,
-    "sessionUrl": "2015sf/kyleday1wedn"
+    "sessionUrl": "2015sf/session-title-coming-stay-tuned-here"
   },
   {
     "sessionId": 4744,
-    "sessionUrl": "2015sf/kyleday2thursday"
+    "sessionUrl": "2015sf/es6-workshop"
   },
   {
     "sessionId": 4745,
-    "sessionUrl": "2015sf/lukeday2thurs"
+    "sessionUrl": "2015sf/advanced-javascript-part-1"
+  },
+  {
+    "sessionId": 4747,
+    "sessionUrl": "2015sf/advanced-javascript-part-2"
+  },
+  {
+    "sessionId": 4748,
+    "sessionUrl": "2015sf/build-secure-enterprise-angular-apps-that-leverage-various-microsoft-tech"
+  },
+  {
+    "sessionId": 4749,
+    "sessionUrl": "2015sf/angular-line-of-business-applications-hands-on"
+  },
+  {
+    "sessionId": 4750,
+    "sessionUrl": "2015sf/typescript-fundamentals"
+  },
+  {
+    "sessionId": 4751,
+    "sessionUrl": "2015sf/angular-in-0-to-60"
+  },
+  {
+    "sessionId": 4752,
+    "sessionUrl": "2015sf/make-your-angular-app-a-maximum-security-prison"
+  },
+  {
+    "sessionId": 4755,
+    "sessionUrl": "2015sf/dominating-shadow-dom"
+  },
+  {
+    "sessionId": 4756,
+    "sessionUrl": "2015sf/creating-d3-components-with-angular2-and-typescript"
+  },
+  {
+    "sessionId": 4757,
+    "sessionUrl": "2015sf/angular-2-speed-run"
+  },
+  {
+    "sessionId": 4758,
+    "sessionUrl": "2015sf/vaadin-components-for-angularjs"
+  },
+  {
+    "sessionId": 4759,
+    "sessionUrl": "2015sf/reusable-angular-components-with-browserify"
   }
 ]
