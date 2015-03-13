@@ -20,16 +20,16 @@ function state ($stateProvider) {
 }
 export default state;
 
-speakerUrl.$inject = ['Speakers', '$stateParams'];
-function speakerUrl (Speakers, $stateParams) {
-  return Speakers.formatUrl($stateParams);
+speakerUrl.$inject = ['Speaker', '$stateParams'];
+function speakerUrl (Speaker, $stateParams) {
+  return Speaker.formatUrl($stateParams);
 }
 
 
-getSpeaker.$inject = ['Speakers', 'speakerUrl', '$q', 'SessionTimes'];
-function getSpeaker (Speakers, speakerUrl, $q, SessionTime) {
+getSpeaker.$inject = ['Speaker', 'speakerUrl', '$q', 'SessionTimes'];
+function getSpeaker (Speaker, speakerUrl, $q, SessionTime) {
   return $q.all([
-    Speakers.fetchByUrl(speakerUrl),
+    Speaker.fetchByUrl(speakerUrl),
     SessionTime.fetchAll()
   ])
   .then(function (results) {

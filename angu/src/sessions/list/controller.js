@@ -1,6 +1,6 @@
 'use strict';
 
-function SessionListController (sessions, days, tracks, Speakers) {
+function SessionListController (sessions, days, tracks, Speaker) {
   this.sessions = sessions;
   this.days = days;
   this.day = days[0];
@@ -14,7 +14,7 @@ function SessionListController (sessions, days, tracks, Speakers) {
   .forEach(function (speaker) {
     speaker.$stateParams = function () {
       const url = this.speakerLocalUrl.replace('/Presenter/', '').toLowerCase();
-      return Speakers.parseUrl(url);
+      return Speaker.parseUrl(url);
     };
   });
 
@@ -29,6 +29,6 @@ function SessionListController (sessions, days, tracks, Speakers) {
     return true;
   };
 }
-SessionListController.$inject = ['sessions', 'days', 'tracks', 'Speakers'];
+SessionListController.$inject = ['sessions', 'days', 'tracks', 'Speaker'];
 
 export default SessionListController;

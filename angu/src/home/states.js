@@ -25,7 +25,7 @@ function getFaqs (Faqs) {
 }
 getFaqs.$inject = ['Faqs'];
 
-function getSpeakers (Speakers) {
-  return Speakers.fetchAll();
+function getSpeakers (Speaker) {
+  return Speaker.fetchAll();
 }
-getSpeakers.$inject = ['Speakers'];
+getSpeakers.$inject = ['Speaker'];

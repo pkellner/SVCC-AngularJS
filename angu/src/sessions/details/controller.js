@@ -3,7 +3,7 @@
 import angular from 'angular';
 import list from 'listify';
 
-function SessionDetailsController (session, Speakers) {
+function SessionDetailsController (session, Speaker) {
   this.session = session;
   this.speakers = session.speakersList.map((speaker) => {
     return angular.extend(speaker, {
@@ -12,12 +12,12 @@ function SessionDetailsController (session, Speakers) {
       bioShort: speaker.userBioShort,
       $stateParams () {
         const url = this.speakerLocalUrl.replace('/Presenter/', '').toLowerCase();
-        return Speakers.parseUrl(url);
+        return Speaker.parseUrl(url);
       }
     });
   });
   this.byline = list(this.speakers.map(s => s.name));
 }
-SessionDetailsController.$inject = ['session', 'Speakers'];
+SessionDetailsController.$inject = ['session', 'Speaker'];
 
 export default SessionDetailsController;
