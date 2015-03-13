@@ -26,6 +26,7 @@ gulp.task('unit', function () {
   return karma.server.start({
     frameworks: ['browserify', 'mocha'],
     files: [
+      require.resolve('es5-shim'),
       './!(node_modules)/**/*.spec.js'
     ],
     exclude: [

@@ -6,7 +6,7 @@ function state ($stateProvider) {
     url: '/speaker',
     parent: 'base',
     resolve: {
-      speakers: getSpeakers
+      speakers: getSpeaker
     },
     views: {
       '@layout': {
@@ -19,10 +19,10 @@ function state ($stateProvider) {
 }
 export default state;
 
-getSpeakers.$inject = ['Speakers', 'SessionTimes', '$q'];
-function getSpeakers (Speakers, SessionTimes, $q) {
+getSpeaker.$inject = ['Speaker', 'SessionTimes', '$q'];
+function getSpeaker (Speaker, SessionTimes, $q) {
   return $q.all([
-    Speakers.fetchAll(),
+    Speaker.fetchAll(),
     SessionTimes.fetchAll()
   ])
   .then(function (results) {

@@ -1,23 +1,34 @@
 'use strict';
 
-exports = module.exports = function (Model, $sce, $q, Session) {
+import {equal as assertEqual} from 'assert';
+
+export default factory;
+
+factory.$inject = ['Model', 'Sessions', 'SpeakerUrl'];
+function factory (Model, Session, SpeakerUrl) {
   class Speaker extends Model {
+    defaults () {
+      return {
+        sessions: []
+      };
+    }
     parse (attributes) {
       attributes.sessions = attributes.sessions.map(function (data) {
         return new Session(data);
       });
       return attributes;
     }
-    static findByUrl (url) {
-      return this.find(function (speaker) {
-        return speaker.presenterUrl === url;
-      });
-    }
     static fetchByUrl (url) {
-      return $q.when(this.findByUrl(url) || this.fetchOne(url));
+      return SpeakerUrl
+        .fetchAll()
+        .then((urls) => {
+          return urls.find(u => u.presenterUrl === url).presenterId;
+        })
+        .then(this.fetchOne.bind(this));
     }
     static parseUrl (url) {
-      let parts = url.split('/');
+      assertValidUrl(url);
+      const parts = url.split('/');
       return {
         camp: parts[0],
         speaker: parts[1]
@@ -38,5 +49,13 @@ exports = module.exports = function (Model, $sce, $q, Session) {
     }
   });
   return Speaker;
-};
-exports.$inject = ['Model', '$sce', '$q', 'Sessions'];
+}
+
+function assertValidUrl (url) {
+  const parts = url.split('/');
+  const expected = 2;
+  const actual = parts.length;
+  assertEqual(actual, expected, `Speaker urls must have ${expected} segments, ` +
+    `got ${actual}`
+  );
+}

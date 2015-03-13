@@ -20,9 +20,9 @@ describe('Model REST', function () {
     it('gets a single model using a specified suffix', angular.mock.inject(function ($httpBackend) {
       $httpBackend
         .expectGET('/model/arrayonly/suffix')
-        .respond(200, {
+        .respond(200, [{
           foo: 'bar'
-        });
+        }]);
       Model.url = '/model';
       Model.fetchOne('suffix')
         .then(function (model) {

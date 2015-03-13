@@ -1,9 +1,15 @@
 'use strict';
 
 import {expect} from 'chai';
-import Model from './model';
+import Base from './model';
 
 describe('Model Base', function () {
+
+  let Model;
+  beforeEach(function () {
+    class _Model extends Base {};
+    Model = _Model;
+  });
 
   describe('Constructor', function () {
 
@@ -24,14 +30,23 @@ describe('Model Base', function () {
       expect(model.foo).to.not.equal(obj);
     });
 
+    it('applies defaults', function () {
+      Model.prototype.defaults = function () {
+        return {
+          foo: 'bar'
+        };
+      };
+      expect(new Model()).to.contain({
+        foo: 'bar'
+      });
+    });
+
     it('calls a parse function with the attributes', function () {
-      class Child extends Model {
-        parse (attributes) {
-          attributes.foo = 'bar';
-          return attributes;
-        }
-      }
-      expect(new Child()).to.contain({
+      Model.prototype.parse = function (attributes) {
+        attributes.foo = 'bar';
+        return attributes;
+      };
+      expect(new Model()).to.contain({
         foo: 'bar'
       });
     });

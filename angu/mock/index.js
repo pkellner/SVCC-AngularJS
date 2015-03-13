@@ -17,13 +17,15 @@ function provideMocks ($httpBackend) {
   .passThrough();
   $httpBackend.whenGET('/rest/faq/arrayonly').respond(require('./data/faqs.json'));
   $httpBackend.whenGET('/rest/sponsor/arrayonly').respond(require('./data/sponsors.json'));
+  $httpBackend.whenGET('/rest/presenterurls/arrayonly').respond(require('./data/speakerUrls.json'));
+
 
   var presenter = '/rest/presenter/arrayonly';
   $httpBackend.whenGET(presenter).respond(require('./data/speakers.json'));
   $httpBackend.whenGET(new RegExp(`${escape(presenter)}/.`)).respond(function (method, url) {
-    var presenterUrl = url.split(`${presenter}/`)[1];
-    var speaker = speakers.find(speaker => speaker.presenterUrl === presenterUrl);
-    return [200, speaker];
+    var id = parseInt(url.split(`${presenter}/`)[1]);
+    var speaker = speakers.find(speaker => speaker.id === id);
+    return [200, [speaker]];
   });
 
   var sessions = require('./data/sessions.json');
