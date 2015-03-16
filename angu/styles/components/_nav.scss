@@ -24,7 +24,14 @@
     color: $white;
 
     @include respond-to(tablet) {
-      display: block;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      font-size: 13px;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 14px;
     }
 
     &.open {
@@ -51,6 +58,10 @@
     li {
       float: left;
 
+      @include respond-to(tablet) {
+        float: none;
+      }
+
       &.active,
       &:hover {
         a {
@@ -65,6 +76,14 @@
       text-transform: uppercase;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.56);
       color: $white;
+
+      @include respond-to(tablet) {
+        padding: 19px 5px;
+      }
+
+      @include respond-to(desktop) {
+        padding: 18px 5px;
+      }
     }
   }
 
@@ -185,13 +204,8 @@
 
     .input-group {
       @include respond-to(phone-tablet) {
-        max-width: 240px;
         float: left;
         clear: left;
-      }
-
-      @include respond-to(tablet) {
-        max-width: 210px;
       }
     }
 
@@ -204,6 +218,22 @@
         margin: 4px 0 2px;
         font-size: 12px;
         line-height: 1.9;
+      }
+    }
+
+    .btn {
+      @include respond-to(tablet) {
+        font-size: 13px;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 12px;
+        padding: 9px 12px;
+      }
+
+      @include respond-to(wide) {
+        font-size: 14px;
+        padding: 8px 12px;
       }
     }
 
