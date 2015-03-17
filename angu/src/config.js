@@ -28,6 +28,24 @@ function parse ($provide, CONFIG) {
       bookingUrl: {
         key: 'hotelBookingUrl'
       }
+    },
+    schedule: {
+      show: {
+        key: 'showSchedule',
+        type: Boolean
+      }
+    },
+    pricing: {
+      show: {
+        key: 'showPricing',
+        type: Boolean
+      }
+    },
+    fun: {
+      show: {
+        key: 'showFun',
+        type: Boolean
+      }
     }
   })
   .parse(CONFIG);

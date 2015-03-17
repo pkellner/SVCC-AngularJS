@@ -1,14 +1,26 @@
-<ul class="nav--list" ng-class="{'open': open}">
+<ul class="nav--list" ng-class="{'open': pages.open}">
   <li ui-sref-active="active">
     <a ui-sref="home">Home</a>
   </li>
-  <li ui-sref-active="active">
+  <li ng-if="pages.show('speakers')" ui-sref-active="active">
     <a ui-sref="speakers">Speakers</a>
   </li>
-  <li ng-if="app.config.showSessions === 'True'" ui-sref-active="active">
+  <li ng-if="pages.show('sessions')" ui-sref-active="active">
     <a ui-sref="sessions">Sessions</a>
   </li>
-  <li ng-if="hotelBookingUrl" class="visible-xs">
-    <a ng-href="{{hotelBookingUrl}}">Book a hotel room</a>
+  <li ng-if="pages.show('schedule')" ui-sref-active="active">
+    <a ui-sref="schedule">Schedule</a>
+  </li>
+  <li ng-if="pages.show('pricing')" ui-sref-active="active">
+    <a ui-sref="pricing">Pricing</a>
+  </li>
+  <li ng-if="pages.show('fun')" ui-sref-active="active">
+    <a ui-sref="fun">Fun</a>
+  </li>
+  <li class="visible-xs">
+    <a href="/angu/purchasetickets">Buy Ticket</a>
+  </li>
+  <li ng-if="pages.hotelBookingUrl" class="visible-xs">
+    <a ng-href="{{pages.hotelBookingUrl}}">Book a hotel room</a>
   </li>
 </ul>

@@ -1,45 +1,9 @@
-<form class="ticket-form" name="ticketForm" ng-hide="ticket.username" ng-submit="ticket.request(ticket.email)">
-  <div class="ping-tickets">
-    <button for="ticketEmail" class="uppercase btn btn-primary" ng-click="ticket.showForm()" ng-if="!ticket.requesting">
-      <span class="hidden-xs hidden-sm">Notify me when tickets go on sale</span>
-      <span class="visible-xs visible-sm">Get tickets</span>
-    </button>
-    <div class="input-group" ng-class="{active: ticket.requesting}">
-      <input
-        class="form-control"
-        type="email"
-        id="ticketEmail"
-        ng-model="ticket.email"
-        name="ticketEmail"
-        required
-        placeholder="Type your email"
-      />
-      <span class="input-group-btn" ng-show="ticketForm.$valid">
-        <button class="btn btn-primary">OK</button>
-      </span>
-    </div>
-    <a ng-if="ticket.hotelBookingUrl" ng-href="{{ticket.hotelBookingUrl}}" class="btn btn-info uppercase">
-      <span class="hidden-xs hidden-sm">Book a hotel room</span>
-      <span class="visible-xs visible-sm">Book room</span>
-      </a>
-  </div>
-</form>
-
-<div class="ping-tickets" ng-if="ticket.username">
-  <div class="input-group">
-    <span class="input-group-btn">
-      <span>
-        <a href="/angu/signuptobenotified" class="btn btn-primary">
-          <span class="hidden-xs hidden-sm">View and Update Ticket Options</span>
-          <span class="visible-xs visible-sm">Ticket Options</span>
-        </a>
-      </span>
-      <span>
-        <a ng-if="ticket.hotelBookingUrl" ng-href="{{ticket.hotelBookingUrl}}" class="btn btn-info uppercase">
-          <span class="hidden-xs hidden-sm">Book a hotel room</span>
-          <span class="visible-xs visible-sm">Book room</span>
-        </a>
-      </span>
-    </span>
-  </div>
+<div class="ping-tickets">
+  <a href="/angu/purchasetickets" class="btn btn-primary">
+    Buy Ticket
+  </a>
+  <a ng-if="ticket.hotelBookingUrl" ng-href="{{ticket.hotelBookingUrl}}" class="btn btn-info uppercase">
+    <span class="hidden-xs hidden-sm">Book a hotel room</span>
+    <span class="visible-xs visible-sm">Book room</span>
+  </a>
 </div>

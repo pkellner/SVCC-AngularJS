@@ -33,9 +33,13 @@
     vertical-align: middle;
 
     .btn {
-      font-size: 14px;
+      font-size: 13px;
       height: $input-height-base;
       margin-bottom: 0;
+
+      @include respond-to(desktop) {
+        font-size: 14px;
+      }
     }
   }
 
