@@ -1,5 +1,13 @@
 'use strict';
 
+PageNavController.$inject = ['config'];
+function PageNavController (config) {
+  this.show = function (state) {
+    return config[state].show;
+  }
+  this.hotelBookingUrl = config.hotel.bookingUrl;
+}
+
 exports = module.exports = function (config) {
   return {
     restrict: 'E',
@@ -7,9 +15,9 @@ exports = module.exports = function (config) {
       open: '='
     },
     templateUrl: 'app/nav/pages/index.html',
-    link: function (scope) {
-      scope.hotelBookingUrl = config.hotel.bookingUrl;
-    }
+    controller: PageNavController,
+    bindToController: true,
+    controllerAs: 'pages'
   };
 };
 exports.$inject = ['config'];
