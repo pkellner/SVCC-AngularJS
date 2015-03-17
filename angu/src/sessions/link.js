@@ -1,10 +1,12 @@
 'use strict';
 
+import template from './link.html';
+
 export default function () {
   return {
     restrict: 'EA',
     transclude: true,
-    templateUrl: 'app/sessions/link.html',
+    template,
     scope: {
       session: '='
     },

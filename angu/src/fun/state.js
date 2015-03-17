@@ -1,5 +1,7 @@
 'use strict';
 
+import template from './fun.html';
+
 export default state;
 
 state.$inject = ['$stateProvider'];
@@ -9,7 +11,7 @@ function state ($stateProvider) {
     parent: 'base',
     views: {
       '@layout': {
-        templateUrl: 'app/fun/fun.html'
+        template
       }
     }
   });

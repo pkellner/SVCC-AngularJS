@@ -1,5 +1,7 @@
 'use strict';
 
+import template from './speakers.html';
+
 state.$inject = ['$stateProvider'];
 function state ($stateProvider) {
   $stateProvider.state('speakers', {
@@ -12,7 +14,7 @@ function state ($stateProvider) {
       '@layout': {
         controller: 'SpeakerListController',
         controllerAs: 'list',
-        templateUrl: 'app/speakers/list/speakers.html'
+        template
       }
     }
   });

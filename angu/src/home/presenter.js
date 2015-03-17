@@ -1,6 +1,7 @@
 'use strict';
 
 var qs = require('qs');
+var template = require('./presenter.html');
 
 exports = module.exports = function () {
   return {
@@ -14,7 +15,7 @@ exports = module.exports = function () {
     bindToController: true,
     controller: PresenterController,
     controllerAs: 'presenter',
-    templateUrl: 'app/home/presenter.html'
+    template
   };
 };
 

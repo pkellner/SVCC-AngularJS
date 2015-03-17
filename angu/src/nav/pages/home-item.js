@@ -1,9 +1,11 @@
 'use strict';
 
+import template from './home-item.html';
+
 exports = module.exports = function ($compile) {
   return {
     restrict: 'E',
-    templateUrl: 'app/nav/pages/home-item.html',
+    template,
     transclude: true,
     scope: {
       target: '@'

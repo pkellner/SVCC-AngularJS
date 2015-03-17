@@ -1,5 +1,7 @@
 'use strict';
 
+import template from './index.html';
+
 PageNavController.$inject = ['config'];
 function PageNavController (config) {
   this.show = function (state) {
@@ -14,7 +16,7 @@ exports = module.exports = function (config) {
     scope: {
       open: '='
     },
-    templateUrl: 'app/nav/pages/index.html',
+    template,
     controller: PageNavController,
     bindToController: true,
     controllerAs: 'pages'

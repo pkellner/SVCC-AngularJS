@@ -1,10 +1,12 @@
 'use strict';
 
+import template from './user.html';
+
 exports = module.exports = function (config) {
   return {
     restrict: 'E',
     require: 'userNav',
-    templateUrl: '/app/nav/user.html',
+    template,
     controller: 'NavController',
     controllerAs: 'userNav',
     scope: {},

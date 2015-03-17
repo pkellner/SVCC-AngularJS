@@ -1,5 +1,7 @@
 'use strict';
 
+import template from './home.html';
+
 exports = module.exports = function ($stateProvider) {
   $stateProvider.state('home', {
     url: '/',
@@ -12,7 +14,7 @@ exports = module.exports = function ($stateProvider) {
       '@layout': {
         controller: 'HomeController',
         controllerAs: 'home',
-        templateUrl: 'app/home/home.html'
+        template
       }
 
     }

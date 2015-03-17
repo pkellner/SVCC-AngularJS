@@ -1,11 +1,12 @@
 'use strict';
 
 import strip from 'striptags';
+import template from './bio.html';
 
 export default function () {
   return {
     restrict: 'EA',
-    templateUrl: 'app/speakers/bio.html',
+    template,
     scope: {
       speaker: '='
     },

@@ -1,11 +1,12 @@
 'use strict';
 
 import strip from 'striptags';
+import template from './description.html';
 
 export default function () {
   return {
     restrict: 'EA',
-    templateUrl: 'app/description.html',
+    template,
     scope: {
       for: '=',
       description: '@'

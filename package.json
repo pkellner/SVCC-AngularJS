@@ -20,6 +20,7 @@
     "es5-shim": "~4.1.0",
     "escape-string-regexp": "~1.0.2",
     "listify": "~1.0.0",
+    "partialify": "^3.1.3",
     "pusher-angular": "~0.1.4",
     "qs": "~2.3.3",
     "sort-on": "~1.0.2",
@@ -68,6 +69,7 @@
           "ignore": "node_modules"
         }
       ],
+      "partialify",
       "browserify-shim"
     ]
   },

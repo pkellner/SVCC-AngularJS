@@ -1,5 +1,7 @@
 'use strict';
 
+import template from './details.html';
+
 states.$inject = ['$stateProvider'];
 function states ($stateProvider) {
   ['session', 'workshop'].forEach(function (type) {
@@ -17,7 +19,7 @@ function states ($stateProvider) {
         '@layout': {
           controller: 'SessionDetailsController',
           controllerAs: 'details',
-          templateUrl: 'app/sessions/details/details.html'
+          template
         }
       }
     });

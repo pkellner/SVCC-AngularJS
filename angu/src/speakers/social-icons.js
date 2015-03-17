@@ -1,9 +1,11 @@
 'use strict';
 
+import template from './social-icons.html';
+
 export default function () {
   return {
     restrict: 'EA',
-    templateUrl: 'app/speakers/social-icons.html',
+    template,
     scope: {
       speaker: '='
     },

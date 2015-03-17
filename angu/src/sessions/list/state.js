@@ -1,5 +1,7 @@
 'use strict';
 
+import template from './sessions.html';
+
 state.$inject = ['$stateProvider'];
 function state ($stateProvider) {
   $stateProvider.state('sessions', {
@@ -15,7 +17,7 @@ function state ($stateProvider) {
       '@layout': {
         controller: 'SessionListController',
         controllerAs: 'list',
-        templateUrl: 'app/sessions/list/sessions.html'
+        template
       }
     }
   });

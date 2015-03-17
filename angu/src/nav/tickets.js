@@ -1,5 +1,7 @@
 'use strict';
 
+import template from './tickets.html';
+
 exports = module.exports = function ($window, config) {
 
   function TicketNotificationController () {
@@ -20,7 +22,7 @@ exports = module.exports = function ($window, config) {
   return {
     restrict: 'E',
     controller: TicketNotificationController,
-    templateUrl: 'app/nav/tickets.html',
+    template,
     controllerAs: 'ticket',
     bindToController: true
   };
