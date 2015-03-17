@@ -10,7 +10,8 @@ module.exports = require('angular')
     require('./nav'),
     require('./home'),
     require('./speakers'),
-    require('./sessions')
+    require('./sessions'),
+    require('./fun')
   ])
   .config(parseConfig)
   .config(enableHtml5Mode)
