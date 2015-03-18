@@ -14,6 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass-official": "~3.3.0"
+    "bootstrap-sass-official": "~3.3.0",
+    "angular-masonry": "~0.11.0"
   }
 }
