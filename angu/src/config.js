@@ -49,5 +49,5 @@ function parse ($provide, CONFIG) {
     }
   })
   .parse(CONFIG);
-  $provide.constant('config', config); 
+  $provide.constant('config', config);
 }

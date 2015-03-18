@@ -7,6 +7,7 @@ module.exports = require('angular')
   .module('angUApp', [
     require('../../base'),
     require('angular-scroll'),
+    require('angular-masonry'),
     require('./nav'),
     require('./home'),
     require('./speakers'),
