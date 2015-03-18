@@ -1,0 +1,57 @@
+$tile-height: 110px;
+$tile-gutter: 10px;
+
+.tile {
+  margin: $tile-gutter / 2;
+  float: left;
+  background: $brand-primary;
+  color: #fff;
+  overflow: hidden;
+
+  &-small {
+    width: calc(20% - #{$tile-gutter});
+    height: $tile-height;
+  }
+
+  &-medium {
+    width: calc(20% - #{$tile-gutter});
+    height: $tile-height * 2 + $tile-gutter;
+  }
+
+  &-large {
+    width: calc(40% - #{$tile-gutter});
+    height: $tile-height * 2 + $tile-gutter;
+  }
+
+  .icon {
+    display: block;
+    width: 77px;
+    height: 77px;
+    padding: 8px;
+    margin: 20px auto 15px;
+    color: $brand-primary;
+    font-size: 60px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .type--lead {
+    font-size: 24px;
+
+    strong {
+      font-size: 30px;
+      display: block;
+    }
+  }
+
+  & > img {
+    min-width: 100%;
+  }
+}
+
+.tiles {
+  @extend %clearfix;
+  margin-left: -$tile-gutter / 2;
+  margin-right: -$tile-gutter / 2;
+  margin-bottom: 40px;
+}
