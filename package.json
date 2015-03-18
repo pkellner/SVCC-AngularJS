@@ -59,7 +59,8 @@
   },
   "browser": {
     "angular-scroll": "./node_modules/angular-scroll/angular-scroll.js",
-    "ui.bootstrap": "./vendor/ui-bootstrap-tpls.js"
+    "ui.bootstrap": "./vendor/ui-bootstrap-tpls.js",
+    "angular-masonry": "./vendor/angular-masonry.js"
   },
   "browserify": {
     "transform": [
@@ -79,6 +80,12 @@
         "angular"
       ],
       "exports": "angular.module('duScroll').name"
+    },
+    "angular-masonry": {
+      "depends": [
+        "angular"
+      ],
+      "exports": "angular.module('wu.masonry').name"
     }
   }
 }
