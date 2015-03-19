@@ -1,7 +1,11 @@
 'use strict';
 
 function SessionListController (sessions, days, tracks, Speaker) {
-  this.sessions = sessions;
+
+  const scheduled = sessions.filter(s => s.time);
+  const unscheduled = sessions.filter(s => !s.time);
+
+  this.sessions = scheduled.concat(unscheduled);
   this.days = days;
   this.day = days[0];
   this.tracks = tracks;
