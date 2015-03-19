@@ -1,1 +1,85 @@
-Fun!
+<div id="home" class="container nav--section ng-scope">
+  <div class="separator">
+    <span class="separator--icon icon-clock"></span>
+  </div>
+
+  <div class="row row-centered">
+    <div class="col-md-9 col-centered">
+      <h2 class="type--lead">
+        It's going to be a great conference
+      </h2>
+      <p class="text-center">It’s not just about the speakers. It’s also about meeting interesting people and having a great time.</p>
+    </div>
+  </div>
+
+  <div ng-init="bricks = [null]" class="row row-centered">
+    <div class="col-md-10 col-centered">
+      <div masonry
+        preserve-order
+        item-selector=".tile"
+        load-images="false"
+        class="tiles"
+        masonry-options="{
+        transitionDuration: 0
+        }"
+      >
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-small"><img cc-src="images/tiles/pic10.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-large"><img cc-src="images/tiles/pic12.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-large">
+          <span class="icon icon-notebook"></span>
+          <h3 class="type--lead">
+            <strong>Programming</strong>
+            (in a fun way)
+          </h3>
+        </div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-small"><img cc-src="images/tiles/pic11.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-medium"><img cc-src="images/tiles/pic1.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-large">
+          <span class="icon icon-piechart"></span>
+          <h3 class="type--lead">
+            <strong>Good food</strong>
+            (to keep you going)
+          </h3>
+        </div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-small"><img cc-src="images/tiles/pic2.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-small"><img cc-src="images/tiles/pic3.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-large">
+          <span class="icon icon-people"></span>
+          <h3 class="type--lead">
+            <strong>Great people</strong>
+            (to meet and talk to)
+          </h3>
+        </div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-small"><img cc-src="images/tiles/pic4.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-small"><img cc-src="images/tiles/pic5.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-small"><img cc-src="images/tiles/pic6.jpg" alt=""></div>
+
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-large">
+          <span class="icon icon-gamepad"></span>
+          <h3 class="type--lead">
+            <strong>Games! Parties!</strong>
+          </h3>
+        </div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-large"><img cc-src="images/tiles/pic7.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-small"><img cc-src="images/tiles/pic8.jpg" alt=""></div>
+        <div masonry-brick ng-repeat="brick in bricks" class="tile tile-small"><img cc-src="images/tiles/pic9.jpg" alt=""></div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-centered">
+    <div class="col-md-9 col-centered">
+      <h2 class="type--lead">
+        Come experience AngularU
+      </h2>
+    </div>
+  </div>
+
+  <div class="separator">
+    <div class="separator--item">
+      <button class="btn btn-primary btn-lg">Get tickets</button>
+    </div>
+  </div>
+
+</div>

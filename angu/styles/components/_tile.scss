@@ -1,0 +1,83 @@
+$tile-height: 110px;
+$tile-gutter: 10px;
+
+.tile {
+  position: absolute;
+  top: 0;
+  float: left;
+  margin: 0 $tile-gutter/2 $tile-gutter;
+  overflow: hidden;
+  color: #fff;
+  background: $brand-primary;
+
+  &-small {
+    width: calc(50% - #{$tile-gutter});
+    height: $tile-height;
+
+    @include respond-to(tablet) {
+      width: calc(25% - #{$tile-gutter});
+    }
+
+    @include respond-to(desktop) {
+      width: calc(20% - #{$tile-gutter});
+    }
+  }
+
+  &-medium {
+    width: calc(50% - #{$tile-gutter});
+    height: $tile-height * 2 + $tile-gutter;
+
+    @include respond-to(tablet) {
+      width: calc(25% - #{$tile-gutter});
+    }
+
+    @include respond-to(desktop) {
+      width: calc(20% - #{$tile-gutter});
+    }
+  }
+
+  &-large {
+    width: calc(100% - #{$tile-gutter});
+    height: $tile-height * 2 + $tile-gutter;
+
+    @include respond-to(tablet) {
+      width: calc(50% - #{$tile-gutter});
+    }
+
+    @include respond-to(desktop) {
+      width: calc(40% - #{$tile-gutter});
+    }
+  }
+
+  .icon {
+    display: block;
+    width: 77px;
+    height: 77px;
+    padding: 8px;
+    margin: 20px auto 15px;
+    color: $brand-primary;
+    font-size: 60px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .type--lead {
+    font-size: 24px;
+
+    strong {
+      font-size: 30px;
+      display: block;
+    }
+  }
+
+  & > img {
+    min-width: 100%;
+  }
+}
+
+.tiles {
+  @extend %clearfix;
+  margin-left: -$tile-gutter / 2;
+  margin-right: -$tile-gutter / 2;
+  margin-bottom: 40px;
+}

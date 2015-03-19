@@ -3,6 +3,7 @@
 import parseConfig from './config';
 import description from './description';
 import layout from './layout';
+import image from './image';
 
 module.exports = require('angular')
   .module('angUApp', [
@@ -19,6 +20,7 @@ module.exports = require('angular')
   .config(enableHtml5Mode)
   .config(anchorScroll)
   .directive('description', description)
+  .directive('ccSrc', image)
   .name;
 
 enableHtml5Mode.$inject = ['$locationProvider'];

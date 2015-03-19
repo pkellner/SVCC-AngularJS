@@ -12,6 +12,14 @@ function parse ($provide, CONFIG) {
         key: 'loggedInUsername'
       }
     },
+    assets: {
+      base: {
+        key: 'baseDir'
+      },
+      cdn: {
+        key: 'cdnUrl'
+      }
+    },
     speakers: {
       show: {
         key: 'showPresenters',
