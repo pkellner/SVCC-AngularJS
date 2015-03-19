@@ -6,7 +6,6 @@ import messages from 'angular-messages';
 import routing from './routing';
 import model from './model';
 import layout from './layout';
-import staticPages from './static';
 import faqs from './faqs';
 import speaker from './speaker';
 import sessions from './sessions'
@@ -18,7 +17,6 @@ export default angular.module('codeCampBase', [
   routing,
   model,
   layout,
-  staticPages,
   faqs,
   speaker,
   sessions,
