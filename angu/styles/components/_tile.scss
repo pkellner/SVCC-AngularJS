@@ -2,25 +2,51 @@ $tile-height: 110px;
 $tile-gutter: 10px;
 
 .tile {
-  margin: $tile-gutter / 2;
+  position: absolute;
+  top: 0;
   float: left;
-  background: $brand-primary;
-  color: #fff;
+  margin: 0 $tile-gutter/2 $tile-gutter;
   overflow: hidden;
+  color: #fff;
+  background: $brand-primary;
 
   &-small {
-    width: calc(20% - #{$tile-gutter});
+    width: calc(50% - #{$tile-gutter});
     height: $tile-height;
+
+    @include respond-to(tablet) {
+      width: calc(25% - #{$tile-gutter});
+    }
+
+    @include respond-to(desktop) {
+      width: calc(20% - #{$tile-gutter});
+    }
   }
 
   &-medium {
-    width: calc(20% - #{$tile-gutter});
+    width: calc(50% - #{$tile-gutter});
     height: $tile-height * 2 + $tile-gutter;
+
+    @include respond-to(tablet) {
+      width: calc(25% - #{$tile-gutter});
+    }
+
+    @include respond-to(desktop) {
+      width: calc(20% - #{$tile-gutter});
+    }
   }
 
   &-large {
-    width: calc(40% - #{$tile-gutter});
+    width: calc(100% - #{$tile-gutter});
     height: $tile-height * 2 + $tile-gutter;
+
+    @include respond-to(tablet) {
+      width: calc(50% - #{$tile-gutter});
+    }
+
+    @include respond-to(desktop) {
+      width: calc(40% - #{$tile-gutter});
+    }
   }
 
   .icon {
