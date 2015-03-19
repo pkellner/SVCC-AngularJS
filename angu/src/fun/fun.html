@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <div ng-controller="TilesCtrl" class="row row-centered">
+  <div ng-init="bricks = [null]" class="row row-centered">
     <div class="col-md-10 col-centered">
       <div masonry
         preserve-order
@@ -22,7 +22,7 @@
         masonry-options="{
         transitionDuration: 0
         }"
-        >
+      >
         <div masonry-brick ng-repeat="brick in bricks" class="tile tile-medium"><img src="images/tiles/pic1.jpg" alt=""></div>
         <div masonry-brick ng-repeat="brick in bricks" class="tile tile-large">
           <span class="icon icon-piechart"></span>
