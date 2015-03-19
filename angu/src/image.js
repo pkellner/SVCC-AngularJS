@@ -6,11 +6,12 @@ export default image;
 
 image.$inject = ['config'];
 function image (config) {
+  const base = config.assets.cdn || config.assets.base;
   return {
     restrict: 'A',
     link: function (scope, element, attributes) {
       attributes.$observe('ccSrc', function (src) {
-        attributes.$set('src', join(config.assets.base, src));
+        attributes.$set('src', join(base, src));
       });
     }
   };

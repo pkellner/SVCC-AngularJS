@@ -15,6 +15,9 @@ function parse ($provide, CONFIG) {
     assets: {
       base: {
         key: 'baseDir'
+      },
+      cdn: {
+        key: 'cdnUrl'
       }
     },
     speakers: {
