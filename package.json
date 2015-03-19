@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "angular": "~1.3.14",
+    "angular-masonry": "bendrucker/angular-masonry#7be999951b4c09799b22f660da4ca0b44e74b3ac",
     "angular-messages": "~1.3.14",
     "angular-router-exception-handler": "~1.0.1",
     "angular-sanitize": "~1.3.14",
@@ -19,7 +20,9 @@
     "confidential": "~0.2.0",
     "es5-shim": "~4.1.0",
     "escape-string-regexp": "~1.0.2",
+    "imagesloaded": "~3.1.8",
     "listify": "~1.0.0",
+    "masonry-layout": "~3.2.2",
     "partialify": "^3.1.3",
     "pusher-angular": "~0.1.4",
     "qs": "~2.3.3",
@@ -59,7 +62,8 @@
   },
   "browser": {
     "angular-scroll": "./node_modules/angular-scroll/angular-scroll.js",
-    "ui.bootstrap": "./vendor/ui-bootstrap-tpls.js"
+    "ui.bootstrap": "./vendor/ui-bootstrap-tpls.js",
+    "angular-masonry": "./node_modules/angular-masonry/angular-masonry.js"
   },
   "browserify": {
     "transform": [
@@ -79,6 +83,14 @@
         "angular"
       ],
       "exports": "angular.module('duScroll').name"
+    },
+    "angular-masonry": {
+      "depends": [
+        "angular",
+        "masonry-layout:Masonry",
+        "imagesloaded:imagesLoaded"
+      ],
+      "exports": "angular.module('wu.masonry').name"
     }
   }
 }
