@@ -2,6 +2,7 @@
 
 import parseConfig from './config';
 import description from './description';
+import layout from './layout';
 
 module.exports = require('angular')
   .module('angUApp', [
@@ -13,6 +14,7 @@ module.exports = require('angular')
     require('./sessions'),
     require('./fun')
   ])
+  .config(layout)
   .config(parseConfig)
   .config(enableHtml5Mode)
   .config(anchorScroll)

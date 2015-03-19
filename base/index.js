@@ -6,7 +6,7 @@ import messages from 'angular-messages';
 import routing from './routing';
 import multiTenant from './multi';
 import model from './model';
-import main from './main';
+import layout from './layout';
 import staticPages from './static';
 import faqs from './faqs';
 import speaker from './speaker';
@@ -21,7 +21,7 @@ export default angular.module('codeCampBase', [
     // our modules
     multiTenant,
     model,
-    main,
+    layout,
     staticPages,
     faqs,
     speaker,
