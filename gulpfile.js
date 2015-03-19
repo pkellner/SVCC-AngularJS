@@ -101,12 +101,6 @@ gulp.task('index', function () {
     .pipe(gulp.dest('dist'));
 });
 
-paths.templates = format('./%s/src/**/*.html', app);
-gulp.task('templates', function () {
-  return gulp.src(paths.templates)
-    .pipe(gulp.dest('dist/app'));
-});
-
 paths.styles = format('./%s/styles/**/*.scss', app);
 gulp.task('styles', function () {
   return gulp.src(paths.styles)
@@ -137,13 +131,12 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('build', ['index', 'templates', 'styles', 'images', 'fonts', 'bundle']);
+gulp.task('build', ['index', 'styles', 'images', 'fonts', 'bundle']);
 
-gulp.task('watch', ['index', 'templates', 'styles', 'images', 'fonts'], function () {
+gulp.task('watch', ['index', 'styles', 'images', 'fonts'], function () {
   var lr = plugins.livereload;
   lr.listen();
   gulp.watch(paths.index, ['index']);
-  gulp.watch(paths.templates, ['templates']);
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.fonts, ['fonts']);

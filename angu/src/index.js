@@ -18,7 +18,6 @@ module.exports = require('angular')
   .config(parseConfig)
   .config(enableHtml5Mode)
   .config(anchorScroll)
-  .config(prependTemplateUrls)
   .directive('description', description)
   .name;
 
@@ -30,25 +29,4 @@ function enableHtml5Mode ($locationProvider) {
 anchorScroll.$inject = ['$uiViewScrollProvider'];
 function anchorScroll ($uiViewScrollProvider) {
   $uiViewScrollProvider.useAnchorScroll();
-}
-
-prependTemplateUrls.$inject = ['CONFIG', '$provide'];
-function prependTemplateUrls (CONFIG, $provide) {
-  $provide.decorator('$templateFactory', decorateTemplateFactory);
-  decorateTemplateFactory.$inject = ['$delegate'];
-  function decorateTemplateFactory ($templateFactory) {
-    var fromUrl = $templateFactory.fromUrl;
-    $templateFactory.fromUrl = function (url, params) {
-      url = CONFIG.baseDir + url;
-      return fromUrl(url, params);
-    };
-    return $templateFactory;
-  }
-  $provide.decorator('$templateRequest', decorateTemplateRequest);
-  decorateTemplateRequest.$inject = ['$delegate'];
-  function decorateTemplateRequest ($templateRequest) {
-    return function (url, ignoreErr) {
-      return $templateRequest(CONFIG.baseDir + url, ignoreErr);
-    };
-  }
 }
