@@ -57,5 +57,8 @@ function parse ($provide, CONFIG) {
     }
   })
   .parse(CONFIG);
+  if (config.assets.cdn) {
+    config.assets.cdn = '//' + config.assets.cdn;
+  }
   $provide.constant('config', config); 
 }
