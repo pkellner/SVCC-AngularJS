@@ -17,7 +17,10 @@ function parse ($provide, CONFIG) {
         key: 'baseDir'
       },
       cdn: {
-        key: 'cdnUrl'
+        key: 'cdnUrl',
+        transform: function (host) {
+          return host ? '//' + host : host;
+        }
       }
     },
     speakers: {
@@ -57,8 +60,5 @@ function parse ($provide, CONFIG) {
     }
   })
   .parse(CONFIG);
-  if (config.assets.cdn) {
-    config.assets.cdn = '//' + config.assets.cdn;
-  }
   $provide.constant('config', config); 
 }

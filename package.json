@@ -17,7 +17,7 @@
     "babel": "~4.4.3",
     "babelify": "~5.0.3",
     "browserify-istanbul": "~0.1.4",
-    "confidential": "~0.2.0",
+    "confidential": "~0.3.0",
     "es5-shim": "~4.1.0",
     "escape-string-regexp": "~1.0.2",
     "imagesloaded": "~3.1.8",
