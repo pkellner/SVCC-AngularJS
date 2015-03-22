@@ -1,25 +1,13 @@
 'use strict';
 
-import template from './index.html';
+import angular from 'angular';
+import router from 'angular-ui-router';
+import nav from './nav';
+import stateNav from './state';
 
-PageNavController.$inject = ['config'];
-function PageNavController (config) {
-  this.show = function (state) {
-    return config[state].show;
-  }
-  this.hotelBookingUrl = config.hotel.bookingUrl;
-}
-
-exports = module.exports = function (config) {
-  return {
-    restrict: 'E',
-    scope: {
-      open: '='
-    },
-    template,
-    controller: PageNavController,
-    bindToController: true,
-    controllerAs: 'pages'
-  };
-};
-exports.$inject = ['config'];
+export default angular.module('angu.nav.pages', [
+  router
+])
+.directive('pageNav', nav)
+.directive('stateNavItem', stateNav)
+.name;

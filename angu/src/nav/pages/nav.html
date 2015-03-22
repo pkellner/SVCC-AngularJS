@@ -1,0 +1,26 @@
+<ul class="nav--list" ng-class="{'open': pages.open}">
+  <state-nav-item state="home">
+    Home
+  </state-nav-item>
+  <state-nav-item state="speakers" ng-if="pages.show('speakers')">
+    Speakers
+  </state-nav-item>
+  <state-nav-item state="sessions" ng-if="pages.show('sessions')">
+    Sessions
+  </state-nav-item>
+  <state-nav-item state="schedule" ng-if="pages.show('schedule')">
+    Schedule
+  </state-nav-item>
+  <state-nav-item state="pricing" ng-if="pages.show('pricing')">
+    Pricing
+  </state-nav-item>
+  <state-nav-item state="fun" ng-if="pages.show('fun')">
+    Fun
+  </state-nav-item>
+  <li class="visible-xs">
+    <a href="/angu/purchasetickets">Buy Ticket</a>
+  </li>
+  <li ng-if="pages.hotelBookingUrl" class="visible-xs">
+    <a ng-href="{{pages.hotelBookingUrl}}">Book a hotel room</a>
+  </li>
+</ul>
