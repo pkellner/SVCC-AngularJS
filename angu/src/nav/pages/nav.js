@@ -2,12 +2,15 @@
 
 import template from './nav.html';
 
-PageNavController.$inject = ['config'];
-function PageNavController (config) {
+PageNavController.$inject = ['config', '$scope'];
+function PageNavController (config, $scope) {
   this.show = function (state) {
     return config[state].show;
   }
   this.hotelBookingUrl = config.hotel.bookingUrl;
+  $scope.$on('$stateChangeSuccess', () => {
+    this.open = false;
+  });
 }
 
 exports = module.exports = function (config) {
