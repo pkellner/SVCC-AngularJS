@@ -20,11 +20,14 @@ describe('State Nav Item', function () {
     $state = _$state_;
   }));
 
-  it('transitions to the state when clicked', function () {
+  it('transitions to the state when clicked', angular.mock.inject(function ($timeout) {
     element.find('li').find('a').triggerHandler('click');
     $scope.$digest();
+    // ui-router artificially defers state transition to allow ng-click expr
+    // to fire before state changes
+    $timeout.flush();
     expect($state.is('theState')).to.equal(true);
-  });
+  }));
 
   it('adds an active class when the state is active', function () {
     $state.go('theState');
