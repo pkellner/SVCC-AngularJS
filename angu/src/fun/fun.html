@@ -80,9 +80,15 @@
 
   <div class="separator">
     <div class="separator--item">
-      <button class="btn btn-primary btn-lg">Get tickets</button>
+        <a href="/angu/purchasetickets" class="btn btn-primary btn-lg">
+            Get tickets
+        </a>
     </div>
   </div>
   <small>Photos courtesy of Shirley Lin. Icons by Creative Stall.</small>
 </div>
 
+<a ng-if="ticket.hotelBookingUrl" ng-href="https://resweb.passkey.com/go/angularu" class="btn btn-info uppercase ng-scope" href="https://resweb.passkey.com/go/angularu">
+    <span class="hidden-xs hidden-sm">Book a hotel room</span>
+    <span class="visible-xs visible-sm">Book room</span>
+</a>
