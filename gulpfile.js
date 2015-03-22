@@ -41,7 +41,7 @@ gulp.task('unit', function () {
       },
       transform: [
         ['browserify-istanbul', {
-          ignore: '**/*.spec.js',
+          ignore: ['**/*.spec.js', '**/*.html'],
           instrumenter: require('isparta')
         }],
         'browserify-shim'
