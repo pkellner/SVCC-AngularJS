@@ -2,7 +2,7 @@
   {
     "codeCampTypeId": 2,
     "question": "How are workshop presenters selected",
-    "answer": "All our workshop speakers are of the highest quality and reputation. Many are from code camp directly and the ones that are not likely have spoken at other similar events and could have spoken at code camp",
+    "answer": "All our <b>workshop speakers</b> are of the highest quality and reputation. Many are from code camp directly and the ones that are not likely have spoken at other similar events and could have spoken at code camp",
     "sequence": "x",
     "id": 4
   },
