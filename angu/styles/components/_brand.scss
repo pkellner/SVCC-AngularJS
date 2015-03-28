@@ -15,7 +15,9 @@
     }
 
     &.angular {
-      background-image: url($img-path + 'logo-angular.svg')
+      //background-image: url($img-path + 'angularu_100x100.png')
+      // THIS IS WRONG BELOW, I CAN'T FIGURE OUT HOW TO REFERENCE THE ABOVE IMAGE
+      background-image: url('/Images/angularu_100x100.png')
     }
   }
 }
