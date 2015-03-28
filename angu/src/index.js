@@ -4,6 +4,7 @@ import parseConfig from './config';
 import description from './description';
 import layout from './layout';
 import image from './image';
+import {stateNotFound, stateChangeError} from './404';
 
 module.exports = require('angular')
   .module('angUApp', [
@@ -19,8 +20,10 @@ module.exports = require('angular')
   .config(parseConfig)
   .config(enableHtml5Mode)
   .config(anchorScroll)
+  .config(stateNotFound)
   .directive('description', description)
   .directive('ccSrc', image)
+  .run(stateChangeError)
   .name;
 
 enableHtml5Mode.$inject = ['$locationProvider'];
