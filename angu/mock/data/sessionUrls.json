@@ -44,10 +44,6 @@
     "sessionUrl": "2015sf/crazy-fast-prototyping-with-angularjs"
   },
   {
-    "sessionId": 4731,
-    "sessionUrl": "2015sf/session-title-coming-stay-tuned-to-this"
-  },
-  {
     "sessionId": 4737,
     "sessionUrl": "2015sf/realtime-angular-with-firebase"
   },
@@ -57,7 +53,7 @@
   },
   {
     "sessionId": 4742,
-    "sessionUrl": "2015sf/session-title-coming-stay-tuned-here"
+    "sessionUrl": "2015sf/directives-in-angular-1-2-win"
   },
   {
     "sessionId": 4744,
@@ -65,11 +61,11 @@
   },
   {
     "sessionId": 4745,
-    "sessionUrl": "2015sf/advanced-javascript-part-1"
+    "sessionUrl": "2015sf/advanced-javascript-foundations"
   },
   {
     "sessionId": 4747,
-    "sessionUrl": "2015sf/advanced-javascript-part-2"
+    "sessionUrl": "2015sf/advanced-javascript-rethinking-async"
   },
   {
     "sessionId": 4748,
@@ -85,7 +81,7 @@
   },
   {
     "sessionId": 4751,
-    "sessionUrl": "2015sf/angular-in-0-to-60"
+    "sessionUrl": "2015sf/angular-apps-in-0-to-60"
   },
   {
     "sessionId": 4752,
@@ -110,5 +106,9 @@
   {
     "sessionId": 4759,
     "sessionUrl": "2015sf/reusable-angular-components-with-browserify"
+  },
+  {
+    "sessionId": 4770,
+    "sessionUrl": "2015sf/componentize-your-app-with-polymer-elements"
   }
 ]

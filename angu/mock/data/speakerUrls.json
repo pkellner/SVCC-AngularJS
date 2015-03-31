@@ -51,7 +51,7 @@
   },
   {
     "presenterId": 31682,
-    "presenterUrl": "2015sf/miško-hevery-31682",
+    "presenterUrl": "2015sf/misko-hevery-31682",
     "urlPostToken": "2015sf"
   },
   {
@@ -67,11 +67,6 @@
   {
     "presenterId": 31685,
     "presenterUrl": "2015sf/lukas-ruebbelke-31685",
-    "urlPostToken": "2015sf"
-  },
-  {
-    "presenterId": 31710,
-    "presenterUrl": "2015sf/ari-lerner-31710",
     "urlPostToken": "2015sf"
   },
   {
@@ -100,6 +95,11 @@
     "urlPostToken": "2015sf"
   },
   {
+    "presenterId": 225,
+    "presenterUrl": "2015sf/jerry-kurata-225",
+    "urlPostToken": "2015sf"
+  },
+  {
     "presenterId": 31791,
     "presenterUrl": "2015sf/tomomi-imura-31791",
     "urlPostToken": "2015sf"
@@ -117,6 +117,11 @@
   {
     "presenterId": 18686,
     "presenterUrl": "2015sf/joonas-lehtinen-18686",
+    "urlPostToken": "2015sf"
+  },
+  {
+    "presenterId": 32038,
+    "presenterUrl": "2015sf/rob-dodson-32038",
     "urlPostToken": "2015sf"
   }
 ]
