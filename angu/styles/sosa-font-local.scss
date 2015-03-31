@@ -1,8 +1,18 @@
+/* 
+
+NOTE:
+
+This can be removed if all index.html references are pointed to sosa-font.css
+
+--Ben
+
+ */
+
 /* =========================================================================
    Variables - assets based on local machine
    ========================================================================= */
 
-@import "setup/assets-local";
+@import "setup/assets";
 
 /* =========================================================================
    Font - Sosa icons and rules
