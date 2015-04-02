@@ -12,6 +12,9 @@ function stateNotFound ($stateProvider, $urlRouterProvider) {
       '@layout': {
         template
       }
+    },
+    data: {
+      statusCode: 404 
     }
   });
   $urlRouterProvider.otherwise(function ($injector) {
