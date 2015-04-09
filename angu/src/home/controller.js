@@ -12,6 +12,9 @@ function HomeController ($scope, faqs, speakers, config) {
     })
   };
 
+  this.homePageTitle = config.analytics.homePageTitle;
+  this.homePageTitleGuid = config.analytics.homePageTitleGuid;
+
   this.showSpeakers = config.speakers.show;
 }
 HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config'];
