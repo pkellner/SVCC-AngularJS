@@ -12,8 +12,7 @@ function HomeController ($scope, faqs, speakers, config) {
     })
   };
 
-  this.homePageTitle = config.analytics.homePageTitle;
-  this.homePageTitleGuid = config.analytics.homePageTitleGuid;
+  this.title2 = config.home.title2;
 
   this.showSpeakers = config.speakers.show;
 }

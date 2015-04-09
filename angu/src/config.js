@@ -1,9 +1,5 @@
 'use strict';
 
-// NEEDS SIMPLE EXPLANATION HERE.  FOR EXAMPLE, WHAT IS THINKING BEHIND:
-//   assets/base/key/baseDir/cdnUrl and how are all these related to each other
-//   I assume string is default but that should be explicit and not assumed if it is.  Is it String? string? or something else
-
 import {Schema} from 'confidential';
 
 export default parse;
@@ -62,12 +58,14 @@ function parse ($provide, CONFIG) {
         type: Boolean
       }
     },
-    analytics: {
-      homePageTitle: {
-        key: 'homePageTitle'
-      },
-      homePageTitleGuid: {
-        key: 'homePageTitleGuid'
+    home: {
+      title2: {
+        content: {
+          key: 'homePageSecondTitle'
+        },
+        guid: {
+          key: 'homePageSecondTitleGuid'
+        }
       }
     }
   })
