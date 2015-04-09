@@ -24,11 +24,6 @@ function state ($stateProvider) {
 }
 export default state;
 
-getSessions.$inject = ['Sessions'];
-function getSessions (Sessions) {
-  return Sessions.fetchAll();
-}
-
 getDays.$inject = ['Days'];
 function getDays (Days) {
   return Days.fetchAll();
@@ -37,6 +32,17 @@ function getDays (Days) {
 getTracks.$inject = ['Tracks'];
 function getTracks (Tracks) {
   return Tracks.fetchAll();
+}
+
+getSessions.$inject = ['Sessions', 'tracks'];
+function getSessions (Sessions, tracks) {
+  return Sessions.fetchAll()
+    .then((sessions) => {
+      sessions.forEach((session) => {
+        session.track = tracks.find(t => t.id === session.sessionTrackId);
+      });
+      return Sessions.sort().all();
+    });
 }
 
 sessionTimes.$inject = ['SessionTimes', 'sessions'];
