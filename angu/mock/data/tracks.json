@@ -1,26 +1,30 @@
 [
   {
     "codeCampYearId": 201,
-    "named": "Track 1",
+    "named": "Room 1",
     "visible": true,
+    "sequence": "SEQB",
     "id": 62
   },
   {
     "codeCampYearId": 201,
-    "named": "Track 2",
+    "named": "Room 2",
     "visible": true,
+    "sequence": "SEQA",
     "id": 63
   },
   {
     "codeCampYearId": 201,
-    "named": "Track 3",
+    "named": "Room 3",
     "visible": true,
+    "sequence": "SEQC",
     "id": 64
   },
   {
     "codeCampYearId": 201,
-    "named": "Track 4",
+    "named": "Room 4",
     "visible": true,
+    "sequence": "SEQD",
     "id": 65
   }
 ]

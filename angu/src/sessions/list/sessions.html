@@ -28,35 +28,14 @@
     </ul>
   </div>
 
-
   <ul class="sessions">
-    <li class="row" ng-repeat="session in list.sessions | filter:list.filter">
-      <div class="col-xs-4 col-sm-3">
-        <span class="sessions--time">
-          <span ng-if="list.day === list.days[0]">
-            {{session.time.startTimeFriendlyDay}} <br>
-          </span>
-          {{session.time.description}}
-        </span>
-        <span class="label label-danger">{{session.sessionTrackName}}</span>
-      </div>
-      <div class="sessions--info col-xs-8 col-sm-9">
-        <session-link session="session">
-          <h4>{{session.title}}</h4>
-        </session-link>
-        <div class="row sessions--info--speaker" ng-repeat="speaker in session.speakersList">
-          <div class="sessions--image">
-            <img ng-src="{{speaker.imageUrl}}?format=jpg&height=400&width=400&scale=both&mode=pad&Bgcolor=ffffff" />
-          </div>
-          <div class="sessions--info--detail">
-            <a ui-sref="speaker(speaker.$stateParams())">
-              <h4 class="color">{{speaker.userFirstName}} {{speaker.userLastName}}</h4>
-            </a>
-            <p>{{speaker.userBioShort}}</p>
-          </div>
-        </div>
-      </div>
-    </li>
+    <session-list-item
+      ng-repeat="session in (filtered = (list.sessions | filter:list.filter))"
+      session="session"
+      show-day="list.day === list.days[0] && (!$index || filtered[$index - 1].time.startTimeFriendlyDay !== session.time.startTimeFriendlyDay)"
+      show-time="!$index || (filtered[$index - 1].time.startTime !== session.time.startTime)"
+    >
+    </session-list-item>
   </ul>
 
 </div>

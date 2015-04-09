@@ -12,12 +12,16 @@
     "sessionUrl": "2015sf/dan-and-john-bringing-their-view-on-the-latest-in-angular"
   },
   {
+    "sessionId": 4717,
+    "sessionUrl": "2015sf/angular-2-forms"
+  },
+  {
     "sessionId": 4718,
     "sessionUrl": "2015sf/realtime-awesomess-with-firebase-and-angular"
   },
   {
     "sessionId": 4719,
-    "sessionUrl": "2015sf/you-can-teach-an-old-dog-new-tricks"
+    "sessionUrl": "2015sf/nifty-shas-of-code-or-how-get-your-stuff-into-angular"
   },
   {
     "sessionId": 4720,
@@ -46,10 +50,6 @@
   {
     "sessionId": 4737,
     "sessionUrl": "2015sf/realtime-angular-with-firebase"
-  },
-  {
-    "sessionId": 4738,
-    "sessionUrl": "2015sf/gulp-with-javascript-and-angular"
   },
   {
     "sessionId": 4742,
@@ -110,5 +110,37 @@
   {
     "sessionId": 4770,
     "sessionUrl": "2015sf/componentize-your-app-with-polymer-elements"
+  },
+  {
+    "sessionId": 4771,
+    "sessionUrl": "2015sf/angular2-server-rendering"
+  },
+  {
+    "sessionId": 4773,
+    "sessionUrl": "2015sf/a-token-walks-into-a-spa"
+  },
+  {
+    "sessionId": 4774,
+    "sessionUrl": "2015sf/designperformance"
+  },
+  {
+    "sessionId": 4775,
+    "sessionUrl": "2015sf/making-money-with-phonegap-and-angular-apps"
+  },
+  {
+    "sessionId": 4777,
+    "sessionUrl": "2015sf/foundation-for-apps-integrating-angularjs-with-responsive-web-apps"
+  },
+  {
+    "sessionId": 4778,
+    "sessionUrl": "2015sf/the-mean-stack-and-the-rise-of-api-first-applications"
+  },
+  {
+    "sessionId": 4780,
+    "sessionUrl": "2015sf/angularjs-application-instances-on-demand"
+  },
+  {
+    "sessionId": 4782,
+    "sessionUrl": "2015sf/angular-cordova-monaca-killer-mobile-app-development"
   }
 ]

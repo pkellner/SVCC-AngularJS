@@ -1,0 +1,29 @@
+<li class="row">
+  <div class="col-xs-4 col-sm-3">
+    <span class="sessions--time">
+      <span ng-if="showDay">
+        {{session.time.startTimeFriendlyDay}} <br>
+      </span>
+      <span ng-if="showTime">
+        {{session.time.description}}
+      </span>
+    </span>
+    <span class="label label-danger">{{session.track.named}}</span>
+  </div>
+  <div class="sessions--info col-xs-8 col-sm-9">
+    <session-link session="session">
+      <h4>{{session.title}}</h4>
+    </session-link>
+    <div class="row sessions--info--speaker" ng-repeat="speaker in session.speakersList">
+      <div class="sessions--image">
+        <img ng-src="{{speaker.imageUrl}}?format=jpg&height=400&width=400&scale=both&mode=pad&Bgcolor=ffffff" />
+      </div>
+      <div class="sessions--info--detail">
+        <a ui-sref="speaker(speaker.$stateParams())">
+          <h4 class="color">{{speaker.userFirstName}} {{speaker.userLastName}}</h4>
+        </a>
+        <p>{{speaker.userBioShort}}</p>
+      </div>
+    </div>
+  </div>
+</li>
