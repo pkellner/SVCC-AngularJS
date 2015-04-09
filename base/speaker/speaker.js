@@ -6,7 +6,7 @@ export default factory;
 
 factory.$inject = ['Model', 'Sessions', 'SpeakerUrl'];
 function factory (Model, Session, SpeakerUrl) {
-  class Speaker extends Model {
+  return class Speaker extends Model {
     defaults () {
       return {
         sessions: []
@@ -17,6 +17,9 @@ function factory (Model, Session, SpeakerUrl) {
         return new Session(data);
       });
       return attributes;
+    }
+    get name () {
+      return `${this.firstName} ${this.lastName}`;
     }
     static fetchByUrl (url) {
       return SpeakerUrl
@@ -40,15 +43,9 @@ function factory (Model, Session, SpeakerUrl) {
     $stateParams () {
       return this.constructor.parseUrl(this.presenterUrl);
     }
+    static comparator = 'speakerSequence';
+    static url = '/rest/presenter';
   }
-  Speaker.url = '/rest/presenter';
-  Speaker.comparator = 'speakerSequence';
-  Object.defineProperty(Speaker.prototype, 'name', {
-    get () {
-      return `${this.firstName} ${this.lastName}`;
-    }
-  });
-  return Speaker;
 }
 
 function assertValidUrl (url) {

@@ -1,10 +1,10 @@
 'use strict';
 
+export default factory;
+
 factory.$inject = ['Model', '$q'];
 function factory (Model) {
-  class SessionTime extends Model {}
-  SessionTime.url = '/rest/sessiontime';
-  return SessionTime;
+  return class SessionTime extends Model {
+    static url = '/rest/sessiontime';
+  }
 }
-
-export default factory;

@@ -4,7 +4,7 @@ export default factory;
 
 factory.$inject = ['Model'];
 function factory (Model) {
-  class SpeakerUrl extends Model {}
-  SpeakerUrl.url = '/rest/presenterurls';
-  return SpeakerUrl;
+  return class SpeakerUrl extends Model {
+    static url = '/rest/presenterurls';
+  }
 }

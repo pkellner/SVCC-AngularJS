@@ -1,8 +1,10 @@
 'use strict';
 
+export default factory;
+
 factory.$inject = ['Model', 'SessionUrls', '$http'];
 function factory (Model, SessionUrls, $http) {
-  class Session extends Model {
+  return class Session extends Model {
     static fetchByUrl (url) {
       return SessionUrls.fetchAll()
         .then(function () {
@@ -31,12 +33,11 @@ function factory (Model, SessionUrls, $http) {
     $stateParams () {
       return Session.parseUrl(this.sessionUrlPre);
     }
-  }
-  Session.url = '/rest/session';
-  Session.comparator = function (session) {
-    return new Date(session.sessionTimeDateTime);
-  }
-  return Session;
+    static comparator (session) {
+      return new Date(session.sessionTimeDateTime);
+    }
+    static url = '/rest/session';
+  };
 }
 
 export default factory;

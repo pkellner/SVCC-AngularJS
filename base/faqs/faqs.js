@@ -1,8 +1,10 @@
 'use strict';
 
-exports = module.exports = function (Model) {
-  class Faq extends Model {}
-  Faq.url = '/rest/faq';
-  return Faq;
-};
-exports.$inject = ['Model'];
+export default factory;
+
+factory.$inject = ['Model'];
+function factory (Model) {
+  return class Faq extends Model {
+    static url = '/rest/faq';
+  }
+}

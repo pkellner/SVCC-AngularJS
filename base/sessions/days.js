@@ -1,5 +1,7 @@
 'use strict';
 
+export default factory;
+
 const days = [
   'Sunday',
   'Monday',
@@ -12,13 +14,10 @@ const days = [
 
 factory.$inject = ['Model'];
 function factory (Model) {
-  class Day extends Model {
+  return class Day extends Model {
     is (index) {
       return days.indexOf(this.dayOfWeek) === index;
     }
-  }
-  Day.url = '/rest/sessiondayofweek';
-  return Day;
+    static url = '/rest/sessiondayofweek'
+  };
 }
-
-export default factory;

@@ -1,8 +1,10 @@
 'use strict';
 
-exports = module.exports = function (Model) {
-  class Sponsor extends Model {};
-  Sponsor.url = '/rest/sponsor';
-  return Sponsor;
+export default factory;
+
+factory.$inject = ['Model'];
+function factory (Model) {
+  return class Sponsor extends Model {
+    static url = '/rest/sponsor';
+  };
 };
-exports.$inject = ['Model'];
