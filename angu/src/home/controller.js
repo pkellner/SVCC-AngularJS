@@ -12,6 +12,8 @@ function HomeController ($scope, faqs, speakers, config) {
     })
   };
 
+  this.title2 = config.home.title2;
+
   this.showSpeakers = config.speakers.show;
 }
 HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config'];

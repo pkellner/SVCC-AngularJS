@@ -9,6 +9,10 @@ exports = module.exports = function ($window, config) {
     this.email = null;
     this.username = config.user.active;
     this.hotelBookingUrl = config.hotel.bookingUrl;
+    this.purchaseUrl = '/angu/purchasetickets';
+
+    const titleGuid = config.home.title2.guid;
+    if (titleGuid) this.purchaseUrl += `?value=${titleGuid}`;
   }
 
   TicketNotificationController.prototype.request = function (email) {

@@ -20,13 +20,20 @@
         // setting constants in this fashion so that the server can dynamically create this (index.html)
         // with appropriate constants filled in.  usingMockDataGlobal ust be a global since angular has not
         // been initialized when this needs to be set.
+
+        // SPECIAL: use "viewthesource" special code and get a 10 percent discount on tickets while they last!
+        //          (only a total of 10 tickets available with this code so grab one now)
+
         var configData = {
           baseDir: '', // use blank for debugging localhost on mac with webstorm (must have mocking enabled)
           cdnUrl: '',
           loggedInUsername: 'pkellner',
           showPresenters: 'True',
           showSessions: 'True',
-          hotelBookingUrl: 'https://resweb.passkey.com/go/angularu'
+          hotelBookingUrl: 'https://resweb.passkey.com/go/angularu',
+          homePageSecondTitle: 'The <strong>Ultimate</strong> Angular Experience',
+          homePageSecondTitleGuid: '8f83dad4-725b-49da-b188-28cc50601dec'
+
         };
         angular.module('angUApp').constant('CONFIG', configData);
       })();
