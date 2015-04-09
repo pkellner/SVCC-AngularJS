@@ -1,5 +1,35 @@
 'use strict';
 
+/*
+
+Parses the config supplied in index.html into a hierarchy based on the object
+supplied below. Where no type/transform is provided, values are passed through
+as-is. The config parser looks for "key" properties and loads from the flat
+index config when it finds them.
+
+Given:
+
+new Schema({
+  foo: {
+    bar: {
+      key: 'FOO_BAR'
+    }
+  }
+})
+.parse({
+  FOO_BAR: 'BAZ'
+});
+
+You GET:
+
+{
+  foo: {
+    bar: 'BAZ'
+  }
+}
+
+*/
+
 import {Schema} from 'confidential';
 
 export default parse;
