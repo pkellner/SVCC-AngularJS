@@ -72,7 +72,7 @@ function parse ($provide, CONFIG) {
     },
     schedule: {
       show: {
-        key: 'showSchedule',
+        key: 'showAgendaOnSchedule',
         type: Boolean
       }
     },

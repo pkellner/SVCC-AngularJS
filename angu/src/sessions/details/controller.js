@@ -3,7 +3,7 @@
 import angular from 'angular';
 import list from 'listify';
 
-function SessionDetailsController (session, Speaker) {
+function SessionDetailsController (session, Speaker, config) {
   this.session = session;
   this.speakers = session.speakersList.map((speaker) => {
     return angular.extend(speaker, {
@@ -17,7 +17,8 @@ function SessionDetailsController (session, Speaker) {
     });
   });
   this.byline = list(this.speakers.map(s => s.name));
+  this.showSchedule = config.schedule.show;
 }
-SessionDetailsController.$inject = ['session', 'Speaker'];
+SessionDetailsController.$inject = ['session', 'Speaker', 'config'];
 
 export default SessionDetailsController;
