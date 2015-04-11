@@ -1,6 +1,6 @@
 <div class="ping-tickets">
-  <a ng-href="{{ticket.purchaseUrl}}" class="btn btn-primary">
-    Buy Ticket
+  <a ng-href="{{ ticket.purchaseUrl }}" class="btn btn-primary"  >
+    {{ ticket.title2 }}
   </a>
   <a ng-if="ticket.hotelBookingUrl" ng-href="{{ticket.hotelBookingUrl}}" class="btn btn-info uppercase">
     <span class="hidden-xs hidden-sm">Book a hotel room</span>
