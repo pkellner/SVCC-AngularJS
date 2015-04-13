@@ -1,4 +1,5 @@
 echo starting
+npm install
 gulp build --production
 time rsync --delete -rcv --chmod=a+rwx ./dist/ angularbeta@siliconvalley-codecamp.com::AngularBeta
 echo done
