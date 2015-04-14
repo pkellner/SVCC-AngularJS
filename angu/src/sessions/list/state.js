@@ -1,5 +1,6 @@
 'use strict';
 
+import sort from 'sort-on';
 import template from './sessions.html';
 
 state.$inject = ['$stateProvider'];
@@ -34,24 +35,41 @@ function getTracks (Tracks) {
   return Tracks.fetchAll();
 }
 
-getSessions.$inject = ['Sessions', 'tracks'];
-function getSessions (Sessions, tracks) {
+getSessions.$inject = ['Sessions', 'tracks', 'times'];
+function getSessions (Sessions, tracks, times) {
   return Sessions.fetchAll()
     .then((sessions) => {
-      sessions.forEach((session) => {
-        session.track = tracks.find(t => t.id === session.sessionTrackId);
-      });
-      return Sessions.sort().all();
+      const groups = sessions = sessions
+        .map((session) => {
+          session.track = tracks.find(t => t.id === session.sessionTrackId);
+          session.time = times.find(t => t.id === session.sessionTimesId);
+          return session;
+        })
+        .reduce((times, session, index, sessions) => {
+          const timeId = session.time ? session.time.id : '';
+          times[timeId] = times[timeId] || [];
+          times[timeId].push(session);
+          if (index < sessions.length - 1) {
+            return times;
+          }
+          else {
+            return Object.keys(times).map(key => times[key]);
+          }
+        }, {})
+        .map((grouped) => {
+          return sort(grouped, 'track.sequence');
+        });
+      return sort(groups, (group) => {
+        return Sessions.comparator(group[0]);
+      })
+      .reduce((sessions, group) => {
+        sessions.push.apply(sessions, group);
+        return sessions;
+      }, []);
     });
 }
 
-sessionTimes.$inject = ['SessionTimes', 'sessions'];
-function sessionTimes (Times, sessions) {
-  return Times.fetchAll()
-    .then(function (times) {
-      return sessions.map(function (session) {
-        session.time = times.find(t => t.id === session.sessionTimesId);
-        return session;
-      });
-    });
+sessionTimes.$inject = ['SessionTimes'];
+function sessionTimes (Times) {
+  return Times.fetchAll();
 }

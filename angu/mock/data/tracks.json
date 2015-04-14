@@ -3,14 +3,14 @@
     "codeCampYearId": 201,
     "named": "Room 1",
     "visible": true,
-    "sequence": "SEQB",
+    "sequence": "SEQA",
     "id": 62
   },
   {
     "codeCampYearId": 201,
     "named": "Room 2",
     "visible": true,
-    "sequence": "SEQA",
+    "sequence": "SEQB",
     "id": 63
   },
   {

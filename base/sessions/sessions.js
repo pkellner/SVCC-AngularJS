@@ -33,12 +33,9 @@ function factory (Model, SessionUrls, $http) {
     $stateParams () {
       return Session.parseUrl(this.sessionUrlPre);
     }
-    static comparator = [
-      'track.sequence',
-      function (session) {
-        return new Date(session.sessionTimeDateTime);
-      }
-    ];
+    static comparator = function (session) {
+      return new Date(session.sessionTimeDateTime);
+    };
     static url = '/rest/session';
   };
 }
