@@ -12,7 +12,8 @@ function HomeController ($scope, faqs, speakers, config) {
     })
   };
 
-  this.title2 = config.home.title2;
+  this.title1 = config.home.title1.content || 'Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More';
+  this.title2 = config.home.title2.content || '<strong>Who’s Who</strong> of Angular Presenters and Its Future';
 
   this.showSpeakers = config.speakers.show;
 }
