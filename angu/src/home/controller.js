@@ -2,7 +2,7 @@
 
 function HomeController ($scope, faqs, speakers, config) {
   $scope.faqs = faqs;
-  
+
   $scope.speakers = {
     keynotes: speakers.filter(function (speaker) {
       return speaker.isKeyNoteSpeaker;
@@ -12,11 +12,19 @@ function HomeController ($scope, faqs, speakers, config) {
     })
   };
 
-  this.title1 = config.home.title1.content || 'Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More';
-  this.title2 = config.home.title2.content || '<strong>Who’s Who</strong> of Angular Presenters and Its Future';
+
+  this.title1 = config.home.title1 ||
+      "Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More";
+
+  this.title2 = config.home.title2 ||
+      "<strong>Who’s Who</strong> of Angular Presenters and Its Future";
+
+  //this.title1 = 'abc';
+  //this.title2 = 'efg';
 
   this.showSpeakers = config.speakers.show;
 }
+
 HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config'];
 
 module.exports = HomeController;
