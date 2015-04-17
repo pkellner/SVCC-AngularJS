@@ -13,12 +13,13 @@ function HomeController ($scope, faqs, speakers, config) {
   };
 
 
-  this.title1 = config.home.title1 ||
-      "Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More";
+  //this.title1 = config.home.title1 ||
+  //    "Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More";
 
-  this.title2 = config.home.title2 ||
+  this.title2 = config.home.title2.content ||
       "<strong>Who’s Who</strong> of Angular Presenters and Its Future";
 
+  debugger;
   //this.title1 = 'abc';
   //this.title2 = 'efg';
 
