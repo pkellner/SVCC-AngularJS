@@ -1,17 +1,65 @@
 .sponsor {
-  &--box {
-    h3 {
-      color: $black;
-    }
+  display: inline-block;
+  text-align: center;
+  margin: 5px 0;
+
+  @include respond-to(tablet) {
+    margin: 5px 7px;
   }
 
   &--img {
-    display: inline-block;
-    margin: 0 10px 10px 0;
+    object-fit: contain;
+    object-position: center;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 5px;
+    padding: 5px;
+    border: 2px solid $gray-table;
   }
 
-  &--links {
-    margin-bottom: 20px;
+  &--list {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include respond-to(tablet) {
+      display: block;
+    }
+
+    &:last-of-type {
+      margin-bottom: 35px;
+    }
+  }
+
+  &--premiere {
+    width: 100%;
+    height: 150px;
+
+    @include respond-to(tablet) {
+      width: 336px;
+      height: 194px;
+    }
+  }
+
+  &--gold {
+    width: 50%;
+    height: 100px;
+
+    @include respond-to(tablet) {
+      width: 224px;
+      height: 144px;
+    }
+  }
+
+  &--silver {
+    width: 25%;
+    height: 60px;
+
+    @include respond-to(tablet) {
+      width: 141px;
+      height: 90px;
+    }
   }
 }
 

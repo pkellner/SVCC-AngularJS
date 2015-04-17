@@ -74,6 +74,8 @@
       color: $gray-lighter;
       border-radius: 50%;
       border: 1px solid $gray-lighter;
+      text-transform: none;
+      text-shadow: none;
 
       &:hover {
         color: $gray-light;

@@ -55,6 +55,13 @@
       }
     }
 
+    .icon-home {
+      position: relative;
+      top: -2px;
+      padding: 0 8px;
+      font-size: 20px;
+    }
+
     li {
       float: left;
 
@@ -64,7 +71,7 @@
 
       &.active,
       &:hover {
-        a {
+        & > a {
           background: $brand-primary;
         }
       }
@@ -186,6 +193,78 @@
 
     a {
       color: #fff;
+    }
+  }
+
+  &--more {
+    &:before {
+      content: "\25be";
+      margin-right: 6px;
+      font-size: 13px;
+      vertical-align: top;
+    }
+  }
+
+  &--drop {
+    display: none;
+    position: absolute;
+    top: $nav-height-mobile;
+    min-width: 245px;
+    font-size: 16px;
+    background: $gray-lightest;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+
+    @include respond-to(tablet) {
+      top: $nav-height;
+
+    }
+
+    &.open {
+      @include respond-to(tablet) {
+        display: block;
+      }
+    }
+
+    &--list {
+      & > li {
+        line-height: 1;
+        border-bottom: 1px solid #d8d8d8;
+
+        & > a {
+          padding: 14px 10px;
+          text-shadow: none;
+          text-transform: none;
+          color: $text-color;
+          font-weight: 400;
+
+          &:before {
+            content: "\25B6";
+            margin-right: 10px;
+            vertical-align: middle;
+            font-size: 7px;
+            color: $brand-primary;
+          }
+        }
+      }
+    }
+
+    .social.alt {
+      width: 100%;
+      padding: 0 0 0 15px;
+      font-weight: 300;
+      background: darken($gray-lightest, 5.5%);
+
+      h4 {
+        color: $text-color;
+      }
+
+      li:hover {
+        a {
+          background: none;
+          color: $white;
+        }
+      }
     }
   }
 
