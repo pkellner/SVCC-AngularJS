@@ -19,9 +19,7 @@ function HomeController ($scope, faqs, speakers, config) {
   this.title2 = config.home.title2.content ||
       "<strong>Who’s Who</strong> of Angular Presenters and Its Future";
 
-  debugger;
-  //this.title1 = 'abc';
-  //this.title2 = 'efg';
+
 
   this.showSpeakers = config.speakers.show;
 }
