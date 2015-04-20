@@ -60,6 +60,7 @@
 
       @include respond-to(tablet) {
         float: none;
+        display: inline-block;
       }
 
       &.active,
