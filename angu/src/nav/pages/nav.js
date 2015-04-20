@@ -8,9 +8,6 @@ function PageNavController (config, $scope) {
     return config[state].show;
   }
   this.hotelBookingUrl = config.hotel.bookingUrl;
-  $scope.$on('$stateChangeSuccess', () => {
-    this.open = false;
-  });
 }
 
 exports = module.exports = function (config) {

@@ -1,7 +1,11 @@
 'use strict';
 
-function NavController () {
+NavController.$inject = ['$rootScope']
+function NavController ($rootScope) {
   this.isOpen = false;
+  $rootScope.$on('$stateChangeSuccess', () => {
+    this.isOpen = false;
+  });
 };
 
 NavController.prototype.toggle = function () {

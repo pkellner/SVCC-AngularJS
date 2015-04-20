@@ -1,6 +1,6 @@
 <ul class="nav--list" ng-class="{'open': pages.open}">
   <state-nav-item state="home">
-    Home
+    <span class="icon-home"></span><span class="sr-only">Home</span>
   </state-nav-item>
   <state-nav-item state="speakers" ng-if="pages.show('speakers')">
     Speakers
@@ -14,10 +14,31 @@
   <state-nav-item state="fun" ng-if="pages.show('fun')">
     Fun
   </state-nav-item>
+  <li ng-controller="NavController as more">
+    <a href="#" class="nav--more" ng-click="more.toggle()">More</a>
+    <!-- toggle 'open' class for to open/close nav dropdown -->
+    <div class="nav--drop open" ng-show="more.isOpen">
+      <!-- <ul class="nav--drop--list">
+        <li><a href="">Jobs</a></li>
+        <li><a href="">Sponsors</a></li>
+        <li><a href="">About AngularU</a></li>
+      </ul> -->
+      <div class="social alt">
+        <h4>Follow us on: </h4>
+        <ul>
+          <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+          <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+          <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank"  target="_blank" class="icon-gplus"></a></li>
+        </ul>
+      </div>
+    </div>
+  </li>
   <li class="visible-xs">
     <a href="/angu/purchasetickets">Buy Ticket</a>
   </li>
   <li ng-if="pages.hotelBookingUrl" class="visible-xs">
     <a ng-href="{{pages.hotelBookingUrl}}">Book a hotel room</a>
   </li>
+
+
 </ul>
