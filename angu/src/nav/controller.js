@@ -3,7 +3,7 @@
 NavController.$inject = ['$rootScope']
 function NavController ($rootScope) {
   this.isOpen = false;
-  $rootScope.$on('$stateChangeSuccess', () => {
+  $rootScope.$on('$stateChangeStart', () => {
     this.isOpen = false;
   });
 };
