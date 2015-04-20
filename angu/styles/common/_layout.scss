@@ -11,8 +11,8 @@ button {
 .container {
   position: relative;
   margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1080px;
+  padding: 0 $container-padding-lg;
+  max-width: $container-width + 2 * $container-padding-lg;
 }
 
 ul {

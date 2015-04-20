@@ -2,4 +2,55 @@
   &--section {
     margin: 50px 0;
   }
+
+  &-sessions {
+    ul {
+      margin-bottom: 30px;
+    }
+
+    li {
+      @extend %clearfix;
+      padding: 8px 20px;
+      font-weight: 400;
+      border-bottom: 2px solid $gray-table;
+    }
+
+    &--sort {
+      text-align: center;
+      margin-bottom: 30px;
+
+      &-btn {
+        -webkit-appearance: none;
+        background: none;
+        border: 2px solid $gray-table;
+        border-width: 0 0 2px 0;
+        margin: 0 9px;
+        transition: border-color .2s ease-out;
+
+        &.active,
+        &:hover,
+        &:focus {
+          border-color: $brand-primary;
+          outline: none;
+        }
+      }
+    }
+
+    &--title {
+      @include respond-to(tablet) {
+        width: 70%;
+        float: left;
+      }
+    }
+
+    &--speaker {
+      color: $brand-primary;
+      display: block;
+
+      @include respond-to(tablet) {
+        width: 30%;
+        float: left;
+      }
+    }
+  }
 }

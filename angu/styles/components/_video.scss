@@ -1,0 +1,56 @@
+.video {
+  &--main {
+    border: 2px solid $gray-table;
+    padding: 10px;
+    margin-bottom: 7px;
+  }
+
+  &--list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    li {
+      position: relative;
+      display: inline-block;
+      padding: 5px;
+      border: 2px solid $gray-table;
+
+      img {
+        width: 100%;
+        height: auto;
+
+        @include respond-to(tablet) {
+          height: 63px;
+        }
+      }
+    }
+  }
+
+  &--playing {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px 0;
+    color: $white;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.6;
+    background: rgba(0,0,0,.6);
+
+    @include respond-to(tablet) {
+      font-size: 15px;
+    }
+  }
+}
+
+.videos {
+
+}
