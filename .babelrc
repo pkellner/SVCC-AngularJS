@@ -1,5 +1,6 @@
 {
   "optional": [
+    "spec.protoToAssign",
     "es7.classProperties"
   ]
 }
