@@ -14,7 +14,8 @@ module.exports = require('angular')
     require('./home'),
     require('./speakers'),
     require('./sessions'),
-    require('./fun')
+    require('./fun'),
+    require('./sponsors')
   ])
   .config(layout)
   .config(parseConfig)
