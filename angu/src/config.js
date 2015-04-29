@@ -88,6 +88,12 @@ function parse ($provide, CONFIG) {
         type: Boolean
       }
     },
+    ng: {
+      from: {
+        key: 'fromNg',
+        type: Boolean
+      }
+    },
     home: {
       title2: {
         content: {

@@ -19,9 +19,11 @@ function HomeController ($scope, faqs, speakers, config) {
   this.title2 = config.home.title2.content ||
       "<strong>Who’s Who</strong> of Angular Presenters and Its Future";
 
-
-
   this.showSpeakers = config.speakers.show;
+  this.fromNg = config.ng.from;
+
+
+
 }
 
 HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config'];
