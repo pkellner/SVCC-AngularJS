@@ -38,18 +38,18 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
 
   this.homePageVideos = [
     {
-      title: 'Brad Green, Who Runs the Google Angular Team, Talks about His Upcoming Angular U Keynote',
-      vimeoId: '517622107',
-      videoThumb: 'https://angularu.com/Images/91-63-brad.png',
-      current: true,
-      iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126281527")
-    },
-    {
       title: 'Misko Hevery Talks About Databinding in Angular 2',
       vimeoId: '126991619',
       videoThumb: 'https://angularu.com/Images/91-63-misko.png',
-      current: false,
+      current: true,
       iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126991619")
+    },
+    {
+      title: 'Brad Green, Who Runs the Google Angular Team, Talks about His Upcoming Angular U Keynote',
+      vimeoId: '517622107',
+      videoThumb: 'https://angularu.com/Images/91-63-brad.png',
+      current: false,
+      iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126281527")
     },
     {
       title: 'Dan Wahlin Giving Us an Idea of What to Expect at Angular U',
