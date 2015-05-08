@@ -1,6 +1,6 @@
 'use strict';
 
-function HomeController ($scope, faqs, speakers, config) {
+function HomeController ($scope, faqs, speakers, config,$sce) {
   $scope.faqs = faqs;
 
   $scope.speakers = {
@@ -22,10 +22,55 @@ function HomeController ($scope, faqs, speakers, config) {
   this.showSpeakers = config.speakers.show;
   this.fromNg = config.ng.from;
 
+  this.homePageVideoCurrent = 0;
+  this.ChangeHomePageVideo = function(vimeoId) {
+      var i;
+      for (i=0;i<this.homePageVideos.length;i++){
+        if (this.homePageVideos[i].vimeoId == vimeoId){
+          this.homePageVideoCurrent = i;
+          this.homePageVideos[i].current = true;
+        }
+        else {
+          this.homePageVideos[i].current = false;
+        }
+      }
+  };
+
+  this.homePageVideos = [
+    {
+      title: 'Brad Green, Who Runs the Google Angular Team, Talks about His Upcoming Angular U Keynote',
+      vimeoId: '517622107',
+      videoThumb: 'https://angularu.com/Images/91-63-brad.png',
+      current: true,
+      iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126281527")
+    },
+    {
+      title: 'Misko Hevery Talks About Databinding in Angular 2',
+      vimeoId: '126991619',
+      videoThumb: 'https://angularu.com/Images/91-63-misko.png',
+      current: false,
+      iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126991619")
+    },
+    {
+      title: 'Dan Wahlin Giving Us an Idea of What to Expect at Angular U',
+      vimeoId: '126281528',
+      videoThumb: 'https://angularu.com/Images/91-63-dan.png',
+      current: false,
+      iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126281528")
+    },
+    {
+      title: 'Scott Moss Talks About His ECMAScript6 Workshops',
+      vimeoId: '126972966',
+      videoThumb: 'https://angularu.com/Images/91-63-scott.png',
+      current: false,
+      iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126972966")
+    }
+  ]
+
 
 
 }
 
-HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config'];
+HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config','$sce'];
 
 module.exports = HomeController;

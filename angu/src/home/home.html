@@ -37,43 +37,64 @@
   <div class="content--section media"  id="media">
     <div class="row">
       <div class="videos col-sm-6">
+
+
         <div class="video--main">
           <p style="margin: 0 0 5px 0">
-
-            <!--<span class="type&#45;&#45;lead type&#45;&#45;color" style="font-weight: 700;font-size: 16px;" >-->
-              <!--Video Sponsored By:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-              <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-              <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http://office365.com/</span>-->
-
             <span class="type--lead type--color" style="font-weight: 700;font-size: 16px;" >
-            Brad Green, Who Runs the Google Angular Team, Talks about His Upcoming Angular U Keynote
+              {{home.homePageVideos[home.homePageVideoCurrent].title}}
             </span>
 
           </p>
 
           <div class="video-embed">
 
-            <iframe src="https://player.vimeo.com/video/126281527" width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >
+            <iframe ng-src="{{ home.homePageVideos[home.homePageVideoCurrent].iframeSrc}}"
+                    width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >
 
             </iframe>
             <!--<iframe width="1280" height="750" src="https://www.youtube.com/embed/6bsZKr2ncwk" frameborder="0" allowfullscreen></iframe>-->
           </div>
         </div>
-        <ul class="video--list">
-          <li>
-            <a href="#"><img src="https://angularu.com/miscpages/91x63.gif" alt="" class=""></a>
-            <span class="video--playing">Playing</span>
-          </li>
-          <li>
-            <a href="#"><img src="https://angularu.com/miscpages/coming.png" alt="" class=""></a>
-          </li>
-          <li>
-            <a href="#"><img src="https://angularu.com/miscpages/coming.png" alt="" class=""></a>
-          </li>
-          <li>
-            <a href="#"><img src="https://angularu.com/miscpages/coming.png" alt="" class=""></a>
+        <ul class="video--list"   >
+          <li ng-repeat="vid in home.homePageVideos" >
+            <a href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" ><img ng-src='{{vid.videoThumb}}' alt="" class=""/></a>
+            <span ng-if="vid.current" class="video--playing">Playing</span>
           </li>
         </ul>
+
+
+        <!--<div class="video&#45;&#45;main">-->
+          <!--<p style="margin: 0 0 5px 0">-->
+            <!--<span class="type&#45;&#45;lead type&#45;&#45;color" style="font-weight: 700;font-size: 16px;" >-->
+            <!--Brad Green, Who Runs the Google Angular Team, Talks about His Upcoming Angular U Keynote-->
+            <!--</span>-->
+
+          <!--</p>-->
+
+          <!--<div class="video-embed">-->
+
+            <!--<iframe src="https://player.vimeo.com/video/126281527" width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >-->
+
+            <!--</iframe>-->
+            <!--&lt;!&ndash;<iframe width="1280" height="750" src="https://www.youtube.com/embed/6bsZKr2ncwk" frameborder="0" allowfullscreen></iframe>&ndash;&gt;-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<ul class="video&#45;&#45;list">-->
+          <!--<li>-->
+            <!--<a href="#"><img src="https://angularu.com/miscpages/91x63.gif" alt="" class=""></a>-->
+            <!--<span class="video&#45;&#45;playing">Playing</span>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a href="#"><img src="https://angularu.com/miscpages/coming.png" alt="" class=""></a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a href="#"><img src="https://angularu.com/miscpages/coming.png" alt="" class=""></a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a href="#"><img src="https://angularu.com/miscpages/coming.png" alt="" class=""></a>-->
+          <!--</li>-->
+        <!--</ul>-->
 
         <div class="text-center">
           <a href="/Videos" ><button  class="btn btn-primary">More videos</button></a>
