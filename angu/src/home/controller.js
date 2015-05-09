@@ -42,7 +42,9 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
       vimeoId: '126991619',
       videoThumb: 'https://angularu.com/Images/91-63-misko.png',
       current: true,
-      iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126991619")
+      iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126991619"),
+      tweetItUrl: "<a href='http://twitter.com/home?status=Check+Out+&quot;Misko+Hevery+Talks+About+Databinding+in+Angular+2&quot;+at+@AngularU+https://AngularU.com/Video/2015sf/misko-hevery-talks-about-databinding-in-angular-2+@mhevery' target='_blank' class='icon-twitter'></a>",
+      tweetItUrlWords: "<a href='http://twitter.com/home?status=Check+Out+&quot;Misko+Hevery+Talks+About+Databinding+in+Angular+2&quot;+at+@AngularU+https://AngularU.com/Video/2015sf/misko-hevery-talks-about-databinding-in-angular-2+@mhevery' target='_blank' >Share&nbsp;This&nbsp;</a>"
     },
     {
       title: 'Brad Green, Who Runs the Google Angular Team, Talks about His Upcoming Angular U Keynote',
@@ -65,7 +67,11 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
       current: false,
       iframeSrc: $sce.trustAsResourceUrl("https://player.vimeo.com/video/126972966")
     }
-  ]
+  ];
+
+
+
+
 
 
 
