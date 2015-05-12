@@ -14,10 +14,6 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
         })
     };
 
-
-    //this.title1 = config.home.title1 ||
-    //    "Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More";
-
     this.title2 = config.home.title2.content ||
         "<strong>Who’s Who</strong> of Angular Presenters and Its Future";
 
@@ -41,7 +37,7 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
     this.createTweetAnchor = function (tweet, containsTwitterClass) {
 
         var str = "<a href='http://twitter.com/home?status=";
-        str += tweet.replace(/ /g, '+');//.replace('"',"&quot;");
+        str += tweet.replace(/ /g, '+');
         str += "' target='_blank' ";
         if (containsTwitterClass === true) {
             str += " class='icon-twitter' ></a>";
@@ -55,9 +51,7 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
         return $sce.trustAsResourceUrl("https://player.vimeo.com/video/" + vimeoId);
     }
 
-    this.getVideoThumb = function (vimeoId, width, height) {
-        return "/rpc/vimeo/thumbnail/" + width + "/" + height + "/" + vimeoId + ".jpg";
-    }
+
 
 
     this.homePageVideos = [
@@ -83,6 +77,10 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
         }
     ];
 
+
+    this.getVideoThumb = function (vimeoId, width, height) {
+        return "/rpc/vimeo/thumbnail/" + width + "/" + height + "/" + vimeoId + ".jpg";
+    }
 
     var k;
     for(k=0;k<this.homePageVideos.length;k++) {
