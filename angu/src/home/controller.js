@@ -20,16 +20,42 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
     this.showSpeakers = config.speakers.show;
     this.fromNg = config.ng.from;
 
-    this.homePageVideoCurrent = 0;
+
+    this.homePageVideos = [
+        {
+            title: 'Misko Hevery Talks About Databinding in Angular 2',
+            vimeoId: '126991619',
+            tweet: 'Check Out "Misko Hevery Talks About Databinding in Angular 2" at @AngularU https://AngularU.com/Video/2015sf/misko-hevery-talks-about-databinding-in-angular-2 @mhevery'
+        },
+        {
+            title: 'Brad Green Talks about His Upcoming Angular U Keynote',
+            vimeoId: '126281527',
+            tweet: 'Check Out "Brad Green Talks About Angular U" at @AngularU https://AngularU.com/Video/2015sf/brad-green-talks-about-angular-u @bradlygreen'
+        },
+        {
+            title: 'Dan Wahlin Giving Us an Idea of What to Expect at Angular U',
+            vimeoId: '126281528',
+            tweet: 'Check Out "Dan Wahlin Giving Us an Idea of What to Expect at Angular U" at @AngularU https://AngularU.com/Video/2015sf/dan-wahlin-giving-us-an-idea-of-what-to-expect-at-angular-u @danwahlin'
+        },
+        {
+            title: 'Scott Moss Talks About His ECMAScript6 Workshops',
+            vimeoId: '126972966',
+            tweet: 'Check Out "Scott Moss Talks About His ECMAScript6 Workshops" at @AngularU https://AngularU.com/Video/2015sf/scott-moss-talks-about-his-ecmascript6-workshops @scotups'
+        }
+    ];
+
+    this.currentVideo = this.homePageVideos[0];
+    this.iFrameSrc =
+        $sce.trustAsResourceUrl("https://player.vimeo.com/video/" + this.currentVideo.vimeoId);
+
     this.ChangeHomePageVideo = function (vimeoId) {
         var i;
         for (i = 0; i < this.homePageVideos.length; i++) {
             if (this.homePageVideos[i].vimeoId == vimeoId) {
                 this.homePageVideoCurrent = i;
-                this.homePageVideos[i].current = true;
-            }
-            else {
-                this.homePageVideos[i].current = false;
+                this.currentVideo = this.homePageVideos[i];
+                this.iFrameSrc =
+                    $sce.trustAsResourceUrl("https://player.vimeo.com/video/" + vimeoId);
             }
         }
     };
@@ -49,49 +75,16 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
 
     this.getIframeSrc = function (vimeoId) {
         return $sce.trustAsResourceUrl("https://player.vimeo.com/video/" + vimeoId);
-    }
-
-
-
-
-    this.homePageVideos = [
-        {
-            title: 'Misko Hevery Talks About Databinding in Angular 2',
-            vimeoId: '126991619',
-            tweet: 'Check Out "Misko Hevery Talks About Databinding in Angular 2" at @AngularU https://AngularU.com/Video/2015sf/misko-hevery-talks-about-databinding-in-angular-2 @mhevery'
-        },
-        {
-            title: 'Brad Green, Who Runs the Google Angular Team, Talks about His Upcoming Angular U Keynote',
-            vimeoId: '126281527',
-            tweet: 'Check Out "Brad Green Talks About Angular U" at @AngularU https://AngularU.com/Video/2015sf/brad-green-talks-about-angular-u @bradlygreen'
-        },
-        {
-            title: 'Dan Wahlin Giving Us an Idea of What to Expect at Angular U',
-            vimeoId: '126281528',
-            tweet: 'Check Out "Dan Wahlin Giving Us an Idea of What to Expect at Angular U" at @AngularU https://AngularU.com/Video/2015sf/dan-wahlin-giving-us-an-idea-of-what-to-expect-at-angular-u @danwahlin'
-        },
-        {
-            title: 'Scott Moss Talks About His ECMAScript6 Workshops',
-            vimeoId: '126972966',
-            tweet: 'Check Out "Scott Moss Talks About His ECMAScript6 Workshops" at @AngularU https://AngularU.com/Video/2015sf/scott-moss-talks-about-his-ecmascript6-workshops @scotups'
-        }
-    ];
-
+    };
 
     this.getVideoThumb = function (vimeoId, width, height) {
-        return "/rpc/vimeo/thumbnail/" + width + "/" + height + "/" + vimeoId + ".jpg";
-    }
+        return "https://angularu.com/rpc/vimeo/thumbnail/" + width + "/" + height + "/" + vimeoId + ".jpg";
+    };
 
     var k;
     for(k=0;k<this.homePageVideos.length;k++) {
         this.homePageVideos[k].thumbNail = this.getVideoThumb(this.homePageVideos[k].vimeoId,105,77);
     }
-
-    this.homePageVideos[0].current = true;
-    this.homePageVideos[1].current = false;
-    this.homePageVideos[2].current = false;
-    this.homePageVideos[3].current = false;
-
 }
 
 HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config','$sce'];
