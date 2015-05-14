@@ -31,14 +31,40 @@
     </ul>
   </div>
 
-  <ul class="sessions">
-    <session-list-item
-      ng-repeat="session in (filtered = (list.sessions | filter:list.filter))"
-      session="session"
-      show-day="list.day === list.days[0] && (!$index || filtered[$index - 1].time.startTimeFriendlyDay !== session.time.startTimeFriendlyDay)"
-      show-time="!$index || (filtered[$index - 1].time.startTime !== session.time.startTime)"
-    >
-    </session-list-item>
+
+
+
+
+  <ul>
+    <li ng-repeat="session in (filtered = (list.sessions | filter:list.filter))">
+      startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>
+      sessionMinutes: {{session.time.sessionMinutes}}<br/>
+      startTimeFriendlyTime: {{session.time.startTimeFriendlyTime}}<br/>
+      startTimeFriendly: {{session.time.startTimeFriendly}}<br/>
+      title:   {{session.title}}<br/>
+      workshop: {{ session.workshop }} <br/>
+      startTime: {{ session.startTime }}<br/>
+      sessionTimeDateTime: {{ session.sessionTimeDateTime }}<br/>
+      sessionTrackName: {{ session.sessionTrackName }}<br/>
+      sessionUrl: {{ session.sessionUrl }}<br/>
+      speakersNamesCsv: {{session.speakersNamesCsv}}<br/>
+      speakersShort: {{session.speakersShort}}<br/>
+      descriptionShort: {{ session.descriptionShort }}<br/>
+      description: {{ session.description }}<br/>
+      <hr/>
+    </li>
   </ul>
+
+
+
+
+  <!--<ul class="sessions">-->
+    <!--<session-list-item-->
+      <!--ng-repeat="session in (filtered = (list.sessions | filter:list.filter))"-->
+      <!--session="session"-->
+      <!--show-day="list.day === list.days[0] && (!$index || filtered[$index - 1].time.startTimeFriendlyDay !== session.time.startTimeFriendlyDay)"-->
+      <!--show-time="!$index || (filtered[$index - 1].time.startTime !== session.time.startTime)" >-->
+    <!--</session-list-item>-->
+  <!--</ul>-->
 
 </div>

@@ -32,6 +32,8 @@ function SessionOverviewController (sessions, days, tracks, Speaker) {
     }
     return true;
   };
+
+
 }
 SessionOverviewController.$inject = ['sessions', 'days', 'tracks', 'Speaker'];
 
