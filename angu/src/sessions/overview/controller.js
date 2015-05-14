@@ -1,0 +1,38 @@
+'use strict';
+
+function SessionOverviewController (sessions, days, tracks, Speaker) {
+
+  const scheduled = sessions.filter(s => s.time);
+  const unscheduled = sessions.filter(s => !s.time);
+
+  this.sessions = scheduled.concat(unscheduled);
+  this.days = days;
+  this.day = days[0];
+  this.tracks = tracks;
+  this.track = undefined;
+
+  this.sessions.reduce(function (speakers, session) {
+    speakers.push.apply(speakers, session.speakersList);
+    return speakers;
+  }, [])
+  .forEach(function (speaker) {
+    speaker.$stateParams = function () {
+      const url = this.speakerLocalUrl.replace('/Presenter/', '').toLowerCase();
+      return Speaker.parseUrl(url);
+    };
+  });
+
+  this.filter = (session) => {
+    if (this.day.dayOfWeek !== 'Show All') {
+      const dayIndex = new Date(session.sessionTimeDateTime).getDay();
+      if (!this.day.is(dayIndex)) return;
+    }
+    if (this.track && this.track.id !== session.sessionTrackId) {
+      return;
+    }
+    return true;
+  };
+}
+SessionOverviewController.$inject = ['sessions', 'days', 'tracks', 'Speaker'];
+
+export default SessionOverviewController;

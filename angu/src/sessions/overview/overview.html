@@ -1,0 +1,44 @@
+<div id="sessions" class="container">
+  <!--<div class="separator">-->
+    <!--<span class="separator&#45;&#45;icon icon-clock"></span>-->
+  <!--</div>-->
+  <!--<h2 class="type&#45;&#45;lead">The program (preliminary)</h2>-->
+
+
+  <span>OVERVIEW</span>
+
+  <div class="separator">
+    <div class="separator--item">
+      <span>View: </span>
+      <select ng-options="day.dayOfWeek for day in list.days" ng-model="list.day"></select>
+    </div>
+  </div>
+
+  <div class="">
+    <ul class="list--radio list--centered list--horizontal">
+      <li>
+        <div class="radio">
+          <input type="radio" name="check" id="radio-all-tracks" checked ng-model="list.track">
+          <label for="radio-all-tracks">All rooms</label>
+        </div>
+      </li>
+      <li ng-repeat="track in list.tracks">
+        <div class="radio">
+          <input type="radio" id="radio-track-{{$index}}" ng-model="list.track" ng-value="track">
+          <label for="radio-track-{{$index}}">{{track.named}}</label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="sessions">
+    <session-list-item
+      ng-repeat="session in (filtered = (list.sessions | filter:list.filter))"
+      session="session"
+      show-day="list.day === list.days[0] && (!$index || filtered[$index - 1].time.startTimeFriendlyDay !== session.time.startTimeFriendlyDay)"
+      show-time="!$index || (filtered[$index - 1].time.startTime !== session.time.startTime)"
+    >
+    </session-list-item>
+  </ul>
+
+</div>
