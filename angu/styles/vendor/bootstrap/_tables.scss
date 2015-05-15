@@ -16,3 +16,28 @@
     }
   }
 }
+
+.table-fixed {
+  table-layout: fixed;
+
+  td {
+    width: 100%;
+  }
+}
+
+.table-cal {
+  > thead {
+    td {
+      &:first-child {
+        background: $white;
+      }
+    }
+  }
+  td {
+    position: relative;
+
+    &:first-child {
+      text-align: center;
+    }
+  }
+}

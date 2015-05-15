@@ -1,0 +1,74 @@
+.cal-entry {
+  position: relative;
+  height: 100%;
+  margin: -10px;
+  padding: 15px 10px;
+
+  &:hover {
+    .cal-entry-tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &-title {
+    font-size: inherit;
+    margin: 0;
+  }
+
+  &-description {
+    margin: 0;
+  }
+
+  &-speakers {
+    margin: 0;
+  }
+
+  &-time {
+    margin: 15px 0;
+    font-weight: 500;
+  }
+
+  &-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    padding-bottom: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .2s ease-out,
+                opacity .2s ease-out;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 15px - 7px;
+      left: 50%;
+      margin-left: -5px;
+      border-top: 7px solid;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+    }
+
+    &-text {
+      padding: 15px 10px;
+      margin: 0;
+    }
+  }
+
+  &--red {
+    @include cal-entry-color($brand-danger);
+    color: $white;
+  }
+
+  &--green {
+    @include cal-entry-color($brand-success);
+    color: $white;
+  }
+
+  &--blue {
+    @include cal-entry-color($brand-info);
+    color: $white;
+  }
+}

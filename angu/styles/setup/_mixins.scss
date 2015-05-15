@@ -64,3 +64,17 @@
     @media only screen and (min-width: $media) { @content; }
   }
 }
+
+@mixin cal-entry-color($value) {
+  background-color: $value;
+
+  .cal-entry-tooltip {
+    &:before {
+      border-top-color: $value;
+    }
+
+    &-text {
+      background: $value;
+    }
+  }
+}
