@@ -31,13 +31,87 @@
     </ul>
   </div>
 
+  <table class="table table-cal table-striped table-fixed hidden-xs">
+    <thead>
+      <tr>
+        <td></td>
+        <td ng-repeat="track in list.tracks">{{track.named}}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>8:00 AM</td>
+        <td rowspan="3" class="cal-entry--blue">
+          <article class="cal-entry">
+            <h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>
+            <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+            <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+            <p class="cal-entry-time">8:00 AM - 9:30 AM</p>
 
+            <div class="cal-entry-tooltip">
+              <p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>
+            </div>
+          </article>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <!-- 4 columns here, because of rowspan in row above -->
+        <td>8:30 AM</td>
+        <td></td>
+        <td rowspan="2" class="cal-entry--red">
+          <article class="cal-entry">
+            <h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>
+            <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+            <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+            <p class="cal-entry-time">8:00 AM - 9:30 AM</p>
 
+            <div class="cal-entry-tooltip">
+              <p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>
+            </div>
+          </article>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <!-- 3 columns here, because of rowspans in rows above -->
+        <td>9:00 AM</td>
+        <td class="cal-entry--green">
+          <article class="cal-entry">
+            <h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>
+            <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+            <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+            <p class="cal-entry-time">8:00 AM - 9:30 AM</p>
 
+            <div class="cal-entry-tooltip">
+              <p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>
+            </div>
+          </article>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>9:30 AM</td>
+      </tr>
+      <tr>
+        <td>10:00 AM</td>
+      </tr>
+      <tr>
+        <td>10:30 AM</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <ul>
+  <ul class="visible-xs">
     <li ng-repeat="session in (filtered = (list.sessions | filter:list.filter))">
-      startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>
+      <article class="cal-entry">
+        <h3 class="cal-entry-title">{{session.title}}</h3>
+        <p class="cal-entry-speakers">{{session.speakersShort}}</p>
+        <p class="cal-entry-time">{{ session.startTime }}</p>
+      </article>
+      <!-- startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>
       sessionMinutes: {{session.time.sessionMinutes}}<br/>
       startTimeFriendlyTime: {{session.time.startTimeFriendlyTime}}<br/>
       startTimeFriendly: {{session.time.startTimeFriendly}}<br/>
@@ -50,7 +124,7 @@
       speakersNamesCsv: {{session.speakersNamesCsv}}<br/>
       speakersShort: {{session.speakersShort}}<br/>
       descriptionShort: {{ session.descriptionShort }}<br/>
-      description: {{ session.description }}<br/>
+      description: {{ session.description }}<br/> -->
       <hr/>
     </li>
   </ul>
