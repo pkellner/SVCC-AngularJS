@@ -92,7 +92,7 @@
   {
     "startTime": "2015-06-23T09:00:00Z",
     "startTimeFriendly": "Tues 9:00 AM",
-    "sessionMinutes": 30,
+    "sessionMinutes": 60,
     "description": "9:00 AM to 10:00 AM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",

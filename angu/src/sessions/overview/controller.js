@@ -14,7 +14,7 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
     //debugger;
 
     this.justDays = [];
-    for (let i=1;i<this.days.length;i++){
+    for (let i = 1; i < this.days.length; i++) {
         this.justDays.push(this.days[i]);
     }
 
@@ -45,12 +45,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
     ];
 
     //var timesArray = [
-    //     '1:30 PM'
+    //     '9:00 AM'
     //];
-
-    //this.day.dayOfWeek = "Monday";
-
-    this.selectedDay = "Tuesday";
 
 
     this.generateTrs = function (selectedDay) {
@@ -62,34 +58,42 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
             for (let j = 0; j < this.tracks.length; j++) {
                 let trackx = this.tracks[j];
                 let sessionFound = null;
+
                 for (let k = 0; k < this.sessions.length; k++) {
                     let sessionx = this.sessions[k];
                     if (sessionx.time != null) {
                         //console.log(timex + ":" + sessionx.time.startTimeFriendlyTime + "::" + trackx.named + ":" + sessionx.sessionTrackName);
                     }
-                    if (sessionx.time != null && timex === sessionx.time.startTimeFriendlyTime && trackx.named === sessionx.sessionTrackName) {
-                        //console.log('      FOUND ' + sessionx.time.startTimeFriendlyDay);
+
+                    if (sessionx.time != null && timex === sessionx.time.startTimeFriendlyTime &&
+                        trackx.named === sessionx.sessionTrackName &&
+                        sessionx.time.startTimeFriendlyDay === selectedDay) {
+                        //console.log('      FOUND day:' + sessionx.time.startTimeFriendlyDay + " track:" + trackx.named);
                         sessionFound = sessionx;
                     }
                 }
+
                 if (sessionFound === null) {
                     sessionOverviewTds.push("");
                 } else {
                     if (sessionFound.time.startTimeFriendlyDay == selectedDay) {
                         console.log("     startTimeFriendlyDay:" + sessionFound.time.startTimeFriendlyDay + ":" + sessionFound.time.sessionMinutes);
-                        let colorClass = "cal-entry-blue";
-                        if (sessionFound.keynote === true) {
-                            colorClass = "cal-entry-green"
+                        let colorClass = "cal-entry--blue";
+                        if (sessionFound.keyNote === true) {
+                            colorClass = "cal-entry--green"
                         }
-                        //debugger;
+
+
                         sessionOverviewTds.push({
                             title: sessionFound.title,
                             description: sessionFound.descriptionShort,
                             minutes: sessionFound.time.sessionMinutes,
                             rowspan: sessionFound.time.sessionMinutes / 30,
                             sessionTimeDescription: sessionFound.time.description,
+                            startTimeFriendlyTime: sessionFound.time.startTimeFriendlyTime,
                             colorClass: colorClass,
-                            speakerCsv: sessionFound.speakersNamesCsv
+                            speakerCsv: sessionFound.speakersNamesCsv,
+                            trackName: sessionFound.sessionTrackName
                         });
                     }
                     else {
@@ -97,11 +101,70 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                     }
                 }
             }
+
+
             this.sessionOverviewTrs.push(sessionOverviewTds);
         }
-    }
-    this.generateTrs();
+        // chop sessionOverviewTds to get rid of empty rows
+        if (this.sessionOverviewTrs && this.sessionOverviewTrs.length > 0) {
+            // build list of tracks that actually have sessions
+            this.tracksValid = [];
+            for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
+                var tds = this.sessionOverviewTrs[i];
+                if (tds && tds.length > 0) {
+                    for (let j = 0; j < tds.length; j++) {
+                        if (tds[j].length == undefined) {
+                            if (this.tracksValid.indexOf(tds[j].trackName) === -1) {
+                                this.tracksValid.push(tds[j].trackName)
+                            }
+                        }
+                    }
+                }
+            }
 
+            debugger;
+
+
+            // now we have track names, let's figure out what columns those are.
+            this.trackColumnsValid = [0]; // time is always a valid column
+
+            for (let i = 0; i < this.tracksValid.length; i++) {
+                for (let j=0;j<this.tracks.length;j++){
+                    if (this.tracks[j].named === this.tracksValid[i]){
+                        this.trackColumnsValid.push(j+1); // shift 1 for time column
+                        break;
+                    }
+                }
+            }
+
+
+
+
+            // just include the columns that have values
+            this.sessionOverviewTrsNew = [];
+            for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
+                let trs = this.sessionOverviewTrs[i];
+                let trsNew = [];
+                trsNew.push(trs[0]); // always push time column
+                for (let k = 0; k < this.trackColumnsValid.length; k++) {
+                    var colToInclude = this.trackColumnsValid[k] + 1; // always shift over 1 because time is first column
+                    trsNew.push(trs[colToInclude]);
+                }
+                this.sessionOverviewTrsNew.push(trsNew);
+            }
+
+
+            this.sessionOverviewTrs = this.sessionOverviewTrsNew;
+
+
+        }
+
+
+    };
+
+    // not sure why this does not make default day tuesday
+    this.selectedDay = "Tuesday";
+    this.generateTrs();
 
 
 }
