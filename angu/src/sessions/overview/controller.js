@@ -11,6 +11,13 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
     this.tracks = tracks;
     this.track = undefined;
 
+    //debugger;
+
+    this.justDays = [];
+    for (let i=1;i<this.days.length;i++){
+        this.justDays.push(this.days[i]);
+    }
+
     this.sessions.reduce(function (speakers, session) {
         speakers.push.apply(speakers, session.speakersList);
         return speakers;
@@ -27,9 +34,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
             const dayIndex = new Date(session.sessionTimeDateTime).getDay();
             if (!this.day.is(dayIndex)) return;
         }
-        if (this.track && this.track.id !== session.sessionTrackId) {
-            return;
-        }
         return true;
     };
 
@@ -44,57 +48,60 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
     //     '1:30 PM'
     //];
 
-    this.sessionOverviewTrs = [];
-    for (let i = 0; i < timesArray.length; i++) {
-        var timex = timesArray[i];
+    //this.day.dayOfWeek = "Monday";
+
+    this.selectedDay = "Tuesday";
 
 
-        var sessionOverviewTds = [];
-        sessionOverviewTds.push(timex);
-
-        for (let j = 0; j < this.tracks.length; j++) {
-            let trackx = this.tracks[j];
-
-            let sessionFound = null;
-            for (let k = 0; k < this.sessions.length; k++) {
-                let sessionx = this.sessions[k];
-
-                if (sessionx.time != null) {
-                    //console.log(timex + ":" + sessionx.time.startTimeFriendlyTime + "::" + trackx.named + ":" + sessionx.sessionTrackName);
+    this.generateTrs = function (selectedDay) {
+        this.sessionOverviewTrs = [];
+        for (let i = 0; i < timesArray.length; i++) {
+            var timex = timesArray[i];
+            var sessionOverviewTds = [];
+            sessionOverviewTds.push(timex);
+            for (let j = 0; j < this.tracks.length; j++) {
+                let trackx = this.tracks[j];
+                let sessionFound = null;
+                for (let k = 0; k < this.sessions.length; k++) {
+                    let sessionx = this.sessions[k];
+                    if (sessionx.time != null) {
+                        //console.log(timex + ":" + sessionx.time.startTimeFriendlyTime + "::" + trackx.named + ":" + sessionx.sessionTrackName);
+                    }
+                    if (sessionx.time != null && timex === sessionx.time.startTimeFriendlyTime && trackx.named === sessionx.sessionTrackName) {
+                        //console.log('      FOUND ' + sessionx.time.startTimeFriendlyDay);
+                        sessionFound = sessionx;
+                    }
                 }
-
-                if (sessionx.time != null && timex === sessionx.time.startTimeFriendlyTime && trackx.named === sessionx.sessionTrackName) {
-                    //console.log('      FOUND ' + sessionx.time.startTimeFriendlyDay);
-                    sessionFound = sessionx;
-                }
-            }
-
-
-            if (sessionFound === null) {
-                sessionOverviewTds.push("");
-            } else {
-                if (sessionFound.time.startTimeFriendlyDay == "Tuesday") {
-                    console.log("     startTimeFriendlyDay:" + sessionFound.time.startTimeFriendlyDay + ":" + sessionFound.time.sessionMinutes );
-
-                    sessionOverviewTds.push({
-                        title: sessionFound.title,
-                        description: sessionFound.descriptionShort,
-                        minutes: sessionFound.time.sessionMinutes,
-                        rowspan: sessionFound.time.sessionMinutes/30,
-                        colorClass: sessionFound.title == "Angular 2 Forms" ? "cal-entry--blue" : "def",
-                        speakerCsv: sessionFound.speakersNamesCsv
-                    });
-                }
-                else {
+                if (sessionFound === null) {
                     sessionOverviewTds.push("");
+                } else {
+                    if (sessionFound.time.startTimeFriendlyDay == selectedDay) {
+                        console.log("     startTimeFriendlyDay:" + sessionFound.time.startTimeFriendlyDay + ":" + sessionFound.time.sessionMinutes);
+                        let colorClass = "cal-entry-blue";
+                        if (sessionFound.keynote === true) {
+                            colorClass = "cal-entry-green"
+                        }
+                        //debugger;
+                        sessionOverviewTds.push({
+                            title: sessionFound.title,
+                            description: sessionFound.descriptionShort,
+                            minutes: sessionFound.time.sessionMinutes,
+                            rowspan: sessionFound.time.sessionMinutes / 30,
+                            sessionTimeDescription: sessionFound.time.description,
+                            colorClass: colorClass,
+                            speakerCsv: sessionFound.speakersNamesCsv
+                        });
+                    }
+                    else {
+                        sessionOverviewTds.push("");
+                    }
                 }
             }
-
+            this.sessionOverviewTrs.push(sessionOverviewTds);
         }
-        this.sessionOverviewTrs.push(sessionOverviewTds);
-
     }
-    //debugger;
+    this.generateTrs();
+
 
 
 }

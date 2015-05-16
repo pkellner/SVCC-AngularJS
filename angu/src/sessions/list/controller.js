@@ -11,6 +11,8 @@ function SessionListController (sessions, days, tracks, Speaker) {
   this.tracks = tracks;
   this.track = undefined;
 
+
+
   this.sessions.reduce(function (speakers, session) {
     speakers.push.apply(speakers, session.speakersList);
     return speakers;
