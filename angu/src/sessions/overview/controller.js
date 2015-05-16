@@ -11,8 +11,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
     this.tracks = tracks;
     this.track = undefined;
 
-    //debugger;
-
     this.justDays = [];
     for (let i = 1; i < this.days.length; i++) {
         this.justDays.push(this.days[i]);
@@ -86,7 +84,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
 
                         sessionOverviewTds.push({
                             title: sessionFound.title,
-                            description: sessionFound.descriptionShort,
+                            description: sessionFound.description,
+                            descriptionShort: sessionFound.descriptionShort,
                             minutes: sessionFound.time.sessionMinutes,
                             rowspan: sessionFound.time.sessionMinutes / 30,
                             sessionTimeDescription: sessionFound.time.description,
@@ -121,9 +120,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                     }
                 }
             }
-
-            debugger;
-
 
             // now we have track names, let's figure out what columns those are.
             this.trackColumnsValid = [0]; // time is always a valid column

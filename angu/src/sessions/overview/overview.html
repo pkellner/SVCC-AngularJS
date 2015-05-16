@@ -35,15 +35,15 @@
               <div wh class="cal-entry" class="cal-entry--blue">
                   <h3 class="cal-entry-title">{{ tds.title}}</h3>
 
-                  <p class="cal-entry-description">{{ tds.description }}</p>
+                  <p class="cal-entry-description">{{ tds.descriptionShort }}</p>
 
                   <p class="cal-entry-speakers">{{tds.speakerCsv}}</p>
 
                   <p class="cal-entry-time">{{tds.sessionTimeDescription}}</p>
 
-                  <!--<div class="cal-entry-tooltip">-->
-                  <!--<p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>-->
-                  <!--</div>-->
+                  <div class="cal-entry-tooltip">
+                  <p class="cal-entry-tooltip-text">{{ tds.description }}</p>
+                  </div>
               </div>
             </span>
         </td>
@@ -53,158 +53,158 @@
 </table>
 
 
-<table class="table table-cal table-striped table-fixed hidden-xs">
-    <thead>
-    <tr>
-        <td></td>
-        <td ng-repeat="track in list.tracks">{{track.named}}</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>8:00 AM</td>
-        <td rowspan="3" class="cal-entry--blue">
-            <come wh class="cal-entry">
-                <h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>
+<!--<table class="table table-cal table-striped table-fixed hidden-xs">-->
+    <!--<thead>-->
+    <!--<tr>-->
+        <!--<td></td>-->
+        <!--<td ng-repeat="track in list.tracks">{{track.named}}</td>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr>-->
+        <!--<td>8:00 AM</td>-->
+        <!--<td rowspan="3" class="cal-entry&#45;&#45;blue">-->
+            <!--<come wh class="cal-entry">-->
+                <!--<h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>-->
 
-                <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+                <!--<p class="cal-entry-description">Angular 2 Roadmap Update</p>-->
 
-                <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+                <!--<p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>-->
 
-                <p class="cal-entry-time">8:00 AM - 9:30 AM</p>
+                <!--<p class="cal-entry-time">8:00 AM - 9:30 AM</p>-->
 
-                <div class="cal-entry-tooltip">
-                    <p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>
-                </div>
-            </come>
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- 4 columns here, because of rowspan in row above -->
-        <td>8:30 AM</td>
-        <td></td>
-        <td rowspan="2" class="cal-entry--red">
-            <article class="cal-entry">
-                <h3 class="cal-entry-title">Angular 2xx Roadmap Update</h3>
+                <!--<div class="cal-entry-tooltip">-->
+                    <!--<p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>-->
+                <!--</div>-->
+            <!--</come>-->
+        <!--</td>-->
+        <!--<td></td>-->
+        <!--<td></td>-->
+        <!--<td></td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--&lt;!&ndash; 4 columns here, because of rowspan in row above &ndash;&gt;-->
+        <!--<td>8:30 AM</td>-->
+        <!--<td></td>-->
+        <!--<td rowspan="2" class="cal-entry&#45;&#45;red">-->
+            <!--<article class="cal-entry">-->
+                <!--<h3 class="cal-entry-title">Angular 2xx Roadmap Update</h3>-->
 
-                <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+                <!--<p class="cal-entry-description">Angular 2 Roadmap Update</p>-->
 
-                <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+                <!--<p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>-->
 
-                <p class="cal-entry-time">8:00 AM - 9:30 AM</p>
+                <!--<p class="cal-entry-time">8:00 AM - 9:30 AM</p>-->
 
-                <div class="cal-entry-tooltip">
-                    <p class="cal-entry-tooltip-text">Angular 2xx Roadmap Update</p>
-                </div>
-            </article>
-        </td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- 3 columns here, because of rowspans in rows above -->
-        <td>9:00 AM</td>
-        <td class="cal-entry--green">
-            <article class="cal-entry">
-                <h3 class="cal-entry-title">Angular 2xxxxxxxx Roadmap Update</h3>
+                <!--<div class="cal-entry-tooltip">-->
+                    <!--<p class="cal-entry-tooltip-text">Angular 2xx Roadmap Update</p>-->
+                <!--</div>-->
+            <!--</article>-->
+        <!--</td>-->
+        <!--<td></td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--&lt;!&ndash; 3 columns here, because of rowspans in rows above &ndash;&gt;-->
+        <!--<td>9:00 AM</td>-->
+        <!--<td class="cal-entry&#45;&#45;green">-->
+            <!--<article class="cal-entry">-->
+                <!--<h3 class="cal-entry-title">Angular 2xxxxxxxx Roadmap Update</h3>-->
 
-                <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+                <!--<p class="cal-entry-description">Angular 2 Roadmap Update</p>-->
 
-                <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+                <!--<p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>-->
 
-                <p class="cal-entry-time">8:00 AM - 9:30 AM</p>
+                <!--<p class="cal-entry-time">8:00 AM - 9:30 AM</p>-->
 
-                <div class="cal-entry-tooltip">
-                    <p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>
-                </div>
-            </article>
-        </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>9:30 AM</td>
-    </tr>
-    <tr>
-        <td>10:00 AM</td>
-        <td rowspan="4" class="cal-entry--blue">
-            <come wh class="cal-entry">
-                <h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>
+                <!--<div class="cal-entry-tooltip">-->
+                    <!--<p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>-->
+                <!--</div>-->
+            <!--</article>-->
+        <!--</td>-->
+        <!--<td></td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>9:30 AM</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>10:00 AM</td>-->
+        <!--<td rowspan="4" class="cal-entry&#45;&#45;blue">-->
+            <!--<come wh class="cal-entry">-->
+                <!--<h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>-->
 
-                <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+                <!--<p class="cal-entry-description">Angular 2 Roadmap Update</p>-->
 
-                <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+                <!--<p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>-->
 
-                <p class="cal-entry-time">8:00 AM - 10:00 AM</p>
+                <!--<p class="cal-entry-time">8:00 AM - 10:00 AM</p>-->
 
-                <div class="cal-entry-tooltip">
-                    <p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>
-                </div>
-            </come>
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+                <!--<div class="cal-entry-tooltip">-->
+                    <!--<p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>-->
+                <!--</div>-->
+            <!--</come>-->
+        <!--</td>-->
+        <!--<td></td>-->
+        <!--<td></td>-->
+        <!--<td></td>-->
+    <!--</tr>-->
 
-    <tr>
+    <!--<tr>-->
 
-        <td>10:00 AM</td>
-        <td></td>
-        <td rowspan="1" class="cal-entry--red">
-            <article class="cal-entry">
-                <h3 class="cal-entry-title">Angular 2xx Roadmap Update</h3>
+        <!--<td>10:00 AM</td>-->
+        <!--<td></td>-->
+        <!--<td rowspan="1" class="cal-entry&#45;&#45;red">-->
+            <!--<article class="cal-entry">-->
+                <!--<h3 class="cal-entry-title">Angular 2xx Roadmap Update</h3>-->
 
-                <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+                <!--<p class="cal-entry-description">Angular 2 Roadmap Update</p>-->
 
-                <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+                <!--<p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>-->
 
-                <p class="cal-entry-time">10:00AM to 10:30AM</p>
+                <!--<p class="cal-entry-time">10:00AM to 10:30AM</p>-->
 
-                <div class="cal-entry-tooltip">
-                    <p class="cal-entry-tooltip-text">Angular 2xx Roadmap Update</p>
-                </div>
-            </article>
-        </td>
-        <td></td>
-    </tr>
-
-
-    <tr>
-        <td>10:30 AM</td>
-    </tr>
-    </tbody>
-</table>
+                <!--<div class="cal-entry-tooltip">-->
+                    <!--<p class="cal-entry-tooltip-text">Angular 2xx Roadmap Update</p>-->
+                <!--</div>-->
+            <!--</article>-->
+        <!--</td>-->
+        <!--<td></td>-->
+    <!--</tr>-->
 
 
-<ul class="visible-xsx">
-    <li ng-repeat="session in (filtered = (list.sessions | filter:list.filter))">
-        <article class="cal-entry">
-            <h3 class="cal-entry-title">{{session.title}}</h3>
+    <!--<tr>-->
+        <!--<td>10:30 AM</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+<!--</table>-->
 
-            <p class="cal-entry-speakers">{{session.speakersShort}}</p>
 
-            <p class="cal-entry-time">{{ session.startTime }}</p>
-        </article>
-        startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>
-        sessionTimeDescription: {{session.time.description}}<br/>
-        sessionMinutes: {{session.time.sessionMinutes}}<br/>
-        startTimeFriendlyTime: {{session.time.startTimeFriendlyTime}}<br/>
-        startTimeFriendly: {{session.time.startTimeFriendly}}<br/>
-        title: {{session.title}}<br/>
-        workshop: {{ session.workshop }} <br/>
-        startTime: {{ session.startTime }}<br/>
-        sessionTimeDateTime: {{ session.sessionTimeDateTime }}<br/>
-        sessionTrackName: {{ session.sessionTrackName }}<br/>
-        sessionUrl: {{ session.sessionUrl }}<br/>
-        speakersNamesCsv: {{session.speakersNamesCsv}}<br/>
-        speakersShort: {{session.speakersShort}}<br/>
-        descriptionShort: {{ session.descriptionShort }}<br/>
-        description: {{ session.description }}<br/>
-        <hr/>
-    </li>
-</ul>
+<!--<ul class="visible-xsx">-->
+    <!--<li ng-repeat="session in (filtered = (list.sessions | filter:list.filter))">-->
+        <!--<article class="cal-entry">-->
+            <!--<h3 class="cal-entry-title">{{session.title}}</h3>-->
+
+            <!--<p class="cal-entry-speakers">{{session.speakersShort}}</p>-->
+
+            <!--<p class="cal-entry-time">{{ session.startTime }}</p>-->
+        <!--</article>-->
+        <!--startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>-->
+        <!--sessionTimeDescription: {{session.time.description}}<br/>-->
+        <!--sessionMinutes: {{session.time.sessionMinutes}}<br/>-->
+        <!--startTimeFriendlyTime: {{session.time.startTimeFriendlyTime}}<br/>-->
+        <!--startTimeFriendly: {{session.time.startTimeFriendly}}<br/>-->
+        <!--title: {{session.title}}<br/>-->
+        <!--workshop: {{ session.workshop }} <br/>-->
+        <!--startTime: {{ session.startTime }}<br/>-->
+        <!--sessionTimeDateTime: {{ session.sessionTimeDateTime }}<br/>-->
+        <!--sessionTrackName: {{ session.sessionTrackName }}<br/>-->
+        <!--sessionUrl: {{ session.sessionUrl }}<br/>-->
+        <!--speakersNamesCsv: {{session.speakersNamesCsv}}<br/>-->
+        <!--speakersShort: {{session.speakersShort}}<br/>-->
+        <!--descriptionShort: {{ session.descriptionShort }}<br/>-->
+        <!--description: {{ session.description }}<br/>-->
+        <!--<hr/>-->
+    <!--</li>-->
+<!--</ul>-->
 
 
 <!--<ul class="sessions">-->
