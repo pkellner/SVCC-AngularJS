@@ -104,6 +104,10 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
 
             this.sessionOverviewTrs.push(sessionOverviewTds);
         }
+
+        debugger;
+
+
         // chop sessionOverviewTds to get rid of empty rows
         if (this.sessionOverviewTrs && this.sessionOverviewTrs.length > 0) {
             // build list of tracks that actually have sessions

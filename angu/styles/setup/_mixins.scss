@@ -9,8 +9,9 @@
 
 @mixin font-smoothing($value: on) {
     @if $value == on {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        // COMMENTED BY PETER KELLNER WAITING NICOLAS FEEDBACK 5/16/2015
+        //-webkit-font-smoothing: antialiased;
+        //-moz-osx-font-smoothing: grayscale;
     }
     @else {
         -webkit-font-smoothing: subpixel-antialiased;
