@@ -6,7 +6,7 @@
     "description": "9:00 AM to 10:30 AM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Monday",
-    "startTimeFriendlyTime": "9:00 AM ",
+    "startTimeFriendlyTime": "9:00 AM",
     "id": 65
   },
   {
@@ -16,7 +16,7 @@
     "description": "11:00 AM to Noon",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Monday",
-    "startTimeFriendlyTime": "11:00 AM ",
+    "startTimeFriendlyTime": "11:00 AM",
     "id": 66
   },
   {
@@ -26,7 +26,7 @@
     "description": "1:00 PM to 1:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Monday",
-    "startTimeFriendlyTime": "1:00 PM ",
+    "startTimeFriendlyTime": "1:00 PM",
     "id": 67
   },
   {
@@ -36,7 +36,7 @@
     "description": "1:30 PM to 2:00 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Monday",
-    "startTimeFriendlyTime": "1:30 PM ",
+    "startTimeFriendlyTime": "1:30 PM",
     "id": 68
   },
   {
@@ -46,7 +46,7 @@
     "description": "2:00 PM to 2:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Monday",
-    "startTimeFriendlyTime": "2:00 PM ",
+    "startTimeFriendlyTime": "2:00 PM",
     "id": 73
   },
   {
@@ -56,7 +56,7 @@
     "description": "3:00 PM to 3:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Monday",
-    "startTimeFriendlyTime": "3:00 PM ",
+    "startTimeFriendlyTime": "3:00 PM",
     "id": 78
   },
   {
@@ -66,7 +66,7 @@
     "description": "3:30 to 4:00",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Monday",
-    "startTimeFriendlyTime": "3:30 PM ",
+    "startTimeFriendlyTime": "3:30 PM",
     "id": 79
   },
   {
@@ -76,7 +76,7 @@
     "description": "4:00 PM to 4:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Monday",
-    "startTimeFriendlyTime": "4:00 PM ",
+    "startTimeFriendlyTime": "4:00 PM",
     "id": 80
   },
   {
@@ -86,7 +86,7 @@
     "description": "4:30 PM to 5:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Monday",
-    "startTimeFriendlyTime": "4:30 PM ",
+    "startTimeFriendlyTime": "4:30 PM",
     "id": 81
   },
   {
@@ -96,7 +96,7 @@
     "description": "9:00 AM to 10:00 AM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
-    "startTimeFriendlyTime": "9:00 AM ",
+    "startTimeFriendlyTime": "9:00 AM",
     "id": 82
   },
   {
@@ -106,7 +106,7 @@
     "description": "10:30 AM to 11:00 AM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
-    "startTimeFriendlyTime": "10:30 AM ",
+    "startTimeFriendlyTime": "10:30 AM",
     "id": 83
   },
   {
@@ -116,7 +116,7 @@
     "description": "11:00 AM to Noon",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
-    "startTimeFriendlyTime": "11:00 AM ",
+    "startTimeFriendlyTime": "11:00 AM",
     "id": 84
   },
   {
@@ -126,7 +126,7 @@
     "description": "1:00 PM to 1:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
-    "startTimeFriendlyTime": "1:00 PM ",
+    "startTimeFriendlyTime": "1:00 PM",
     "id": 85
   },
   {
@@ -136,7 +136,7 @@
     "description": "1:30 PM to 2:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
-    "startTimeFriendlyTime": "1:30 PM ",
+    "startTimeFriendlyTime": "1:30 PM",
     "id": 86
   },
   {
@@ -146,7 +146,7 @@
     "description": "3:00 PM to 3:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
-    "startTimeFriendlyTime": "3:00 PM ",
+    "startTimeFriendlyTime": "3:00 PM",
     "id": 87
   },
   {
@@ -156,7 +156,7 @@
     "description": "3:30 PM to 4:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
-    "startTimeFriendlyTime": "3:30 PM ",
+    "startTimeFriendlyTime": "3:30 PM",
     "id": 88
   },
   {
@@ -166,7 +166,7 @@
     "description": "4:30 PM to 5:30 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
-    "startTimeFriendlyTime": "4:30 PM ",
+    "startTimeFriendlyTime": "4:30 PM",
     "id": 89
   },
   {
@@ -176,7 +176,7 @@
     "description": "6:30 PM to 9:00 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
-    "startTimeFriendlyTime": "6:30 PM ",
+    "startTimeFriendlyTime": "6:30 PM",
     "id": 90
   },
   {
@@ -186,7 +186,7 @@
     "description": "9:00 AM to 4:00 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Wednesday",
-    "startTimeFriendlyTime": "9:00 AM ",
+    "startTimeFriendlyTime": "9:00 AM",
     "id": 91
   },
   {
@@ -196,7 +196,7 @@
     "description": "9:00 AM to 5:00 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Thursday",
-    "startTimeFriendlyTime": "9:00 AM ",
+    "startTimeFriendlyTime": "9:00 AM",
     "id": 92
   }
 ]

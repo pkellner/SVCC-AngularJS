@@ -5,7 +5,6 @@
   <!--<h2 class="type&#45;&#45;lead">The program (preliminary)</h2>-->
 
 
-  <span>OVERVIEW</span>
 
   <div class="separator">
     <div class="separator--item">
@@ -14,22 +13,66 @@
     </div>
   </div>
 
-  <div class="">
-    <ul class="list--radio list--centered list--horizontal">
-      <li>
-        <div class="radio">
-          <input type="radio" name="check" id="radio-all-tracks" checked ng-model="list.track">
-          <label for="radio-all-tracks">All rooms</label>
-        </div>
-      </li>
-      <li ng-repeat="track in list.tracks">
-        <div class="radio">
-          <input type="radio" id="radio-track-{{$index}}" ng-model="list.track" ng-value="track">
-          <label for="radio-track-{{$index}}">{{track.named}}</label>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <!--<div class="">-->
+    <!--<ul class="list&#45;&#45;radio list&#45;&#45;centered list&#45;&#45;horizontal">-->
+      <!--<li>-->
+        <!--<div class="radio">-->
+          <!--<input type="radio" name="check" id="radio-all-tracks" checked ng-model="list.track">-->
+          <!--<label for="radio-all-tracks">All rooms</label>-->
+        <!--</div>-->
+      <!--</li>-->
+      <!--<li ng-repeat="track in list.tracks">-->
+        <!--<div class="radio">-->
+          <!--<input type="radio" id="radio-track-{{$index}}" ng-model="list.track" ng-value="track">-->
+          <!--<label for="radio-track-{{$index}}">{{track.named}}</label>-->
+        <!--</div>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+
+  <table class="table table-cal table-striped table-fixed hidden-xs">
+    <thead>
+    <tr>
+      <td></td>
+      <td ng-repeat="(key,value) in list.tracks">{{value.named}}</td>
+    </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(key,value) in list.sessionOverviewTrs">
+        <td ng-repeat="tds in value track by $index" rowspan="{{tds.rowspan}}" class="{{tds.colorClass}}"     >
+
+
+
+            <span ng-show="$index == 0">
+              {{tds}}
+            </span>
+
+           <span ng-show="$index != 0">
+              <div wh class="cal-entry" class="cal-entry--blue"  >
+                <h3 class="cal-entry-title">{{ tds.title}}</h3>
+                <p class="cal-entry-description">{{ tds.description }}</p>
+                <p class="cal-entry-speakers">{{tds.speakerCsv}}</p>
+                <p class="cal-entry-time">8:00 AM - 9:30 AM</p>
+
+                <!--<div class="cal-entry-tooltip">-->
+                  <!--<p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>-->
+                <!--</div>-->
+              </div>
+
+            </span>
+
+
+
+
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
 
   <table class="table table-cal table-striped table-fixed hidden-xs">
     <thead>
@@ -42,7 +85,7 @@
       <tr>
         <td>8:00 AM</td>
         <td rowspan="3" class="cal-entry--blue">
-          <article class="cal-entry">
+          <come wh class="cal-entry">
             <h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>
             <p class="cal-entry-description">Angular 2 Roadmap Update</p>
             <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
@@ -51,7 +94,7 @@
             <div class="cal-entry-tooltip">
               <p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>
             </div>
-          </article>
+          </come>
         </td>
         <td></td>
         <td></td>
@@ -63,13 +106,13 @@
         <td></td>
         <td rowspan="2" class="cal-entry--red">
           <article class="cal-entry">
-            <h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>
+            <h3 class="cal-entry-title">Angular 2xx Roadmap Update</h3>
             <p class="cal-entry-description">Angular 2 Roadmap Update</p>
             <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
             <p class="cal-entry-time">8:00 AM - 9:30 AM</p>
 
             <div class="cal-entry-tooltip">
-              <p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>
+              <p class="cal-entry-tooltip-text">Angular 2xx Roadmap Update</p>
             </div>
           </article>
         </td>
@@ -80,7 +123,7 @@
         <td>9:00 AM</td>
         <td class="cal-entry--green">
           <article class="cal-entry">
-            <h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>
+            <h3 class="cal-entry-title">Angular 2xxxxxxxx Roadmap Update</h3>
             <p class="cal-entry-description">Angular 2 Roadmap Update</p>
             <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
             <p class="cal-entry-time">8:00 AM - 9:30 AM</p>
@@ -97,21 +140,65 @@
       </tr>
       <tr>
         <td>10:00 AM</td>
+        <td rowspan="4" class="cal-entry--blue">
+          <come wh class="cal-entry">
+            <h3 class="cal-entry-title">Angular 2 Roadmap Update</h3>
+            <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+            <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+            <p class="cal-entry-time">8:00 AM - 10:00 AM</p>
+
+            <div class="cal-entry-tooltip">
+              <p class="cal-entry-tooltip-text">Angular 2 Roadmap Update</p>
+            </div>
+          </come>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
+
+      <tr>
+
+        <td>10:00 AM</td>
+        <td></td>
+        <td rowspan="1" class="cal-entry--red">
+          <article class="cal-entry">
+            <h3 class="cal-entry-title">Angular 2xx Roadmap Update</h3>
+            <p class="cal-entry-description">Angular 2 Roadmap Update</p>
+            <p class="cal-entry-speakers">Igor Minar,Brad Green,Misko Hevery</p>
+            <p class="cal-entry-time">10:00AM to 10:30AM</p>
+
+            <div class="cal-entry-tooltip">
+              <p class="cal-entry-tooltip-text">Angular 2xx Roadmap Update</p>
+            </div>
+          </article>
+        </td>
+        <td></td>
+      </tr>
+
+
+
+
       <tr>
         <td>10:30 AM</td>
       </tr>
     </tbody>
   </table>
 
-  <ul class="visible-xs">
+
+
+
+
+
+
+  <ul class="visible-xsx">
     <li ng-repeat="session in (filtered = (list.sessions | filter:list.filter))">
       <article class="cal-entry">
         <h3 class="cal-entry-title">{{session.title}}</h3>
         <p class="cal-entry-speakers">{{session.speakersShort}}</p>
         <p class="cal-entry-time">{{ session.startTime }}</p>
       </article>
-      <!-- startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>
+      startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>
       sessionMinutes: {{session.time.sessionMinutes}}<br/>
       startTimeFriendlyTime: {{session.time.startTimeFriendlyTime}}<br/>
       startTimeFriendly: {{session.time.startTimeFriendly}}<br/>
@@ -124,7 +211,7 @@
       speakersNamesCsv: {{session.speakersNamesCsv}}<br/>
       speakersShort: {{session.speakersShort}}<br/>
       descriptionShort: {{ session.descriptionShort }}<br/>
-      description: {{ session.description }}<br/> -->
+      description: {{ session.description }}<br/>
       <hr/>
     </li>
   </ul>
@@ -141,4 +228,51 @@
     <!--</session-list-item>-->
   <!--</ul>-->
 
+</div>
+
+
+<div id="sponsors" class="nav--section container">
+  <div class="separator">
+    <span class="separator--icon icon-heart"></span>
+  </div>
+
+  <h2 class="type--lead">Our sponsors</h2>
+
+  <ul class="sponsor--list">
+    <li class="sponsor sponsor--premiere">
+      <a href="http://rangle.io/"><img class="sponsor--img" src="images/Rangleio-logo-RGB.jpg" alt=""></a>
+    </li>
+  </ul>
+
+  <!--<ul class="sponsor&#45;&#45;list">-->
+    <!--<li class="sponsor sponsor&#45;&#45;gold">-->
+      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+    <!--</li>-->
+    <!--<li class="sponsor sponsor&#45;&#45;gold">-->
+      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+    <!--</li>-->
+  <!--</ul>-->
+
+  <!--<ul class="sponsor&#45;&#45;list">-->
+    <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+    <!--</li>-->
+    <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+    <!--</li>-->
+    <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+    <!--</li>-->
+    <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+    <!--</li>-->
+    <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+    <!--</li>-->
+  <!--</ul>-->
+
+  <div class="text-center">
+    <button class="btn btn-primary btn-lg">Become a sponsor</button>
+  </div>
+</div>
 </div>
