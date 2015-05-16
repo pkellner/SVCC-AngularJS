@@ -81,7 +81,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                             colorClass = "cal-entry--green"
                         }
 
-
                         sessionOverviewTds.push({
                             title: sessionFound.title,
                             description: sessionFound.description,
@@ -92,7 +91,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                             startTimeFriendlyTime: sessionFound.time.startTimeFriendlyTime,
                             colorClass: colorClass,
                             speakerCsv: sessionFound.speakersNamesCsv,
-                            trackName: sessionFound.sessionTrackName
+                            trackName: sessionFound.sessionTrackName,
+                            sessionUrl: sessionFound.sessionUrl
                         });
                     }
                     else {
@@ -104,8 +104,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
 
             this.sessionOverviewTrs.push(sessionOverviewTds);
         }
-
-        debugger;
 
 
         // chop sessionOverviewTds to get rid of empty rows
