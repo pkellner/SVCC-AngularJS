@@ -63,6 +63,7 @@ $tile-gutter: 10px;
 
   .type--lead {
     font-size: 24px;
+    @include font-smoothing(off);
 
     strong {
       font-size: 30px;

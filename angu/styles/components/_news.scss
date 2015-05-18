@@ -33,9 +33,12 @@
     }
 
     &--title {
+      display: block;
+      font-size: inherit;
       font-weight: 600;
       color: $brand-primary;
       margin: 0;
+      text-shadow: none;
     }
 
     &--content {

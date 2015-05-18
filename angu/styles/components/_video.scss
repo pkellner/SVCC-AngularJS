@@ -3,6 +3,11 @@
     border: 2px solid $gray-table;
     padding: 10px;
     margin-bottom: 7px;
+
+    &--title {
+      margin-bottom: 5px;
+      font-size: inherit;
+    }
   }
 
   &--list {

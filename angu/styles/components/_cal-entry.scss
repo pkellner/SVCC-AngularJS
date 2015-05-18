@@ -20,8 +20,8 @@
 
   &-title {
     @include font-smoothing(off);
-    font-size: 15px;
-    margin: 0 0 5px;
+    font-size: inherit;
+    margin: 0 0 10px;
     padding-right: 110px;
 
     @include respond-to(tablet) {
