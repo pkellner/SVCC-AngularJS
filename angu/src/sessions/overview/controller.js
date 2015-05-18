@@ -75,7 +75,7 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                     sessionOverviewTds.push("");
                 } else {
                     if (sessionFound.time.startTimeFriendlyDay == selectedDay) {
-                        console.log("     startTimeFriendlyDay:" + sessionFound.time.startTimeFriendlyDay + ":" + sessionFound.time.sessionMinutes);
+                        //console.log("     startTimeFriendlyDay:" + sessionFound.time.startTimeFriendlyDay + ":" + sessionFound.time.sessionMinutes);
                         let colorClass = "cal-entry--blue";
                         if (sessionFound.keyNote === true) {
                             colorClass = "cal-entry--green"
@@ -149,6 +149,11 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                     trsNew.push(trs[colToInclude]);
                 }
                 this.sessionOverviewTrsNew.push(trsNew);
+            }
+
+            console.log('sessionOverviewTrs.length: ' + this.sessionOverviewTrs.length);
+            for (let k=0;k<this.sessionOverviewTrs.length;k++) {
+                console.log('sessionOverviewTrs[' + k + '].length: ' + this.sessionOverviewTrs[k].length + ' time: ' + this.sessionOverviewTrs[k][0]);
             }
 
 
