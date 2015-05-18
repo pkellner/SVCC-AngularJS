@@ -48,32 +48,34 @@
         </tbody>
     </table>
 
-    <ul class="visible-xsx">
-    <li ng-repeat="session in (filtered = (list.sessions | filter:list.filter))">
-        <div class="cal-entry">
-            <h3 class="cal-entry-title"><a href="{{session.sessionUrl}}" target="_blank" >{{session.title}}</a></h3>
-            <p class="cal-entry-description">{{session.descriptionShort}}</p>
-            <p class="cal-entry-speakers">{{session.speakersShort}}</p>
-            <p class="cal-entry-time">{{ session.startTime }}</p>
-        </div>
-        <!-- startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>
-        sessionTimeDescription: {{session.time.description}}<br/>
-        sessionMinutes: {{session.time.sessionMinutes}}<br/>
-        startTimeFriendlyTime: {{session.time.startTimeFriendlyTime}}<br/>
-        startTimeFriendly: {{session.time.startTimeFriendly}}<br/>
-        title: {{session.title}}<br/>
-        workshop: {{ session.workshop }} <br/>
-        startTime: {{ session.startTime }}<br/>
-        sessionTimeDateTime: {{ session.sessionTimeDateTime }}<br/>
-        sessionTrackName: {{ session.sessionTrackName }}<br/>
-        sessionUrl: {{ session.sessionUrl }}<br/>
-        speakersNamesCsv: {{session.speakersNamesCsv}}<br/>
-        speakersShort: {{session.speakersShort}}<br/>
-        descriptionShort: {{ session.descriptionShort }}<br/>
-        description: {{ session.description }}<br/> -->
-        <hr/>
-    </li>
-</ul>
+    <div class="visible-xsx">
+        <h3>Room 1</h3>
+        <ul>
+            <li ng-repeat="session in (filtered = (list.sessions | filter:list.filter))">
+                <div class="cal-entry">
+                    <h3 class="cal-entry-title"><a href="{{session.sessionUrl}}" target="_blank" >{{session.title}}</a></h3>
+                    <p class="cal-entry-description">{{session.descriptionShort}}</p>
+                    <p class="cal-entry-speakers">{{session.speakersShort}}</p>
+                    <p class="cal-entry-time">{{ session.startTime }}</p>
+                </div>
+                <!-- startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>
+                sessionTimeDescription: {{session.time.description}}<br/>
+                sessionMinutes: {{session.time.sessionMinutes}}<br/>
+                startTimeFriendlyTime: {{session.time.startTimeFriendlyTime}}<br/>
+                startTimeFriendly: {{session.time.startTimeFriendly}}<br/>
+                title: {{session.title}}<br/>
+                workshop: {{ session.workshop }} <br/>
+                startTime: {{ session.startTime }}<br/>
+                sessionTimeDateTime: {{ session.sessionTimeDateTime }}<br/>
+                sessionTrackName: {{ session.sessionTrackName }}<br/>
+                sessionUrl: {{ session.sessionUrl }}<br/>
+                speakersNamesCsv: {{session.speakersNamesCsv}}<br/>
+                speakersShort: {{session.speakersShort}}<br/>
+                descriptionShort: {{ session.descriptionShort }}<br/>
+                description: {{ session.description }}<br/> -->
+            </li>
+        </ul>
+    </div>
 </div>
 
 <div id="sponsors" class="nav--section container">
@@ -83,11 +85,11 @@
 
 
     <h2 class="type--lead">Premiere Sponsor</h2>
-    <ul class="sponsor--list">
-        <li class="sponsor sponsor--premiere">
-            <a href="http://rangle.io/"><img class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg" alt=""></a>
-        </li>
-    </ul>
+        <ul class="sponsor--list">
+            <li class="sponsor sponsor--premiere">
+                <a href="http://rangle.io/"><img class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg" alt=""></a>
+            </li>
+        </ul>
 
     <!--<ul class="sponsor&#45;&#45;list">-->
     <!--<li class="sponsor sponsor&#45;&#45;gold">-->
