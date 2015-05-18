@@ -17,6 +17,7 @@
 
   &--list {
     @extend %clearfix;
+    @include font-smoothing(on);
     display: none;
     float: left;
     margin: 0;
@@ -229,6 +230,7 @@
 
     &--list {
       & > li {
+        display: block;
         line-height: 1;
         border-bottom: 1px solid #d8d8d8;
 

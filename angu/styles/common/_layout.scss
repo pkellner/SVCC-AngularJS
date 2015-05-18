@@ -1,6 +1,7 @@
 body {
-  @include font-smoothing(on);
+  @include font-smoothing(off);
   font-weight: lighter;
+  font-size: 16px;
   background: #fff;
 }
 

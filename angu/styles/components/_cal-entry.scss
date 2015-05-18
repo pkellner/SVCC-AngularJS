@@ -19,6 +19,7 @@
   }
 
   &-title {
+    @include font-smoothing(off);
     font-size: 15px;
     margin: 0 0 5px;
     padding-right: 110px;
