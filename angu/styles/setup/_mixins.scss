@@ -70,12 +70,15 @@
   background-color: $value;
 
   .cal-entry-tooltip {
+    background: darken($value, 10%);
+    box-shadow: 0 0 0 6px rgba($black, 0.5);
+
     &:before {
       border-top-color: $value;
     }
 
-    &-text {
-      background: $value;
-    }
+    // &-text {
+    //   background: $value;
+    // }
   }
 }

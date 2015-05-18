@@ -12,36 +12,65 @@
   }
 
   &-title {
-    font-size: inherit;
-    margin: 0;
+    font-size: 15px;
+    margin: 0 0 5px;
+    padding-right: 110px;
+
+    @include respond-to(tablet) {
+      padding-right: 0;
+    }
+
+    a {
+      color: $black;
+
+      @include respond-to(tablet) {
+        color: $white;
+      }
+    }
   }
 
   &-description {
     margin: 0;
+    line-height: 1.4;
   }
 
   &-speakers {
-    margin: 0;
+    margin: 10px 0;
+    font-weight: 400;
   }
 
   &-time {
-    margin: 15px 0;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    margin: 0;
+    line-height: 1;
     font-weight: 500;
+
+    @include respond-to(tablet) {
+      position: static;
+      margin: 15px 0;
+    }
+
   }
 
   &-tooltip {
     position: absolute;
-    bottom: 100%;
-    left: 0;
-    right: 0;
-    padding-bottom: 15px;
+    z-index: 2;
+    top: 50%;
+    left: -20px;
+    right: -20px;
+    // padding-bottom: 15px;
+    padding: 15px 10px;
+    margin: 0;
     visibility: hidden;
     opacity: 0;
+    transform: translateY(-50%);
     transition: visibility .2s ease-out,
                 opacity .2s ease-out;
 
     &:before {
-      content: "";
+      // content: "";
       position: absolute;
       bottom: 15px - 7px;
       left: 50%;
@@ -52,8 +81,9 @@
     }
 
     &-text {
-      padding: 15px 10px;
+      // padding: 15px 10px;
       margin: 0;
+      font-size: 95%;
     }
   }
 
