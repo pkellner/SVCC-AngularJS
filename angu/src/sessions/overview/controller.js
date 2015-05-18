@@ -5,6 +5,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
     const scheduled = sessions.filter(s => s.time);
     const unscheduled = sessions.filter(s => !s.time);
 
+
+
     this.sessions = scheduled.concat(unscheduled);
     this.days = days;
     this.day = days[0];
@@ -37,6 +39,7 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
 
 
     var timesArray = [
+        '8:00 AM', '8:30 AM',
         '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
         '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM',
         '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'
@@ -47,7 +50,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
     //];
 
 
-    this.generateTrs = function (selectedDay) {
+    this.generateTrs = function (selDay) {
+
         this.sessionOverviewTrs = [];
         for (let i = 0; i < timesArray.length; i++) {
             var timex = timesArray[i];
@@ -65,7 +69,7 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
 
                     if (sessionx.time != null && timex === sessionx.time.startTimeFriendlyTime &&
                         trackx.named === sessionx.sessionTrackName &&
-                        sessionx.time.startTimeFriendlyDay === selectedDay) {
+                        sessionx.time.startTimeFriendlyDay === selDay) {
                         //console.log('      FOUND day:' + sessionx.time.startTimeFriendlyDay + " track:" + trackx.named);
                         sessionFound = sessionx;
                     }
@@ -74,7 +78,7 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                 if (sessionFound === null) {
                     sessionOverviewTds.push("");
                 } else {
-                    if (sessionFound.time.startTimeFriendlyDay == selectedDay) {
+                    if (sessionFound.time.startTimeFriendlyDay == selDay) {
                         //console.log("     startTimeFriendlyDay:" + sessionFound.time.startTimeFriendlyDay + ":" + sessionFound.time.sessionMinutes);
                         let colorClass = "cal-entry--blue";
                         if (sessionFound.keyNote === true) {
@@ -135,9 +139,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                 }
             }
 
-
-
-
             // just include the columns that have values
             this.sessionOverviewTrsNew = [];
             for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
@@ -151,25 +152,20 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                 this.sessionOverviewTrsNew.push(trsNew);
             }
 
-            console.log('sessionOverviewTrs.length: ' + this.sessionOverviewTrs.length);
+            //console.log('sessionOverviewTrs.length: ' + this.sessionOverviewTrs.length);
             for (let k=0;k<this.sessionOverviewTrs.length;k++) {
-                console.log('sessionOverviewTrs[' + k + '].length: ' + this.sessionOverviewTrs[k].length + ' time: ' + this.sessionOverviewTrs[k][0]);
+                //console.log('sessionOverviewTrs[' + k + '].length: ' + this.sessionOverviewTrs[k].length + ' time: ' + this.sessionOverviewTrs[k][0]);
             }
 
-
             this.sessionOverviewTrs = this.sessionOverviewTrsNew;
-
-
         }
 
 
     };
 
-    // not sure why this does not make default day tuesday
-    this.selectedDay = "Tuesday";
-    this.generateTrs();
-
-
+    let startDay = "Monday";
+    this.selectedDay = startDay;  // sets radio button to initial state
+    this.generateTrs(startDay); // default to Monday, need to fix to default to current day if June 21-25
 }
 SessionOverviewController.$inject = ['sessions', 'days', 'tracks', 'Speaker', 'times'];
 

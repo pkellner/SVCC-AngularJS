@@ -5,14 +5,25 @@
     <!--{{ list.selectedDay.dayOfWeek }}-->
     <!--</div>-->
 
+    <!--<ul class="list&#45;&#45;radio list&#45;&#45;centered list&#45;&#45;horizontal">-->
+        <!--<li ng-repeat="day in list.justDays">-->
+            <!--<div class="radio radio-tab">-->
+                <!--<input type="radio" name="day-selected-radiobutton" ng-value="day" ng-model="list.selectedDay" ng-change="list.generateTrs(list.selectedDay.dayOfWeek)" checked id="dow-{{$index}}"/>-->
+                <!--<label class="radio&#45;&#45;tab" for="dow-{{$index}}">{{day.dayOfWeek}}</label>-->
+            <!--</div>-->
+        <!--</li>-->
+    <!--</ul>-->
+
+
     <ul class="list--radio list--centered list--horizontal">
         <li ng-repeat="day in list.justDays">
             <div class="radio radio-tab">
-                <input type="radio" name="day-selected-radiobutton" ng-value="day" ng-model="list.selectedDay" ng-change="list.generateTrs(list.selectedDay.dayOfWeek)" checked id="dow-{{$index}}"/>
+                <input type="radio" name="day-selected-radiobutton" ng-value="day.dayOfWeek" ng-model="list.selectedDay"   ng-change="list.generateTrs(day.dayOfWeek)"  id="dow-{{$index}}"/>
                 <label class="radio--tab" for="dow-{{$index}}">{{day.dayOfWeek}}</label>
             </div>
         </li>
     </ul>
+
 </div>
 
 <div class="container">
@@ -24,8 +35,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="(key,value) in list.sessionOverviewTrs">
-                <td ng-repeat="tds in value track by $index" rowspan="{{tds.rowspan}}" class="{{tds.colorClass}}">
+            <tr ng-repeat="session in list.sessionOverviewTrs">
+                <td ng-repeat="tds in session track by $index" rowspan="{{tds.rowspan}}" class="{{tds.colorClass}}">
                     <span ng-show="$index == 0">
                       {{tds}}
                     </span>
@@ -48,10 +59,22 @@
         </tbody>
     </table>
 
+
+    <!--Below is mobile version-->
     <div class="visible-xs">
-        <h3>Room 1</h3>
+
         <ul>
-            <li ng-repeat="session in (filtered = (list.sessions | filter:list.filter))">
+
+
+
+
+
+
+
+
+
+
+
                 <div class="cal-entry">
                     <h3 class="cal-entry-title"><a href="{{session.sessionUrl}}" target="_blank" >{{session.title}}</a></h3>
                     <p class="cal-entry-description">{{session.descriptionShort}}</p>
@@ -76,6 +99,37 @@
             </li>
         </ul>
     </div>
+
+
+
+    <!--<div class="visible-xs">-->
+        <!--<h3>Room 1</h3>-->
+        <!--<ul>-->
+            <!--<li ng-repeat="session in (filtered = (list.sessions | filter:list.filter))">-->
+                <!--<div class="cal-entry">-->
+                    <!--<h3 class="cal-entry-title"><a href="{{session.sessionUrl}}" target="_blank" >{{session.title}}</a></h3>-->
+                    <!--<p class="cal-entry-description">{{session.descriptionShort}}</p>-->
+                    <!--<p class="cal-entry-speakers">{{session.speakersShort}}</p>-->
+                    <!--<p class="cal-entry-time">{{ session.startTime }}</p>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; startTimeFriendlyDay: {{session.time.startTimeFriendlyDay}}<br/>-->
+                <!--sessionTimeDescription: {{session.time.description}}<br/>-->
+                <!--sessionMinutes: {{session.time.sessionMinutes}}<br/>-->
+                <!--startTimeFriendlyTime: {{session.time.startTimeFriendlyTime}}<br/>-->
+                <!--startTimeFriendly: {{session.time.startTimeFriendly}}<br/>-->
+                <!--title: {{session.title}}<br/>-->
+                <!--workshop: {{ session.workshop }} <br/>-->
+                <!--startTime: {{ session.startTime }}<br/>-->
+                <!--sessionTimeDateTime: {{ session.sessionTimeDateTime }}<br/>-->
+                <!--sessionTrackName: {{ session.sessionTrackName }}<br/>-->
+                <!--sessionUrl: {{ session.sessionUrl }}<br/>-->
+                <!--speakersNamesCsv: {{session.speakersNamesCsv}}<br/>-->
+                <!--speakersShort: {{session.speakersShort}}<br/>-->
+                <!--descriptionShort: {{ session.descriptionShort }}<br/>-->
+                <!--description: {{ session.description }}<br/> &ndash;&gt;-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
 </div>
 
 <div id="sponsors" class="nav--section container">
