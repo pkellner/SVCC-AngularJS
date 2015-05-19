@@ -76,6 +76,12 @@ function parse ($provide, CONFIG) {
         type: Boolean
       }
     },
+    overview: {
+      show: {
+        key: 'showOverviewOnSchedule',
+        type: Boolean
+      }
+    },
     pricing: {
       show: {
         key: 'showPricing',

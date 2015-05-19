@@ -1,6 +1,6 @@
 'use strict';
 
-function SessionOverviewController(sessions, days, tracks, Speaker, times) {
+function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) {
 
     const scheduled = sessions.filter(s => s.time);
     const unscheduled = sessions.filter(s => !s.time);
@@ -118,6 +118,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
         }
 
 
+
+
         // chop sessionOverviewTds to get rid of empty rows
         if (this.sessionOverviewTrs && this.sessionOverviewTrs.length > 0) {
             // build list of tracks that actually have sessions
@@ -162,6 +164,10 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
                 //console.log('sessionOverviewTrs[' + k + '].length: ' + this.sessionOverviewTrs[k].length + ' time: ' + this.sessionOverviewTrs[k][0]);
             }
             this.sessionOverviewTrs = this.sessionOverviewTrsNew;
+
+            for (let i=0;i<this.sessionOverviewTrs.length;i++) {
+                $sce.trustAsHtml(this.sessionOverviewTrs[i].description);
+            }
 
             // now make a mobile version of the list that is just one long column versus 2d
             // that is, for each day:
@@ -221,6 +227,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times) {
     this.selectedDay = startDay;  // sets radio button to initial state
     this.generateTrs(startDay); // default to Monday, need to fix to default to current day if June 21-25
 }
-SessionOverviewController.$inject = ['sessions', 'days', 'tracks', 'Speaker', 'times'];
+SessionOverviewController.$inject = ['sessions', 'days', 'tracks', 'Speaker', 'times','$sce'];
 
 export default SessionOverviewController;

@@ -44,7 +44,7 @@
 
                    <span ng-show="$index != 0">
                       <div wh class="cal-entry" class="cal-entry--blue" ng-show="tds.length != 0">
-                          <h3 class="cal-entry-title"><a href="{{tds.sessionUrl}}" target="_blank">{{tds.title}}</a>
+                          <h3 class="cal-entry-title"><a href="/ng{{tds.sessionUrl}}" target="_blank">{{tds.title}}</a>
                           </h3>
 
                           <p class="cal-entry-description">{{tds.descriptionShort}}</p>
@@ -53,12 +53,12 @@
 
                           <p class="cal-entry-time">{{tds.sessionTimeDescription}}</p>
 
-                          <div class="cal-entry-tooltip">
-                              <h3 class="cal-entry-title"><a href="{{tds.sessionUrl}}" target="_blank">{{tds.title}}</a>
-                              </h3>
+                          <!--<div class="cal-entry-tooltip">-->
+                              <!--<h3 class="cal-entry-title"><a href="{{tds.sessionUrl}}" target="_blank">{{tds.title}}</a>-->
+                              <!--</h3>-->
 
-                              <p class="cal-entry-tooltip-text">{{tds.description}}</p>
-                          </div>
+                              <!--<p ng-bind-html="tds.description" class="cal-entry-tooltip-text"></p>-->
+                          <!--</div>-->
                       </div>
                     </span>
             </td>
@@ -74,7 +74,7 @@
                 <ul>
                     <li ng-repeat="session in list.sessionOverviewMobile">
                         <div class="cal-entry" ng-show="session.sessionTrackName === track">
-                            <h3 class="cal-entry-title"><a href="{{session.sessionUrl}}" target="_blank">{{session.title}}</a>
+                            <h3 class="cal-entry-title"><a href="/ng{{session.sessionUrl}}" target="_blank">{{session.title}}</a>
                             </h3>
                             <p class="cal-entry-description">{{session.descriptionShort}}</p>
                             <p class="cal-entry-speakers">{{session.speakersNamesCsv}}</p>
