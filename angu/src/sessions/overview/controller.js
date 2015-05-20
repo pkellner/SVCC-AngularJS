@@ -1,10 +1,9 @@
 'use strict';
 
-function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) {
+function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce) {
 
     const scheduled = sessions.filter(s => s.time);
     const unscheduled = sessions.filter(s => !s.time);
-
 
 
     this.sessions = scheduled.concat(unscheduled);
@@ -71,7 +70,16 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) 
 
 
                 for (let k = 0; k < this.sessions.length; k++) {
+
+
                     let sessionx = this.sessions[k];
+
+                    //console.log("id:" + sessionx.id);
+                    //if (sessionx.id === 4751){
+                    //    sessionx.startTimeFriendlyTime = sessionx.startTimeFriendlyOverride;
+                    //    sessionx.time.startTimeFriendlyTime = sessionx.startTimeFriendlyOverride;
+                    //}
+
                     if (sessionx.time != null) {
                         //console.log(timex + ":" + sessionx.time.startTimeFriendlyTime + "::" + trackx.named + ":" + sessionx.sessionTrackName);
                     }
@@ -94,8 +102,9 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) 
                             colorClass = "cal-entry--green"
                         }
 
-                        //console.log('      Pushing: day:' + sessionFound.time.startTimeFriendlyTime + " track:" + sessionFound.sessionTrackName);
+                        console.log('      Pushing: day:' + sessionFound.time.startTimeFriendlyTime + " track:" + sessionFound.sessionTrackName + " sessionId:"+ sessionFound.id);
                         sessionOverviewTds.push({
+                            id: sessionFound.id,
                             title: sessionFound.title,
                             description: sessionFound.description,
                             descriptionShort: sessionFound.descriptionShort,
@@ -118,8 +127,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) 
         }
 
 
-
-
         // chop sessionOverviewTds to get rid of empty rows
         if (this.sessionOverviewTrs && this.sessionOverviewTrs.length > 0) {
             // build list of tracks that actually have sessions
@@ -140,9 +147,9 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) 
             // now we have track names, let's figure out what columns those are.
             this.trackColumnsValid = [0]; // time is always a valid column
             for (let i = 0; i < this.tracksValid.length; i++) {
-                for (let j=0;j<this.tracks.length;j++){
-                    if (this.tracks[j].named === this.tracksValid[i]){
-                        this.trackColumnsValid.push(j+1); // shift 1 for time column
+                for (let j = 0; j < this.tracks.length; j++) {
+                    if (this.tracks[j].named === this.tracksValid[i]) {
+                        this.trackColumnsValid.push(j + 1); // shift 1 for time column
                         break;
                     }
                 }
@@ -160,12 +167,12 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) 
                 this.sessionOverviewTrsNew.push(trsNew);
             }
             //console.log('sessionOverviewTrs.length: ' + this.sessionOverviewTrs.length);
-            for (let k=0;k<this.sessionOverviewTrs.length;k++) {
+            for (let k = 0; k < this.sessionOverviewTrs.length; k++) {
                 //console.log('sessionOverviewTrs[' + k + '].length: ' + this.sessionOverviewTrs[k].length + ' time: ' + this.sessionOverviewTrs[k][0]);
             }
             this.sessionOverviewTrs = this.sessionOverviewTrsNew;
 
-            for (let i=0;i<this.sessionOverviewTrs.length;i++) {
+            for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
                 $sce.trustAsHtml(this.sessionOverviewTrs[i].description);
             }
 
@@ -180,7 +187,7 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) 
             //     ...
 
             this.sessionOverviewMobile = [];
-            for (let i=0;i<this.sessionOverviewTrs.length;i++) {
+            for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
                 let sessionOverviewTr = this.sessionOverviewTrs[i];
                 let sessionTime = sessionOverviewTr[0]; // each row is for one specific time
 
@@ -191,6 +198,11 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) 
 
                     if (sessionOverviewTrCol && typeof(sessionOverviewTrCol) !== "string") {
                         if (sessionOverviewTrCol.length == undefined) { // must be a session
+
+                            //if (sessionOverviewTrCol.id === 4751) {
+                            //    debugger;
+                            //}
+
                             this.sessionOverviewMobile.push({
                                 sessionTime: sessionTime,
                                 title: sessionOverviewTrCol.title,
@@ -207,6 +219,18 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) 
                     }
                 }
             }
+
+
+            // build list of times we have in list
+            this.sessionTimesFound = [];
+
+            for (let j = 0; j < this.sessionOverviewMobile.length; j++) {
+                let sessionTime = this.sessionOverviewMobile[j].sessionTime;
+                if (this.sessionTimesFound.indexOf(sessionTime) === -1) {
+                    this.sessionTimesFound.push(sessionTime);
+                }
+            }
+
 
             // DEBUGGING OUT ONLY
             //for (let i=0;i<this.tracksValid.length;i++) {
@@ -227,6 +251,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times,$sce) 
     this.selectedDay = startDay;  // sets radio button to initial state
     this.generateTrs(startDay); // default to Monday, need to fix to default to current day if June 21-25
 }
-SessionOverviewController.$inject = ['sessions', 'days', 'tracks', 'Speaker', 'times','$sce'];
+SessionOverviewController.$inject = ['sessions', 'days', 'tracks', 'Speaker', 'times', '$sce'];
 
 export default SessionOverviewController;

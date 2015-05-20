@@ -66,25 +66,53 @@
         </tbody>
     </table>
 
-    <!--Below is mobile version-->
+    <!--Below is mobile version BY TIME-->
     <div class="visible-xs">
         <ul>
-            <li ng-repeat="track in list.tracksValid">
-                <h3>{{track}}</h3>
+            <li ng-repeat="sessionTime in list.sessionTimesFound">
+                <h3 class="type--lead type--color">{{sessionTime}}</h3>
                 <ul>
                     <li ng-repeat="session in list.sessionOverviewMobile">
-                        <div class="cal-entry" ng-show="session.sessionTrackName === track">
+                        <div class="cal-entry" ng-show="session.sessionTime === sessionTime">
                             <h3 class="cal-entry-title"><a href="/ng{{session.sessionUrl}}" target="_blank">{{session.title}}</a>
                             </h3>
                             <p class="cal-entry-description">{{session.descriptionShort}}</p>
                             <p class="cal-entry-speakers">{{session.speakersNamesCsv}}</p>
-                            <p class="cal-entry-time">{{ session.sessionTime }}</p>
+                            <p class="cal-entry-time">{{ session.sessionTrackName }}</p>
+                            
+
                         </div>
                     </li>
                 </ul>
             </li>
         </ul>
     </div>
+
+
+    <!--Below is mobile version BY ROOM-->
+    <!--<div class="visible-xs">-->
+        <!--<ul>-->
+            <!--<li ng-repeat="track in list.tracksValid">-->
+                <!--<h3>{{track}}</h3>-->
+                <!--<ul>-->
+                    <!--<li ng-repeat="session in list.sessionOverviewMobileByRoom">-->
+                        <!--<div class="cal-entry" ng-show="session.sessionTrackName === track">-->
+                            <!--<h3 class="cal-entry-title"><a href="/ng{{session.sessionUrl}}" target="_blank">{{session.title}}</a>-->
+                            <!--</h3>-->
+                            <!--<p class="cal-entry-description">{{session.descriptionShort}}</p>-->
+                            <!--<p class="cal-entry-speakers">{{session.speakersNamesCsv}}</p>-->
+                            <!--<p class="cal-entry-time">{{ session.sessionTime }}</p>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+
+
+
+
 </div>
 
 <div id="sponsors" class="nav--section container">
