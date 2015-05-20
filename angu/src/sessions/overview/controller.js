@@ -144,6 +144,10 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
                 }
             }
 
+            for (let i=0;i<this.tracksValid.length;i++){
+                console.log("tracksValid:" + i + ":" + this.tracksValid[i]);
+            }
+
             // now we have track names, let's figure out what columns those are.
             this.trackColumnsValid = [0]; // time is always a valid column
             for (let i = 0; i < this.tracksValid.length; i++) {
@@ -154,6 +158,12 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
                     }
                 }
             }
+
+            for (let i=0;i<this.trackColumnsValid.length;i++){
+                console.log("trackColumnsValid:" + i + ":" + this.trackColumnsValid[i]);
+            }
+
+
             // just include the columns that have values
             this.sessionOverviewTrsNew = [];
             for (let i = 0; i < this.sessionOverviewTrs.length; i++) {

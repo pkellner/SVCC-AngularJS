@@ -26,5 +26,26 @@
     "visible": true,
     "sequence": "SEQD",
     "id": 65
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Room 5",
+    "visible": true,
+    "sequence": "zzz",
+    "id": 66
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Room 6",
+    "visible": true,
+    "sequence": "zzz",
+    "id": 67
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Room 7",
+    "visible": true,
+    "sequence": "zzz",
+    "id": 68
   }
 ]

@@ -92,7 +92,7 @@
   {
     "startTime": "2015-06-23T09:00:00Z",
     "startTimeFriendly": "Tues 9:00 AM",
-    "sessionMinutes": 60,
+    "sessionMinutes": 30,
     "description": "9:00 AM to 10:00 AM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Tuesday",
@@ -182,7 +182,7 @@
   {
     "startTime": "2015-06-24T09:00:00Z",
     "startTimeFriendly": "Wed 9:00 AM",
-    "sessionMinutes": 480,
+    "sessionMinutes": 420,
     "description": "9:00 AM to 4:00 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Wednesday",
@@ -192,11 +192,21 @@
   {
     "startTime": "2015-06-25T09:00:00Z",
     "startTimeFriendly": "Thur 9:00 AM",
-    "sessionMinutes": 480,
-    "description": "9:00 AM to 5:00 PM",
+    "sessionMinutes": 420,
+    "description": "9:00 AM to 4:00 PM",
     "codeCampYearId": 201,
     "startTimeFriendlyDay": "Thursday",
     "startTimeFriendlyTime": "9:00 AM",
     "id": 92
+  },
+  {
+    "startTime": "2015-06-25T08:00:00Z",
+    "startTimeFriendly": "Thur 8:00 AM",
+    "sessionMinutes": 420,
+    "description": "8:00 AM to 3:00 PM",
+    "codeCampYearId": 201,
+    "startTimeFriendlyDay": "Thursday",
+    "startTimeFriendlyTime": "8:00 AM",
+    "id": 94
   }
 ]
