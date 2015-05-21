@@ -258,6 +258,7 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
     };
 
     let startDay = "Monday";
+    //let startDay = "Thursday";
     this.selectedDay = startDay;  // sets radio button to initial state
     this.generateTrs(startDay); // default to Monday, need to fix to default to current day if June 21-25
 }

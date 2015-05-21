@@ -23,6 +23,11 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
 
     this.homePageVideos = [
         {
+            title: 'Brad Green Talks Directives, Controllers become Components in Angular 2',
+            vimeoId: '128435293',
+            tweet: 'Check Out "Brad Green, Igor Minar and Misko Havery Talk Angular 2" at @AngularU https://angularu.com/ng/session/2015sf/angular-2-roadmap-update @bradlygreen'
+        },
+        {
             title: 'Misko Hevery Talks About Databinding in Angular 2',
             vimeoId: '126991619',
             tweet: 'Check Out "Misko Hevery Talks About Databinding in Angular 2" at @AngularU https://AngularU.com/Video/2015sf/misko-hevery-talks-about-databinding-in-angular-2 @mhevery'
@@ -36,12 +41,8 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
             title: 'Dan Wahlin Giving Us an Idea of What to Expect at Angular U',
             vimeoId: '126281528',
             tweet: 'Check Out "Dan Wahlin Giving Us an Idea of What to Expect at Angular U" at @AngularU https://AngularU.com/Video/2015sf/dan-wahlin-giving-us-an-idea-of-what-to-expect-at-angular-u @danwahlin'
-        },
-        {
-            title: 'Scott Moss Talks About His ECMAScript6 Workshops',
-            vimeoId: '126972966',
-            tweet: 'Check Out "Scott Moss Talks About His ECMAScript6 Workshops" at @AngularU https://AngularU.com/Video/2015sf/scott-moss-talks-about-his-ecmascript6-workshops @scotups'
         }
+
     ];
 
     this.currentVideo = this.homePageVideos[0];
