@@ -45,6 +45,10 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
     ];
 
     //var timesArray = [
+    //    '8:00 AM','9:00 AM'
+    //];
+
+    //var timesArray = [
     //    '9:00 AM', '10:30 AM',
     //    '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM'
     //];
@@ -64,6 +68,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
             var timex = timesArray[i];
             var sessionOverviewTds = [];
             sessionOverviewTds.push(timex);
+
+
             for (let j = 0; j < this.tracks.length; j++) {
                 let trackx = this.tracks[j];
                 let sessionFound = null;
@@ -102,7 +108,7 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
                             colorClass = "cal-entry--green"
                         }
 
-                        console.log('      Pushing: day:' + sessionFound.time.startTimeFriendlyTime + " track:" + sessionFound.sessionTrackName + " sessionId:"+ sessionFound.id);
+                        //console.log('      Pushing: day:' + sessionFound.time.startTimeFriendlyTime + " track:" + sessionFound.sessionTrackName + " sessionId:"+ sessionFound.id);
                         sessionOverviewTds.push({
                             id: sessionFound.id,
                             title: sessionFound.title,
@@ -144,9 +150,9 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
                 }
             }
 
-            for (let i=0;i<this.tracksValid.length;i++){
-                console.log("tracksValid:" + i + ":" + this.tracksValid[i]);
-            }
+            //for (let i=0;i<this.tracksValid.length;i++){
+            //    console.log("tracksValid:" + i + ":" + this.tracksValid[i]);
+            //}
 
             // now we have track names, let's figure out what columns those are.
             this.trackColumnsValid = [0]; // time is always a valid column
@@ -159,23 +165,25 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
                 }
             }
 
-            for (let i=0;i<this.trackColumnsValid.length;i++){
-                console.log("trackColumnsValid:" + i + ":" + this.trackColumnsValid[i]);
-            }
+            //for (let i=0;i<this.trackColumnsValid.length;i++){
+            //    console.log("trackColumnsValid:" + i + ":" + this.trackColumnsValid[i]);
+            //}
 
 
-            // just include the columns that have values
             this.sessionOverviewTrsNew = [];
             for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
                 let trs = this.sessionOverviewTrs[i];
                 let trsNew = [];
-                trsNew.push(trs[0]); // always push time column
-                for (let k = 0; k < this.trackColumnsValid.length; k++) {
-                    var colToInclude = this.trackColumnsValid[k] + 1; // always shift over 1 because time is first column
-                    trsNew.push(trs[colToInclude]);
+                for (let k = 0; k < trs.length; k++) { // go through original array of tracks and just use valid ones
+
+                    // is k in the array this.trackColumnsValid
+                    if (this.trackColumnsValid.indexOf(k) != -1){
+                        trsNew.push(trs[k]);
+                    }
                 }
                 this.sessionOverviewTrsNew.push(trsNew);
             }
+
             //console.log('sessionOverviewTrs.length: ' + this.sessionOverviewTrs.length);
             for (let k = 0; k < this.sessionOverviewTrs.length; k++) {
                 //console.log('sessionOverviewTrs[' + k + '].length: ' + this.sessionOverviewTrs[k].length + ' time: ' + this.sessionOverviewTrs[k][0]);
@@ -257,8 +265,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
 
     };
 
-    let startDay = "Monday";
-    //let startDay = "Thursday";
+    //let startDay = "Monday";
+    let startDay = "Thursday";
     this.selectedDay = startDay;  // sets radio button to initial state
     this.generateTrs(startDay); // default to Monday, need to fix to default to current day if June 21-25
 }
