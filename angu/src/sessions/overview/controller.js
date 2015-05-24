@@ -1,5 +1,6 @@
 'use strict';
 
+
 function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce) {
 
     const scheduled = sessions.filter(s => s.time);
@@ -37,16 +38,20 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
     };
 
 
-    var timesArray = [
-        '8:00 AM', '8:30 AM',
-        '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
-        '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM','3:30 PM',
-        '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'
-    ];
+    //var timesArray = [
+    //    '9:00 AM'
+    //];
 
     //var timesArray = [
-    //    '8:00 AM','9:00 AM'
+    //    '8:00 AM', '8:30 AM',
+    //    '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
+    //    '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM',
+    //    '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'
     //];
+
+    var timesArray = [
+        '8:00 AM','9:00 AM'
+    ];
 
     //var timesArray = [
     //    '9:00 AM', '10:30 AM',
@@ -63,136 +68,89 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
 
     this.generateTrs = function (selDay) {
 
-        this.sessionOverviewTrs = [];
-        for (let i = 0; i < timesArray.length; i++) {
-            var timex = timesArray[i];
-            var sessionOverviewTds = [];
-            sessionOverviewTds.push(timex);
+        // first create a list of sessions that are just for this day
+        let sessionsDay = [];
 
+        // create a list of tracks (times) for this day
+        this.tracksValid = [];
 
-            for (let j = 0; j < this.tracks.length; j++) {
-                let trackx = this.tracks[j];
-                let sessionFound = null;
-
-
-                for (let k = 0; k < this.sessions.length; k++) {
-
-
-                    let sessionx = this.sessions[k];
-
-                    //console.log("id:" + sessionx.id);
-                    //if (sessionx.id === 4751){
-                    //    sessionx.startTimeFriendlyTime = sessionx.startTimeFriendlyOverride;
-                    //    sessionx.time.startTimeFriendlyTime = sessionx.startTimeFriendlyOverride;
-                    //}
-
-                    if (sessionx.time != null) {
-                        //console.log(timex + ":" + sessionx.time.startTimeFriendlyTime + "::" + trackx.named + ":" + sessionx.sessionTrackName);
-                    }
-
-                    if (sessionx.time != null && timex === sessionx.time.startTimeFriendlyTime &&
-                        trackx.named === sessionx.sessionTrackName &&
-                        sessionx.time.startTimeFriendlyDay === selDay) {
-                        //console.log('      FOUND day:' + sessionx.time.startTimeFriendlyDay + " track:" + trackx.named);
-                        sessionFound = sessionx;
-                    }
-                }
-
-                if (sessionFound === null) {
-                    sessionOverviewTds.push("");
-                } else {
-                    if (sessionFound.time.startTimeFriendlyDay == selDay) {
-                        //console.log("        pushing startTimeFriendlyDay:" + sessionFound.time.startTimeFriendlyDay + ":" + sessionFound.sessionTrackName + ":" + sessionFound.time.sessionMinutes);
-                        let colorClass = "cal-entry--blue";
-                        if (sessionFound.keyNote === true) {
-                            colorClass = "cal-entry--green"
-                        }
-
-                        //console.log('      Pushing: day:' + sessionFound.time.startTimeFriendlyTime + " track:" + sessionFound.sessionTrackName + " sessionId:"+ sessionFound.id);
-                        sessionOverviewTds.push({
-                            id: sessionFound.id,
-                            title: sessionFound.title,
-                            description: sessionFound.description,
-                            descriptionShort: sessionFound.descriptionShort,
-                            minutes: sessionFound.time.sessionMinutes,
-                            rowspan: sessionFound.time.sessionMinutes / 30,
-                            sessionTimeDescription: sessionFound.time.description,
-                            startTimeFriendlyTime: sessionFound.time.startTimeFriendlyTime,
-                            colorClass: colorClass,
-                            speakersNamesCsv: sessionFound.speakersNamesCsv,
-                            sessionTrackName: sessionFound.sessionTrackName,
-                            sessionUrl: sessionFound.sessionUrl
-                        });
-                    }
-                    else {
-                        sessionOverviewTds.push("");
-                    }
+        for (let i = 0; i < this.sessions.length; i++) {
+            if (this.sessions[i].time.startTimeFriendlyDay === selDay) {
+                sessionsDay.push(sessions[i]);
+                if (this.tracksValid.indexOf(this.sessions[i].sessionTrackName) === -1) {
+                    this.tracksValid.push(this.sessions[i].sessionTrackName);
                 }
             }
-            this.sessionOverviewTrs.push(sessionOverviewTds);
+        }
+
+        // potentially later sort the tracks by name
+
+
+        var getTrack = function (sessionTrackName, tracks) {
+            for (let i = 0; i < tracks.length; i++) {
+                if (sessionTrackName === tracks[i].named) {
+                    return tracks[i];
+                }
+            }
         }
 
 
-        // chop sessionOverviewTds to get rid of empty rows
-        if (this.sessionOverviewTrs && this.sessionOverviewTrs.length > 0) {
-            // build list of tracks that actually have sessions
-            this.tracksValid = [];
-            for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
-                var tds = this.sessionOverviewTrs[i];
-                if (tds && tds.length > 0) {
-                    for (let j = 0; j < tds.length; j++) {
-                        if (tds[j].length == undefined) {
-                            if (this.tracksValid.indexOf(tds[j].sessionTrackName) === -1) {
-                                this.tracksValid.push(tds[j].sessionTrackName)
-                            }
-                        }
-                    }
-                }
-            }
+        this.sessionOverviewTrs = [];
 
-            //for (let i=0;i<this.tracksValid.length;i++){
-            //    console.log("tracksValid:" + i + ":" + this.tracksValid[i]);
-            //}
+        debugger;
+        for (let i = 0; i < timesArray.length; i++) {
+            let timex = timesArray[i];
+            let sessionOverviewTds = [];
+            sessionOverviewTds.push(timex);
 
-            // now we have track names, let's figure out what columns those are.
-            this.trackColumnsValid = [0]; // time is always a valid column
             for (let i = 0; i < this.tracksValid.length; i++) {
-                for (let j = 0; j < this.tracks.length; j++) {
-                    if (this.tracks[j].named === this.tracksValid[i]) {
-                        this.trackColumnsValid.push(j + 1); // shift 1 for time column
-                        break;
+
+                var trackx = this.tracksValid[i];
+                var sessionFound = null;
+                for (let k = 0; k < sessionsDay.length; k++) {
+                    let sessionx = sessionsDay[k];
+                    if (sessionx.time != null && timex === sessionx.time.startTimeFriendlyTime &&
+                        trackx === sessionx.sessionTrackName) {
+                        //console.log('      FOUND day:' + sessionx.time.startTimeFriendlyDay + " track:" + trackx.named);
+                        sessionFound = sessionx;
                     }
+
                 }
-            }
 
-            //for (let i=0;i<this.trackColumnsValid.length;i++){
-            //    console.log("trackColumnsValid:" + i + ":" + this.trackColumnsValid[i]);
-            //}
+                if (sessionFound === null) {
+                    //sessionOverviewTds.push("");
+                } else {
 
 
-            this.sessionOverviewTrsNew = [];
-            for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
-                let trs = this.sessionOverviewTrs[i];
-                let trsNew = [];
-                for (let k = 0; k < trs.length; k++) { // go through original array of tracks and just use valid ones
-
-                    // is k in the array this.trackColumnsValid
-                    if (this.trackColumnsValid.indexOf(k) != -1){
-                        trsNew.push(trs[k]);
+                    let colorClass = "cal-entry--blue";
+                    if (sessionFound.keyNote === true) {
+                        colorClass = "cal-entry--green"
                     }
+
+                    //console.log('      Pushing: day:' + sessionFound.time.startTimeFriendlyTime + " track:" + sessionFound.sessionTrackName + " sessionId:"+ sessionFound.id);
+                    sessionOverviewTds.push({
+                        id: sessionFound.id,
+                        title: sessionFound.title,
+                        description: sessionFound.description,
+                        descriptionShort: sessionFound.descriptionShort,
+                        minutes: sessionFound.time.sessionMinutes,
+                        rowspan: sessionFound.time.sessionMinutes / 30,
+                        sessionTimeDescription: sessionFound.time.description,
+                        startTimeFriendlyTime: sessionFound.time.startTimeFriendlyTime,
+                        colorClass: colorClass,
+                        speakersNamesCsv: sessionFound.speakersNamesCsv,
+                        sessionTrackName: sessionFound.sessionTrackName,
+                        sessionUrl: sessionFound.sessionUrl
+                    });
+
+
                 }
-                this.sessionOverviewTrsNew.push(trsNew);
+
+
             }
 
-            //console.log('sessionOverviewTrs.length: ' + this.sessionOverviewTrs.length);
-            for (let k = 0; k < this.sessionOverviewTrs.length; k++) {
-                //console.log('sessionOverviewTrs[' + k + '].length: ' + this.sessionOverviewTrs[k].length + ' time: ' + this.sessionOverviewTrs[k][0]);
-            }
-            this.sessionOverviewTrs = this.sessionOverviewTrsNew;
+            this.sessionOverviewTrs.push(sessionOverviewTds);
 
-            for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
-                $sce.trustAsHtml(this.sessionOverviewTrs[i].description);
-            }
 
             // now make a mobile version of the list that is just one long column versus 2d
             // that is, for each day:
