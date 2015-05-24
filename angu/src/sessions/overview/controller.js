@@ -203,8 +203,6 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
         //
         //// build list of times we have in list
         this.sessionTimesFound = [];
-        debugger;
-
         for (let j = 0; j < this.sessionOverviewMobile.length; j++) {
             let sessionTime = this.sessionOverviewMobile[j].sessionTime;
             if (this.sessionTimesFound.indexOf(sessionTime) === -1) {
