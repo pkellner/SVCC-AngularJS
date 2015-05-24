@@ -208,5 +208,15 @@
     "startTimeFriendlyDay": "Thursday",
     "startTimeFriendlyTime": "8:00 AM",
     "id": 94
+  },
+  {
+    "startTime": "2015-06-25T08:00:00Z",
+    "startTimeFriendly": "Wed 8:00 AM",
+    "sessionMinutes": 420,
+    "description": "8:00 AM to 3:00 PM",
+    "codeCampYearId": 201,
+    "startTimeFriendlyDay": "Wednesday",
+    "startTimeFriendlyTime": "8:00 AM",
+    "id": 95
   }
 ]

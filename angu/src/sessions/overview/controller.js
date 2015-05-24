@@ -14,7 +14,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
     this.track = undefined;
 
     this.justDays = [];
-    for (let i = 1; i < this.days.length; i++) {
+    //for (let i = 1; i < this.days.length; i++) {
+    for (let i = 1; i < 3; i++) { // just do mon/tue
         this.justDays.push(this.days[i]);
     }
 
@@ -42,31 +43,35 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
     //    '9:00 AM'
     //];
 
-    //var timesArray = [
-    //    '8:00 AM', '8:30 AM',
-    //    '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
-    //    '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM',
-    //    '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'
-    //];
-
     var timesArray = [
-        '8:00 AM','9:00 AM'
+        '8:00 AM', '8:30 AM',
+        '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
+        '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM',
+        '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'
     ];
+
+    //var timesArray = [
+    //    '8:00 AM', '9:00 AM'
+    //];
 
     //var timesArray = [
     //    '9:00 AM', '10:30 AM',
     //    '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM'
     //];
 
-    //var timesArray = [
-    //    '8:00 AM', '8:30 AM',
-    //    '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
-    //    '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM',
-    //    '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'
-    //];
-
 
     this.generateTrs = function (selDay) {
+
+        function createArray(length) {
+            var arr = new Array(length || 0),
+                i = length;
+
+            if (arguments.length > 1) {
+                var args = Array.prototype.slice.call(arguments, 1);
+                while (i--) arr[length - 1 - i] = createArray.apply(this, args);
+            }
+            return arr;
+        }
 
         // first create a list of sessions that are just for this day
         let sessionsDay = [];
@@ -83,52 +88,48 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
             }
         }
 
-        // potentially later sort the tracks by name
+        this.tracksValid.sort();
 
-
-        var getTrack = function (sessionTrackName, tracks) {
-            for (let i = 0; i < tracks.length; i++) {
-                if (sessionTrackName === tracks[i].named) {
-                    return tracks[i];
-                }
+        let overviewMatrix = createArray(timesArray.length, this.tracksValid.length);
+        for (let i = 0; i < timesArray.length; i++) {
+            overviewMatrix[i][0] = timesArray[i];
+            for (let j = 0; j < this.tracksValid.length; j++) {
+                overviewMatrix[i][j] = {
+                    id: 0,
+                    title: "",
+                    description: "",
+                    descriptionShort: "",
+                    minutes: 30,
+                    rowspan: 1,
+                    sessionTimeDescription: "",
+                    startTimeFriendlyTime: "",
+                    colorClass: "",
+                    speakersNamesCsv: "",
+                    sessionTrackName: "",
+                    sessionUrl: ""
+                };
             }
         }
 
-
-        this.sessionOverviewTrs = [];
-
-        debugger;
         for (let i = 0; i < timesArray.length; i++) {
             let timex = timesArray[i];
-            let sessionOverviewTds = [];
-            sessionOverviewTds.push(timex);
-
-            for (let i = 0; i < this.tracksValid.length; i++) {
-
-                var trackx = this.tracksValid[i];
-                var sessionFound = null;
+            for (let j = 0; j < this.tracksValid.length; j++) {
+                let trackx = this.tracksValid[j];
+                let sessionFound = null;
                 for (let k = 0; k < sessionsDay.length; k++) {
                     let sessionx = sessionsDay[k];
                     if (sessionx.time != null && timex === sessionx.time.startTimeFriendlyTime &&
                         trackx === sessionx.sessionTrackName) {
-                        //console.log('      FOUND day:' + sessionx.time.startTimeFriendlyDay + " track:" + trackx.named);
                         sessionFound = sessionx;
                     }
-
                 }
 
-                if (sessionFound === null) {
-                    //sessionOverviewTds.push("");
-                } else {
-
-
+                if (sessionFound != null) {
                     let colorClass = "cal-entry--blue";
                     if (sessionFound.keyNote === true) {
                         colorClass = "cal-entry--green"
                     }
-
-                    //console.log('      Pushing: day:' + sessionFound.time.startTimeFriendlyTime + " track:" + sessionFound.sessionTrackName + " sessionId:"+ sessionFound.id);
-                    sessionOverviewTds.push({
+                    var sRec = {
                         id: sessionFound.id,
                         title: sessionFound.title,
                         description: sessionFound.description,
@@ -141,90 +142,81 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
                         speakersNamesCsv: sessionFound.speakersNamesCsv,
                         sessionTrackName: sessionFound.sessionTrackName,
                         sessionUrl: sessionFound.sessionUrl
-                    });
-
-
+                    };
+                    overviewMatrix[i][j] = sRec; // allow for time column
                 }
-
-
             }
+        }
 
+
+        this.sessionOverviewTrs = [];
+        for (let i = 0; i < timesArray.length; i++) {
+            let sessionOverviewTds = [];
+            sessionOverviewTds.push(timesArray[i]);
+            for (let j = 0; j < this.tracksValid.length; j++) {
+                sessionOverviewTds.push(overviewMatrix[i][j]);
+            }
             this.sessionOverviewTrs.push(sessionOverviewTds);
+        }
 
 
-            // now make a mobile version of the list that is just one long column versus 2d
-            // that is, for each day:
-            //   trackname1
-            //      9:00 xxx
-            //     10:00 yyy
-            //   trackname2
-            //     9:00 xxxx
-            //     10:00 yyyy
-            //     ...
-
-            this.sessionOverviewMobile = [];
-            for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
-                let sessionOverviewTr = this.sessionOverviewTrs[i];
-                let sessionTime = sessionOverviewTr[0]; // each row is for one specific time
+        //this.sessionOverviewTrs.push(sessionOverviewTds);
 
 
-                for (let j = 1; j < sessionOverviewTr.length; j++) {
-                    var sessionOverviewTrCol = sessionOverviewTr[j];
-                    //console.log(sessionOverviewTrCol);
+        // now make a mobile version of the list that is just one long column versus 2d
+        // that is, for each day:
+        //   trackname1
+        //      9:00 xxx
+        //     10:00 yyy
+        //   trackname2
+        //     9:00 xxxx
+        //     10:00 yyyy
+        //     ...
 
-                    if (sessionOverviewTrCol && typeof(sessionOverviewTrCol) !== "string") {
-                        if (sessionOverviewTrCol.length == undefined) { // must be a session
 
-                            //if (sessionOverviewTrCol.id === 4751) {
-                            //    debugger;
-                            //}
 
-                            this.sessionOverviewMobile.push({
-                                sessionTime: sessionTime,
-                                title: sessionOverviewTrCol.title,
-                                description: sessionOverviewTrCol.description,
-                                descriptionShort: sessionOverviewTrCol.descriptionShort,
-                                minutes: sessionOverviewTrCol.minutes,
-                                speakersNamesCsv: sessionOverviewTrCol.speakersNamesCsv,
-                                sessionTrackName: sessionOverviewTrCol.sessionTrackName,
-                                sessionUrl: sessionOverviewTrCol.sessionUrl
-                            })
-                        }
-                    } else {
-                        //debugger;
-                    }
+        this.sessionOverviewMobile = [];
+        for (let i = 0; i < this.sessionOverviewTrs.length; i++) {
+            let sessionOverviewTr = this.sessionOverviewTrs[i];
+            let sessionTime = sessionOverviewTr[0]; // each row is for one specific time
+
+
+            for (let j = 1; j < sessionOverviewTr.length; j++) {
+                var sessionOverviewTrCol = sessionOverviewTr[j];
+
+                if (sessionOverviewTrCol.title.length > 0) {
+                    this.sessionOverviewMobile.push({
+                        sessionTime: sessionTime,
+                        title: sessionOverviewTrCol.title,
+                        description: sessionOverviewTrCol.description,
+                        descriptionShort: sessionOverviewTrCol.descriptionShort,
+                        minutes: sessionOverviewTrCol.minutes,
+                        speakersNamesCsv: sessionOverviewTrCol.speakersNamesCsv,
+                        sessionTrackName: sessionOverviewTrCol.sessionTrackName,
+                        sessionUrl: sessionOverviewTrCol.sessionUrl
+                    })
+
                 }
             }
+        }
+        //
+        //
+        //// build list of times we have in list
+        this.sessionTimesFound = [];
+        debugger;
 
-
-            // build list of times we have in list
-            this.sessionTimesFound = [];
-
-            for (let j = 0; j < this.sessionOverviewMobile.length; j++) {
-                let sessionTime = this.sessionOverviewMobile[j].sessionTime;
-                if (this.sessionTimesFound.indexOf(sessionTime) === -1) {
-                    this.sessionTimesFound.push(sessionTime);
-                }
+        for (let j = 0; j < this.sessionOverviewMobile.length; j++) {
+            let sessionTime = this.sessionOverviewMobile[j].sessionTime;
+            if (this.sessionTimesFound.indexOf(sessionTime) === -1) {
+                this.sessionTimesFound.push(sessionTime);
             }
-
-
-            // DEBUGGING OUT ONLY
-            //for (let i=0;i<this.tracksValid.length;i++) {
-            //    console.log("TRACK: " +  this.tracksValid[i]);
-            //    for (let j = 0; j < this.sessionOverviewMobile.length; j++) {
-            //        console.log(j + " SESSIONTRACK: " + this.sessionOverviewMobile[j].sessionTrackName);
-            //        if (this.tracksValid[i] === this.sessionOverviewMobile[j].sessionTrackName){
-            //            console.log(i + ":" + j + j + " track: " + this.sessionOverviewMobile[j].sessionTrackName + ":" + this.tracksValid[i]);
-            //        }
-            //    }
-            //}
         }
 
 
     };
 
-    //let startDay = "Monday";
-    let startDay = "Thursday";
+    let startDay = "Monday";
+    //let startDay = "Thursday";
     this.selectedDay = startDay;  // sets radio button to initial state
     this.generateTrs(startDay); // default to Monday, need to fix to default to current day if June 21-25
 }

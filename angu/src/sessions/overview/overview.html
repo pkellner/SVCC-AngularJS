@@ -38,11 +38,16 @@
         <tbody>
         <tr ng-repeat="session in list.sessionOverviewTrs">
             <td ng-repeat="tds in session track by $index" rowspan="{{tds.rowspan}}" class="{{tds.colorClass}}">
-                    <span ng-show="$index == 0">
+
+                <!--{{ $index }} : {{ tds.title}} : {{tds.sessionTrackName}}-->
+
+
+                    <span ng-show="$index === 0">
                       {{tds}}
                     </span>
 
-                   <span ng-show="$index != 0">
+                   <span ng-show="$index !== 0 && tds.title.length > 0">
+                       <!--{{tds.title}}:{{$index}}:{{tds.sessionTrackName}}-->
                       <div wh class="cal-entry" class="cal-entry--blue" ng-show="tds.length != 0">
                           <h3 class="cal-entry-title"><a href="/ng{{tds.sessionUrl}}" target="_blank">{{tds.title}}</a>
                           </h3>
@@ -53,10 +58,11 @@
 
                           <p class="cal-entry-time">{{tds.sessionTimeDescription}}</p>
 
+                          <!--{{ tds.sessionTrackName }}-->
+
                           <!--<div class="cal-entry-tooltip">-->
                               <!--<h3 class="cal-entry-title"><a href="{{tds.sessionUrl}}" target="_blank">{{tds.title}}</a>-->
                               <!--</h3>-->
-
                               <!--<p ng-bind-html="tds.description" class="cal-entry-tooltip-text"></p>-->
                           <!--</div>-->
                       </div>
@@ -89,7 +95,7 @@
     </div>
 
 
-    <!--Below is mobile version BY ROOM-->
+    <!--&lt;!&ndash;Below is mobile version BY ROOM&ndash;&gt;-->
     <!--<div class="visible-xs">-->
         <!--<ul>-->
             <!--<li ng-repeat="track in list.tracksValid">-->

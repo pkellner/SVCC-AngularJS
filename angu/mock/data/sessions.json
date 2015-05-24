@@ -2780,7 +2780,7 @@
     "adminComments": "",
     "doNotShowPrimarySpeaker": false,
     "lectureRoomsId": 0,
-    "sessionTimesId": 91,
+    "sessionTimesId": 95,
     "tweetLine": "",
     "sessionsMaterialUrl": "",
     "tweetLinePreCamp": "",
@@ -2808,7 +2808,7 @@
     "sessionSlug": "angular-line-of-business-applications-hands-on",
     "sessionUrl": "/workshop/2015sf/angular-line-of-business-applications-hands-on",
     "sessionUrlPre": "/Workshop/2015sf/angular-line-of-business-applications-hands-on",
-    "sessionTrackName": "Room 2",
+    "sessionTrackName": "Room 6",
     "sessionTrackId": 63,
     "descriptionEllipsized": "This workshop will take you step by step through the process of building a line of...",
     "interestedCount": 0,
@@ -2864,9 +2864,9 @@
     "tagsResultCsv": "AngularJS App ",
     "sessionTimesResult": {
       "startTime": "2015-06-24T09:00:00",
-      "description": "9:00 AM to 4:00 PM",
+      "description": "8:00 AM to 3:00 PM",
       "codeCampYearId": 201,
-      "id": 91
+      "id": 95
     },
     "speakersList": [
       {
