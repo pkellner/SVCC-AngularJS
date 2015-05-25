@@ -14,8 +14,8 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
     this.track = undefined;
 
     this.justDays = [];
-    //for (let i = 1; i < this.days.length; i++) {
-    for (let i = 1; i < 3; i++) { // just do mon/tue
+    for (let i = 1; i < this.days.length; i++) {
+    //for (let i = 1; i < 3; i++) { // just do mon/tue
         this.justDays.push(this.days[i]);
     }
 
@@ -129,13 +129,15 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
                     if (sessionFound.keyNote === true) {
                         colorClass = "cal-entry--green"
                     }
+                    let rowSpan = sessionFound.time.sessionMinutes / 30;
+
                     var sRec = {
                         id: sessionFound.id,
                         title: sessionFound.title,
                         description: sessionFound.description,
                         descriptionShort: sessionFound.descriptionShort,
                         minutes: sessionFound.time.sessionMinutes,
-                        rowspan: sessionFound.time.sessionMinutes / 30,
+                        rowspan: rowSpan,
                         sessionTimeDescription: sessionFound.time.description,
                         startTimeFriendlyTime: sessionFound.time.startTimeFriendlyTime,
                         colorClass: colorClass,
@@ -144,6 +146,12 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
                         sessionUrl: sessionFound.sessionUrl
                     };
                     overviewMatrix[i][j] = sRec; // allow for time column
+                    if (rowSpan > 1){
+                        sRec = {title: 'rowspanvoid'};
+                        for (let l=1;l<rowSpan;l++){
+                            overviewMatrix[i+l][j] = sRec
+                        }
+                    }
                 }
             }
         }
@@ -154,7 +162,9 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
             let sessionOverviewTds = [];
             sessionOverviewTds.push(timesArray[i]);
             for (let j = 0; j < this.tracksValid.length; j++) {
-                sessionOverviewTds.push(overviewMatrix[i][j]);
+                if (overviewMatrix[i][j].title !== "rowspanvoid") {
+                    sessionOverviewTds.push(overviewMatrix[i][j]);
+                }
             }
             this.sessionOverviewTrs.push(sessionOverviewTds);
         }
