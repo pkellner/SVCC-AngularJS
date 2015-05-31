@@ -5,6 +5,6 @@ import state from './state';
 import controller from './controller';
 
 export default angular.module('angu.videos', [])
-  .controller('VideosController', controller)
+  .controller('VideoController', controller)
   .config(state)
   .name;
