@@ -1,12 +1,16 @@
+//export default function () {
+//  this.foo = 'bar from video'
+//}
+
 'use strict';
 
-function VideoController (video) {
+function VideoController (videos) {
 
   debugger;
 
 
 
 }
-VideoController.$inject = ['video'];
+VideoController.$inject = ['videos'];
 
 export default VideoController;

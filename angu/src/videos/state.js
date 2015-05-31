@@ -4,26 +4,28 @@ import template from './videos.html';
 
 export default state;
 
-getVideoSessions.$inject = ['Video'];
 
-function state ($stateProvider) {
-  $stateProvider.state('videos', {
-    url: '/videos',
-    parent: 'base',
-    resolve: {
-      videoSessions: getVideos
-    },
-    views: {
-      '@layout': {
-        template,
-        controller: 'VideoController',
-        controllerAs: 'videos'
-      }
-    }
-  });
+function state($stateProvider) {
+    $stateProvider.state('videos', {
+        url: '/videos',
+        resolve: {
+            videos: getVideos
+        },
+        parent: 'base',
+        views: {
+            '@layout': {
+                template,
+                controller: 'VideosController',
+                controllerAs: 'videos'
+            }
+        }
+    });
+
 }
 
+getVideos.$inject = ['Videos','$q'];
 function getVideos (Video) {
-  return Video.fetchAll();
+    return Video.fetchAll();
+
 }
 state.$inject = ['$stateProvider'];

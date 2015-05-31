@@ -10,16 +10,18 @@ import faqs from './faqs';
 import speaker from './speaker';
 import sessions from './sessions'
 import sponsors from './sponsors';
+import videos from './videos';
 
 export default angular.module('codeCampBase', [
-  sanitize,
-  messages,
-  routing,
-  model,
-  layout,
-  faqs,
-  speaker,
-  sessions,
-  sponsors    
+    sanitize,
+    messages,
+    routing,
+    model,
+    layout,
+    faqs,
+    speaker,
+    sessions,
+    sponsors,
+    videos
 ])
-.name;
+    .name;
