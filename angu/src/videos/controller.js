@@ -4,13 +4,18 @@
 
 'use strict';
 
-function VideoController (videos) {
+function VideoController(videos,$sce) {
 
-  this.videos = videos;
+    for (let i = 0; i < videos.length; i++) {
+        videos[i].vimeoIframeSrc =
+            $sce.trustAsResourceUrl("https://player.vimeo.com/video/" + videos[i].vimeoId);
+    }
 
+
+    this.videos = videos;
 
 
 }
-VideoController.$inject = ['videos'];
+VideoController.$inject = ['videos','$sce'];
 
 export default VideoController;
