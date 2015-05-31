@@ -6,7 +6,7 @@
 
 function VideoController (videos) {
 
-  debugger;
+  this.videos = videos;
 
 
 

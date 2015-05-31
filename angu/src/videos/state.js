@@ -16,7 +16,7 @@ function state($stateProvider) {
             '@layout': {
                 template,
                 controller: 'VideosController',
-                controllerAs: 'videos'
+                controllerAs: 'list'
             }
         }
     });
