@@ -2,51 +2,59 @@
     <div class="separator">
         <span class="separator--icon icon-code"></span>
     </div>
-    <h2 class="type--lead">Videos</h2>
+
 
     <!--<ul class="speakers">-->
-        <!--<li class="row" ng-repeat="video in list.videos">-->
-            <!--<p>{{ video.vimeoId }}</p>-->
-        <!--</li>-->
+    <!--<li class="row" ng-repeat="video in list.videos">-->
+    <!--<p>{{ video.vimeoId }}</p>-->
+    <!--</li>-->
     <!--</ul>-->
 
-    <div class="persona--container" >
-        <!-- ngRepeat: presenter in presenters -->
 
-        <div class="persona" ng-repeat="video in list.videos">
-            <div class="social ">
-                <a href="/Video/2015sf/brad-green-talks-directives-controllers-become-components-in-angular-2"> <img src="https://angularu.com/Images/window_fullscreen_1-256.png" width="32" height="32" alt="Video Larger Display"></a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <h4>Share This On</h4>
-                <ul>
-                    <li><a href="http://twitter.com/home?status=Check+Out+'Brad+Green+Talks+Directives,+Controllers+become+Components+in+Angular+2'+at+@AngularU+https://AngularU.com/Video/2015sf/brad-green-talks-directives-controllers-become-components-in-angular-2+@bradlygreen" target="_blank" class="icon-twitter"></a></li>
-                </ul>
-            </div>
+    <h1 class="type--lead">Session Recordings</h1>
+
+    <div class="persona--container">
+
+
+        <!-- Session Videos -->
+        <div class="persona" ng-repeat="video in list.videosSessions ">
+            <a class="type--color"  href="{{video.sessionUrl}}" target="_blank" >{{video.sessionTitle}}</a>
             <div class="persona--img">
-                <iframe src="{{video.vimeoIframeSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290" height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+                <iframe src="{{video.vimeoIframeSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"
+                        height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
                 </iframe>
-
-
             </div>
+            <a href="{{video.tweetString}}"
+               target="_blank" class="icon-twitter"></a><br/>
+            <a href="{{video.urlWithTitle}}" target="_blank">EXPAND</a><br/>
             <h3><a href="https://angularu.com/ng/session/2015sf/angular-2-roadmap-update">{{video.title}}</a></h3>
             <p>
-                <!--{{video.descriptionText}}-->
-            </p>
+               {{video.sessionSpeakerNamesCsv}}
+           <br/>Recorded: {{video.sessionTimeFriendly}} in San Francisco</p></p>
         </div>
-
-
-
-
     </div>
 
 
-
-
-
-
-
-
-
+    <br/>
+    <h1 class="type--lead">PreConference Recordings</h1>
+    <div class="persona--container">
+        <!-- PreConference Videos -->
+        <div class="persona" ng-repeat="video in list.videosPreConferences ">
+            <a class="type--color"  href="{{video.urlWithTitle}}" target="_blank" >{{video.title}}</a>
+            <div class="persona--img">
+                <iframe src="{{video.vimeoIframeSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"
+                        height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
+                </iframe>
+            </div>
+            <a href="{{video.tweetString}}"
+               target="_blank" class="icon-twitter"></a><br/>
+            <a href="{{video.urlWithTitle}}" target="_blank">EXPAND</a><br/>
+          
+            <p>
+                {{video.descriptionText}}
+            </p>
+        </div>
+    </div>
 
 
     <div id="sponsors" class="nav--section container">
@@ -58,16 +66,49 @@
         <h2 class="type--lead">Premiere Sponsor</h2>
         <ul class="sponsor--list">
             <li class="sponsor sponsor--premiere">
-                <a href="http://rangle.io/"><img class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg" alt=""></a>
+                <a href="http://rangle.io/"><img class="sponsor--img"
+                                                 ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg"
+                                                 alt=""></a>
             </li>
         </ul>
 
         <h2 class="type--lead">Silver Sponsors</h2>
         <ul class="sponsor--list">
             <li class="sponsor sponsor--silver">
-                <a href="http://pluralsight.com/" target="_blank"  ><img class="sponsor--img"  ng-src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png" alt="Puralsight"></a>
+                <a href="http://pluralsight.com/" target="_blank"><img class="sponsor--img"
+                                                                       ng-src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png"
+                                                                       alt="Puralsight"></a>
             </li>
         </ul>
+
+
+        <!--<div class="social ">-->
+            <!--<a href="http://twitter.com/home?status=Check+Out+'Brad+Green+Talks+Directives,+Controllers+become+Components+in+Angular+2'+at+@AngularU+https://AngularU.com/Video/2015sf/brad-green-talks-directives-controllers-become-components-in-angular-2+@bradlygreen"-->
+               <!--target="_blank" class="icon-twitter"></a><br/>-->
+            <!--<a href="/Video/2015sf/brad-green-talks-directives-controllers-become-components-in-angular-2"> <img-->
+                    <!--src="https://angularu.com/Images/window_fullscreen_1-256.png" width="32" height="32"-->
+                    <!--alt="Video Larger Display"></a>-->
+            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+            <!--<h4>Share This On</h4>-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<a href="http://twitter.com/home?status=Check+Out+'Brad+Green+Talks+Directives,+Controllers+become+Components+in+Angular+2'+at+@AngularU+https://AngularU.com/Video/2015sf/brad-green-talks-directives-controllers-become-components-in-angular-2+@bradlygreen"-->
+                       <!--target="_blank" class="icon-twitter"></a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="persona&#45;&#45;img">-->
+            <!--<iframe src="{{video.vimeoIframeSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"-->
+                    <!--height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">-->
+            <!--</iframe>-->
+
+
+        <!--</div>-->
+        <!--<h3><a href="https://angularu.com/ng/session/2015sf/angular-2-roadmap-update">{{video.title}}</a></h3>-->
+
+        <!--<p>-->
+            <!--&lt;!&ndash;{{video.descriptionText}}&ndash;&gt;-->
+        <!--</p>-->
+
 
         <!--<ul class="sponsor&#45;&#45;list">-->
         <!--<li class="sponsor sponsor&#45;&#45;gold">-->
