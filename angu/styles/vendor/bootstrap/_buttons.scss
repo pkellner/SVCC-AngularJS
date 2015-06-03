@@ -35,3 +35,28 @@
   line-height: 37px;
   padding: 0 14px;
 }
+
+.btn-light {
+  background: $gray-lightest;
+  text-shadow: none;
+
+  &:hover {
+    background: darken($gray-lightest, 10%);
+  }
+}
+
+.inline-buttons {
+  @extend %clearfix;
+  @include font-smoothing(on);
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    margin-right: 6px;
+    font-size: 120%;
+  }
+
+  .btn {
+    float: left;
+    font-size: inherit;
+  }
+}
