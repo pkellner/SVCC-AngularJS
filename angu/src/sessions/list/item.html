@@ -25,5 +25,10 @@
         <p>{{speaker.userBioShort}}</p>
       </div>
     </div>
+
+    <div class="inline-buttons text-small" ng-hide="session.videoUrl == undefined">
+      <a href="{{ session.videoUrl}}" class="btn btn-primary uppercase"><i class="icon-camera"></i> Watch the video</a>
+      <a href="#" class="btn btn-light">Recording of Live Stream From Conference</a>
+    </div>
   </div>
 </li>

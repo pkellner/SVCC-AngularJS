@@ -40,14 +40,15 @@
   background: $gray-lightest;
   text-shadow: none;
 
-  &:hover {
-    background: darken($gray-lightest, 10%);
-  }
+  // &:hover {
+  //   background: darken($gray-lightest, 10%);
+  // }
 }
 
 .inline-buttons {
   @extend %clearfix;
   @include font-smoothing(on);
+  margin-bottom: 15px;
 
   [class^="icon-"],
   [class*=" icon-"] {
@@ -58,5 +59,9 @@
   .btn {
     float: left;
     font-size: inherit;
+  }
+
+  span.btn {
+    cursor: default;
   }
 }
