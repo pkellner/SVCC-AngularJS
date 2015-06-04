@@ -18,6 +18,7 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
         "<strong>Who’s Who</strong> of Angular Presenters and Its Future";
 
     this.showSpeakers = config.speakers.show;
+    this.showLiveFeed = config.home.showLiveFeed;
     this.fromNg = config.ng.from;
 
 

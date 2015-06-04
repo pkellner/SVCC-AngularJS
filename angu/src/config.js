@@ -101,6 +101,10 @@ function parse ($provide, CONFIG) {
       }
     },
     home: {
+      showLiveFeed: {
+        key: 'showLiveFeedOnHomePage',
+        type: 'boolean'
+      },
       title2: {
         content: {
           key: 'homePageSecondTitle'
