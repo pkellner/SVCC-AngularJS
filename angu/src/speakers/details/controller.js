@@ -2,6 +2,7 @@
 
 function SpeakerDetailsController (speaker, config) {
   this.speaker = speaker;
+
   this.showSessions = config.sessions.show;
   this.showSchedule = config.schedule.show;
 }

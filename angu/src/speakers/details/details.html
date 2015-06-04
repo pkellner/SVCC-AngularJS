@@ -37,9 +37,9 @@
               <span class="label label-default">{{session.sessionTrackName}}</span>
             </div>
             <p description="description" for="session"></p>
-            <div class="inline-buttons text-small">
-              <a href="#" class="btn btn-primary uppercase"><i class="icon-camera"></i> Watch the video</a>
-              <a href="#" class="btn btn-light">Video title and duration 2min</a>
+            <div class="inline-buttons text-small" ng-hide="session.videoUrl == undefined">
+              <a href="{{ session.videoUrl}}" class="btn btn-primary uppercase"><i class="icon-camera"></i> Watch the video</a>
+              <a href="#" class="btn btn-light">Recording of Live Stream From Conference</a>
             </div>
           </li>
         </ul>
