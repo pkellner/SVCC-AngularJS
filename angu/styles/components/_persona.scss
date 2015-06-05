@@ -131,7 +131,9 @@
 
   &--video {
     text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c2c2c2;
 
     h3 {
       font-weight: normal;
@@ -144,8 +146,6 @@
 
     p {
       margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #c2c2c2;
     }
 
     .persona--img {
