@@ -1,263 +1,300 @@
 <div id="home">
 
-  <section class="nav--section live-feed"   ng-show="home.showLiveFeed"   >
-    <div class="container">
-      <div class="row row-centered">
-        <div class="col-md-9 col-centered">
-          <h2 class="type--lead"><span class="type--color">Live feed of the conference</span></h2>
-          <div class="video-embed">
-            <iframe ng-src="{{ home.iFrameSrcLiveStream}}"  width="431" height="263"  frameborder="0" allowfullscreen></iframe>
-            <!--<iframe ng-src="{{ home.iFrameSrc }}" width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >-->
-            </iframe>
-          </div>
+    <section class="nav--section live-feed" ng-show="home.showLiveFeed">
+        <div class="container">
+            <div class="row row-centered">
+                <div class="col-md-9 col-centered">
+                    <h2 class="type--lead"><span class="type--color">Live feed of the conference</span></h2>
 
-          <div class="live-feed-info text-center">
+                    <div class="video-embed">
+                        <iframe ng-src="{{ home.iFrameSrcLiveStream}}" width="431" height="263" frameborder="0"
+                                allowfullscreen></iframe>
+                        <!--<iframe ng-src="{{ home.iFrameSrc }}" width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >-->
+                        </iframe>
+                    </div>
 
-
-            <h3>Now playing: <span class="type--color">Migrating to Angular 2</span> by David East</h3>
-            <p>Time to make the switch to Angular2. This talk will cover all of the fundamentals of taking an Angular 1.x app and taking to an Angular2 version. It's time to start thinking in Components.</p>
+                    <div class="live-feed-info text-center">
 
 
-          </div>
+                        <h3>Now playing: <span class="type--color">Migrating to Angular 2</span> by David East</h3>
 
-          <button class="btn btn-primary btn-lg center-block">View the streaming schedule</button>
+                        <p>Time to make the switch to Angular2. This talk will cover all of the fundamentals of taking
+                            an Angular 1.x app and taking to an Angular2 version. It's time to start thinking in
+                            Components.</p>
 
-          <div class="social center-block">
-            <h4>Don’t want to miss anything? <a href="https://angularu.com/angu/StayUpToDate" class="type--color">Get email alerts</a> or follow us on: </h4>
-            <ul>
-              <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
-              <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
-              <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank"  target="_blank" class="icon-gplus"></a></li>
-            </ul>
-          </div>
+
+                    </div>
+
+                    <a href="Videos"   ><button class="btn btn-primary btn-lg center-block">Recorded Sessions</button></a>
+
+                    <div class="social center-block">
+                        <h4>Don’t want to miss anything? <a href="https://angularu.com/angu/StayUpToDate"
+                                                            class="type--color">Get email alerts</a> or follow us on:
+                        </h4>
+                        <ul>
+                            <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+                            <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+                            <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank"
+                                   target="_blank" class="icon-gplus"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="container nav--section">
+    <div class="container nav--section">
 
-    <div class="row row-centered">
-      <div class="col-md-9 col-centered">
-        <h2 class="type--lead">
-          <span class="type--color">Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More</span>
-        </h2>
-        <h2 class="text-center"><span class="type--color" ng-bind-html="home.title2"></span></h2>
-        <h3  class="text-center"><span class="type--color" style="color: #00487F;" >
+        <div class="row row-centered">
+            <div class="col-md-9 col-centered">
+                <h2 class="type--lead">
+                    <span class="type--color">Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More</span>
+                </h2>
 
-          <a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg">Signup For The Live Feed of All Keynotes.&nbsp;&nbsp;&nbsp; Details Here</a>
+                <h2 class="text-center"><span class="type--color" ng-bind-html="home.title2"></span></h2>
+
+                <h3 class="text-center"><span class="type--color" style="color: #00487F;">
+
+
+              <div><a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg">Signup For The Live Feed of All Keynotes</a></div>
+              <div><a href="/angu/CommunityEvent" class="btn btn-primary btn-lg">Signup For Community Event Tuesday June 23rd</a></div>
+
           </span>
-          </h3>
+                </h3>
 
-          <!--<button class="btn btn-primary btn-lg center-block"   href='/angu/LiveFeedNotify'  >-->
-          <!--&lt;!&ndash;Signup For The Live Feed of All Keynotes.&nbsp;&nbsp;&nbsp; Details Here</button>&ndash;&gt;-->
-        <!--</span></h3>-->
+                <!--<button class="btn btn-primary btn-lg center-block"   href='/angu/LiveFeedNotify'  >-->
+                <!--&lt;!&ndash;Signup For The Live Feed of All Keynotes.&nbsp;&nbsp;&nbsp; Details Here</button>&ndash;&gt;-->
+                <!--</span></h3>-->
 
-      </div>
-    </div>
+            </div>
+        </div>
 
-    <div class="content--sectionx">
-      <h2 class="type--lead">Keynote Presenters</h2>
-      <keynote-presenters presenters="speakers.keynotes"></keynote-presenters>
-      <button ng-hide="home.showSpeakers" class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon</button>
-    </div>
+        <div class="content--sectionx">
+            <h2 class="type--lead">Keynote Presenters</h2>
+            <keynote-presenters presenters="speakers.keynotes"></keynote-presenters>
+            <button ng-hide="home.showSpeakers" class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon
+            </button>
+        </div>
 
 
-    <div class="content--section media"  id="media">
-      <div class="row">
-        <div class="videos col-sm-6">
-          <div class="video--main">
-            <h3 class="video--main--title">
-              <span class="type--lead type--color" style="font-weight: 700;font-size: 16px;" >
+        <div class="content--section media" id="media">
+            <div class="row">
+                <div class="videos col-sm-6">
+                    <div class="video--main">
+                        <h3 class="video--main--title">
+              <span class="type--lead type--color" style="font-weight: 700;font-size: 16px;">
                 {{home.currentVideo.title}}&nbsp;
               </span>
               <span ng-show="home.currentVideo.tweet.length > 0"
-                    ng-bind-html="home.home.createTweetAnchor(home.currentVideo.tweet,false)" ></span>
+                    ng-bind-html="home.home.createTweetAnchor(home.currentVideo.tweet,false)"></span>
               <span ng-show="home.currentVideo.tweet.length > 0"
-                    ng-bind-html="home.createTweetAnchor(home.currentVideo.tweet,true)" ></span>
-            </h3>
+                    ng-bind-html="home.createTweetAnchor(home.currentVideo.tweet,true)"></span>
+                        </h3>
 
-            <div class="video-embed">
-              <iframe ng-src=
-                              "{{ home.iFrameSrc }}"
-                      width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >
-              </iframe>
+                        <div class="video-embed">
+                            <iframe ng-src=
+                                            "{{ home.iFrameSrc }}"
+                                    width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <ul class="video--list">
+                        <li ng-repeat="vid in home.homePageVideos">
+                            <a href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)">
+                                <img ng-src='{{ vid.thumbNail }}' alt="" class=""/></a>
+                            <span ng-if="vid.vimeoId === home.currentVideo.vimeoId"
+                                  class="video--playing">Playing</span>
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <a href="/Videos">
+                            <button class="btn btn-primary">More videos</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="news col-sm-6">
+                    <ul class="news--list">
+                        <li class="news-single">
+                            <div class="news-single--date">
+                                <span class="news-single--month">April</span>
+                                <span class="news-single--day">15</span>
+                            </div>
+                            <a href="/News/2015sf/brad-green-tells-us-what-to-expect-at-angular-team-keynote-at-angular-u"
+                               class="news-single--content">
+                                <span class="news-single--category">News</span>
+
+                                <h3 class="news-single--title">Brad Green Tells Us What to Expect at Angular Team
+                                    Keynote at Angular U</h3>
+                            </a>
+                        </li>
+                        <li class="news-single">
+                            <div class="news-single--date">
+                                <span class="news-single--month">April</span>
+                                <span class="news-single--day">7</span>
+                            </div>
+                            <a href="/News/2015sf/honored-to-have-angular-u-on-angularjsorg-site"
+                               class="news-single--content">
+                                <span class="news-single--category">News</span>
+
+                                <h3 class="news-single--title">Honored To Have Angular U On AngularJS.Org Site</h3>
+                            </a>
+                        </li>
+                        <li class="news-single">
+                            <div class="news-single--date">
+                                <span class="news-single--month">April</span>
+                                <span class="news-single--day">3</span>
+                            </div>
+                            <a href="/News/2015sf/announcing-steve-souders-keynote-at-angular-u"
+                               class="news-single--content">
+                                <span class="news-single--category">News</span>
+
+                                <h3 class="news-single--title">Announcing Steve Souders Keynote at Angular U</h3>
+                            </a>
+                        </li>
+                        <li class="news-single">
+                            <div class="news-single--date">
+                                <span class="news-single--month">March</span>
+                                <span class="news-single--day">29</span>
+                            </div>
+                            <a href="http://weblogs.asp.net/dwahlin/introducing-the-angularu-conference"
+                               class="news-single--content">
+                                <span class="news-single--category">News</span>
+
+                                <h3 class="news-single--title">Introducing the Angular U Conference - Dan Wahlin</h3>
+                            </a>
+                        </li>
+                        <li class="news-single">
+                            <div class="news-single--date">
+                                <span class="news-single--month">March</span>
+                                <span class="news-single--day">26</span>
+                            </div>
+                            <a href="https://angularu.com/News/2015sf/why-am-i-so-excited-about-angular-u/"
+                               class="news-single--content">
+                                <span class="news-single--category">News</span>
+
+                                <h3 class="news-single--title">Why Am I so Excited about Angluar U - Peter Kellner</h3>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <!--<div class="text-center">-->
+                    <!--<button class="btn btn-primary">More news</button>-->
+                    <!--</div>-->
+
+                </div>
             </div>
-          </div>
-          <ul class="video--list"   >
-            <li ng-repeat="vid in home.homePageVideos" >
-              <a href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" >
-                <img ng-src='{{ vid.thumbNail }}' alt="" class=""/></a>
-              <span ng-if="vid.vimeoId === home.currentVideo.vimeoId" class="video--playing">Playing</span>
-            </li>
-          </ul>
-
-          <div class="text-center">
-            <a href="/Videos" ><button  class="btn btn-primary">More videos</button></a>
-          </div>
         </div>
-        <div class="news col-sm-6">
-          <ul class="news--list">
-            <li class="news-single">
-              <div class="news-single--date">
-                <span class="news-single--month">April</span>
-                <span class="news-single--day">15</span>
-              </div>
-              <a href="/News/2015sf/brad-green-tells-us-what-to-expect-at-angular-team-keynote-at-angular-u" class="news-single--content">
-                <span class="news-single--category">News</span>
-                <h3 class="news-single--title">Brad Green Tells Us What to Expect at Angular Team Keynote at Angular U</h3>
-              </a>
-            </li>
-            <li class="news-single">
-              <div class="news-single--date">
-                <span class="news-single--month">April</span>
-                <span class="news-single--day">7</span>
-              </div>
-              <a href="/News/2015sf/honored-to-have-angular-u-on-angularjsorg-site" class="news-single--content">
-                <span class="news-single--category">News</span>
-                <h3 class="news-single--title">Honored To Have Angular U On AngularJS.Org Site</h3>
-              </a>
-            </li>
-            <li class="news-single">
-              <div class="news-single--date">
-                <span class="news-single--month">April</span>
-                <span class="news-single--day">3</span>
-              </div>
-              <a href="/News/2015sf/announcing-steve-souders-keynote-at-angular-u" class="news-single--content">
-                <span class="news-single--category">News</span>
-                <h3 class="news-single--title">Announcing Steve Souders Keynote at Angular U</h3>
-              </a>
-            </li>
-            <li class="news-single">
-              <div class="news-single--date">
-                <span class="news-single--month">March</span>
-                <span class="news-single--day">29</span>
-              </div>
-              <a href="http://weblogs.asp.net/dwahlin/introducing-the-angularu-conference" class="news-single--content">
-                <span class="news-single--category">News</span>
-                <h3 class="news-single--title">Introducing the Angular U Conference - Dan Wahlin</h3>
-              </a>
-            </li>
-            <li class="news-single">
-              <div class="news-single--date">
-                <span class="news-single--month">March</span>
-                <span class="news-single--day">26</span>
-              </div>
-              <a href="https://angularu.com/News/2015sf/why-am-i-so-excited-about-angular-u/" class="news-single--content">
-                <span class="news-single--category">News</span>
-                <h3 class="news-single--title">Why Am I so Excited about Angluar U - Peter Kellner</h3>
-              </a>
-            </li>
 
-          </ul>
-
-          <!--<div class="text-center">-->
-            <!--<button class="btn btn-primary">More news</button>-->
-          <!--</div>-->
-
+        <div class="social center-block">
+            <h4>Don’t want to miss anything? <a href="https://angularu.com/angu/StayUpToDate" class="type--color">Get
+                email alerts</a> or follow us on: </h4>
+            <ul>
+                <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+                <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+                <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank" target="_blank"
+                       class="icon-gplus"></a></li>
+            </ul>
         </div>
-      </div>
-    </div>
 
-    <div class="social center-block">
-      <h4>Don’t want to miss anything? <a href="https://angularu.com/angu/StayUpToDate" class="type--color">Get email alerts</a> or follow us on: </h4>
-      <ul>
-        <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
-        <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
-        <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank"  target="_blank" class="icon-gplus"></a></li>
-      </ul>
-    </div>
+        <section class="content--section" ng-show="home.showSpeakers" id="en_speakerlist">
+            <h2 class="type--lead">Speaker List</h2>
+            <regular-presenters presenters="speakers.regular"></regular-presenters>
+        </section>
 
-    <section class="content--section" ng-show="home.showSpeakers" id="en_speakerlist">
-      <h2 class="type--lead">Speaker List</h2>
-      <regular-presenters presenters="speakers.regular"></regular-presenters>
-    </section>
-
-    <div class="separator">
-      <span ng-click="googleMap()" class="separator--icon icon-pin"></span>
-    </div>
-    <div id="venue" class="slider nav--section">
-      <div class="slide--container">
-        <ul rn-carousel slides="slides" class="slide--list">
-          <li>
-            <div class="slide">
-              <div class="slide--content">
-                <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi or Bart ride from San&nbsp;Francisco Downtown.</p>
-              </div>
+        <div class="separator">
+            <span ng-click="googleMap()" class="separator--icon icon-pin"></span>
+        </div>
+        <div id="venue" class="slider nav--section">
+            <div class="slide--container">
+                <ul rn-carousel slides="slides" class="slide--list">
+                    <li>
+                        <div class="slide">
+                            <div class="slide--content">
+                                <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a
+                                    short distance from the San&nbsp;Francisco Airport and within a short taxi or Bart
+                                    ride from San&nbsp;Francisco Downtown.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </li>
-        </ul>
-      </div>
+        </div>
+
+        <div id="faq" class="nav--section container">
+            <div class="separator">
+                <span class="separator--icon icon-question">?</span>
+            </div>
+
+            <div>
+                <h2 class="type--lead">FAQ</h2>
+                <ul class="list--block list--centered">
+                    <li ng-repeat="faq in faqs">
+                        <p><strong>Question: {{faq.question}}</strong></p>
+
+                        <p>Answer: {{faq.answer}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="sponsors" class="nav--section container">
+            <div class="separator">
+                <span class="separator--icon icon-heart"></span>
+            </div>
+
+
+            <h2 class="type--lead">Premiere Sponsor</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--premiere">
+                    <a href="http://rangle.io/" target="_blank"><img class="sponsor--img"
+                                                                     ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg"
+                                                                     alt="Rangle.io"></a>
+                </li>
+            </ul>
+
+            <h2 class="type--lead">Silver Sponsors</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--silver">
+                    <a href="http://pluralsight.com/" target="_blank"><img class="sponsor--img"
+                                                                           ng-src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png"
+                                                                           alt="Puralsight"></a>
+                </li>
+            </ul>
+
+            <!--<ul class="sponsor&#45;&#45;list">-->
+            <!--<li class="sponsor sponsor&#45;&#45;gold">-->
+            <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;gold">-->
+            <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--</ul>-->
+
+            <!--<ul class="sponsor&#45;&#45;list">-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--</ul>-->
+
+            <div class="text-center">
+                <a href="mailto:sponsor@angularu.com" class="btn btn-primary btn-lg">Become a sponsor</a>
+            </div>
+        </div>
     </div>
-
-    <div id="faq" class="nav--section container">
-      <div class="separator">
-        <span class="separator--icon icon-question">?</span>
-      </div>
-
-      <div>
-        <h2 class="type--lead">FAQ</h2>
-        <ul class="list--block list--centered">
-          <li ng-repeat="faq in faqs">
-            <p><strong>Question: {{faq.question}}</strong></p>
-            <p>Answer: {{faq.answer}}</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-
-
-    <div id="sponsors" class="nav--section container">
-      <div class="separator">
-        <span class="separator--icon icon-heart"></span>
-      </div>
-
-
-      <h2 class="type--lead">Premiere Sponsor</h2>
-      <ul class="sponsor--list">
-        <li class="sponsor sponsor--premiere">
-          <a href="http://rangle.io/" target="_blank"   ><img class="sponsor--img"  ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg" alt="Rangle.io"></a>
-        </li>
-      </ul>
-
-      <h2 class="type--lead">Silver Sponsors</h2>
-      <ul class="sponsor--list">
-        <li class="sponsor sponsor--silver">
-          <a href="http://pluralsight.com/" target="_blank"  ><img class="sponsor--img"  ng-src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png" alt="Puralsight"></a>
-        </li>
-      </ul>
-
-      <!--<ul class="sponsor&#45;&#45;list">-->
-      <!--<li class="sponsor sponsor&#45;&#45;gold">-->
-      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
-      <!--</li>-->
-      <!--<li class="sponsor sponsor&#45;&#45;gold">-->
-      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
-      <!--</li>-->
-      <!--</ul>-->
-
-      <!--<ul class="sponsor&#45;&#45;list">-->
-      <!--<li class="sponsor sponsor&#45;&#45;silver">-->
-      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
-      <!--</li>-->
-      <!--<li class="sponsor sponsor&#45;&#45;silver">-->
-      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
-      <!--</li>-->
-      <!--<li class="sponsor sponsor&#45;&#45;silver">-->
-      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
-      <!--</li>-->
-      <!--<li class="sponsor sponsor&#45;&#45;silver">-->
-      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
-      <!--</li>-->
-      <!--<li class="sponsor sponsor&#45;&#45;silver">-->
-      <!--<a href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
-      <!--</li>-->
-      <!--</ul>-->
-
-      <div class="text-center">
-        <a href="mailto:sponsor@angularu.com" class="btn btn-primary btn-lg">Become a sponsor</a>
-      </div>
-    </div>
-  </div>
 </div>
