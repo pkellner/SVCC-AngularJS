@@ -6,13 +6,18 @@
         <div class="col-md-9 col-centered">
           <h2 class="type--lead"><span class="type--color">Live feed of the conference</span></h2>
           <div class="video-embed">
-            <iframe ng-src="{{ home.iFrameSrc }}" width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >
+            <iframe ng-src="{{ home.iFrameSrcLiveStream}}"  width="431" height="263"  frameborder="0" allowfullscreen></iframe>
+            <!--<iframe ng-src="{{ home.iFrameSrc }}" width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >-->
             </iframe>
           </div>
 
           <div class="live-feed-info text-center">
+
+
             <h3>Now playing: <span class="type--color">Migrating to Angular 2</span> by David East</h3>
             <p>Time to make the switch to Angular2. This talk will cover all of the fundamentals of taking an Angular 1.x app and taking to an Angular2 version. It's time to start thinking in Components.</p>
+
+
           </div>
 
           <button class="btn btn-primary btn-lg center-block">View the streaming schedule</button>

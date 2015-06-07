@@ -22,6 +22,14 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
     this.fromNg = config.ng.from;
 
 
+    //https://www.youtube.com/embed/uV2uebhnqOw
+    this.iFrameSrcLiveStream =
+        $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + config.home.liveFeedEmbedCode);
+
+
+
+
+
     this.homePageVideos = [
         {
             title: 'Brad Green Talks Directives, Controllers become Components in Angular 2',

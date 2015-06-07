@@ -105,6 +105,9 @@ function parse ($provide, CONFIG) {
         key: 'showLiveFeedOnHomePage',
         type: 'boolean'
       },
+      liveFeedEmbedCode: {
+        key: 'liveFeedEmbedCode'
+      },
       title2: {
         content: {
           key: 'homePageSecondTitle'
