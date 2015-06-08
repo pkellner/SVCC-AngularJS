@@ -81,10 +81,10 @@
                         <div class="cal-entry" ng-show="session.sessionTime === sessionTime">
                             <h3 class="cal-entry-title"><a href="/ng{{session.sessionUrl}}" target="_blank">{{session.title}}</a>
                             </h3>
+                            <p class="cal-entry-time">{{ session.sessionTrackName }}</p>
                             <p class="cal-entry-description">{{session.descriptionShort}}</p>
                             <p class="cal-entry-speakers">{{session.speakersNamesCsv}}</p>
-                            <p class="cal-entry-time">{{ session.sessionTrackName }}</p>
-                            
+
 
                         </div>
                     </li>
