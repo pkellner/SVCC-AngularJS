@@ -7,4 +7,54 @@
   .video-embed {
     margin-bottom: 20px;
   }
+
+  .label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  &-info {
+    text-align: left;
+  }
+
+  &-share {
+    &-title {
+      float: left;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin: 0 10px 0 0;
+      line-height: 27px;
+    }
+
+    &-list {
+      @extend %clearfix;
+      margin-bottom: 10px;
+
+      li {
+        float: left;
+        margin-right: 5px;
+      }
+
+      [class^="icon-"],
+      [class*=" icon-"] {
+        display: inline-block;
+        color: #fff;
+        padding: 5px;
+        font-size: 16px;
+      }
+
+      .icon-twitter {
+        background: #6caddf;
+      }
+
+      .icon-gplus {
+        background: #dd1b16;
+      }
+
+      .icon-fb {
+        background: #3d5a99;
+      }
+    }
+  }
 }

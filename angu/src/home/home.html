@@ -3,7 +3,7 @@
     <section class="nav--section live-feed" ng-show="home.showLiveFeed">
         <div class="container">
             <div class="row row-centered">
-                <div class="col-md-9 col-centered">
+                <div class="col-md-10 col-centered">
                     <h2 class="type--lead"><span class="type--color">Live feed of the conference</span></h2>
 
                     <div class="video-embed">
@@ -13,17 +13,27 @@
                         </iframe>
                     </div>
 
-                    <div class="live-feed-info text-center">
+                    <div class="row">
+                        <div class="col-sm-9 live-feed-info text-center">
+                            <h3>Now playing: <span class="type--color">Migrating to Angular 2</span> by David East</h3>
+                            <span class="label label-danger label-alt">Sponsored by <a href="#" class="type--color">Microsoft Virtual Academy</a></span>
+                            <p>Time to make the switch to Angular2. This talk will cover all of the fundamentals of taking
+                                an Angular 1.x app and taking to an Angular2 version. It's time to start thinking in
+                                Components.</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="live-feed-share">
+                                <h4 class="live-feed-share-title">Share this on: </h4>
+                                <ul class="live-feed-share-list">
+                                    <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+                                    <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+                                </ul>
 
-
-                        <h3>Now playing: <span class="type--color">Migrating to Angular 2</span> by David East</h3>
-
-                        <p>Time to make the switch to Angular2. This talk will cover all of the fundamentals of taking
-                            an Angular 1.x app and taking to an Angular2 version. It's time to start thinking in
-                            Components.</p>
-
-
+                                <button class="btn btn-primary btn-full">View all the videos</button>
+                            </div>
+                        </div>
                     </div>
+
 
                     <a href="Videos"   ><button class="btn btn-primary btn-lg center-block">Recorded Sessions</button></a>
 
