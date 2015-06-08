@@ -33,8 +33,10 @@
       ng-repeat="session in (filtered = (list.sessions | filter:list.filter))"
       session="session"
       show-day="list.day === list.days[0] && (!$index || filtered[$index - 1].time.startTimeFriendlyDay !== session.time.startTimeFriendlyDay)"
-      show-time="!$index || (filtered[$index - 1].time.startTime !== session.time.startTime)"
-    >
+      show-time="!$index || (filtered[$index - 1].time.startTime !== session.time.startTime)" >
+
+
+
     </session-list-item>
   </ul>
 
