@@ -1,1 +1,45 @@
-The sponsors include {{sponsors.foo}}
+<!--The sponsors include {{sponsors.foo}}-->
+
+<div id="videos" class="container">
+    <div class="separator">
+        <span class="separator--icon icon-code"></span>
+    </div>
+
+    <h1 class="type--lead">Pluralsight Speaker Videos</h1>
+
+    <div class="persona--container">
+
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td valign="top" width="150" colspan="2">Angular U Speaker</td>
+
+
+                <td valign="top" width="200">Plurasight Course(s)</td>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="author in sponsors.pluralsightAuthors">
+
+                <td valign="top" width="100">
+                    <img ng-src="{{author.authorImageUrl}}?format=jpg&amp;height=50&amp;width=50&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff"/>
+                </td>
+
+                <td valign="top"><a class="type--color" href="{{author.speakerUrl}}"
+                                    target="_blank">{{author.authorName}}</a></td>
+
+
+                <td valign="top"><a class="type--color" href="{{author.courseUrl}}" target="_blank">Courses</a></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+
+</tbody></table>
