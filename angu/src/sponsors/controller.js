@@ -59,6 +59,13 @@ export default function () {
       "courseUrl": "https://www.shareasale.com/r.cfm?u=1015006&b=611266&m=53701&afftrack=&urllink=www%2Epluralsight%2Ecom%2Fauthor%2FLukas%2DRuebbelke"
     },
     {
+      "speakerId": 31685,
+      "authorName": "Peter Kellner",
+      "authorImageUrl": "//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/903.jpg",
+      "speakerUrl": "pluralsight",
+      "courseUrl": "https://www.shareasale.com/r.cfm?u=1015006&b=611266&m=53701&afftrack=&urllink=www%2Epluralsight%2Ecom%2Fauthor%2FPeter%2DKellner"
+    },
+    {
       "speakerId": 6220,
       "authorName": "Justin Schwartzenberger",
       "authorImageUrl": "//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150406163122-6220.jpg",
