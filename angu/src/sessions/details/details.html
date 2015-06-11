@@ -23,6 +23,12 @@
               <!--<li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>-->
               <!--<li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank"  target="_blank" class="icon-gplus"></a></li>-->
             </ul>
+                        
+            <h3 style="padding-left: 2cm;">Add to Google Calendar: </h3>
+            <ul>
+             <li><a title="Add this Session to your Google calendar" 
+             		ng-href="{{details.session.gCalLink}}" class="icon-gcal" target="_blank"></a></li>
+            </ul>
           </div>
   </section>
   <div class="speaker-details row" ng-repeat="speaker in details.speakers">
