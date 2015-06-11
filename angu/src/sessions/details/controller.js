@@ -34,7 +34,10 @@ function SessionDetailsController (session, Speaker, config) {
   gCalLink += '&text=Angular+U+-+'+encodeURIComponent(session.title)+'+by+'+encodeURIComponent(session.speakersShort.replace(/,+$/, ""));
   gCalLink += '&location='+encodeURIComponent('Hyatt Regency San Francisco Airport 1333 Old Bayshore Hwy Burlingame, CA 94010');
   gCalLink += '&details='+encodeURIComponent('For full details see:\nhttps://angularu.com/ng/' + session.sessionUrlPre);
-  gCalLink += '%0A%0ARoom%3A%0A'+encodeURIComponent(session.track.named);
+
+  if (session.track != undefined && session.track.named != undefined) {
+    gCalLink += '%0A%0ARoom%3A%0A' + encodeURIComponent(session.track.named);
+  }
   this.session.gCalLink = gCalLink;	
 
   this.speakers = session.speakersList.map((speaker) => {
