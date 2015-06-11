@@ -80,7 +80,7 @@ export default function () {
       "authorName": "Justin Schwartzenberger",
       "authorImageUrl": "//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150406163122-6220.jpg",
       "speakerUrl": "speaker/2015sf/justin-schwartzenberger-6220",
-      "courseUrl": "https://www.shareasale.com/r.cfm?u=1015006&b=611266&m=53701&afftrack=&urllink=www%2Epluralsight%2Ecom%2Fauthor%2FJustin%2DSchwartzenberger"
+      "courseUrl": "https://www.shareasale.com/r.cfm?u=1015006&b=611266&m=53701&afftrack=&urllink=www%2Epluralsight%2Ecom%2Fauthor%2FJustin%2DSchwarty"
     },
     {
       "speakerId": 31799,
