@@ -1,4 +1,5 @@
 // Core Bootstrap mixins, variables and Overrides - modified variables
+// http://tenbytwenty.com/?xxxx_posts=sosa
 @import "../setup/bootstrap-core";
 
 @import "../setup/variables";
@@ -82,4 +83,7 @@
 }
 .icon-camera:before {
   content: "2";
+}
+.icon-calendar:before {
+  content: "[";
 }

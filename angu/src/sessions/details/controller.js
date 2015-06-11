@@ -17,6 +17,9 @@ function SessionDetailsController (session, Speaker, config) {
     });
   });
   this.byline = list(this.speakers.map(s => s.name));
+
+  this.tweetLineFull = "http://twitter.com/home?status=" + session.tweetLine;
+
   this.showSchedule = config.schedule.show;
 }
 SessionDetailsController.$inject = ['session', 'Speaker', 'config'];
