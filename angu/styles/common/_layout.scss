@@ -41,3 +41,52 @@ b {
     margin-top: $nav-height;
   }
 }
+
+
+h1, .h1 {
+  font-size: 24px;
+
+  @include respond-to(phone) {
+    font-size: 36px;
+  }
+}
+
+h2, .h2 {
+  font-size: 20px;
+
+  @include respond-to(phone) {
+    font-size: 30px;
+  }
+}
+
+h3, .h3 {
+  font-size: 16px;
+
+  @include respond-to(phone) {
+    font-size: 24px;
+  }
+}
+
+h4, .h4 {
+  font-size: 15px;
+
+  @include respond-to(phone) {
+    font-size: 22px;
+  }
+}
+
+h5, .h5 {
+  font-size: 13px;
+
+  @include respond-to(phone) {
+    font-size: 14px;
+  }
+}
+
+h6, .h6 {
+  font-size: 12px;
+
+  @include respond-to(phone) {
+    font-size: 12px;
+  }
+}

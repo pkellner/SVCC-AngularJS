@@ -56,18 +56,24 @@
     <div class="container nav--section">
 
         <div class="row row-centered">
-            <div class="col-md-9 col-centered">
+            <div class="col-sm-12 col-centered">
                 <h2 class="type--lead">
-                    <span class="type--color">Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More</span>
+                    <span class="type--color">Covering Angular 1.x, 2, <br>
+                    TypeScript, ECMAScript 6, Web Components and More</span>
                 </h2>
 
-                <h2 class="text-center"><span class="type--color" ng-bind-html="home.title2"></span></h2>
+                <!-- <h2 class="type--lead"><span class="type--color" ng-bind-html="home.title2"></span></h2> -->
 
-                <h3 class="text-center"><span class="type--color" style="color: #00487F;">
-
-
-              <div><a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg">Signup For The Live Feed of All Keynotes</a></div>
-              <div><a href="/angu/CommunityEvent" class="btn btn-primary btn-lg">Signup For Community Event Tuesday June 23rd</a></div>
+                <div class="row text-center">
+                    <div class="col-sm-6 mb20">
+                        <h3 class="type--lead">Free Live Stream of Angular U Keynotes</h3>
+                        <a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg">Sign up for the live feed</a>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3 class="type--lead">Participate in our community event on June 23</h3>
+                        <a href="/angu/CommunityEvent" class="btn btn-primary btn-lg">Sign up for the event</a>
+                    </div>
+                </div>
 
           </span>
                 </h3>
@@ -79,7 +85,7 @@
             </div>
         </div>
 
-        <div class="content--sectionx">
+        <div class="content--section">
             <h2 class="type--lead">Keynote Presenters</h2>
             <keynote-presenters presenters="speakers.keynotes"></keynote-presenters>
             <button ng-hide="home.showSpeakers" class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon
