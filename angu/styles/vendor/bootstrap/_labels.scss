@@ -5,6 +5,7 @@
   font-size: 9px;
   line-height: 1.5;
   text-transform: uppercase;
+  text-align: left;
   color: $gray-dark;
   background: $gray-lightest;
   white-space: normal;
@@ -15,15 +16,6 @@
     font-size: 12px;
   }
 
-  &-alt {
-    text-transform: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: #3b3b3b;
-    font-style: italic;
-    font-size: 14px;
-  }
-
   &:before {
     content: "";
     position: absolute;
@@ -32,6 +24,19 @@
     left: 0;
     top: 0;
     bottom: 0;
+  }
+
+  &-full {
+    width: 100%;
+  }
+
+  &-alt {
+    text-transform: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #3b3b3b;
+    font-style: italic;
+    font-size: 14px;
   }
 
   &-danger {
