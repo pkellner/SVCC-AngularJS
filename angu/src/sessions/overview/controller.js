@@ -13,6 +13,10 @@ function SessionOverviewController(sessions, days, tracks, Speaker, times, $sce)
     this.tracks = tracks;
     this.track = undefined;
 
+    for (let i=0;i<this.sessions.length;i++) {
+       this.sessions[i].speakersNamesCsv = this.sessions[i].speakersNamesCsv.replace(/,/g, ', ');
+    }
+
     this.justDays = [];
     for (let i = 1; i < this.days.length; i++) {
     //for (let i = 1; i < 3; i++) { // just do mon/tue
