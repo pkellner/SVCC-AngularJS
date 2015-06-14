@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = require('angular')
-    .module('video', [])
-    .factory('Videos', require('./videos'))
+    .module('codecampyear', [])
+    .factory('CodeCampYear', require('./codecampyear'))
     .name;

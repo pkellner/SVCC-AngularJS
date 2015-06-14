@@ -8,7 +8,8 @@ exports = module.exports = function ($stateProvider) {
     parent: 'base',
     resolve: {
       faqs: getFaqs,
-      speakers: getSpeakers
+      speakers: getSpeakers,
+      codecampyear: getCodeCampYear
     },
     views: {
       '@layout': {
@@ -26,6 +27,11 @@ function getFaqs (Faqs) {
   return Faqs.fetchAll();
 }
 getFaqs.$inject = ['Faqs'];
+
+function getCodeCampYear (CodeCampYear) {
+  return CodeCampYear.fetchAll();
+}
+getCodeCampYear.$inject = ['CodeCampYear'];
 
 function getSpeakers (Speaker) {
   return Speaker.fetchAll();

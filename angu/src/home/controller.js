@@ -2,8 +2,19 @@
 
 
 
-function HomeController ($scope, faqs, speakers, config,$sce) {
+function HomeController ($scope, faqs, speakers, config,$sce,codecampyear) {
     $scope.faqs = faqs;
+
+    if (codecampyear && codecampyear.length === 1) {
+        this.codecampyear = codecampyear[0];
+        this.codecampyear.liveFeedSessionSpeakersCsv = this.codecampyear.liveFeedSessionSpeakersCsv.replace(/,/g, ', ');
+    } else {
+        this.codecampyear = [{
+            liveFeedTitle: 'code camp year problem'
+        }];
+    }
+
+    debugger;
 
     $scope.speakers = {
         keynotes: speakers.filter(function (speaker) {
@@ -97,6 +108,6 @@ function HomeController ($scope, faqs, speakers, config,$sce) {
     }
 }
 
-HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config','$sce'];
+HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config','$sce','codecampyear'];
 
 module.exports = HomeController;

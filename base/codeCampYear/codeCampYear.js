@@ -4,7 +4,7 @@ export default factory;
 
 factory.$inject = ['Model'];
 function factory (Model) {
-  return class Faq extends Model {
-    static url = '/rest/faq';
+  return class CodeCampYear extends Model {
+    static url = '/rest/codecampyear';
   }
 }
