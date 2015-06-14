@@ -13,8 +13,12 @@ function HomeController ($scope, faqs, speakers, config,$sce,codecampyear) {
             liveFeedTitle: 'code camp year problem'
         }];
     }
+    //debugger;
+    this.showLiveFeedSessionTitle = this.codecampyear.liveFeedSessionTitle && this.codecampyear.liveFeedSessionTitle.length != 0;
+    this.showLiveFeedSponsorName = this.codecampyear.liveFeedSponsorName && this.codecampyear.liveFeedSponsorName.length != 0;
 
-    debugger;
+
+
 
     $scope.speakers = {
         keynotes: speakers.filter(function (speaker) {

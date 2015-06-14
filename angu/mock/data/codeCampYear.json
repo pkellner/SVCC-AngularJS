@@ -14,9 +14,9 @@
     "liveStreamFeedOverride": true,
     "showLiveFeedStart": "2015-06-22T00:00:00Z",
     "showLiveFeedEnd": "2015-06-26T00:00:00Z",
-    "liveFeedSponsorName": "Rangle.IO",
+    "liveFeedSponsorName": "Microsoft Office365",
     "liveStreamSponsorNameEmpty": "If No Live Feed Use This",
-    "liveFeedSponsorUrl": "http://rangle.io",
+    "liveFeedSponsorUrl": "http://Microsoft.com/",
     "liveFeedSponsorMessage": "Best Place To Buy Stuff",
     "liveStreamSponsorMessageEmpty": "Empty Message Here",
     "liveFeedSessionId": -1,
@@ -53,9 +53,12 @@
       "twitterUrl": "http://twitter.com/angularu",
       "id": 3
     },
-    "liveFeedSessionTitle": "LiveFeedSessionTitle here",
-    "liveFeedSessionDescription": "Livefeedsessiondescription here",
+    "liveFeedSessionTitle": "Live Feed Session Title Here",
+    "liveFeedSessionDescription": "Live Feed Session Description Here.  This can actually go on for quite a while.",
     "liveFeedSessionSpeakersCsv": "Brad,Misko,Igor",
+    "showLiveFeedCurrent": true,
+    "timeZoneOffsetFromServer": -2,
+    "timeOnServer": "2015-06-14T10:37:24.1546173-07:00",
     "id": 201
   }
 ]

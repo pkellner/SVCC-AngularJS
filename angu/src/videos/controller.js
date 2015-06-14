@@ -12,6 +12,10 @@ function VideoController(videos,$sce,config) {
     for (let i = 0; i < videos.length; i++) {
         videos[i].vimeoIframeSrc =
             $sce.trustAsResourceUrl("https://player.vimeo.com/video/" + videos[i].vimeoId);
+
+        if (videos[i].sessionSpeakerNamesCsv) {
+            videos[i].sessionSpeakerNamesCsv = videos[i].sessionSpeakerNamesCsv.replace(/,/g, ', ');
+        }
     }
 
     this.videosSessions = videos.filter(function (rec) {

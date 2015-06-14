@@ -1,10 +1,10 @@
 <div id="home">
 
-    <section class="nav--section live-feed" ng-show="home.showLiveFeed">
+    <section class="nav--section live-feed" ng-show="home.codecampyear.showLiveFeedCurrent">
         <div class="container">
             <div class="row row-centered">
                 <div class="col-md-10 col-centered">
-                    <h2 class="type--lead"><span class="type--color">Live feed of the conference</span></h2>
+                    <h2 class="type--lead"><span class="type--color">Angular U Live Feed</span></h2>
 
                     <div class="video-embed">
                         <iframe ng-src="{{ home.iFrameSrcLiveStream}}" width="431" height="263" frameborder="0"
@@ -14,12 +14,11 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-9 live-feed-info text-center">
+                        <div class="col-sm-9 live-feed-info text-center" ng-show="home.showLiveFeedSessionTitle">
+
                             <h3>Now playing: <span class="type--color">{{ home.codecampyear.liveFeedSessionTitle }}</span> by {{ home.codecampyear.liveFeedSessionSpeakersCsv }}</h3>
-                            <span class="label label-danger label-alt">Sponsored by <a href="http://rangle.io/" class="type--color">RANGLE.IO</a></span>
-                            <p>Time to make the switch to Angular2. This talk will cover all of the fundamentals of taking
-                                an Angular 1.x app and taking to an Angular2 version. It's time to start thinking in
-                                Components.</p>
+                            <span ng-show="home.showLiveFeedSponsorName"  class="label label-danger label-alt">Sponsored by <a ng-href="{{home.codecampyear.liveFeedSponsorUrl}}" target="_blank" class="type--color">{{ home.codecampyear.liveFeedSponsorName}}</a></span>
+                            <p>{{ home.codecampyear.liveFeedSessionDescription }}</p>
                         </div>
                         <div class="col-sm-3">
                             <div class="live-feed-share">
