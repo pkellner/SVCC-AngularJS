@@ -2,8 +2,39 @@
 
 
 
-function HomeController ($scope, faqs, speakers, config,$sce,codecampyear) {
+function HomeController ($scope, faqs, speakers, config,$sce,codecampyear,$timeout,CodeCampYear) {
     $scope.faqs = faqs;
+
+    //$scope.value = 0;
+    //function pollData () {
+    //        CodeCampYear.fetchAll().then(function(data){
+    //            $scope.value += 1;
+    //            $scope.codecampyear = data[0];
+    //            $scope.codecampyear.liveFeedTitle = $scope.value;
+    //        });
+    //    setTimeout(pollData, 1000 * 5)
+    //}
+    //pollData();
+
+    var onTimeout = function() {
+        $scope.value += 1;
+
+
+        CodeCampYear.fetchAllNoCache().then(function(data){
+            //console.log(data.length);
+            $scope.home.codecampyear = data[0];
+            console.log('new title: ' + $scope.home.codecampyear.liveFeedTitle + ' timeOnServer: ' + $scope.home.codecampyear.timeOnServer );
+        });
+        timer = $timeout(onTimeout, 5000);
+    };
+    var timer = $timeout(onTimeout, 5000);
+    $scope.value = 0;
+    $scope.$on("$destroy", function() {
+        if (timer) {
+            $timeout.cancel(timer);
+        }
+    });
+
 
     if (codecampyear && codecampyear.length === 1) {
         this.codecampyear = codecampyear[0];
@@ -113,8 +144,13 @@ function HomeController ($scope, faqs, speakers, config,$sce,codecampyear) {
     for(k=0;k<this.homePageVideos.length;k++) {
         this.homePageVideos[k].thumbNail = this.getVideoThumb(this.homePageVideos[k].vimeoId,105,77);
     }
+
+
+
+
+
 }
 
-HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config','$sce','codecampyear'];
+HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config','$sce','codecampyear','$timeout','CodeCampYear'];
 
 module.exports = HomeController;

@@ -1,10 +1,9 @@
 <div id="home">
-
     <section class="nav--section live-feed" ng-show="home.codecampyear.showLiveFeedCurrent">
         <div class="container">
             <div class="row row-centered">
                 <div class="col-md-10 col-centered">
-                    <h2 class="type--lead"><span class="type--color">Angular U Live Feed</span></h2>
+                    <h2 class="type--lead"><span class="type--color">{{home.codecampyear.liveFeedTitle}}</span></h2>
 
                     <div class="video-embed">
                         <iframe ng-src="{{ home.iFrameSrcLiveStream}}" width="431" height="263" frameborder="0"
@@ -82,6 +81,8 @@
                 <!--</span></h3>-->
 
             </div>
+
+
         </div>
 
 

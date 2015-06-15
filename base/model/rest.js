@@ -26,5 +26,16 @@ function factory ($http) {
         return Model.all();
       });
     }
+    static fetchAllNoCache () {
+      return $http.get(`${this.url}/arrayonly`, {
+        cache: false
+      })
+          .then((response) => {
+            return this.set(response.data);
+          })
+          .then(function (Model) {
+            return Model.all();
+          });
+    }
   };
 }
