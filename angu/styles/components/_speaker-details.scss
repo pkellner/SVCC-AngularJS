@@ -20,6 +20,8 @@
 
     img {
       max-width: 100%;
+      margin-bottom: 10px;
+
       @include respond-to(tablet) {
         width: 100%;
       }

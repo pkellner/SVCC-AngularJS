@@ -45,6 +45,14 @@
   // }
 }
 
+.btn-lg {
+  font-size: 14px;
+
+  @include respond-to(phone) {
+    font-size: 18px;
+  }
+}
+
 .inline-buttons {
   @extend %clearfix;
   @include font-smoothing(on);
