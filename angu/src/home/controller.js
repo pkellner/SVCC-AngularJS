@@ -38,13 +38,14 @@ function HomeController ($scope, faqs, speakers, config,$sce,codecampyear) {
 
 
     //https://www.youtube.com/embed/uV2uebhnqOw
+    var embedCode = this.codecampyear.liveFeedEmbedCodeEmpty || "";
+    if (this.codecampyear.liveFeedEmbedCode && this.codecampyear.liveFeedEmbedCode.length > 0){
+        embedCode = this.codecampyear.liveFeedEmbedCode
+    }
+
     this.iFrameSrcLiveStream =
-        $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + config.home.liveFeedEmbedCode);
-
-
-
-
-
+        $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + embedCode);
+    
     this.homePageVideos = [
         {
             title: 'Brad Green Talks Directives, Controllers become Components in Angular 2',

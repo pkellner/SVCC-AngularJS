@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-sm-9 live-feed-info text-center" ng-show="home.showLiveFeedSessionTitle">
 
-                            <h3>Now playing: <span class="type--color">{{ home.codecampyear.liveFeedSessionTitle }}</span> by {{ home.codecampyear.liveFeedSessionSpeakersCsv }}</h3>
+                            <h3>Now playing: <span ><a class="type--color" target="_blank"   ng-href="{{home.codecampyear.liveFeedSessionUrl}}">{{ home.codecampyear.liveFeedSessionTitle }}</a></span> by {{ home.codecampyear.liveFeedSessionSpeakersCsv }}</h3>
                             <span ng-show="home.showLiveFeedSponsorName"  class="label label-danger label-alt">Sponsored by <a ng-href="{{home.codecampyear.liveFeedSponsorUrl}}" target="_blank" class="type--color">{{ home.codecampyear.liveFeedSponsorName}}</a></span>
                             <p>{{ home.codecampyear.liveFeedSessionDescription }}</p>
                         </div>
@@ -24,8 +24,8 @@
                             <div class="live-feed-share">
                                 <h4 class="live-feed-share-title">Share this on: </h4>
                                 <ul class="live-feed-share-list">
-                                    <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
-                                    <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+                                    <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+                                    <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
                                 </ul>
 
                                 <a href="Videos"   ><button class="btn btn-primary btn-full">View all the videos</button></a>
@@ -41,9 +41,9 @@
                                                             class="type--color">Get email alerts</a> or follow us on:
                         </h4>
                         <ul>
-                            <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
-                            <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
-                            <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank"
+                            <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+                            <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+                            <li><a ng-href="https://plus.google.com/b/100446488804563546766/" target="_blank"
                                    target="_blank" class="icon-gplus"></a></li>
                         </ul>
                     </div>
@@ -65,8 +65,8 @@
                 <h3 class="text-center"><span class="type--color" style="color: #00487F;">
 
 
-              <div><a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg">Signup For The Live Feed of All Keynotes</a></div>
-              <div><a href="/angu/CommunityEvent" class="btn btn-primary btn-lg">Signup For Community Event Tuesday June 23rd</a></div>
+              <div><a ng-href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg">Signup For The Live Feed of All Keynotes</a></div>
+              <div><a ng-href="/angu/CommunityEvent" class="btn btn-primary btn-lg">Signup For Community Event Tuesday June 23rd</a></div>
 
           </span>
                 </h3>
@@ -110,7 +110,7 @@
                     </div>
                     <ul class="video--list">
                         <li ng-repeat="vid in home.homePageVideos">
-                            <a href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)">
+                            <a ng-href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)">
                                 <img ng-src='{{ vid.thumbNail }}' alt="" class=""/></a>
                             <span ng-if="vid.vimeoId === home.currentVideo.vimeoId"
                                   class="video--playing">Playing</span>
@@ -118,7 +118,7 @@
                     </ul>
 
                     <div class="text-center">
-                        <a href="/Videos">
+                        <a ng-href="/Videos">
                             <button class="btn btn-primary">More videos</button>
                         </a>
                     </div>
@@ -130,7 +130,7 @@
                                 <span class="news-single--month">June</span>
                                 <span class="news-single--day">8</span>
                             </div>
-                            <a href="/News/2015sf/rangleios-women-who-code-contest-announced"
+                            <a ng-href="/News/2015sf/rangleios-women-who-code-contest-announced"
                                class="news-single--content">
                                 <span class="news-single--category">News</span>
 
@@ -143,7 +143,7 @@
                                 <span class="news-single--month">April</span>
                                 <span class="news-single--day">15</span>
                             </div>
-                            <a href="/News/2015sf/brad-green-tells-us-what-to-expect-at-angular-team-keynote-at-angular-u"
+                            <a ng-href="/News/2015sf/brad-green-tells-us-what-to-expect-at-angular-team-keynote-at-angular-u"
                                class="news-single--content">
                                 <span class="news-single--category">News</span>
 
@@ -156,7 +156,7 @@
                                 <span class="news-single--month">April</span>
                                 <span class="news-single--day">7</span>
                             </div>
-                            <a href="/News/2015sf/honored-to-have-angular-u-on-angularjsorg-site"
+                            <a ng-href="/News/2015sf/honored-to-have-angular-u-on-angularjsorg-site"
                                class="news-single--content">
                                 <span class="news-single--category">News</span>
 
@@ -180,7 +180,7 @@
                                 <span class="news-single--month">March</span>
                                 <span class="news-single--day">29</span>
                             </div>
-                            <a href="http://weblogs.asp.net/dwahlin/introducing-the-angularu-conference"
+                            <a ng-href="http://weblogs.asp.net/dwahlin/introducing-the-angularu-conference"
                                class="news-single--content">
                                 <span class="news-single--category">News</span>
 
@@ -192,7 +192,7 @@
                                 <span class="news-single--month">March</span>
                                 <span class="news-single--day">26</span>
                             </div>
-                            <a href="https://angularu.com/News/2015sf/why-am-i-so-excited-about-angular-u/"
+                            <a ng-href="https://angularu.com/News/2015sf/why-am-i-so-excited-about-angular-u/"
                                class="news-single--content">
                                 <span class="news-single--category">News</span>
 
@@ -211,12 +211,12 @@
         </div>
 
         <div class="social center-block">
-            <h4>Don’t want to miss anything? <a href="https://angularu.com/angu/StayUpToDate" class="type--color">Get
+            <h4>Don’t want to miss anything? <a ng-href="https://angularu.com/angu/StayUpToDate" class="type--color">Get
                 email alerts</a> or follow us on: </h4>
             <ul>
-                <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
-                <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
-                <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank" target="_blank"
+                <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+                <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+                <li><a ng-href="https://plus.google.com/b/100446488804563546766/" target="_blank" target="_blank"
                        class="icon-gplus"></a></li>
             </ul>
         </div>
