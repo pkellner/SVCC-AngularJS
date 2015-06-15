@@ -7,7 +7,9 @@ function HomeController ($scope, faqs, speakers, config,$sce,codecampyear) {
 
     if (codecampyear && codecampyear.length === 1) {
         this.codecampyear = codecampyear[0];
-        this.codecampyear.liveFeedSessionSpeakersCsv = this.codecampyear.liveFeedSessionSpeakersCsv.replace(/,/g, ', ');
+        if (this.codecampyear.liveFeedSessionSpeakersCsv && this.codecampyear.liveFeedSessionSpeakersCsv.length > 0) {
+            this.codecampyear.liveFeedSessionSpeakersCsv = this.codecampyear.liveFeedSessionSpeakersCsv.replace(/,/g, ', ');
+        }
     } else {
         this.codecampyear = [{
             liveFeedTitle: 'code camp year problem'
@@ -16,8 +18,6 @@ function HomeController ($scope, faqs, speakers, config,$sce,codecampyear) {
     //debugger;
     this.showLiveFeedSessionTitle = this.codecampyear.liveFeedSessionTitle && this.codecampyear.liveFeedSessionTitle.length != 0;
     this.showLiveFeedSponsorName = this.codecampyear.liveFeedSponsorName && this.codecampyear.liveFeedSponsorName.length != 0;
-
-
 
 
     $scope.speakers = {
@@ -38,6 +38,8 @@ function HomeController ($scope, faqs, speakers, config,$sce,codecampyear) {
 
 
     //https://www.youtube.com/embed/uV2uebhnqOw
+
+    // Use liveFeedEmbedCode, but if not there then use liveFeedEmbedCodeEmpty
     var embedCode = this.codecampyear.liveFeedEmbedCodeEmpty || "";
     if (this.codecampyear.liveFeedEmbedCode && this.codecampyear.liveFeedEmbedCode.length > 0){
         embedCode = this.codecampyear.liveFeedEmbedCode
@@ -45,7 +47,7 @@ function HomeController ($scope, faqs, speakers, config,$sce,codecampyear) {
 
     this.iFrameSrcLiveStream =
         $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + embedCode);
-    
+
     this.homePageVideos = [
         {
             title: 'Brad Green Talks Directives, Controllers become Components in Angular 2',

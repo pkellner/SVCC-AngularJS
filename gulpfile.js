@@ -11,6 +11,7 @@ var argv        = require('yargs').argv;
 var chalk       = require('chalk');
 var format      = require('util').format;
 var superstatic = require('superstatic');
+var replace     = require('gulp-replace');
 var app         = argv.app;
 
 if (!app) {
@@ -88,6 +89,7 @@ gulp.task('bundle', function () {
   if (!production) return bundled;
   return bundled
     .pipe(buffer())
+      .pipe(replace(/('|")use strict\1/g, ''))
     .pipe(plugins.uglify())
     .pipe(plugins.rename({
       suffix: '.min'
