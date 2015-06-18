@@ -15,9 +15,8 @@ function HomeController ($scope, faqs, speakers, config,$sce,codecampyear,$timeo
             liveFeedTitle: 'code camp year problem'
         }];
     }
-    //debugger;
-    this.showLiveFeedSessionTitle = this.codecampyear.liveFeedSessionTitle && this.codecampyear.liveFeedSessionTitle.length != 0;
-    this.showLiveFeedSponsorName = this.codecampyear.liveFeedSponsorName && this.codecampyear.liveFeedSponsorName.length != 0;
+
+    this.showLiveFeedInfo = this.codecampyear.liveFeedSessionTitle && this.codecampyear.liveFeedSessionTitle.length > 1;
 
 
     $scope.speakers = {

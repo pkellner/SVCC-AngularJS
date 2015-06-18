@@ -13,11 +13,11 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-9 live-feed-info text-center" >
+                        <div class="col-sm-9 live-feed-info text-center" ng-show="home.showLiveFeedInfo" >
 
-                            <h3   ng-show="home.showLiveFeedSessionTitle" >Now playing: <span ><a class="type--color" target="_blank"   ng-href="{{home.codecampyear.liveFeedSessionUrl}}">{{ home.codecampyear.liveFeedSessionTitle }}</a></span> by {{ home.codecampyear.liveFeedSessionSpeakersCsv }}</h3>
-                            <span ng-show="home.showLiveFeedSponsorName"  class="label label-danger label-alt">Live Feed and Talk Sponsored by <a ng-href="{{home.codecampyear.liveFeedSponsorUrl}}" target="_blank" class="type--color">{{ home.codecampyear.liveFeedSponsorName}}</a></span>
-                            <p ng-show="home.showLiveFeedSessionTitle"  >{{ home.codecampyear.liveFeedSessionDescription }}</p>
+                            <h3>Now playing: <span ><a class="type--color" target="_blank"   ng-href="{{home.codecampyear.liveFeedSessionUrl}}">{{ home.codecampyear.liveFeedSessionTitle }}</a></span> by {{ home.codecampyear.liveFeedSessionSpeakersCsv }}</h3>
+                            <span  class="label label-danger label-alt">Live Feed and Talk Sponsored by <a ng-href="{{home.codecampyear.liveFeedSponsorUrl}}" target="_blank" class="type--color">{{ home.codecampyear.liveFeedSponsorName}}</a></span>
+                            <p>{{ home.codecampyear.liveFeedSessionDescription }}</p>
                         </div>
                         <div class="col-sm-3">
                             <div class="live-feed-share">
@@ -68,7 +68,7 @@
                         <a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg">Sign up for the live feed</a>
                     </div>
                     <div class="col-sm-6">
-                        <h3 class="type--lead">Participate in our community event on June 23</h3>
+                        <h3 class="type--lead">Evening community event on June 23</h3>
                         <a href="/angu/CommunityEvent" class="btn btn-primary btn-lg">Sign up for the event</a>
                     </div>
                 </div>
