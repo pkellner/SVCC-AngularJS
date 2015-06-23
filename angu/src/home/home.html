@@ -16,8 +16,13 @@
                         <div class="col-sm-9 live-feed-info text-center" ng-show="home.showLiveFeedInfo" >
 
                             <h3>Now playing: <span ><a class="type--color" target="_blank"   ng-href="{{home.codecampyear.liveFeedSessionUrl}}">{{ home.codecampyear.liveFeedSessionTitle }}</a></span> by {{ home.codecampyear.liveFeedSessionSpeakersCsv }}</h3>
-                            <span  class="label label-danger label-alt">Live Feed and Talk Sponsored by <a ng-href="{{home.codecampyear.liveFeedSponsorUrl}}" target="_blank" class="type--color">{{ home.codecampyear.liveFeedSponsorName}}</a></span>
-                            <p>{{ home.codecampyear.liveFeedSessionDescription }}</p>
+
+
+                            <span ng-hide="true"  class="label label-danger label-alt">Live Feed and Talk Sponsored by <a ng-href="{{home.codecampyear.liveFeedSponsorUrl}}" target="_blank" class="type--color">{{ home.codecampyear.liveFeedSponsorName}}</a></span>
+
+
+                            <!--<p>{{ home.codecampyear.liveFeedSessionDescription }}</p><p>{{ home.codecampyear.liveFeedSessionDescription }}</p>-->
+                            <p ng-bind-html="home.codecampyear.liveFeedSessionDescription" ></p>
                         </div>
                         <div class="col-sm-3">
                             <div class="live-feed-share">

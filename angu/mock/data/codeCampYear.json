@@ -51,9 +51,9 @@
         "twitterUrl": "http://twitter.com/angularu",
         "id": 3
       },
-      "liveFeedSessionTitle": "x",
-      "liveFeedSessionDescription": "efg",
-      "liveFeedSessionSpeakersCsv": "hij",
+      "liveFeedSessionTitle": "Live Feed Session Title HERE",
+      "liveFeedSessionDescription": "Session Description <b>HERE</b>",
+      "liveFeedSessionSpeakersCsv": "speaker1,speaker2,speaker3",
       "showLiveFeedCurrent": true,
       "timeZoneOffsetFromServer": 0,
       "timeOnServer": "2015-06-17T17:23:44.299546-07:00",
