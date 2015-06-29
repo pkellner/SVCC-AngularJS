@@ -12,25 +12,23 @@
 
 
 
-    <h1 class="type--lead"  ng-show="list.videoSessions.length > 0"  >Session Recordings</h1>
+    <h1 class="type--lead"  ng-show="list.videosSessions.length > 0"  >Session Recordings</h1>
 
     <div class="persona--container">
 
 
         <!-- Session Videos -->
-        <div class="persona persona--video" ng-repeat="video in list.videosSessions ">
-            <h3><a class="type--color"  href="{{video.sessionUrl}}" target="_blank" >{{video.title}}</a></h3>
+        <div class="persona persona--video" ng-repeat="video in list.videosSessions | orderBy: 'sessionTimeDateTimeSort' ">
+            <h3><a class="type--color"  href="{{video.sessionUrl}}" target="_blank" >{{video.sessionTitle}}</a></h3>
 
 
 
             <div class="persona--img">
-
-
                 <iframe ng-hide="video.videoSourceYouTube" src="{{video.iFrameVideoSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"
                         height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
                 </iframe>
 
-                <iframe width="289" height="163"
+                <iframe ng-show="video.videoSourceYouTube" width="289" height="163"
                         src="{{video.iFrameVideoSrc}}"
                         frameborder="0" allowfullscreen></iframe>
                 <!--<iframe ng-show="video.videoSourceYouTube" src="{{video.iFrameVideoSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"-->
@@ -63,9 +61,25 @@
         <div class="persona persona--video" ng-repeat="video in list.videosPreConferences ">
             <h3><a class="type--color"  href="{{video.urlWithTitle}}" target="_blank" >{{video.title}}</a></h3>
             <div class="persona--img">
-                <iframe src="{{video.vimeoIframeSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"
+
+                <!--<iframe src="{{video.vimeoIframeSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"-->
+                        <!--height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">-->
+                <!--</iframe>-->
+
+                <iframe ng-hide="video.videoSourceYouTube" src="{{video.iFrameVideoSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"
                         height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
                 </iframe>
+
+                <iframe ng-show="video.videoSourceYouTube" width="289" height="163"
+                        src="{{video.iFrameVideoSrc}}"
+                        frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+
             </div>
 
             <div class="persona--actions">

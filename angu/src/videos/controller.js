@@ -11,23 +11,20 @@ function VideoController(videos,$sce,config) {
 
     for (let i = 0; i < videos.length; i++) {
 
-        //debugger;
+
         // use youtube as primary if it exists
+
         videos[i].videoSourceYouTube = false;
         if (videos[i].youTubeURL && videos[i].youTubeURL.length > 1) {
             videos[i].videoSourceYouTube = true;
-
+            videos[i].abc = 'abcd';
             // http://www.techairlines.com/youtube-parameters/
-            var str = "http://www.youtube.com/embed/" + videos[i].youTubeURL + "?vq=large&amp;cc_load_policy=1&amp;showinfo=0&amp;rel=0&amp;autohide=2&amp;controls=1&amp;fs=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;listType=user_uploads&amp;list=&amp;color=white";
+            var str = "https://www.youtube.com/embed/" + videos[i].youTubeURL + "?vq=large&amp;cc_load_policy=1&amp;showinfo=0&amp;rel=0&amp;autohide=2&amp;controls=1&amp;fs=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;listType=user_uploads&amp;list=&amp;color=white";
             videos[i].iFrameVideoSrc =
                 $sce.trustAsResourceUrl(str);
         } else if (videos[i].vimeoId && videos[i].vimeoId.length > 1) {
-
             videos[i].iFrameVideoSrc =
                 $sce.trustAsResourceUrl("https://player.vimeo.com/video/" + videos[i].vimeoId);
-        }
-        else {
-            videos[i].iFrameVideoSrc = "x";
         }
 
         if (videos[i].sessionSpeakerNamesCsv) {
@@ -38,6 +35,8 @@ function VideoController(videos,$sce,config) {
     this.videosSessions = videos.filter(function (rec) {
         return rec.sessionId != undefined
     });
+
+
 
 
 
