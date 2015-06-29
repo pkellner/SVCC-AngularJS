@@ -24,10 +24,24 @@
 
 
             <div class="persona--img">
-                <iframe src="{{video.vimeoIframeSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"
+
+
+                <iframe ng-hide="video.videoSourceYouTube" src="{{video.iFrameVideoSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"
                         height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
                 </iframe>
+
+                <iframe width="289" height="163"
+                        src="{{video.iFrameVideoSrc}}"
+                        frameborder="0" allowfullscreen></iframe>
+                <!--<iframe ng-show="video.videoSourceYouTube" src="{{video.iFrameVideoSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"-->
+                        <!--height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""-->
+                        <!--fs= >-->
+                <!--</iframe>-->
+
+
             </div>
+
+
             <div class="persona--actions">
                 <a class="persona--actions--expand" href="{{video.urlWithTitle}}" target="_blank"><i class="icon-chain"></i>EXPAND</a>
 
