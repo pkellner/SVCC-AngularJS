@@ -7,13 +7,17 @@ exports = module.exports = function ($window, config) {
   function TicketNotificationController () {
     this.requesting = false;  // what does "requesting" do? I can't find usage.  4/11/2015 - PGK
 
+    // COMMENTED OUT PURCHASE TICKET AND BOOKHOTEL RROM FOR NOW AFTER FIRST ANGULARU 2015
+
+
+
     this.email = null;
     this.username = config.user.active;
-    this.hotelBookingUrl = config.hotel.bookingUrl;
-    this.purchaseUrl = '/angu/purchasetickets';
+    this.hotelBookingUrl = ''; //config.hotel.bookingUrl;
+    this.purchaseUrl = ''; // '/angu/purchasetickets';
     const titleGuid = config.home.title2.guid;
     if (titleGuid) {
-      this.purchaseUrl += `?value=${titleGuid}`;
+      //this.purchaseUrl += `?value=${titleGuid}`;
     }
     this.title2 = config.home.title2.content ? config.home.title2.content :  'Buy Ticket';
   }
