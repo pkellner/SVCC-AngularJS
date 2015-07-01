@@ -1,4 +1,50 @@
 <div id="home">
+
+
+    <section class="nav--section live-feed">
+        <div class="container">
+
+
+            <div class="row row-centered">
+                <div class="col-md-10 col-centered">
+                    <div class="row text-center">
+
+                        <div>
+
+                            <a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg xcenter-block">Sign Up to be
+                                Notified of Future Events</a>
+                        </div>
+                        <!--<div class="col-sm-6 mb20">-->
+                        <!--<h3 class="type&#45;&#45;lead">Sign Up to be Notified of Future Events</h3>-->
+                        <!--<a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg">Sign up for the live feed</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-6">-->
+                        <!--<h3 class="type&#45;&#45;lead">Evening community event on June 23</h3>-->
+                        <!--<a href="/angu/CommunityEvent" class="btn btn-primary btn-lg">Sign up for the event</a>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row row-centered">
+                <div class="col-md-10 col-centered">
+                    <h2 class="type--lead"><span class="type--color">Opening Keynote From the Angular Team June 22, 2015 (Brad Green, Igor Minar and Misko Hevery)</span>
+                    </h2>
+
+                    <div class="video-embed">
+                        <iframe ng-src="https://www.youtube.com/embed/aHGmj_fqPLE" width="431" height="263"
+                                frameborder="0"
+                                allowfullscregulpen></iframe>
+
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="nav--section live-feed" ng-show="home.codecampyear.showLiveFeedCurrent">
         <div class="container">
             <div class="row row-centered">
@@ -12,27 +58,33 @@
                         </iframe>
                     </div>
 
+
                     <div class="row">
-                        <div class="col-sm-9 live-feed-info text-center" ng-show="home.showLiveFeedInfo" >
+                        <div class="col-sm-9 live-feed-info text-center" ng-show="home.showLiveFeedInfo">
 
-                            <h3>Now playing: <span ><a class="type--color" target="_blank"   ng-href="{{home.codecampyear.liveFeedSessionUrl}}">{{ home.codecampyear.liveFeedSessionTitle }}</a></span> by {{ home.codecampyear.liveFeedSessionSpeakersCsv }}</h3>
-
-
-                            <span ng-hide="true"  class="label label-danger label-alt">Live Feed and Talk Sponsored by <a ng-href="{{home.codecampyear.liveFeedSponsorUrl}}" target="_blank" class="type--color">{{ home.codecampyear.liveFeedSponsorName}}</a></span>
-
-
+                            <h3>Now playing: <span><a class="type--color" target="_blank"
+                                                      ng-href="{{home.codecampyear.liveFeedSessionUrl}}">{{
+                                home.codecampyear.liveFeedSessionTitle }}</a></span> by {{
+                                home.codecampyear.liveFeedSessionSpeakersCsv }}</h3>
+                            <span ng-hide="true" class="label label-danger label-alt">Live Feed and Talk Sponsored by <a
+                                    ng-href="{{home.codecampyear.liveFeedSponsorUrl}}" target="_blank"
+                                    class="type--color">{{ home.codecampyear.liveFeedSponsorName}}</a></span>
                             <!--<p>{{ home.codecampyear.liveFeedSessionDescription }}</p><p>{{ home.codecampyear.liveFeedSessionDescription }}</p>-->
-                            <p ng-bind-html="home.codecampyear.liveFeedSessionDescription" ></p>
+                            <p ng-bind-html="home.codecampyear.liveFeedSessionDescription"></p>
                         </div>
                         <div class="col-sm-3">
                             <div class="live-feed-share">
                                 <h4 class="live-feed-share-title">Share this on: </h4>
                                 <ul class="live-feed-share-list">
-                                    <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
-                                    <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+                                    <li><a ng-href="http://twitter.com/angularu" target="_blank"
+                                           class="icon-twitter"></a></li>
+                                    <li><a ng-href="https://www.facebook.com/angularu" target="_blank"
+                                           class="icon-fb"></a></li>
                                 </ul>
 
-                                <a href="Videos"   ><button class="btn btn-primary btn-full">View all the videos</button></a>
+                                <a href="Videos">
+                                    <button class="btn btn-primary btn-full">View all the videos</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -47,7 +99,8 @@
                         <ul>
                             <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
                             <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
-                            <li><a ng-href="https://plus.google.com/u/0/communities/100721362580915494668" target="_blank"
+                            <li><a ng-href="https://plus.google.com/u/0/communities/100721362580915494668"
+                                   target="_blank"
                                    target="_blank" class="icon-gplus"></a></li>
                         </ul>
                     </div>
@@ -66,26 +119,6 @@
                 </h2>
 
                 <!-- <h2 class="type--lead"><span class="type--color" ng-bind-html="home.title2"></span></h2> -->
-
-                <div class="row text-center">
-
-                    <div>
-
-                        <a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg xcenter-block">Sign Up to be Notified of Future Events</a>
-                    </div>
-                    <!--<div class="col-sm-6 mb20">-->
-                        <!--<h3 class="type&#45;&#45;lead">Sign Up to be Notified of Future Events</h3>-->
-                        <!--<a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg">Sign up for the live feed</a>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-6">-->
-                        <!--<h3 class="type&#45;&#45;lead">Evening community event on June 23</h3>-->
-                        <!--<a href="/angu/CommunityEvent" class="btn btn-primary btn-lg">Sign up for the event</a>-->
-                    <!--</div>-->
-                </div>
-
-                </span>
-                </h3>
-
                 <!--<button class="btn btn-primary btn-lg center-block"   href='/angu/LiveFeedNotify'  >-->
                 <!--&lt;!&ndash;Signup For The Live Feed of All Keynotes.&nbsp;&nbsp;&nbsp; Details Here</button>&ndash;&gt;-->
                 <!--</span></h3>-->
@@ -94,8 +127,6 @@
 
 
         </div>
-
-
 
 
         <div class="content--sectionx">
@@ -184,16 +215,16 @@
                             </a>
                         </li>
                         <!--<li class="news-single">-->
-                            <!--<div class="news-single&#45;&#45;date">-->
-                                <!--<span class="news-single&#45;&#45;month">April</span>-->
-                                <!--<span class="news-single&#45;&#45;day">3</span>-->
-                            <!--</div>-->
-                            <!--<a href="/News/2015sf/announcing-steve-souders-keynote-at-angular-u"-->
-                               <!--class="news-single&#45;&#45;content">-->
-                                <!--<span class="news-single&#45;&#45;category">News</span>-->
+                        <!--<div class="news-single&#45;&#45;date">-->
+                        <!--<span class="news-single&#45;&#45;month">April</span>-->
+                        <!--<span class="news-single&#45;&#45;day">3</span>-->
+                        <!--</div>-->
+                        <!--<a href="/News/2015sf/announcing-steve-souders-keynote-at-angular-u"-->
+                        <!--class="news-single&#45;&#45;content">-->
+                        <!--<span class="news-single&#45;&#45;category">News</span>-->
 
-                                <!--<h3 class="news-single&#45;&#45;title">Announcing Steve Souders Keynote at Angular U</h3>-->
-                            <!--</a>-->
+                        <!--<h3 class="news-single&#45;&#45;title">Announcing Steve Souders Keynote at Angular U</h3>-->
+                        <!--</a>-->
                         <!--</li>-->
                         <li class="news-single">
                             <div class="news-single--date">
@@ -236,7 +267,8 @@
             <ul>
                 <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
                 <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
-                <li><a ng-href="https://plus.google.com/u/0/communities/100721362580915494668" target="_blank" target="_blank"
+                <li><a ng-href="https://plus.google.com/u/0/communities/100721362580915494668" target="_blank"
+                       target="_blank"
                        class="icon-gplus"></a></li>
             </ul>
         </div>
