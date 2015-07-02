@@ -7,6 +7,7 @@
     <div class="heading">
       <h3 class="color">{{details.session.title}} <span>by {{details.byline}}</span></h3>
     </div>
+
     <div class="speaker-details--desc">
       <span class="speaker-details--date" ng-if="details.showSchedule">
         {{details.session.time.startTimeFriendlyDay}} {{details.session.time.description}}
@@ -18,7 +19,14 @@
 
     <p description="description" for="details.session"></p>
 
-    <div class="text-center">
+    <iframe  width="440" height="250" ng-show="details.youTubeCodeLen > 1"
+            src="{{details.iFrameVideoSrc}}"
+            frameborder="0" allowfullscreen></iframe>
+
+    <!--<iframe width="778" height="474" src="https://www.youtube.com/embed/aHGmj_fqPLE" frameborder="0" allowfullscreen></iframe>-->
+
+    <!--<div class="text-center">-->
+    <div>
       <div class="social colored">
         <h3>Share: </h3>
           <ul>

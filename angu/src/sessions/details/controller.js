@@ -17,7 +17,7 @@ function convertDateToGCalString(date){
   return s;
 }
 
-function SessionDetailsController (session, Speaker, config) {
+function SessionDetailsController (session, Speaker, config,$sce) {
   this.session = session;
 
   var sessionStartDate = new Date(session.time.startTime.replace("T"," ").replace(/Z+$/, " PDT"));
@@ -56,8 +56,19 @@ function SessionDetailsController (session, Speaker, config) {
   this.tweetLineFull = "http://twitter.com/home?status=" + session.tweetLine;
 
   this.showSchedule = config.schedule.show;
+
+  if (session.youTubeCode) {
+    this.youTubeCodeLen = session.youTubeCode.length;
+  } else {
+    this.youTubeCodeLen = 0;
+  }
+
+  var str1 = "https://www.youtube.com/embed/" + session.youTubeCode + "?vq=large&amp;cc_load_policy=1&amp;showinfo=0&amp;rel=0&amp;autohide=2&amp;controls=1&amp;fs=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;listType=user_uploads&amp;list=&amp;color=white";
+  this.iFrameVideoSrc =
+      $sce.trustAsResourceUrl(str1);
+
   
 }
-SessionDetailsController.$inject = ['session', 'Speaker', 'config'];
+SessionDetailsController.$inject = ['session', 'Speaker', 'config','$sce'];
 
 export default SessionDetailsController;
