@@ -73,6 +73,33 @@
 
 
 
+  <div class="nav--section container">
+
+    <div>
+      <ul class="list--block">
+
+        <a class="type--color" target="_blank" ng-show="details.sessiondisplayitem && details.sessiondisplayitem.length > 0" href="https://plus.google.com/u/0/communities/100721362580915494668" alt="Photo Gallery on Community Site">Community Site With All Photos</a>
+
+
+        <li ng-repeat="item in details.sessiondisplayitem">
+          <br/><br/>
+          <div style="width: 400px;" ng-show="item.sessionDisplayItemTypeName === 'Image'">
+            <img ng-src="{{item.imageSrc}}?w=400" /><br/><span style="width: 400px;"><strong>{{item.title}}</strong></span>
+          </div>
+
+          <div style="width: 400px;" ng-show="item.sessionDisplayItemTypeName === 'YouTube'">
+            <iframe  width="400" height="250"
+                     src="{{item.youTubeIframeSrc}}"
+                     frameborder="0" allowfullscreen></iframe><br/><span><strong>{{item.title}}</strong></span>
+          </div>
+
+
+
+        </li>
+
+      </ul>
+    </div>
+  </div>
 
 
   <!--<div id="faq" class="nav&#45;&#45;section container">-->
@@ -84,10 +111,24 @@
       <!--<h2 class="type&#45;&#45;lead">FAQ</h2>-->
       <!--<ul class="list&#45;&#45;block list&#45;&#45;centered">-->
         <!--<li ng-repeat="item in details.sessiondisplayitem">-->
+
+
+
           <!--<p><strong>Question: {{item.id}}</strong></p>-->
 
           <!--<p>Answer: {{item.title}}</p>-->
-          <!--<img ng-src="{{item.imageSrc}}" />-->
+
+          <!--<div ng-show="item.sessionDisplayItemTypeName === 'Image'">-->
+              <!--<img ng-src="{{item.imageSrc}}" />-->
+          <!--</div>-->
+
+          <!--<div ng-showxxx="item.sessionDisplayItemTypeName === 'YouTube'">-->
+            <!--<iframe  width="440" height="250"-->
+                     <!--src="{{item.youTubeIframeSrc}}"-->
+                     <!--frameborder="0" allowfullscreen></iframe>-->
+          <!--</div>-->
+
+
         <!--</li>-->
       <!--</ul>-->
     <!--</div>-->

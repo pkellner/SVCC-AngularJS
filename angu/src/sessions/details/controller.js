@@ -21,17 +21,29 @@ function SessionDetailsController (session, Speaker,sessiondisplayitem, config,$
   this.session = session;
 
 
-  this.sessiondisplayitem = [];
-  for (let i=0;i<sessiondisplayitem.length;i++){
-    if (sessiondisplayitem[i].sessionId === session.id){
+  //if (sessiondisplayitem.length > 0) {
+  //
+  //}
 
-      sessiondisplayitem[i].imageSrc = "//d1n4bbuvjcnilu.cloudfront.net" + "/sessiondisplayitem/" + sessiondisplayitem[i].id + ".jpg?w=150";
+  this.sessiondisplayitem = [];
+  for (var i=0;i<sessiondisplayitem.length;i++){
+
+    if ( sessiondisplayitem[i].sessionId === session.id){
+
+      if (sessiondisplayitem[i].sessionDisplayItemTypeName === "Image") {
+
+        //sessiondisplayitem[i].imageSrc = "//d1n4bbuvjcnilu.cloudfront.net" + "/sessiondisplayitem/" + sessiondisplayitem[i].id + ".jpg";
+        sessiondisplayitem[i].imageSrc = config.assets.cdn + "/sessiondisplayitem/" + sessiondisplayitem[i].id + ".jpg";
+
+      } else if (sessiondisplayitem[i].sessionDisplayItemTypeName === "YouTube") {
+        var youTubeSrc = "https://www.youtube.com/embed/" +  sessiondisplayitem[i].data1 + "?vq=large&amp;cc_load_policy=1&amp;showinfo=0&amp;rel=0&amp;autohide=2&amp;controls=1&amp;fs=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;listType=user_uploads&amp;list=&amp;color=white";
+        sessiondisplayitem[i].youTubeIframeSrc =
+            $sce.trustAsResourceUrl(youTubeSrc);
+      }
 
       this.sessiondisplayitem.push(sessiondisplayitem[i]);
     }
   }
-
-  this.cdnUrl = config.assets.cdn;
 
   var sessionStartDate = new Date(session.time.startTime.replace("T"," ").replace(/Z+$/, " PDT"));
   var sessionStartDateGCalString=convertDateToGCalString(sessionStartDate);
