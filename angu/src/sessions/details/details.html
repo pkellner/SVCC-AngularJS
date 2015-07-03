@@ -81,7 +81,7 @@
         <a class="type--color" target="_blank" ng-show="details.sessiondisplayitem && details.sessiondisplayitem.length > 0" href="https://plus.google.com/u/0/communities/100721362580915494668" alt="Photo Gallery on Community Site">Community Site With All Photos</a>
 
 
-        <li ng-repeat="item in details.sessiondisplayitem">
+        <li ng-repeat="item in details.sessiondisplayitem | orderBy:'sequence' ">
           <br/><br/>
           <div style="width: 400px;" ng-show="item.sessionDisplayItemTypeName === 'Image'">
             <img ng-src="{{item.imageSrc}}?w=400" /><br/><span style="width: 400px;"><strong>{{item.title}}</strong></span>
