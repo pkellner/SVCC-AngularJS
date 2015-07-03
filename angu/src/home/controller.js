@@ -2,8 +2,10 @@
 
 
 
-function HomeController ($scope, faqs, speakers, config,$sce,codecampyear,$timeout,CodeCampYear) {
+function HomeController ($scope, faqs, speakers, config,$sce,codecampyear,sessiondisplayitem,  $timeout,CodeCampYear) {
     $scope.faqs = faqs;
+
+    $scope.sessiondisplayitem = sessiondisplayitem;
 
     if (codecampyear && codecampyear.length === 1) {
         this.codecampyear = codecampyear[0];
@@ -130,6 +132,6 @@ function HomeController ($scope, faqs, speakers, config,$sce,codecampyear,$timeo
 
 }
 
-HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config','$sce','codecampyear','$timeout','CodeCampYear'];
+HomeController.$inject = ['$scope', 'faqs', 'speakers', 'config','$sce','codecampyear','sessiondisplayitem','$timeout','CodeCampYear'];
 
 module.exports = HomeController;

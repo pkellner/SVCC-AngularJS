@@ -17,8 +17,21 @@ function convertDateToGCalString(date){
   return s;
 }
 
-function SessionDetailsController (session, Speaker, config,$sce) {
+function SessionDetailsController (session, Speaker,sessiondisplayitem, config,$sce) {
   this.session = session;
+
+
+  this.sessiondisplayitem = [];
+  for (let i=0;i<sessiondisplayitem.length;i++){
+    if (sessiondisplayitem[i].sessionId === session.id){
+
+      sessiondisplayitem[i].imageSrc = "//d1n4bbuvjcnilu.cloudfront.net" + "/sessiondisplayitem/" + sessiondisplayitem[i].id + ".jpg?w=150";
+
+      this.sessiondisplayitem.push(sessiondisplayitem[i]);
+    }
+  }
+
+  this.cdnUrl = config.assets.cdn;
 
   var sessionStartDate = new Date(session.time.startTime.replace("T"," ").replace(/Z+$/, " PDT"));
   var sessionStartDateGCalString=convertDateToGCalString(sessionStartDate);
@@ -67,8 +80,11 @@ function SessionDetailsController (session, Speaker, config,$sce) {
   this.iFrameVideoSrc =
       $sce.trustAsResourceUrl(str1);
 
+
+
+
   
 }
-SessionDetailsController.$inject = ['session', 'Speaker', 'config','$sce'];
+SessionDetailsController.$inject = ['session', 'Speaker','sessiondisplayitem', 'config','$sce'];
 
 export default SessionDetailsController;

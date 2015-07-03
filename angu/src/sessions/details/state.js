@@ -13,7 +13,8 @@ function states ($stateProvider) {
           return type;
         },
         sessionUrl: sessionUrl,
-        session: getSession
+        session: getSession,
+        sessiondisplayitem: getSessionDisplayItem
       },
       views: {
         '@layout': {
@@ -49,3 +50,8 @@ function getSession (Sessions, sessionUrl, $q, Tracks, SessionTimes) {
     return session;
   });
 }
+
+function getSessionDisplayItem (SessionDisplayItem) {
+  return SessionDisplayItem.fetchAll();
+}
+getSessionDisplayItem.$inject = ['SessionDisplayItem'];

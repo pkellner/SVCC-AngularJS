@@ -48,5 +48,9 @@ function provideMocks($httpBackend) {
 
     $httpBackend.whenGET('/rest/codecampyear/arrayonly').respond(require('./data/codecampyear.json'));
 
+    $httpBackend.whenGET('/rest/sessiondisplayitem/arrayonly').respond(require('./data/sessionDisplayItem.json'));
+
+
+
 }
 provideMocks.$inject = ['$httpBackend'];
