@@ -1,0 +1,32 @@
+[
+  {
+    "id": 708,
+    "sponsorName": "Twilio",
+    "imageUrl": "http://cache.siliconvalley-codecamp.com/sponsorimage/20140929145849-708.jpg",
+    "hoverOverText": "Twilio",
+    "underLogoText": "Twilio",
+    "webSite": "http://www.twilio.com",
+    "sponsorSupportLevel": "Platinum",
+    "showFeatured": false
+  },
+  {
+    "id": 735,
+    "sponsorName": "Google",
+    "imageUrl": "http://cache.siliconvalley-codecamp.com/sponsorimage/20130423165430-735.jpg",
+    "hoverOverText": "Google",
+    "underLogoText": "Google",
+    "webSite": "http://www.google.com/",
+    "sponsorSupportLevel": "Gold",
+    "showFeatured": false
+  },
+  {
+    "id": 821,
+    "sponsorName": "Esri",
+    "imageUrl": "http://cache.siliconvalley-codecamp.com/sponsorimage/20140910232128-821.jpg",
+    "hoverOverText": "Esri",
+    "underLogoText": "Esri",
+    "webSite": "http://www.esri.com/",
+    "sponsorSupportLevel": "Silver",
+    "showFeatured": false
+  }
+]

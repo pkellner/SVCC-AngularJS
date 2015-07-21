@@ -1,0 +1,46 @@
+<div id="speaker-details" class="container">
+  <div class="separator">
+    <span class="separator--icon icon-search"></span>
+  </div>
+  <h2 class="type--lead">Speaker details</h2>
+
+  <div class="speaker-details row">
+    <div class="speaker-details--image col-sm-3">
+      <img ng-src="{{details.speaker.imageUrl}}?format=jpg&height=400&width=400&scale=both&mode=pad&Bgcolor=ffffff" alt="{{details.speaker.name}}">
+      <div class="social center-block colored">
+        <speaker-social-icons speaker="details.speaker"></speaker-social-icons>
+      </div>
+
+    </div>
+    <div class="speaker-details--info col-sm-9">
+      <section>
+        <div class="heading">
+          <h3 class="color">{{details.speaker.name}}</h3>
+        </div>
+        <h4 class="speaker-details--desc italic">{{details.speaker.bioShort}}</h4>
+        <p speaker-bio speaker="details.speaker"></p>
+      </section>
+
+      <section ng-if="details.showSessions">
+        <div class="heading">
+          <h3 class="color">Sessions</h3>
+        </div>
+        <ul class="list--squared">
+          <li ng-repeat="session in details.speaker.sessions">
+            <session-link session="session">
+              <h4>{{session.title}}</h4>
+            </session-link>
+            <div>
+              <span class="speaker-details--date" ng-if="details.session.workshop">
+                {{session.time.startTimeFriendlyDay}} {{session.time.description}}
+              </span>
+              <span class="label label-default">{{session.sessionTrackName}}</span>
+            </div>
+            <p description="description" for="session"></p>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</div>

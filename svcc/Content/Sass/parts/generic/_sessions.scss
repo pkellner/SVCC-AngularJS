@@ -1,0 +1,489 @@
+/**
+ * Session details
+ */
+.sessionDetailsWrap {
+  @include clearfix;
+
+  .sessionDescription {
+	  line-height: 21px;
+    ul {
+      list-style-type: circle;
+      margin-left: 30px;
+      li {
+        margin-bottom: 3px;
+      }
+    }
+  }
+  
+  .buttonsBox {
+    float: left;
+    margin: 0 0 20px 10px;
+  }
+
+  .speakerAction {
+    float: right;
+    width: 242px;
+    margin-bottom: 10px;
+  }
+
+  .interestSelectBtn {
+    margin: 0 0 10px;
+  }
+
+  .sessionMaterials {
+    font-size: medium;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .tagsBox {
+    clear: both;
+    @include clearfix;
+  }
+
+  .sessionTags {
+    float: left;
+    overflow: hidden;
+    width: 80%;
+  }
+  
+  .button {
+    &.pointer {
+      float: right;
+      margin: 10px 0 25px 0;
+      cursor: pointer;
+      clear: both;
+    }
+  }
+  
+}
+
+.relatedSessions {
+  
+  li {
+    padding: 8px 10px;
+    border-top: 1px dotted #666;
+    @include clearfix;
+    
+    &:first-child {
+      border-top: 0;
+    }
+  }
+  
+  li > div {
+    float: left;
+  }
+  
+  .sessionDate {
+    font-size: 14px;
+    width: 120px;
+    font-weight: bold;
+    padding-top: 7px;
+  }
+  
+  .sessionTitle {
+    font-size: 14px;
+    width: 350px;
+    font-weight: normal;
+    margin: 0;
+    color: #2e363d;
+    padding: 0 10px;
+    padding-top: 7px;
+  }
+  
+  .btnDetails {
+    width: 85px;
+  }
+}
+
+/**
+ * Session changelog link
+ */
+.sessionChangelog {
+  text-align: right;
+}
+
+/**
+ * Session details wrapper for listings
+ */
+.sessionBox {
+  padding: 5px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px dotted $dark-gray;
+
+  .hTitle {
+    margin-top: 0;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/**
+ * Speaker links
+ */
+.sessionSpeakers {
+  margin: 16px 0;
+  clear: both;
+}
+
+/**
+ * Interest button
+ */
+.interestSelectBtn {
+  .select {
+    position: relative;
+    width: 108px;
+    text-shadow: none;
+    text-align: left;
+    cursor: pointer;
+
+    .label {
+      position: relative;
+      border-bottom-left-radius: 10px;
+      vertical-align: top;
+      height: 18px;
+      display: block;
+      border: 1px solid transparent;
+      padding: 7px 8px 7px 24px;
+      margin: -8px -10px;
+      text-align: top;
+      vertical-align: top;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        @include imageSprites;
+        background-position: -9999px -9999px;
+        margin: -7px 4px 0px 5px;
+        content: '';
+      }
+    }
+  }
+
+  &.Interested {
+    .select {
+      .label
+      {
+        background-color: #e18309;
+        border: 1px solid #e18309;
+        color: #fff;
+
+        &:before
+        {
+          background-position: -50px -150px;
+        }
+      }
+    }
+  }
+
+  &.Attending {
+    .select {
+      .label
+      {
+        background-color: #39b54a;
+        border: 1px solid #39b54a;
+        color: #fff;
+        
+        &:before
+        {
+          background-position: -25px -148px;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Interest dropdown
+ */
+.selectOptionsWrap {
+  display: none;
+  z-index: 9999;
+  width: 140px;
+  position: absolute;
+  margin-top: -34px;
+  margin-left: -6px;
+  background-color: #f3f1f3;
+  border: 1px solid $dark-gray;
+  padding: 8px;
+  @include box-shadow(0px 3px 3px 1px hsla(0, 0%, 0%, 0.3)); 
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: default;
+
+  .option {
+    position: relative;
+    border-bottom: 1px dotted #aaa;
+    padding: 4px 4px 4px 30px;
+    cursor: pointer;
+    margin: 2px 0;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+      border-bottom: 1px solid $primary-color;
+    }
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      @include imageSprites;
+      background-position: -999px -9999px;
+      display: inline-block;
+      margin: 6px 12px 0px 4px;
+      content: '';
+    }
+
+    &.interested:before {
+      background-position: -50px -176px;
+    }
+
+    &.attending:before {
+      background-position: -25px -173px;
+    }
+  }
+}
+
+/**
+ * Sessions filters
+ */
+.filterContentWrap {
+  padding: 14px;
+
+  .checkbox {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    @include imageSprites;
+    background-position: 0 -20px;
+    margin-right: 5px;
+  }
+
+  .selected .checkbox {
+    background-position: 0 0;
+  }
+
+  .filterOptionsWrap {
+    @include clearfix;
+    margin-bottom: 5px;
+  }
+
+  .optionsWrap {
+    overflow: hidden;
+    vertical-align: top;
+    padding-top: 8px;
+    @include scadaFont;
+    font-size: 14px;
+
+    li {
+      float: left;
+      cursor: pointer;
+      margin: 3px 5px;
+    }
+  }
+
+  .labelWrap {
+    float: left;
+    @include handelGothicFont;
+    font-size: 16px;
+    vertical-align: top;
+    padding-top: 6px;
+    margin-right: 10px;
+    width: 80px;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      margin: 2px 10px 0 0;
+      @include imageSprites;
+      display: inline-block;
+    }
+
+    .label {
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 5px;
+    }
+  }
+
+  .dayLabel {
+    float: left;
+    vertical-align: top;
+    width: 65px;
+    display: block;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 3px 5px;
+  }
+
+  .timeOption {
+    @include clearfix;
+    margin-bottom: 5px;
+  }
+
+  // Days filter
+  .daysFilterWrap {
+    .labelWrap {
+      .icon {
+        background-position: 0 -273px;
+      }
+    }
+  }
+
+  // Time filter
+  .timeFilterWrap {
+    .labelWrap {
+      .icon {
+        background-position: -27px -273px;
+      }
+    }
+  }
+}
+
+/**
+ * Sessions table
+ */
+.sessionsTable {
+  margin: 16px 0;
+  width: 100%;
+
+  td, th {
+    vertical-align: middle;
+    padding: 11px 8px;
+    font-size: 14px;
+    
+    i {
+      font-style: italic;
+    }
+
+    &.name {
+      line-height: 16px;
+      text-transform: none;
+      font-weight: normal;
+      margin-bottom: 0;
+      @include scadaFont;
+    }
+
+    &.action {
+      width: 157px;
+      height: auto;
+    }
+
+    &.details {
+      width: 80px;
+    }
+  }
+
+  .author {
+    text-decoration: none;
+  }
+
+  tr:first-child {
+    td, th {
+      border-top: 0;
+    }
+  }
+
+  /* contains info used for sorting/filtering */
+  .currentSessionDetails {
+    display: none;
+  }
+    
+  .button.gray {
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+    
+    &.alt {
+      background: #fff;
+      font-size: 15px;
+      color: #5c5c5c;
+      border-color: #dbdada;    
+    }  
+  }
+  
+  .details {
+    .button.gray.alt {
+      padding: 7px 19px;
+      margin-top: 3px;
+    }
+  }
+  
+  tr.KidSession {
+	  
+	.name {
+      padding-left: 80px;
+      position: relative;
+      display: block;
+      
+      &:before {
+        content: '';
+        width: 73px;
+        height: 70px;
+        position: absolute;
+        left: 2px;
+        top: -3px;
+        background: url($cdm-path + "/Content/Images/kids-badge.png") no-repeat;
+      }
+    }    
+    
+    .details {
+      .button {
+        background: #39b54a;
+        color: #fff;
+        font-weight: normal;
+        text-shadow: none;
+        border: 0;
+      }    
+    }
+  }
+}
+
+/**
+ * Session Tracks
+ */
+.sessionTracks {
+  padding: 10px;
+
+  dt {
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  dd {
+    margin: 10px 10px 40px 30px;
+
+    span, p {
+      font: inherit !important;
+    }
+  }
+}
+
+.smainTitle {
+  font-size: 24px;
+  color: #676767;
+  margin: 20px 0;
+}
+
+tr.ProfessionalSession {
+  background: #f0efef;
+  border-bottom: 15px solid #fff;
+}
+
+tr.KidSession {
+  background: #f0efef;
+  border-bottom: 15px solid #fff;
+}

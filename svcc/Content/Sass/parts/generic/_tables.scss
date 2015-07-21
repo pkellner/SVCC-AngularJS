@@ -1,0 +1,92 @@
+/**
+ * Attendance table on homepage
+ */
+.codeCampTable {
+  margin: 16px auto;
+  width: 100%;
+  border-spacing: 5px;
+  border-collapse: separate;
+
+  td,
+  th {
+     text-align: center;
+     padding: 10px;
+     width: 100px;
+     background-color: $medium-gray;
+  }
+
+  thead {
+    td,
+    th {
+      background-color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+/**
+ * Simple table (spread the word page)
+ */
+.simpleTable {
+  margin: 16px auto;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  td,
+  th {
+    padding: 0 10px;
+  }
+
+  th {
+    padding-top: 10px;
+    font-weight: bold;
+  }
+
+  thead {
+    td,
+    th {
+      padding: 10px;
+      border-bottom: 1px solid $text-color;
+    }
+
+    th {
+      font-weight: normal;
+    }
+  }
+}
+
+/**
+ * Fancy table (session links page)
+ */
+.fancyTable {
+  margin: 16px auto;
+  width: 100%;
+  border-color: #333;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top-width: 1px;
+
+  td,
+  th {
+    min-width: 130px;
+    @include linear-gradient(to bottom, #d6deff 0, #e8edff 32px, $fallback: #e8edff);
+    border-bottom: 1px solid #fff;
+    padding: 8px;
+    vertical-align: top;
+  }
+
+  thead {
+    td,
+    th {
+      @include linear-gradient(to bottom, #9eb3ff 0, #b9c9fe 32px, $fallback: #b9c9fe);
+      border-top: 1px solid #d3ddff;
+      font-size: 15px;
+    }
+  }
+
+  a {
+    font-weight: normal;
+    text-decoration: none;
+  }
+}

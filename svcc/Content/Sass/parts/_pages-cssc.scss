@@ -1,0 +1,785 @@
+/* Home Page - Main Banner */
+
+.homeBanner {
+	@include box-sizing(border-box);
+	height: 333px;
+	padding: 80px 0 0 33px;
+	overflow: hidden;
+	background: url($cdm-path + '/Content/Images/CSSC/homepage_banner.jpg') no-repeat;
+
+	h1 {
+		@include harabaraFont;
+		font-size: 48px;
+		line-height: 1;
+		color: white;
+	}
+
+	h2 {
+		@include antennaFont;
+		font-size: 36px;
+		line-height: 1;
+		text-transform: uppercase;
+		margin: 8px 0 12px;
+		color: #ffc52a;
+	}
+
+	a.cta {
+		@include arboriaFont;
+		@include linear-gradient(#ffba00, #ff6f02);
+		display: inline-block;
+		width: 288px;
+		height: 48px;
+		line-height: 50px;
+		border-radius: 24px;
+		color: black;
+		text-align: center;
+		font-size: 24px;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-shadow: 0px 1px 0px #ffc702;
+	}
+}
+
+@media screen and (max-width: 1020px) {
+	.homeBanner {
+		@include backgroundCover;
+		height: 170px;
+		padding: 32px 0 0 28px;
+
+		h1 {
+			font-size: 30px;
+		}
+		h2 {
+			font-size: 24px;
+		}
+		a.cta {
+			font-size: 18px;
+			height: 32px;
+			line-height: 32px;
+			width: 171px;
+		}
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.homeBanner {
+		background-position: 0 0;
+		height: 130px;
+		padding: 32px 0 0 14px;
+
+		h1 {
+			font-size: 20px;
+		}
+		h2 {
+			font-size: 18px;
+		}
+		a.cta {
+			font-size: 14px;
+			height: 28px;
+			line-height: 28px;
+			width: 136px;
+		}
+	}
+}
+
+/* Presenters area */
+
+.presenters {
+	@extend .clearfix;
+	padding: 30px 17px 30px 17px;
+	background: #f6f6f6 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAIAAADAusJtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABpJREFUeNpiuHHjBhMDEDx58oThw4cPAAEGADlACAe5PAcxAAAAAElFTkSuQmCC) repeat-x top left;
+
+	.presentersCarousel {
+		width: 1000px;
+	}
+}
+
+.presenter {
+	@include antennaFont;
+	@include box-sizing(border-box);
+	@extend .tagStyling;
+	position: relative;
+	float: left;
+	font-size: 12px;
+	width: 308px;
+	border: 1px solid #c4c4c4;
+	margin: 30px 25px 0 0;
+	padding: 13px 13px 1px 13px;
+	background: white;
+	color: #656565;
+	line-height: 1.5;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+
+	h3 {
+		font-size: 18px;
+		color: #f1602b;
+		margin-bottom: 10px;
+		line-height: 1.2;
+		text-align: center;
+	}
+	a.url {
+		display: block;
+		color: #006fe1;
+		text-decoration: none;
+		line-height: 1.2;
+		word-wrap: break-word;
+		text-align: center;
+	}
+	.more {
+		text-align: center;
+		margin: 10px 0 16px;
+		overflow: hidden;
+	}
+	.more a {
+		@include arboriaFont;
+		display: inline-block;
+		font-size: 12px;
+		line-height: 18px;
+		height: 18px;
+		padding: 0 13px;
+		color: white;
+		background: #fdb133;
+		text-decoration: none;
+	}
+	.more a:after {
+		content: "\bb";
+		margin-left: 5px;
+	}
+}
+
+.presenter:after,
+.presenter:before {
+	content: '\0020';
+	position: absolute;
+	width: 97%;
+	border: 1px solid #c4c4c4;
+	border-top: 0 solid;
+	background: white;
+	height: 3px;
+	bottom: -5px;
+	left: 1.5%;
+}
+
+.presenter:after {
+	bottom: -9px;
+	width: 94%;
+	left: 3%;
+}
+
+.ribbon {
+	position: relative;
+	margin-bottom: 3px;
+
+	.inner {
+		@include arboriaFont;
+		position: relative;
+		margin: 0 129px;
+		padding-left: 35px;
+		font-size: 36px;
+		height: 65px;
+		line-height: 65px;
+		color: white;
+		background: #f1602b;
+		text-transform: uppercase;
+		text-shadow: 0px 2px 0px #c64f23;
+
+		strong {
+			color: #fcff00;
+		}
+	}
+
+	&:before {
+		content: '\0020';
+		position: absolute;
+		width: 78px;
+		height: 77px;
+		background: url($cdm-path + "/Content/Images/CSSC/sprites.png") no-repeat -16px -161px;
+		top: 0;
+		left: 51px;
+	}
+
+	&:after {
+		content: '\0020';
+		position: absolute;
+		width: 78px;
+		height: 77px;
+		background: url($cdm-path + "/Content/Images/CSSC/sprites.png") no-repeat -926px -161px;
+		top: 0;
+		right: 51px;
+	}
+
+}
+
+.presentersSearch {
+	@include borderRadius(17px);
+	height: 34px;
+	overflow: hidden;
+	background: white;
+	position: absolute;
+	padding: 0 9px;
+	right: 25px;
+	top: 17px;
+
+	input {
+		vertical-align: top;
+		height: 32px;
+	}
+
+	input:first-child {
+		font-size: 13px;
+		border: 0 solid;
+		width: 200px;
+	}
+
+	input:first-child {
+		outline: none;
+	}
+}
+
+@media screen and (max-width: 1020px) {
+	.ribbon {
+		margin-bottom: 33px;
+
+		.inner {
+			margin: 0 42px;
+			padding-left: 16px;
+			font-size: 18px;
+			height: 47px;
+			line-height: 47px;
+		}
+
+		&:before {
+			width: 37px;
+			height: 52px;
+			background: url($cdm-path + "/Content/Images/CSSC/sprites.png") no-repeat -475px -518px;
+			left: 5px;
+		}
+
+		&:after {
+			width: 37px;
+			height: 52px;
+			background: url($cdm-path + "/Content/Images/CSSC/sprites.png") no-repeat -976px -525px;
+			right: 5px;
+		}
+	}
+	.presentersSearch {
+		@include borderRadius(15px);
+		height: 29px;
+		padding: 0 7px;
+		right: 6px;
+		top: 8px;
+		border: 1px solid #a4411d;
+
+		input {
+			vertical-align: top;
+			height: 29px;
+		}
+
+		input:first-child {
+			font-size: 12px;
+			border: 0 solid;
+			width: 100px;
+		}
+	}
+	.presenters {
+		background: white;
+		padding-top: 0;
+		padding-bottom: 10px;
+	}
+
+	.presenter {
+		margin: 0;
+		padding-bottom: 1px;
+	}
+
+	.presenter:after {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.ribbon {
+		padding-bottom: 20px;
+
+		.inner {
+			font-size: 14px;
+		}
+	}
+	.presentersSearch {
+		margin: 0 auto;
+		position: relative;
+		text-align: center;
+		border: 1px solid #888;
+		width: 80%;
+
+		input:first-child {
+			width: 80%;
+			float: left;
+		}
+		input:first-child + input {
+			position: absolute;
+			right: 3px;
+			top: 1px;
+		}
+	}
+}
+
+
+/*
+ * Workshop Page
+ */
+
+/* Workshops Page - Leader */
+.workshopInfo {
+	background: white;
+	border: 1px solid #c4c4c4;
+	padding: 25px 35px;
+
+	h2 {
+		text-transform: none;
+	}
+	.collapsible {
+		@include box-sizing(border-box);
+	}
+}
+.workshopLeader {
+	@extend .tagStyling;
+	margin-top: 60px;
+
+	h2 {
+		@include arboriaFont;
+		background: #f1602b;
+		position: relative;
+		float: left;
+		font-size: 32px;
+		height: 52px;
+		line-height: 60px;
+		color: white;
+		margin-bottom: 0;
+		padding: 0 30px;
+		border-top-left-radius: 5px;
+	}
+
+	h2:after {
+		content: '';
+		background: url($cdm-path + "/Content/Images/CSSC/sprites.png") no-repeat -19px -715px;
+		position: absolute;
+		width: 18px;
+		height: 52px;
+		top: 0;
+		right: -18px;
+	}
+
+	a {
+		color: $primary-color;
+	}
+
+	.inner {
+		@extend .clearfix;
+		clear: both;
+		padding: 0 25px;
+		color: black;
+		background: white;
+		border: 1px solid #c4c4c4;
+
+		.rightColumn {
+			width: 711px;
+			float: right;
+		}
+
+		.leader {
+			@extend .clearfix;
+
+			border-top: 3px solid #e2dfdf;
+			padding: 25px 0 0 0;
+		}
+
+		.leader:first-child {
+			border: 0 solid;
+		}
+
+
+		img.leaderPhoto {
+			width: auto;
+			border: 1px solid white;
+		}
+
+		.leftColumn {
+			float: left;
+			width: 175px;
+			margin-right: 15px;
+			margin-bottom: 20px;
+
+			img {
+				border: 1px solid #c4c4c4;
+			}
+
+			p {
+				font-size: 20px;
+				margin: 5px 0 0 0;
+			}
+			p.leaderURL {
+				font-size: 16px;
+				word-wrap: break-word;
+			}
+			img+p {
+				font-weight: bold;
+			}
+		}
+
+		p, ul, ol {
+			@include antennaFont;
+			font-size: 18px;
+			line-height: 1.35;
+			margin-bottom: 20px;
+		}
+
+		h3 {
+			@include arboriaFont;
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		.buttonList {
+			margin-top: 0;
+		}
+	}
+}
+
+/* Workshops Page - Proctors */
+.proctors {
+	@include antennaFont;
+	@extend .clearfix;
+	float: left;
+	margin: 32px 0 30px;
+
+	h2 {
+		@include arboriaFont;
+		@include linear-gradient(#2c2c2c, #1b1b1b);
+		position: relative;
+		float: left;
+		font-size: 32px;
+		height: 54px;
+		line-height: 60px;
+		overflow: hidden;
+		color: white;
+		margin-bottom: -1px;
+		padding: 0 30px;
+		border-top-left-radius: 5px;
+		z-index: 5;
+	}
+
+	h2:after {
+		content: '';
+		background: url($cdm-path + "/Content/Images/CSSC/sprites.png") no-repeat -16px -647px;
+		position: absolute;
+		width: 21px;
+		height: 54px;
+		top: 0;
+		right: 0;
+	}
+
+	ul.proctorList {
+		@extend .clearfix;
+		clear: both;
+
+		li {
+			@include box-sizing(border-box);
+			float: left;
+			margin-right: -1px;
+			margin-left: 0;
+			width: 127px;
+			padding: 12px;
+			border: 1px solid #dbdbdb;
+			background: white url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAzCAIAAADZxfV4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEpJREFUeNq0w8cNwDAMALHbf1dXuXdAvwwQAuTey9/POZ97b73W0nNOPcag905rTddaKaWQcyalhIgQYySEgPce55y21mKMeQIMAHJOlf5lumDDAAAAAElFTkSuQmCC) bottom left repeat-x;
+			text-align: center;
+
+			h3 {
+				@include arboriaFont;
+				font-size: 11px;
+				margin: 5px 0 7px;
+				text-align: center;
+			}
+
+			img {
+				padding: 6px;
+				border: 1px solid #e6e6e6;
+			}
+
+			.url {
+				display: block;
+				line-height: 1.5;
+				word-wrap: break-word;
+				font-size: 11px;
+			}
+		}
+
+	}
+
+
+}
+
+/* Workshops Page - Tags */
+.meta {
+	@extend .clearfix;
+	width: 100%;
+	margin: 15px 0;
+	font-size: 0;
+
+	.tag.chess {
+		width: 28%;
+		margin-right: 2%;
+	}
+	.tag.clock {
+		width: 38%;
+		margin-right: 2%;
+	}
+	.btn {
+		width: 30%;
+		height: 55px;
+		line-height: 55px;
+		font-size: 20px;
+		text-transform: uppercase;
+	}
+}
+
+.tag {
+	@include box-sizing(border-box);
+	@include antennaFont;
+	@include boxShadow(0, 1px, 5px);
+	position: relative;
+	display: table;
+	float: left;
+	height: 53px;
+	font-size: 14px;
+	padding: 0 13px 0 62px;
+	margin-bottom: 15px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAzCAIAAADZxfV4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEpJREFUeNq0w8cNwDAMALHbf1dXuXdAvwwQAuTey9/POZ97b73W0nNOPcag905rTddaKaWQcyalhIgQYySEgPce55y21mKMeQIMAHJOlf5lumDDAAAAAElFTkSuQmCC) bottom left repeat-x;
+}
+
+.tag i {
+	display: table-cell;
+  	vertical-align: middle;
+  	font-style: normal;
+}
+
+.tag.chess:before,
+.tag.clock:before {
+	content: '\0020';
+	position: absolute;
+	background: url($cdm-path + "/Content/Images/CSSC/sprites.png") no-repeat -16px -492px;
+	top: 10px;
+	left: 13px;
+	width: 35px;
+	height: 34px;
+}
+
+.tag.clock:before {
+	background: url($cdm-path + "/Content/Images/CSSC/sprites.png") no-repeat -16px -547px;
+}
+
+
+/* Workshops Page - Presentation box */
+.presentationBox {
+	@extend .tagStyling;
+
+	h3 {
+		@include arboriaFont;
+		font-size: 24px;
+		color: $primary-color;
+		text-transform: uppercase;
+	}
+	p {
+		@include antennaFont;
+		font-size: 14px;
+		line-height: 1.5;
+		margin: 10px 0;
+	}
+	a.btn {
+		color: white;
+	}
+}
+
+.presentationBox.float {
+	width: 685px;
+	float: right;
+	margin-top: 32px;
+}
+
+
+@media screen and (max-width: 1020px) {
+
+	.workshopInfo {
+		padding: 15px;
+	}
+
+	.meta {
+		text-align: center;
+
+		.tag, a {
+			line-height: 1.2;
+			font-size: 12px;
+		}
+		.tag.chess {
+			width: 49%;
+		}
+		.tag.clock {
+			width: 49%;
+			margin-right: 0;
+		}
+		.btn {
+			margin-top: 10px;
+			width: auto;
+		}
+		.tag:first-child+a {
+			margin-top: 65px;
+			margin-left: -49%;
+		}
+	}
+
+	.workshopLeader {
+		margin-top: 30px;
+
+		h2 {
+			font-size: 24px;
+		}
+		h3 {
+			font-size: 20px;
+		}
+
+		.inner {
+			@include arialFont;
+			float: none;
+			font-size: 12px;
+			width: auto;
+
+			.leftColumn {
+				width: 20%;
+				margin-right: 0;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.rightColumn {
+				float: right;
+				width: 74%;
+			}
+		}
+
+	}
+
+	.buttonList {
+		li {
+			margin: 5px 0;
+		}
+	}
+
+	.presentationBox.float {
+		width: auto;
+		float: none;
+		margin-bottom: 20px;
+	}
+
+	.proctors {
+		float: none;
+		width: 100%;
+		h2 {
+			font-size: 24px;
+		}
+
+		ul.proctorList {
+			width: 100%;
+
+			li {
+			}
+		}
+
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	.meta {
+		text-align: center;
+		margin-bottom: 15px;
+
+		.tag, a {
+			height: 45px;
+			float: none;
+			margin-bottom: 10px;
+		}
+		.tag.chess,
+		.tag.clock {
+			padding-left: 45px;
+			width: 100%;
+			margin-right: 0;
+		}
+		.tag.chess:before,
+		.tag.clock:before {
+			top: 5px;
+			left: 5px;
+		}
+		.btn {
+			width: 100%;
+			margin-top: 10px;
+			width: auto;
+			line-height: 1.2;
+			height: auto;
+			font-size: 16px;
+		}
+		.tag:first-child+a {
+			margin-top: auto;
+			margin-left: auto;
+		}
+	}
+
+	.workshopLeader {
+		margin-top: 15px;
+
+		h2 {
+			font-size: 18px;
+			padding-left: 20px;
+		}
+
+		.inner {
+			text-align: center;
+			padding: 15px;
+
+			.leftColumn, .rightColumn {
+				width: 100%;
+				float: none;
+			}
+
+			.leftColumn {
+				margin-bottom: 2em;
+
+				p {
+					text-align: center;
+				}
+				img {
+					width: auto;
+					max-width: 100%;
+				}
+			}
+
+		}
+	}
+
+	.proctors {
+		margin: 20px 0;
+
+		h2 {
+			font-size: 18px;
+			padding-left: 20px;
+		}
+	}
+
+}

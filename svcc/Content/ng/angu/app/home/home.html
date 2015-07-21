@@ -1,0 +1,70 @@
+<div id="home" class="container nav--section">
+  <div class="separator">
+    <span class="separator--icon icon-code"></span>
+  </div>
+
+  <div class="row row-centered">
+    <div class="col-md-9 col-centered">
+      <h2 class="type--lead">
+        <span class="type--color">A 4-day event</span> covering Angular,<br>
+        TypeScript, ECMAScript 6, and Web Components
+      </h2>
+      <p class="text-center">Angular University gathers over <a class="type--color" ui-sref="speakers">30 presenters</a> for 4 days
+        packed with <a class="type--color" ui-sref="sessions">presentations, hands on workshops</a>, and <a class="type--color" ui-sref="fun">fun</a>!</p>
+        <!--<button class="btn btn-primary btn-lg center-block">Read More</button>-->
+      <div class="social center-block">
+        <h4>Follow us on: </h4>
+        <ul>
+          <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+          <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+          <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank"  target="_blank" class="icon-gplus"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content--section">
+    <h2 class="type--lead">Keynote Presenters</h2>
+    <keynote-presenters presenters="speakers.keynotes"></keynote-presenters>
+    <button ng-hide="home.showSpeakers" class="btn btn-primary btn-lg center-block">Full Agenda Coming Soon</button>
+  </div>
+
+  <section class="content--section" ng-show="home.showSpeakers" id="en_speakerlist">
+    <h2 class="type--lead">Partial Speaker List (more coming)</h2>
+    <regular-presenters presenters="speakers.regular"></regular-presenters>
+  </section>
+
+  <div class="separator">
+    <span ng-click="googleMap()" class="separator--icon icon-pin"></span>
+  </div>
+  <div id="venue" class="slider nav--section">
+    <div class="slide--container">
+      <ul rn-carousel slides="slides" class="slide--list">
+        <li>
+          <div class="slide">
+            <div class="slide--content">
+              <p>The conference takes place at the <span class="type--color">Hyatt Regency</span>, a short distance from the San&nbsp;Francisco Airport and within a short taxi or Bart ride from San&nbsp;Francisco Downtown.</p>
+              <!--<button class="btn btn-primary btn-lg">More details</button>-->
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="faq" class="nav--section container">
+    <div class="separator">
+      <span class="separator--icon icon-question">?</span>
+    </div>
+
+    <div>
+      <h2 class="type--lead">FAQ</h2>
+      <ul class="list--block list--centered">
+        <li ng-repeat="faq in faqs">
+          <p><strong>Question: {{faq.question}}</strong></p>
+          <p>Answer: {{faq.answer}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

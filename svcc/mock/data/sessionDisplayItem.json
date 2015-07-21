@@ -1,0 +1,102 @@
+[
+  {
+    "sessionDisplayItemTypeId": 2,
+    "sessionId": 4722,
+    "itemCreationDate": "2015-07-02T15:47:44.233Z",
+    "createdDate": "2015-07-02T15:47:44Z",
+    "updatedDate": "2015-07-02T15:47:44Z",
+    "title": "Artist Rendering of Misko Hevery, Brad Green and Igor Minar",
+    "sequence": "0010",
+    "sessionDisplayItemTypeName": "Image",
+    "id": 1
+  },
+  {
+    "sessionDisplayItemTypeId": 2,
+    "sessionId": 4722,
+    "itemCreationDate": "2015-07-02T15:50:21.683Z",
+    "createdDate": "2015-07-02T15:50:21Z",
+    "updatedDate": "2015-07-02T15:50:21Z",
+    "title": "Brad Green Opening Remarks",
+    "sequence": "0020",
+    "sessionDisplayItemTypeName": "Image",
+    "id": 2
+  },
+  {
+    "sessionDisplayItemTypeId": 2,
+    "sessionId": 4722,
+    "itemCreationDate": "2015-07-02T16:00:00.413Z",
+    "createdDate": "2015-07-02T16:00:00Z",
+    "updatedDate": "2015-07-02T16:00:00Z",
+    "title": "Igor Minar Passionate About His Points",
+    "sequence": "0030",
+    "sessionDisplayItemTypeName": "Image",
+    "id": 3
+  },
+  {
+    "sessionDisplayItemTypeId": 2,
+    "sessionId": 4722,
+    "itemCreationDate": "2015-07-02T16:01:26.697Z",
+    "createdDate": "2015-07-02T16:01:26Z",
+    "updatedDate": "2015-07-02T16:01:26Z",
+    "title": "Misko Hevery Talks About Building for the Future",
+    "sequence": "0040",
+    "sessionDisplayItemTypeName": "Image",
+    "id": 4
+  },
+  {
+    "sessionDisplayItemTypeId": 2,
+    "sessionId": 4722,
+    "itemCreationDate": "2015-07-02T16:02:29.52Z",
+    "createdDate": "2015-07-02T16:02:29Z",
+    "updatedDate": "2015-07-02T16:02:29Z",
+    "title": "Angular U Audience in Anticipation of Opening Keynote By the Google Angular Team",
+    "sequence": "0015",
+    "sessionDisplayItemTypeName": "Image",
+    "id": 5
+  },
+  {
+    "sessionDisplayItemTypeId": 2,
+    "sessionId": 4722,
+    "itemCreationDate": "2015-07-02T16:03:33.263Z",
+    "createdDate": "2015-07-02T16:03:33Z",
+    "updatedDate": "2015-07-02T16:03:33Z",
+    "title": "Misko Havery Being Interviewed After His Keynote",
+    "sequence": "0050",
+    "sessionDisplayItemTypeName": "Image",
+    "id": 6
+  },
+  {
+    "sessionDisplayItemTypeId": 3,
+    "sessionId": 4722,
+    "itemCreationDate": "2015-07-02T16:04:56.483Z",
+    "createdDate": "2015-07-02T16:04:56Z",
+    "updatedDate": "2015-07-02T16:04:56Z",
+    "title": "Kevin Nilson Interviews Brad, Misko and Igor During a Break",
+    "data1": "msGKMlEYoNg",
+    "sequence": "0060",
+    "sessionDisplayItemTypeName": "YouTube",
+    "id": 7
+  },
+  {
+    "sessionDisplayItemTypeId": 2,
+    "sessionId": 3711,
+    "itemCreationDate": "2015-07-02T17:10:14.013Z",
+    "createdDate": "2015-07-02T17:10:14Z",
+    "updatedDate": "2015-07-02T17:10:14Z",
+    "title": "Dan and John Ready To Go",
+    "sequence": "0000",
+    "sessionDisplayItemTypeName": "Image",
+    "id": 8
+  },
+  {
+    "sessionDisplayItemTypeId": 2,
+    "sessionId": 3711,
+    "itemCreationDate": "2015-07-02T17:12:38.977Z",
+    "createdDate": "2015-07-02T17:12:38Z",
+    "updatedDate": "2015-07-02T17:12:38Z",
+    "title": "Dan and John Ready To Go 11",
+    "sequence": "0000",
+    "sessionDisplayItemTypeName": "Image",
+    "id": 9
+  }
+]

@@ -1,0 +1,29 @@
+<div
+  class="nav--user"
+  ng-class="{'open': userNav.isOpen}"
+  ng-click="userNav.toggle()"
+>
+  <button class="nav--user--toggle icon-user"></button>
+  <a class="nav--user--name"  ng-show="userNav.username">{{ userNav.username }}</a>
+  <a class="nav--user--name" href="#" ng-hide="userNav.username">login</a>
+  <ul
+    class="nav--list nav--user--list"
+    ng-class="{'open': userNav.isOpen}"
+  >
+    <li ng-hide="userNav.username">
+      <a href="/Account/Login">Login</a>
+    </li>
+    <li ng-hide="userNav.username">
+      <a href="/Register/ForgotPassword">Forgot Password</a>
+    </li>
+    <li ng-show="userNav.username">
+      <a href="/Register/ForgotPassword">Reset Password</a>
+    </li>
+    <li>
+      <a href="/Angu/CallForPapers">Call For Speakers</a>
+    </li>
+    <li ng-show="userNav.username">
+      <a href="/Account/Logout">Logout</a>
+    </li>
+  </ul>
+</div>

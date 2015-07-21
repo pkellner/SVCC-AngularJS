@@ -1,0 +1,51 @@
+[
+  {
+    "codeCampYearId": 201,
+    "named": "Room 1",
+    "visible": true,
+    "sequence": "SEQA",
+    "id": 62
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Room 2",
+    "visible": true,
+    "sequence": "SEQB",
+    "id": 63
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Room 3",
+    "visible": true,
+    "sequence": "SEQC",
+    "id": 64
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Room 4",
+    "visible": true,
+    "sequence": "SEQD",
+    "id": 65
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Room 5",
+    "visible": true,
+    "sequence": "zzz",
+    "id": 66
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Room 6",
+    "visible": true,
+    "sequence": "zzz",
+    "id": 67
+  },
+  {
+    "codeCampYearId": 201,
+    "named": "Room 7",
+    "visible": true,
+    "sequence": "zzz",
+    "id": 68
+  }
+]

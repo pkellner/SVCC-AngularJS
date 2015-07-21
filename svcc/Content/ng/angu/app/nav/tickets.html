@@ -1,0 +1,9 @@
+<div class="ping-tickets">
+  <a href="/angu/purchasetickets" class="btn btn-primary">
+    Buy Ticket
+  </a>
+  <a ng-if="ticket.hotelBookingUrl" ng-href="{{ticket.hotelBookingUrl}}" class="btn btn-info uppercase">
+    <span class="hidden-xs hidden-sm">Book a hotel room</span>
+    <span class="visible-xs visible-sm">Book room</span>
+  </a>
+</div>

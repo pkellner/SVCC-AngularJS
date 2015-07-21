@@ -1,0 +1,51 @@
+<div id="speakers" class="container">
+  <div class="separator">
+    <span class="separator--icon icon-code"></span>
+  </div>
+  <h2 class="type--lead">The speakers</h2>
+  
+  <div class="separator" ng-if="list.showSessions && list.showSessionDetails">
+    <div class="separator--item">
+      <span>View: </span>
+      <select name="s1" id="s2">
+        <option value="0">All days</option>
+        <option value="1">Monday, June 22</option>
+        <option value="2">Tuesday, June 23</option>
+      </select>
+    </div>
+  </div>
+
+  <ul class="speakers">
+    <li class="row" ng-repeat="speaker in list.speakers">
+      <div class="col-sm-2">
+        <div class="speakers--image">
+          <img ng-src="{{speaker.imageUrl}}?format=jpg&height=400&width=400&scale=both&mode=pad&Bgcolor=ffffff" alt="{{speaker.name}}">
+        </div>
+      </div>
+      <div class="speakers--info col-sm-10">
+        <header class="heading small">
+          <a ui-sref="speaker(speaker.$stateParams())">
+            <h4 class="color">{{speaker.name}}</h4>
+          </a>
+          <div class="social colored">
+            <speaker-social-icons speaker="speaker"></speaker-social-icons>
+          </div>
+          <p class="heading--sub">{{speaker.bioShort}}</p>
+        </header>
+        <div class="speakers--info--detail" ng-if="list.showSessions">
+          <ul class="list--default">
+            <li ng-repeat="session in speaker.sessions">
+              <session-link session="session">
+                <b>{{session.title}}</b>
+              </session-link>
+              <span ng-show="list.showSessionDetails">
+                {{session.time.startTimeFriendlyDay}} {{session.time.description}} &nbsp;&nbsp;<span class="label label-danger">{{session.sessionTrackName}}</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</div>

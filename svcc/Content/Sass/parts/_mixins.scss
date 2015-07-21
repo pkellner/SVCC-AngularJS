@@ -1,0 +1,45 @@
+//Rounded Container
+@mixin roundBorder {
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  @include box-shadow(0px 0px 6px 3px rgba(0, 0, 0, 0.1)); 
+}
+
+//Gray bg gradient
+@mixin grayGradient {
+  background: $medium-gray;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YzZjNmMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlM2UzZTMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  @include background(linear-gradient(to bottom, $medium-gray 0%, $gray 100%), $fallback: '');
+
+  .ie8 & {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#{$medium-gray}", endColorstr="#{$gray}", GradientType=0 );
+  }
+}
+
+@mixin lightGrayGradient {
+  background: $near-white;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZhZmFmYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNWY0ZjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  @include background(linear-gradient(to bottom, $near-white 0%, $light-gray 100%), $fallback: '');
+  
+  .ie8 & {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#{$near-white}", endColorstr="#{$light-gray}", GradientType=0 );
+  }
+}
+
+//Sprites
+@mixin imageSprites {
+  background: transparent url($cdm-path + "/Content/Images/sprites.png") no-repeat;
+}
+
+@mixin imageSpriteIcons {
+  background: url($cdm-path + "/Content/Images/sprites-icons.png") #f7941e no-repeat;
+}
+
+@mixin imageSpriteSocial {
+  background: url($cdm-path + "/Content/Images/sprite-social.png") no-repeat;
+}
+
+@mixin imageSpriteSocialBig {
+  background: url($cdm-path + "/Content/Images/sprite-socialbig.png") no-repeat;
+}
+

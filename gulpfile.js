@@ -133,13 +133,20 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('build', ['index', 'styles', 'images', 'fonts', 'bundle']);
+paths.svcccontent = format('./%s/Content/**/*', app);
+gulp.task('svcccontent', function () {
+  return gulp.src(paths.svcccontent)
+      .pipe(gulp.dest('dist/Content'));
+});
 
-gulp.task('watch', ['index', 'styles', 'images', 'fonts'], function () {
+gulp.task('build', ['index', 'styles','svcccontent', 'images', 'fonts', 'bundle']);
+
+gulp.task('watch', ['index', 'styles','svcccontent', 'images', 'fonts'], function () {
   var lr = plugins.livereload;
   lr.listen();
   gulp.watch(paths.index, ['index']);
   gulp.watch(paths.styles, ['styles']);
+  gulp.watch(paths.svcccontent, ['svcccontent']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.fonts, ['fonts']);
 

@@ -1,0 +1,218 @@
+/**
+ * Used on registration/profile/jobad pay/donation pages
+ * there's no imporving it, need to work with whatever it returns.
+ */
+
+.specialform {
+  
+   /*BUG: FOR SOME REASON, IF I USE JUST <P> TAG IT OVERRIDES P TAG ON RIGHT SIDE SPONSOR BANNER*/
+    .regparagraph {
+        text-align: left;
+        width: 450px;
+        font: normal normal normal 12px/18px verdana, sans-serif;
+        margin: 15px 15px 15px 15px;
+    }
+
+    .redrequired {
+        color: red;
+    }
+
+    .input_button {
+        height: 13px;
+        width: 13px;
+        background: rgb(255, 255, 255) repeat-x scroll 0% 0% / auto padding-box border-box;
+        border: 0px none rgb(0, 0, 0);
+        font: normal normal normal 13px/normal Arial;
+        margin: 3px 3px 8px 4px;
+        padding: 0px;
+    }
+
+    .label_extrawide {
+        clear: left;
+        color: rgb(40,40,40);
+        width: 350PX;
+        display: block;
+        float: left;
+        text-align: right;
+        text-decoration: none solid rgb(136, 136, 136);
+        border: 0px none rgb(136, 136, 136);
+        font: normal normal normal 12px/18px verdana, sans-serif;
+        margin: 0px 0px 6.079999923706055px;
+        outline: rgb(136, 136, 136) none 0px;
+        padding: 0px 10px 0px 0px;
+    }
+
+   
+
+    .label_fullwide {
+        clear: left;
+        color: rgb(40,40,40);
+        width: 550PX;
+        display: block;
+        float: left;
+        text-align: right;
+        text-decoration: none solid rgb(136, 136, 136);
+        border: 0px none rgb(136, 136, 136);
+        font: normal normal normal 12px/18px verdana, sans-serif;
+        margin: 0px 0px 6.079999923706055px;
+        outline: rgb(136, 136, 136) none 0px;
+        padding: 0px 10px 0px 0px;
+    }
+
+    .input-shorter-required {
+        box-sizing: content-box;
+        width: 225px;
+        text-align: left;
+        float: left;
+        background: rgb(255, 255, 255) repeat-x scroll 0% 0% / auto padding-box border-box;
+        border: 1px solid rgb(255, 255, 255);
+        font: normal normal normal 13px/normal Arial;
+        margin: 2px 2px 8px;
+        padding: 1px 0px 1px 6.666666507720947px;
+    }
+
+
+    fieldset {
+        background-position: 390px 10px;
+        text-align: left;
+        width: 520px;
+        background: rgba(0, 0, 0, 0) no-repeat scroll 390px 10px / auto padding-box border-box;
+        border: 1px solid rgb(255, 255, 255);
+        font: normal normal normal 12px/18.239999771118164px verdana, sans-serif;
+        margin: 0px 2px 15px 0px;
+        padding: 5px;
+    }
+
+    form {
+        text-align: left;
+        width: 560px;
+        background: rgb(221, 238, 238) none repeat scroll 0% 0% / auto padding-box border-box;
+        border: 1px solid rgb(0, 0, 0);
+        font: normal normal normal 12px/normal arial, sans-serif;
+        margin: 0px 25px;
+        padding: 10px;
+    }
+
+
+    legend {
+        background-position: 0% 50%;
+        height: 18px;
+        text-align: left;
+        width: 475px;
+        background: rgb(255, 255, 255) repeat-x scroll 0% 50% / auto padding-box border-box;
+        border: 3px solid rgb(255, 255, 255);
+        font: normal normal bold 13px/18px georgia, sans-serif;
+        margin: 0px 0px 5px;
+        padding: 5px;
+    }
+
+
+    label {
+        clear: left;
+        color: rgb(40,40,40);
+        width: 150px;
+        display: block;
+        float: left;
+        text-align: right;
+        text-decoration: none solid rgb(136, 136, 136);
+        border: 0px none rgb(136, 136, 136);
+        font: normal normal normal 12px/18px verdana, sans-serif;
+        margin: 0px 0px 6.079999923706055px;
+        outline: rgb(136, 136, 136) none 0px;
+        padding: 0px 10px 0px 0px;
+    }
+
+
+    
+
+    
+
+    input {
+        box-sizing: content-box;
+        width: 300px;
+        text-align: left;
+        float: left;
+        background: rgb(255, 255, 255) repeat-x scroll 0% 0% / auto padding-box border-box;
+        border: 1px solid rgb(255, 255, 255);
+        font: normal normal normal 13px/normal Arial;
+        margin: 2px 2px 8px;
+        padding: 1px 0px 1px 6.666666507720947px;
+    }
+
+    .input-narrow120 {
+        box-sizing: content-box;
+        width: 120px;
+        text-align: left;
+        float: left;
+        background: rgb(200, 200, 200) repeat-x scroll 0% 0% / auto padding-box border-box;
+        border: 1px solid rgb(255, 255, 255);
+        font: normal normal normal 13px/normal Arial;
+        margin: 2px 2px 8px;
+        padding: 1px 0px 1px 6.666666507720947px;
+    }
+
+     .input-smallx {
+        box-sizing: content-box;
+        width: 42px;
+        text-align: left;
+        float: left;
+        background: rgb(255,255,255) repeat-x scroll 0% 0% / auto padding-box border-box;
+        border: 1px solid rgb(255, 255, 255);
+        font: normal normal normal 13px/normal Arial;
+        margin: 2px 2px 8px;
+        padding: 1px 0px 1px 6.666666507720947px;
+    }
+
+    .input-fullwide {
+        box-sizing: content-box;
+        width: 500px;
+        text-align: left;
+        float: left;
+        background: rgb(255, 255, 255) repeat-x scroll 0% 0% / auto padding-box border-box;
+        border: 1px solid rgb(255, 255, 255);
+        font: normal normal normal 13px/normal Arial;
+        margin: 2px 2px 8px;
+        padding: 1px 0px 1px 6.666666507720947px;
+    }
+
+    select {
+        height: 20px;
+        width: 250px;
+        border: 1px solid rgb(169, 169, 169);
+        font: normal normal normal 13px/normal Arial;
+        margin: 2px 2px 2px 6.666666507720947px;
+    }
+
+    option {
+        color: rgb(255, 255, 255);
+        cursor: default;
+        text-decoration: none solid rgb(255, 255, 255);
+        white-space: pre;
+        align-self: center;
+        background: rgb(119, 136, 136) none repeat scroll 0% 0% / auto padding-box border-box;
+        border: 0px none rgb(255, 255, 255);
+        font: normal normal normal 13px/normal Arial;
+        outline: rgb(255, 255, 255) none 0px;
+    }
+
+
+
+    textarea {
+        background-position: 0% 100%;
+        box-sizing: content-box;
+        
+        background: rgb(255, 255, 255) repeat-x scroll 0% 100% / auto padding-box border-box;
+        border: 1px solid rgb(255, 255, 255);
+        font: normal normal normal 13px/normal monospace;
+        margin: 0px;
+        padding: 6.666666507720947px;
+    }
+	
+	
+
+   
+
+
+
+
+}

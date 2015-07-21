@@ -1,0 +1,110 @@
+/*
+ * Basic content styling
+ * usage: @extend tagStyling;
+ */
+
+.tagStyling {
+  @include antennaFont;
+  line-height: 1.4;
+  font-size: 14px;
+
+  p, ul, ol, h1, h2, h3, h4, h5, h6, blockquote, pre, dd, table {
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: normal;
+  }
+  p:last-child,
+  ul:last-child,
+  ol:last-child {
+    margin-bottom: 0;
+  }
+
+  li {
+    margin-left: 2em;
+    margin-bottom: 0.5em;
+    list-style-type: none;
+  }
+  ol li {
+    list-style-type: decimal;
+  }
+  .buttonList li {
+    margin-left: 0;
+  }
+  .buttonList li a {
+    color: white;
+  }
+  .buttonList li a:hover {
+    text-decoration: none;
+  }
+
+  strong, b {
+    font-weight: bold;
+  }
+  i, em {
+    font-style: italic;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .btn a, a.btn {
+    text-decoration: none;
+    color: white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    color: #444;
+  }
+  h1, h2 {
+    @include arboriaFont;
+    font-size: 42px;
+    color: $primary-color;
+    line-height: 1.2;
+  }
+  h3 {
+    @include arboriaFont;
+    font-size: 32px;
+  }
+  h4 {
+    @include arboriaFont;
+    font-size: 24px;
+  }
+  h5 {
+    @include arboriaFont;
+    font-size: 16px;
+  }
+  h6 {
+    @include arboriaFont;
+    font-size: 14px;
+  }
+  pre {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #eee;
+    padding: 15px;
+  }
+  dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  table {
+    border-collapse: collapse;
+    border: 2px solid #ddd;
+    border-style: solid none;
+
+    td, th {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      font-weight: bold;
+      text-align: center;
+      background: #eee;
+    }
+  }
+}
