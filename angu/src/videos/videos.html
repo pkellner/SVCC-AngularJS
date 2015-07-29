@@ -21,21 +21,24 @@
         <div class="persona persona--video" ng-repeat="video in list.videosSessions | orderBy: 'sessionTimeDateTimeSort' ">
             <h3><a class="type--color"  href="/ng{{video.sessionUrl}}" target="_blank" >{{video.sessionTitle}}</a></h3>
 
-
-
             <div class="persona--img">
+
+                <!-- Vimeo Videos -->
                 <iframe ng-hide="video.videoSourceYouTube" src="{{video.iFrameVideoSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"
                         height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
                 </iframe>
 
-                <iframe ng-show="video.videoSourceYouTube" width="289" height="163"
-                        src="{{video.iFrameVideoSrc}}"
-                        frameborder="0" allowfullscreen></iframe>
+
+                <!--     real youtube below -->
+                <!--<iframe ng-show="video.videoSourceYouTube" width="289" height="163" src="{{video.iFrameVideoSrc}}" frameborder="0" allowfullscreen></iframe>-->
+                <!--<img src="http://img.youtube.com/vi/fsrJWUVoXeM/sddefault.jpg" />-->
+
                 <!--<iframe ng-show="video.videoSourceYouTube" src="{{video.iFrameVideoSrc}}" style="margin-top: 5px;margin-bottom: 5px;" width="290"-->
                         <!--height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""-->
                         <!--fs= >-->
                 <!--</iframe>-->
 
+                <non-sucky-youtube-embed  ng-show="video.videoSourceYouTube"   vidid="{{video.youTubeURL}}" height="360" width="480"><non-sucky-youtube-embed>
 
             </div>
 
@@ -70,9 +73,11 @@
                         height="190" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="">
                 </iframe>
 
-                <iframe ng-show="video.videoSourceYouTube" width="289" height="163"
-                        src="{{video.iFrameVideoSrc}}"
-                        frameborder="0" allowfullscreen></iframe>
+                <non-sucky-youtube-embed  ng-show="video.videoSourceYouTube"  vidid='{{video.youTubeURL}}' height="360" width="480"><non-sucky-youtube-embed>
+
+                <!--<iframe ng-show="video.videoSourceYouTube" width="289" height="163"-->
+                        <!--src="{{video.iFrameVideoSrc}}"-->
+                        <!--frameborder="0" allowfullscreen></iframe>-->
 
 
 

@@ -6,18 +6,18 @@
 
 function VideoController(videos,$sce,config) {
 
+    // the image has a problem loading because the directive shows before the below runs.
+    // to fix it, I need to add to the resolve something that adds stuff to videos array before this controller executes
 
     this.showLiveFeed = config.home.showLiveFeed;
 
     for (let i = 0; i < videos.length; i++) {
-
-
         // use youtube as primary if it exists
 
         videos[i].videoSourceYouTube = false;
-        if (videos[i].youTubeURL && videos[i].youTubeURL.length > 1) {
+        if (videos[i].youTubeURL && videos[i].youTubeURL.length > 4) {
             videos[i].videoSourceYouTube = true;
-            videos[i].abc = 'abcd';
+            //videos[i].abc = 'abcd';
             // http://www.techairlines.com/youtube-parameters/
             var str = "https://www.youtube.com/embed/" + videos[i].youTubeURL + "?vq=large&amp;cc_load_policy=1&amp;showinfo=0&amp;rel=0&amp;autohide=2&amp;controls=1&amp;fs=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;listType=user_uploads&amp;list=&amp;color=white";
             videos[i].iFrameVideoSrc =
@@ -30,6 +30,10 @@ function VideoController(videos,$sce,config) {
         if (videos[i].sessionSpeakerNamesCsv) {
             videos[i].sessionSpeakerNamesCsv = videos[i].sessionSpeakerNamesCsv.replace(/,/g, ', ');
         }
+
+        //if (videos[i].videoSourceYouTube == true){
+            //console.log('TRUE: ' + videos[i].youTubeURL + '  ' + videos[i].videoSourceYouTube);
+        //}
     }
 
     this.videosSessions = videos.filter(function (rec) {
