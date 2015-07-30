@@ -10,13 +10,15 @@ module.exports = require('angular')
     .module('angUApp', [
         require('../../base'),
         require('angular-scroll'),
+        require('angular-stripe'),
         require('./nav'),
         require('./home'),
         require('./speakers'),
         require('./sessions'),
         require('./fun'),
         require('./sponsors'),
-        require('./videos')
+        require('./videos'),
+        require('./purchase')
     ])
     .config(layout)
     .config(parseConfig)

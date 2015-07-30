@@ -25,7 +25,15 @@ function state($stateProvider) {
 
 getVideos.$inject = ['Videos','$q'];
 function getVideos (Video) {
-    return Video.fetchAll();
+    return Video.fetchAll().then(function(videos){
+
+        return videos.map(function(video){
+            return video;
+        });
+    });
+
+
+
 
 }
 state.$inject = ['$stateProvider'];
