@@ -5,7 +5,7 @@
 'use strict';
 
 function PurchaseController(stripe,config) {
-    debugger;
+    //debugger;
 }
 PurchaseController.$inject = ['stripe','config'];
 
