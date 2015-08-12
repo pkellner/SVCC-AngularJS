@@ -15,7 +15,7 @@ var replace     = require('gulp-replace');
 var app         = argv.app;
 
 if (!app) {
-  app = 'angu';
+  app = 'svcc';
   plugins.util.log('no app defined with --app, defaulting to', chalk.magenta('angu'));
 }
 

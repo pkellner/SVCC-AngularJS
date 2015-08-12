@@ -11,6 +11,7 @@ module.exports = require('angular')
         require('../../base'),
         require('angular-scroll'),
         require('angular-stripe'),
+        require('angular-credit-cards'),
         require('./nav'),
         require('./home'),
         require('./speakers'),

@@ -7,7 +7,10 @@ module.exports = require('angular')
     .module('angUApp', [
         require('../../base'),
         require('angular-scroll'),
-        require('./home')
+        require('angular-stripe'),
+        require('angular-credit-cards'),
+        require('./home'),
+        require('./register')
     ])
     .config(parseConfig)
     .config(enableHtml5Mode)

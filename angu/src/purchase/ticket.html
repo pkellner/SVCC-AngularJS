@@ -1,23 +1,41 @@
 <div id="home" class="container nav--section">
+
+
+  <form novalidate class="simple-form">
+    Name: <input type="text" ng-model="user.name" /><br />
+    E-mail: <input type="email" ng-model="user.email" /><br />
+    Gender: <input type="radio" ng-model="user.gender" value="male" />male
+    <input type="radio" ng-model="user.gender" value="female" />female<br />
+    <input type="button" ng-click="reset()" value="Reset" />
+    <input type="submit" ng-click="update(user)" value="Save" />
+  </form>
+  <pre>form = {{user | json}}</pre>
+  <pre>master = {{master | json}}</pre>
+
+
   <!--<div class="separator">-->
     <!--<span class="separator&#45;&#45;icon icon-clock"></span>-->
   <!--</div>-->
 
-  <div class="row row-centered">
-    <div class="col-md-9 col-centered">
-      <h2 class="type--lead">
-        It's going to be a great conference (PURCHASE TICKET)
-      </h2>
-      <p class="text-center">It’s not just about the speakers. It’s also about meeting interesting people and having a great time.</p>
-    </div>
-  </div>
+  <!--<div class="row row-centered">-->
+    <!--<div class="col-md-9 col-centered">-->
+      <!--<h2 class="type&#45;&#45;lead">-->
+        <!--It's going to be a great conference (PURCHASE TICKET)-->
+      <!--</h2>-->
+      <!--<p class="text-center">It’s not just about the speakers. It’s also about meeting interesting people and having a great time.</p>-->
+    <!--</div>-->
+  <!--</div>-->
 
-  <div class="separator">
-    <div class="separator--item">
-        <a href="/angu/purchasetickets" class="btn btn-primary btn-lg">
-            Get tickets
-        </a>
-    </div>
-  </div>
+  <!--<div class="separator">-->
+    <!--<div class="separator&#45;&#45;item">-->
+        <!--<a href="/angu/purchasetickets" class="btn btn-primary btn-lg">-->
+            <!--Get tickets-->
+        <!--</a>-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+
+
 
 </div>
