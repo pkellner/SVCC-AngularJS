@@ -1,18 +1,18 @@
 'use strict';
 
-import template from './sponsors.html';
+import template from './pluralsight.html';
 
 export default state;
 
 state.$inject = ['$stateProvider'];
 function state ($stateProvider) {
-  $stateProvider.state('sponsors', {
+  $stateProvider.state('pluralsight', {
     url: '/pluralsight', // need to make this it's own directory
     parent: 'base',
     views: {
       '@layout': {
         template,
-        controller: 'SponsorsController',
+        controller: 'PluralsightController',
         controllerAs: 'sponsors'
       }
     }

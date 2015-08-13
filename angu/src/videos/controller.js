@@ -1,7 +1,3 @@
-//export default function () {
-//  this.foo = 'bar from video'
-//}
-
 'use strict';
 
 function VideoController(videos,$sce,config) {

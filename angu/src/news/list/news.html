@@ -1,0 +1,29 @@
+<div id="news" class="container">
+  <!--<div class="separator">-->
+
+
+
+  <ul>
+    <li ng-repeat="newsItem in list.news">
+
+      <p>id: {{ newsItem.id  }}</p>
+      <p>visible: {{ newsItem.visible }}</p>
+      <p>title: {{ newsItem.title }} </p>
+      <p>authors: {{ newsItem.authors }}</p>
+
+      <!--<p>createdDate: {{ newsItem.createdDate }}</p>-->
+
+      <p>ReadMore Url: {{ newsItem.urlWithTitle }}</p>
+      <p>postDateString: {{ newsItem.postDateString }}</p>
+      <p>authorImageUrl: {{ newsItem.authorImageUrl }}</p>
+
+    <hr/>
+
+
+
+
+
+    </li>
+  </ul>
+
+</div>

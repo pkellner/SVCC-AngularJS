@@ -46,6 +46,8 @@ function provideMocks($httpBackend) {
 
     $httpBackend.whenGET('/rest/videosession/arrayonly').respond(require('./data/videosession.json'));
 
+    $httpBackend.whenGET('/rest/news/arrayonly').respond(require('./data/news.json'));
+
     $httpBackend.whenGET('/rest/codecampyear/arrayonly').respond(require('./data/codecampyear.json'));
 
     $httpBackend.whenGET('/rest/sessiondisplayitem/arrayonly').respond(require('./data/sessionDisplayItem.json'));

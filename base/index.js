@@ -13,6 +13,7 @@ import sponsors from './sponsors';
 import videos from './videos';
 import codecampyear from './codecampyear';
 import sessiondisplayitem from './sessionDisplayItem';
+import news from './news';
 
 export default angular.module('codeCampBase', [
     sanitize,
@@ -26,6 +27,7 @@ export default angular.module('codeCampBase', [
     sponsors,
     videos,
     codecampyear,
-    sessiondisplayitem
+    sessiondisplayitem,
+    news
 ])
     .name;

@@ -4,9 +4,9 @@
 
 'use strict';
 
-function PurchaseController(stripe,config) {
-    debugger;
+function PurchaseController(config) {
+
 }
-PurchaseController.$inject = ['stripe','config'];
+PurchaseController.$inject = ['config'];
 
 export default PurchaseController;
