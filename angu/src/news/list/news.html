@@ -1,29 +1,39 @@
-<div id="news" class="container">
-  <!--<div class="separator">-->
+<div class="container">
+  <div class="separator">
+    <span class="separator--icon icon-news"></span>
+  </div>
 
+  <div class="row">
+    <div class="col-sm-4 col-sm-push-4">
+      <h1 class="type--lead medium">News</h1>
+    </div>
 
+    <div class="col-sm-4 col-sm-push-4">
+      <div class="search-input">
+        <input class="search-input--input" type="search" placeholder="Search in the news">
+        <button type="submit">Search</button>
+      </div>
+    </div>
+  </div>
 
-  <ul>
-    <li ng-repeat="newsItem in list.news">
+  <div id="news" class="container">
+    <!--<div class="separator">-->
+    <ul>
+      <li ng-repeat="newsItem in list.news">
 
-      <p>id: {{ newsItem.id  }}</p>
-      <p>visible: {{ newsItem.visible }}</p>
-      <p>title: {{ newsItem.title }} </p>
-      <p>authors: {{ newsItem.authors }}</p>
+        <p>id: {{ newsItem.id  }}</p>
+        <p>visible: {{ newsItem.visible }}</p>
+        <p>title: {{ newsItem.title }} </p>
+        <p>authors: {{ newsItem.authors }}</p>
 
-      <!--<p>createdDate: {{ newsItem.createdDate }}</p>-->
+        <!--<p>createdDate: {{ newsItem.createdDate }}</p>-->
 
-      <p>ReadMore Url: {{ newsItem.urlWithTitle }}</p>
-      <p>postDateString: {{ newsItem.postDateString }}</p>
-      <p>authorImageUrl: {{ newsItem.authorImageUrl }}</p>
+        <p>ReadMore Url: {{ newsItem.urlWithTitle }}</p>
+        <p>postDateString: {{ newsItem.postDateString }}</p>
+        <p>authorImageUrl: {{ newsItem.authorImageUrl }}</p>
 
-    <hr/>
-
-
-
-
-
-    </li>
-  </ul>
-
+      <hr/>
+      </li>
+    </ul>
+  </div>
 </div>
