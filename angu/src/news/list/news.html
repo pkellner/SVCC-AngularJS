@@ -1,25 +1,67 @@
 <div class="container">
-  <div class="separator">
+  <div class="separator margin-bottom-small">
     <span class="separator--icon icon-news"></span>
   </div>
 
-  <div class="row">
-    <div class="col-sm-4 col-sm-push-4">
-      <h1 class="type--lead medium">News</h1>
-    </div>
+  <div class="news-tiles">
+    <div class="row">
+      <div class="col-sm-4 col-sm-push-4">
+        <h1 class="type--lead medium">News</h1>
+      </div>
 
-    <div class="col-sm-4 col-sm-push-4">
-      <div class="search-input">
-        <input class="search-input--input" type="search" placeholder="Search in the news">
-        <button type="submit">Search</button>
+      <div class="col-sm-4 col-sm-push-4">
+        <div class="search-input">
+          <input class="search-input--input" type="search" placeholder="Search in the news">
+          <button class="search-input--button" type="submit">
+            <span class="search-input--button--text">Search</span>
+            <span class="search-input--button--icon icon-search"></span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="news" class="container">
     <!--<div class="separator">-->
-    <ul>
-      <li ng-repeat="newsItem in list.news">
+    <ul class="news-tiles--list">
+      <li ng-repeat="newsItem in list.news" class="news-tiles--tile">
+        <h2 class="news-tiles--title">{{ newsItem.title }}</h2>
+
+        <div class="news-tiles--info-bar">
+          <div class="news-tiles--info-bar--avatar" style="background-image: url({{ newsItem.authorImageUrl }})">
+            <img src="{{ newsItem.authorImageUrl }}" class="news-tiles--info-bar--avatar--img">
+          </div>
+
+          <div class="news-tiles--info-bar--text">
+            <span>By <strong>{{ newsItem.authors }}</strong></span>
+            <span>{{ postDateString }}</span>
+          </div>
+        </div>
+
+        <div class="news-tiles--tile--body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae, voluptatibus! Ab vero possimus rerum, nobis architecto quod, repellat odio explicabo iste reiciendis non facere mollitia tempore nemo incidunt provident!
+        </div>
+
+        <div class="news-tiles--tile--footer">
+          <a class="news-tiles--tile--footer--button" href="{{ newsItem.urlWithTitle }}">Read More</a>
+
+          <div class="news-tiles--share">
+            <div class="news-tiles--share--title">Share On</div>
+
+            <ul class="news-tiles--share--list">
+              <li class="news-tiles--share--item"><a class="news-tiles--share--link" href="#">
+                <span class="news-tiles--share--text">Google+</span>
+                <span class="news-tiles--share--icon icon-google-plus"></span>
+              </a></li>
+              <li class="news-tiles--share--item"><a class="news-tiles--share--link" href="#">
+                <span class="news-tiles--share--text">Facebook</span>
+                <span class="news-tiles--share--icon icon-facebook"></span>
+              </a></li>
+              <li class="news-tiles--share--item"><a class="news-tiles--share--link" href="#">
+                <span class="news-tiles--share--text">Twitter</span>
+                <span class="news-tiles--share--icon icon-twitter"></span>
+              </a></li>
+            </ul>
+          </div>
+        </div>
 
         <p>id: {{ newsItem.id  }}</p>
         <p>visible: {{ newsItem.visible }}</p>

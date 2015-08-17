@@ -1,7 +1,60 @@
 .search-input {
+  $height: 32px;
+
+  position: relative;
+  margin: 5px 0;
+  width: 100%;
+  padding: 0 $height 0 0;
   display: block;
+  border: 1px solid $gray-border;
+  line-height: $height;
+
+  &--input,
+  &--button {
+    height: $height;
+    border: 0 none;
+  }
 
   &--input {
-    border: 2px solid red;
+    transition: outline .2s;
+    width: 100%;
+    display: block;
+    padding: 0 10px;
+    font-size: 14px;
+
+    @include placeholder {
+      color: $black;
+      font-style: italic;
+    }
+
+    &:focus {
+      outline: 1px solid $brand-primary;
+    }
+  }
+
+  &--button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: $height;
+    width: $height;
+    padding: 0;
+    background: none;
+    overflow: hidden;
+
+    &:focus {
+      outline: 1px solid $brand-primary;
+    }
+
+    &--text {
+      position: absolute;
+      left: -99em;
+      top: -99em;
+    }
+
+    &--icon {
+      position: relative;
+      top: -2px;
+    }
   }
 }
