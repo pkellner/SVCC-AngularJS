@@ -23,17 +23,21 @@
     <!--<div class="separator">-->
     <ul class="news-tiles--list">
       <li ng-repeat="newsItem in list.news" class="news-tiles--tile">
-        <h2 class="news-tiles--title">{{ newsItem.title }}</h2>
+        <h2 class="news-tiles--tile--title">{{ newsItem.title }}</h2>
 
-        <div class="news-tiles--info-bar">
-          <div class="news-tiles--info-bar--avatar" style="background-image: url({{ newsItem.authorImageUrl }})">
-            <img src="{{ newsItem.authorImageUrl }}" class="news-tiles--info-bar--avatar--img">
+        <div class="news-tiles--tile--info-bar">
+          <div ng-if="newsItem.authorImageUrl" class="news-tiles--tile--info-bar--avatar" style="background-image: url({{ newsItem.authorImageUrl }})">
+            <img src="{{ newsItem.authorImageUrl }}">
           </div>
 
-          <div class="news-tiles--info-bar--text">
-            <span>By <strong>{{ newsItem.authors }}</strong></span>
-            <span>{{ postDateString }}</span>
-          </div>
+          <div class="news-tiles--tile--info-bar--text">By <strong>{{ newsItem.authors }}</strong></div>
+          <div class="news-tiles--tile--info-bar--text">{{ newsItem.postDateString }}</div>
+        </div>
+
+        <img class="news-tiles--tile--image" src="http://placehold.it/270x110" alt="">
+
+        <div ng-if="newsItem.youTubeUrl" class="news-tiles--tile--iframe-wrapper">
+          <iframe src="http://www.youtube.com/embed/C0DPdy98e4c" frameborder="0"></iframe>
         </div>
 
         <div class="news-tiles--tile--body">
@@ -43,39 +47,62 @@
         <div class="news-tiles--tile--footer">
           <a class="news-tiles--tile--footer--button" href="{{ newsItem.urlWithTitle }}">Read More</a>
 
-          <div class="news-tiles--share">
-            <div class="news-tiles--share--title">Share On</div>
+          <div class="news-tiles--tile--footer--share">
+            <div class="news-tiles--tile--footer--share--title">Share On:</div>
 
-            <ul class="news-tiles--share--list">
-              <li class="news-tiles--share--item"><a class="news-tiles--share--link" href="#">
-                <span class="news-tiles--share--text">Google+</span>
-                <span class="news-tiles--share--icon icon-google-plus"></span>
+            <ul class="news-tiles--tile--footer--share--list">
+              <li class="news-tiles--tile--footer--share--item"><a class="news-tiles--tile--footer--share--link" href="#">
+                <span class="news-tiles--tile--footer--share--text">Google+</span>
+                <span class="icon-gplus"></span>
               </a></li>
-              <li class="news-tiles--share--item"><a class="news-tiles--share--link" href="#">
-                <span class="news-tiles--share--text">Facebook</span>
-                <span class="news-tiles--share--icon icon-facebook"></span>
+              <li class="news-tiles--tile--footer--share--item"><a class="news-tiles--tile--footer--share--link" href="#">
+                <span class="news-tiles--tile--footer--share--text">Facebook</span>
+                <span class="icon-fb"></span>
               </a></li>
-              <li class="news-tiles--share--item"><a class="news-tiles--share--link" href="#">
-                <span class="news-tiles--share--text">Twitter</span>
-                <span class="news-tiles--share--icon icon-twitter"></span>
+              <li class="news-tiles--tile--footer--share--item"><a class="news-tiles--tile--footer--share--link" href="#">
+                <span class="news-tiles--tile--footer--share--text">Twitter</span>
+                <span class="icon-twitter"></span>
               </a></li>
             </ul>
+
           </div>
         </div>
-
-        <p>id: {{ newsItem.id  }}</p>
-        <p>visible: {{ newsItem.visible }}</p>
-        <p>title: {{ newsItem.title }} </p>
-        <p>authors: {{ newsItem.authors }}</p>
-
-        <!--<p>createdDate: {{ newsItem.createdDate }}</p>-->
-
-        <p>ReadMore Url: {{ newsItem.urlWithTitle }}</p>
-        <p>postDateString: {{ newsItem.postDateString }}</p>
-        <p>authorImageUrl: {{ newsItem.authorImageUrl }}</p>
-
-      <hr/>
       </li>
     </ul>
   </div>
+
+  <div class="separator">
+    <button class="separator--button">More News</button>
+  </div>
+
+  <aside class="social-block">
+    <div class="social-block--header">
+      <h2 class="social-block--title">Do you want to be updated on Angular news and events?</h2>
+      <a class="social-block--title link" href="#">Join the Angular U Community!</a>
+    </div>
+
+    <ul class="social-block--list">
+      <li class="social-block--list--item"><a class="social-block--list--link" href="#">
+        <span class="social-block--list--circle-icon gplus">
+          <span class="icon-gplus"></span>
+        </span>
+
+        <span class="social-block--list--text">On Google+</span>
+      </a></li>
+      <li class="social-block--list--item"><a class="social-block--list--link" href="#">
+        <span class="social-block--list--circle-icon twitter">
+          <span class="icon-twitter"></span>
+        </span>
+
+        <span class="social-block--list--text">On Twitter</span>
+      </a></li>
+      <li class="social-block--list--item"><a class="social-block--list--link" href="#">
+        <span class="social-block--list--circle-icon">
+          <span class="icon-mail"></span>
+        </span>
+
+        <span class="social-block--list--text">Subscribe to our mainling list</span>
+      </a></li>
+    </ul>
+  </aside>
 </div>

@@ -1,3 +1,159 @@
 .news-tiles {
+  $gutter: 28px;
+
+  overflow: hidden;
   margin: 0 10px;
+
+  &--list {
+    margin: 25px 0 0;
+    font-size: 0;
+
+    @include respond-to(tablet) {
+      margin: 50px (-$gutter) 0;
+    }
+  }
+
+
+  &--tile {
+    font-size: 14px;
+    max-width: 420px;
+    margin: 0 auto 30px;
+
+    @include respond-to(tablet) {
+      padding: 0 $gutter;
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+    }
+
+    @include respond-to(desktop) {
+      width: #{(100 / 3)}%;
+    }
+
+    &--title {
+      margin-bottom: 15px;
+      font-size: 21px;
+      font-style: italic;
+    }
+
+    &--info-bar {
+      padding-bottom: 10px;
+      border-bottom: 1px solid $gray-border;
+      margin-bottom: 10px;
+
+      &--avatar {
+        $size: 47px;
+
+        float: left;
+        margin-right: 10px;
+        width: $size;
+        height: $size;
+        border-radius: $size;
+        overflow: hidden;
+        background-size: cover;
+
+        img {
+          display: none;
+        }
+      }
+
+      &--text {
+        display: block;
+      }
+    }
+
+    &--iframe-wrapper {
+      position: relative;
+      margin-bottom: 10px;
+      width: 100%;
+      padding-bottom: 56%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &--image {
+      display: block;
+      width: 100%;
+      margin: 0 auto 10px;
+    }
+
+    &--body {
+      margin-bottom: 10px;
+    }
+
+    &--footer {
+      @include clearfix;
+      line-height: 30px;
+      font-size: 12px;
+      width: 100%;
+
+      &--button,
+      &--share {
+        height: 30px;
+      }
+
+      &--button {
+        transition-property: background-color, text-shadow;
+        transition-duration: .2s;
+        float: left;
+        padding: 0 10px;
+        color: $white;
+        text-align: center;
+        text-shadow: 0 1px 1px rgba(#000, .75);
+        background: $brand-primary;
+        text-transform: uppercase;
+        display: block;
+
+        &:hover {
+          color: $white;
+          text-shadow: 0 1px 10px rgba(#000, .75);
+          background: lighten($brand-primary, 20%);
+        }
+
+        &:focus {
+          color: $white;
+          background: darken($brand-primary, 10%);
+        }
+      }
+
+      &--share {
+        text-align: right;
+        padding: 0 10px;
+        background: $gray-border;
+
+        &--title,
+        &--list,
+        &--item {
+          display: inline-block;
+        }
+
+        &--title {
+          text-transform: uppercase;
+          margin-right: 2px;
+        }
+
+        &--link {
+          margin-left: 3px;
+          font-size: 16px;
+          color: $black;
+
+          &:hover {
+            color: $brand-primary;
+          }
+        }
+
+        &--text {
+          position: absolute;
+          left: -999em;
+          top: -999em;
+        }
+      }
+    }
+  }
 }
