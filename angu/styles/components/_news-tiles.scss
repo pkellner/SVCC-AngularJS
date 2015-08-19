@@ -1,26 +1,29 @@
 .news-tiles {
-  $gutter: 28px;
+  $gutter: 56px;
 
   overflow: hidden;
   margin: 0 10px;
 
   &--list {
-    margin: 25px 0 0;
+    max-width: 420px;
+    margin: 25px auto 0;
     font-size: 0;
 
     @include respond-to(tablet) {
-      margin: 50px (-$gutter) 0;
+      max-width: none;
+      margin: 50px ($gutter / -2) 0;
     }
   }
 
-
   &--tile {
     font-size: 14px;
+    width: 100%;
     max-width: 420px;
     margin: 0 auto 30px;
+    background: $white;
 
     @include respond-to(tablet) {
-      padding: 0 $gutter;
+      padding: 0 ($gutter / 2);
       display: inline-block;
       vertical-align: top;
       width: 50%;

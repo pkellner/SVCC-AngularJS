@@ -21,8 +21,8 @@
     </div>
 
     <!--<div class="separator">-->
-    <ul class="news-tiles--list">
-      <li ng-repeat="newsItem in list.news" class="news-tiles--tile">
+    <ul masonry preserve-order class="news-tiles--list masonry">
+      <li ng-repeat="newsItem in list.news" class="masonry-brick news-tiles--tile">
         <h2 class="news-tiles--tile--title">{{ newsItem.title }}</h2>
 
         <div class="news-tiles--tile--info-bar">
