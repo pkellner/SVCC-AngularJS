@@ -5,39 +5,43 @@
   text-align: center;
 
   &:before {
-    content: "";
     position: absolute;
-    left: 0;
-    right: 0;
     top: 50%;
-    margin-top: -1px;
+    right: 0;
+    left: 0;
     height: 2px;
-    background: $gray-lighter;
-    border-top: 1px solid $gray-lightest;
+    margin-top: -1px;
+    content: "";
     opacity: 0.5;
+    border-top: 1px solid $gray-lightest;
+    background: $gray-lighter;
+  }
+
+  &.margin-bottom-small {
+    margin-bottom: 10px;
   }
 
   &--icon {
     position: relative;
     display: block;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin: 0 auto;
     width: 52px;
     height: 52px;
-    font-size: 30px;
+    margin: 0 auto;
+    padding: 10px;
     color: $gray-lighter;
     border: 1px solid $gray-lighter;
     border-radius: 50%;
     background: $body-bg;
     box-shadow: 0 0 0 17px $body-bg;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
 
     &.icon-question {
       font-family: 'Lato';
-      font-weight: normal;
       font-size: 33px;
+      font-weight: normal;
     }
 
     &.icon-heart {
@@ -46,16 +50,48 @@
   }
 
   &--item {
-    position: relative;
     display: inline-block;
-    padding: 10px 0;
     margin: 0 auto;
+    padding: 10px 0;
     background: #fff;
     box-shadow: 0 0 0 17px #fff;
 
     span {
-      font-weight: normal;
       margin-right: 10px;
+      font-weight: normal;
+    }
+  }
+
+  &--button {
+    @include font-smoothing(off);
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    padding: 0 15px;
+    transition-duration: .2s;
+    transition-property: background-color, text-shadow;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    border: 0 none;
+    border-right: 17px solid #fff;
+    border-left: 17px solid #fff;
+    background: $brand-primary;
+    background: $brand-primary;
+    text-shadow: 0 1px 1px rgba(#000, .75);
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 35px;
+
+    &:hover {
+      color: $white;
+      background: lighten($brand-primary, 20%);
+      text-shadow: 0 1px 10px rgba(#000, .75);
+    }
+
+    &:focus {
+      color: $white;
+      background: darken($brand-primary, 10%);
     }
   }
 }

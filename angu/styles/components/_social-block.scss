@@ -1,0 +1,76 @@
+.social-block {
+  margin: 50px auto 40px;
+  text-align: center;
+
+  &--header {
+    margin-bottom: 20px;
+  }
+
+  &--title {
+    @include font-smoothing(on);
+    margin: 5px 0;
+    font: {
+      size: 21px;
+      weight: normal;
+      style: italic;
+    }
+    color: $black;
+
+    &.link {
+      color: $brand-primary;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  &--list {
+    &--item {
+      margin: 0 15px 10px;
+      display: inline-block;
+    }
+
+    &--circle-icon {
+      $size: 40px;
+
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: $size;
+      height: $size;
+      border-radius: $size;
+      background: $black;
+      color: $white;
+      font-size: 22px;
+
+      &.gplus {
+        background: $brand-primary;
+      }
+
+      &.twitter {
+        background: $twitter-blue;
+      }
+
+      [class^="icon-"] {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+      }
+    }
+
+    &--text {
+      display: block;
+      vertical-align: middle;
+      font: {
+        size: 16px;
+        style: italic;
+      }
+
+      @include respond-to(phone) {
+        display: inline-block;
+      }
+    }
+  }
+}
